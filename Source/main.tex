@@ -243,21 +243,13 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 
 	In order to look more closely at the variations between the individual bands' maps, we also include a pixel-by-pixel analysis. Figure \ref{fig:AMEvsDust_allsky_allbands} shows the result of such a comparison, for each of the 19 bands sampled. The AME data comes from the AME component map provided in the Planck Public Release 2, produced by the COMMANDER component separation method.
 
-    To keep our analysis comparable to previous works, we carry-out the analysis by excluding pixels within 10 degrees of the ecliptic plane, where the Zodi-residuals can be a problem (especially in the MIR.) The remaining pixels are divided into ``high galactic latitudes" (more than 10 degrees from the galactic plane), and "low to mid galactic latitudes" (within 10 degrees of the plane).
+    To keep our analysis comparable to previous works, we carry-out the analysis by excluding pixels within 10 degrees of the ecliptic plane, where the Zodi-residuals can be a problem (especially in the MIR.) The remaining pixels are divided into ``high galactic latitudes'' (more than 10 degrees from the galactic plane), and ``low to mid galactic latitudes'' (within 10 degrees of the plane).
     %While it is true that the story of pixels close to the plane tends to be complicated, it is also true that at high galactic latitudes, where IR dust emission is fainter, Zodi-subtraction uncertainties become more significant.
 
     We can quickly see that, for all of the bands, there is a first-order correlation between the IR with the AME. Figure \ref{fig:AME_IR_crosscorr_allbandsg} visualizes the cross-correlation matrix for each of the IR bands and the AME for both the Pearson-based and Spearman-based cross-correlation matrices. With either test, the AME does not show a strong correlation with other bands at high latitudes. At lower latitudes, the FIR bands show stronger correlation for the Pearson test, but there appears to be an even correlation across all bands in the case of the Spearman rank test. The AKARI 9 micron bands, and the other PAH-tracing bands show a stronger correlation only relative to the bands from 18 to 60 microns. The WISE 12 micron band is show for comparison purposes, but the version of the WISE 12 micron map used here has been produced only for visualization purposes and is not yet vetted for scientific analysis.
 
     Even excluding pixels near the ecliptic plane, and separating the sky into two GLAT ranges, the situation is very difficult to interpret. To understand if the same pattern persists across the sky rather than presenting only for the all-sky average, we repeat the correlation analysis for GLAT bins. For each degree of galactic latitude, we cross correlate that Planck modified blackbody fitting results vs. the AME and the AKARI 9 micron intensity. (This comes with the caveat that the galactic plane is much more heavily sampled than the galactic poles.) Figure \ref{fig:PlanckModBBvsAMEandA9_byGLAT} shows the results.
 
-
-
-%\begin{figure*}
-%\label{fig:AME_IR_crosscorr_allbands}
-%\includegraphics[width=175mm]{../Plots/AME_vs_IR_corr_grid_seaborn.png}
-%\centering
-%\caption{A colorized visualization of the ALL-SKY cross-correlation matrix for the 19 infrared bands sampled and the AME map. These results are simply based on the full sky (but omitting pixels within 10 degrees of the ecliptic plane) cross correlation of each band vs. every other band.}
-%\end{figure*}
 
 \begin{figure*}
 \label{fig:AME_IR_crosscorr_allbandsg}
@@ -292,40 +284,6 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 \caption{A cross-correlation tests (Spearman) of AME vs. dust radiance (R), temperature (T),  emissivity index (Beta), and the AKARI 9 micron brightness (A9), by GLAT. The order of strongest to weakest correlation basically remains constant from pole to pole. (Except near the galactic plane, and around GLAT 40  }
 \end{figure*}
 
-%\begin{table*}
-%\label{tab:allsky_corr_coef}
-%\caption{ $R^{2}$ correlation coefficients for the all-sky AME vs. IR emission comparison. This table gives a rough idea of how well (or how poorly) each IR photometric band used correlates with the AME. The test is run twice: once for pixels within 10 degrees of the galactic plane, and once for pixels at least 10 degrees from the plane. Pixels within 10 degrees of the ecliptic plane are masked, to minimize contamination from residual zodiacal light. }
-%\centering
-%\begin{tabular}{lrrr}
-%\hline\hline
-%\hline
-%& Band     & High Glat  & Low Glat \\
-%& AKARI  9   & -0.0     & 0.582　\\
-%& DIRBE  12   & 0.092   & 0.564 \\
-%& IRAS   12   & 0.009   & 0.407 \\
-%& WISE   12   & 0.112   & 0.736 \\
-%& AKARI  18  & -0.0     & 0.17 \\
-%& DIRBE  25   & 0.014   & 0.264 \\
-%& IRAS   25   & 0.001   & 0.128 \\
-%& DIRBE  60   & 0.026   & 0.544 \\
-%& IRAS   60   & 0.005   & 0.255 \\
-%& AKARI  65   & 0.0     & -0.0 \\
-%& AKARI  90  & -0.0    & -0.0 \\
-%& DIRBE  100  & 0.101  &  0.764 \\
-%& IRAS   100  & 0.027  &  0.578 \\
-%& DIRBE  140  & 0.227  &  0.844 \\
-%& AKARI  140  & 0.254  & -0.0 \\
-%& AKARI  160  & 0.219  & -0.0 \\
-%& DIRBE  240  & 0.425  &  0.89 \\
-%& PLANCK 350  & 0.295  &  0.849 \\
-%& PLANCK 550  & 0.354  &  0.859 \\
-%\hline
-%% Text for table notes should follow after the \enddata but before
-%% the \end{deluxetable}. Make sure there is at least one \tablenotemark
-%% in the table for each \tablenotetext.
-%\label{TabData}
-%\end{tabular}
-%\end{table*}
 
 \subsection{Analysis of Planck Collaboration AME Candidate Regions}
 
@@ -339,15 +297,15 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 
      Once photometry results were gathered for all of the 98 regions, we then performed a full dust SED fitting,
 
-The SED of the different fields were fit using the \cite{galliano11} dust model. We used the amorphous carbon and silicate dust mixture. Indeed, this dust mixture is more emissive than the standard silicate-graphite \citep{draine07}, by a factor of 2-3. As was shown by Herschel, in the LMC \citep{galliano11}, and by Planck, in the Milky Way \citep{planck16}, this increase of emissivity is necessary to have a proper fit of the sub-mm emission. We assume that the radiation field heating this dust mixture is the Galactic ISRF \citep{math83}, scaled by a factor U. We also assume, following \cite{dale01}, that the dust is exposed to a distribution of starlight intensity, distributed as:
+The SED of the different fields were fit using the \cite{galliano11} dust model. We used the amorphous carbon and silicate dust mixture. Indeed, this dust mixture is more emissive than the standard silicate-graphite \citep{draine07}, by a factor of 2-3. As was shown by Herschel, in the LMC \citep{galliano11}, and by Planck, in the Milky Way \citep{planck16}, this increase of emissivity is necessary to have a proper fit of the sub-mm emission. We assume that the radiation field heating this dust mixture is the Galactic ISRF \citep{math83}, scaled by a factor $U$. We also assume, following \cite{dale01}, that the dust is exposed to a distribution of starlight intensity, distributed as:
 
-%\begin{equation}
-     $dM_{dust}$ / U dU between $U_{min}$ and $U_{max}$; (1)
-%\end{equation}
+\begin{equation}
+      dM_{dust}\propto{} U^{-\alpha}dU
+ \end{equation}
 
-where $U_{min}$, $U_{max}$ and  are free parameters. An old stellar population template (PEGASE; \citep{fioc97}) is added to this SED in order to model the near-IR emission. We perform, for the moment, a simple least-squares analysis. The results of the SED fitting vs. the AME are shown in Figure \ref{fig:AME_regs_J13}. For the vast majority of the samples, the fits are reasonable, with the $\chi^{2}$ distribution (see Fig. \ref{fig:AME_PCXVvsPR2}) appearing as we expect.
+between $U_{min}$ and $U_{max}$, where $U_{min}$, $U_{max}$ and $\alpha{}$ are free parameters. An old stellar population template (PEGASE; \citep{fioc97}) is added to this SED in order to model the near-IR emission. We perform, for the moment, a simple least-squares analysis. The results of the SED fitting vs. the AME are shown in Figure \ref{fig:AME_regs_J13}. For the vast majority of the samples, the fits are reasonable, with the $\chi^{2}$ distribution (see Fig. \ref{fig:AME_PCXVvsPR2}) appearing as we expect.
 
-     Two comparisons are shown - AME vs. PAH mass and AME vs. total dust mass, for two different AME data sets. The AME (PR2) data indicates the results of this work (our own photometry on the publicly available Planck 'COMMANDER' algorithm based AME map.) The AME (PCXV) plots, on the bottom, indicate that the AME flux values are those quoted from the PCXV analysis (wherein component separation, of AME from known foregrounds, was done region-by-region.) Furthermore, the regions themselves are categorized as high (red circles) or low (blue circles) significance AME. Simply based on Figure \ref{fig:AME_regs_J13}, it is difficult to discern a difference on the correlation strengths. To statistically evaluate the situation, we employ the Bootstrap re-sampling approach, first introduced by \cite{efron79}. This involves creating 100,000 random re-sampled sets of the data. We use the "with replacement" approach, meaning that a data point may be selected multiple times in a single re-sampling iteration. However the size of the re-sampled set is the same is the input set size. For each random set we run a correlation test, resulting in a distribution of correlation coefficients. The results of the Bootstrap analysis are given in Figure \ref{fig:AME_boostrap_mass_regs_all}. The distributions of correlation coefficients for AME vs. PAH mass, and AME vs. total dust mass., appear to be distinct. Mean correlation coefficients are separated by ~0.1+/-0.05-0.07.
+     Two comparisons are shown - AME vs. PAH mass and AME vs. total dust mass, for two different AME data sets. The AME (PR2) data indicates the results of this work (our own photometry on the publicly available Planck 'COMMANDER' algorithm based AME map.) The AME (PCXV) plots, on the bottom, indicate that the AME flux values are those quoted from the PCXV analysis (wherein component separation, of AME from known foregrounds, was done region-by-region.) Furthermore, the regions themselves are categorized as high (red circles) or low (blue circles) significance AME. Simply based on Figure \ref{fig:AME_regs_J13}, it is difficult to discern a difference on the correlation strengths. To statistically evaluate the situation, we employ the Bootstrap re-sampling approach, first introduced by \cite{efron79}. This involves creating 100,000 random re-sampled sets of the data. We use the "with replacement" approach, meaning that a data point may be selected multiple times in a single re-sampling iteration. However the size of the re-sampled set is the same is the input set size. For each random set we run a correlation test, resulting in a distribution of correlation coefficients. The results of the Bootstrap analysis are given in Figure \ref{fig:AME_boostrap_mass_regs_all}. The distributions of correlation coefficients for AME vs. PAH mass, and AME vs. total dust mass., appear to be distinct. Mean correlation coefficients are separated by 0.1+/-0.05-0.07.
 
 %     If anything, the correlation tests indicate that the regions most reliably identified as AME-prominent, had a weaker correlation with both dust mass and with PAH mass. However, here we must be very cautious, considering the lower sample size of highly significant AME regions. Moreover, the difficulties in noise estimates, and the inherent uncertainty in the AME component separation process.
 

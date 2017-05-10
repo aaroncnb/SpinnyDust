@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex /home/aaronb/Projectbrary/CosmicDust/Tekout/main"] 1494225735 "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bbl" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main" 1494225826
+["bibtex /home/aaronb/Projectbrary/CosmicDust/Tekout/main"] 1494407353 "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bbl" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main" 1494407405
   "./apj.bst" 1494213411 31890 1ae968ce6ab12f10d1bf74035f62faed ""
-  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" 1494225826 23712 d337920ca3be52f5a494fd94804bb326 ""
+  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" 1494407405 22838 254b0ef4eb8983b413769344a55a9a00 ""
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bcf" 0 -1 0 ""
-  "reference.bib" 1494213411 212993 f075d379e0b5e27117c142e64d83f27c ""
+  "reference.bib" 1494406283 213355 6bbd498d8c0d9166fa8ca81109c75d36 ""
   (generated)
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bbl"
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.blg"
-["pdflatex"] 1494225824 "main.tex" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.pdf" "main" 1494225826
+["pdflatex"] 1494407403 "main.tex" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.pdf" "main" 1494407405
   "../Plots/AMEregs_bootstrap_DmassDlum_PCXV.png" 1494213411 17871 f373f4dc4b099baa3a693705c72f9495 ""
   "../Plots/AMEregs_bootstrap_DmassDlum_spearman_PCXV.png" 1494213411 19637 d484c955a2cfd8a2600da2d9e5f3f9c1 ""
   "../Plots/AMEregs_bootstrap_PmassDlum_pearson_PR2.png" 1494213411 17098 15befe50a7255eedd0e52d69015fc914 ""
@@ -249,8 +249,8 @@
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../SEDs/sed_96.pdf" 1494213411 45675 2f55aab1edc5e5fd66749481f3cdf421 ""
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../SEDs/sed_97.pdf" 1494213411 44883 d86669ece2a070c4b50cb6d659f1bb5f ""
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../SEDs/sed_98.pdf" 1494213411 45713 f105c12c5504342ccaa66d8058d4c988 ""
-  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" 1494225826 23712 d337920ca3be52f5a494fd94804bb326 ""
-  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bbl" 1494225735 17418 cdeb9d076d011956c7c97d90475d4231 "bibtex /home/aaronb/Projectbrary/CosmicDust/Tekout/main"
+  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" 1494407405 22838 254b0ef4eb8983b413769344a55a9a00 ""
+  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bbl" 1494407353 17210 c388be605a4bafedc8ad463f4a9d2238 "bibtex /home/aaronb/Projectbrary/CosmicDust/Tekout/main"
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -288,6 +288,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1248133631 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb" 1248133631 36310 f5ddc6715cc60deb16d9db5ded6a9391 ""
@@ -326,9 +327,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1493198700 1863403 f3ff9a4253bcb5fb9a9baaf0c572cb01 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1493198760 3854197 143ce0fe853c991379df89f5b65aff42 ""
   "aastex.cls" 1494213411 66187 34b00eaf5bc1c6dfe8c5317100e255e0 ""
-  "main.tex" 1494225824 53627 9782fadbb1551623dbbde8bfc17008ca ""
+  "main.tex" 1494407401 51098 886aa0f299e5538a54c7baa72734cdec ""
   "natbib.sty" 1494213411 34789 9ac060fbd8646b7d751b2f5261a0844d ""
   (generated)
-  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux"
-  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.pdf"
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.log"
+  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.pdf"
+  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux"
