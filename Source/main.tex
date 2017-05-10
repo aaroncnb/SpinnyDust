@@ -300,10 +300,21 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 The SED of the different fields were fit using the \cite{galliano11} dust model. We used the amorphous carbon and silicate dust mixture. Indeed, this dust mixture is more emissive than the standard silicate-graphite \citep{draine07}, by a factor of 2-3. As was shown by Herschel, in the LMC \citep{galliano11}, and by Planck, in the Milky Way \citep{planck16}, this increase of emissivity is necessary to have a proper fit of the sub-mm emission. We assume that the radiation field heating this dust mixture is the Galactic ISRF \citep{math83}, scaled by a factor $U$. We also assume, following \cite{dale01}, that the dust is exposed to a distribution of starlight intensity, distributed as:
 
 \begin{equation}
+    \label{eq:U}
       dM_{dust}\propto{} U^{-\alpha}dU
  \end{equation}
 
-between $U_{min}$ and $U_{max}$, where $U_{min}$, $U_{max}$ and $\alpha{}$ are free parameters. An old stellar population template (PEGASE; \citep{fioc97}) is added to this SED in order to model the near-IR emission. We perform, for the moment, a simple least-squares analysis. The results of the SED fitting vs. the AME are shown in Figure \ref{fig:AME_regs_J13}. For the vast majority of the samples, the fits are reasonable, with the $\chi^{2}$ distribution (see Fig. \ref{fig:AME_PCXVvsPR2}) appearing as we expect.
+between $U_{min}$ and $U_{max}$, where $U_{min}$, $U_{max}$ and $\alpha{}$ are free parameters. An old stellar population template (PEGASE; \citep{fioc97}) is added to this SED in order to model the near-IR emission. The emission of this dust model is demonstrated in Fig. \ref{fig:galliano11_templates}. We perform, for the moment, a simple least-squares analysis. The results of the SED fitting vs. the AME are shown in Figure \ref{fig:AME_regs_J13}. For the vast majority of the samples, the fits are reasonable, with the $\chi^{2}$ distribution (see Fig. \ref{fig:AME_PCXVvsPR2}) appearing as we expect.
+
+\begin{figure*}
+\label{fig:galliano11_templates}
+\includegraphics[width=80mm]{../Plots/template_deltaU_G11_AC.pdf}
+\includegraphics[width=80mm]{../Plots/template_powerU_alpha_G11_AC.pdf}
+\includegraphics[width=80mm]{../Plots/template_powerU_DU_G11_AC.pdf}
+\includegraphics[width=80mm]{../Plots/template_powerU_Um_G11_AC.pdf}
+\centering
+\caption{Dust templates of \cite{galliano11}. The upper-left panel shows the variation of a uniformly illuminated mixture, as a function $U$. The other three panels show the variations of the emission of a dust mixture exposed to a distribution of starlight intensity, varying each parameter of Eq. \ref{eq:U}.  }
+\end{figure*}
 
      Two comparisons are shown - AME vs. PAH mass and AME vs. total dust mass, for two different AME data sets. The AME (PR2) data indicates the results of this work (our own photometry on the publicly available Planck 'COMMANDER' algorithm based AME map.) The AME (PCXV) plots, on the bottom, indicate that the AME flux values are those quoted from the PCXV analysis (wherein component separation, of AME from known foregrounds, was done region-by-region.) Furthermore, the regions themselves are categorized as high (red circles) or low (blue circles) significance AME. Simply based on Figure \ref{fig:AME_regs_J13}, it is difficult to discern a difference on the correlation strengths. To statistically evaluate the situation, we employ the Bootstrap re-sampling approach, first introduced by \cite{efron79}. This involves creating 100,000 random re-sampled sets of the data. We use the "with replacement" approach, meaning that a data point may be selected multiple times in a single re-sampling iteration. However the size of the re-sampled set is the same is the input set size. For each random set we run a correlation test, resulting in a distribution of correlation coefficients. The results of the Bootstrap analysis are given in Figure \ref{fig:AME_boostrap_mass_regs_all}. The distributions of correlation coefficients for AME vs. PAH mass, and AME vs. total dust mass., appear to be distinct. Mean correlation coefficients are separated by 0.1+/-0.05-0.07.
 
