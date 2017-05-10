@@ -137,29 +137,6 @@ A third, but not widely accepted, possible explanation for AME is discussed in \
 
      Assuming a rotational emission model, the AME signature (consistent with continuum emission having a peak around 20 to 40~GHz ) implies very small oscillators (\textasciitilde{}10~nm). In any case, the PAH class of molecules are the only spinning dust candidate so far which show both: 1) Evidence of abundance in the ISM at IR wavelengths, and 2) A predicted range of dipole moments (on order of 1~debye), to produce the observed AME signature \citep{draine98b, lovas05, thorwirth07}. However, it should be noted that the current upper-bound on the abundance of nanosilicates, allows for a "spinning nanosilicate" explanation for the AME, as shown by \cite{hensley17a}. Due to the (apparently) continuous shape of the AME SED, a distribution of dipole moments and rotational velocities is needed, in a spinning dust scenario.
 
-\begin{figure*}
-\label{fig:relSpectralResponse_MIR}
-\centering
-\includegraphics[width=150mm]{../Plots/RelSpectralResponse_MIR.png}
-\caption{This plot compares the relative spectral response curves of the MIR bands used in this study, AKARI/IRC 9~$\mu$m, IRAS 12~$\mu$m, WISE 12~$\mu$m, AKARI 18~$\mu$m, and  IRAS 25~$\mu$. AKARI/IRC 9~$\mu$m, IRAS 12~$\mu$m, WISE 12~$\mu$m bands are dominated by PAH emission (see Figure \ref{fig:inband_ionfrac_bar}. The AKARI 18~$\mu$m, and  IRAS 25~$\mu$m bands contain minimal PAH emission. }
-\end{figure*}
-
-\begin{figure*}
-\label{fig:inband_ionfrac_bar}
-\centering
-\includegraphics[width=150mm]{../Plots/InBandContribution_PAH_bar.png}
-\caption{This plot shows the fractional contribution of ionized vs. neutral PAH emission, based on the DL01, for the AKARI/IRC 9~$\mu$m, IRAS 12~$\mu$m, and WISE 12~$\mu$m photometric bands. The fraction is shown vs. $G_{0}$, the interstellar radiation field strength relative to that of the solar neighborhood $G_{0}$. The contributions remain very flat vs. $G_{0}$, the interstellar radiation field strength (ISRF) relative to that of the solar neighborhood, out to $G_{0}$ of 100. IRC 9~$\mu$m clearly shows a larger contribution from ionized PAHs, by about 16 percent, and a conversely smaller contribution from neutral PAHs. }
-\end{figure*}
-
-%\begin{figure*}
-%\label{fig:inband_ionfrac}
-%\centering
-%\includegraphics[width=150mm]{../Plots/inBand_PAHionFraction.png}
-%\caption{This plot shows the fractional contribution of ionized vs. neutral PAH emission, based on the DL01, for the AKARI/IRC 9~$\mu$m and IRAS 12~$\mu$m photometric bands. The fraction is shown vs. $G_{0}$, the interstellar radiation field strength relative to that of the solar neighborhood $G_{0}$. THe contributions remain very flat vs. the ISRF, through $G_{0}$ of 100. IRC 9~$\mu$m clearly shows a larger contribution from ionized PAHs, by about 16 percent. }
-%\end{figure*}
-
-
-
     The overall pattern among large-scale studies seems to show that all of the dust-tracing photometric bands show evidence of at least a first-order correlation with the AME (and each other.) On an all-sky, pixel-by-pixel basis, at 1-degree angular resolution, \cite{ysard10b} find that 12~$\mu$m emission, via IRAS, correlates more strongly with AME (via WMAP) than with 100~$\mu$m emission. They also find that scaling the IR intensity by the interstellar radiation field strength (given as $G_0$, a measure of ISRF relative to that of the solar neighborhood) improves both correlations.
 
     However in a similar work, \cite{hensley16} report that the 12~$\mu$m emission (via WISE) correlates less tightly with AME than with thermal dust radiance, using the Planck Collaboration dust and AME component-separation maps \citep{planck15X}. Also at odds with \cite{ysard10b}, they report that AME correlates more strongly with 12~$\mu$m intensity than with the intensity scaled by the interstellar radiation field.
@@ -184,7 +161,28 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
 
      The AKARI infrared space telescope revealed an entire sky of infrared light, from the mid to far infrared, via two instruments \citep{akari07} the Infrared Camera (IRC)\citep{irc07} and the Far Infrared Surveyor (FIS) \citep{fis07}.
 
-     IRC's 9~$\mu$m band all-sky map demonstrates the abundance of the PAH bands carrier in the Milky Way \citep{ishihara10}. This band uniquely covers major ionized PAH features at 6.2 and 7.7~$\mu$m; as well as neutral PAH features at 8.6 and 11.2~$\mu$m across the entire sky, in a single photometric band \citep{irc07}. The IRAS 12~$\mu$m band covers the 11.2 and 8.6~$\mu$m features, and the similarly-shaped WISE~12~$\mu$m band covers primarily the 11.2~$\mu$m feature. According to this distribution of PAH features across the response filters, it is expected that the IRC 9~$\mu$m band is the one most dominated by PAH emission. This is especially in the case of ionized PAHs, since the IRAS and WISE bands do not strongly cover the ionized PAH features.
+     IRC's 9~$\mu$m band all-sky map demonstrates the abundance of the PAH bands carrier in the Milky Way \citep{ishihara10}. Figure \ref{fig:relSpectralResponse_MIR} shows the coverage of the MIR bands along with an example galactic cirrus SED. The 9~$\mu$m band uniquely covers major ionized PAH features at 6.2 and 7.7~$\mu$m; as well as neutral PAH features at 8.6 and 11.2~$\mu$m across the entire sky \citep{irc07}. The IRAS 12~$\mu$m band covers the 11.2 and 8.6~$\mu$m features, and the similarly-shaped WISE~12~$\mu$m band covers primarily the 11.2~$\mu$m feature. According to this distribution of PAH features across the response filters, it is expected that the IRC 9~$\mu$m band is the one most dominated by PAH emission. Figure \ref{fig:inband_ionfrac_bar} shows the relative contribution of neutral PAHs vs ionized PAHs to the AKARI/IRC 9~$\mu$m, IRAS 12~$\mu$m and WISE 12~$\mu$m bands, based on the DLO1 dust SED model. IRC 9~$\mu$m shows a larger contribution from ionized PAHs, by about 16 percent, and a conversely smaller contribution from neutral PAHs. These relative contributions remain relatively constant out to a $G_{0}$ of about 100, with the contribution from warm dust becomming a larger factor for the IRAS 12~$\mu$m and WISE 12~$\mu$m bands. Thus, according the the DL01 template, IRC 9~$\mu$m should have the highest contribution from PAHs (especially ionized) out to extreme radiation fields.
+
+     \begin{figure*}
+     \label{fig:relSpectralResponse_MIR}
+     \centering
+     \includegraphics[width=150mm]{../Plots/RelSpectralResponse_MIR.png}
+     \caption{Relative spectral response curves of the MIR bands used in this study, AKARI/IRC 9~$\mu$m, IRAS 12~$\mu$m, WISE 12~$\mu$m, AKARI 18~$\mu$m, and  IRAS 25~$\mu$m. AKARI/IRC 9~$\mu$m, IRAS 12~$\mu$m, WISE 12~$\mu$m bands are dominated by PAH emission (see Figure \ref{fig:inband_ionfrac_bar}. The AKARI 18~$\mu$m, and  IRAS 25~$\mu$m bands contain minimal PAH emission. }
+     \end{figure*}
+
+     \begin{figure*}
+     \label{fig:inband_ionfrac_bar}
+     \centering
+     \includegraphics[width=150mm]{../Plots/InBandContribution_PAH_bar.png}
+     \caption{Fractional contribution of ionized vs. neutral PAH emission, based on the DL01 dust SED model at $G_{0}$ of 1. $G_{0}$ is the interstellar radiation field strength relative to that of the solar neighborhood. PAH0 and PAH1 refer to neutral and ionized PAHs. }
+     \end{figure*}
+
+     %\begin{figure*}
+     %\label{fig:inband_ionfrac}
+     %\centering
+     %\includegraphics[width=150mm]{../Plots/inBand_PAHionFraction.png}
+     %\caption{This plot shows the fractional contribution of ionized vs. neutral PAH emission, based on the DL01, for the AKARI/IRC 9~$\mu$m and IRAS 12~$\mu$m photometric bands. The fraction is shown vs. $G_{0}$, the interstellar radiation field strength relative to that of the solar neighborhood $G_{0}$. THe contributions remain very flat vs. the ISRF, through $G_{0}$ of 100. IRC 9~$\mu$m clearly shows a larger contribution from ionized PAHs, by about 16 percent. }
+     %\end{figure*}
 
       We utilize the most recent version of the IRC data (Ishihara, et al., in prep.) This version has had an updated model of the Zodiacal light, fitted and subtracted. The details of the improved Zodi-model, which offers an improvement over that used for the IRAS all-sky maps, are given in \cite{kondo16}.
 \begin{table*}
