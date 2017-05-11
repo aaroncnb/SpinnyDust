@@ -3,51 +3,13 @@ import numpy as np
 import pandas as pd
 import healpy as hp
 
-def mode(ndarray,axis=0):
-    if ndarray.size == 1:
-        return (ndarray[0],1)
-    elif ndarray.size == 0:
-        raise Exception('Attempted to find mode on an empty array!')
-    try:
-        axis = [i for i in range(ndarray.ndim)][axis]
-    except IndexError:
-        raise Exception('Axis %i out of range for array with %i dimension(s)' % (axis,ndarray.ndim))
-    srt = np.sort(ndarray,axis=axis)
-    dif = np.diff(srt,axis=axis)
-    shape = [i for i in dif.shape]
-    shape[axis] += 2
-    indices = np.indices(shape)[axis]
-    index = tuple([slice(None) if i != axis else slice(1,-1) for i in range(dif.ndim)])
-    indices[index][dif == 0] = 0
-    indices.sort(axis=axis)
-    bins = np.diff(indices,axis=axis)
-    location = np.argmax(bins,axis=axis)
-    mesh = np.indices(bins.shape)
-    index = tuple([slice(None) if i != axis else 0 for i in range(dif.ndim)])
-    index = [mesh[i][index].ravel() if i != axis else location.ravel() for i in range(bins.ndim)]
-    counts = bins[tuple(index)].reshape(location.shape)
-    index[axis] = indices[tuple(index)]
-    modals = srt[tuple(index)].reshape(location.shape)
-
-    return (modals, counts)
-
-
-
-
 filepath      =  "../Data/raw/"
 
 nside         = 256
-
-glatrange = 10.0
+glatrange     = 10.0
 glatrange_mid = 2.5
-elatrange = 15.0
+elatrange     = 15.0
 
-bands         = ["akari_90",\
-                    "dirbe_100", "iras_100",\
-                    "dirbe_140", "akari_140",\
-                    "akari_160", \
-                    "dirbe_240", \
-                    "planck_857", "planck_545"]
 
 
 band_names =   [ "akari_9",\
@@ -91,18 +53,16 @@ band_labels  = ["AKARI 9 $\mu{m}$",\
 
 waves_micron  = [ 9,12,12,12,18,25,25,60,60,65,90,100,100,140,140,160,240,350,550]
 
-nbands            = len(bands)
 nbands_all        = len(band_names)
 
-planck_bb_path    = "../Data/raw/COM_CompMap_dust-commander_0256_R2.00.fits.gz" #HEALPix FITS table containing Planck low-res modBB results
-fields  = [4,7,1] #The field number in the HEALPix file
-labels  = ["Temperature","Beta","Radiance"]
+planck_bb_path    = filepath+"/COM_CompMap_dust-commander_0256_R2.00.fits.gz" #HEALPix FITS table containing Planck low-res modBB results
+fields            = [4,7,1] #The field number in the HEALPix file
+labels            = ["Temperature","Beta","Radiance"]
 
 planck_bb = pd.DataFrame()
 for i in range (0,3):
     planck_bb[labels[i]] = hp.read_map(planck_bb_path,field = fields[i])
 
-planck_bb
 
 
 ### Import the Galactic coordinate reference columns:
