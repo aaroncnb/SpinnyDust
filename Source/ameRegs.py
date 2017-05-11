@@ -99,19 +99,6 @@ def corr_plot(X_, Y_, xtitle, ytitle, yerr=None, auto_limits=True, logscale=Fals
         plt.xlim([0,100])
         plt.ylim([0,100])
 
-
-
-
-    ## Plot the line of best fit:
-    #op = plt.plot(
-    #    ols_fit.predict(),
-    #    ws['y'],
-    #    color='k',
-    #    ls='solid',
-    #    lw=1,
-    #alpha=1.0,
-    #)
-
     print round(ols_fit.rsquared,3), round(ols_fit_hs.rsquared,3), round(ols_fit_ls.rsquared,3)
 
 print "Hi"
