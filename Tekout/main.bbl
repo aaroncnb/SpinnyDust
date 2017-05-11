@@ -59,6 +59,9 @@
 \bibitem[{{Draine} \& {Li}(2007)}]{draine07}
 ---. 2007, \apj, 657, 810
 
+\bibitem[{Efron(1979)}]{efron79}
+Efron, B. 1979, Ann. Statist., 7, 1
+
 \bibitem[{{Erickson}(1957)}]{erickson57}
 {Erickson}, W.~C. 1957, \apj, 126, 480
 
@@ -82,6 +85,9 @@
   {Wandelt}, {Hansen}, {Reinecke}, \& {Bartelmann}}]{gorski15}
 {G{\'o}rski}, K.~M., {Hivon}, E., {Banday}, A.~J., {Wandelt}, B.~D., {Hansen},
   F.~K., {Reinecke}, M., \& {Bartelmann}, M. 2005, \apj, 622, 759
+
+\bibitem[{{Hensley} \& {Draine}(2017)}]{hensley17a}
+{Hensley}, B.~S., \& {Draine}, B.~T. 2017, \apj, 836, 179
 
 \bibitem[{Hensley {et~al.}(2016)Hensley, Draine, \& Meisner}]{hensley16}
 Hensley, B.~S., Draine, B.~T., \& Meisner, A.~M. 2016, The Astrophysical
@@ -192,12 +198,6 @@ Lovas, F.~J., McMahon, R.~J., Grabow, J.-U., Schnell, M., Mack, J., Scott,
 
 \bibitem[{{Onaka}(2000)}]{onaka00}
 {Onaka}, T. 2000, Advances in Space Research, 25, 2167
-
-\bibitem[{{Onaka} {et~al.}(1999){Onaka}, {Mizutani}, {Tomono}, {Shibai},
-  {Nakagawa}, \& {Doi}}]{onaka99}
-{Onaka}, T., {Mizutani}, M., {Tomono}, D., {Shibai}, H., {Nakagawa}, T., \&
-  {Doi}, Y. 1999, in ESA Special Publication, Vol. 427, The Universe as Seen by
-  ISO, ed. P.~{Cox} \& M.~{Kessler}, 731
 
 \bibitem[{{Onaka} {et~al.}(1996){Onaka}, {Yamamura}, {Tanabe}, {Roellig}, \&
   {Yuen}}]{onaka96}
@@ -316,9 +316,6 @@ Lovas, F.~J., McMahon, R.~J., Grabow, J.-U., Schnell, M., Mack, J., Scott,
   {Shenoy}, {Carey}, {Noriega-Crespo}, {Dickinson}, {Ali-Ha{\"i}moud},
   {Casassus}, {Cleary}, {Davies}, {Davis}, {Hirata}, \& {Watson}}]{tibbs11}
 {Tibbs}, C.~T., {et~al.} 2011, \mnras, 418, 1889
-
-\bibitem[{{Tielens}(2008)}]{tielens08}
-{Tielens}, A.~G.~G.~M. 2008, \araa, 46, 289
 
 \bibitem[{{Ysard} {et~al.}(2011){Ysard}, {Juvela}, \& {Verstraete}}]{ysard11}
 {Ysard}, N., {Juvela}, M., \& {Verstraete}, L. 2011, \aap, 535, A89

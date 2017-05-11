@@ -86,18 +86,14 @@ glat = pd.DataFrame(glat, columns=['GLAT'])
 ##### Now, we have a cube of the FIR data saved as "fir"
 ##### We want to compare the individual maps in a way that makes some physical sense
 ##### How about we start by assuming an SED? Next: Modified blackbody fitting
-layer = 0
+
 npix  = 12*nside**2
-phot  = np.ones([npix, nbands_all])
 
 
-for i in band_names:
 
-    phot[:,layer] = hp.read_map(filepath+str(nside)+"_nside/"+band+"_"+str(nside)+"_1dres.fits",memmap=False);
-    layer += 1
 
-print "IR Maps Read"
-phot = pd.DataFrame(phot, columns = band_abbr)
+
+
 
 
 
@@ -105,9 +101,14 @@ phot = pd.DataFrame(phot, columns = band_abbr)
 planck_mw = pd.DataFrame()
 labels = ['AME','CO','ff','Sync']
 paths = ['COM_CompMap_AME-commander_0256_R2.00.fits.gz','COM_CompMap_CO-commander_0256_R2.00.fits.gz','COM_CompMap_freefree-commander_0256_R2.00.fits.gz','COM_CompMap_Synchrotron-commander_0256_R2.00.fits.gz']
-
 for label, path in zip(labels, paths):
     planck_mw[label] = hp.read_map(filepath+path,field = 0);
+print "COMMANDER MW Maps Read"
+
+phot = pd.DataFrame(
+for i in range(0,len(band_names)):
+    phot[band_abbr[i]] = hp.read_map(filepath+str(nside)+"_nside/"+band+"_"+str(nside)+"_1dres.fits")
+print "IR Maps Read"
 
 
 
@@ -118,10 +119,6 @@ for label, path in zip(labels, paths):
 
 
 
-phot = phot.join(pd.DataFrame(AME,  columns= ['AME']))
-phot = phot.join(pd.DataFrame(ff,   columns= ['FF']))
-phot = phot.join(pd.DataFrame(CO,   columns= ['CO']))
-phot = phot.join(pd.DataFrame(Sync, columns= ['Syn']))
 
 bb = pd.DataFrame(AME,  columns= ['AME'])
 bb = bb.join(pd.DataFrame(Planck_T, columns= ['T']))
