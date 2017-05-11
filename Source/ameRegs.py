@@ -7,7 +7,7 @@ import statsmodels.formula.api as sm
 
 def corr_plot(X_, Y_, xtitle, ytitle, yerr=None, auto_limits=True, logscale=False):
 
-    pcxv_AME = "/work1/users/aaronb/Databrary/AME.txt"
+    pcxv_AME = "../Data//AME.txt"
 
     ### Potential fractioanl contribution from an UCHII region...
     f_uch     = np.genfromtxt(pcxv_AME,usecols = (19), dtype = 'float', delimiter=',',skip_header=1)
