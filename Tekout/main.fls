@@ -99,9 +99,9 @@ INPUT ../Plots/InBandContribution_PAH_bar.png
 INPUT ../Plots/InBandContribution_PAH_bar.png
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-INPUT /home/aaronb/Projectbrary/CosmicDust/Tekout/../Plots/all_bands_corr_matrix_wAME_spearman.png
-INPUT ../Plots/all_bands_corr_matrix_wAME_spearman.png
-INPUT ../Plots/all_bands_corr_matrix_wAME_spearman.png
+INPUT /home/aaronb/Projectbrary/CosmicDust/Tekout/../Plots/all_bands_corr_matrix_wAME_spearman.pdf
+INPUT ../Plots/all_bands_corr_matrix_wAME_spearman.pdf
+INPUT ../Plots/all_bands_corr_matrix_wAME_spearman.pdf
 INPUT /home/aaronb/Projectbrary/CosmicDust/Tekout/../Plots/AMEvsDust_allsky_allbands.png
 INPUT ../Plots/AMEvsDust_allsky_allbands.png
 INPUT ../Plots/AMEvsDust_allsky_allbands.png

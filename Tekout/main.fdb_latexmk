@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex /home/aaronb/Projectbrary/CosmicDust/Tekout/main"] 1494566859 "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bbl" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main" 1494566862
-  "/home/aaronb/Projectbrary/CosmicDust/Source/apj.bst" 1494213411 31890 1ae968ce6ab12f10d1bf74035f62faed ""
-  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" 1494566862 23313 dfdf1f3eb815711a57ff5ed3dcbb040f ""
+["bibtex /home/aaronb/Projectbrary/CosmicDust/Tekout/main"] 1494577317 "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bbl" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main" 1494577643
+  "./apj.bst" 1494213411 31890 1ae968ce6ab12f10d1bf74035f62faed ""
+  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" 1494577643 23251 6180f1847e647e1c21adf927989efdc9 ""
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bcf" 0 -1 0 ""
   "reference.bib" 1494406283 213355 6bbd498d8c0d9166fa8ca81109c75d36 ""
   (generated)
-  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bbl"
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.blg"
-["pdflatex"] 1494566860 "main.tex" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.pdf" "main" 1494566862
+  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bbl"
+["pdflatex"] 1494577641 "main.tex" "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.pdf" "main" 1494577643
   "../Plots/AMEregs_bootstrap_DmassDlum_spearman_PCXV.png" 1494213411 19637 d484c955a2cfd8a2600da2d9e5f3f9c1 ""
   "../Plots/AMEregs_bootstrap_PmassDlum_spearman_PR2.png" 1494213411 18427 f2ad397b0f5a0fa140cf2e3ca2644f88 ""
   "../Plots/AMEregs_bootstrap_mass_spearman_PCXV.png" 1494213411 17617 2dc9385c7738762289e122fd24847dc0 ""
@@ -20,7 +20,7 @@
   "../Plots/PlanckModBBvsAMEandA9_byGLAT.png" 1494213411 86357 5035d830a046587a7a2fa2a55828c282 ""
   "../Plots/PlanckModBBvsAMEandA9_hist.png" 1494213411 89835 f5f18d0650f95c65d2ab7a087d40f7c9 ""
   "../Plots/RelSpectralResponse_MIR.png" 1494213411 32474 4d56c68eff85622376f95b4caa10ea43 ""
-  "../Plots/all_bands_corr_matrix_wAME_spearman.png" 1494213411 29352 a239528a18ab70c1f2d49390e5a00072 ""
+  "../Plots/all_bands_corr_matrix_wAME_spearman.pdf" 1494577307 36155 244055e360e91f6cc3efbfc1b1833f29 ""
   "../Plots/histo_chi2red.pdf" 1494213411 35704 3c1d92c66a3f9195656faf9c8756d2bf ""
   "../Plots/lOrionis_AKARI9.png" 1494213411 142195 34922f02a9d93bec42022203e0ed1c7e ""
   "../Plots/lOrionis_grid_img.png" 1494213411 1447153 bb9fbef9cb6236a105a9c1da5d3e2ef8 ""
@@ -140,7 +140,7 @@
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../Plots/PlanckModBBvsAMEandA9_byGLAT.png" 1494213411 86357 5035d830a046587a7a2fa2a55828c282 ""
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../Plots/PlanckModBBvsAMEandA9_hist.png" 1494213411 89835 f5f18d0650f95c65d2ab7a087d40f7c9 ""
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../Plots/RelSpectralResponse_MIR.png" 1494213411 32474 4d56c68eff85622376f95b4caa10ea43 ""
-  "/home/aaronb/Projectbrary/CosmicDust/Tekout/../Plots/all_bands_corr_matrix_wAME_spearman.png" 1494213411 29352 a239528a18ab70c1f2d49390e5a00072 ""
+  "/home/aaronb/Projectbrary/CosmicDust/Tekout/../Plots/all_bands_corr_matrix_wAME_spearman.pdf" 1494577307 36155 244055e360e91f6cc3efbfc1b1833f29 ""
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../Plots/histo_chi2red.pdf" 1494213411 35704 3c1d92c66a3f9195656faf9c8756d2bf ""
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../Plots/lOrionis_AKARI9.png" 1494213411 142195 34922f02a9d93bec42022203e0ed1c7e ""
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../Plots/lOrionis_grid_img.png" 1494213411 1447153 bb9fbef9cb6236a105a9c1da5d3e2ef8 ""
@@ -247,8 +247,8 @@
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../SEDs/sed_96.pdf" 1494213411 45675 2f55aab1edc5e5fd66749481f3cdf421 ""
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../SEDs/sed_97.pdf" 1494213411 44883 d86669ece2a070c4b50cb6d659f1bb5f ""
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/../SEDs/sed_98.pdf" 1494213411 45713 f105c12c5504342ccaa66d8058d4c988 ""
-  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" 1494566862 23313 dfdf1f3eb815711a57ff5ed3dcbb040f ""
-  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bbl" 1494566860 17210 c388be605a4bafedc8ad463f4a9d2238 "bibtex /home/aaronb/Projectbrary/CosmicDust/Tekout/main"
+  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux" 1494577643 23251 6180f1847e647e1c21adf927989efdc9 ""
+  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.bbl" 1494577317 17210 c388be605a4bafedc8ad463f4a9d2238 "bibtex /home/aaronb/Projectbrary/CosmicDust/Tekout/main"
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -325,9 +325,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1493198700 1863403 f3ff9a4253bcb5fb9a9baaf0c572cb01 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1493198760 3854197 143ce0fe853c991379df89f5b65aff42 ""
   "aastex.cls" 1494213411 66187 34b00eaf5bc1c6dfe8c5317100e255e0 ""
-  "main.tex" 1494557331 51473 62241c9c896f6e587da2ebdd8213932f ""
+  "main.tex" 1494577641 50598 46256efbdc21cacd322814d23e9075e9 ""
   "natbib.sty" 1494213411 34789 9ac060fbd8646b7d751b2f5261a0844d ""
   (generated)
-  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.log"
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.pdf"
+  "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.log"
   "/home/aaronb/Projectbrary/CosmicDust/Tekout/main.aux"

@@ -177,13 +177,6 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
      \caption{Fractional contribution of ionized vs. neutral PAH emission, based on the DL01 dust SED model at $G_{0}$ of 1. $G_{0}$ is the interstellar radiation field strength relative to that of the solar neighborhood. PAH0 and PAH1 refer to neutral and ionized PAHs. }
      \end{figure*}
 
-     %\begin{figure*}
-     %\label{fig:inband_ionfrac}
-     %\centering
-     %\includegraphics[width=150mm]{../Plots/inBand_PAHionFraction.png}
-     %\caption{This plot shows the fractional contribution of ionized vs. neutral PAH emission, based on the DL01, for the AKARI/IRC 9~$\mu$m and IRAS 12~$\mu$m photometric bands. The fraction is shown vs. $G_{0}$, the interstellar radiation field strength relative to that of the solar neighborhood $G_{0}$. THe contributions remain very flat vs. the ISRF, through $G_{0}$ of 100. IRC 9~$\mu$m clearly shows a larger contribution from ionized PAHs, by about 16 percent. }
-     %\end{figure*}
-
       We utilize the most recent version of the IRC data (Ishihara, et al., in prep.) This version has had an updated model of the Zodiacal light, fitted and subtracted. The details of the improved Zodi-model, which offers an improvement over that used for the IRAS all-sky maps, are given in \cite{kondo16}.
 \begin{table*}
 \label{tab:data}
@@ -213,10 +206,6 @@ Planck/HFI & 345~$\mu$m & 4.7$'$ & & \citep{hfi14viii} \\
 Planck/HFI & 550~$\mu$m & 4.3$'$& & '' \\
 WISE & 12~$\mu$m & & & &  \\
 \hline
-%% Text for table notes should follow after the \enddata but before
-%% the \end{deluxetable}. Make sure there is at least one \tablenotemark
-%% in the table for each \tablenotetext.
-%\label{TabData}
 \end{tabular}
 \end{table*}
 
@@ -253,9 +242,9 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 
 \begin{figure*}
 \label{fig:AME_IR_crosscorr_allbandsg}
-\includegraphics[width=185mm]{../Plots/all_bands_corr_matrix_wAME_spearman.png}
+\includegraphics[width=185mm]{../Plots/all_bands_corr_matrix_wAME_spearman.pdf}
 \centering
-\caption{A colorized visualization of the ALL-SKY cross-correlation matrix for the 19 infrared bands sampled and the AME map. These results are based on the full sky (but omitting pixels within 10 degrees of the ecliptic plane) cross correlation of each band vs. every other band and the AME map. Plots on the top row are based on the Spearman rank correlation test. Those on the bottom are based on the Pearson correlation coefficients. }
+\caption{A colorized visualization of the ALL-SKY cross-correlation matrix for the 19 infrared bands sampled and the AME map. These results are based on the full sky (but omitting pixels within 10 degrees of the ecliptic plane) cross correlation of each band vs. every other band and the AME map. Plots on the top row are based on the Spearman rank correlation test.}
 \end{figure*}
 
 
@@ -303,16 +292,16 @@ The SED of the different fields were fit using the \cite{galliano11} dust model.
       dM_{dust}\propto{} U^{-\alpha}dU
  \end{equation}
 
-between $U_{min}$ and $U_{max}$, where $U_{min}$, $U_{max}$ and $\alpha{}$ are free parameters. An old stellar population template (PEGASE; \citep{fioc97}) is added to this SED in order to model the near-IR emission. The emission of this dust model is demonstrated in Fig. \ref{fig:galliano11_templates}. We perform, for the moment, a simple least-squares analysis. The results of the SED fitting vs. the AME are shown in Figure \ref{fig:AME_regs_J13}. For the vast majority of the samples, the fits are reasonable, with the $\chi^{2}$ distribution (see Fig. \ref{fig:AME_PCXVvsPR2}) appearing as we expect.
+between $U_{min}$ and $U_{max}$, where $U_{min}$, $U_{max}$ and $\alpha{}$ are free parameters. An old stellar population template (PEGASE; \citep{fioc97}) is added to this SED in order to model the near-IR emission. The emission of this dust model is demonstrated in Fig. \ref{fig:galliano11_templates}. We perform, for the moment, a simple least-squares analysis. The results of the SED fitting vs. the AME are shown in Fig. \ref{fig:AME_regs_J13}. For the vast majority of the samples, the fits are reasonable, with the $\chi^{2}$ distribution (see Fig. \ref{fig:AME_PCXVvsPR2}) appearing as we expect.
 
 \begin{figure*}
-\label{fig:galliano11_templates}
-\includegraphics[width=80mm]{../Plots/template_deltaU_G11_AC.pdf}
-\includegraphics[width=80mm]{../Plots/template_powerU_alpha_G11_AC.pdf}
-\includegraphics[width=80mm]{../Plots/template_powerU_DU_G11_AC.pdf}
-\includegraphics[width=80mm]{../Plots/template_powerU_Um_G11_AC.pdf}
-\centering
-\caption{Dust templates of \cite{galliano11}. The upper-left panel shows the variation of a uniformly illuminated mixture, as a function $U$. The other three panels show the variations of the emission of a dust mixture exposed to a distribution of starlight intensity, varying each parameter of Eq. \ref{eq:U}.  }
+  \label{fig:galliano11_templates}
+    \includegraphics[width=80mm]{../Plots/template_deltaU_G11_AC.pdf}
+    \includegraphics[width=80mm]{../Plots/template_powerU_alpha_G11_AC.pdf}
+    \includegraphics[width=80mm]{../Plots/template_powerU_DU_G11_AC.pdf}
+    \includegraphics[width=80mm]{../Plots/template_powerU_Um_G11_AC.pdf}
+    \centering
+    \caption{Dust templates of \cite{galliano11}. The upper-left panel shows the variation of a uniformly illuminated mixture, as a function $U$. The other three panels show the variations of the emission of a dust mixture exposed to a distribution of starlight intensity, varying each parameter of Eq. \ref{eq:U}.  }
 \end{figure*}
 
      Two comparisons are shown - AME vs. PAH mass and AME vs. total dust mass, for two different AME data sets. The AME (PR2) data indicates the results of this work (our own photometry on the publicly available Planck 'COMMANDER' algorithm based AME map.) The AME (PCXV) plots, on the bottom, indicate that the AME flux values are those quoted from the PCXV analysis (wherein component separation, of AME from known foregrounds, was done region-by-region.) Furthermore, the regions themselves are categorized as high (red circles) or low (blue circles) significance AME. Simply based on Figure \ref{fig:AME_regs_J13}, it is difficult to discern a difference on the correlation strengths. To statistically evaluate the situation, we employ the Bootstrap re-sampling approach, first introduced by \cite{efron79}. This involves creating 100,000 random re-sampled sets of the data. We use the "with replacement" approach, meaning that a data point may be selected multiple times in a single re-sampling iteration. However the size of the re-sampled set is the same is the input set size. For each random set we run a correlation test, resulting in a distribution of correlation coefficients. The results of the Bootstrap analysis are given in Figure \ref{fig:AME_boostrap_mass_regs_all}. The distributions of correlation coefficients for AME vs. PAH mass, and AME vs. total dust mass., appear to be distinct. Mean correlation coefficients are separated by 0.1+/-0.05-0.07.
@@ -387,28 +376,25 @@ between $U_{min}$ and $U_{max}$, where $U_{min}$, $U_{max}$ and $\alpha{}$ are f
 
 \section{Discussion}
   \label{sec:Discussion}
-         As noted in Section 1, previous studies found that the AME generally correlates at dust-related IR wavelengths \citep{ysard10b,planckXV, hensley16}. We see the same overall pattern in the present study, for each of the three scales examined: the all-sky pixel-based analysis, the re-examination of Planck AME Candidate regions, and the inspection of the $\lambda$~Orionis region.
-         In the case of the AME candidate regions, do we find evidence of a statistically stronger relationship between AME and total dust mass than AME vs. PAH mass, for the full set of 98 regions. We were able to confirm that the correlation coefficients are statistically distinct, via boostrap re-sampling (with replacement.) However the difference is marginal. Moreover the full set of 98 regions includes many regions that are either near the galactic plane, or do not have a strong S/N for the AME component separation. A similar result is found when we compare AME to the total dust luminosity and PAH luminosity.
 
-        	The closeness of the correlation coefficients found here is consistent with the results of the IRAS vs. AME correlation test result from \cite{planckXV}. They found that correlation coefficient among the 4 IRAS bands (12, 25, 60, and 100 microns) differ from one another only by about 5\%, across the whole set of 98 regions. The trend of AKARI MIR and FIR data vs. the AME does not disagree with their IRAS comparison. This work adds that bands longer than IRAS 100 micron also correlate strongly with AME, especially the two Planck/HFI bands used.
+    As noted in Section 1, previous studies found that the AME generally correlates at dust-related IR wavelengths \citep{ysard10b,planckXV, hensley16}. We see the same overall pattern in the present study, for each of the three scales examined: the all-sky pixel-based analysis, the re-examination of Planck AME Candidate regions, and the inspection of the $\lambda$~Orionis region.
+
+    While there is consensus regarding the the AME to IR correlation, there is disagreement about the specific component of IR dust emission which is more closely tied to AME. In other words, there is no consensus concerning the relative importance of MIR vs. FIR emission in predicting the anomalous emission. \cite{ysard10b} find that MIR (IRAS 12) correlates more tightly with AME (via WMAP) than with FIR (IRAS 100.) Meanwhile, \cite{hensley16} argue that the FIR component of dust emission has more closely related to AME than PAH emission (via WISE 12). While the respective correlation coefficients found by these studies are similar,
+    they offer very different interpretations: \cite{ysard10b} interprets the marginally stronger MIR correlation as support of a spinning PAH hypothesis. \cite{hensley16} argue that a stronger FIR:AME correlation is evidance against spinning PAHs, instead
+    In this context, AME vs. IR on an all-sky, 1-degree resolution basis, our results are consistent with \cite{hensley16} in that the bands which trace PAH emission (AKARI 9, IRAS 12), are more poorly correlated with AME the FIR bands are. In fact, the FIR bands and the AME map show nearly the same cross-correlation results vs. all of the other bands. In a more recent paper, \cite{hensley17}, they go on to argue that the observational upper-bound placed on the abundance of nanosilicates allows for a spinning-nanosilicate scenario.
+
+    In the case of the AME candidate regions, do we find evidence of a statistically stronger relationship between AME and total dust mass than AME vs. PAH mass, for the full set of 98 regions. We were able to confirm that the correlation coefficients are statistically distinct, via boostrap re-sampling (with replacement.) However the difference is marginal. Moreover the full set of 98 regions includes many regions that are either near the galactic plane, or do not have a strong S/N for the AME component separation. A similar result is found when we compare AME to the total dust luminosity and PAH luminosity.
+
+    The closeness of the correlation coefficients found here is consistent with the results of the IRAS vs. AME correlation test result from \cite{planckXV}. They found that correlation coefficient among the 4 IRAS bands (12, 25, 60, and 100 microns) differ from one another only by about 5\%, across the whole set of 98 regions. The trend of AKARI MIR and FIR data vs. the AME does not disagree with their IRAS comparison. This work adds that bands longer than IRAS 100 micron also correlate strongly with AME, especially the two Planck/HFI bands used.
 
 
-         In the case of $\lambda$~Orionis, we do not apply a dust SED fitting, but we did find that the AKARI 9 micron emission and the longest wavelength Planck 545 GHz emission had the strongest Spearman rank correlation coefficients (0.80 and 0.81.) The literature does not yet contain a comparable analysis of AME in $\lambda$~Orionis, however if we consider the 9 micron band to be a tracer of PAH , emission, and Planck 545 Ghz band to be a tracer of thermal dust emission, the result is in-line with what we have seen in \cite{ysard10b} and \cite{hensley16}. In those works, the two relationships (MIR vs. AME and FIR vs. AME) are very close (although these two papers are odds as to which relationship is stronger, and in their final interpretation.) In the future, we will apply the same dust SED fitting analysis, and bootstrap verification as was applied to the AME candidate regions described above. We will also attempt our own fitting of the AME component, based on low frequency data (rather than using the "COMMANDER" AME map.)
+    In the case of $\lambda$~Orionis, we do not apply a dust SED fitting, but we did find that the AKARI 9 micron emission and the longest wavelength Planck 545 GHz emission had the strongest Spearman rank correlation coefficients (0.80 and 0.81.) The literature does not yet contain a comparable analysis of AME in $\lambda$~Orionis, however if we consider the 9 micron band to be a tracer of PAH , emission, and Planck 545 Ghz band to be a tracer of thermal dust emission, the result is in-line with what we have seen in \cite{ysard10b} and \cite{hensley16}. In those works, the two relationships (MIR vs. AME and FIR vs. AME) are very close (although these two papers are odds as to which relationship is stronger, and in their final interpretation.) In the future, we will apply the same dust SED fitting analysis, and bootstrap verification as was applied to the AME candidate regions described above. We will also attempt our own fitting of the AME component, based on low frequency data (rather than using the "COMMANDER" AME map.)
 
-       In our all-sky, pixel-by-pixel comparison, we find that all of the 19 wavelengths sampled show a first-order correlation with the AME. This is again consistent with the previous investigations of the AME cited above, wherein the only differences found are minor. Without applying further dust SED fitting, this analysis seems to concur with \cite{hensley16} in that the FIR bands (in their work, they used the dust radiance) show the tightest correlation. However, the difference in correlation from the MIR to FIR becomes very small when focusing only on galactic latitudes within 5 degrees of the plane. In \cite{hensley16}, the galactic plane is masked, whereas we mask only the pixels which have missing data from any of the 19 maps, as well as pixels within 10 degrees of the ecliptic plane (due to residual zodiacal light emission in the MIR maps.)
+    In our all-sky, pixel-by-pixel comparison, we find that all of the 19 wavelengths sampled show a first-order correlation with the AME. This is again consistent with the previous investigations of the AME cited above, wherein the only differences found are minor. Without applying further dust SED fitting, this analysis seems to concur with \cite{hensley16} in that the FIR bands (in their work, they used the dust radiance) show the tightest correlation. However, the difference in correlation from the MIR to FIR becomes very small when focusing only on galactic latitudes within 5 degrees of the plane. In \cite{hensley16}, the galactic plane is masked, whereas we mask only the pixels which have missing data from any of the 19 maps, as well as pixels within 10 degrees of the ecliptic plane (due to residual zodiacal light emission in the MIR maps.)
 
-     From these results, we cannot confirm or rule out a spinning-PAH hypothesis on an all-sky, 1-degree scale. However, in  $\lambda$~Orionis, the results may be consistent with a scenario in which PAH mass, cold dust, and the AME are all tightly correlated. Weaker correlation from 25 to 70 microns may indicate that AME is weaker in regions of warmer dust and stronger radiation fields. Further analysis is needed to investigate if the AME seen in this region really comes from PAHs or other small spinning grains, and/or another source entirely.  Future work should investigate whether or not PAHs are being destroyed in the region of $\lambda$~Orionis where AME is weaker.
+    From these results, we cannot confirm or rule out a spinning-PAH hypothesis on an all-sky, 1-degree scale. However, in  $\lambda$~Orionis, the results may be consistent with a scenario in which PAH mass, cold dust, and the AME are all tightly correlated. Weaker correlation from 25 to 70 microns may indicate that AME is weaker in regions of warmer dust and stronger radiation fields. Further analysis is needed to investigate if the AME seen in this region really comes from PAHs or other small spinning grains, and/or another source entirely.  Future work should investigate whether or not PAHs are being destroyed in the region of $\lambda$~Orionis where AME is weaker.
 
-           We look forward to continued environment-resolved comparisons to investigate the potential AME-PAH relationship in a region by region manner. We will explore $\lambda$~Orionis in more detail, in a later paper. We will also employ higher resolution AME all-sky data as it becomes available.
-
-%       The PAH-dominated bands (AKARI 9, IRAS 12) correlate with AME, but so do the thermal emission-dominated bands like AKARI~160 and Planck~550 (Figure \ref{fig:all-sky}, Figure \ref{fig:AME_IR_crosscorr_allbandsg}. The WISE 12 micron band was also included, and shows less scatter in the AME vs. IR plot than the other MIR bands.
-%       What we add to the literature is a simple confirmation that this correlation is present in the AKARI bands. We recommend revisiting the all-sky pixel-by-pixel investigation if/when a finer resolution AME all-sky map can be produced. Such a map may be able to be produced upon completion of projects such as the the C-Band All-Sky Survey (C-BASS) by \cite{irfan15}, which maps the sky at higher resolution than the \cite{haslam82} 408~MHz survey. Currently, synchrotron component separation based on \cite{haslam82} limits the all-sky AME component separation to a resolution of about one degree.
-
-%       In the case of the AME candidate regions, even though we carry out a more detailed analysis than with the all-sky case, essentially the same conclusion appears. The dust SED fitting shows that both the estimated PAH-mass per region, and the total dust mass per region correlate with the total AME flux per region.
-
-%       The one possible exception, among the results shown here, is with $\lambda$~Orionis. Although we do again see the general correlation between dust emission and AME, where also note that the correlation weakens significantly between 25 and 160~$\mu$m. We interpret this early result as regions of warmer dust exhibiting weaker AME. A stronger correlation at the PAH-dominated bands as well as the longest wavelength bands might indicate a scenario in which AME is produced by PAHs, and that the PAH distribution follows that of the colder dust. However we feel that a more detailed analysis is needed to truly say that PAHs produce the AME seen in $\lambda$~Orionis, and to assess whether or not warm dust is truly the cause for the weaker AME seen inside the ring structure. In a future study we carry-out a pixel by pixel dust characterization, using an SED fitting similar to that described in Section 3.2.
-
-%       We argue that a conclusion about the role (or lack thereof) of PAHs in producing the AME, is unlikely to be revealed, photometrically, without improved resolution.
+    We look forward to continued environment-resolved comparisons to investigate the potential AME-PAH relationship in a region by region manner. We will explore $\lambda$~Orionis in more detail, in a later paper. We recommend revisiting the all-sky pixel-by-pixel investigation if/when a finer resolution AME all-sky map can be produced. Such a map may be able to be produced upon completion of projects such as the the C-Band All-Sky Survey (C-BASS) by \cite{irfan15}, which maps the sky at higher resolution than the \cite{haslam82} 408~MHz survey. Currently, synchrotron component separation based on \cite{haslam82} limits the all-sky AME component separation to a resolution of about one degree.
 
 
 

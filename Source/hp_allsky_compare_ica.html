@@ -11770,7 +11770,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -11784,7 +11784,7 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">gaussian_kde</span>
 <span class="kn">import</span> <span class="nn">scipy</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">healpy</span> <span class="kn">as</span> <span class="nn">hp</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
 </pre></div>
 
 </div>
@@ -11797,132 +11797,307 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">### Make a gargantuan cube. The &quot;layers&quot; are the FIR data:</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">healpy</span> <span class="kn">as</span> <span class="nn">hp</span>
-
-<span class="n">filepath</span>      <span class="o">=</span>  <span class="s2">&quot;../Data/raw/&quot;</span>
-
-<span class="n">nside</span>         <span class="o">=</span> <span class="mi">256</span>
-<span class="n">npix</span>          <span class="o">=</span> <span class="mi">12</span><span class="o">*</span><span class="n">nside</span><span class="o">**</span><span class="mi">2</span>
-
-
-
-
-<span class="n">band_names</span> <span class="o">=</span>   <span class="p">[</span> <span class="s2">&quot;akari_9&quot;</span><span class="p">,</span>\
-                    <span class="s2">&quot;dirbe_12&quot;</span><span class="p">,</span><span class="s2">&quot;iras_12&quot;</span><span class="p">,</span> <span class="s2">&quot;wise_12&quot;</span><span class="p">,</span> \
-                    <span class="s2">&quot;akari_18&quot;</span><span class="p">,</span> \
-                    <span class="s2">&quot;dirbe_25&quot;</span><span class="p">,</span><span class="s2">&quot;iras_25&quot;</span><span class="p">,</span> \
-                    <span class="s2">&quot;dirbe_60&quot;</span><span class="p">,</span><span class="s2">&quot;iras_60&quot;</span><span class="p">,</span><span class="s2">&quot;akari_65&quot;</span><span class="p">,</span>\
-                    <span class="s2">&quot;akari_90&quot;</span><span class="p">,</span>\
-                    <span class="s2">&quot;dirbe_100&quot;</span><span class="p">,</span> <span class="s2">&quot;iras_100&quot;</span><span class="p">,</span>\
-                    <span class="s2">&quot;dirbe_140&quot;</span><span class="p">,</span> <span class="s2">&quot;akari_140&quot;</span><span class="p">,</span>\
-                    <span class="s2">&quot;akari_160&quot;</span><span class="p">,</span> \
-                    <span class="s2">&quot;dirbe_240&quot;</span><span class="p">,</span> \
-                    <span class="s2">&quot;planck_857&quot;</span><span class="p">,</span> <span class="s2">&quot;planck_545&quot;</span><span class="p">]</span>
-
-
-<span class="n">band_abbr</span> <span class="o">=</span>   <span class="p">[</span> <span class="s2">&quot;A9&quot;</span><span class="p">,</span>\
-                    <span class="s2">&quot;D12&quot;</span><span class="p">,</span><span class="s2">&quot;I12&quot;</span><span class="p">,</span> <span class="s2">&quot;W12&quot;</span><span class="p">,</span> \
-                    <span class="s2">&quot;A18&quot;</span><span class="p">,</span> \
-                    <span class="s2">&quot;D25&quot;</span><span class="p">,</span><span class="s2">&quot;I25&quot;</span><span class="p">,</span> \
-                    <span class="s2">&quot;D60&quot;</span><span class="p">,</span><span class="s2">&quot;I60&quot;</span><span class="p">,</span><span class="s2">&quot;A65&quot;</span><span class="p">,</span>\
-                    <span class="s2">&quot;A90&quot;</span><span class="p">,</span>\
-                    <span class="s2">&quot;D100&quot;</span><span class="p">,</span> <span class="s2">&quot;I100&quot;</span><span class="p">,</span>\
-                    <span class="s2">&quot;D140&quot;</span><span class="p">,</span> <span class="s2">&quot;A140&quot;</span><span class="p">,</span>\
-                    <span class="s2">&quot;A160&quot;</span><span class="p">,</span> \
-                    <span class="s2">&quot;D240&quot;</span><span class="p">,</span> \
-                    <span class="s2">&quot;P857&quot;</span><span class="p">,</span> <span class="s2">&quot;P545&quot;</span><span class="p">]</span>
-
-
-
-<span class="n">band_labels</span>  <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AKARI 9 $\mu{m}$&quot;</span><span class="p">,</span>\
-                <span class="s2">&quot;DIRBE 12 $\mu{m}$&quot;</span><span class="p">,</span><span class="s2">&quot;IRAS 12 $\mu{m}$&quot;</span><span class="p">,</span><span class="s2">&quot;WISE 12 $\mu{m}$&quot;</span><span class="p">,</span> \
-                <span class="s2">&quot;AKARI 18 $\mu{m}$&quot;</span><span class="p">,</span>\
-                <span class="s2">&quot;DIRBE 25 $\mu{m}$&quot;</span><span class="p">,</span> <span class="s2">&quot;IRAS 25 $\mu{m}$&quot;</span><span class="p">,</span> \
-                <span class="s2">&quot;DIRBE 60 $\mu{m}$&quot;</span><span class="p">,</span><span class="s2">&quot;IRAS 60 $\mu{m}$&quot;</span><span class="p">,</span><span class="s2">&quot;AKARI 65 $\mu{m}$&quot;</span><span class="p">,</span> \
-                <span class="s2">&quot;AKARI 90 $\mu{m}$&quot;</span><span class="p">,</span> \
-                <span class="s2">&quot;DIRBE 100 $\mu{m}$&quot;</span><span class="p">,</span><span class="s2">&quot;IRAS 100 $\mu{m}$&quot;</span><span class="p">,</span>\
-                <span class="s2">&quot;DIRBE 140 $\mu{m}$&quot;</span><span class="p">,</span><span class="s2">&quot;AKARI 140 $\mu{m}$&quot;</span><span class="p">,</span>\
-                <span class="s2">&quot;AKARI 160 $\mu{m}$&quot;</span><span class="p">,</span>\
-                <span class="s2">&quot;DIRBE 240 $\mu{m}$&quot;</span><span class="p">,</span>\
-                <span class="s2">&quot;PLANCK 350 $\mu{m}$&quot;</span><span class="p">,</span><span class="s2">&quot;PLANCK 550 $\mu{m}$&quot;</span> <span class="p">]</span>
-
-<span class="n">waves_micron</span>  <span class="o">=</span> <span class="p">[</span> <span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">350</span><span class="p">,</span><span class="mi">550</span><span class="p">]</span>
-
-<span class="n">nbands_all</span>        <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">band_names</span><span class="p">)</span>
-
-
-
-<span class="c1">### Import the Galactic coordinate reference columns:</span>
-<span class="c1">### These are just &quot;maps&quot; of glat and glon. That way you can easily get the center pixel coordinates from a given pixel index</span>
-
-<span class="n">coords</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">coords</span><span class="p">[</span><span class="s1">&#39;glon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">read_map</span><span class="p">(</span><span class="n">filepath</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">nside</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_nside/pixel_coords_map_ring_galactic_res8.fits&quot;</span><span class="p">,</span> <span class="n">field</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">coords</span><span class="p">[</span><span class="s1">&#39;glat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">read_map</span><span class="p">(</span><span class="n">filepath</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">nside</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_nside/pixel_coords_map_ring_galactic_res8.fits&quot;</span><span class="p">,</span> <span class="n">field</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">coords</span><span class="p">[</span><span class="s1">&#39;elon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">read_map</span><span class="p">(</span><span class="n">filepath</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">nside</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_nside/pixel_coords_map_ring_ecliptic_res8.fits&quot;</span><span class="p">,</span> <span class="n">field</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">coords</span><span class="p">[</span><span class="s1">&#39;elat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">read_map</span><span class="p">(</span><span class="n">filepath</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">nside</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_nside/pixel_coords_map_ring_ecliptic_res8.fits&quot;</span><span class="p">,</span> <span class="n">field</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-
-
-
-<span class="c1">#### Read Planck low-res Modified blackbody fitting results:</span>
-<span class="n">planck_bb_path</span>    <span class="o">=</span> <span class="n">filepath</span><span class="o">+</span><span class="s2">&quot;/COM_CompMap_dust-commander_0256_R2.00.fits.gz&quot;</span> <span class="c1">#HEALPix FITS table containing Planck low-res modBB results</span>
-<span class="n">fields</span>            <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#The field number in the HEALPix file</span>
-<span class="n">labels</span>            <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;T&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">]</span>
-
-<span class="n">planck_bb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">planck_bb</span><span class="p">[</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">read_map</span><span class="p">(</span><span class="n">planck_bb_path</span><span class="p">,</span><span class="n">field</span> <span class="o">=</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../Data/maps.pickle&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1"># Python 3: open(..., &#39;rb&#39;)</span>
+    <span class="n">coords</span><span class="p">,</span> <span class="n">planck_bb</span><span class="p">,</span> <span class="n">planck_mw</span><span class="p">,</span> <span class="n">phot</span><span class="p">,</span> <span class="n">phot_modesub</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     
-<span class="n">planck_bb</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
-    <span class="n">to_replace</span> <span class="o">=</span><span class="n">hp</span><span class="o">.</span><span class="n">UNSEEN</span><span class="p">,</span>
-    <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
-    <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span>
-    <span class="p">)</span>
+<span class="n">phot</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1">#planck_bb.head()</span>
+<span class="c1">#planck_mw.head()</span>
+<span class="c1">#coords.head()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
 
 
-<span class="c1">#### Read Planck low-res microwave component fitting results:</span>
-<span class="n">planck_mw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AME&#39;</span><span class="p">,</span><span class="s1">&#39;CO&#39;</span><span class="p">,</span><span class="s1">&#39;ff&#39;</span><span class="p">,</span><span class="s1">&#39;Sync&#39;</span><span class="p">]</span>
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
 
-<span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;COM_CompMap_AME-commander_0256_R2.00.fits.gz&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;COM_CompMap_CO-commander_0256_R2.00.fits.gz&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;COM_CompMap_freefree-commander_0256_R2.00.fits.gz&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;COM_CompMap_Synchrotron-commander_0256_R2.00.fits.gz&#39;</span><span class="p">]</span>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A9</th>
+      <th>D12</th>
+      <th>I12</th>
+      <th>W12</th>
+      <th>A18</th>
+      <th>D25</th>
+      <th>I25</th>
+      <th>D60</th>
+      <th>I60</th>
+      <th>A65</th>
+      <th>A90</th>
+      <th>D100</th>
+      <th>I100</th>
+      <th>D140</th>
+      <th>A140</th>
+      <th>A160</th>
+      <th>D240</th>
+      <th>P857</th>
+      <th>P545</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>1.083658</td>
+      <td>1.071264</td>
+      <td>0.018346</td>
+      <td>NaN</td>
+      <td>2.099690</td>
+      <td>2.142549</td>
+      <td>0.610734</td>
+      <td>0.598758</td>
+      <td>2.073384</td>
+      <td>1.688520</td>
+      <td>1.546775</td>
+      <td>1.529856</td>
+      <td>0.787866</td>
+      <td>2.403259</td>
+      <td>2.195928</td>
+      <td>0.991204</td>
+      <td>0.583666</td>
+      <td>0.258794</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>1.091430</td>
+      <td>1.045220</td>
+      <td>0.017045</td>
+      <td>NaN</td>
+      <td>2.119253</td>
+      <td>2.171547</td>
+      <td>0.690011</td>
+      <td>0.596552</td>
+      <td>1.928738</td>
+      <td>1.394335</td>
+      <td>1.506179</td>
+      <td>1.455086</td>
+      <td>3.546372</td>
+      <td>2.527890</td>
+      <td>2.874538</td>
+      <td>0.672390</td>
+      <td>0.620408</td>
+      <td>0.269439</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>1.093857</td>
+      <td>1.064194</td>
+      <td>0.012653</td>
+      <td>NaN</td>
+      <td>2.122237</td>
+      <td>2.159359</td>
+      <td>0.697645</td>
+      <td>0.596992</td>
+      <td>1.806098</td>
+      <td>1.456207</td>
+      <td>1.512805</td>
+      <td>1.544730</td>
+      <td>3.832097</td>
+      <td>2.485977</td>
+      <td>2.421713</td>
+      <td>0.951366</td>
+      <td>0.629106</td>
+      <td>0.272736</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>1.082492</td>
+      <td>1.066986</td>
+      <td>0.029448</td>
+      <td>NaN</td>
+      <td>2.092455</td>
+      <td>2.135687</td>
+      <td>0.612444</td>
+      <td>0.616380</td>
+      <td>2.072155</td>
+      <td>1.593516</td>
+      <td>1.554953</td>
+      <td>1.524600</td>
+      <td>0.697479</td>
+      <td>2.373043</td>
+      <td>2.408980</td>
+      <td>0.558173</td>
+      <td>0.612663</td>
+      <td>0.284378</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>1.086391</td>
+      <td>1.082960</td>
+      <td>0.003322</td>
+      <td>NaN</td>
+      <td>2.100158</td>
+      <td>2.150484</td>
+      <td>0.644721</td>
+      <td>0.611308</td>
+      <td>2.598172</td>
+      <td>1.715493</td>
+      <td>1.545120</td>
+      <td>1.503084</td>
+      <td>1.173915</td>
+      <td>2.235033</td>
+      <td>2.398738</td>
+      <td>1.534221</td>
+      <td>0.521117</td>
+      <td>0.238315</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
 
-<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">paths</span><span class="p">):</span>
-    <span class="n">planck_mw</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">read_map</span><span class="p">(</span><span class="n">filepath</span><span class="o">+</span><span class="n">path</span><span class="p">,</span><span class="n">field</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">glatrange</span>     <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">glatrange_mid</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">elatrange</span>     <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="n">gcut_l</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="nb">abs</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;glat&#39;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">glatrange</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;elat&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">elatrange</span><span class="p">))</span>
+<span class="n">gcut_h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="nb">abs</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;glat&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">glatrange</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;elat&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">elatrange</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Imputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+
+<span class="c1">### Setup the standard pipeline to apply to all the data:</span>
+<span class="n">allsky_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">Imputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;median&quot;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;std_scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>
+<span class="p">])</span>
+
+<span class="n">phot_tr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">allsky_pipeline</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">phot</span><span class="p">),</span><span class="n">columns</span><span class="o">=</span><span class="n">phot</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">planck_bb_tr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">allsky_pipeline</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">planck_bb</span><span class="p">),</span><span class="n">columns</span><span class="o">=</span><span class="n">planck_bb</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">planck_mw_tr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">allsky_pipeline</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">planck_mw</span><span class="p">),</span><span class="n">columns</span><span class="o">=</span><span class="n">planck_mw</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+
+<span class="n">phot_corr</span> <span class="o">=</span> <span class="n">phot_tr</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+<span class="n">planck_bb_corr</span> <span class="o">=</span> <span class="n">planck_bb_tr</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+<span class="n">planck_mw_corr</span> <span class="o">=</span> <span class="n">planck_mw_tr</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sb</span>
+<span class="n">phot_corr</span>     <span class="o">=</span> <span class="n">phot_tr</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">planck_mw_tr</span><span class="p">[</span><span class="s1">&#39;AME&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+<span class="n">phot_corr_lgl</span> <span class="o">=</span> <span class="n">phot_tr</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">planck_mw_tr</span><span class="p">[</span><span class="s1">&#39;AME&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">gcut_l</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+<span class="n">phot_corr_hgl</span> <span class="o">=</span> <span class="n">phot_tr</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">planck_mw_tr</span><span class="p">[</span><span class="s1">&#39;AME&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">gcut_h</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#bb_corr_drop = bb_corr.drop(&#39;AME&#39;,axis=0).drop(&#39;A9&#39;,axis=1)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">phot_corr</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">mask</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">triu_indices_from</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">with</span> <span class="n">sb</span><span class="o">.</span><span class="n">axes_style</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">):</span>
+
     
-<span class="n">planck_mw</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
-    <span class="n">to_replace</span> <span class="o">=</span><span class="n">hp</span><span class="o">.</span><span class="n">UNSEEN</span><span class="p">,</span>
-    <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
-    <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span>
-    <span class="p">)</span>
-<span class="k">print</span> <span class="s2">&quot;COMMANDER MW Maps Read&quot;</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+    <span class="n">cbar_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="o">.</span><span class="mi">91</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mo">03</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">])</span>
+    
+    <span class="n">sb</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+        <span class="n">phot_corr</span><span class="p">,</span>
+        <span class="c1">#linewidths=.5,</span>
+        <span class="n">annot</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
+        <span class="n">cbar</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">yticklabels</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">xticklabels</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;All-sky&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+    
+    <span class="n">sb</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+        <span class="n">phot_corr_hgl</span><span class="p">,</span>
+        <span class="c1">#linewidths=.5,</span>
+        <span class="n">annot</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
+        <span class="n">cbar</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">yticklabels</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">xticklabels</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;|GLAT| &gt; 10&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+    
+    
+    <span class="n">sb</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+        <span class="n">phot_corr_lgl</span><span class="p">,</span>
+        <span class="c1">#linewidths=.5,</span>
+        <span class="n">annot</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
+        <span class="n">cbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">cbar_ax</span><span class="o">=</span><span class="n">cbar_ax</span><span class="p">,</span>
+        <span class="n">yticklabels</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">xticklabels</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+        <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;|GLAT| &lt; 10&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
 
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c1">#### Read in the MIR to FIR photometry data:</span>
-<span class="n">phot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">band_names</span><span class="p">)):</span>
-    <span class="n">phot</span><span class="p">[</span><span class="n">band_abbr</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">read_map</span><span class="p">(</span><span class="n">filepath</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">nside</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_nside/&quot;</span><span class="o">+</span><span class="n">band</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">nside</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_1dres.fits&quot;</span><span class="p">)</span>
-<span class="k">print</span> <span class="s2">&quot;IR Maps Read&quot;</span>
-
-<span class="n">phot</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
-    <span class="n">to_replace</span> <span class="o">=</span><span class="n">hp</span><span class="o">.</span><span class="n">UNSEEN</span><span class="p">,</span>
-    <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
-    <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span>
-    <span class="p">)</span>
-
-    <span class="c1">## Calculate the mode of each HEALPix map.</span>
-<span class="c1">## Round to 3 decimal places, to consolidate multipleunique modes</span>
-
-<span class="n">allsky_modes</span> <span class="o">=</span> <span class="n">phot</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="c1">## Subtract the all-sky mode from each map:</span>
-<span class="c1">## Trying a vectorized way now, using the Pandas &quot;.subtract&quot; method</span>
-<span class="n">phot_modesub</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">phot</span><span class="o">.</span><span class="n">values</span><span class="o">-</span><span class="n">allsky_modes</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">phot</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../Plots/all_bands_corr_matrix_wAME_spearman.pdf&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11934,103 +12109,481 @@ div#notebook {
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">IOError</span>                                   Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-4-7cde23333d33&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     31</span> 
-<span class="ansi-green-intense-fg ansi-bold">     32</span> coords <span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>DataFrame<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 33</span><span class="ansi-red-fg"> </span>coords<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;glon&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> hp<span class="ansi-blue-fg">.</span>read_map<span class="ansi-blue-fg">(</span>filepath<span class="ansi-blue-fg">+</span>str<span class="ansi-blue-fg">(</span>nside<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">+</span><span class="ansi-blue-fg">&#34;_nside/pixel_coords_map_ring_galactic_res8.fits&#34;</span><span class="ansi-blue-fg">,</span> field <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     34</span> coords<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;glat&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> hp<span class="ansi-blue-fg">.</span>read_map<span class="ansi-blue-fg">(</span>filepath<span class="ansi-blue-fg">+</span>str<span class="ansi-blue-fg">(</span>nside<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">+</span><span class="ansi-blue-fg">&#34;_nside/pixel_coords_map_ring_galactic_res8.fits&#34;</span><span class="ansi-blue-fg">,</span> field <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     35</span> coords<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;elon&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> hp<span class="ansi-blue-fg">.</span>read_map<span class="ansi-blue-fg">(</span>filepath<span class="ansi-blue-fg">+</span>str<span class="ansi-blue-fg">(</span>nside<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">+</span><span class="ansi-blue-fg">&#34;_nside/pixel_coords_map_ring_ecliptic_res8.fits&#34;</span><span class="ansi-blue-fg">,</span> field <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">/home/aaronb/anaconda2/lib/python2.7/site-packages/healpy/fitsfunc.pyc</span> in <span class="ansi-cyan-fg">read_map</span><span class="ansi-blue-fg">(filename, field, dtype, nest, partial, hdu, h, verbose, memmap)</span>
-<span class="ansi-green-intense-fg ansi-bold">    290</span>     &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    291</span> 
-<span class="ansi-green-fg">--&gt; 292</span><span class="ansi-red-fg">     </span>fits_hdu <span class="ansi-blue-fg">=</span> _get_hdu<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">,</span> hdu<span class="ansi-blue-fg">=</span>hdu<span class="ansi-blue-fg">,</span> memmap<span class="ansi-blue-fg">=</span>memmap<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    293</span> 
-<span class="ansi-green-intense-fg ansi-bold">    294</span>     nside <span class="ansi-blue-fg">=</span> fits_hdu<span class="ansi-blue-fg">.</span>header<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;NSIDE&#39;</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">/home/aaronb/anaconda2/lib/python2.7/site-packages/healpy/fitsfunc.pyc</span> in <span class="ansi-cyan-fg">_get_hdu</span><span class="ansi-blue-fg">(input_data, hdu, memmap)</span>
-<span class="ansi-green-intense-fg ansi-bold">    526</span> 
-<span class="ansi-green-intense-fg ansi-bold">    527</span>     <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>input_data<span class="ansi-blue-fg">,</span> six<span class="ansi-blue-fg">.</span>string_types<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 528</span><span class="ansi-red-fg">         </span>hdulist <span class="ansi-blue-fg">=</span> pf<span class="ansi-blue-fg">.</span>open<span class="ansi-blue-fg">(</span>input_data<span class="ansi-blue-fg">,</span> memmap<span class="ansi-blue-fg">=</span>memmap<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    529</span>         <span class="ansi-green-fg">return</span> _get_hdu<span class="ansi-blue-fg">(</span>hdulist<span class="ansi-blue-fg">,</span> hdu<span class="ansi-blue-fg">=</span>hdu<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    530</span> 
-
-<span class="ansi-green-fg">/home/aaronb/anaconda2/lib/python2.7/site-packages/astropy/io/fits/hdu/hdulist.pyc</span> in <span class="ansi-cyan-fg">fitsopen</span><span class="ansi-blue-fg">(name, mode, memmap, save_backup, cache, lazy_load_hdus, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    164</span> 
-<span class="ansi-green-intense-fg ansi-bold">    165</span>     return HDUList.fromfile(name, mode, memmap, save_backup, cache,
-<span class="ansi-green-fg">--&gt; 166</span><span class="ansi-red-fg">                             lazy_load_hdus, **kwargs)
-</span><span class="ansi-green-intense-fg ansi-bold">    167</span> 
-<span class="ansi-green-intense-fg ansi-bold">    168</span> 
-
-<span class="ansi-green-fg">/home/aaronb/anaconda2/lib/python2.7/site-packages/astropy/io/fits/hdu/hdulist.pyc</span> in <span class="ansi-cyan-fg">fromfile</span><span class="ansi-blue-fg">(cls, fileobj, mode, memmap, save_backup, cache, lazy_load_hdus, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    402</span>         return cls._readfrom(fileobj=fileobj, mode=mode, memmap=memmap,
-<span class="ansi-green-intense-fg ansi-bold">    403</span>                              save_backup<span class="ansi-blue-fg">=</span>save_backup<span class="ansi-blue-fg">,</span> cache<span class="ansi-blue-fg">=</span>cache<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 404</span><span class="ansi-red-fg">                              lazy_load_hdus=lazy_load_hdus, **kwargs)
-</span><span class="ansi-green-intense-fg ansi-bold">    405</span> 
-<span class="ansi-green-intense-fg ansi-bold">    406</span>     <span class="ansi-blue-fg">@</span>classmethod
-
-<span class="ansi-green-fg">/home/aaronb/anaconda2/lib/python2.7/site-packages/astropy/io/fits/hdu/hdulist.pyc</span> in <span class="ansi-cyan-fg">_readfrom</span><span class="ansi-blue-fg">(cls, fileobj, data, mode, memmap, save_backup, cache, lazy_load_hdus, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1013</span>             <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> isinstance<span class="ansi-blue-fg">(</span>fileobj<span class="ansi-blue-fg">,</span> _File<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1014</span>                 <span class="ansi-red-fg"># instantiate a FITS file object (ffo)</span>
-<span class="ansi-green-fg">-&gt; 1015</span><span class="ansi-red-fg">                 </span>fileobj <span class="ansi-blue-fg">=</span> _File<span class="ansi-blue-fg">(</span>fileobj<span class="ansi-blue-fg">,</span> mode<span class="ansi-blue-fg">=</span>mode<span class="ansi-blue-fg">,</span> memmap<span class="ansi-blue-fg">=</span>memmap<span class="ansi-blue-fg">,</span> cache<span class="ansi-blue-fg">=</span>cache<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1016</span>             <span class="ansi-red-fg"># The pyfits mode is determined by the _File initializer if the</span>
-<span class="ansi-green-intense-fg ansi-bold">   1017</span>             <span class="ansi-red-fg"># supplied mode was None</span>
-
-<span class="ansi-green-fg">/home/aaronb/anaconda2/lib/python2.7/site-packages/astropy/utils/decorators.pyc</span> in <span class="ansi-cyan-fg">wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    491</span>                         <span class="ansi-red-fg"># one with the name of the new argument to the function</span>
-<span class="ansi-green-intense-fg ansi-bold">    492</span>                         kwargs<span class="ansi-blue-fg">[</span>new_name<span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> value
-<span class="ansi-green-fg">--&gt; 493</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> function<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    494</span> 
-<span class="ansi-green-intense-fg ansi-bold">    495</span>         <span class="ansi-green-fg">return</span> wrapper
-
-<span class="ansi-green-fg">/home/aaronb/anaconda2/lib/python2.7/site-packages/astropy/io/fits/file.pyc</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, fileobj, mode, memmap, overwrite, cache)</span>
-<span class="ansi-green-intense-fg ansi-bold">    142</span>             self<span class="ansi-blue-fg">.</span>_open_fileobj<span class="ansi-blue-fg">(</span>fileobj<span class="ansi-blue-fg">,</span> mode<span class="ansi-blue-fg">,</span> overwrite<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    143</span>         <span class="ansi-green-fg">elif</span> isinstance<span class="ansi-blue-fg">(</span>fileobj<span class="ansi-blue-fg">,</span> string_types<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 144</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>_open_filename<span class="ansi-blue-fg">(</span>fileobj<span class="ansi-blue-fg">,</span> mode<span class="ansi-blue-fg">,</span> overwrite<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    145</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    146</span>             self<span class="ansi-blue-fg">.</span>_open_filelike<span class="ansi-blue-fg">(</span>fileobj<span class="ansi-blue-fg">,</span> mode<span class="ansi-blue-fg">,</span> overwrite<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/home/aaronb/anaconda2/lib/python2.7/site-packages/astropy/io/fits/file.pyc</span> in <span class="ansi-cyan-fg">_open_filename</span><span class="ansi-blue-fg">(self, filename, mode, overwrite)</span>
-<span class="ansi-green-intense-fg ansi-bold">    497</span>             self<span class="ansi-blue-fg">.</span>_file <span class="ansi-blue-fg">=</span> bz2<span class="ansi-blue-fg">.</span>BZ2File<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">,</span> bzip2_mode<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    498</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 499</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>_file <span class="ansi-blue-fg">=</span> fileobj_open<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">,</span> IO_FITS_MODES<span class="ansi-blue-fg">[</span>mode<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    500</span> 
-<span class="ansi-green-intense-fg ansi-bold">    501</span>         <span class="ansi-red-fg"># Make certain we&#39;re back at the beginning of the file</span>
-
-<span class="ansi-green-fg">/home/aaronb/anaconda2/lib/python2.7/site-packages/astropy/io/fits/util.pyc</span> in <span class="ansi-cyan-fg">fileobj_open</span><span class="ansi-blue-fg">(filename, mode)</span>
-<span class="ansi-green-intense-fg ansi-bold">    391</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    392</span> 
-<span class="ansi-green-fg">--&gt; 393</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> open<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">,</span> mode<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    394</span> <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    395</span>     <span class="ansi-green-fg">def</span> fileobj_open<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">,</span> mode<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">IOError</span>: [Errno 2] No such file or directory: &#39;../Data/raw/256_nside/pixel_coords_map_ring_galactic_res8.fits&#39;</pre>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABA0AAAFcCAYAAACjl0cYAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XtYVWX6//HP2lsQEzQxKRM1Mg+FXzznKHlMJ8a0TC1h
+lNQci7JpUkyRSkrFQ6P+rrST3ybTPKBpaIYKndRMSTNNwnJMJ1EsEURUMOW0f390tb8xoOLam73R
+/X55retir7XudT8L5GFz86znMWw2m00AAAAAAAD/xeLuBgAAAAAAgOqJogEAAAAAAKgQRQMAAAAA
+AFAhigYAAAAAAKBCFA0AAAAAAECFKBoAAAAAAIAKUTTANWHnzp1q2bKlFixYYN8XGRmpli1bOjXP
+ggUL1LJlS+3cudOp1wXgXr/3IYmJie5uSpWKiIhQ37593d0MAFWMPg2AK9VwdwMASZo9e7YWLVok
+Pz8/ffnll/Lx8XF3kwB4kNTUVCUmJmrPnj3KyclRSUmJ/P39ddddd6lfv34aMGCADMMoExMTE6O1
+a9dq1apVatu27VXle+aZZ5SSkqLbbrtNKSkp5Y7v2LFDo0aNqtS1rFarvv/++6vK72xr167V1KlT
+dfHixcu25YMPPtDy5ct1+PBhWSwWtW7dWk8++aS6du3qwtYC1z/6NMfQpwFlUTSA2xUWFmrt2rWy
+WCw6d+6ckpOTNXDgQHc3C4AHuHjxomJjY5WUlKTbbrtNDzzwgJo2barCwkL99NNP2rBhgzZv3qyU
+lBTNmTNHtWrVcjhnTk6OPv/8c1ksFh05ckRff/21OnXqVOacli1b6tVXXy2zb+PGjUpJSdFjjz2m
+Nm3a2PdbLO4bNHj27FnFxcVp06ZNVyz2LliwQK+99pq6dOmiF198UcXFxVq5cqX+9re/af78+erT
+p4+LWg1cv+jTHEOfBlSMogHc7uOPP9bp06f117/+VQkJCXr//fcpGgBwialTpyopKUnDhg1TbGys
+atQo+2PxH//4h6Kjo/Xpp59q7ty5euGFFxzO+cEHH6ioqEjDhg3T8uXL9f7775d7g12/fn2FhYWV
+2ffDDz9Iktq0aVPu2NWKjo7Wfffdp3vvvVdWq9X0dR577DEdP35cCxcu1FtvvaV9+/ZVeN6xY8f0
+1ltvqX379lq0aJH9l4L+/fsrLCxML7/8snr27Fnu8w/g6nhqn3Y5hYWF2rhxo/bs2aOpU6de9lz6
+NKBizGkAt1u1apUkacSIEerQoYO++eYbHT582Kk5ioqKtHjxYg0cOFAdO3ZUu3bt1K9fP82fP1+F
+hYVXjJ89e7Zatmyp1157Tf/4xz/UsmVLpaenlzuvsLBQHTt21L333iubzebUewDgXAcOHNCaNWvU
+tm1bvfDCCxW+ufPx8dHs2bMVHR2tIUOGOJzTZrNp9erV8vHx0bhx43TrrbcqJSVFZ86ccfjaV+P0
+6dP6+9//rr59++pf//qX6fwtW7bUunXr1KNHj8uel5SUpOLiYkVGRpb5K6Kvr68GDhyokydPKjU1
+1VQbAPzGk/u0imRnZ2vBggXq1auXJk2apF9//fWKMfRpQMUoGsCtfvrpJ+3atUvt2rXTbbfdZh9h
+sHr1aqfmmT59umbOnKnbb79dkydPVlxcnNq1a6c33nhD48ePv2zsihUrtGjRIoWHh+vpp5+2/5Bd
+u3ZtuXO3bdumc+fO6aGHHir3rCCA6mX9+vWSpJEjR152OKyvr68ef/xxtWrVyuGc27dv17Fjx9Sn
+Tx/5+fnpgQce0MWLF+1tcZVFixZp+fLlat26tebNm6cePXpoypQp+vHHH6/qOvHx8br55puveF5a
+WpokVfic9O/Dki/1Fz0AlePJfdofpaWlacKECerVq5cWLlyo0NBQrV27Vv/85z+vGEufBlSMogHc
+6v3335ckDR48WJL0l7/8RbVq1dK6desqNQKgspKSktS8eXPNmzdPgwcP1sCBAxUfH28vGJw/f77C
+uC1btmj69Om67777FBcXJ0kKDQ3VrbfeqqSkpHJt3LRpkwzD4PEK4Brw+5u+jh07uiznf/d5gwYN
+KrPflTp27Kj58+frk08+UUREhDZt2qT+/ftr5MiR+uyzz1RaWuq0XMePH5ekCt+MN2zYUJKUmZnp
+tHyAJ/LkPq2oqEhJSUkaOnSoHn74Ye3YsUOPP/64tmzZoldeeUV33XWXU/PRp8HTUDSA2/w+AWKt
+WrX0l7/8RdJv1e8///nPOn36tD799FOn5apRo4aysrLKdeCPP/64XnvtNd1www3lYvbv369x48ap
+Y8eOmjNnjr1qb7FYNGjQIOXl5Wnz5s1l7ufzzz/X3XffrcDAQKe1HUDVyMnJkcVi0U033VTu2K+/
+/qqzZ8+W24qLix3K9/nnn6thw4b605/+JElq2rSpOnbsqIMHD7rtr1KNGjXSpEmTtHXrVr344ov6
+5Zdf9NRTT2nMmDFOy1FQUCBvb+8K50/4fSK2goICp+UDPJEn92mDBw9WdHS0Lly4oBkzZmjLli16
+5plnKvxcOAN9GjwNRQO4ze8TIPbt21e+vr72/War1OfOnVNubm6Z7fe/lI0dO1Znz57VX/7yF40d
+O1bLly9XRkbGJa/1yy+/6IknnpC/v7/eeOMNeXt7lzk+aNAgWSyWMo8ofPHFFyooKLC3H0D1ZrVa
+ZbPZKpx/5MUXX1SnTp3Kbd98843pfL9PFjZw4MAyQ4fdOdrgj2644QYNGzZMMTExatCggU6fPu3W
+9gC4Op7cp+Xl5alJkyaKjY3V4MGDy71vA+AYigZwm98nQLz77ruVkZFh32655RbddNNN+uqrr3Ts
+2LFKX++pp55Sly5dymw///yzJOnRRx/VokWL1LVrV23btk1Tp07Vn//8Z0VEROjf//53uWtNnTpV
+2dnZOnHihA4dOlTueKNGjezXysnJkfTbowm1a9fWfffdZ+bTAcDFAgICZLPZ7MNM/+jJJ5/Ue++9
+Z98eeughh3LZbDb7G+gOHTqU6fOCg4Pl5eWljRs3uu0vU+fPn9fy5csVFhamqKgo1a5dW5GRkU67
+vq+vrwoLC1VSUlJh7t/PAWCeJ/dpo0ePVlFRkR599FE9+OCDSkxMdOpjrv+NPg2ehnVA4Bb/+c9/
+tGvXLkm67HI/a9as0bhx4yp1zdjYWJ09e7bMvgYNGtg/Dg0NVWhoqC5cuKBdu3YpKSlJ69ev14gR
+I/Txxx+rTp069nMDAwMVGxurJ598UtHR0frwww/Ldf6DBw/Wl19+qeTkZA0ePFiff/65+vXr55Q1
+jwFUvQ4dOmjHjh3avn27wsPDyxxr1qyZmjVrZn/9e39l1pdffml/POpvf/tbhecUFRVpw4YNeuSR
+RxzKdTWOHz+uZcuWac2aNTp37pxCQ0MVGxur7t27O3Uy18aNG+vAgQM6ceKEGjVqVObY78Xdpk2b
+Oi0f4Ik8uU8bMWKEhg8frk8++URLly7V5MmTNWfOHEVERCgiIsLpjynQp8HTUDSAW/xenX744Yd1
+zz33lDt+8eJFTZ48WR988IH+/ve/V+qad955Z6XO8/HxUffu3dW9e3fVq1dPixcv1q5du9SnTx/7
+Oc8//7w6d+6sF154QbGxsYqLi9PcuXPLXKdPnz668cYbtXHjRvn7++v8+fMOV+4BuM5DDz2kN954
+Q4sWLdLAgQPl4+NTZbl+7/OeeOKJCifkOnnypOLj4/X++++75A32nj17tHjxYn366aeqWbOmHnro
+IQ0fPly33357leRr166dPvnkE+3Zs6fcG+zdu3dL+u0XHgDmeXKfJv32eEZYWJjCwsL0ww8/6L33
+3tPbb7+thQsX6v7779fIkSMr/V7xSujT4GkoGsDlfp8A0dvbW+PHj5e/v3+F53322WdKSUnRli1b
+5OfnZzpfenq6oqOjNXr06HI/uH4fPXCpZ98GDx6srVu3KikpSd26dSuzKoK3t7cefPBBvffeeyop
+KdFtt93m0hmLATimUaNGeuKJJ/TGG2/o2Wef1Zw5cyocTpqammp/nMrMm/Ds7Gx9/vnnatCggZ5+
++ulL9jfr1q3Td999pwMHDjhlKbTLefbZZ1WzZk1NnDhRgwcPdqiPrYz+/fvr1Vdf1dKlS9WvXz/7
+5GG5ublav369goKC6D8BB3lyn/bf7rzzTs2cOVPPPfecVq1apYSEBP34449KTEx0yvXp0+BpKBrA
+5VJSUpSXl6dBgwZdsmAgScOHD1dKSopWr16txx57zHS+Vq1aqWbNmpo6daoOHDig1q1by2q16sCB
+A1q2bJmaN29un/W3ItOmTdO+ffv08ssvq3379mrSpIn92JAhQ7RkyRJ9++23evbZZ023EYB7/P3v
+f9fFixe1aNEi3XfffRowYIBatGghi8WiX375RVu3btXevXtVr149/fOf/7Svv/1HO3fu1IkTJyq8
+fmhoqD744AMVFxcrPDz8spNzRUZGKiYmRu+//76mTJnitHusyJw5c9SxY8fLruV+JadOndLXX39t
+f52Xlyebzabk5GT7vpCQEN166626+eabNX78eM2cOVOjRo3Sgw8+qAsXLmjZsmU6f/68FixY4NTH
+IQBP5al92qX4+/vrySef1JgxY/Ttt99e9lz6NODSKBrA5X6vbo8YMeKy5919991q0aKFtm3bpn79
++pnOV6NGDS1fvlxvvvmmPvvsM61du1ZFRUVq1KiRhg0bpqioqMv+0Ktbt65mz56tUaNGafz48UpI
+SJCXl5ckqUWLFgoODtYPP/xQZhQCgGuDxWLRxIkT1b9/f61cuVKbN2/WqlWrVFpaKn9/f7Vo0UJx
+cXF68MEHVbt27QqvMW/evEtef+3atXr//ffl7e2tiIiIy7bl/vvv1yuvvKKPPvpIEydOrNKhxXff
+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
+KTIyUoWFhSopKdGUKVN08803KzIyUmfPnlVWVpYiIyP11FNPqUuXLhVeIzY2VlOmTFFpaanatGmj
+rl27OvVGAAAAAACoajye8F8CAwO1d+/eCo/9vgzjpcyaNcv+8R133KEVK1ZcZfMAAAAAAIC7mJrT
+AAAAAAAAj+RZAw0oGgDXo5CmPUzHpmVsdWJLAMA5zPZr9GkAqiPeq13bmAixmigsKTEfW2Q+1qyz
+F8+ZjrVaLaZj3fU4zfmiX03FlTqw3GbuuQumY0/9esZ07OkL5mPNqn+Dv+nYU+dzndgSONOFi+b6
+psLzReaTOvA998u5bFNxVp+apnMaloqX861UrAMdYs75vCuf5OS8p7LPm86ZkZdlOja74JTpWEc0
+vTHQdGxGXqYTWwJ3M2T+fc+1yOpAv2aWI/2hI0ujl9pKXZ7XXfdqceDrWlrq+t9V4GTMaQAAAAAA
+ACrCRIgAAAAAAOCaNWPGDO3bt0+GYSg2NlYhISH2Y1999ZXmzZsni8WioKAgxcfHy2K59CiwSo8P
+S0pKUnBwsHJz/2/o83vvvafg4GAVFBSUO3/8+PGKiYmRJBUVFSk6OloREREaPny4jh07Vtm0AAAA
+AABUHxbDvdsV7Nq1SxkZGVq1apXi4+MVHx9f5viUKVM0f/58rVy5UgUFBdq2bdvlb7eyn5ekpCQ1
+btxYKSkpkqR169bp1KlTCggIKHfu9u3bdfTo0TKxderUUUJCgqKiojR37tzKpgUAAAAAoNowDMOt
+25WkpqaqT58+kqRmzZrpzJkzys/Ptx9PTEzULbfcIkny9/fX6dOnL3u9ShUN8vLylJaWppiYGG3Y
+sEGS1KdPH40bN65cowsLC/Xmm2/qySefLNPovn37SpK6du2qPXv2VCYtAAAAAADVi+Hm7QpycnJU
+r149+2t/f39lZ//fBNe+vr6SpJMnT2r79u3q0ePyq3lUqmiQnJysnj17qlu3bjpy5IiysrLsif7b
+woULFRERUeZ4Tk6O/P1/mw3eYrHIMAwVFhZWJjUAAAAAANVGdR9p8N8qWink1KlTioqKUlxcXJkC
+Q0UqVTRISkpS//79ZbVaFRYWpo0bN1Z43pEjR5Senq7777//qhsNAAAAAAAcExAQoJycHPvrkydP
+qkGDBvbX+fn5GjNmjJ599lndc889V7zeFVdPOHHihPbt26dZs2bJMAxduHBBfn5+GjVqVLlzt2zZ
+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
+"
+>
 </div>
-</div>
 
 </div>
-</div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">glatrange</span>     <span class="o">=</span> <span class="mf">10.0</span>
-<span class="n">glatrange_mid</span> <span class="o">=</span> <span class="mf">2.5</span>
-<span class="n">elatrange</span>     <span class="o">=</span> <span class="mf">15.0</span>
-
-
-<span class="n">gcut_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="nb">abs</span><span class="p">(</span><span class="n">glat</span> <span class="o">&gt;</span> <span class="n">glatrange</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">elat</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">elatrange</span><span class="p">))</span>
-<span class="n">gcut_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="nb">abs</span><span class="p">(</span><span class="n">glat</span> <span class="o">&lt;</span> <span class="n">glatrange</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">elat</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">elatrange</span><span class="p">))</span>
-</pre></div>
-
-</div>
 </div>
 </div>
 
@@ -12053,24 +12606,6 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span><span class="p">,</span> <span class="n">FastICA</span><span class="p">,</span> <span class="n">NMF</span>
 <span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Imputer</span>
-
-<span class="n">imp</span> <span class="o">=</span> <span class="n">Imputer</span><span class="p">()</span>
-
-<span class="n">imp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">phot</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">phot</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">MinMaxScaler</span>
-
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-
-<span class="c1"># Don&#39;t cheat - fit only on training data</span>
-<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  
-<span class="n">X</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  
-
-
-
-<span class="c1">#X = X[:,[0,1,-2]]</span>
 </pre></div>
 
 </div>
@@ -12083,7 +12618,11 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">nmf</span> <span class="o">=</span> <span class="n">NMF</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">MinMaxScaler</span>
+
+
+
+<span class="n">nmf</span> <span class="o">=</span> <span class="n">NMF</span><span class="p">()</span>
 <span class="n">S_nmf_</span> <span class="o">=</span> <span class="n">nmf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
 <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -12359,24 +12898,6 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span><span class="p">,</span> <span class="n">FastICA</span><span class="p">,</span> <span class="n">NMF</span>
 <span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Imputer</span>
-
-<span class="n">imp</span> <span class="o">=</span> <span class="n">Imputer</span><span class="p">()</span>
-
-<span class="n">imp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">bb</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">bb</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">MinMaxScaler</span>
-
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-
-<span class="c1"># Don&#39;t cheat - fit only on training data</span>
-<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  
-<span class="n">X</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  
-
-
-
-<span class="c1">#X = X[:,[0,1,-2]]</span>
 </pre></div>
 
 </div>
@@ -12575,82 +13096,13 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">bb</span><span class="o">.</span><span class="n">columns</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sb</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">### Import the Galactic coordinate reference columns:</span>
-<span class="c1">### These are just &quot;maps&quot; of glat and glon. That way you can easily get the center pixel coordinates from a given pixel index</span>
-
-<span class="n">glon</span> <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">read_map</span><span class="p">(</span><span class="n">filepath</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">nside</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_nside/pixel_coords_map_ring_galactic_res8.fits&quot;</span><span class="p">,</span> <span class="n">field</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="n">glat</span> <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">read_map</span><span class="p">(</span><span class="n">filepath</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">nside</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_nside/pixel_coords_map_ring_galactic_res8.fits&quot;</span><span class="p">,</span> <span class="n">field</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="c1"># elon = hp.read_map(filepath+str(nside)+&quot;_nside/pixel_coords_map_ring_ecliptic_res8.fits&quot;, field = 0, memmap=False)</span>
-<span class="c1"># elat = hp.read_map(filepath+str(nside)+&quot;_nside/pixel_coords_map_ring_ecliptic_res8.fits&quot;, field = 1, memmap=False)</span>
-    
-
-<span class="c1"># gcut_1 = np.where((abs(glat &gt; glatrange)) &amp; (abs(elat) &gt; elatrange))</span>
-<span class="c1"># gcut_2 = np.where((abs(glat &lt; glatrange)) &amp; (abs(elat) &gt; elatrange))</span>
-                  
-<span class="c1"># glon = pd.DataFrame(glon, columns=[&#39;GLON&#39;])</span>
-<span class="c1"># glat = pd.DataFrame(glat, columns=[&#39;GLAT&#39;]) </span>
-
-
-<span class="n">start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">90</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">90</span>
 <span class="n">stop</span> <span class="o">=</span> <span class="mi">90</span>
 <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="n">glat_intervs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">stop</span><span class="p">,</span><span class="n">step</span><span class="p">)</span>
 
 <span class="n">glats</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">glat</span><span class="o">&gt;</span><span class="n">i</span><span class="p">,</span> <span class="n">glat</span><span class="o">&lt;</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">glat_intervs</span><span class="p">]</span>
-
-
-<span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">glats</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">glat_intervs</span><span class="p">[</span><span class="mi">90</span><span class="p">]</span>
-<span class="k">print</span> <span class="n">i</span>
-
-
-<span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">glat</span><span class="o">&gt;</span><span class="n">i</span><span class="p">,</span> <span class="n">glat</span><span class="o">&lt;</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-
-<span class="n">glat</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-
-<span class="k">print</span> <span class="n">glat</span><span class="p">[</span><span class="n">glats</span><span class="p">[</span><span class="mi">171</span><span class="p">]]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">glat</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">glat</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">glat</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">len</span><span class="p">(</span><span class="n">glat</span><span class="p">)</span><span class="o">/</span><span class="n">glat</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">glat</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
 </div>

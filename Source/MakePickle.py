@@ -60,10 +60,10 @@ nbands_all        = len(band_names)
 ### These are just "maps" of glat and glon. That way you can easily get the center pixel coordinates from a given pixel index
 
 coords = pd.DataFrame()
-coords['glon'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_galactic_res8.fits", field = 0)
-coords['glat'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_galactic_res8.fits", field = 1)
-coords['elon'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_ecliptic_res8.fits", field = 0)
-coords['elat'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_ecliptic_res8.fits", field = 1)
+coords['glon'] = hp.read_map(filepath+"pixel_coords_map_ring_galactic_res8.fits", field = 0)
+coords['glat'] = hp.read_map(filepath+"pixel_coords_map_ring_galactic_res8.fits", field = 1)
+coords['elon'] = hp.read_map(filepath+"pixel_coords_map_ring_ecliptic_res8.fits", field = 0)
+coords['elat'] = hp.read_map(filepath+"pixel_coords_map_ring_ecliptic_res8.fits", field = 1)
 
 
 
@@ -107,7 +107,7 @@ print "COMMANDER MW Maps Read"
 #### Read in the MIR to FIR photometry data:
 phot = pd.DataFrame()
 for i in range(0,len(band_names)):
-    phot[band_abbr[i]] = hp.read_map(filepath+str(nside)+"_nside/"+band+"_"+str(nside)+"_1dres.fits")
+    phot[band_abbr[i]] = hp.read_map(filepath+band_names[i]+"_"+str(nside)+"_1dres.fits.gz")
 print "IR Maps Read"
 
 phot.replace(
@@ -124,3 +124,13 @@ allsky_modes = phot.round(3).mode(axis=0)
 ## Subtract the all-sky mode from each map:
 ## Trying a vectorized way now, using the Pandas ".subtract" method
 phot_modesub = pd.DataFrame(phot.values-allsky_modes.values,columns=phot.columns)
+
+
+
+import pickle
+
+# obj0, obj1, obj2 are created here...
+
+# Saving the objects:
+with open('../Data/maps.pickle', 'w') as f:  # Python 3: open(..., 'wb')
+    pickle.dump([coords, planck_bb, planck_mw, phot, phot_modesub], f)
