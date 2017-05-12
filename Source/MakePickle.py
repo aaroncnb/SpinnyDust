@@ -6,9 +6,8 @@ import healpy as hp
 filepath      =  "../Data/raw/"
 
 nside         = 256
-glatrange     = 10.0
-glatrange_mid = 2.5
-elatrange     = 15.0
+npix          = 12*nside**2
+
 
 
 
@@ -55,75 +54,61 @@ waves_micron  = [ 9,12,12,12,18,25,25,60,60,65,90,100,100,140,140,160,240,350,55
 
 nbands_all        = len(band_names)
 
-planck_bb_path    = filepath+"/COM_CompMap_dust-commander_0256_R2.00.fits.gz" #HEALPix FITS table containing Planck low-res modBB results
-fields            = [4,7,1] #The field number in the HEALPix file
-labels            = ["Temperature","Beta","Radiance"]
-
-planck_bb = pd.DataFrame()
-for i in range (0,3):
-    planck_bb[labels[i]] = hp.read_map(planck_bb_path,field = fields[i])
-
 
 
 ### Import the Galactic coordinate reference columns:
 ### These are just "maps" of glat and glon. That way you can easily get the center pixel coordinates from a given pixel index
 
-glon = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_galactic_res8.fits", field = 0)
-glat = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_galactic_res8.fits", field = 1)
-elon = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_ecliptic_res8.fits", field = 0)
-elat = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_ecliptic_res8.fits", field = 1)
-
-
-gcut_1 = np.where((abs(glat > glatrange)) & (abs(elat) > elatrange))
-gcut_2 = np.where((abs(glat < glatrange)) & (abs(elat) > elatrange))
-
-glon = pd.DataFrame(glon, columns=['GLON'])
-glat = pd.DataFrame(glat, columns=['GLAT'])
-
-### Same for the ecliptic coordinates:
-
-
-##### Now, we have a cube of the FIR data saved as "fir"
-##### We want to compare the individual maps in a way that makes some physical sense
-##### How about we start by assuming an SED? Next: Modified blackbody fitting
-
-npix  = 12*nside**2
+coords = pd.DataFrame()
+coords['glon'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_galactic_res8.fits", field = 0)
+coords['glat'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_galactic_res8.fits", field = 1)
+coords['elon'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_ecliptic_res8.fits", field = 0)
+coords['elat'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_ecliptic_res8.fits", field = 1)
 
 
 
+#### Read Planck low-res Modified blackbody fitting results:
+planck_bb_path    = filepath+"/COM_CompMap_dust-commander_0256_R2.00.fits.gz" #HEALPix FITS table containing Planck low-res modBB results
+fields            = [4,7,1] #The field number in the HEALPix file
+labels            = ["T","B","R"]
+
+planck_bb = pd.DataFrame()
+for i in range(0,3):
+    planck_bb[labels[i]] = hp.read_map(planck_bb_path,field = fields[i])
+
+planck_bb.replace(
+    to_replace =hp.UNSEEN,
+    value=np.nan,
+    inplace=True
+    )
 
 
-
-
-
-
-
+#### Read Planck low-res microwave component fitting results:
 planck_mw = pd.DataFrame()
 labels = ['AME','CO','ff','Sync']
-paths = ['COM_CompMap_AME-commander_0256_R2.00.fits.gz','COM_CompMap_CO-commander_0256_R2.00.fits.gz','COM_CompMap_freefree-commander_0256_R2.00.fits.gz','COM_CompMap_Synchrotron-commander_0256_R2.00.fits.gz']
+
+paths = ['COM_CompMap_AME-commander_0256_R2.00.fits.gz',
+         'COM_CompMap_CO-commander_0256_R2.00.fits.gz',
+         'COM_CompMap_freefree-commander_0256_R2.00.fits.gz',
+         'COM_CompMap_Synchrotron-commander_0256_R2.00.fits.gz']
+
 for label, path in zip(labels, paths):
     planck_mw[label] = hp.read_map(filepath+path,field = 0);
+
+planck_mw.replace(
+    to_replace =hp.UNSEEN,
+    value=np.nan,
+    inplace=True
+    )
 print "COMMANDER MW Maps Read"
 
-phot = pd.DataFrame(
+
+
+#### Read in the MIR to FIR photometry data:
+phot = pd.DataFrame()
 for i in range(0,len(band_names)):
     phot[band_abbr[i]] = hp.read_map(filepath+str(nside)+"_nside/"+band+"_"+str(nside)+"_1dres.fits")
 print "IR Maps Read"
-
-
-
-
-
-
-## Replace the HEALPix "UNSEEN" pixels with NaN, in a Pandas Dataframe:
-
-
-
-
-bb = pd.DataFrame(AME,  columns= ['AME'])
-bb = bb.join(pd.DataFrame(Planck_T, columns= ['T']))
-bb = bb.join(pd.DataFrame(Planck_B, columns= ['Beta']))
-bb = bb.join(pd.DataFrame(Planck_FIR, columns= ['FIR']))
 
 phot.replace(
     to_replace =hp.UNSEEN,
@@ -131,25 +116,7 @@ phot.replace(
     inplace=True
     )
 
-bb.replace(
-    to_replace =hp.UNSEEN,
-    value=np.nan,
-    inplace=True
-    )
-
-# bb = bb.join(
-#       pd.DataFrame(
-#             (bb['T'].values / 17.5)**(4+2),
-#             columns=['G0']
-#                 )
-#                 )
-
-# print "G0 Map Calculated"
-
-
-
-
-## Calculate the mode of each HEALPix map.
+    ## Calculate the mode of each HEALPix map.
 ## Round to 3 decimal places, to consolidate multipleunique modes
 
 allsky_modes = phot.round(3).mode(axis=0)
@@ -157,8 +124,3 @@ allsky_modes = phot.round(3).mode(axis=0)
 ## Subtract the all-sky mode from each map:
 ## Trying a vectorized way now, using the Pandas ".subtract" method
 phot_modesub = pd.DataFrame(phot.values-allsky_modes.values,columns=phot.columns)
-
-
-#allsky_corrcoeff = pd.DataFrame(pd.DataFrame.corr(phot, method='pearson'))
-#allsky_corrcoeff_gcut1 = pd.DataFrame(pd.DataFrame.corr(phot.iloc[gcut_1], method='pearson'))
-#allsky_corrcoeff_gcut2 = pd.DataFrame(pd.DataFrame.corr(phot.iloc[gcut_2], method='pearson'))
