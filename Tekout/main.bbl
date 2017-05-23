@@ -1,4 +1,4 @@
-\begin{thebibliography}{56}
+\begin{thebibliography}{58}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Ali-Haimoud}(2010)}]{ali-haimoud10}
@@ -43,6 +43,9 @@
   {Komugi}, {White}, {Ikeda}, {Kato}, {Chinone}, {Etxaluze}, \&
   {Cypriano}}]{doi15}
 {Doi}, Y., {et~al.} 2015, \pasj, 67, 50
+
+\bibitem[{{Draine}(2011)}]{draine11}
+{Draine}, B.~T. 2011, {Physics of the Interstellar and Intergalactic Medium}
 
 \bibitem[{{Draine} \& {Hensley}(2013)}]{draine13}
 {Draine}, B.~T., \& {Hensley}, B. 2013, \apj, 765, 159
@@ -153,6 +156,9 @@ Hensley, B.~S., Draine, B.~T., \& Meisner, A.~M. 2016, The Astrophysical
 
 \bibitem[{{Leitch}(1998)}]{leitch98}
 {Leitch}, E.~M. 1998, PhD thesis, CALIFORNIA INSTITUTE OF TECHNOLOGY
+
+\bibitem[{{Li} \& {Draine}(2001)}]{li01}
+{Li}, A., \& {Draine}, B.~T. 2001, \apj, 554, 778
 
 \bibitem[{Lovas {et~al.}(2005)Lovas, McMahon, Grabow, Schnell, Mack, Scott, \&
   Kuczkowski}]{lovas05}

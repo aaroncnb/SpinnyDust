@@ -107,7 +107,7 @@ A look at microwave dust emission via the Infrared}
 %% editorial office after submission.
 
 \begin{abstract}
-%The anomalous microwave emission (AME) still lacks a coherent explanation. Both electric dipole emission by rapidly rotating dust (``spinning dust") and magnetic dipole emission by grains with magnetic inclusions (``magnetic dust") have emerged as theoretically plausible explanations. We explore the spinning dust angle. Specifically, the particular scenario in which spinning polycyclic aromatic hydrocarbon molecules (PAHs) are the dominant carriers of the AME. We use AKARI/Infrared Camera (IRC), due to its thorough PAH-band coverage, to analyze 98 regions showing evidence of AME. Also in the mid-infrared, we include the PAH-tracing bands of IRAS, WISE, and DIRBE (around 12 microns), for comparison to the pre-release IRC data. We supplement the MIR data with AKARI Far Infrared Surveyor (FIS), and Planck High Frequency Instrument (HFI) bands at 857 and 545~GHz, and IRAS to constrain the full dust thermal spectral energy distribution (SED). We carry out a dust SED fitting and find no preferential relationship between estimates of PAH abundance and the AME. At best, they PAH-dominated bands correlate with AME as well as the band s tracing the peak thermal dust emission. The results are consistent with previous studies in that the AME has a clear connection to interstellar dust, but a conclusive link to any particular population of dust is unapparent.
+The anomalous microwave emission (AME) still lacks a coherent explanation. Both electric dipole emission by rapidly rotating dust (``spinning dust") and magnetic dipole emission by grains with magnetic inclusions (``magnetic dust") have emerged as theoretically plausible explanations. We explore the spinning dust angle. Specifically, the particular scenario in which spinning polycyclic aromatic hydrocarbon molecules (PAHs) are the dominant carriers of the AME. We use AKARI/Infrared Camera (IRC), due to its thorough PAH-band coverage, to analyze 98 regions showing evidence of AME.   We comare AME with infrared dust emission from 3 different approaches. The results and discussion contained here apply to a angular cales of approximately 1-degree. In general, our results support an AME-from-dust hypothesis. At 1-degree angular resolution, we do not find evidence that the AME is exclusively carried by PAHs. The correlation of far IR dust emission with AME appears to be the best predictor, with MIR/PAH emission being marginally more weakly correlated with AME. IN the case of lambda Orionis, AME vs. PAH is at least as strong as AME vs. FIR. Higher resolution studies will be needed in the future to fully solve the AME mystery. re consistent with previous studies in that the AME has a clear connection to interstellar dust, but a conclusive link to any particular population of dust is unapparent.
 \end{abstract}
 
 
@@ -260,7 +260,7 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 
       \begin{figure*}
         \label{fig:AME_IR_crosscorr_allbandsg}
-        \includegraphics[width=185mm]{../Plots/all_bands_corr_matrix_wAME_spearman.png}
+        \includegraphics[width=185mm]{../Plots/all_bands_corr_matrix_wAME_spearman.pdf}
         \centering
         \caption{A colorized visualization of the ALL-SKY cross-correlation matrix for the 19 infrared bands sampled and the AME map. These results are based on the full sky (but omitting pixels within 10 degrees of the ecliptic plane) cross correlation of each band vs. every other band and the AME map. Plots on the top row are based on the Spearman rank correlation test. Those on the bottom are based on the Pearson correlation coefficients. }
       \end{figure*}
@@ -385,17 +385,17 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
   \caption{A grid of thumbnails showing the $\lambda$~Orionis region's structure, at 12 wavelengths, along with AME contours (shown in white countours. Spatial correlation seems to be the best at the shortest and longest wavelengths (AKARI/IRC 9~$\mu$m and Planck/HFI 550 micron) .}
 \end{figure*}
 
-\begin{figure*}
-  \label{fig:orionis-corr}
-  \includegraphics[width=170mm]{../Plots/orionis_correlations_AME.png}
-  \centering
-  \caption{Pixel cross-correlation for all pixels in the $\lambda$~Orionis cut-out region.  $S$ indicates the Spearman rank correlation coefficient for each plot.}
-\end{figure*}
+% \begin{figure*}
+%   \label{fig:orionis-corr}
+%   \includegraphics[width=170mm]{../Plots/orionis_correlations_AME.png}
+%   \centering
+%   \caption{Pixel cross-correlation for all pixels in the $\lambda$~Orionis cut-out region.  $S$ indicates the Spearman rank correlation coefficient for each plot.}
+% \end{figure*}
 
 \section{Discussion}
   \label{sec:discussion}
 
-
+  We comare AME with infrared dust emission from 3 different approaches. The results and discussion contained here apply to a angular cales of approximately 1-degree. In general, our results support an AME-from-dust hypothesis. At 1-degree angular resolution, we do not find evidence that the AME is exclusively carried by PAHs. The correlation of far IR dust emission with AME appears to be the best predictor, with MIR/PAH emission being marginally more weakly correlated with AME. IN the case of lambda Orionis, AME vs. PAH is at least as strong as AME vs. FIR. Higher resolution studies will be needed in the future to fully solve the AME mystery.
       \subsection{AME:Dust}
 
         As noted in Section 1, previous studies found that the AME generally correlates at dust-related IR wavelengths \citep{ysard10b,planckXV, hensley16}. We see the same overall pattern in the present study, for each of the three scales examined: the all-sky pixel-based analysis, the re-examination of Planck AME Candidate regions, and the inspection of the $\lambda$~Orionis region.
@@ -415,9 +415,6 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 
         According to spinning dust theory outlined in \cite{draine98} and in subsequent works by \cite{ysard10}, the AME profile and intensity will depend in part on the ISRF- but as is well-stated in \cite{hensley17a}, exactly how the ISRF will affect the AME SED is a more complicated question. Absorbed starlight photons may be able to rotationally excite the carriers, but if an enhanced ISRF leads to increased dust heating, then the increased IR emission can rotationally de-excite the carriers. However the ISRF affects not only the dust temperature but ionization of the carriers. In our all-sky investigation, we find that the AME is anti-correlated with temperature, when looking at the Planck COMMANDER AME and thermal dust maps, including all pixels except this within 10 degrees of the ecliptic plane.
 
-      \subsection{Resolution limitations}
-
-        It is possible that even if there is a relationship between PAH emission and the AME, that such a signal is being diluted by both the low resolution. This problem is well demonstrated in \cite{paladini15}, where it is shown that the AME in the RCW 49 HII region may have been overestimated at angular scales larger than 7$'$. Degree-resolution is likely to be averaging together vastly different environments in a single beam, making it difficult to account for smaller-scale environmental variations that lead to variations in spinning dust emission.
 
       \subection{Microwave foreground component separation}
 
@@ -432,7 +429,7 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
         If there is a sufficient abundance of PAHs with an electric dipole, then we must consider the possibility that the data currently available to do not offer the necessary spatial resolution, or that the photometric bands used do not allow us to adequately separate the individual dust components (i.e. the PAH features from potential nanosilicate features) and/or microwave foreground emission components (free-free from spinning-dust.) We look forward to continued environment-resolved comparisons to investigate the potential AME-PAH (or AME-nanosilicates, iron nanoparticles) relationship in a region by region, especially given the disagreement we find between our examination of lambda Orionis and the all-sky analysis.
 
 
-       This project is supported by JSPS and CNRS under the Japan--France Research Cooperative Program. We would like to give special thanks to the AME WOrkshop 2016 attendees and organizer, Chris Tibbs, for enlightening disucssions. Thanks also to Nathalie Ysard and Steven Gibson for helpful feedback. 
+       This project is supported by JSPS and CNRS under the Japan--France Research Cooperative Program. We would like to give special thanks to the AME WOrkshop 2016 attendees and organizer, Chris Tibbs, for enlightening disucssions. Thanks also to Nathalie Ysard and Steven Gibson for helpful feedback.
 
 
 
