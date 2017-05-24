@@ -8,7 +8,7 @@
 
 
 
-# In[1]:
+# In[3]:
 
 get_ipython().magic(u'matplotlib inline')
 #from IPython.external import mathjax; mathjax.install_mathjax()
@@ -21,125 +21,131 @@ import astropy.io.fits as fits
 from scipy.stats import gaussian_kde
 import scipy
 import pandas as pd
-import healpy as hp
+import pickle
 
 
 # In[4]:
 
-### Make a gargantuan cube. The "layers" are the FIR data:
-import numpy as np
-import pandas as pd
-import healpy as hp
-
-filepath      =  "../Data/raw/"
-
-nside         = 256
-npix          = 12*nside**2
-
-
-
-
-band_names =   [ "akari_9",                    "dirbe_12","iras_12", "wise_12",                     "akari_18",                     "dirbe_25","iras_25",                     "dirbe_60","iras_60","akari_65",                    "akari_90",                    "dirbe_100", "iras_100",                    "dirbe_140", "akari_140",                    "akari_160",                     "dirbe_240",                     "planck_857", "planck_545"]
-
-
-band_abbr =   [ "A9",                    "D12","I12", "W12",                     "A18",                     "D25","I25",                     "D60","I60","A65",                    "A90",                    "D100", "I100",                    "D140", "A140",                    "A160",                     "D240",                     "P857", "P545"]
-
-
-
-band_labels  = ["AKARI 9 $\mu{m}$",                "DIRBE 12 $\mu{m}$","IRAS 12 $\mu{m}$","WISE 12 $\mu{m}$",                 "AKARI 18 $\mu{m}$",                "DIRBE 25 $\mu{m}$", "IRAS 25 $\mu{m}$",                 "DIRBE 60 $\mu{m}$","IRAS 60 $\mu{m}$","AKARI 65 $\mu{m}$",                 "AKARI 90 $\mu{m}$",                 "DIRBE 100 $\mu{m}$","IRAS 100 $\mu{m}$",                "DIRBE 140 $\mu{m}$","AKARI 140 $\mu{m}$",                "AKARI 160 $\mu{m}$",                "DIRBE 240 $\mu{m}$",                "PLANCK 350 $\mu{m}$","PLANCK 550 $\mu{m}$" ]
-
-waves_micron  = [ 9,12,12,12,18,25,25,60,60,65,90,100,100,140,140,160,240,350,550]
-
-nbands_all        = len(band_names)
-
-
-
-### Import the Galactic coordinate reference columns:
-### These are just "maps" of glat and glon. That way you can easily get the center pixel coordinates from a given pixel index
-
-coords = pd.DataFrame()
-coords['glon'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_galactic_res8.fits", field = 0)
-coords['glat'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_galactic_res8.fits", field = 1)
-coords['elon'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_ecliptic_res8.fits", field = 0)
-coords['elat'] = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_ecliptic_res8.fits", field = 1)
-
-
-
-#### Read Planck low-res Modified blackbody fitting results:
-planck_bb_path    = filepath+"/COM_CompMap_dust-commander_0256_R2.00.fits.gz" #HEALPix FITS table containing Planck low-res modBB results
-fields            = [4,7,1] #The field number in the HEALPix file
-labels            = ["T","B","R"]
-
-planck_bb = pd.DataFrame()
-for i in range(0,3):
-    planck_bb[labels[i]] = hp.read_map(planck_bb_path,field = fields[i])
+with open('../Data/maps.pickle') as f:  # Python 3: open(..., 'rb')
+    coords, planck_bb, planck_mw, phot, phot_modesub = pickle.load(f)
     
-planck_bb.replace(
-    to_replace =hp.UNSEEN,
-    value=np.nan,
-    inplace=True
-    )
+phot.head()
+#planck_bb.head()
+#planck_mw.head()
+#coords.head()
 
 
-#### Read Planck low-res microwave component fitting results:
-planck_mw = pd.DataFrame()
-labels = ['AME','CO','ff','Sync']
-
-paths = ['COM_CompMap_AME-commander_0256_R2.00.fits.gz',
-         'COM_CompMap_CO-commander_0256_R2.00.fits.gz',
-         'COM_CompMap_freefree-commander_0256_R2.00.fits.gz',
-         'COM_CompMap_Synchrotron-commander_0256_R2.00.fits.gz']
-
-for label, path in zip(labels, paths):
-    planck_mw[label] = hp.read_map(filepath+path,field = 0);
-    
-planck_mw.replace(
-    to_replace =hp.UNSEEN,
-    value=np.nan,
-    inplace=True
-    )
-print "COMMANDER MW Maps Read"
-
-
-
-#### Read in the MIR to FIR photometry data:
-phot = pd.DataFrame()
-for i in range(0,len(band_names)):
-    phot[band_abbr[i]] = hp.read_map(filepath+str(nside)+"_nside/"+band+"_"+str(nside)+"_1dres.fits")
-print "IR Maps Read"
-
-phot.replace(
-    to_replace =hp.UNSEEN,
-    value=np.nan,
-    inplace=True
-    )
-
-    ## Calculate the mode of each HEALPix map.
-## Round to 3 decimal places, to consolidate multipleunique modes
-
-allsky_modes = phot.round(3).mode(axis=0)
-
-## Subtract the all-sky mode from each map:
-## Trying a vectorized way now, using the Pandas ".subtract" method
-phot_modesub = pd.DataFrame(phot.values-allsky_modes.values,columns=phot.columns)
-
-
-
-
-# In[ ]:
+# In[49]:
 
 glatrange     = 10.0
 glatrange_mid = 2.5
-elatrange     = 15.0
+elatrange     = 10
 
 
-gcut_1 = np.where((abs(glat > glatrange)) & (abs(elat) > elatrange))
-gcut_2 = np.where((abs(glat < glatrange)) & (abs(elat) > elatrange))
+gcut_l = np.where((abs(coords['glat']) < glatrange) & (abs(coords['elat']) > elatrange))
+gcut_h = np.where((abs(coords['glat']) > glatrange) & (abs(coords['elat']) > elatrange))
 
 
 
 
 
+
+
+# In[9]:
+
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import Imputer
+from sklearn.preprocessing import StandardScaler
+
+
+### Setup the standard pipeline to apply to all the data:
+allsky_pipeline = Pipeline([
+    ('imputer', Imputer(strategy="median")),
+    ('std_scaler', StandardScaler()),
+])
+
+phot_tr = pd.DataFrame(allsky_pipeline.fit_transform(phot),columns=phot.columns)
+planck_bb_tr = pd.DataFrame(allsky_pipeline.fit_transform(planck_bb),columns=planck_bb.columns)
+planck_mw_tr = pd.DataFrame(allsky_pipeline.fit_transform(planck_mw),columns=planck_mw.columns)
+
+
+phot_corr = phot_tr.corr(method='spearman')
+planck_bb_corr = planck_bb_tr.corr(method='spearman')
+planck_mw_corr = planck_mw_tr.corr(method='spearman')
+
+
+# In[50]:
+
+import seaborn as sb
+phot_corr     = phot_tr.join(planck_mw_tr['AME']).corr(method='spearman')
+phot_corr_lgl = phot_tr.join(planck_mw_tr['AME']).iloc[gcut_l].corr(method='spearman')
+phot_corr_hgl = phot_tr.join(planck_mw_tr['AME']).iloc[gcut_h].corr(method='spearman')
+
+
+# In[60]:
+
+#bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
+mask = np.zeros_like(phot_corr.values)
+mask[np.triu_indices_from(mask,k=1)] = True
+
+with sb.axes_style("white"):
+
+    
+    fig, ax = plt.subplots(1,3,figsize=(15,5))
+    cbar_ax = fig.add_axes([.91, .2, .03, .7])
+    
+    sb.heatmap(
+        phot_corr,
+        #linewidths=.5,
+        annot=False,
+        mask=mask,
+        cbar=False,
+        yticklabels=True,
+        xticklabels=True,
+        ax = ax[0],
+        vmin=0,
+        vmax=1)
+    
+    ax[0].set_title("All-sky", fontsize=20)
+
+    
+    sb.heatmap(
+        phot_corr_hgl,
+        #linewidths=.5,
+        annot=False,
+        mask=mask,
+        cbar=False,
+        yticklabels=False,
+        xticklabels=False,
+        ax=ax[1],
+        vmin=0,
+        vmax=1)
+    
+    ax[1].set_title("|GLAT| > 10", fontsize=20)
+
+    
+    
+    sb.heatmap(
+        phot_corr_lgl,
+        #linewidths=.5,
+        annot=False,
+        mask=mask,
+        cbar=True,
+        cbar_ax=cbar_ax,
+        yticklabels=False,
+        xticklabels=False,
+        ax=ax[2],
+        vmin=0,
+        vmax=1)
+    
+    ax[2].set_title("|GLAT| < 10", fontsize=20)
+
+
+    fig.tight_layout(rect=[0, 0, .9, 1])
+    
+    plt.show()
+
+    fig.savefig("../Plots/all_bands_corr_matrix_wAME_spearman.pdf", bbox_inches='tight')
 
 
 # ## Applying Independent Component Analysis (ICA) from 'skitlearn':
@@ -152,27 +158,14 @@ gcut_2 = np.where((abs(glat < glatrange)) & (abs(elat) > elatrange))
 
 from sklearn.decomposition import PCA, FastICA, NMF
 from sklearn.manifold import TSNE
-from sklearn.preprocessing import Imputer
 
-imp = Imputer()
-
-imp.fit(phot.values)
-X = imp.transform(phot.values)
-
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-
-scaler = MinMaxScaler(feature_range=(0, 1))
-
-# Don't cheat - fit only on training data
-scaler.fit(X)  
-X = scaler.transform(X)  
-
-
-
-#X = X[:,[0,1,-2]]
 
 
 # In[ ]:
+
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+
+
 
 nmf = NMF()
 S_nmf_ = nmf.fit(X).transform(X)
@@ -293,24 +286,6 @@ for i in range(0,np.size(S_nmf_,axis=1)):
 
 from sklearn.decomposition import PCA, FastICA, NMF
 from sklearn.manifold import TSNE
-from sklearn.preprocessing import Imputer
-
-imp = Imputer()
-
-imp.fit(bb.values)
-X = imp.transform(bb.values)
-
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-
-scaler = MinMaxScaler(feature_range=(0, 1))
-
-# Don't cheat - fit only on training data
-scaler.fit(X)  
-X = scaler.transform(X)  
-
-
-
-#X = X[:,[0,1,-2]]
 
 
 # In[ ]:
@@ -438,28 +413,6 @@ plt.close()
 
 # In[ ]:
 
-bb.columns
-import seaborn as sb
-
-
-# In[ ]:
-
-### Import the Galactic coordinate reference columns:
-### These are just "maps" of glat and glon. That way you can easily get the center pixel coordinates from a given pixel index
-
-glon = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_galactic_res8.fits", field = 0, memmap=False)
-glat = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_galactic_res8.fits", field = 1, memmap=False)
-# elon = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_ecliptic_res8.fits", field = 0, memmap=False)
-# elat = hp.read_map(filepath+str(nside)+"_nside/pixel_coords_map_ring_ecliptic_res8.fits", field = 1, memmap=False)
-    
-
-# gcut_1 = np.where((abs(glat > glatrange)) & (abs(elat) > elatrange))
-# gcut_2 = np.where((abs(glat < glatrange)) & (abs(elat) > elatrange))
-                  
-# glon = pd.DataFrame(glon, columns=['GLON'])
-# glat = pd.DataFrame(glat, columns=['GLAT']) 
-
-
 start = -90
 stop = 90
 step = 1
@@ -468,28 +421,6 @@ glat_intervs = np.arange(start,stop,step)
 
 glats = [np.where(np.logical_and(glat>i, glat< i+1))  for i in glat_intervs]
 
-
-np.shape(glats)
-
-
-# In[ ]:
-
-i = glat_intervs[90]
-print i
-
-
-j = np.where(np.logical_and(glat>i, glat< i+1))
-
-glat[j]
-
-print glat[glats[171]]
-
-
-# In[ ]:
-
-print len(glat)
-print glat.iloc[0]-glat.iloc[-1]
-len(glat)/glat.iloc[0]-glat.iloc[-1]
 
 
 # In[ ]:
