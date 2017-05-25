@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1495674248 "main.aux" "main.bbl" "main" 1495674250
+["bibtex main"] 1495696484 "main.aux" "main.bbl" "main" 1495696486
   "./apj.bst" 1495673266 31890 1ae968ce6ab12f10d1bf74035f62faed ""
-  "main.aux" 1495674250 24323 c924096414b143532a517cf21ba7e196 ""
+  "main.aux" 1495696486 24045 49b80d53be80479f90ce04cb856b1bf8 ""
   "main.bcf" 0 -1 0 ""
   "reference.bib" 1495673266 214071 c9a7998139e70607a76d5f1b711bd854 ""
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1495674248 "main.tex" "/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.pdf" "main" 1495674250
+["pdflatex"] 1495696484 "main.tex" "/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.pdf" "main" 1495696486
   "../Plots/AMEregs_bootstrap_DmassDlum_spearman_PCXV.png" 1495673266 19637 d484c955a2cfd8a2600da2d9e5f3f9c1 ""
   "../Plots/AMEregs_bootstrap_PmassDlum_spearman_PR2.png" 1495673266 18427 f2ad397b0f5a0fa140cf2e3ca2644f88 ""
   "../Plots/AMEregs_bootstrap_mass_spearman_PCXV.png" 1495673266 17617 2dc9385c7738762289e122fd24847dc0 ""
@@ -130,7 +130,7 @@
   "../SEDs/sed_97.pdf" 1495673266 44883 d86669ece2a070c4b50cb6d659f1bb5f ""
   "../SEDs/sed_98.pdf" 1495673266 45713 f105c12c5504342ccaa66d8058d4c988 ""
   "/etc/texmf/web2c/texmf.cnf" 1495674126 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.aux" 1495674250 24323 c924096414b143532a517cf21ba7e196 ""
+  "/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.aux" 1495696486 24045 49b80d53be80479f90ce04cb856b1bf8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -206,9 +206,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1495674134 27758 38728abbce47239bb9c148cdc8c9e373 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1495674135 718487 b474967aedb660f0acd73dc18ad40597 ""
   "aastex.cls" 1495673266 66187 34b00eaf5bc1c6dfe8c5317100e255e0 ""
-  "main.aux" 1495674250 24323 c924096414b143532a517cf21ba7e196 ""
-  "main.bbl" 1495674248 17417 e57fb15eb6b1b9d9c7cde50e3c6b335e "bibtex main"
-  "main.tex" 1495674245 56440 a023b20014088c3b1f50b75deeebd2d1 ""
+  "main.aux" 1495696486 24045 49b80d53be80479f90ce04cb856b1bf8 ""
+  "main.bbl" 1495696484 17417 e57fb15eb6b1b9d9c7cde50e3c6b335e "bibtex main"
+  "main.tex" 1495696475 56029 014a3888b6d4c8fb03ad6271c0b8fc43 ""
   "natbib.sty" 1495673266 34789 9ac060fbd8646b7d751b2f5261a0844d ""
   (generated)
   "main.pdf"
