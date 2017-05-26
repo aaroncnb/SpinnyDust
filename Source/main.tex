@@ -216,7 +216,6 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
     IRAS/IRIS & 100~$\mu$m  & 4.5$'$ &   \textless 13.5\%       & '' \\
     Planck/HFI & 345~$\mu$m & 4.7$'$ & & \citep{hfi14viii} \\
     Planck/HFI & 550~$\mu$m & 4.3$'$& & '' \\
-    WISE & 12~$\mu$m & & & &  \\
     \hline
     %% Text for table notes should follow after the \enddata but before
     %% the \end{deluxetable}. Make sure there is at least one \tablenotemark
@@ -253,7 +252,9 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 
     We can quickly see that, for all of the bands, there is a first-order correlation between the IR with the AME. Figure \ref{fig:AME_IR_crosscorr_allbandsg} visualizes the cross-correlation matrix for each of the IR bands. The AME does not show a strong correlation with other bands at $|l|>10$. At $|l|<10$, the FIR bands show stronger correlation. The AKARI 9~$\mu$m bands, and the other PAH-tracing bands show a stronger correlation only relative to the bands from 18 to 60~$\mu$m. The WISE 12~$\mu$m band is shown for comparison purposes, but the version of the WISE 12~$\mu$m map used here has been released only for visualization purposes \footnote{https://faun.rc.fas.harvard.edu/ameisner/wssa/index.html}.
 
-    Even excluding pixels near the ecliptic plane, and separating the sky into two $b$ ranges, the situation is very difficult to interpret. To understand if the same pattern persists across the sky rather than presenting only for the all-sky average, we repeat the correlation analysis for $b$ bins. For each degree of $b$, we cross correlate that Planck modified blackbody fitting results vs. the AME and the AKARI 9~$\mu$m intensity. (This comes with the caveat that the galactic plane is much more heavily sampled than the galactic poles.) Figure \ref{fig:PlanckModBBvsAMEandA9_byGLAT} shows the results.
+    Even excluding pixels near the ecliptic plane, and separating the sky into two $b$ ranges, the situation is very difficult to interpret. To understand if the same pattern persists across the sky rather than presenting only for the all-sky average, we repeat the correlation analysis for $b$ bins. For each degree of $b$, we cross correlate that Planck modified blackbody fitting results vs. the AME and the AKARI 9~$\mu$m intensity. (This comes with the caveat that the galactic plane is much more heavily sampled than the galactic poles.) Fig. \ref{fig:PlanckModBBvsAMEandA9_byGLAT} shows the results.
+
+    We do the same analysis by galactic longitude as well, also in 1-degree bins. As shown by Fig.  \ref{fig:PlanckModBBvsAMEandA9_byGLON}, this approach produces a much more consistent result with the rank of correlation strengths remaining constant accross all longitudes. There is an unexplained variation between $b = 200$ and 250.
 
 
       \begin{figure*}
@@ -283,9 +284,17 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
       \begin{figure*}
         \label{fig:PlanckModBBvsAMEandA9_byGLAT}
         \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_byGLAT.pdf}
-        \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_hist.pdf}
+        \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_GLAT_hist.pdf}
         \centering
-        \caption{Cross-correlation tests (Spearman) of AME vs. dust radiance ($R$), temperature ($T$),  emissivity index (Beta), and the AKARI 9~$\mu$m brightness (A9), by $b$. The order of strongest to weakest correlation basically remains constant from pole to pole. (Except near the galactic plane, and $b = 40$  }
+        \caption{Left: Cross-correlation tests (Spearman) of AME vs. dust radiance ($R$), temperature ($T$),  emissivity index (Beta), and the AKARI 9~$\mu$m brightness (A9), by $b$.  Right: Histograms of the correlation scores . }
+      \end{figure*}
+
+      \begin{figure*}
+        \label{fig:PlanckModBBvsAMEandA9_byGLON}
+        \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_byGLON.pdf}
+        \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_GLON_hist.pdf}
+        \centering
+        \caption{ The same analysis as in Fig. \ref{fig:PlanckModBBvsAMEandA9_byGLAT}, but according to GLON bins instead of GLAT. } 
       \end{figure*}
 
 
