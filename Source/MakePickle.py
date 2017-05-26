@@ -12,7 +12,7 @@ npix          = 12*nside**2
 
 
 band_names =   [ "akari_9",\
-                    "dirbe_12","iras_12", "wise_12", \
+                    "dirbe_12","iras_12", \
                     "akari_18", \
                     "dirbe_25","iras_25", \
                     "dirbe_60","iras_60","akari_65",\
@@ -25,7 +25,7 @@ band_names =   [ "akari_9",\
 
 
 band_abbr =   [ "A9",\
-                    "D12","I12", "W12", \
+                    "D12","I12", \
                     "A18", \
                     "D25","I25", \
                     "D60","I60","A65",\
@@ -39,7 +39,7 @@ band_abbr =   [ "A9",\
 
 
 band_labels  = ["AKARI 9 $\mu{m}$",\
-                "DIRBE 12 $\mu{m}$","IRAS 12 $\mu{m}$","WISE 12 $\mu{m}$", \
+                "DIRBE 12 $\mu{m}$","IRAS 12 $\mu{m}$", \
                 "AKARI 18 $\mu{m}$",\
                 "DIRBE 25 $\mu{m}$", "IRAS 25 $\mu{m}$", \
                 "DIRBE 60 $\mu{m}$","IRAS 60 $\mu{m}$","AKARI 65 $\mu{m}$", \
@@ -50,7 +50,7 @@ band_labels  = ["AKARI 9 $\mu{m}$",\
                 "DIRBE 240 $\mu{m}$",\
                 "PLANCK 350 $\mu{m}$","PLANCK 550 $\mu{m}$" ]
 
-waves_micron  = [ 9,12,12,12,18,25,25,60,60,65,90,100,100,140,140,160,240,350,550]
+waves_micron  = [ 9,12,12,18,25,25,60,60,65,90,100,100,140,140,160,240,350,550]
 
 nbands_all        = len(band_names)
 
@@ -70,7 +70,7 @@ coords['elat'] = hp.read_map(filepath+"pixel_coords_map_ring_ecliptic_res8.fits"
 #### Read Planck low-res Modified blackbody fitting results:
 planck_bb_path    = filepath+"/COM_CompMap_dust-commander_0256_R2.00.fits.gz" #HEALPix FITS table containing Planck low-res modBB results
 fields            = [4,7,1] #The field number in the HEALPix file
-labels            = ["T","B","R"]
+labels            = ["$T$","$B$","$R$"]
 
 planck_bb = pd.DataFrame()
 for i in range(0,3):
