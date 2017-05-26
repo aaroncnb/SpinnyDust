@@ -6,51 +6,47 @@ Database file #1: reference.bib
 Warning--I didn't find a database entry for "hensey17"
 Warning--I didn't find a database entry for "ali-haimoud13"
 Warning--I didn't find a database entry for "compienge11"
-Warning--I didn't find a database entry for "draine98"
-Warning--I didn't find a database entry for "ysard10"
-Warning--I didn't find a database entry for "hensely16"
-Warning--I didn't find a database entry for "hoang16"
-Warning--I didn't find a database entry for "draine16"
+Warning--I didn't find a database entry for "compiegne11"
 Warning--empty publisher in draine11
-You've used 58 entries,
+You've used 60 entries,
             2988 wiz_defined-function locations,
-            974 strings with 26522 characters,
-and the built_in function-call counts, 33675 in all, are:
-= -- 2081
-> -- 3638
-< -- 22
-+ -- 1217
-- -- 1152
-* -- 3516
-:= -- 6728
-add.period$ -- 58
-call.type$ -- 58
-change.case$ -- 362
+            978 strings with 26646 characters,
+and the built_in function-call counts, 34505 in all, are:
+= -- 2157
+> -- 3682
+< -- 24
++ -- 1233
+- -- 1164
+* -- 3586
+:= -- 6876
+add.period$ -- 60
+call.type$ -- 60
+change.case$ -- 374
 chr.to.int$ -- 53
-cite$ -- 59
-duplicate$ -- 1058
-empty$ -- 1541
-format.name$ -- 1353
-if$ -- 6253
-int.to.chr$ -- 6
+cite$ -- 61
+duplicate$ -- 1096
+empty$ -- 1595
+format.name$ -- 1375
+if$ -- 6421
+int.to.chr$ -- 8
 int.to.str$ -- 1
-missing$ -- 55
-newline$ -- 178
-num.names$ -- 232
-pop$ -- 357
+missing$ -- 57
+newline$ -- 184
+num.names$ -- 240
+pop$ -- 370
 preamble$ -- 1
-purify$ -- 361
+purify$ -- 373
 quote$ -- 0
-skip$ -- 887
+skip$ -- 914
 stack$ -- 0
-substring$ -- 1148
-swap$ -- 8
+substring$ -- 1190
+swap$ -- 12
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 519
+type$ -- 537
 warning$ -- 1
-while$ -- 189
+while$ -- 197
 width$ -- 0
-write$ -- 583
-(There were 9 warnings)
+write$ -- 603
+(There were 5 warnings)

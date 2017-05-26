@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.25)  25 MAY 2017 19:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.5)  26 MAY 2017 18:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **main.tex
-(/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.tex
+(/home/aaronb/Codebrary/latex/CosmicDust/Source/main.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 3 language(s) loaded.
-(/home/aaronb/Projectbrary/latex/CosmicDust/Source/aastex.cls
+(/home/aaronb/Codebrary/latex/CosmicDust/Source/aastex.cls
 Document Class: aastex 2005/06/22 5.2/AAS markup document class
 Class aastex Info: Original \LaTeX2.09 style by Chris Biemesderfer (chris@seagoat.com). Adapted to \LaTeXe by A. Ogawa (ogawa@teleport.com) on input line 83.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -64,7 +64,7 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/natbib.sty
+)) (/home/aaronb/Codebrary/latex/CosmicDust/Source/natbib.sty
 Package: natbib 2003/06/06 7.1 (PWD)
 \bibhang=\skip43
 \bibsep=\skip44
@@ -114,7 +114,7 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \juo@sk=\count97
 \c@colht=\dimen120
 \my@outputbox=\box33
-) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.aux)
+) (/home/aaronb/Codebrary/latex/CosmicDust/Source/main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
@@ -129,8 +129,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
 LaTeX Font Info:    ... okay on input line 62.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
 LaTeX Font Info:    ... okay on input line 62.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count98
 \scratchdimen=\dimen121
@@ -230,7 +229,11 @@ File: ../Plots/band-ratio-multiple.pdf Graphic file (type pdf)
  <use ../Plots/band-ratio-multiple.pdf>
 Package pdftex.def Info: ../Plots/band-ratio-multiple.pdf used on input line 178.
 (pdftex.def)             Requested size: 426.79134pt x 284.54036pt.
- <../Plots/InBandContribution_PAH_bar.png, id=25, 376.40625pt x 311.1625pt>
+
+
+Package natbib Warning: Citation `compiegne11' on page 4 undefined on input line 179.
+
+<../Plots/InBandContribution_PAH_bar.png, id=25, 376.40625pt x 311.1625pt>
 File: ../Plots/InBandContribution_PAH_bar.png Graphic file (type png)
  <use ../Plots/InBandContribution_PAH_bar.png>
 Package pdftex.def Info: ../Plots/InBandContribution_PAH_bar.png used on input line 186.
@@ -368,28 +371,9 @@ Overfull \hbox (13.94185pt too wide) in paragraph at lines 380--382
  []
 
 [13] [14 <../Plots/AMEvsDust_regs_J13.png>] [15 <../Plots/PCXVvsPR2.png> <../Plots/histo_chi2red.pdf>] [16 <../Plots/AMEregs_bootstrap_mass_spearman_PR2.png> <../Plots/AMEregs_bootstrap_mass_spearman_PCXV.png> <../Plots/AMEregs_bootstrap_DmassDlum_spearman_PCXV.png> <../Plots/AMEregs_bootstrap_PmassDlum_spearman_PR2.png>] [17 <../Plots/lOrionis_AKARI9.png>] [18 <../Plots/lOrionis_grid_img.png>]
-
-Package natbib Warning: Citation `draine98' on page 19 undefined on input line 413.
-
-
-Package natbib Warning: Citation `ysard10' on page 19 undefined on input line 413.
-
-
 Underfull \hbox (badness 7685) in paragraph at lines 416--416
 []\OT1/cmr/bx/n/10 Microwave fore-ground com-po-nent
  []
-
-
-Package natbib Warning: Citation `hensely16' on page 19 undefined on input line 422.
-
-
-Package natbib Warning: Citation `hoang16' on page 19 undefined on input line 422.
-
-
-Package natbib Warning: Citation `draine98' on page 19 undefined on input line 424.
-
-
-Package natbib Warning: Citation `draine16' on page 19 undefined on input line 424.
 
 [19] [20
 
@@ -890,7 +874,7 @@ File: ../SEDs/sed_98.pdf Graphic file (type pdf)
  <use ../SEDs/sed_98.pdf>
 Package pdftex.def Info: ../SEDs/sed_98.pdf used on input line 549.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.bbl [21
+ (/home/aaronb/Codebrary/latex/CosmicDust/Source/main.bbl [21
 
 ] [22 <../SEDs/sed_01.pdf> <../SEDs/sed_02.pdf> <../SEDs/sed_03.pdf> <../SEDs/sed_04.pdf> <../SEDs/sed_05.pdf> <../SEDs/sed_06.pdf> <../SEDs/sed_07.pdf> <../SEDs/sed_08.pdf> <../SEDs/sed_09.pdf> <../SEDs/sed_10.pdf> <../SEDs/sed_11.pdf> <../SEDs/sed_12.pdf> <../SEDs/sed_13.pdf> <../SEDs/sed_14.pdf> <../SEDs/sed_15.pdf> <../SEDs/sed_16.pdf> <../SEDs/sed_17.pdf> <../SEDs/sed_18.pdf> <../SEDs/sed_19.pdf> <../SEDs/sed_20.pdf>] [23 <../SEDs/sed_21.pdf> <../SEDs/sed_22.pdf> <../SEDs/sed_23.pdf> <../SEDs/sed_24.pdf> <../SEDs/sed_25.pdf> <../SEDs/sed_26.pdf> <../SEDs/sed_27.pdf> <../SEDs/sed_28.pdf> <../SEDs/sed_29.pdf> <../SEDs/sed_30.pdf> <../SEDs/sed_31.pdf> <../SEDs/sed_32.pdf> <../SEDs/sed_33.pdf> <../SEDs/sed_34.pdf> <../SEDs/sed_35.pdf> <../SEDs/sed_36.pdf> <../SEDs/sed_37.pdf> <../SEDs/sed_38.pdf> <../SEDs/sed_39.pdf> <../SEDs/sed_40.pdf>] [24 <../SEDs/sed_41.pdf> <../SEDs/sed_42.pdf> <../SEDs/sed_43.pdf> <../SEDs/sed_44.pdf> <../SEDs/sed_45.pdf> <../SEDs/sed_46.pdf> <../SEDs/sed_47.pd
 f> <../SEDs/sed_48.pdf> <../SEDs/sed_49.pdf> <../SEDs/sed_50.pdf> <../SEDs/sed_51.pdf> <../SEDs/sed_52.pdf> <../SEDs/sed_53.pdf> <../SEDs/sed_54.pdf> <../SEDs/sed_55.pdf> <../SEDs/sed_56.pdf> <../SEDs/sed_57.pdf> <../SEDs/sed_58.pdf> <../SEDs/sed_59.pdf> <../SEDs/sed_60.pdf>] [25 <../SEDs/sed_61.pdf> <../SEDs/sed_62.pdf> <../SEDs/sed_63.pdf> <../SEDs/sed_64.pdf> <../SEDs/sed_65.pdf> <../SEDs/sed_66.pdf> <../SEDs/sed_67.pdf> <../SEDs/sed_68.pdf> <../SEDs/sed_69.pdf> <../SEDs/sed_70.pdf> <../SEDs/sed_71.pdf> <../SEDs/sed_72.pdf> <../SEDs/sed_73.pdf> <../SEDs/sed_74.pdf> <../SEDs/sed_75.pdf> <../SEDs/sed_76.pdf> <../SEDs/sed_77.pdf> <../SEDs/sed_78.pdf> <../SEDs/sed_79.pdf> <../SEDs/sed_80.pdf>] [26 <../SEDs/sed_81.pdf> <../SEDs/sed_82.pdf> <../SEDs/sed_83.pdf> <../SEDs/sed_84.pdf> <../SEDs/sed_85.pdf> <../SEDs/sed_86.pdf> <../SEDs/sed_87.pdf> <../SEDs/sed_88.pdf> <../SEDs/sed_89.pdf> <../SEDs/sed_90.pdf> <../SEDs/sed_91.pdf> <../SEDs/sed_92.pdf> <../SEDs/sed_93.pdf> <../SEDs/sed_94.pdf> 
@@ -910,25 +894,28 @@ Package natbib Warning: There were undefined citations.
 
 [27
 
-] (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.aux)
+] [28
+
+
+] (/home/aaronb/Codebrary/latex/CosmicDust/Source/main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3364 strings out of 494953
- 50237 string characters out of 6180977
- 135316 words of memory out of 5000000
- 6488 multiletter control sequences out of 15000+600000
+ 3362 strings out of 494953
+ 50179 string characters out of 6180978
+ 135546 words of memory out of 5000000
+ 6486 multiletter control sequences out of 15000+600000
  11645 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,10n,28p,2479b,310s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,28p,2479b,314s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on /home/aaronb/Projectbrary/latex/CosmicDust/Source/main.pdf (27 pages, 12424535 bytes).
+Output written on /home/aaronb/Codebrary/latex/CosmicDust/Source/main.pdf (28 pages, 12425312 bytes).
 PDF statistics:
- 991 PDF objects out of 1000 (max. 8388607)
- 465 compressed objects within 5 object streams
+ 994 PDF objects out of 1000 (max. 8388607)
+ 467 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  1184 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{58}
+\begin{thebibliography}{60}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Ali-Haimoud}(2010)}]{ali-haimoud10}
@@ -50,8 +50,11 @@
 \bibitem[{{Draine} \& {Hensley}(2013)}]{draine13}
 {Draine}, B.~T., \& {Hensley}, B. 2013, \apj, 765, 159
 
-\bibitem[{{Draine} \& {Lazarian}(1998)}]{draine98b}
-{Draine}, B.~T., \& {Lazarian}, A. 1998, \apj, 508, 157
+\bibitem[{{Draine} \& {Lazarian}(1998{\natexlab{a}})}]{draine98a}
+{Draine}, B.~T., \& {Lazarian}, A. 1998{\natexlab{a}}, \apjl, 494, L19
+
+\bibitem[{{Draine} \& {Lazarian}(1998{\natexlab{b}})}]{draine98b}
+---. 1998{\natexlab{b}}, \apj, 508, 157
 
 \bibitem[{{Draine} \& {Lazarian}(1999)}]{draine99}
 ---. 1999, \apj, 512, 740
@@ -89,8 +92,11 @@ Efron, B. 1979, Ann. Statist., 7, 1
 {G{\'o}rski}, K.~M., {Hivon}, E., {Banday}, A.~J., {Wandelt}, B.~D., {Hansen},
   F.~K., {Reinecke}, M., \& {Bartelmann}, M. 2005, \apj, 622, 759
 
-\bibitem[{{Hensley} \& {Draine}(2017)}]{hensley17a}
-{Hensley}, B.~S., \& {Draine}, B.~T. 2017, \apj, 836, 179
+\bibitem[{{Hensley} \& {Draine}(2017{\natexlab{a}})}]{hensley17a}
+{Hensley}, B.~S., \& {Draine}, B.~T. 2017{\natexlab{a}}, \apj, 836, 179
+
+\bibitem[{{Hensley} \& {Draine}(2017{\natexlab{b}})}]{hensley17b}
+---. 2017{\natexlab{b}}, \apj, 834, 134
 
 \bibitem[{Hensley {et~al.}(2016)Hensley, Draine, \& Meisner}]{hensley16}
 Hensley, B.~S., Draine, B.~T., \& Meisner, A.~M. 2016, The Astrophysical
