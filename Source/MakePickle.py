@@ -1,4 +1,4 @@
-cd Pr### Make a gargantuan cube. The "layers" are the FIR data:
+### Make a gargantuan cube. The "layers" are the FIR data:
 import numpy as np
 import pandas as pd
 import healpy as hp
