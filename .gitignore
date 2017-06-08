@@ -1,0 +1,5 @@
+*.pickle
+*.p
+./Data/*.pickle
+./Data/*.p
+

@@ -1,14 +1,15 @@
-### Make a gargantuan cube. The "layers" are the FIR data:
+cd Pr### Make a gargantuan cube. The "layers" are the FIR data:
 import numpy as np
 import pandas as pd
 import healpy as hp
+import sys
 
 filepath      =  "../Data/raw/"
 
 nside         = 256
 npix          = 12*nside**2
 
-
+nest = bool(sys.argv[1])
 
 
 band_names =   [ "akari_9",\
@@ -60,10 +61,10 @@ nbands_all        = len(band_names)
 ### These are just "maps" of glat and glon. That way you can easily get the center pixel coordinates from a given pixel index
 
 coords = pd.DataFrame()
-coords['glon'] = hp.read_map(filepath+"pixel_coords_map_ring_galactic_res8.fits", field = 0)
-coords['glat'] = hp.read_map(filepath+"pixel_coords_map_ring_galactic_res8.fits", field = 1)
-coords['elon'] = hp.read_map(filepath+"pixel_coords_map_ring_ecliptic_res8.fits", field = 0)
-coords['elat'] = hp.read_map(filepath+"pixel_coords_map_ring_ecliptic_res8.fits", field = 1)
+coords['glon'] = hp.read_map(filepath+"pixel_coords_map_ring_galactic_res8.fits", field = 0, nest=nest)
+coords['glat'] = hp.read_map(filepath+"pixel_coords_map_ring_galactic_res8.fits", field = 1, nest=nest)
+coords['elon'] = hp.read_map(filepath+"pixel_coords_map_ring_ecliptic_res8.fits", field = 0, nest=nest)
+coords['elat'] = hp.read_map(filepath+"pixel_coords_map_ring_ecliptic_res8.fits", field = 1, nest=nest)
 
 
 
@@ -74,7 +75,7 @@ labels            = ["$T$","$B$","$R$"]
 
 planck_bb = pd.DataFrame()
 for i in range(0,3):
-    planck_bb[labels[i]] = hp.read_map(planck_bb_path,field = fields[i])
+    planck_bb[labels[i]] = hp.read_map(planck_bb_path,field = fields[i], nest=nest)
 
 planck_bb.replace(
     to_replace =hp.UNSEEN,
@@ -93,7 +94,7 @@ paths = ['COM_CompMap_AME-commander_0256_R2.00.fits.gz',
          'COM_CompMap_Synchrotron-commander_0256_R2.00.fits.gz']
 
 for label, path in zip(labels, paths):
-    planck_mw[label] = hp.read_map(filepath+path,field = 0);
+    planck_mw[label] = hp.read_map(filepath+path,field = 0, nest=nest)
 
 planck_mw.replace(
     to_replace =hp.UNSEEN,
@@ -107,7 +108,7 @@ print "COMMANDER MW Maps Read"
 #### Read in the MIR to FIR photometry data:
 phot = pd.DataFrame()
 for i in range(0,len(band_names)):
-    phot[band_abbr[i]] = hp.read_map(filepath+band_names[i]+"_"+str(nside)+"_1dres.fits.gz")
+    phot[band_abbr[i]] = hp.read_map(filepath+band_names[i]+"_"+str(nside)+"_1dres.fits.gz", nest=nest)
 print "IR Maps Read"
 
 phot.replace(
@@ -132,5 +133,10 @@ import pickle
 # obj0, obj1, obj2 are created here...
 
 # Saving the objects:
-with open('../Data/maps.pickle', 'w') as f:  # Python 3: open(..., 'wb')
+if nest == True:
+    pname = "maps_nest.pickle"
+else:
+    pname = "maps.pickle"
+
+with open("../Data/"+pname, 'w') as f:  # Python 3: open(..., 'wb')
     pickle.dump([coords, planck_bb, planck_mw, phot, phot_modesub], f)
