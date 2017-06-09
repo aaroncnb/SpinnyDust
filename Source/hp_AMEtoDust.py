@@ -226,7 +226,7 @@ pltAMEvsDust(X_, Y_, subset_hs, subset_ls, xlabel, ylabel)
 
 # ## Experimenting with a boostrap test (Per Doi-san's advice')
 
-# In[38]:
+# In[41]:
 
 def bootstrap(data_x, 
               data_y, 
@@ -330,7 +330,7 @@ def bootstrap_run(X1_data,
 #     import datetime
 #     timestamp = datetime.datetime.now().strftime("%I:%M%p%B%d,%Y")
 
-    plt.savefig("../Plots/"+ftitle+"_.pdf")
+    plt.savefig("../Plots/"+ftitle)
     plt.legend(loc='upper left')
     plt.show()
 
@@ -340,7 +340,7 @@ def bootstrap_run(X1_data,
 
 # ## Calculate bootstrap results using PAH Luminosity ( not PAH Mass)
 
-# In[39]:
+# In[42]:
 
 #Y_data  = fd_all[~np.isnan(fd_all)]
 #Y_data = sres_ame[~np.isnan(sres_ame)]
@@ -376,7 +376,7 @@ bootstrap_run(
 #bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)
 
 
-# In[40]:
+# In[43]:
 
 Y_data = sres_ame
 X1_data = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values) 
