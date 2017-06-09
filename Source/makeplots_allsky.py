@@ -575,7 +575,7 @@ plt.close()
 
 # # All-sky AME vs. IR plots:
 
-# In[30]:
+# In[31]:
 
 ncols=3
 nrows=6
@@ -612,7 +612,7 @@ for i in range(0,nrows):
 
             hb = ax.hexbin(x_, y_, 
                    mincnt=1,
-                   gridsize=200,
+                   gridsize=300,
                    bins='log', 
                    cmap='inferno_r',
                    xscale='log',
@@ -635,7 +635,7 @@ ax.set_xlabel('IR [MJy/sr]', fontsize=20)
 
 plt.show()
 
-fig.savefig("../Plots/AMEvsDust_allsky_allbands.pdf", bbox_inches='tight')
+fig.savefig("../Plots/AMEvsDust_allsky_allbands.pdf", bbox_inches='tight')  
 
 
 # In[ ]:
