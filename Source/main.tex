@@ -257,7 +257,7 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
         \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_byGLON.pdf}
         \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_GLON_hist.pdf}
         \centering
-        \caption{Top Left: Cross-correlation tests (Spearman) of AME vs. dust radiance ($R$), temperature ($T$),  emissivity index (Beta), and the AKARI 9~$\mu$m brightness (A9), by $b$. Top Right: Histograms of the correlation scores. Bottom Left and Right: The same analysis repeated for galactic longitude. }
+        \caption{Top Left: Cross-correlation tests (Spearman) of AME vs. dust radiance ($R$), temperature ($T$),  emissivity index ($\beta$), and the AKARI 9~$\mu$m brightness (A9), by $b$. Top Right: Histograms of the correlation scores. Bottom Left and Right: The same analysis repeated for galactic longitude. }
       \end{figure*}
 
       \begin{figure*}
@@ -309,17 +309,19 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 
 \begin{figure*}
   \label{fig:AME_regs_J13}
-  \includegraphics[width=150mm]{../Plots/AMEvsDust_regs_J13.png}
+  \includegraphics[width=80mm]{../Plots/RegsAMEvsDustMass.pdf}
+  \includegraphics[width=80mm]{../Plots/RegsAMEvsPAHMass.pdf}
   \centering
-  \caption{Results of circular aperture photometry and dust SED fitting for 98 regions listed in PCXV. Red dots indicated regions with significant AME. Blue dots indicated regions with low/zero significance AME. }
+  \caption{Results of circular aperture photometry and dust SED fitting for 98 regions listed in PCXV for dust mass (Top) and PAH mass (Bottom). Blue regions show AME over 5$\sigma$. Green regions show AME under 5$\sigma$, and/or with a significant potential contribution from nearby UC HII regions (categorization process described in PCXV.) A linear regression with shaed 68\% confidence interval is also plotted for each distribution.}
 \end{figure*}
 
-\begin{figure*}
-  \label{fig:AME_PCXVvsPR2}
-  \includegraphics[width=80mm]{../Plots/PCXVvsPR2.png}
-  \centering
-  \caption[width=75mm]{Left: Cross-comparison of the PCXV photometry results and the results of this work, based on the Planck Collaboration PR2 AME map.}
-\end{figure*}
+
+% \begin{figure*}
+%   \label{fig:AME_PCXVvsPR2}
+%   \includegraphics[width=80mm]{../Plots/PCXVvsPR2.png}
+%   \centering
+%   \caption[width=75mm]{Left: Cross-comparison of the PCXV photometry results and the results of this work, based on the Planck Collaboration PR2 AME map.}
+% \end{figure*}
 
 \begin{figure*}
   \label{fig:AME_regs_chi2}
@@ -329,22 +331,14 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 \end{figure*}
 
 \begin{figure*}
-  \label{fig:AME_boostrap_mass_regs_all}
-  \includegraphics[width=80mm]{../Plots/AMEregs_bootstrap_mass_spearman_PR2.png}
-  \includegraphics[width=80mm]{../Plots/AMEregs_bootstrap_mass_spearman_PCXV.png}
+  \label{fig:AME_boostrap_regs_all}
+
+  \includegraphics[width=80mm]{../Plots/RegsAME_Bootstrap_MDustandMPAH.pdf}
+  \includegraphics[width=80mm]{../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf}
+
   \centering
-  \caption{Left: Histogram showing the distribution of Spearman correlation test results ($S$), based on 100,000 Bootstrapped sub-samples for each of the two comparisons (AME vs. total dust mass and AME vs. PAH mass.), based on PCXV AME flux values of the full set of 98 candidate regions. Right:  Same comparison repeated using fluxes obtained directly by circular aperture photometry on the PR2 map. }
+  \caption{Left: Histogram showing the distribution of Spearman correlation test results ($S$), based on 10,000 Bootstrapped sub-samples for each of the two comparisons (AME vs. total dust mass and AME vs. PAH mass.), based on PCXV AME flux values of the full set of 98 candidate regions. Right: The same comparison, using Dust and PAH Luminosity rather than mass.}
 \end{figure*}
-
-\begin{figure*}
-  \label{fig:AME_boostrap_lum_regs_pr2}
-  \includegraphics[width=80mm]{../Plots/AMEregs_bootstrap_DmassDlum_spearman_PCXV.png}
-  \includegraphics[width=80mm]{../Plots/AMEregs_bootstrap_PmassDlum_spearman_PR2.png}
-  \centering
-  \caption{Left: Distribution of $S$ results for AME vs. dust luminosity and AME vs dust mass. Right: AME vs. dust luminosity and AME vs. PAH luminosity. The same Bootstrap comparison method as in Figure \ref{fig:AME_boostrap_mass_regs_all} is used. }
-\end{figure*}
-
-
 
 \subsection{Analysis of the $\lambda$~Orionis Region}
 
