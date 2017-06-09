@@ -153,7 +153,7 @@ plt.rcParams['figure.facecolor']='white'
 plt.rcParams['savefig.facecolor']='white'
 
 
-# In[19]:
+# In[21]:
 
 
 
@@ -205,7 +205,7 @@ ylabel = "Residual 28.4~GHz Flux"
 X_ = qpah*dmass
 xlabel = "PAH Mass [kg/m2/sr]"
 
-pltAMEvsDust(X_, Y_, subset_hs, subset_ls, xlabel, ylabel, ftitle="RegsAMEvsPAHtMass.pdf")
+pltAMEvsDust(X_, Y_, subset_hs, subset_ls, xlabel, ylabel, ftitle="RegsAMEvsPAHMass.pdf")
 
 
 # In[20]:
@@ -226,11 +226,7 @@ pltAMEvsDust(X_, Y_, subset_hs, subset_ls, xlabel, ylabel)
 
 # ## Experimenting with a boostrap test (Per Doi-san's advice')
 
-# In[9]:
-
-
-
-
+# In[38]:
 
 def bootstrap(data_x, 
               data_y, 
@@ -243,7 +239,7 @@ def bootstrap(data_x,
     #"""Returns bootstrap estimate of 100.0*(1-alpha) CI for statistic."""
     
     n = len(data_x)
-    #print "Data dimen: "+str(np.shape(data))
+
     
     corr_coeff_array = np.ones(num_samples)
     
@@ -266,9 +262,7 @@ def bootstrap(data_x,
             corr_coeff_array[i] = stat_r
     
     corr_coeff_array[np.isnan(corr_coeff_array)==False]
-    #print stat_r
-    
-    #print corr_coeff_array
+
     return corr_coeff_array
 
 
@@ -280,7 +274,15 @@ def bootstrap_run(X1_data,
                   iterations=10000, 
                   title=None, 
                   X1_label=None, 
-                  X2_label=None):
+                  X2_label=None,
+                  ftitle='Bootstrap' ):
+    
+        ## Force background color to be white:
+    ### Note that seaborn plotting functions my override these settings.
+    plt.rcParams['axes.facecolor']='white'
+    plt.rcParams['figure.facecolor']='white'
+    plt.rcParams['savefig.facecolor']='white'
+    
     
     corr_array_X1 = bootstrap(X1_data,Y_data, iterations, len(X1_data),kind=kind )
 
@@ -295,20 +297,22 @@ def bootstrap_run(X1_data,
     t, prob = scipy.stats.ttest_ind(X1,X2, axis=0, equal_var=True) #Equal_var=False for Welch's t-test
     # make plots
     
-    pylab.figure(figsize=(8,8))
+    plt.figure(figsize=(6,6))
 
     round_it = 3
 
     bins = np.linspace(0.1, 1.0, 100)
 
-    pylab.hist(X1, bins, alpha=0.5, color= 'r', label=X1_label +" "+ 
+    plt.hist(X1, bins, alpha=0.5, color= 'r', label=X1_label +" "+ 
                                            str(round(np.nanmean(X1),round_it)) + " +/- " +  
                                            str(round(np.nanstd(X1),round_it)) )
-    pylab.hist(X2, bins, alpha=0.5, color= 'b', label=X2_label+" "+ 
+    plt.hist(X2, bins, alpha=0.5, color= 'b', label=X2_label+" "+ 
                                            str(round(np.nanmean(X2),round_it)) + " +/- " +  
                                            str(round(np.nanstd(X2),round_it))
                                             + "\n" + "t-stat: "+ 
                                                        str(round(t,round_it))+", p-value: "+   str(round(prob,round_it)))
+    plt.ylabel("Count", fontsize=20)
+    plt.xlabel("$S$", fontsize=20)
     
     #if X3_data:
     #    corr_array_lOri_L = bootstrap(X3_data, Y_data, iterations, len(X3_data), kind=kind )
@@ -322,27 +326,21 @@ def bootstrap_run(X1_data,
     #pylab.hist(xL, bins, alpha=0.5, label=("Dust Luminosity vs. AME \n R = "+ str(round(np.nanmean(xL),round_it))) + " +/- " + str(round(np.nanstd(xL),round_it)))
     
     
-    pylab.title('Hist. of Bootstrapped '+kind+' Corr. Results')
-    import datetime
-    timestamp = datetime.datetime.now().strftime("%I:%M%p%B%d,%Y")
+    #plt.title('Hist. of Bootstrapped '+kind+' Corr. Results')
+#     import datetime
+#     timestamp = datetime.datetime.now().strftime("%I:%M%p%B%d,%Y")
 
-    pylab.savefig('boostrap_'+kind+'_'+timestamp+'.pdf')
-    pylab.legend(loc='upper left')
-    pylab.show()
+    plt.savefig("../Plots/"+ftitle+"_.pdf")
+    plt.legend(loc='upper left')
+    plt.show()
 
 
     
 
 
-# In[ ]:
-
-dmass[~np.isnan(dmass)]
-pahmass[~np.isnan(dmass)]
-
-
 # ## Calculate bootstrap results using PAH Luminosity ( not PAH Mass)
 
-# In[ ]:
+# In[39]:
 
 #Y_data  = fd_all[~np.isnan(fd_all)]
 #Y_data = sres_ame[~np.isnan(sres_ame)]
@@ -351,10 +349,12 @@ Y_data = sres_ame
 X1_data = np.exp(sed_res_data['ln(<U> [Habings])'].values)*np.exp(sed_res_data['ln(Md [kg/m2/sr])']) 
 X2_data = X1_data*sed_res_data['qPAH'].values 
     
-X1_label = "Dust Lum. vs. AME \n  R = "
-X2_label = "PAH Lum. vs. AME \n   R = "
+X1_label = "Dust Lum. vs. AME \n  $S$ = "
+X2_label = "PAH Lum. vs. AME \n   $S$ = "
 
-iterations = 100000
+ftitle ="RegsAME_Bootstrap_LDustandLPAH.pdf"
+
+iterations = 10000
 
 # kind = 'Pearson'
 # bootstrap_run(X1_data, X2_data, Y_data, kind=kind, X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)
@@ -362,51 +362,45 @@ iterations = 100000
 #bootstrap_run(X1_data, X2_data, Y_data, X3_data=X3_data, kind=kind, iterations=iterations, title=None)
 
 kind = 'Spearman'
-bootstrap_run(X1_data, X2_data, Y_data, kind=kind, X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)
+bootstrap_run(
+    X1_data, 
+    X2_data, 
+    Y_data, 
+    kind=kind, 
+    X1_label = X1_label, 
+    X2_label = X2_label, 
+    iterations=iterations, 
+    ftitle=ftitle)
+
 #kind = 'pearson'
 #bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)
 
 
-# In[ ]:
+# In[40]:
 
-Y_data = sres_ame[subset_hs]
-
+Y_data = sres_ame
 X1_data = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values) 
 X2_data = X1_data*sed_res_data['qPAH'].values 
 X1_data = X1_data - X2_data
     
-X1_label = "Dust Mass. vs. AME \n  R = "
-X2_label = "PAH Mass. vs. AME \n   R = "
+X1_label = "Dust Mass. vs. AME \n  $S$ = "
+X2_label = "PAH Mass. vs. AME \n   $S$ = "
 
-iterations = 100000
+iterations = 10000
 
-X1_data = X1_data[subset_hs]
-X2_data = X2_data[subset_hs]
-
-# kind = 'Pearson'
-# bootstrap_run(X1_data, X2_data, Y_data, kind=kind, 
-#               X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)
-
-#bootstrap_run(X1_data, X2_data, Y_data, X3_data=X3_data, kind=kind, iterations=iterations, title=None)
 
 kind = 'Spearman'
+
+ftitle ="RegsAME_Bootstrap_MDustandMPAH.pdf"
+
 bootstrap_run(X1_data, X2_data, Y_data, kind=kind, 
-              X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)
+              X1_label = X1_label, X2_label = X2_label, iterations=iterations, ftitle=ftitle)
 
 
-Y_data = fd_all[subset_hs]
 
-# kind = 'Pearson'
-# bootstrap_run(X1_data, X2_data, Y_data, kind=kind, 
-#               X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)
+# In[ ]:
 
-#bootstrap_run(X1_data, X2_data, Y_data, X3_data=X3_data, kind=kind, iterations=iterations, title=None)
 
-kind = 'Spearman'
-bootstrap_run(X1_data, X2_data, Y_data, kind=kind, 
-              X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)
-#kind = 'pearson'
-#bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)
 
 
 # In[ ]:
@@ -423,7 +417,7 @@ X2_label = "PAH Mass. vs. AME \n   R = "
 X1_data=X1_data[subset_ls]
 X2_data=X2_data[subset_ls]
 
-iterations = 100000
+iterations = 10000
 
 # kind = 'Pearson'
 # bootstrap_run(X1_data, X2_data, Y_data, kind=kind, 
@@ -461,7 +455,7 @@ X1_data = np.exp(sed_res_data['ln(<U> [Habings])'].values)
 X2_data = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values) 
 #X3_data = phot_ori['im_lnLdust_tot_best.fits']
 
-iterations = 1000000
+iterations = 10000
 
 X1_label = "U [Habings] vs. AME \n  R = "
 X2_label = "Dust Mass  vs. AME \n   R = "
