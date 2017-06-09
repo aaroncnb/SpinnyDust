@@ -343,8 +343,6 @@ def bootstrap_run(X1_data,
 
 # In[45]:
 
-#Y_data  = fd_all[~np.isnan(fd_all)]
-#Y_data = sres_ame[~np.isnan(sres_ame)]
 Y_data = sres_ame
 
 X1_data = np.exp(sed_res_data['ln(<U> [Habings])'].values)*np.exp(sed_res_data['ln(Md [kg/m2/sr])']) 
@@ -357,11 +355,6 @@ ftitle ="RegsAME_Bootstrap_LDustandLPAH.pdf"
 
 iterations = 10000
 
-# kind = 'Pearson'
-# bootstrap_run(X1_data, X2_data, Y_data, kind=kind, X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)
-
-#bootstrap_run(X1_data, X2_data, Y_data, X3_data=X3_data, kind=kind, iterations=iterations, title=None)
-
 kind = 'Spearman'
 bootstrap_run(
     X1_data, 
@@ -373,8 +366,6 @@ bootstrap_run(
     iterations=iterations, 
     ftitle=ftitle)
 
-#kind = 'pearson'
-#bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)
 
 
 # In[46]:
@@ -401,6 +392,23 @@ bootstrap_run(X1_data, X2_data, Y_data, kind=kind,
 
 # In[ ]:
 
+Y_data = sres_ame
+X1_data = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values) 
+X2_data = X1_data*sed_res_data['qPAH'].values 
+X1_data = X1_data - X2_data
+    
+X1_label = "Dust Mass. vs. AME \n  $S$ = "
+X2_label = "PAH Mass. vs. AME \n   $S$ = "
+
+iterations = 10000
+
+
+kind = 'Spearman'
+
+ftitle ="RegsAME_Bootstrap_MDustandMPAH.pdf"
+
+bootstrap_run(X1_data, X2_data, Y_data, kind=kind, 
+              X1_label = X1_label, X2_label = X2_label, iterations=iterations, ftitle=ftitle)
 
 
 

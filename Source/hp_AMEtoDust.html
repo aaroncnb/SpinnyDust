@@ -2630,9 +2630,7 @@ EEIi3P8HS3SvNMOZn0oAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c">#Y_data  = fd_all[~np.isnan(fd_all)]</span>
-<span class="c">#Y_data = sres_ame[~np.isnan(sres_ame)]</span>
-<span class="n">Y_data</span> <span class="o">=</span> <span class="n">sres_ame</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">Y_data</span> <span class="o">=</span> <span class="n">sres_ame</span>
 
 <span class="n">X1_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">sed_res_data</span><span class="p">[</span><span class="s">&#39;ln(&lt;U&gt; [Habings])&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">sed_res_data</span><span class="p">[</span><span class="s">&#39;ln(Md [kg/m2/sr])&#39;</span><span class="p">])</span> 
 <span class="n">X2_data</span> <span class="o">=</span> <span class="n">X1_data</span><span class="o">*</span><span class="n">sed_res_data</span><span class="p">[</span><span class="s">&#39;qPAH&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> 
@@ -2644,11 +2642,6 @@ EEIi3P8HS3SvNMOZn0oAAAAASUVORK5CYII=
 
 <span class="n">iterations</span> <span class="o">=</span> <span class="mi">10000</span>
 
-<span class="c"># kind = &#39;Pearson&#39;</span>
-<span class="c"># bootstrap_run(X1_data, X2_data, Y_data, kind=kind, X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)</span>
-
-<span class="c">#bootstrap_run(X1_data, X2_data, Y_data, X3_data=X3_data, kind=kind, iterations=iterations, title=None)</span>
-
 <span class="n">kind</span> <span class="o">=</span> <span class="s">&#39;Spearman&#39;</span>
 <span class="n">bootstrap_run</span><span class="p">(</span>
     <span class="n">X1_data</span><span class="p">,</span> 
@@ -2659,9 +2652,6 @@ EEIi3P8HS3SvNMOZn0oAAAAASUVORK5CYII=
     <span class="n">X2_label</span> <span class="o">=</span> <span class="n">X2_label</span><span class="p">,</span> 
     <span class="n">iterations</span><span class="o">=</span><span class="n">iterations</span><span class="p">,</span> 
     <span class="n">ftitle</span><span class="o">=</span><span class="n">ftitle</span><span class="p">)</span>
-
-<span class="c">#kind = &#39;pearson&#39;</span>
-<span class="c">#bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)</span>
 </pre></div>
 
 </div>
@@ -3239,7 +3229,23 @@ DAwiIhKEgUFERIIwMIiISBAGBhERCcLAICIiQf4/2TSdnEMBmV4AAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre> 
+<div class=" highlight hl-ipython2"><pre><span class="n">Y_data</span> <span class="o">=</span> <span class="n">sres_ame</span>
+<span class="n">X1_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">sed_res_data</span><span class="p">[</span><span class="s">&#39;ln(Md [kg/m2/sr])&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> 
+<span class="n">X2_data</span> <span class="o">=</span> <span class="n">X1_data</span><span class="o">*</span><span class="n">sed_res_data</span><span class="p">[</span><span class="s">&#39;qPAH&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> 
+<span class="n">X1_data</span> <span class="o">=</span> <span class="n">X1_data</span> <span class="o">-</span> <span class="n">X2_data</span>
+    
+<span class="n">X1_label</span> <span class="o">=</span> <span class="s">&quot;Dust Mass. vs. AME </span><span class="se">\n</span><span class="s">  $S$ = &quot;</span>
+<span class="n">X2_label</span> <span class="o">=</span> <span class="s">&quot;PAH Mass. vs. AME </span><span class="se">\n</span><span class="s">   $S$ = &quot;</span>
+
+<span class="n">iterations</span> <span class="o">=</span> <span class="mi">10000</span>
+
+
+<span class="n">kind</span> <span class="o">=</span> <span class="s">&#39;Spearman&#39;</span>
+
+<span class="n">ftitle</span> <span class="o">=</span><span class="s">&quot;RegsAME_Bootstrap_MDustandMPAH.pdf&quot;</span>
+
+<span class="n">bootstrap_run</span><span class="p">(</span><span class="n">X1_data</span><span class="p">,</span> <span class="n">X2_data</span><span class="p">,</span> <span class="n">Y_data</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">kind</span><span class="p">,</span> 
+              <span class="n">X1_label</span> <span class="o">=</span> <span class="n">X1_label</span><span class="p">,</span> <span class="n">X2_label</span> <span class="o">=</span> <span class="n">X2_label</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="n">iterations</span><span class="p">,</span> <span class="n">ftitle</span><span class="o">=</span><span class="n">ftitle</span><span class="p">)</span>
 </pre></div>
 
 </div>
