@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[5]:
 
 import matplotlib
 #from IPython.external import mathjax; mathjax.install_mathjax()
@@ -27,7 +27,7 @@ get_ipython().magic(u'matplotlib inline')
 # 
 # The first thing we do is just re-load our progress so far (the photometry data) into memory.
 
-# In[2]:
+# In[18]:
 
 data_path = "../Data/"
 
@@ -66,60 +66,22 @@ f_uch     = np.genfromtxt(pcxv_AME,usecols = (19), dtype = 'float', delimiter=',
 ### AME Significance
 sig_ame = np.genfromtxt(pcxv_AME,usecols = (16), dtype = 'float', delimiter=',',skip_header=1)
 
-### Subsets separating "Highly Significant" AME from "Low/Non-significant" AME
-subset_hs = (
-    
-(sig_ame     > 5.000)   | 
-(f_uch       <= 0.25)    #& 
-
-)
-#print subset_hs
-
-subset_ls = (subset_hs == False)
-
 
 # ## Step 2: Load-in dust SED fitting results:
 # Now we do the same thing for the SED fitting. Just load the columns from Fred's "results.csv" file into python variables.
 # (In the future, it may be better to load these as Pandas DataFrames)
 
-# In[3]:
+# In[19]:
 
 ##############Model A: Fred's Model############
 ###############################################
 ### PAH fraction
-
-
-
-
-
-qpah    = np.genfromtxt('../Data/fred_results_82616.csv',usecols = (5), dtype = 'float', delimiter=',',skip_header=1)
-### Dust mass
-dmass   = np.exp(np.genfromtxt('../Data/fred_results_82616.csv',usecols = (1), dtype = 'float', delimiter=',',skip_header=1))
-### ISRF (relative to galactic average)
-U       = np.exp(np.genfromtxt('../Data/fred_results_82616.csv',usecols = (3), dtype = 'float', delimiter=',',skip_header=1))
-### PAH Mass
-pahmass = qpah*dmass
-
-
-import numpy.random as npr
-import pylab
-
-
 
 ### Potential fractioanl contribution from an UCHII region...
 #f_uch     = np.genfromtxt(pcxv_AME,usecols = (19), dtype = 'float', delimiter=',',skip_header=1)
 ### AME Significance
 sig_ame = np.genfromtxt(pcxv_AME,usecols = (16), dtype = 'float', delimiter=',',skip_header=1)
 
-### Subsets separating "Highly Significant" AME from "Low/Non-significant" AME
-subset_hs = (
-    
-    (sig_ame     > 5.000)   & 
-    (f_uch       <= 0.25)    #& 
-
-    )
-
-subset_ls = (subset_hs == False)
 
 ### Subsets for removing points that have a NaN sres_ame value
 
@@ -128,13 +90,11 @@ sres_nonan = np.isnan(sres_ame)==False
 
 # ### Load results intp Pandas dataframe, instead of individual variables:
 
-# In[10]:
+# In[21]:
 
 #sed_res_path = '/work1/users/aaronb/Databrary/fred_results_82616.csv'
 
-
-
-sed_res_path = '../Data/fred_results_83116.csv'
+sed_res_path = '../Data/fred_results_82616.csv'
 
 sed_res_data = pd.read_csv(sed_res_path, index_col=False)
 
@@ -144,24 +104,20 @@ sed_res_data.head()
 
 # # Plots of dust vs. AME using Galliano+ (2011) model:
 
-# In[6]:
+# In[22]:
 
 ## Force background color to be white:
 ### Note that seaborn plotting functions my override these settings.
-plt.rcParams['axes.facecolor']='white'
-plt.rcParams['figure.facecolor']='white'
-plt.rcParams['savefig.facecolor']='white'
+plt.rcParams['axes.facecolor']    ='white'
+plt.rcParams['figure.facecolor']  ='white'
+plt.rcParams['savefig.facecolor'] ='white'
 
 
-# In[21]:
+# In[65]:
 
 
 
-Y_ = sres_ame
-X_ = qpah*dmass
-
-
-def pltAMEvsDust(X_, Y_, subset_hs, subset_ls, xlabel, ylabel, ftitle):
+def pltAMEvsDust(X_, Y_, subset_hs, subset_ls, xlabel, ylabel,yerr,xerr=None,xmin=None, logy=True,logx=True, ftitle="RegPlot.pdf"):
     
     
     ## Force background color to be white:
@@ -174,17 +130,30 @@ def pltAMEvsDust(X_, Y_, subset_hs, subset_ls, xlabel, ylabel, ftitle):
     
     ax.set_ylabel(ylabel, fontsize=20)
     ax.set_xlabel(xlabel, fontsize=20)
-    ax.set_xscale('log')
-    ax.set_yscale('log')
-    ax.set_xlim((X_.min(), X_.max()))
     
-    ax = sns.regplot(x=X_[subset_hs], y= Y_[subset_hs], ci=68, fit_reg=True, robust=True, n_boot=1000,  label="High AME$\sigma$")
-    ax.errorbar(X_[subset_hs], Y_[subset_hs], yerr=sres_ame_err[subset_hs], fmt='.',ecolor='b')
-    ax = sns.regplot(x=X_[subset_ls], y= Y_[subset_ls], ci=68, fit_reg=True, robust=True, n_boot=1000,  label="Low AME$\sigma$")
-    ax.errorbar(X_[subset_ls], Y_[subset_ls], yerr=sres_ame_err[subset_ls], fmt='.',ecolor='g')
+    if xmin is None:
+        ax.set_xlim((X_.min(), X_.max()))
+    else: 
+        ax.set_xlim((xmin, X_.max()))
+        
+    
+    ax = sns.regplot(x=X_[subset_hs], y= Y_[subset_hs], ci=95, fit_reg=True, robust=True, n_boot=50,  label="High AME$\sigma$")
+    ax = sns.regplot(x=X_[subset_ls], y= Y_[subset_ls], ci=95, fit_reg=True, robust=True, n_boot=50,  label="Low AME$\sigma$")
+    if xerr is None:
+        ax.errorbar(X_[subset_hs], Y_[subset_hs], yerr=yerr[subset_hs], fmt='.',ecolor='b')
+        ax.errorbar(X_[subset_ls], Y_[subset_ls], yerr=yerr[subset_ls], fmt='.',ecolor='g')
+    else:
+        ax.errorbar(X_[subset_hs], Y_[subset_hs], yerr=yerr[subset_hs], xerr=xerr[subset_hs],fmt='.',ecolor='b')
+        ax.errorbar(X_[subset_ls], Y_[subset_ls], yerr=yerr[subset_ls], xerr=xerr[subset_ls],fmt='.',ecolor='g')
+        
+    if logx == True:
+        ax.set_xscale('log')
+
+    if logy == True:
+        ax.set_yscale('log')
 
     #ax.set_ylim([0,100])
-    ax.legend()
+    ax.legend(fontsize=16)
     
     fig.savefig("../Plots/"+ftitle)
     
@@ -199,34 +168,127 @@ subset_hs = (
 
 subset_ls = (subset_hs == False)
 
-Y_ = sres_ame
-ylabel = "Residual 28.4~GHz Flux"
+Y_   = sres_ame.copy()
+X_   = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values)       * sed_res_data['qPAH'].values
+dmass.copy()
+yerr = sres_ame_err.copy()
+xerr = np.exp(sed_res_data['sigma(ln(Md))'].values)*X_*sed_res_data['qPAH'].values
 
-X_ = qpah*dmass
+ylabel = "Residual 28.4~GHz Flux"
 xlabel = "PAH Mass [kg/m2/sr]"
 
-pltAMEvsDust(X_, Y_, subset_hs, subset_ls, xlabel, ylabel, ftitle="RegsAMEvsPAHMass.pdf")
+pltAMEvsDust(X_,
+             Y_,
+             subset_hs,
+             subset_ls,
+             xlabel,
+             ylabel,
+             yerr,
+             xerr=xerr,
+             logx=True,
+             ftitle="RegsAMEvsPAHMass.pdf")
 
 
-# In[20]:
+# In[63]:
 
-X_ = dmass
+X_ = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values)
+Y_   = sres_ame.copy()
 xlabel = "Dust Mass [kg/m2/sr]"
 
-pltAMEvsDust(X_, Y_, subset_hs, subset_ls, xlabel, ylabel, ftitle="RegsAMEvsDustMass.pdf")
+xerr = sed_res_data['sigma(ln(Md))']*X_
+yerr = sres_ame_err.copy()
+pltAMEvsDust(X_, 
+             Y_, 
+             subset_hs, 
+             subset_ls, 
+             xlabel, 
+             ylabel, 
+             yerr,
+             xerr=xerr,
+             ftitle="RegsAMEvsDustMass.pdf")
 
 
-# In[13]:
+# In[59]:
 
-X_ = qpah
+X_ = sed_res_data['qPAH'].values
+Y_   = sres_ame.copy()
+xlabel = "PAH Fraction"
+xerr = sed_res_data['sigma(qPAH)'].values
+yerr = sres_ame_err.copy()
+
+pltAMEvsDust(X_, 
+             Y_, 
+             subset_hs, 
+             subset_ls, 
+             xlabel, 
+             ylabel, 
+             yerr,
+             xmin = 0.02, 
+             ftitle="RegsAMEvsqPAH.pdf")
+
+
+# In[37]:
+
+sns.regplot(x=np.log(X_), y= np.log(Y_), logistic=True, n_boot=50)
+
+
+# In[66]:
+
+Y_ = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values)
+ylabel = "Dust Mass [kg/m2/sr]"
+
+X_ = sed_res_data['qPAH'].values
 xlabel = "PAH Fraction"
 
-pltAMEvsDust(X_, Y_, subset_hs, subset_ls, xlabel, ylabel)
+yerr = sed_res_data['sigma(ln(Md))'].values*Y_
+xerr = sed_res_data['sigma(qPAH)'].values
+
+pltAMEvsDust(
+    X_, 
+    Y_, 
+    subset_hs, 
+    subset_ls, 
+    xlabel, 
+    ylabel,
+    yerr=yerr,
+    xerr=xerr,
+    logy=True, 
+    logx=False,
+    xmin=0.01,
+    ftitle="RegsDustMassvsqPAH.pdf")
+
+
+# In[67]:
+
+Y_     = np.exp(sed_res_data['ln(<U> [Habings])'].values)
+ylabel = 'U [Habings]'
+
+X_     = sed_res_data['qPAH'].values
+xlabel = "PAH Fraction"
+xmin = 0.01
+
+# yerr_exp = sed_res_data['sigma(ln(<U>))'].values
+# yerr_rel = yerr_exp / sed_res_data['ln(<U> [Habings])'].values
+# yerr_lin = np.exp(sed_res_data['ln(<U> [Habings])'].values)*yerr_rel
+yerr = np.exp(sed_res_data['sigma(ln(<U>))'].values)
+
+pltAMEvsDust(X_, 
+             Y_, 
+             subset_hs, 
+             subset_ls, 
+             xlabel, 
+             ylabel,
+             yerr=yerr,
+             xerr=xerr,
+             xmin=xmin,
+             logy=True, 
+             logx=False, 
+             ftitle="RegsUvsqPAH.pdf")
 
 
 # ## Experimenting with a boostrap test (Per Doi-san's advice')
 
-# In[44]:
+# In[63]:
 
 def bootstrap(data_x, 
               data_y, 
@@ -249,7 +311,7 @@ def bootstrap(data_x,
             idx = npr.randint(0, n, (num_subsamples))
             samples_x = data_x[idx]
             samples_y = data_y[idx]
-            stat_r, stat_p = scipy.stats.spearmanr(samples_x,samples_y)
+            stat_r, stat_p = scipy.stats.spearmanr(samples_x,samples_y, axis=0, nan_policy='omit' )
             corr_coeff_array[i] = stat_r
     
     elif kind == 'Pearson':
@@ -258,7 +320,7 @@ def bootstrap(data_x,
             idx = npr.randint(0, n, (num_subsamples))
             samples_x = data_x[idx]
             samples_y = data_y[idx]
-            stat_r, stat_p = scipy.stats.pearsonr(samples_x,samples_y)
+            stat_r, stat_p = scipy.stats.pearsonr(samples_x,samples_y,axis=0)
             corr_coeff_array[i] = stat_r
     
     corr_coeff_array[np.isnan(corr_coeff_array)==False]
@@ -284,9 +346,9 @@ def bootstrap_run(X1_data,
     plt.rcParams['savefig.facecolor']='white'
     
     
-    corr_array_X1 = bootstrap(X1_data,Y_data, iterations, len(X1_data),kind=kind )
+    corr_array_X1 = bootstrap(X1_data,Y_data, iterations, len(X1_data),kind=kind)
 
-    corr_array_X2 = bootstrap(X2_data,Y_data, iterations, len(X2_data), kind=kind )
+    corr_array_X2 = bootstrap(X2_data,Y_data, iterations, len(X2_data), kind=kind)
     
     X1 = corr_array_X1
     X2 = corr_array_X2
@@ -339,9 +401,80 @@ def bootstrap_run(X1_data,
     
 
 
+# In[71]:
+
+print subset_ls[subset_ls==False]
+
+
+# In[74]:
+
+Y_data = sres_ame
+
+X1_data = np.exp(sed_res_data['ln(Md [kg/m2/sr])'])
+X2_data = X1_data*sed_res_data['qPAH'].values
+
+Y_data = Y_data[subset_hs==True]
+X1_data = X1_data[subset_hs==True]
+X2_data = X2_data[subset_hs==True]
+
+
+    
+X1_label = "Dust Lum. vs. AME \n  $S$ = "
+X2_label = "PAH Lum. vs. AME \n   $S$ = "
+
+ftitle ="RegsAME_Bootstrap_LDustandLPAH.pdf"
+
+iterations = 1000
+
+kind = 'Spearman'
+bootstrap_run(
+    X1_data, 
+    X2_data, 
+    Y_data, 
+    kind=kind, 
+    X1_label = X1_label, 
+    X2_label = X2_label, 
+    iterations=iterations, 
+    ftitle=ftitle)
+
+
+
+# In[73]:
+
+Y_data = sres_ame
+
+X1_data = np.exp(sed_res_data['ln(<U> [Habings])'].values)*np.exp(sed_res_data['ln(Md [kg/m2/sr])'])
+X2_data = X1_data*sed_res_data['qPAH'].values
+
+Y_data = Y_data[subset_ls==True]
+X1_data = X1_data[subset_ls==True]
+X2_data = X2_data[subset_ls==True]
+
+
+    
+X1_label = "Dust Lum. vs. AME \n  $S$ = "
+X2_label = "PAH Lum. vs. AME \n   $S$ = "
+
+ftitle ="RegsAME_Bootstrap_LDustandLPAH.pdf"
+
+iterations = 1000
+
+kind = 'Spearman'
+bootstrap_run(
+    X1_data, 
+    X2_data, 
+    Y_data, 
+    kind=kind, 
+    X1_label = X1_label, 
+    X2_label = X2_label, 
+    iterations=iterations, 
+    ftitle=ftitle)
+
+
+
 # ## Calculate bootstrap results using PAH Luminosity ( not PAH Mass)
 
-# In[45]:
+# In[58]:
 
 Y_data = sres_ame
 
@@ -368,7 +501,7 @@ bootstrap_run(
 
 
 
-# In[46]:
+# In[ ]:
 
 Y_data = sres_ame
 X1_data = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values) 
