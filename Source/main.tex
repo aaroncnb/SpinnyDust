@@ -237,9 +237,9 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 
       \begin{figure*}
         \label{fig:AMEvsDust_allsky_allbands}
-        \includegraphics[width=145mm]{../Plots/AMEvsDust_allsky_allbands.pdf}
+        \includegraphics[width=125mm]{../Plots/AMEvsDust_allsky_allbands.pdf}
         \centering
-        \caption{ALL-SKY plots of each of the 19 infrared bands' photometry results against those of the PR2 map. Similar to plots from the previous section, however these are produced on an all-sky basis. Cyan points represent pixels within 5 degrees of the galactic plane. Magenta points are pixels over 5 degrees from the galactic plane. Pixels within 5 degrees of the ecliptic plane are not plotted. Due to the large number of pixels plotted, a low alpha value is used (0.02). This helps to visualize the bulk of the pixels, but also means that portions of the plot with low point-density may seem blank on the page. Figure \ref{fig:AME_IR_crosscorr_allbandsg} shows the cross-correlation test results.}
+        \caption{ALL-SKY 'hexbin' density plots of each of the 18 infrared bands' photometry results against those of the PR2 map. Pixels within 5 degrees of the ecliptic plane are excluded, to minimize the effect of Zodaiacal light. (Note that such a mask excludes the $\rho$ Ophiuchus cloud.) Darker values indicate a higher density of pixels falling within a 2D bin. All plots are on the same logarithmic axes. 'A' indicates AKARI; 'D', DIRBE; 'I', IRAS, and 'P' Planck. The number after the letter indicates the band central nominal wavelength in microns (or frequency in GHz, in the case of the Planck bands.) The AME data comes from the Planck PR2 AME map.}
       \end{figure*}
 
 
@@ -275,7 +275,7 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 
       \begin{figure*}
         \label{fig:MWCompsbyGLOTandGLON}
-        \includegraphics[width=80mm]{../Plots/../Plots/CommanderByGLON_median.pdf}
+        \includegraphics[width=80mm]{../Plots/CommanderByGLON_median.pdf}
         \includegraphics[width=80mm]{../Plots/CommanderByGLAT_median.pdf}
         \includegraphics[width=80mm]{../Plots/CommanderByGLON_mean.pdf}
         \includegraphics[width=80mm]{../Plots/CommanderByGLAT_mean.pdf}
@@ -299,7 +299,7 @@ The analysis we have done so far is done from 3 perspectives, but with all 3 rel
 
 \subsection{Analysis of Planck Collaboration AME Candidate Regions}
 
-     Previously, \cite{planckXV} (hereafter, PCXV) identified and analyzed a list of regions where the AME appeared to stand out, relative to estimates of known microwave foregrounds. The full set includes 98 regions. While the majority of these regions showed only $$\sigma{} < 5$$ AME or a high potential contribution from free-free emission, 27 showed AME at $$\sigma{} > 5$$ and unlikely confusion with ultra-compact HII regions. We re-examined the full set of 98 regions, employing data from 19 photometric bands, from the AKARI, Planck, IRAS, and WISE data sets. The major goals are 1) To see how the AME to IR comparison looks with the AKARI data, and 2) To apply a dust SED fitting analysis to these regions. While tackling these goals, we attempted to keep our analysis is comparable as possible to the PCXV analysis by following their circular aperture photometry scheme. The process can be summarized as follows:
+     Previously, \cite{planckXV} (hereafter, PCXV) identified and analyzed a list of regions where the AME appeared to stand out, relative to estimates of known microwave foregrounds. The full set includes 98 regions. While the majority of these regions showed only $\sigma{} < 5$ AME or a high potential contribution from free-free emission, 27 showed AME at $\sigma{} > 5$ and unlikely confusion with ultra-compact HII regions. We re-examined the full set of 98 regions, employing data from 19 photometric bands, from the AKARI, Planck, IRAS, and WISE data sets. The major goals are 1) To see how the AME to IR comparison looks with the AKARI data, and 2) To apply a dust SED fitting analysis to these regions. While tackling these goals, we attempted to keep our analysis is comparable as possible to the PCXV analysis by following their circular aperture photometry scheme. The process can be summarized as follows:
 
      1) For each region, the total flux within a 1 degree radius circular aperture is summed.
 
