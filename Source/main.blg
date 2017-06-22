@@ -3,50 +3,47 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: apj.bst
 Database file #1: reference.bib
-Warning--I didn't find a database entry for "henlsey17"
 Warning--I didn't find a database entry for "ali-haimoud13"
-Warning--I didn't find a database entry for "compienge11"
-Warning--I didn't find a database entry for "compiegne11"
 Warning--empty publisher in draine11
-You've used 60 entries,
+You've used 61 entries,
             2988 wiz_defined-function locations,
-            978 strings with 26647 characters,
-and the built_in function-call counts, 34505 in all, are:
-= -- 2157
-> -- 3682
+            979 strings with 26871 characters,
+and the built_in function-call counts, 34955 in all, are:
+= -- 2191
+> -- 3713
 < -- 24
-+ -- 1233
-- -- 1164
-* -- 3586
-:= -- 6876
-add.period$ -- 60
-call.type$ -- 60
-change.case$ -- 374
-chr.to.int$ -- 53
-cite$ -- 61
-duplicate$ -- 1096
-empty$ -- 1595
-format.name$ -- 1375
-if$ -- 6421
++ -- 1243
+- -- 1173
+* -- 3631
+:= -- 6961
+add.period$ -- 61
+call.type$ -- 61
+change.case$ -- 379
+chr.to.int$ -- 54
+cite$ -- 62
+duplicate$ -- 1114
+empty$ -- 1623
+format.name$ -- 1388
+if$ -- 6510
 int.to.chr$ -- 8
 int.to.str$ -- 1
-missing$ -- 57
-newline$ -- 184
-num.names$ -- 240
-pop$ -- 370
+missing$ -- 58
+newline$ -- 187
+num.names$ -- 244
+pop$ -- 374
 preamble$ -- 1
-purify$ -- 373
+purify$ -- 378
 quote$ -- 0
-skip$ -- 914
+skip$ -- 931
 stack$ -- 0
-substring$ -- 1190
+substring$ -- 1214
 swap$ -- 12
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 537
+type$ -- 546
 warning$ -- 1
-while$ -- 197
+while$ -- 199
 width$ -- 0
-write$ -- 603
-(There were 5 warnings)
+write$ -- 613
+(There were 2 warnings)

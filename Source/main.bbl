@@ -1,4 +1,4 @@
-\begin{thebibliography}{60}
+\begin{thebibliography}{61}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Ali-Haimoud}(2010)}]{ali-haimoud10}
@@ -22,6 +22,11 @@
   {Egret}, {Genova}, {Louys}, {Ochsenbein}, {Wenger}, \&
   {Bartlett}}]{bonnarel00}
 {Bonnarel}, F., {et~al.} 2000, \aaps, 143, 33
+
+\bibitem[{{Compi{\`e}gne} {et~al.}(2011){Compi{\`e}gne}, {Verstraete}, {Jones},
+  {Bernard}, {Boulanger}, {Flagey}, {Le Bourlot}, {Paradis}, \&
+  {Ysard}}]{dustem11}
+{Compi{\`e}gne}, M., {et~al.} 2011, \aap, 525, A103
 
 \bibitem[{{Dale} {et~al.}(2001){Dale}, {Helou}, {Contursi}, {Silbermann}, \&
   {Kolhatkar}}]{dale01}
