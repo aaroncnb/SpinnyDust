@@ -118,6 +118,9 @@ INPUT ../Plots/all_bands_corr_matrix_wAME_spearman.pdf
 INPUT /home/aaronb/Projectbrary/latex/CosmicDust/Source/../Plots/AMEvsDust_allsky_allbands.pdf
 INPUT ../Plots/AMEvsDust_allsky_allbands.pdf
 INPUT ../Plots/AMEvsDust_allsky_allbands.pdf
+INPUT /home/aaronb/Projectbrary/latex/CosmicDust/Source/../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf
+INPUT ../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf
+INPUT ../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf
 INPUT /home/aaronb/Projectbrary/latex/CosmicDust/Source/../Plots/PlanckModBBvsAMEandA9.pdf
 INPUT ../Plots/PlanckModBBvsAMEandA9.pdf
 INPUT ../Plots/PlanckModBBvsAMEandA9.pdf

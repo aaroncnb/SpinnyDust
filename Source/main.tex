@@ -232,6 +232,13 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
         \caption{ALL-SKY 'hexbin' density plots of each of the 18 infrared bands' photometry results against those of the PR2 map. Pixels within 5$^{\circ}$ of the ecliptic plane are excluded, to minimize the effect of Zodaiacal light. (Note that such a mask excludes the $\rho$ Ophiuchus cloud.) Darker values indicate a higher density of pixels falling within a 2D bin. All plots are on the same logarithmic axes. 'A' indicates AKARI; 'D', DIRBE; 'I', IRAS, and 'P' Planck. The number after the letter indicates the band central nominal wavelength in microns (or frequency in GHz, in the case of the Planck bands.) The AME data comes from the Planck PR2 AME map.}
       \end{figure*}
 
+      \begin{figure*}
+        \label{fig:AMEtoRvsDusttoR_allsky_allbands}
+        \includegraphics[width=150mm]{../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf}
+        \centering
+        \caption{[...]}
+      \end{figure*}
+
 
       \begin{figure*}
         \label{fig:PlanckModBBvsAMEandA9}
@@ -394,7 +401,7 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
 
       \subsection{AME:$T$, $G_{0}$}
 
-        According to spinning dust theory outlined in \cite{draine98a} and in subsequent works by \cite{ysard10a}, the AME profile and intensity will depend in part on the ISRF- but as is well-stated in \cite{hensley17a}, exactly how the ISRF will affect the AME SED is a more complicated question. Absorbed starlight photons may be able to rotationally excite the carriers, but if an enhanced ISRF leads to increased dust heating, then the increased IR emission can rotationally de-excite the carriers. However the ISRF affects not only the dust temperature but ionization of the carriers. In our all-sky investigation, we find that the AME is anti-correlated with temperature with $S = -0.56$ on average. However we also find that this value varies between $S = -0.90$ and $0$ along galactic meridians; between $S = 0$ and $-0.6$ along the parellels (Fig. \ref{fig:PlanckModBBvsAMEandA9}). This may be a result of the modified blackbody model applied by the Planck Coll., in which $\beta$ and $T$ are both free parameters.  \cite{hensley16} looked at the $AME$/$R$ ratio vs. $T$ and found only a slight anti-correlation of $P = -0.06$. 
+        According to spinning dust theory outlined in \cite{draine98a} and in subsequent works by \cite{ysard10a}, the AME profile and intensity will depend in part on the ISRF- but as is well-stated in \cite{hensley17a}, exactly how the ISRF will affect the AME SED is a more complicated question. Absorbed starlight photons may be able to rotationally excite the carriers, but if an enhanced ISRF leads to increased dust heating, then the increased IR emission can rotationally de-excite the carriers. However the ISRF affects not only the dust temperature but ionization of the carriers. In our all-sky investigation, we find that the AME is anti-correlated with temperature with $S = -0.56$ on average. However we also find that this value varies between $S = -0.90$ and $0$ along galactic meridians; between $S = 0$ and $-0.6$ along the parellels (Fig. \ref{fig:PlanckModBBvsAMEandA9}). This may be a result of the modified blackbody model applied by the Planck Coll., in which $\beta$ and $T$ are both free parameters.  \cite{hensley16} looked at the $AME$/$R$ ratio vs. $T$ and found only a slight anti-correlation of $P = -0.06$.
 
 
       \subsection{Microwave foreground component separation}
@@ -403,7 +410,7 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
 
       \subsection{Summary}
 
-        From these results, we cannot confirm or rule out a spinning-PAH hypothesis on an all-sky, 1$^{\circ}$ scale. While nanosilicates or magentic dipole emission from dust may be plausible contributors to the AME, as shown in \cite{hoang16a, hensley17a}, we do not find (at least at resolutions considered here) that PAHs can be ruled-out as a carrier. While it is true that the FIR in our study has a tighter correlation with AME than PAH-related bands, the correlation with PAH emission remains. Either this is a coincidental correlation- PAHs and AME are both correlated with the ``actual'' carrier/s of AME, MIR phometric bands are not as good of a tracer of the actual PAH mass as we believed, or perhaps that PAHs are indeed contributing to the AME but that they are just one of multiple sources of the AME.
+        From these results, we cannot confirm or rule out a spinning-PAH hypothesis on an all-sky, 1$^{\circ}$ scale. While nanosilicates or magentic dipole emission from dust may be plausible contributors to the AME, as shown in \cite{hoang16a, hensley17a}, we do not find (at least at resolutions considered here) that PAHs can be ruled-out as a carrier. While it is true that the FIR in our study has a tighter correlation with AME than PAH-related bands, the correlation with PAH emission remains. This is true both when considering AME intensity to Either this is a coincidental correlation- PAHs and AME are both correlated with the ``actual'' carrier/s of AME, MIR phometric bands are not as good of a tracer of the actual PAH mass as we believed, or perhaps that PAHs are indeed contributing to the AME but that they are just one of multiple sources of the AME.
 
          If it can be shown that IR emission from non-PAH small dust particles, such as nanosilicates strongly correlates with the AME, another very interesting question would need to be addressed: why does PAH emission \textit{not} show a strong correlation? Do PAHs not have the range of dipole moments needed to produce emission in the 10 - 90 GHz range? Because, as is described in \cite{draine98a} and again in \cite{hensley17b}, such small particles should be spinning at the frequencies consistent with AME. Thus if we believe a particular class of small dust particles to exist, PAHs, nanosilicates, or otherwise- then they must be producing microwave emission, unless they do not have a permanent electric dipole.
 
