@@ -193,7 +193,7 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
 
 \subsection{AME Data}
 
-     We utilize the COMMANDER-Ruler AME component separation map, from the Planck Collaboration's Public Data Release 2 (hereafter, PR2). Details of the foreground contribution estimates are given in \cite{planckXII}. The PR2 AME map was created primarily for the purpose of isolating the CMB from galactic microwave emission. Thus we do not consider it to be a definitive data set for the absolute anomalous flux in a given pixel, but rather a rough look at the whole-sky relative variation of the AME. It is not to be taken as a perfect isolation of the AME, however it is the only all-sky estimate of the AME which incorporates the Planck data. We also quote AME estimates for 98 circular apertures, found in \cite{planckXV}, that were made using a more careful region-by-region component separation method at 1$^{\circ}$ resolution.
+     We utilize the COMMANDER-Ruler AME component separation map, from the Planck Collaboration's Public Data Release 2 (hereafter, PR2). Details of the foreground contribution estimates are given in \cite{planckXII}. The PR2 AME map was created primarily for the purpose of isolating the CMB from galactic microwave emission. Thus we do not consider it to be a definitive data set for the absolute anomalous flux in a given pixel, but rather a rough look at the whole-sky relative variation of the AME. We also quote AME estimates for 98 circular apertures, found in \cite{planckXV}, that were made using a more careful region-by-region component separation method at 1$^{\circ}$ resolution.
 
 \subsection{All-sky Data Processing}
 
@@ -203,13 +203,13 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
 \section{Analysis}
 \label{sec:analysis}
 
-    We inspect the IR abd AME data in 3 approaches, relying on HEALPix maps at ~1$^{\circ}$ angular resolution. We start with an all-sky AME to IR comparison, looking for global patterns among all pixels (except those within 10$^{\circ}$ of the ecliptic plane.) 2) Next we show a slightly more regionalized comparison, looking at the set of AME-prominent galactic clouds identified by the \cite{planckXV}. As much as possible, we maintain comparability between their IRAS-Planck based result, and our result which adds-in AKARI data and dust SED fitting. 3) Lastly, we highlight the $\lambda$~Orionis molecular ring \citep{maddalena86,maddalena87}, a particular AME-dominated region with resolvable structure even at ~1$^{\circ}$ angular resolution.
+    We inspect the IR abd AME data in 3 approaches, relying on HEALPix maps at ~1$^{\circ}$ angular resolution. We start with an all-sky AME to IR comparison, looking for global patterns among all pixels (except those within 10$^{\circ}$ of the ecliptic plane.) 2) Next we show a more regionalized comparison, looking at the set of AME-prominent galactic clouds identified by the \cite{planckXV}. As much as possible, we maintain comparability between their IRAS-Planck based result, and our result which adds-in AKARI data and dust SED fitting. 3) Lastly, we highlight the $\lambda$~Orionis molecular ring \citep{maddalena86,maddalena87}, a particular AME-dominated region with resolvable structure even at ~1$^{\circ}$ angular resolution.
 
 \subsection{All-sky Pixel Domain Analysis}
 
-	In order to look more closely at the variations between the individual bands' maps, we include a pixel-by-pixel analysis. Figure \ref{fig:AMEvsDust_allsky_allbands} shows the result of such a comparison, for each of the 18 bands sampled. The AME data comes from PR2, produced by the COMMANDER component separation method.
+	In order to look more closely at the variations between the individual bands' maps, we include a pixel-by-pixel analysis. Figure \ref{fig:AMEvsDust_allsky_allbands} shows the result of such a comparison, for each of the 18 bands sampled. The AME data comes from the PR2 AME map.
 
-    To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane, where the Zodi-residuals can be a problem (especially in the MIR.)
+    To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane, where the Zodi-residuals can be a problematic (especially in the MIR.)
 
      Figure \ref{fig:AME_IR_crosscorr_allbandsg} visualizes the cross-correlation matrix for each of the IR bands. The AME does not show a strong correlation with other bands at $|l|>10$. At $|l|<10$, the FIR bands show stronger correlation. The PAH-tracing bands show a stronger correlation than bands at 18 to 60~$\mu$m, but weaker than AME vs. the FIR bands.
 
@@ -220,7 +220,7 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
         \label{fig:AME_IR_crosscorr_allbandsg}
         \includegraphics[width=185mm]{../Plots/all_bands_corr_matrix_wAME_spearman.pdf}
         \centering
-        \caption{ALL-SKY cross-correlation matrix for the 18 infrared bands sampled, and the AME map. THe color-scale indicates the Spearman rank ($S$). Results are based on the full sky (excluding pixels within 10$^{\circ}$ of the ecliptic plane) cross correlation of each band vs. every other band and the AME map. }
+        \caption{ALL-SKY cross-correlation matrix for the 18 infrared bands sampled, and the AME map. THe color-scale indicates the Spearman rank ($S$). Results are based on the full sky (excluding pixels within 10$^{\circ}$ of the ecliptic plane).}
       \end{figure*}
 
 
@@ -229,14 +229,14 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
         \label{fig:AMEvsDust_allsky_allbands}
         \includegraphics[width=150mm]{../Plots/AMEvsDust_allsky_allbands.pdf}
         \centering
-        \caption{ALL-SKY 'hexbin' density plots of each of the 18 infrared bands' photometry results against those of the PR2 map. Pixels within 5$^{\circ}$ of the ecliptic plane are excluded, to minimize the effect of Zodaiacal light. (Note that such a mask excludes the $\rho$ Ophiuchus cloud.) Darker values indicate a higher density of pixels falling within a 2D bin. All plots are on the same logarithmic axes. 'A' indicates AKARI; 'D', DIRBE; 'I', IRAS, and 'P' Planck. The number after the letter indicates the band central nominal wavelength in microns (or frequency in GHz, in the case of the Planck bands.) The AME data comes from the Planck PR2 AME map.}
+        \caption{ALL-SKY 'hexbin' density plots of each of the 18 infrared bands' photometry results against those of the PR2 AME map. Pixels within 10$^{\circ}$ of the ecliptic plane are excluded. Darker values indicate higher pixel densities. Plots share logarithmic. 'A' indicates AKARI; 'D', DIRBE; 'I', IRAS, and 'P' Planck. The number after each letter indicates the band central nominal wavelength in microns (or frequency in GHz, in the case of the Planck bands.) }
       \end{figure*}
 
       \begin{figure*}
         \label{fig:AMEtoRvsDusttoR_allsky_allbands}
         \includegraphics[width=150mm]{../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf}
         \centering
-        \caption{[...]}
+        \caption{Similar comparison to Fig. \ref{fig:AMEvsDust_allsky_allbands}, with both the IR and the AME intensities scaled by the PR2 dust radiance ($R$) for each pixel. }
       \end{figure*}
 
 
