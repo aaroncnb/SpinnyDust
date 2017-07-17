@@ -215,6 +215,8 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
 
   To understand how these trends may vary across the sky, we repeat the correlation analysis along 1$^{\circ}$ width latitude strips. For each degree of $b$, we cross correlate the Planck modified blackbody fitting results vs. the AME and the AKARI 9~$\mu$m intensity. (This comes with the geometrical caveat that the higher latitude bins have fewer samples.) The results of this comparison are shown in \ref{fig:PlanckModBBvsAMEandA9_bins}. Fig. \ref{fig:PlanckModBBvsAMEandA9_bins}) shows the result with longitude strips. The $l$ based comparison produces a consistent ranking of the correlation strengths all longitudes. There is an unexplained variation between $b = 200$ and 250.
 
+  Finally, we produce an all-sky correlation map. From the NSIDE 256 input maps of each of dust temperature $T$, radiance $R$, and emissivity index $\Beta$, and $I_{9~\mu{}}$, we produce NSIDE 16 maps of $S$ for correlation strength vs. AME. These maps are shown in Fig. \ref{fig:Spearman_Map_nside16_AMEtoMBBandA9}.
+
 
       \begin{figure*}
         \label{fig:AME_IR_crosscorr_allbandsg}
@@ -280,6 +282,13 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
         \caption{Top: Median microwave foreground emission for components produced by the Planck Collaboration for 1$^{\circ}$ GLON bins (Left), and for GLAT bins (Right). Bottom: The same analysis as Top, but using the mean values. }
       \end{figure*}
 
+
+      \begin{figure*}
+        \label{fig:Spearman_Map_nside16_AMEtoMBBandA9}
+        \includegraphics[width=160mm]{../Plots/Spearman_Map_nside16_AMEtoMBBandA9.pdf}
+        \centering
+        \caption{Spatial map of Spearman correlation coefficients between the AME and dust temperature $T$, radiance $R$, and emissivity index $\Beta$, and $I_{9~\mu{}m}.$ $S$ is calculated for all NSIDE 256 pixels within each NSIDE 8 pixel-sized bin.  }
+      \end{figure*}
 
 
 
