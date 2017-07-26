@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.12)  17 JUL 2017 11:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.12)  26 JUL 2017 09:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -117,18 +117,18 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 ) (/home/aaronb/Projectbrary/CosmicDust/Source/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count98
@@ -179,24 +179,24 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 AAS 2-column preprint substyle, v5.2 <12 Dec 2003>.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 89.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 90.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 89.
+LaTeX Font Info:    Try loading font information for U+msa on input line 90.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 89.
+LaTeX Font Info:    Try loading font information for U+msb on input line 90.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 1852) in paragraph at lines 100--101
+Underfull \hbox (badness 1852) in paragraph at lines 101--102
 \OT1/cmr/m/n/10 ob-ser-va-tions, the anoma-lous mi-crowave emis-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--106
+Underfull \hbox (badness 10000) in paragraph at lines 103--107
 
  []
 
@@ -211,49 +211,49 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-Package natbib Warning: Citation `ali-haimoud13' on page 2 undefined on input line 117.
+Package natbib Warning: Citation `ali-haimoud13' on page 2 undefined on input line 118.
 
 [2]
-Underfull \hbox (badness 1394) in paragraph at lines 123--124
+Underfull \hbox (badness 1394) in paragraph at lines 124--125
 \OT1/cmr/m/n/10 the AME-prominent Perseus Molec-u-lar Cloud
  []
 
 
-LaTeX Warning: Reference `fig:inband_ionfrac_bar' on page 3 undefined on input line 127.
+LaTeX Warning: Reference `fig:inband_ionfrac_bar' on page 3 undefined on input line 128.
 
 
-LaTeX Warning: Reference `fig:inband_ionfrac_bar' on page 3 undefined on input line 141.
+LaTeX Warning: Reference `fig:inband_ionfrac_bar' on page 3 undefined on input line 142.
 
 [3] <../Plots/RelSpectralResponse_MIR.png, id=23, 379.4175pt x 266.9975pt>
 File: ../Plots/RelSpectralResponse_MIR.png Graphic file (type png)
  <use ../Plots/RelSpectralResponse_MIR.png>
-Package pdftex.def Info: ../Plots/RelSpectralResponse_MIR.png used on input line 146.
+Package pdftex.def Info: ../Plots/RelSpectralResponse_MIR.png used on input line 147.
 (pdftex.def)             Requested size: 426.79134pt x 300.33884pt.
 
 
-LaTeX Warning: Reference `fig:inband_ionfrac_bar' on page 4 undefined on input line 147.
+LaTeX Warning: Reference `fig:inband_ionfrac_bar' on page 4 undefined on input line 148.
 
 <../Plots/band-ratio-multiple.pdf, id=25, 433.62pt x 289.08pt>
 File: ../Plots/band-ratio-multiple.pdf Graphic file (type pdf)
  <use ../Plots/band-ratio-multiple.pdf>
-Package pdftex.def Info: ../Plots/band-ratio-multiple.pdf used on input line 154.
+Package pdftex.def Info: ../Plots/band-ratio-multiple.pdf used on input line 155.
 (pdftex.def)             Requested size: 426.79134pt x 284.54036pt.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 168.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 169.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 168.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 169.
 
-Underfull \hbox (badness 1389) in paragraph at lines 196--197
+Underfull \hbox (badness 1389) in paragraph at lines 197--198
 []\OT1/cmr/m/n/10 We uti-lize the COMMANDER-Ruler AME
  []
 
 [4] [5 <../Plots/RelSpectralResponse_MIR.png>] [6 <../Plots/band-ratio-multiple.pdf>]
-/home/aaronb/Projectbrary/CosmicDust/Source/main.tex:218: Undefined control sequence.
+/home/aaronb/Projectbrary/CosmicDust/Source/main.tex:219: Undefined control sequence.
 <recently read> \Beta 
                       
-l.218 ...radiance $R$, and emissivity index $\Beta
+l.219 ...radiance $R$, and emissivity index $\Beta
                                                   $, and $I_{9~\mu{}}$, we p...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -264,99 +264,99 @@ and I'll forget about whatever was undefined.
 <../Plots/all_bands_corr_matrix_wAME_spearman.pdf, id=72, 1043.38562pt x 353.40154pt>
 File: ../Plots/all_bands_corr_matrix_wAME_spearman.pdf Graphic file (type pdf)
  <use ../Plots/all_bands_corr_matrix_wAME_spearman.pdf>
-Package pdftex.def Info: ../Plots/all_bands_corr_matrix_wAME_spearman.pdf used on input line 223.
+Package pdftex.def Info: ../Plots/all_bands_corr_matrix_wAME_spearman.pdf used on input line 224.
 (pdftex.def)             Requested size: 526.37598pt x 178.2857pt.
 
-Overfull \hbox (56.62099pt too wide) in paragraph at lines 223--225
+Overfull \hbox (56.62099pt too wide) in paragraph at lines 224--226
  [][] 
  []
 
 <../Plots/AMEvsDust_allsky_allbands.pdf, id=73, 405.21388pt x 250.96693pt>
 File: ../Plots/AMEvsDust_allsky_allbands.pdf Graphic file (type pdf)
  <use ../Plots/AMEvsDust_allsky_allbands.pdf>
-Package pdftex.def Info: ../Plots/AMEvsDust_allsky_allbands.pdf used on input line 232.
+Package pdftex.def Info: ../Plots/AMEvsDust_allsky_allbands.pdf used on input line 233.
 (pdftex.def)             Requested size: 426.79134pt x 264.34639pt.
  <../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf, id=74, 412.25581pt x 260.4878pt>
 File: ../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf Graphic file (type pdf)
  <use ../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf>
-Package pdftex.def Info: ../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf used on input line 239.
+Package pdftex.def Info: ../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf used on input line 240.
 (pdftex.def)             Requested size: 426.79134pt x 269.67271pt.
  <../Plots/PlanckModBBvsAMEandA9.pdf, id=75, 370.00046pt x 349.4336pt>
 File: ../Plots/PlanckModBBvsAMEandA9.pdf Graphic file (type pdf)
  <use ../Plots/PlanckModBBvsAMEandA9.pdf>
-Package pdftex.def Info: ../Plots/PlanckModBBvsAMEandA9.pdf used on input line 247.
+Package pdftex.def Info: ../Plots/PlanckModBBvsAMEandA9.pdf used on input line 248.
 (pdftex.def)             Requested size: 241.84842pt x 228.41412pt.
  <../Plots/PlanckModBBvsAMEandA9_byGLAT.pdf, id=76, 401.44983pt x 274.1925pt>
 File: ../Plots/PlanckModBBvsAMEandA9_byGLAT.pdf Graphic file (type pdf)
  <use ../Plots/PlanckModBBvsAMEandA9_byGLAT.pdf>
-Package pdftex.def Info: ../Plots/PlanckModBBvsAMEandA9_byGLAT.pdf used on input line 254.
+Package pdftex.def Info: ../Plots/PlanckModBBvsAMEandA9_byGLAT.pdf used on input line 255.
 (pdftex.def)             Requested size: 227.62204pt x 155.4713pt.
  <../Plots/PlanckModBBvsAMEandA9_GLAT_hist.pdf, id=77, 368.70248pt x 273.18875pt>
 File: ../Plots/PlanckModBBvsAMEandA9_GLAT_hist.pdf Graphic file (type pdf)
  <use ../Plots/PlanckModBBvsAMEandA9_GLAT_hist.pdf>
-Package pdftex.def Info: ../Plots/PlanckModBBvsAMEandA9_GLAT_hist.pdf used on input line 255.
+Package pdftex.def Info: ../Plots/PlanckModBBvsAMEandA9_GLAT_hist.pdf used on input line 256.
 (pdftex.def)             Requested size: 227.62204pt x 168.65828pt.
  <../Plots/PlanckModBBvsAMEandA9_byGLON.pdf, id=78, 407.03319pt x 274.1925pt>
 File: ../Plots/PlanckModBBvsAMEandA9_byGLON.pdf Graphic file (type pdf)
  <use ../Plots/PlanckModBBvsAMEandA9_byGLON.pdf>
-Package pdftex.def Info: ../Plots/PlanckModBBvsAMEandA9_byGLON.pdf used on input line 256.
+Package pdftex.def Info: ../Plots/PlanckModBBvsAMEandA9_byGLON.pdf used on input line 257.
 (pdftex.def)             Requested size: 227.62204pt x 153.33336pt.
  <../Plots/PlanckModBBvsAMEandA9_GLON_hist.pdf, id=79, 374.28584pt x 273.18875pt>
 File: ../Plots/PlanckModBBvsAMEandA9_GLON_hist.pdf Graphic file (type pdf)
  <use ../Plots/PlanckModBBvsAMEandA9_GLON_hist.pdf>
-Package pdftex.def Info: ../Plots/PlanckModBBvsAMEandA9_GLON_hist.pdf used on input line 257.
+Package pdftex.def Info: ../Plots/PlanckModBBvsAMEandA9_GLON_hist.pdf used on input line 258.
 (pdftex.def)             Requested size: 227.62204pt x 166.14049pt.
  <../Plots/IntensityByGLON_median.pdf, id=80, 377.07751pt x 277.74983pt>
 File: ../Plots/IntensityByGLON_median.pdf Graphic file (type pdf)
  <use ../Plots/IntensityByGLON_median.pdf>
-Package pdftex.def Info: ../Plots/IntensityByGLON_median.pdf used on input line 265.
+Package pdftex.def Info: ../Plots/IntensityByGLON_median.pdf used on input line 266.
 (pdftex.def)             Requested size: 227.62204pt x 167.66832pt.
 
 <../Plots/IntensityByGLAT_median.pdf, id=81, 379.8692pt x 277.89098pt>
 File: ../Plots/IntensityByGLAT_median.pdf Graphic file (type pdf)
  <use ../Plots/IntensityByGLAT_median.pdf>
-Package pdftex.def Info: ../Plots/IntensityByGLAT_median.pdf used on input line 266.
+Package pdftex.def Info: ../Plots/IntensityByGLAT_median.pdf used on input line 267.
 (pdftex.def)             Requested size: 227.62204pt x 166.51537pt.
  <../Plots/IntensitybyGLON_mean.pdf, id=82, 374.28584pt x 277.74983pt>
 File: ../Plots/IntensitybyGLON_mean.pdf Graphic file (type pdf)
  <use ../Plots/IntensitybyGLON_mean.pdf>
-Package pdftex.def Info: ../Plots/IntensitybyGLON_mean.pdf used on input line 267.
+Package pdftex.def Info: ../Plots/IntensitybyGLON_mean.pdf used on input line 268.
 (pdftex.def)             Requested size: 227.62204pt x 168.91432pt.
  <../Plots/IntensityByGLAT_mean.pdf, id=83, 379.8692pt x 277.89098pt>
 File: ../Plots/IntensityByGLAT_mean.pdf Graphic file (type pdf)
  <use ../Plots/IntensityByGLAT_mean.pdf>
-Package pdftex.def Info: ../Plots/IntensityByGLAT_mean.pdf used on input line 268.
+Package pdftex.def Info: ../Plots/IntensityByGLAT_mean.pdf used on input line 269.
 (pdftex.def)             Requested size: 227.62204pt x 166.51537pt.
  <../Plots/CommanderByGLON_median.pdf, id=84, 374.28584pt x 277.74983pt>
 File: ../Plots/CommanderByGLON_median.pdf Graphic file (type pdf)
  <use ../Plots/CommanderByGLON_median.pdf>
-Package pdftex.def Info: ../Plots/CommanderByGLON_median.pdf used on input line 277.
+Package pdftex.def Info: ../Plots/CommanderByGLON_median.pdf used on input line 278.
 (pdftex.def)             Requested size: 227.62204pt x 168.91432pt.
  <../Plots/CommanderByGLAT_median.pdf, id=85, 379.8692pt x 277.89098pt>
 File: ../Plots/CommanderByGLAT_median.pdf Graphic file (type pdf)
  <use ../Plots/CommanderByGLAT_median.pdf>
-Package pdftex.def Info: ../Plots/CommanderByGLAT_median.pdf used on input line 278.
+Package pdftex.def Info: ../Plots/CommanderByGLAT_median.pdf used on input line 279.
 (pdftex.def)             Requested size: 227.62204pt x 166.51537pt.
  <../Plots/CommanderByGLON_mean.pdf, id=86, 374.28584pt x 277.74983pt>
 File: ../Plots/CommanderByGLON_mean.pdf Graphic file (type pdf)
  <use ../Plots/CommanderByGLON_mean.pdf>
-Package pdftex.def Info: ../Plots/CommanderByGLON_mean.pdf used on input line 279.
+Package pdftex.def Info: ../Plots/CommanderByGLON_mean.pdf used on input line 280.
 (pdftex.def)             Requested size: 227.62204pt x 168.91432pt.
  <../Plots/CommanderByGLAT_mean.pdf, id=87, 379.8692pt x 277.89098pt>
 File: ../Plots/CommanderByGLAT_mean.pdf Graphic file (type pdf)
  <use ../Plots/CommanderByGLAT_mean.pdf>
-Package pdftex.def Info: ../Plots/CommanderByGLAT_mean.pdf used on input line 280.
+Package pdftex.def Info: ../Plots/CommanderByGLAT_mean.pdf used on input line 281.
 (pdftex.def)             Requested size: 227.62204pt x 166.51537pt.
  <../Plots/Spearman_Map_nside16_AMEtoMBBandA9.pdf, id=88, 578.16pt x 289.08pt>
 File: ../Plots/Spearman_Map_nside16_AMEtoMBBandA9.pdf Graphic file (type pdf)
  <use ../Plots/Spearman_Map_nside16_AMEtoMBBandA9.pdf>
-Package pdftex.def Info: ../Plots/Spearman_Map_nside16_AMEtoMBBandA9.pdf used on input line 288.
-(pdftex.def)             Requested size: 455.24408pt x 227.62082pt.
+Package pdftex.def Info: ../Plots/Spearman_Map_nside16_AMEtoMBBandA9.pdf used on input line 289.
+(pdftex.def)             Requested size: 455.24408pt x 115.60269pt.
 
-/home/aaronb/Projectbrary/CosmicDust/Source/main.tex:290: Undefined control sequence.
+/home/aaronb/Projectbrary/CosmicDust/Source/main.tex:291: Undefined control sequence.
 <argument> ...ce $R$, and emissivity index $\Beta 
                                                   $, and $I_{9~\mu {}m}.$ $S...
-l.290 ...s within each NSIDE 8 pixel-sized bin.  }
+l.291 ...s within each NSIDE 8 pixel-sized bin.  }
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -364,10 +364,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/aaronb/Projectbrary/CosmicDust/Source/main.tex:290: Undefined control sequence.
+/home/aaronb/Projectbrary/CosmicDust/Source/main.tex:291: Undefined control sequence.
 <recently read> \Beta 
                       
-l.290 ...s within each NSIDE 8 pixel-sized bin.  }
+l.291 ...s within each NSIDE 8 pixel-sized bin.  }
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -376,12 +376,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (3.95538pt too wide) in paragraph at lines 295--295
+Overfull \hbox (3.95538pt too wide) in paragraph at lines 296--296
 []\OT1/cmr/bx/n/10 Analysis of Planck Col-lab-o-ra-tion AME
  []
 
 
-LaTeX Warning: Reference `fig:AME_PCXVvsPR2' on page 7 undefined on input line 303.
+LaTeX Warning: Reference `fig:AME_PCXVvsPR2' on page 7 undefined on input line 304.
 
 [7] [8 <../Plots/all_bands_corr_matrix_wAME_spearman.pdf> <../Plots/AMEvsDust_allsky_allbands.pdf
 
@@ -404,7 +404,10 @@ pdfTeX warning: pdflatex (file ../Plots/IntensitybyGLON_mean.pdf): PDF inclusion
 > <../Plots/IntensityByGLAT_mean.pdf
 
 pdfTeX warning: pdflatex (file ../Plots/IntensityByGLAT_mean.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [13 <../Plots/CommanderByGLON_median.pdf> <../Plots/CommanderByGLAT_median.pdf
+>] [13 <../Plots/Spearman_Map_nside16_AMEtoMBBandA9.pdf> <../Plots/CommanderByGLON_median.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/CommanderByGLON_median.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../Plots/CommanderByGLAT_median.pdf
 
 pdfTeX warning: pdflatex (file ../Plots/CommanderByGLAT_median.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <../Plots/CommanderByGLON_mean.pdf
@@ -415,95 +418,94 @@ pdfTeX warning: pdflatex (file ../Plots/CommanderByGLON_mean.pdf): PDF inclusion
 pdfTeX warning: pdflatex (file ../Plots/CommanderByGLAT_mean.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
 
-LaTeX Warning: Reference `fig:AME_PCXVvsPR2' on page 14 undefined on input line 312.
+LaTeX Warning: Reference `fig:AME_PCXVvsPR2' on page 14 undefined on input line 313.
 
-<../Plots/template_deltaU_G11_AC.pdf, id=802, 505.89pt x 505.89pt>
+<../Plots/template_deltaU_G11_AC.pdf, id=850, 505.89pt x 505.89pt>
 File: ../Plots/template_deltaU_G11_AC.pdf Graphic file (type pdf)
  <use ../Plots/template_deltaU_G11_AC.pdf>
-Package pdftex.def Info: ../Plots/template_deltaU_G11_AC.pdf used on input line 315.
+Package pdftex.def Info: ../Plots/template_deltaU_G11_AC.pdf used on input line 316.
 (pdftex.def)             Requested size: 227.62204pt x 227.62523pt.
- <../Plots/template_powerU_alpha_G11_AC.pdf, id=803, 505.89pt x 505.89pt>
+ <../Plots/template_powerU_alpha_G11_AC.pdf, id=851, 505.89pt x 505.89pt>
 File: ../Plots/template_powerU_alpha_G11_AC.pdf Graphic file (type pdf)
  <use ../Plots/template_powerU_alpha_G11_AC.pdf>
-Package pdftex.def Info: ../Plots/template_powerU_alpha_G11_AC.pdf used on input line 316.
+Package pdftex.def Info: ../Plots/template_powerU_alpha_G11_AC.pdf used on input line 317.
 (pdftex.def)             Requested size: 227.62204pt x 227.62523pt.
- <../Plots/template_powerU_DU_G11_AC.pdf, id=804, 505.89pt x 505.89pt>
+ <../Plots/template_powerU_DU_G11_AC.pdf, id=852, 505.89pt x 505.89pt>
 File: ../Plots/template_powerU_DU_G11_AC.pdf Graphic file (type pdf)
  <use ../Plots/template_powerU_DU_G11_AC.pdf>
-Package pdftex.def Info: ../Plots/template_powerU_DU_G11_AC.pdf used on input line 317.
+Package pdftex.def Info: ../Plots/template_powerU_DU_G11_AC.pdf used on input line 318.
 (pdftex.def)             Requested size: 227.62204pt x 227.62523pt.
- <../Plots/template_powerU_Um_G11_AC.pdf, id=805, 505.89pt x 505.89pt>
+ <../Plots/template_powerU_Um_G11_AC.pdf, id=853, 505.89pt x 505.89pt>
 File: ../Plots/template_powerU_Um_G11_AC.pdf Graphic file (type pdf)
  <use ../Plots/template_powerU_Um_G11_AC.pdf>
-Package pdftex.def Info: ../Plots/template_powerU_Um_G11_AC.pdf used on input line 318.
+Package pdftex.def Info: ../Plots/template_powerU_Um_G11_AC.pdf used on input line 319.
 (pdftex.def)             Requested size: 227.62204pt x 227.62523pt.
 
-Underfull \hbox (badness 2020) in paragraph at lines 312--323
+Underfull \hbox (badness 2020) in paragraph at lines 313--324
 \OT1/cmr/m/n/10 u-la-tion tem-plate (PE-GASE; (Fioc & Rocca-
  []
 
-[14 <../Plots/Spearman_Map_nside16_AMEtoMBBandA9.pdf>] [15 <../Plots/template_deltaU_G11_AC.pdf> <../Plots/template_powerU_alpha_G11_AC.pdf> <../Plots/template_powerU_DU_G11_AC.pdf> <../Plots/template_powerU_Um_G11_AC.pdf>] <../Plots/RegsAMEvsDustMass.pdf, id=866, 433.62pt x 289.08pt>
+<../Plots/RegsAMEvsDustMass.pdf, id=854, 433.62pt x 289.08pt>
 File: ../Plots/RegsAMEvsDustMass.pdf Graphic file (type pdf)
  <use ../Plots/RegsAMEvsDustMass.pdf>
-Package pdftex.def Info: ../Plots/RegsAMEvsDustMass.pdf used on input line 330.
+Package pdftex.def Info: ../Plots/RegsAMEvsDustMass.pdf used on input line 331.
 (pdftex.def)             Requested size: 227.62204pt x 151.74721pt.
- <../Plots/RegsAMEvsPAHMass.pdf, id=867, 433.62pt x 289.08pt>
+ <../Plots/RegsAMEvsPAHMass.pdf, id=855, 433.62pt x 289.08pt>
 File: ../Plots/RegsAMEvsPAHMass.pdf Graphic file (type pdf)
  <use ../Plots/RegsAMEvsPAHMass.pdf>
-Package pdftex.def Info: ../Plots/RegsAMEvsPAHMass.pdf used on input line 331.
+Package pdftex.def Info: ../Plots/RegsAMEvsPAHMass.pdf used on input line 332.
 (pdftex.def)             Requested size: 227.62204pt x 151.74721pt.
- <../Plots/RegsAMEvsqPAH.pdf, id=868, 433.62pt x 289.08pt>
+ <../Plots/RegsAMEvsqPAH.pdf, id=856, 433.62pt x 289.08pt>
 File: ../Plots/RegsAMEvsqPAH.pdf Graphic file (type pdf)
  <use ../Plots/RegsAMEvsqPAH.pdf>
-Package pdftex.def Info: ../Plots/RegsAMEvsqPAH.pdf used on input line 332.
+Package pdftex.def Info: ../Plots/RegsAMEvsqPAH.pdf used on input line 333.
 (pdftex.def)             Requested size: 227.62204pt x 151.74721pt.
- <../Plots/RegsUvsqPAH.pdf, id=869, 433.62pt x 289.08pt>
+ <../Plots/RegsUvsqPAH.pdf, id=857, 433.62pt x 289.08pt>
 File: ../Plots/RegsUvsqPAH.pdf Graphic file (type pdf)
  <use ../Plots/RegsUvsqPAH.pdf>
-Package pdftex.def Info: ../Plots/RegsUvsqPAH.pdf used on input line 333.
+Package pdftex.def Info: ../Plots/RegsUvsqPAH.pdf used on input line 334.
 (pdftex.def)             Requested size: 227.62204pt x 151.74721pt.
- <../Plots/histo_chi2red.pdf, id=870, 505.89pt x 505.89pt>
+ <../Plots/histo_chi2red.pdf, id=858, 505.89pt x 505.89pt>
 File: ../Plots/histo_chi2red.pdf Graphic file (type pdf)
  <use ../Plots/histo_chi2red.pdf>
-Package pdftex.def Info: ../Plots/histo_chi2red.pdf used on input line 348.
+Package pdftex.def Info: ../Plots/histo_chi2red.pdf used on input line 349.
 (pdftex.def)             Requested size: 213.39566pt x 213.39865pt.
- <../Plots/RegsAME_Bootstrap_MDustandMPAH.pdf, id=871, 433.62pt x 433.62pt>
+ <../Plots/RegsAME_Bootstrap_MDustandMPAH.pdf, id=859, 433.62pt x 433.62pt>
 File: ../Plots/RegsAME_Bootstrap_MDustandMPAH.pdf Graphic file (type pdf)
  <use ../Plots/RegsAME_Bootstrap_MDustandMPAH.pdf>
-Package pdftex.def Info: ../Plots/RegsAME_Bootstrap_MDustandMPAH.pdf used on input line 356.
+Package pdftex.def Info: ../Plots/RegsAME_Bootstrap_MDustandMPAH.pdf used on input line 357.
 (pdftex.def)             Requested size: 227.62204pt x 227.62082pt.
- <../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf, id=872, 433.62pt x 433.62pt>
+ <../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf, id=860, 433.62pt x 433.62pt>
 File: ../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf Graphic file (type pdf)
  <use ../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf>
-Package pdftex.def Info: ../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf used on input line 357.
+Package pdftex.def Info: ../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf used on input line 358.
 (pdftex.def)             Requested size: 227.62204pt x 227.62082pt.
-
-<../Plots/lOrionis_AKARI9.png, id=873, 614.295pt x 567.11874pt>
+ <../Plots/lOrionis_AKARI9.png, id=861, 614.295pt x 567.11874pt>
 File: ../Plots/lOrionis_AKARI9.png Graphic file (type png)
  <use ../Plots/lOrionis_AKARI9.png>
-Package pdftex.def Info: ../Plots/lOrionis_AKARI9.png used on input line 372.
+Package pdftex.def Info: ../Plots/lOrionis_AKARI9.png used on input line 373.
 (pdftex.def)             Requested size: 426.79134pt x 394.0209pt.
- <../Plots/lOrionis_grid_img.png, id=874, 1375.1375pt x 1013.7875pt>
+ <../Plots/lOrionis_grid_img.png, id=862, 1375.1375pt x 1013.7875pt>
 File: ../Plots/lOrionis_grid_img.png Graphic file (type png)
  <use ../Plots/lOrionis_grid_img.png>
-Package pdftex.def Info: ../Plots/lOrionis_grid_img.png used on input line 379.
+Package pdftex.def Info: ../Plots/lOrionis_grid_img.png used on input line 380.
 (pdftex.def)             Requested size: 483.69684pt x 356.59442pt.
 
-Overfull \hbox (13.94185pt too wide) in paragraph at lines 379--381
+Overfull \hbox (13.94185pt too wide) in paragraph at lines 380--382
  [][] 
  []
 
-<../Plots/orionis_correlations_AME.png, id=875, 1409.265pt x 1078.0275pt>
+<../Plots/orionis_correlations_AME.png, id=863, 1409.265pt x 1078.0275pt>
 File: ../Plots/orionis_correlations_AME.png Graphic file (type png)
  <use ../Plots/orionis_correlations_AME.png>
-Package pdftex.def Info: ../Plots/orionis_correlations_AME.png used on input line 386.
+Package pdftex.def Info: ../Plots/orionis_correlations_AME.png used on input line 387.
 (pdftex.def)             Requested size: 483.69684pt x 369.99532pt.
 
-Overfull \hbox (13.94185pt too wide) in paragraph at lines 386--388
+Overfull \hbox (13.94185pt too wide) in paragraph at lines 387--389
  [][] 
  []
 
-[16] [17 <../Plots/RegsAMEvsDustMass.pdf> <../Plots/RegsAMEvsPAHMass.pdf
+[14] [15 <../Plots/template_deltaU_G11_AC.pdf> <../Plots/template_powerU_alpha_G11_AC.pdf> <../Plots/template_powerU_DU_G11_AC.pdf> <../Plots/template_powerU_Um_G11_AC.pdf>] [16 <../Plots/RegsAMEvsDustMass.pdf> <../Plots/RegsAMEvsPAHMass.pdf
 
 pdfTeX warning: pdflatex (file ../Plots/RegsAMEvsPAHMass.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <../Plots/RegsAMEvsqPAH.pdf
@@ -512,517 +514,515 @@ pdfTeX warning: pdflatex (file ../Plots/RegsAMEvsqPAH.pdf): PDF inclusion: multi
 > <../Plots/RegsUvsqPAH.pdf
 
 pdfTeX warning: pdflatex (file ../Plots/RegsUvsqPAH.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [18 <../Plots/histo_chi2red.pdf> <../Plots/RegsAME_Bootstrap_MDustandMPAH.pdf> <../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf
+>] [17 <../Plots/histo_chi2red.pdf> <../Plots/RegsAME_Bootstrap_MDustandMPAH.pdf> <../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf
 
 pdfTeX warning: pdflatex (file ../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [19 <../Plots/lOrionis_AKARI9.png>] [20 <../Plots/lOrionis_grid_img.png>] [21 <../Plots/orionis_correlations_AME.png>]
-Underfull \hbox (badness 7685) in paragraph at lines 420--420
+>] [18 <../Plots/lOrionis_AKARI9.png>] [19 <../Plots/lOrionis_grid_img.png>] [20 <../Plots/orionis_correlations_AME.png>] [21]
+Underfull \hbox (badness 7685) in paragraph at lines 421--421
 []\OT1/cmr/bx/n/10 Microwave fore-ground com-po-nent
  []
 
-[22] [23
-
-] <../SEDs/sed_01.pdf, id=1203, 505.89pt x 505.89pt>
+[22] <../SEDs/sed_01.pdf, id=1201, 505.89pt x 505.89pt>
 File: ../SEDs/sed_01.pdf Graphic file (type pdf)
  <use ../SEDs/sed_01.pdf>
-Package pdftex.def Info: ../SEDs/sed_01.pdf used on input line 441.
+Package pdftex.def Info: ../SEDs/sed_01.pdf used on input line 442.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_02.pdf, id=1205, 505.89pt x 505.89pt>
+ <../SEDs/sed_02.pdf, id=1203, 505.89pt x 505.89pt>
 File: ../SEDs/sed_02.pdf Graphic file (type pdf)
  <use ../SEDs/sed_02.pdf>
-Package pdftex.def Info: ../SEDs/sed_02.pdf used on input line 442.
+Package pdftex.def Info: ../SEDs/sed_02.pdf used on input line 443.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_03.pdf, id=1207, 505.89pt x 505.89pt>
+ <../SEDs/sed_03.pdf, id=1205, 505.89pt x 505.89pt>
 File: ../SEDs/sed_03.pdf Graphic file (type pdf)
  <use ../SEDs/sed_03.pdf>
-Package pdftex.def Info: ../SEDs/sed_03.pdf used on input line 443.
+Package pdftex.def Info: ../SEDs/sed_03.pdf used on input line 444.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_04.pdf, id=1209, 505.89pt x 505.89pt>
+ <../SEDs/sed_04.pdf, id=1207, 505.89pt x 505.89pt>
 File: ../SEDs/sed_04.pdf Graphic file (type pdf)
  <use ../SEDs/sed_04.pdf>
-Package pdftex.def Info: ../SEDs/sed_04.pdf used on input line 444.
+Package pdftex.def Info: ../SEDs/sed_04.pdf used on input line 445.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_05.pdf, id=1211, 505.89pt x 505.89pt>
+ <../SEDs/sed_05.pdf, id=1209, 505.89pt x 505.89pt>
 File: ../SEDs/sed_05.pdf Graphic file (type pdf)
  <use ../SEDs/sed_05.pdf>
-Package pdftex.def Info: ../SEDs/sed_05.pdf used on input line 445.
+Package pdftex.def Info: ../SEDs/sed_05.pdf used on input line 446.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_06.pdf, id=1213, 505.89pt x 505.89pt>
+ <../SEDs/sed_06.pdf, id=1211, 505.89pt x 505.89pt>
 File: ../SEDs/sed_06.pdf Graphic file (type pdf)
  <use ../SEDs/sed_06.pdf>
-Package pdftex.def Info: ../SEDs/sed_06.pdf used on input line 446.
+Package pdftex.def Info: ../SEDs/sed_06.pdf used on input line 447.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_07.pdf, id=1215, 505.89pt x 505.89pt>
+ <../SEDs/sed_07.pdf, id=1213, 505.89pt x 505.89pt>
 File: ../SEDs/sed_07.pdf Graphic file (type pdf)
  <use ../SEDs/sed_07.pdf>
-Package pdftex.def Info: ../SEDs/sed_07.pdf used on input line 447.
+Package pdftex.def Info: ../SEDs/sed_07.pdf used on input line 448.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_08.pdf, id=1217, 505.89pt x 505.89pt>
+ <../SEDs/sed_08.pdf, id=1215, 505.89pt x 505.89pt>
 File: ../SEDs/sed_08.pdf Graphic file (type pdf)
  <use ../SEDs/sed_08.pdf>
-Package pdftex.def Info: ../SEDs/sed_08.pdf used on input line 448.
+Package pdftex.def Info: ../SEDs/sed_08.pdf used on input line 449.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_09.pdf, id=1219, 505.89pt x 505.89pt>
+ <../SEDs/sed_09.pdf, id=1217, 505.89pt x 505.89pt>
 File: ../SEDs/sed_09.pdf Graphic file (type pdf)
  <use ../SEDs/sed_09.pdf>
-Package pdftex.def Info: ../SEDs/sed_09.pdf used on input line 449.
+Package pdftex.def Info: ../SEDs/sed_09.pdf used on input line 450.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_10.pdf, id=1221, 505.89pt x 505.89pt>
+ <../SEDs/sed_10.pdf, id=1219, 505.89pt x 505.89pt>
 File: ../SEDs/sed_10.pdf Graphic file (type pdf)
  <use ../SEDs/sed_10.pdf>
-Package pdftex.def Info: ../SEDs/sed_10.pdf used on input line 450.
+Package pdftex.def Info: ../SEDs/sed_10.pdf used on input line 451.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_11.pdf, id=1223, 505.89pt x 505.89pt>
+ <../SEDs/sed_11.pdf, id=1221, 505.89pt x 505.89pt>
 File: ../SEDs/sed_11.pdf Graphic file (type pdf)
  <use ../SEDs/sed_11.pdf>
-Package pdftex.def Info: ../SEDs/sed_11.pdf used on input line 451.
+Package pdftex.def Info: ../SEDs/sed_11.pdf used on input line 452.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_12.pdf, id=1225, 505.89pt x 505.89pt>
+ <../SEDs/sed_12.pdf, id=1223, 505.89pt x 505.89pt>
 File: ../SEDs/sed_12.pdf Graphic file (type pdf)
  <use ../SEDs/sed_12.pdf>
-Package pdftex.def Info: ../SEDs/sed_12.pdf used on input line 452.
+Package pdftex.def Info: ../SEDs/sed_12.pdf used on input line 453.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_13.pdf, id=1227, 505.89pt x 505.89pt>
+ <../SEDs/sed_13.pdf, id=1225, 505.89pt x 505.89pt>
 File: ../SEDs/sed_13.pdf Graphic file (type pdf)
  <use ../SEDs/sed_13.pdf>
-Package pdftex.def Info: ../SEDs/sed_13.pdf used on input line 453.
+Package pdftex.def Info: ../SEDs/sed_13.pdf used on input line 454.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
 
-<../SEDs/sed_14.pdf, id=1229, 505.89pt x 505.89pt>
+<../SEDs/sed_14.pdf, id=1227, 505.89pt x 505.89pt>
 File: ../SEDs/sed_14.pdf Graphic file (type pdf)
  <use ../SEDs/sed_14.pdf>
-Package pdftex.def Info: ../SEDs/sed_14.pdf used on input line 454.
+Package pdftex.def Info: ../SEDs/sed_14.pdf used on input line 455.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_15.pdf, id=1231, 505.89pt x 505.89pt>
+ <../SEDs/sed_15.pdf, id=1229, 505.89pt x 505.89pt>
 File: ../SEDs/sed_15.pdf Graphic file (type pdf)
  <use ../SEDs/sed_15.pdf>
-Package pdftex.def Info: ../SEDs/sed_15.pdf used on input line 455.
+Package pdftex.def Info: ../SEDs/sed_15.pdf used on input line 456.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_16.pdf, id=1233, 505.89pt x 505.89pt>
+ <../SEDs/sed_16.pdf, id=1231, 505.89pt x 505.89pt>
 File: ../SEDs/sed_16.pdf Graphic file (type pdf)
  <use ../SEDs/sed_16.pdf>
-Package pdftex.def Info: ../SEDs/sed_16.pdf used on input line 456.
+Package pdftex.def Info: ../SEDs/sed_16.pdf used on input line 457.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_17.pdf, id=1235, 505.89pt x 505.89pt>
+ <../SEDs/sed_17.pdf, id=1233, 505.89pt x 505.89pt>
 File: ../SEDs/sed_17.pdf Graphic file (type pdf)
  <use ../SEDs/sed_17.pdf>
-Package pdftex.def Info: ../SEDs/sed_17.pdf used on input line 457.
+Package pdftex.def Info: ../SEDs/sed_17.pdf used on input line 458.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_18.pdf, id=1237, 505.89pt x 505.89pt>
+ <../SEDs/sed_18.pdf, id=1235, 505.89pt x 505.89pt>
 File: ../SEDs/sed_18.pdf Graphic file (type pdf)
  <use ../SEDs/sed_18.pdf>
-Package pdftex.def Info: ../SEDs/sed_18.pdf used on input line 458.
+Package pdftex.def Info: ../SEDs/sed_18.pdf used on input line 459.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_19.pdf, id=1239, 505.89pt x 505.89pt>
+ <../SEDs/sed_19.pdf, id=1237, 505.89pt x 505.89pt>
 File: ../SEDs/sed_19.pdf Graphic file (type pdf)
  <use ../SEDs/sed_19.pdf>
-Package pdftex.def Info: ../SEDs/sed_19.pdf used on input line 459.
+Package pdftex.def Info: ../SEDs/sed_19.pdf used on input line 460.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_20.pdf, id=1241, 505.89pt x 505.89pt>
+ <../SEDs/sed_20.pdf, id=1239, 505.89pt x 505.89pt>
 File: ../SEDs/sed_20.pdf Graphic file (type pdf)
  <use ../SEDs/sed_20.pdf>
-Package pdftex.def Info: ../SEDs/sed_20.pdf used on input line 460.
+Package pdftex.def Info: ../SEDs/sed_20.pdf used on input line 461.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_21.pdf, id=1243, 505.89pt x 505.89pt>
+ <../SEDs/sed_21.pdf, id=1241, 505.89pt x 505.89pt>
 File: ../SEDs/sed_21.pdf Graphic file (type pdf)
  <use ../SEDs/sed_21.pdf>
-Package pdftex.def Info: ../SEDs/sed_21.pdf used on input line 466.
+Package pdftex.def Info: ../SEDs/sed_21.pdf used on input line 467.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_22.pdf, id=1245, 505.89pt x 505.89pt>
+ <../SEDs/sed_22.pdf, id=1243, 505.89pt x 505.89pt>
 File: ../SEDs/sed_22.pdf Graphic file (type pdf)
  <use ../SEDs/sed_22.pdf>
-Package pdftex.def Info: ../SEDs/sed_22.pdf used on input line 467.
+Package pdftex.def Info: ../SEDs/sed_22.pdf used on input line 468.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_23.pdf, id=1247, 505.89pt x 505.89pt>
+ <../SEDs/sed_23.pdf, id=1245, 505.89pt x 505.89pt>
 File: ../SEDs/sed_23.pdf Graphic file (type pdf)
  <use ../SEDs/sed_23.pdf>
-Package pdftex.def Info: ../SEDs/sed_23.pdf used on input line 468.
+Package pdftex.def Info: ../SEDs/sed_23.pdf used on input line 469.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_24.pdf, id=1249, 505.89pt x 505.89pt>
+ <../SEDs/sed_24.pdf, id=1247, 505.89pt x 505.89pt>
 File: ../SEDs/sed_24.pdf Graphic file (type pdf)
  <use ../SEDs/sed_24.pdf>
-Package pdftex.def Info: ../SEDs/sed_24.pdf used on input line 469.
+Package pdftex.def Info: ../SEDs/sed_24.pdf used on input line 470.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_25.pdf, id=1251, 505.89pt x 505.89pt>
+ <../SEDs/sed_25.pdf, id=1249, 505.89pt x 505.89pt>
 File: ../SEDs/sed_25.pdf Graphic file (type pdf)
  <use ../SEDs/sed_25.pdf>
-Package pdftex.def Info: ../SEDs/sed_25.pdf used on input line 470.
+Package pdftex.def Info: ../SEDs/sed_25.pdf used on input line 471.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_26.pdf, id=1253, 505.89pt x 505.89pt>
+ <../SEDs/sed_26.pdf, id=1251, 505.89pt x 505.89pt>
 File: ../SEDs/sed_26.pdf Graphic file (type pdf)
  <use ../SEDs/sed_26.pdf>
-Package pdftex.def Info: ../SEDs/sed_26.pdf used on input line 471.
+Package pdftex.def Info: ../SEDs/sed_26.pdf used on input line 472.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
 
-<../SEDs/sed_27.pdf, id=1255, 505.89pt x 505.89pt>
+<../SEDs/sed_27.pdf, id=1253, 505.89pt x 505.89pt>
 File: ../SEDs/sed_27.pdf Graphic file (type pdf)
  <use ../SEDs/sed_27.pdf>
-Package pdftex.def Info: ../SEDs/sed_27.pdf used on input line 472.
+Package pdftex.def Info: ../SEDs/sed_27.pdf used on input line 473.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_28.pdf, id=1257, 505.89pt x 505.89pt>
+ <../SEDs/sed_28.pdf, id=1255, 505.89pt x 505.89pt>
 File: ../SEDs/sed_28.pdf Graphic file (type pdf)
  <use ../SEDs/sed_28.pdf>
-Package pdftex.def Info: ../SEDs/sed_28.pdf used on input line 473.
+Package pdftex.def Info: ../SEDs/sed_28.pdf used on input line 474.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_29.pdf, id=1259, 505.89pt x 505.89pt>
+ <../SEDs/sed_29.pdf, id=1257, 505.89pt x 505.89pt>
 File: ../SEDs/sed_29.pdf Graphic file (type pdf)
  <use ../SEDs/sed_29.pdf>
-Package pdftex.def Info: ../SEDs/sed_29.pdf used on input line 474.
+Package pdftex.def Info: ../SEDs/sed_29.pdf used on input line 475.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_30.pdf, id=1261, 505.89pt x 505.89pt>
+ <../SEDs/sed_30.pdf, id=1259, 505.89pt x 505.89pt>
 File: ../SEDs/sed_30.pdf Graphic file (type pdf)
  <use ../SEDs/sed_30.pdf>
-Package pdftex.def Info: ../SEDs/sed_30.pdf used on input line 475.
+Package pdftex.def Info: ../SEDs/sed_30.pdf used on input line 476.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_31.pdf, id=1263, 505.89pt x 505.89pt>
+ <../SEDs/sed_31.pdf, id=1261, 505.89pt x 505.89pt>
 File: ../SEDs/sed_31.pdf Graphic file (type pdf)
  <use ../SEDs/sed_31.pdf>
-Package pdftex.def Info: ../SEDs/sed_31.pdf used on input line 476.
+Package pdftex.def Info: ../SEDs/sed_31.pdf used on input line 477.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_32.pdf, id=1265, 505.89pt x 505.89pt>
+ <../SEDs/sed_32.pdf, id=1263, 505.89pt x 505.89pt>
 File: ../SEDs/sed_32.pdf Graphic file (type pdf)
  <use ../SEDs/sed_32.pdf>
-Package pdftex.def Info: ../SEDs/sed_32.pdf used on input line 477.
+Package pdftex.def Info: ../SEDs/sed_32.pdf used on input line 478.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_33.pdf, id=1267, 505.89pt x 505.89pt>
+ <../SEDs/sed_33.pdf, id=1265, 505.89pt x 505.89pt>
 File: ../SEDs/sed_33.pdf Graphic file (type pdf)
  <use ../SEDs/sed_33.pdf>
-Package pdftex.def Info: ../SEDs/sed_33.pdf used on input line 478.
+Package pdftex.def Info: ../SEDs/sed_33.pdf used on input line 479.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_34.pdf, id=1269, 505.89pt x 505.89pt>
+ <../SEDs/sed_34.pdf, id=1267, 505.89pt x 505.89pt>
 File: ../SEDs/sed_34.pdf Graphic file (type pdf)
  <use ../SEDs/sed_34.pdf>
-Package pdftex.def Info: ../SEDs/sed_34.pdf used on input line 479.
+Package pdftex.def Info: ../SEDs/sed_34.pdf used on input line 480.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_35.pdf, id=1271, 505.89pt x 505.89pt>
+ <../SEDs/sed_35.pdf, id=1269, 505.89pt x 505.89pt>
 File: ../SEDs/sed_35.pdf Graphic file (type pdf)
  <use ../SEDs/sed_35.pdf>
-Package pdftex.def Info: ../SEDs/sed_35.pdf used on input line 480.
+Package pdftex.def Info: ../SEDs/sed_35.pdf used on input line 481.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_36.pdf, id=1273, 505.89pt x 505.89pt>
+ <../SEDs/sed_36.pdf, id=1271, 505.89pt x 505.89pt>
 File: ../SEDs/sed_36.pdf Graphic file (type pdf)
  <use ../SEDs/sed_36.pdf>
-Package pdftex.def Info: ../SEDs/sed_36.pdf used on input line 481.
+Package pdftex.def Info: ../SEDs/sed_36.pdf used on input line 482.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_37.pdf, id=1275, 505.89pt x 505.89pt>
+ <../SEDs/sed_37.pdf, id=1273, 505.89pt x 505.89pt>
 File: ../SEDs/sed_37.pdf Graphic file (type pdf)
  <use ../SEDs/sed_37.pdf>
-Package pdftex.def Info: ../SEDs/sed_37.pdf used on input line 482.
+Package pdftex.def Info: ../SEDs/sed_37.pdf used on input line 483.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_38.pdf, id=1277, 505.89pt x 505.89pt>
+ <../SEDs/sed_38.pdf, id=1275, 505.89pt x 505.89pt>
 File: ../SEDs/sed_38.pdf Graphic file (type pdf)
  <use ../SEDs/sed_38.pdf>
-Package pdftex.def Info: ../SEDs/sed_38.pdf used on input line 483.
+Package pdftex.def Info: ../SEDs/sed_38.pdf used on input line 484.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_39.pdf, id=1279, 505.89pt x 505.89pt>
+ <../SEDs/sed_39.pdf, id=1277, 505.89pt x 505.89pt>
 File: ../SEDs/sed_39.pdf Graphic file (type pdf)
  <use ../SEDs/sed_39.pdf>
-Package pdftex.def Info: ../SEDs/sed_39.pdf used on input line 484.
+Package pdftex.def Info: ../SEDs/sed_39.pdf used on input line 485.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
 
-<../SEDs/sed_40.pdf, id=1281, 505.89pt x 505.89pt>
+<../SEDs/sed_40.pdf, id=1279, 505.89pt x 505.89pt>
 File: ../SEDs/sed_40.pdf Graphic file (type pdf)
  <use ../SEDs/sed_40.pdf>
-Package pdftex.def Info: ../SEDs/sed_40.pdf used on input line 485.
+Package pdftex.def Info: ../SEDs/sed_40.pdf used on input line 486.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_41.pdf, id=1283, 505.89pt x 505.89pt>
+ <../SEDs/sed_41.pdf, id=1281, 505.89pt x 505.89pt>
 File: ../SEDs/sed_41.pdf Graphic file (type pdf)
  <use ../SEDs/sed_41.pdf>
-Package pdftex.def Info: ../SEDs/sed_41.pdf used on input line 490.
+Package pdftex.def Info: ../SEDs/sed_41.pdf used on input line 491.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_42.pdf, id=1285, 505.89pt x 505.89pt>
+ <../SEDs/sed_42.pdf, id=1283, 505.89pt x 505.89pt>
 File: ../SEDs/sed_42.pdf Graphic file (type pdf)
  <use ../SEDs/sed_42.pdf>
-Package pdftex.def Info: ../SEDs/sed_42.pdf used on input line 491.
+Package pdftex.def Info: ../SEDs/sed_42.pdf used on input line 492.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_43.pdf, id=1287, 505.89pt x 505.89pt>
+ <../SEDs/sed_43.pdf, id=1285, 505.89pt x 505.89pt>
 File: ../SEDs/sed_43.pdf Graphic file (type pdf)
  <use ../SEDs/sed_43.pdf>
-Package pdftex.def Info: ../SEDs/sed_43.pdf used on input line 492.
+Package pdftex.def Info: ../SEDs/sed_43.pdf used on input line 493.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_44.pdf, id=1289, 505.89pt x 505.89pt>
+ <../SEDs/sed_44.pdf, id=1287, 505.89pt x 505.89pt>
 File: ../SEDs/sed_44.pdf Graphic file (type pdf)
  <use ../SEDs/sed_44.pdf>
-Package pdftex.def Info: ../SEDs/sed_44.pdf used on input line 493.
+Package pdftex.def Info: ../SEDs/sed_44.pdf used on input line 494.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_45.pdf, id=1291, 505.89pt x 505.89pt>
+ <../SEDs/sed_45.pdf, id=1289, 505.89pt x 505.89pt>
 File: ../SEDs/sed_45.pdf Graphic file (type pdf)
  <use ../SEDs/sed_45.pdf>
-Package pdftex.def Info: ../SEDs/sed_45.pdf used on input line 494.
+Package pdftex.def Info: ../SEDs/sed_45.pdf used on input line 495.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_46.pdf, id=1293, 505.89pt x 505.89pt>
+ <../SEDs/sed_46.pdf, id=1291, 505.89pt x 505.89pt>
 File: ../SEDs/sed_46.pdf Graphic file (type pdf)
  <use ../SEDs/sed_46.pdf>
-Package pdftex.def Info: ../SEDs/sed_46.pdf used on input line 495.
+Package pdftex.def Info: ../SEDs/sed_46.pdf used on input line 496.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_47.pdf, id=1295, 505.89pt x 505.89pt>
+ <../SEDs/sed_47.pdf, id=1293, 505.89pt x 505.89pt>
 File: ../SEDs/sed_47.pdf Graphic file (type pdf)
  <use ../SEDs/sed_47.pdf>
-Package pdftex.def Info: ../SEDs/sed_47.pdf used on input line 496.
+Package pdftex.def Info: ../SEDs/sed_47.pdf used on input line 497.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_48.pdf, id=1297, 505.89pt x 505.89pt>
+ <../SEDs/sed_48.pdf, id=1295, 505.89pt x 505.89pt>
 File: ../SEDs/sed_48.pdf Graphic file (type pdf)
  <use ../SEDs/sed_48.pdf>
-Package pdftex.def Info: ../SEDs/sed_48.pdf used on input line 497.
+Package pdftex.def Info: ../SEDs/sed_48.pdf used on input line 498.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_49.pdf, id=1299, 505.89pt x 505.89pt>
+ <../SEDs/sed_49.pdf, id=1297, 505.89pt x 505.89pt>
 File: ../SEDs/sed_49.pdf Graphic file (type pdf)
  <use ../SEDs/sed_49.pdf>
-Package pdftex.def Info: ../SEDs/sed_49.pdf used on input line 498.
+Package pdftex.def Info: ../SEDs/sed_49.pdf used on input line 499.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_50.pdf, id=1301, 505.89pt x 505.89pt>
+ <../SEDs/sed_50.pdf, id=1299, 505.89pt x 505.89pt>
 File: ../SEDs/sed_50.pdf Graphic file (type pdf)
  <use ../SEDs/sed_50.pdf>
-Package pdftex.def Info: ../SEDs/sed_50.pdf used on input line 499.
+Package pdftex.def Info: ../SEDs/sed_50.pdf used on input line 500.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_51.pdf, id=1303, 505.89pt x 505.89pt>
+ <../SEDs/sed_51.pdf, id=1301, 505.89pt x 505.89pt>
 File: ../SEDs/sed_51.pdf Graphic file (type pdf)
  <use ../SEDs/sed_51.pdf>
-Package pdftex.def Info: ../SEDs/sed_51.pdf used on input line 500.
+Package pdftex.def Info: ../SEDs/sed_51.pdf used on input line 501.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_52.pdf, id=1305, 505.89pt x 505.89pt>
+ <../SEDs/sed_52.pdf, id=1303, 505.89pt x 505.89pt>
 File: ../SEDs/sed_52.pdf Graphic file (type pdf)
  <use ../SEDs/sed_52.pdf>
-Package pdftex.def Info: ../SEDs/sed_52.pdf used on input line 501.
+Package pdftex.def Info: ../SEDs/sed_52.pdf used on input line 502.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
 
-<../SEDs/sed_53.pdf, id=1307, 505.89pt x 505.89pt>
+<../SEDs/sed_53.pdf, id=1305, 505.89pt x 505.89pt>
 File: ../SEDs/sed_53.pdf Graphic file (type pdf)
  <use ../SEDs/sed_53.pdf>
-Package pdftex.def Info: ../SEDs/sed_53.pdf used on input line 502.
+Package pdftex.def Info: ../SEDs/sed_53.pdf used on input line 503.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_54.pdf, id=1309, 505.89pt x 505.89pt>
+ <../SEDs/sed_54.pdf, id=1307, 505.89pt x 505.89pt>
 File: ../SEDs/sed_54.pdf Graphic file (type pdf)
  <use ../SEDs/sed_54.pdf>
-Package pdftex.def Info: ../SEDs/sed_54.pdf used on input line 503.
+Package pdftex.def Info: ../SEDs/sed_54.pdf used on input line 504.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_55.pdf, id=1311, 505.89pt x 505.89pt>
+ <../SEDs/sed_55.pdf, id=1309, 505.89pt x 505.89pt>
 File: ../SEDs/sed_55.pdf Graphic file (type pdf)
  <use ../SEDs/sed_55.pdf>
-Package pdftex.def Info: ../SEDs/sed_55.pdf used on input line 504.
+Package pdftex.def Info: ../SEDs/sed_55.pdf used on input line 505.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_56.pdf, id=1313, 505.89pt x 505.89pt>
+ <../SEDs/sed_56.pdf, id=1311, 505.89pt x 505.89pt>
 File: ../SEDs/sed_56.pdf Graphic file (type pdf)
  <use ../SEDs/sed_56.pdf>
-Package pdftex.def Info: ../SEDs/sed_56.pdf used on input line 505.
+Package pdftex.def Info: ../SEDs/sed_56.pdf used on input line 506.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_57.pdf, id=1315, 505.89pt x 505.89pt>
+ <../SEDs/sed_57.pdf, id=1313, 505.89pt x 505.89pt>
 File: ../SEDs/sed_57.pdf Graphic file (type pdf)
  <use ../SEDs/sed_57.pdf>
-Package pdftex.def Info: ../SEDs/sed_57.pdf used on input line 506.
+Package pdftex.def Info: ../SEDs/sed_57.pdf used on input line 507.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_58.pdf, id=1317, 505.89pt x 505.89pt>
+ <../SEDs/sed_58.pdf, id=1315, 505.89pt x 505.89pt>
 File: ../SEDs/sed_58.pdf Graphic file (type pdf)
  <use ../SEDs/sed_58.pdf>
-Package pdftex.def Info: ../SEDs/sed_58.pdf used on input line 507.
+Package pdftex.def Info: ../SEDs/sed_58.pdf used on input line 508.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_59.pdf, id=1319, 505.89pt x 505.89pt>
+ <../SEDs/sed_59.pdf, id=1317, 505.89pt x 505.89pt>
 File: ../SEDs/sed_59.pdf Graphic file (type pdf)
  <use ../SEDs/sed_59.pdf>
-Package pdftex.def Info: ../SEDs/sed_59.pdf used on input line 508.
+Package pdftex.def Info: ../SEDs/sed_59.pdf used on input line 509.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_60.pdf, id=1321, 505.89pt x 505.89pt>
+ <../SEDs/sed_60.pdf, id=1319, 505.89pt x 505.89pt>
 File: ../SEDs/sed_60.pdf Graphic file (type pdf)
  <use ../SEDs/sed_60.pdf>
-Package pdftex.def Info: ../SEDs/sed_60.pdf used on input line 509.
+Package pdftex.def Info: ../SEDs/sed_60.pdf used on input line 510.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_61.pdf, id=1323, 505.89pt x 505.89pt>
+ <../SEDs/sed_61.pdf, id=1321, 505.89pt x 505.89pt>
 File: ../SEDs/sed_61.pdf Graphic file (type pdf)
  <use ../SEDs/sed_61.pdf>
-Package pdftex.def Info: ../SEDs/sed_61.pdf used on input line 513.
+Package pdftex.def Info: ../SEDs/sed_61.pdf used on input line 514.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_62.pdf, id=1325, 505.89pt x 505.89pt>
+ <../SEDs/sed_62.pdf, id=1323, 505.89pt x 505.89pt>
 File: ../SEDs/sed_62.pdf Graphic file (type pdf)
  <use ../SEDs/sed_62.pdf>
-Package pdftex.def Info: ../SEDs/sed_62.pdf used on input line 514.
+Package pdftex.def Info: ../SEDs/sed_62.pdf used on input line 515.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_63.pdf, id=1327, 505.89pt x 505.89pt>
+ <../SEDs/sed_63.pdf, id=1325, 505.89pt x 505.89pt>
 File: ../SEDs/sed_63.pdf Graphic file (type pdf)
  <use ../SEDs/sed_63.pdf>
-Package pdftex.def Info: ../SEDs/sed_63.pdf used on input line 515.
+Package pdftex.def Info: ../SEDs/sed_63.pdf used on input line 516.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_64.pdf, id=1329, 505.89pt x 505.89pt>
+ <../SEDs/sed_64.pdf, id=1327, 505.89pt x 505.89pt>
 File: ../SEDs/sed_64.pdf Graphic file (type pdf)
  <use ../SEDs/sed_64.pdf>
-Package pdftex.def Info: ../SEDs/sed_64.pdf used on input line 516.
+Package pdftex.def Info: ../SEDs/sed_64.pdf used on input line 517.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_65.pdf, id=1331, 505.89pt x 505.89pt>
+ <../SEDs/sed_65.pdf, id=1329, 505.89pt x 505.89pt>
 File: ../SEDs/sed_65.pdf Graphic file (type pdf)
  <use ../SEDs/sed_65.pdf>
-Package pdftex.def Info: ../SEDs/sed_65.pdf used on input line 517.
+Package pdftex.def Info: ../SEDs/sed_65.pdf used on input line 518.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
 
-<../SEDs/sed_66.pdf, id=1333, 505.89pt x 505.89pt>
+<../SEDs/sed_66.pdf, id=1331, 505.89pt x 505.89pt>
 File: ../SEDs/sed_66.pdf Graphic file (type pdf)
  <use ../SEDs/sed_66.pdf>
-Package pdftex.def Info: ../SEDs/sed_66.pdf used on input line 518.
+Package pdftex.def Info: ../SEDs/sed_66.pdf used on input line 519.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_67.pdf, id=1335, 505.89pt x 505.89pt>
+ <../SEDs/sed_67.pdf, id=1333, 505.89pt x 505.89pt>
 File: ../SEDs/sed_67.pdf Graphic file (type pdf)
  <use ../SEDs/sed_67.pdf>
-Package pdftex.def Info: ../SEDs/sed_67.pdf used on input line 519.
+Package pdftex.def Info: ../SEDs/sed_67.pdf used on input line 520.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_68.pdf, id=1337, 505.89pt x 505.89pt>
+ <../SEDs/sed_68.pdf, id=1335, 505.89pt x 505.89pt>
 File: ../SEDs/sed_68.pdf Graphic file (type pdf)
  <use ../SEDs/sed_68.pdf>
-Package pdftex.def Info: ../SEDs/sed_68.pdf used on input line 520.
+Package pdftex.def Info: ../SEDs/sed_68.pdf used on input line 521.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_69.pdf, id=1339, 505.89pt x 505.89pt>
+ <../SEDs/sed_69.pdf, id=1337, 505.89pt x 505.89pt>
 File: ../SEDs/sed_69.pdf Graphic file (type pdf)
  <use ../SEDs/sed_69.pdf>
-Package pdftex.def Info: ../SEDs/sed_69.pdf used on input line 521.
+Package pdftex.def Info: ../SEDs/sed_69.pdf used on input line 522.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_70.pdf, id=1341, 505.89pt x 505.89pt>
+ <../SEDs/sed_70.pdf, id=1339, 505.89pt x 505.89pt>
 File: ../SEDs/sed_70.pdf Graphic file (type pdf)
  <use ../SEDs/sed_70.pdf>
-Package pdftex.def Info: ../SEDs/sed_70.pdf used on input line 522.
+Package pdftex.def Info: ../SEDs/sed_70.pdf used on input line 523.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_71.pdf, id=1343, 505.89pt x 505.89pt>
+ <../SEDs/sed_71.pdf, id=1341, 505.89pt x 505.89pt>
 File: ../SEDs/sed_71.pdf Graphic file (type pdf)
  <use ../SEDs/sed_71.pdf>
-Package pdftex.def Info: ../SEDs/sed_71.pdf used on input line 523.
+Package pdftex.def Info: ../SEDs/sed_71.pdf used on input line 524.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_72.pdf, id=1345, 505.89pt x 505.89pt>
+ <../SEDs/sed_72.pdf, id=1343, 505.89pt x 505.89pt>
 File: ../SEDs/sed_72.pdf Graphic file (type pdf)
  <use ../SEDs/sed_72.pdf>
-Package pdftex.def Info: ../SEDs/sed_72.pdf used on input line 524.
+Package pdftex.def Info: ../SEDs/sed_72.pdf used on input line 525.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_73.pdf, id=1347, 505.89pt x 505.89pt>
+ <../SEDs/sed_73.pdf, id=1345, 505.89pt x 505.89pt>
 File: ../SEDs/sed_73.pdf Graphic file (type pdf)
  <use ../SEDs/sed_73.pdf>
-Package pdftex.def Info: ../SEDs/sed_73.pdf used on input line 525.
+Package pdftex.def Info: ../SEDs/sed_73.pdf used on input line 526.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_74.pdf, id=1349, 505.89pt x 505.89pt>
+ <../SEDs/sed_74.pdf, id=1347, 505.89pt x 505.89pt>
 File: ../SEDs/sed_74.pdf Graphic file (type pdf)
  <use ../SEDs/sed_74.pdf>
-Package pdftex.def Info: ../SEDs/sed_74.pdf used on input line 526.
+Package pdftex.def Info: ../SEDs/sed_74.pdf used on input line 527.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_75.pdf, id=1351, 505.89pt x 505.89pt>
+ <../SEDs/sed_75.pdf, id=1349, 505.89pt x 505.89pt>
 File: ../SEDs/sed_75.pdf Graphic file (type pdf)
  <use ../SEDs/sed_75.pdf>
-Package pdftex.def Info: ../SEDs/sed_75.pdf used on input line 527.
+Package pdftex.def Info: ../SEDs/sed_75.pdf used on input line 528.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_76.pdf, id=1353, 505.89pt x 505.89pt>
+ <../SEDs/sed_76.pdf, id=1351, 505.89pt x 505.89pt>
 File: ../SEDs/sed_76.pdf Graphic file (type pdf)
  <use ../SEDs/sed_76.pdf>
-Package pdftex.def Info: ../SEDs/sed_76.pdf used on input line 528.
+Package pdftex.def Info: ../SEDs/sed_76.pdf used on input line 529.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_77.pdf, id=1355, 505.89pt x 505.89pt>
+ <../SEDs/sed_77.pdf, id=1353, 505.89pt x 505.89pt>
 File: ../SEDs/sed_77.pdf Graphic file (type pdf)
  <use ../SEDs/sed_77.pdf>
-Package pdftex.def Info: ../SEDs/sed_77.pdf used on input line 529.
+Package pdftex.def Info: ../SEDs/sed_77.pdf used on input line 530.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_78.pdf, id=1357, 505.89pt x 505.89pt>
+ <../SEDs/sed_78.pdf, id=1355, 505.89pt x 505.89pt>
 File: ../SEDs/sed_78.pdf Graphic file (type pdf)
  <use ../SEDs/sed_78.pdf>
-Package pdftex.def Info: ../SEDs/sed_78.pdf used on input line 530.
+Package pdftex.def Info: ../SEDs/sed_78.pdf used on input line 531.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
 
-<../SEDs/sed_79.pdf, id=1359, 505.89pt x 505.89pt>
+<../SEDs/sed_79.pdf, id=1357, 505.89pt x 505.89pt>
 File: ../SEDs/sed_79.pdf Graphic file (type pdf)
  <use ../SEDs/sed_79.pdf>
-Package pdftex.def Info: ../SEDs/sed_79.pdf used on input line 531.
+Package pdftex.def Info: ../SEDs/sed_79.pdf used on input line 532.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_80.pdf, id=1361, 505.89pt x 505.89pt>
+ <../SEDs/sed_80.pdf, id=1359, 505.89pt x 505.89pt>
 File: ../SEDs/sed_80.pdf Graphic file (type pdf)
  <use ../SEDs/sed_80.pdf>
-Package pdftex.def Info: ../SEDs/sed_80.pdf used on input line 532.
+Package pdftex.def Info: ../SEDs/sed_80.pdf used on input line 533.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_81.pdf, id=1363, 505.89pt x 505.89pt>
+ <../SEDs/sed_81.pdf, id=1361, 505.89pt x 505.89pt>
 File: ../SEDs/sed_81.pdf Graphic file (type pdf)
  <use ../SEDs/sed_81.pdf>
-Package pdftex.def Info: ../SEDs/sed_81.pdf used on input line 536.
+Package pdftex.def Info: ../SEDs/sed_81.pdf used on input line 537.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_82.pdf, id=1365, 505.89pt x 505.89pt>
+ <../SEDs/sed_82.pdf, id=1363, 505.89pt x 505.89pt>
 File: ../SEDs/sed_82.pdf Graphic file (type pdf)
  <use ../SEDs/sed_82.pdf>
-Package pdftex.def Info: ../SEDs/sed_82.pdf used on input line 537.
+Package pdftex.def Info: ../SEDs/sed_82.pdf used on input line 538.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_83.pdf, id=1367, 505.89pt x 505.89pt>
+ <../SEDs/sed_83.pdf, id=1365, 505.89pt x 505.89pt>
 File: ../SEDs/sed_83.pdf Graphic file (type pdf)
  <use ../SEDs/sed_83.pdf>
-Package pdftex.def Info: ../SEDs/sed_83.pdf used on input line 538.
+Package pdftex.def Info: ../SEDs/sed_83.pdf used on input line 539.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_84.pdf, id=1369, 505.89pt x 505.89pt>
+ <../SEDs/sed_84.pdf, id=1367, 505.89pt x 505.89pt>
 File: ../SEDs/sed_84.pdf Graphic file (type pdf)
  <use ../SEDs/sed_84.pdf>
-Package pdftex.def Info: ../SEDs/sed_84.pdf used on input line 539.
+Package pdftex.def Info: ../SEDs/sed_84.pdf used on input line 540.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_85.pdf, id=1371, 505.89pt x 505.89pt>
+ <../SEDs/sed_85.pdf, id=1369, 505.89pt x 505.89pt>
 File: ../SEDs/sed_85.pdf Graphic file (type pdf)
  <use ../SEDs/sed_85.pdf>
-Package pdftex.def Info: ../SEDs/sed_85.pdf used on input line 540.
+Package pdftex.def Info: ../SEDs/sed_85.pdf used on input line 541.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_86.pdf, id=1373, 505.89pt x 505.89pt>
+ <../SEDs/sed_86.pdf, id=1371, 505.89pt x 505.89pt>
 File: ../SEDs/sed_86.pdf Graphic file (type pdf)
  <use ../SEDs/sed_86.pdf>
-Package pdftex.def Info: ../SEDs/sed_86.pdf used on input line 541.
+Package pdftex.def Info: ../SEDs/sed_86.pdf used on input line 542.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_87.pdf, id=1375, 505.89pt x 505.89pt>
+ <../SEDs/sed_87.pdf, id=1373, 505.89pt x 505.89pt>
 File: ../SEDs/sed_87.pdf Graphic file (type pdf)
  <use ../SEDs/sed_87.pdf>
-Package pdftex.def Info: ../SEDs/sed_87.pdf used on input line 542.
+Package pdftex.def Info: ../SEDs/sed_87.pdf used on input line 543.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_88.pdf, id=1377, 505.89pt x 505.89pt>
+ <../SEDs/sed_88.pdf, id=1375, 505.89pt x 505.89pt>
 File: ../SEDs/sed_88.pdf Graphic file (type pdf)
  <use ../SEDs/sed_88.pdf>
-Package pdftex.def Info: ../SEDs/sed_88.pdf used on input line 543.
+Package pdftex.def Info: ../SEDs/sed_88.pdf used on input line 544.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_89.pdf, id=1379, 505.89pt x 505.89pt>
+ <../SEDs/sed_89.pdf, id=1377, 505.89pt x 505.89pt>
 File: ../SEDs/sed_89.pdf Graphic file (type pdf)
  <use ../SEDs/sed_89.pdf>
-Package pdftex.def Info: ../SEDs/sed_89.pdf used on input line 544.
+Package pdftex.def Info: ../SEDs/sed_89.pdf used on input line 545.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_90.pdf, id=1381, 505.89pt x 505.89pt>
+ <../SEDs/sed_90.pdf, id=1379, 505.89pt x 505.89pt>
 File: ../SEDs/sed_90.pdf Graphic file (type pdf)
  <use ../SEDs/sed_90.pdf>
-Package pdftex.def Info: ../SEDs/sed_90.pdf used on input line 545.
+Package pdftex.def Info: ../SEDs/sed_90.pdf used on input line 546.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_91.pdf, id=1383, 505.89pt x 505.89pt>
+ <../SEDs/sed_91.pdf, id=1381, 505.89pt x 505.89pt>
 File: ../SEDs/sed_91.pdf Graphic file (type pdf)
  <use ../SEDs/sed_91.pdf>
-Package pdftex.def Info: ../SEDs/sed_91.pdf used on input line 546.
+Package pdftex.def Info: ../SEDs/sed_91.pdf used on input line 547.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
 
-<../SEDs/sed_92.pdf, id=1385, 505.89pt x 505.89pt>
+<../SEDs/sed_92.pdf, id=1383, 505.89pt x 505.89pt>
 File: ../SEDs/sed_92.pdf Graphic file (type pdf)
  <use ../SEDs/sed_92.pdf>
-Package pdftex.def Info: ../SEDs/sed_92.pdf used on input line 547.
+Package pdftex.def Info: ../SEDs/sed_92.pdf used on input line 548.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_93.pdf, id=1387, 505.89pt x 505.89pt>
+ <../SEDs/sed_93.pdf, id=1385, 505.89pt x 505.89pt>
 File: ../SEDs/sed_93.pdf Graphic file (type pdf)
  <use ../SEDs/sed_93.pdf>
-Package pdftex.def Info: ../SEDs/sed_93.pdf used on input line 548.
+Package pdftex.def Info: ../SEDs/sed_93.pdf used on input line 549.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_94.pdf, id=1389, 505.89pt x 505.89pt>
+ <../SEDs/sed_94.pdf, id=1387, 505.89pt x 505.89pt>
 File: ../SEDs/sed_94.pdf Graphic file (type pdf)
  <use ../SEDs/sed_94.pdf>
-Package pdftex.def Info: ../SEDs/sed_94.pdf used on input line 549.
+Package pdftex.def Info: ../SEDs/sed_94.pdf used on input line 550.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_95.pdf, id=1391, 505.89pt x 505.89pt>
+ <../SEDs/sed_95.pdf, id=1389, 505.89pt x 505.89pt>
 File: ../SEDs/sed_95.pdf Graphic file (type pdf)
  <use ../SEDs/sed_95.pdf>
-Package pdftex.def Info: ../SEDs/sed_95.pdf used on input line 550.
+Package pdftex.def Info: ../SEDs/sed_95.pdf used on input line 551.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_96.pdf, id=1393, 505.89pt x 505.89pt>
+ <../SEDs/sed_96.pdf, id=1391, 505.89pt x 505.89pt>
 File: ../SEDs/sed_96.pdf Graphic file (type pdf)
  <use ../SEDs/sed_96.pdf>
-Package pdftex.def Info: ../SEDs/sed_96.pdf used on input line 551.
+Package pdftex.def Info: ../SEDs/sed_96.pdf used on input line 552.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_97.pdf, id=1395, 505.89pt x 505.89pt>
+ <../SEDs/sed_97.pdf, id=1393, 505.89pt x 505.89pt>
 File: ../SEDs/sed_97.pdf Graphic file (type pdf)
  <use ../SEDs/sed_97.pdf>
-Package pdftex.def Info: ../SEDs/sed_97.pdf used on input line 552.
+Package pdftex.def Info: ../SEDs/sed_97.pdf used on input line 553.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- <../SEDs/sed_98.pdf, id=1397, 505.89pt x 505.89pt>
+ <../SEDs/sed_98.pdf, id=1395, 505.89pt x 505.89pt>
 File: ../SEDs/sed_98.pdf Graphic file (type pdf)
  <use ../SEDs/sed_98.pdf>
-Package pdftex.def Info: ../SEDs/sed_98.pdf used on input line 553.
+Package pdftex.def Info: ../SEDs/sed_98.pdf used on input line 554.
 (pdftex.def)             Requested size: 113.81102pt x 112.52475pt.
- (/home/aaronb/Projectbrary/CosmicDust/Source/main.bbl [24
+ (/home/aaronb/Projectbrary/CosmicDust/Source/main.bbl [23
 
-] [25 <../SEDs/sed_01.pdf> <../SEDs/sed_02.pdf> <../SEDs/sed_03.pdf> <../SEDs/sed_04.pdf> <../SEDs/sed_05.pdf> <../SEDs/sed_06.pdf> <../SEDs/sed_07.pdf> <../SEDs/sed_08.pdf> <../SEDs/sed_09.pdf> <../SEDs/sed_10.pdf> <../SEDs/sed_11.pdf> <../SEDs/sed_12.pdf> <../SEDs/sed_13.pdf> <../SEDs/sed_14.pdf> <../SEDs/sed_15.pdf> <../SEDs/sed_16.pdf> <../SEDs/sed_17.pdf> <../SEDs/sed_18.pdf> <../SEDs/sed_19.pdf> <../SEDs/sed_20.pdf>] [26 <../SEDs/sed_21.pdf> <../SEDs/sed_22.pdf> <../SEDs/sed_23.pdf> <../SEDs/sed_24.pdf> <../SEDs/sed_25.pdf> <../SEDs/sed_26.pdf> <../SEDs/sed_27.pdf> <../SEDs/sed_28.pdf> <../SEDs/sed_29.pdf> <../SEDs/sed_30.pdf> <../SEDs/sed_31.pdf> <../SEDs/sed_32.pdf> <../SEDs/sed_33.pdf> <../SEDs/sed_34.pdf> <../SEDs/sed_35.pdf> <../SEDs/sed_36.pdf> <../SEDs/sed_37.pdf> <../SEDs/sed_38.pdf> <../SEDs/sed_39.pdf> <../SEDs/sed_40.pdf>] [27 <../SEDs/sed_41.pdf> <../SEDs/sed_42.pdf> <../SEDs/sed_43.pdf> <../SEDs/sed_44.pdf> <../SEDs/sed_45.pdf> <../SEDs/sed_46.pdf> <../SEDs/sed_47.pd
-f> <../SEDs/sed_48.pdf> <../SEDs/sed_49.pdf> <../SEDs/sed_50.pdf> <../SEDs/sed_51.pdf> <../SEDs/sed_52.pdf> <../SEDs/sed_53.pdf> <../SEDs/sed_54.pdf> <../SEDs/sed_55.pdf> <../SEDs/sed_56.pdf> <../SEDs/sed_57.pdf> <../SEDs/sed_58.pdf> <../SEDs/sed_59.pdf> <../SEDs/sed_60.pdf>] [28 <../SEDs/sed_61.pdf> <../SEDs/sed_62.pdf> <../SEDs/sed_63.pdf> <../SEDs/sed_64.pdf> <../SEDs/sed_65.pdf> <../SEDs/sed_66.pdf> <../SEDs/sed_67.pdf> <../SEDs/sed_68.pdf> <../SEDs/sed_69.pdf> <../SEDs/sed_70.pdf> <../SEDs/sed_71.pdf> <../SEDs/sed_72.pdf> <../SEDs/sed_73.pdf> <../SEDs/sed_74.pdf> <../SEDs/sed_75.pdf> <../SEDs/sed_76.pdf> <../SEDs/sed_77.pdf> <../SEDs/sed_78.pdf> <../SEDs/sed_79.pdf> <../SEDs/sed_80.pdf>] [29 <../SEDs/sed_81.pdf> <../SEDs/sed_82.pdf> <../SEDs/sed_83.pdf> <../SEDs/sed_84.pdf> <../SEDs/sed_85.pdf> <../SEDs/sed_86.pdf> <../SEDs/sed_87.pdf> <../SEDs/sed_88.pdf> <../SEDs/sed_89.pdf> <../SEDs/sed_90.pdf> <../SEDs/sed_91.pdf> <../SEDs/sed_92.pdf> <../SEDs/sed_93.pdf> <../SEDs/sed_94.pdf> 
+] [24 <../SEDs/sed_01.pdf> <../SEDs/sed_02.pdf> <../SEDs/sed_03.pdf> <../SEDs/sed_04.pdf> <../SEDs/sed_05.pdf> <../SEDs/sed_06.pdf> <../SEDs/sed_07.pdf> <../SEDs/sed_08.pdf> <../SEDs/sed_09.pdf> <../SEDs/sed_10.pdf> <../SEDs/sed_11.pdf> <../SEDs/sed_12.pdf> <../SEDs/sed_13.pdf> <../SEDs/sed_14.pdf> <../SEDs/sed_15.pdf> <../SEDs/sed_16.pdf> <../SEDs/sed_17.pdf> <../SEDs/sed_18.pdf> <../SEDs/sed_19.pdf> <../SEDs/sed_20.pdf>] [25 <../SEDs/sed_21.pdf> <../SEDs/sed_22.pdf> <../SEDs/sed_23.pdf> <../SEDs/sed_24.pdf> <../SEDs/sed_25.pdf> <../SEDs/sed_26.pdf> <../SEDs/sed_27.pdf> <../SEDs/sed_28.pdf> <../SEDs/sed_29.pdf> <../SEDs/sed_30.pdf> <../SEDs/sed_31.pdf> <../SEDs/sed_32.pdf> <../SEDs/sed_33.pdf> <../SEDs/sed_34.pdf> <../SEDs/sed_35.pdf> <../SEDs/sed_36.pdf> <../SEDs/sed_37.pdf> <../SEDs/sed_38.pdf> <../SEDs/sed_39.pdf> <../SEDs/sed_40.pdf>] [26 <../SEDs/sed_41.pdf> <../SEDs/sed_42.pdf> <../SEDs/sed_43.pdf> <../SEDs/sed_44.pdf> <../SEDs/sed_45.pdf> <../SEDs/sed_46.pdf> <../SEDs/sed_47.pd
+f> <../SEDs/sed_48.pdf> <../SEDs/sed_49.pdf> <../SEDs/sed_50.pdf> <../SEDs/sed_51.pdf> <../SEDs/sed_52.pdf> <../SEDs/sed_53.pdf> <../SEDs/sed_54.pdf> <../SEDs/sed_55.pdf> <../SEDs/sed_56.pdf> <../SEDs/sed_57.pdf> <../SEDs/sed_58.pdf> <../SEDs/sed_59.pdf> <../SEDs/sed_60.pdf>] [27 <../SEDs/sed_61.pdf> <../SEDs/sed_62.pdf> <../SEDs/sed_63.pdf> <../SEDs/sed_64.pdf> <../SEDs/sed_65.pdf> <../SEDs/sed_66.pdf> <../SEDs/sed_67.pdf> <../SEDs/sed_68.pdf> <../SEDs/sed_69.pdf> <../SEDs/sed_70.pdf> <../SEDs/sed_71.pdf> <../SEDs/sed_72.pdf> <../SEDs/sed_73.pdf> <../SEDs/sed_74.pdf> <../SEDs/sed_75.pdf> <../SEDs/sed_76.pdf> <../SEDs/sed_77.pdf> <../SEDs/sed_78.pdf> <../SEDs/sed_79.pdf> <../SEDs/sed_80.pdf>] [28 <../SEDs/sed_81.pdf> <../SEDs/sed_82.pdf> <../SEDs/sed_83.pdf> <../SEDs/sed_84.pdf> <../SEDs/sed_85.pdf> <../SEDs/sed_86.pdf> <../SEDs/sed_87.pdf> <../SEDs/sed_88.pdf> <../SEDs/sed_89.pdf> <../SEDs/sed_90.pdf> <../SEDs/sed_91.pdf> <../SEDs/sed_92.pdf> <../SEDs/sed_93.pdf> <../SEDs/sed_94.pdf> 
 <../SEDs/sed_95.pdf> <../SEDs/sed_96.pdf> <../SEDs/sed_97.pdf> <../SEDs/sed_98.pdf>]
 Underfull \hbox (badness 1442) in paragraph at lines 5--7
 \OT1/cmr/m/n/9 Cal-cu-late Spin-ning Dust Spec-tra, As-tro-physics
@@ -1037,9 +1037,9 @@ Underfull \hbox (badness 3364) in paragraph at lines 18--20
 
 Package natbib Warning: There were undefined citations.
 
-[30
+[29
 
-] [31
+] [30
 
 ] (/home/aaronb/Projectbrary/CosmicDust/Source/main.aux)
 
@@ -1056,10 +1056,10 @@ Here is how much of TeX's memory you used:
  38i,9n,28p,2479b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on /home/aaronb/Projectbrary/CosmicDust/Source/main.pdf (31 pages, 25468339 bytes).
+Output written on /home/aaronb/Projectbrary/CosmicDust/Source/main.pdf (30 pages, 25468341 bytes).
 PDF statistics:
- 1870 PDF objects out of 2073 (max. 8388607)
- 664 compressed objects within 7 object streams
+ 1868 PDF objects out of 2073 (max. 8388607)
+ 661 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
- 1244 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

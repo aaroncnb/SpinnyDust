@@ -30,6 +30,7 @@
 %% use the longabstract style option.
 
  \documentclass[preprint2,longabstract]{aastex}
+ \usepackage{graphicx}
 %% If you want to create your own macros, you can do so
 %% using \newcommand. Your macros should appear before
 %% the \begin{document} command.
@@ -285,7 +286,7 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
 
       \begin{figure*}
         \label{fig:Spearman_Map_nside16_AMEtoMBBandA9}
-        \includegraphics[width=160mm]{../Plots/Spearman_Map_nside16_AMEtoMBBandA9.pdf}
+        \includegraphics[width=160mm, trim={0 0 0 50mm},clip]{../Plots/Spearman_Map_nside16_AMEtoMBBandA9.pdf}
         \centering
         \caption{Spatial map of Spearman correlation coefficients between the AME and dust temperature $T$, radiance $R$, and emissivity index $\Beta$, and $I_{9~\mu{}m}.$ $S$ is calculated for all NSIDE 256 pixels within each NSIDE 8 pixel-sized bin.  }
       \end{figure*}
