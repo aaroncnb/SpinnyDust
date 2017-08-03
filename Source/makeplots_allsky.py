@@ -861,28 +861,33 @@ plot_hdists(phot_modesub[(phot_modesub>-5) & (phot_modesub<25)].A9.dropna())
 
 
 
-# In[135]:
+# In[189]:
 
-data = phot_modesub.dropna().values[:,1]
+data = phot_modesub.dropna().values[:,0]
 # phot_modesub[(phot_modesub>-5) & (phot_modesub<25)].A9.dropna()
 # data.std()
 
 
-# In[159]:
+# In[190]:
 
 from astropy.modeling import models, fitting
 
-def fitAndPlot(data):
+def fitAndPlot(data,zero_mean=False, left_wing=False):
     
 
     # Get distribution
-    y,x, patches = plt.hist(data, range=(-3, 3), bins=50, normed=True,alpha=0.8)
+    y,x, patches = plt.hist(data, range=(-10, 10), bins=300, normed=True,alpha=0.8)
     #print y
     # Fit the data using a Gaussian
     g_init = models.Gaussian1D(amplitude=1., mean=0, stddev=1.)
+    g_init.mean.fixed = zero_mean
     fit_g = fitting.LevMarLSQFitter()
-    g = fit_g(g_init, x[:-1], y)
-    #print g
+    
+    if left_wing == True:
+        g = fit_g(g_init, x[:-1][x[:-1]<0], y[x[:-1]<0])
+    else:
+        g = fit_g(g_init, x[:-1], y)
+
 
 
     plt.plot(x,g(x),label='Gaussian', color='black')
@@ -893,20 +898,32 @@ def fitAndPlot(data):
     # plt.figure(figsize=(8,5))
     # plt.plot(x, y[:-1], 'ko')
     # plt.plot(x, g(x), label='Gaussian')
-    plt.ylim(0,1.5)
+    plt.ylim(0,2.0)
     plt.ylabel('Norm. Pixel Count', fontsize=22)
     plt.xlabel('Intensity [MJy/sr]',fontsize=22)
     plt.legend(loc=2)
-    plt.text(0.75,0.5,"Stdev: "+str(round(g.stddev.value,3)),fontsize=22)
+    plt.text(0.75,0.5,"Stddev: "+str(round(g.stddev.value,3)),fontsize=22)
+    plt.text(0.75,0.75,"Data mean: "+str(round(np.mean(data),3)),fontsize=22)
     
     return g.stddev.value
 
 fitAndPlot(data)
+plt.show()
+plt.close()
+fitAndPlot(data, zero_mean=True)
+plt.show()
+plt.close()
+fitAndPlot(data, zero_mean=False, left_wing=True)
+plt.show()
+plt.close()
+fitAndPlot(data, zero_mean=True, left_wing=True)
+plt.show()
+plt.close()
     
 # Select data
 
 
-# In[162]:
+# In[191]:
 
 stddevs = []
 
@@ -917,6 +934,21 @@ for i in range(0,len(phot_modesub.columns)):
     plt.title(phot_modesub.columns[i], fontsize=22)
     plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+".pdf", bbox_inches='tight', dpi=100)
     plt.show()
+ 
+
+
+# In[192]:
+
+stddevs = []
+
+for i in range(0,len(phot_modesub.columns)):
+    data = phot_modesub.dropna().values[:,i]
+    stddev = fitAndPlot(data, zero_mean=True, left_wing=True)
+    stddevs.append(stddev)
+    plt.title(phot_modesub.columns[i], fontsize=22)
+    plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+"_leftWing_zeroMean.pdf", bbox_inches='tight', dpi=100)
+    plt.show()
+    plt.close()
  
 
 
