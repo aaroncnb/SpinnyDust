@@ -906,7 +906,7 @@ fitAndPlot(data)
 # Select data
 
 
-# In[160]:
+# In[162]:
 
 stddevs = []
 
@@ -915,9 +915,9 @@ for i in range(0,len(phot_modesub.columns)):
     stddev = fitAndPlot(data)
     stddevs.append(stddev)
     plt.title(phot_modesub.columns[i], fontsize=22)
-    plt.show()
     plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+".pdf", bbox_inches='tight', dpi=100)
-    plt.close()
+    plt.show()
+ 
 
 
 # # Angular Power Spectra:
