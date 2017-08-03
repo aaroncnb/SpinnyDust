@@ -250,39 +250,39 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
         \caption{Spearman cross-correlation test ($S$) of AME vs. dust radiance (R), temperature (T),  emissivity index ($\beta$), and the AKARI 9~$\mu$m brightness (A9), of the whole sky. Thermal dust parameters are provided in the Planck Coll. PR2 data. This provides a simplified picture of the AME vs. IR dust emission relationship. We can see that the results are consistent with the cross-correlation of AME vs. the 19 photometric intensities in Figure \ref{fig:AME_IR_crosscorr_allbandsg}. This plot gives the results using the whole sky. Fig. \ref{fig:PlanckModBBvsAMEandA9_bins} shows correlation results as they vary by GLAT and GLON. }
       \end{figure*}
 
-      \begin{figure*}
-        \label{fig:PlanckModBBvsAMEandA9_bins}
-        \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_byGLAT.pdf}
-        \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_GLAT_hist.pdf}
-        \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_byGLON.pdf}
-        \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_GLON_hist.pdf}
-        \centering
-        \caption{Top Left: Cross-correlation tests (Spearman) of AME vs. dust radiance ($R$), temperature ($T$),  emissivity index ($\beta$), and the AKARI 9~$\mu$m brightness (A9), by $b$. Top Right: Histograms of the correlation scores. Bottom Left and Right: The same analysis repeated for galactic longitude. }
-      \end{figure*}
+      % \begin{figure*}
+      %   \label{fig:PlanckModBBvsAMEandA9_bins}
+      %   \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_byGLAT.pdf}
+      %   \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_GLAT_hist.pdf}
+      %   \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_byGLON.pdf}
+      %   \includegraphics[width=80mm]{../Plots/PlanckModBBvsAMEandA9_GLON_hist.pdf}
+      %   \centering
+      %   \caption{Top Left: Cross-correlation tests (Spearman) of AME vs. dust radiance ($R$), temperature ($T$),  emissivity index ($\beta$), and the AKARI 9~$\mu$m brightness (A9), by $b$. Top Right: Histograms of the correlation scores. Bottom Left and Right: The same analysis repeated for galactic longitude. }
+      % \end{figure*}
 
 
-      \begin{figure*}
-        \label{fig:IRvbyGLOTandGLON}
-        \includegraphics[width=80mm]{../Plots/IntensityByGLON_median.pdf}
-        \includegraphics[width=80mm]{../Plots/IntensityByGLAT_median.pdf}
-        \includegraphics[width=80mm]{../Plots/IntensitybyGLON_mean.pdf}
-        \includegraphics[width=80mm]{../Plots/IntensityByGLAT_mean.pdf}
-        \centering
-        \caption{Top: Median IR intensity  for 1$^{\circ}$ GLON bins (Left), and for GLAT bins (Right). Bottom: The same analysis as Top, using the mean values..}
-      \end{figure*}
+      % \begin{figure*}
+      %   \label{fig:IRvbyGLOTandGLON}
+      %   \includegraphics[width=80mm]{../Plots/IntensityByGLON_median.pdf}
+      %   \includegraphics[width=80mm]{../Plots/IntensityByGLAT_median.pdf}
+      %   \includegraphics[width=80mm]{../Plots/IntensitybyGLON_mean.pdf}
+      %   \includegraphics[width=80mm]{../Plots/IntensityByGLAT_mean.pdf}
+      %   \centering
+      %   \caption{Top: Median IR intensity  for 1$^{\circ}$ GLON bins (Left), and for GLAT bins (Right). Bottom: The same analysis as Top, using the mean values..}
+      % \end{figure*}
+      %
 
 
-
-      \begin{figure*}
-        \label{fig:MWCompsbyGLOTandGLON}
-        \includegraphics[width=80mm]{../Plots/CommanderByGLON_median.pdf}
-        \includegraphics[width=80mm]{../Plots/CommanderByGLAT_median.pdf}
-        \includegraphics[width=80mm]{../Plots/CommanderByGLON_mean.pdf}
-        \includegraphics[width=80mm]{../Plots/CommanderByGLAT_mean.pdf}
-        \centering
-        \caption{Top: Median microwave foreground emission for components produced by the Planck Collaboration for 1$^{\circ}$ GLON bins (Left), and for GLAT bins (Right). Bottom: The same analysis as Top, but using the mean values. }
-      \end{figure*}
-
+      % \begin{figure*}
+      %   \label{fig:MWCompsbyGLOTandGLON}
+      %   \includegraphics[width=80mm]{../Plots/CommanderByGLON_median.pdf}
+      %   \includegraphics[width=80mm]{../Plots/CommanderByGLAT_median.pdf}
+      %   \includegraphics[width=80mm]{../Plots/CommanderByGLON_mean.pdf}
+      %   \includegraphics[width=80mm]{../Plots/CommanderByGLAT_mean.pdf}
+      %   \centering
+      %   \caption{Top: Median microwave foreground emission for components produced by the Planck Collaboration for 1$^{\circ}$ GLON bins (Left), and for GLAT bins (Right). Bottom: The same analysis as Top, but using the mean values. }
+      % \end{figure*}
+      %
 
       \begin{figure*}
         \label{fig:Spearman_Map_nside16_AMEtoMBBandA9}
@@ -310,16 +310,18 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
           dM_{dust}\propto{} U^{-\alpha}dU
      \end{equation}
 
-    between $U_{min}$ and $U_{max}$, where $U_{min}$, $U_{max}$ and $\alpha{}$ are free parameters. An old stellar population template (PEGASE; \citep{fioc97}) is added to this SED in order to model the near-IR emission. The emission of this dust model is demonstrated in Fig. \ref{fig:galliano11_templates}. We perform a simple least-squares analysis. For the vast majority of the samples, the fits are reasonable, with the $\chi{}^{2}$ distribution shown in Fig. \ref{fig:AME_PCXVvsPR2}.
-\begin{figure*}
-  \label{fig:galliano11_templates}
-  \includegraphics[width=80mm]{../Plots/template_deltaU_G11_AC.pdf}
-  \includegraphics[width=80mm]{../Plots/template_powerU_alpha_G11_AC.pdf}
-  \includegraphics[width=80mm]{../Plots/template_powerU_DU_G11_AC.pdf}
-  \includegraphics[width=80mm]{../Plots/template_powerU_Um_G11_AC.pdf}
-  \centering
-  \caption{Dust templates of \cite{galliano11}. The upper-left panel shows the variation of a uniformly illuminated mixture, as a function $U$. The other three panels show the variations of the emission of a dust mixture exposed to a distribution of starlight intensity, varying each parameter of Eq. \ref{eq:U}.  }
-\end{figure*}
+    between $U_{min}$ and $U_{max}$, where $U_{min}$, $U_{max}$ and $\alpha{}$ are free parameters. An old stellar population template (PEGASE; \citep{fioc97}) is added to this SED in order to model the near-IR emission. We perform a simple least-squares analysis. For the vast majority of the samples, the fits are reasonable, with the $\chi{}^{2}$ distribution shown in Fig. \ref{fig:AME_PCXVvsPR2}.
+
+% \begin{figure*}
+%   \label{fig:galliano11_templates}
+%   \includegraphics[width=80mm]{../Plots/template_deltaU_G11_AC.pdf}
+%   \includegraphics[width=80mm]{../Plots/template_powerU_alpha_G11_AC.pdf}
+%   \includegraphics[width=80mm]{../Plots/template_powerU_DU_G11_AC.pdf}
+%   \includegraphics[width=80mm]{../Plots/template_powerU_Um_G11_AC.pdf}
+%   \centering
+%   \caption{Dust templates of \cite{galliano11}. The upper-left panel shows the variation of a uniformly illuminated mixture, as a function $U$. The other three panels show the variations of the emission of a dust mixture exposed to a distribution of starlight intensity, varying each parameter of Eq. \ref{eq:U}.  }
+% \end{figure*}
+
     The results of the SED fitting vs. the AME are shown in Fig. The AME flux values are those quoted from the PCXV analysis (wherein component separation, of AME from known foregrounds, was done region-by-region.) Furthermore, the regions themselves are categorized as high (red circles) or low (blue circles) significance AME. Simply based on Figure \ref{fig:AME_regs_J13}, it is difficult to discern a difference on the correlation strengths.
 
      To statistically evaluate the situation, we employ the Bootstrap re-sampling approach, first introduced by \cite{efron79}. This involves creating 10,000 random re-sampled sets of the data. We use the "with replacement" approach, meaning that a data point may be selected multiple times in a single re-sampling iteration. However the size of the re-sampled set is the same is the input set size. For each random set we run a correlation test, resulting in a distribution of correlation coefficients. Results of the Bootstrap analysis are given in Figure \ref{fig:AME_boostrap_regs_all}. The distributions of correlation coefficients for AME vs. PAH mass, and AME vs. total dust mass., appear to be distinct. Mean correlation coefficients are separated by 0.1+/-0.05-0.07.
