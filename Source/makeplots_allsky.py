@@ -25,12 +25,24 @@ matplotlib.style.use('seaborn-bright')
 get_ipython().magic(u'matplotlib inline')
 
 
-# In[7]:
+# In[403]:
 
 with open('../Data/maps_nest.pickle') as f:  # Python 3: open(..., 'rb')
     coords, planck_bb, planck_mw, phot, phot_modesub = pickle.load(f)
     
 phot.head()
+
+
+rad_pr1 = hp.read_map('/work1/users/aaronb/Databrary/HEALPix/AKARI_HEALPix_orig/256_nside/radiance_PR1_256_smooth.fits')
+
+
+rad_pr1 = pd.DataFrame(rad_pr1, columns=['$R$'])
+
+
+
+# In[404]:
+
+rad_pr1.replace(to_replace=hp.UNSEEN, value=np.nan, inplace=True)
 
 
 # In[9]:
@@ -47,6 +59,17 @@ gcut_h = np.where((abs(coords['glat']) > glatrange) & (abs(coords['elat']) > ela
 
 
 
+
+
+# In[307]:
+
+print hp.fit_monopole(phot['A9'])
+print hp.fit_monopole(phot['A9'].values[hmask!=hp.UNSEEN])
+print phot['A9'].mode()
+print hp.fit_monopole(phot['A18'])
+print phot['A18'].mode()
+print hp.fit_dipole(phot['A9'])
+print hp.fit_dipole(phot['A18'])
 
 
 # In[10]:
@@ -746,7 +769,10 @@ plt.show()
 fig.savefig("../Plots/AMEvsDust_allsky_allbands.pdf", bbox_inches='tight', dpi=100)  
 
 
-# In[10]:
+# ## Compare with Planck PR2 Dust Intensity Map
+# (With ref. frequency at 545 GHz)
+
+# In[ ]:
 
 ncols=6
 nrows=3
@@ -816,6 +842,86 @@ for i in range(0,nrows):
                 ax.set_frame_on(True)
 
                 k += 1
+            mAdd
+
+
+# ## Compare with Planck PR1 Radiance Map 
+# (degraded and smoothed as in Hensley+ 2016)
+
+# In[21]:
+
+plt.close()
+
+ncols=6
+nrows=3
+aspect=1.0
+
+fig, axs = plt.subplots(ncols=ncols, 
+                        nrows=nrows, 
+                        sharey=True, 
+                        sharex=True)
+#fig.subplots_adjust(hspace=0.1, left=0.1, right=0.7)
+plt.setp(axs.flat, aspect=1.0, adjustable='box-forced')
+
+k=0
+
+
+for i in range(0,nrows):
+    for j in range(0,ncols):
+            
+            if k > 17:
+                
+                pass
+            
+            else:
+           
+                x = phot_modesub.values[:,k]
+
+
+                y = planck_mw['AME'].values[:]
+                
+                R = rad_pr1['$R$'].values[:]
+                
+                y = y/R
+                x = x/R
+
+                x_ = x[(x>0) & (y>0)]
+                y_ = y[(x>0) & (y>0)]
+
+
+                xmin = x_.min()
+                xmax = x_.max()
+                ymin = y_.min()
+                ymax = y_.max()
+
+                ax = axs[i,j]
+                #ax.set_aspect(aspect, adjustable='box')
+
+                hb = ax.hexbin(
+                       x_,
+                       y_, 
+                       mincnt=1,
+                       gridsize=10,
+                       bins='log', 
+                       cmap='inferno_r',
+                       xscale='log',
+                       yscale='log')
+
+
+                ax.axis([xmin, xmax, ymin, ymax])
+
+                ax.text(0.4, 0.4,
+                        phot_modesub.columns[k], 
+                        horizontalalignment='left',
+                        verticalalignment='top',
+                        transform=ax.transAxes, 
+                        fontsize=15)
+                
+                ax.grid(True)
+                
+                ax.set_frame_on(True)
+
+                k += 1
             
 ax = axs[1,0]
 ax.set_ylabel('$I_{AME} / R$', fontsize=15)
@@ -827,9 +933,92 @@ plt.show()
 fig.savefig("../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf", bbox_inches='tight')  
 
 
+
+
+# In[19]:
+
+plt.close()
+
+ncols=6
+nrows=3
+aspect=1.0
+
+fig, axs = plt.subplots(ncols=ncols, 
+                        nrows=nrows, 
+                        sharey=True, 
+                        sharex=True)
+#fig.subplots_adjust(hspace=0.1, left=0.1, right=0.7)
+plt.setp(axs.flat, aspect=1.0, adjustable='box-forced')
+
+k=0
+
+
+for i in range(0,nrows):
+    for j in range(0,ncols):
+            
+            if k > 17:
+                
+                pass
+            
+            else:
+           
+                x = phot_modesub.values[:,k]
+
+
+                y = rad_pr1['$R$'].values[:]
+                
+                #y = y/R
+                #x = x/R
+
+                x_ = x[(x>0)]
+                y_ = y[(x>0)]
+
+
+                xmin = x_.min()
+                xmax = x_.max()
+                ymin = y_.min()
+                ymax = y_.max()
+
+                ax = axs[i,j]
+                #ax.set_aspect(aspect, adjustable='box')
+
+                hb = ax.hexbin(
+                       x_,
+                       y_, 
+                       mincnt=1,
+                       gridsize=50,
+                       bins='log', 
+                       cmap='inferno_r',
+                       xscale='log',
+                       yscale='log')
+
+
+                ax.axis([xmin, xmax, ymin, ymax])
+
+                ax.text(0.8, 0.5,phot_modesub.columns[k], horizontalalignment='center',
+                  verticalalignment='center',
+                  transform=ax.transAxes, 
+                  fontsize=15)
+                
+                ax.grid(True)
+                
+                ax.set_frame_on(True)
+
+                k += 1
+            
+ax = axs[1,0]
+ax.set_ylabel('$R$', fontsize=15)
+ax = axs[-1,3]
+ax.set_xlabel('$I_{IR}$', fontsize=15)
+
+plt.show()
+
+fig.savefig("../Plots/IRvsR_allsky_allbands.pdf", bbox_inches='tight', dpi=100)  
+
+
 # ## All-sky Noise Estimation:
 
-# In[58]:
+# In[ ]:
 
 hmap_hists =  pd.DataFrame.hist(phot_modesub, 
                                 range=(-10, 25), 
@@ -840,17 +1029,18 @@ hmap_hists =  pd.DataFrame.hist(phot_modesub,
                                 xlabelsize=15,
                                 sharey=False,
                                 ylabelsize=12,
-                                figsize=(11,8.5))
-hmap_hists.
+                                figsize=(11,8.5),
+                                **{'normed':True})
+hmap_hists
 
 
-# In[56]:
+# In[22]:
 
 def plot_hdists(df):
     
     import seaborn as sns
     import scipy.stats as stats
-    sns.distplot(df, bins=100, kde=False, fit=stats.gamma )
+    sns.distplot(df, bins=1000, kde=False, fit=stats.gamma )
     print 
     
 plot_hdists(phot_modesub[(phot_modesub>-5) & (phot_modesub<25)].A9.dropna())
@@ -868,15 +1058,325 @@ data = phot_modesub.dropna().values[:,0]
 # data.std()
 
 
-# In[190]:
+# In[399]:
 
 from astropy.modeling import models, fitting
 
-def fitAndPlot(data,zero_mean=False, left_wing=False):
+def fitAndPlot(data, ymax=2.0, nbins=1000, amplitude =1, stddev = 1, mean=0, zero_mean=False, left_wing=False, left_mean=False, xrange=(-10,10)):
     
 
     # Get distribution
-    y,x, patches = plt.hist(data, range=(-10, 10), bins=300, normed=True,alpha=0.8)
+    y,x, patches = plt.hist(data, range=xrange, bins=nbins, normed=True,alpha=0.8)
+    #print y
+    # Fit the data using a Gaussian
+    g_init = models.Gaussian1D(amplitude=amplitude, mean=mean, stddev=stddev)
+    g_init.mean.fixed = zero_mean
+    g_init.stddev.bounds = (0,None)
+    fit_g = fitting.LevMarLSQFitter()
+    
+    if left_wing == True:
+        g = fit_g(g_init, x[:-1][x[:-1]<0], y[x[:-1]<0])
+    elif left_mean == True:
+        g = fit_g(g_init, x[:-1][x[:-1]<np.mean(data)], y[x[:-1]<np.mean(data)])
+    else:
+        g = fit_g(g_init, x[:-1], y)
+
+
+
+    plt.plot(x,g(x),label='Gaussian', color='black',alpha=0.8)
+
+
+
+    # Plot the data with the best-fit model
+    # plt.figure(figsize=(8,5))
+    # plt.plot(x, y[:-1], 'ko')
+    # plt.plot(x, g(x), label='Gaussian')
+    plt.ylim(0,ymax)
+    plt.ylabel('Norm. Pixel Count', fontsize=22)
+    plt.xlabel('Intensity [MJy/sr]',fontsize=22)
+    plt.legend(loc=2)
+    plt.text((xrange[1]-abs(xrange[0])*3)/8,ymax/4,"Stddev: "+str(round(g.stddev.value,3)),fontsize=22)
+    plt.text((xrange[1]-abs(xrange[0])*3)/8,(ymax*5)/8,"Data mean: "+str(round(np.mean(data),3)),fontsize=22)
+    
+    return g.stddev.value
+
+# fitAndPlot(data)
+# plt.show()
+# plt.close()
+# fitAndPlot(data, zero_mean=True)
+# plt.show()
+# plt.close()
+# fitAndPlot(data, zero_mean=False, left_wing=True)
+# plt.show()
+# plt.close()
+fitAndPlot(data, left_mean=True)
+plt.show()
+plt.close()
+    
+# Select data
+
+
+# In[230]:
+
+# Get distribution
+y,x, patches = plt.hist(planck_mw.AME.dropna().values-0, range =(-30,150),bins=1000, normed=True,alpha=0.8)
+#print y
+# Fit the data using a Gaussian
+g_init = models.Gaussian1D(amplitude=0.1, mean=0, stddev=1.)
+g_init.mean.fixed = False
+fit_g = fitting.LevMarLSQFitter()
+g = fit_g(g_init, x[:-1][x[:-1]<0], y[x[:-1]<0])
+
+plt.plot(x,g(x),label='Gaussian', color='black')
+
+plt.ylabel('Norm. Pixel Count', fontsize=22)
+plt.xlabel('Intensity [uKCMB]',fontsize=22)
+plt.legend(loc=2)
+
+
+print np.size(planck_mw.AME.dropna()==0)
+
+
+# In[252]:
+
+# Get distribution
+y,x, patches = plt.hist(planck_bb['$T$'].dropna().values, range =(0,50),bins=100, normed=True,alpha=0.8)
+#print y
+# Fit the data using a Gaussian
+g_init = models.Gaussian1D(amplitude=0.1, mean=20, stddev=1.)
+g_init.mean.fixed = False
+fit_g = fitting.LevMarLSQFitter()
+g = fit_g(g_init, x[:-1], y)
+
+plt.plot(x,g(x),label='Gaussian', color='black')
+
+
+
+# Plot the data with the best-fit model
+# plt.figure(figsize=(8,5))
+# plt.plot(x, y[:-1], 'ko')
+# plt.plot(x, g(x), label='Gaussian')
+#plt.ylim(0,2.0)
+plt.ylabel('Norm. Pixel Count', fontsize=22)
+plt.xlabel('Intensity [uKCMB]',fontsize=22)
+plt.legend(loc=2)
+#plt.text(60,0.008,"Stddev: "+str(round(g.stddev.value,3)),fontsize=22)
+#plt.text(60,0.006,"Data mean: "+str(round(np.mean(data),3)),fontsize=22)
+
+#print np.size(planck_mw.T.dropna()==0)
+
+
+# In[ ]:
+
+#### Read Planck low-res Modified blackbody fitting results:
+planck_bb_path    = filepath+"/COM_CompMap_dust-commander_0256_R2.00.fits.gz" #HEALPix FITS table containing Planck low-res modBB results
+fields            = [4,7,1] #The field number in the HEALPix file
+labels            = ["$T$","$B$","$R$"]
+
+planck_bb = pd.DataFrame()
+for i in range(0,3):
+    planck_bb[labels[i]] = hp.read_map(planck_bb_path,field = fields[i], nest=nest)
+
+planck_bb.replace(
+    to_replace =hp.UNSEEN,
+    value=np.nan,
+    inplace=True
+    )
+
+
+#### Read Planck low-res microwave component fitting results:
+planck_mw = pd.DataFrame()
+labels = ['AME','CO','ff','Sync']
+
+paths = ['COM_CompMap_AME-commander_0256_R2.00.fits.gz',
+
+
+# In[359]:
+
+## Whole sky without mean-fixing or wing-selection
+
+
+# In[356]:
+
+stddevs = []
+for i in range(0,len(phot_modesub.columns)):
+    data = phot_modesub.dropna().values[:,i]
+    stddev = fitAndPlot(data)
+    stddevs.append(stddev)
+    plt.title(phot_modesub.columns[i], fontsize=22)
+    plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+".pdf", bbox_inches='tight', dpi=100)
+    plt.show()
+ 
+
+
+# In[360]:
+
+## Whole sky with mean fixed to zero, using only the left wing
+
+
+# In[358]:
+
+stddevs = []
+
+for i in range(0,len(phot_modesub.columns)):
+    data = phot_modesub.dropna().values[:,i]
+    stddev = fitAndPlot(data, zero_mean=True, left_wing=True)
+    stddevs.append(stddev)
+    plt.title(phot_modesub.columns[i], fontsize=22)
+    plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+"_leftWing_zeroMean.pdf", bbox_inches='tight', dpi=100)
+    plt.show()
+    plt.close()
+ 
+
+
+# ## Noise estimated for limited patches:
+
+# #### Patch 1: (l:130, b:60) [25x25 degree Gal] , npix = 20164
+
+# In[400]:
+
+stddevs = []
+
+noise_patches = [(coords.glon > 117.5) & (coords.glon < 142.5) & (coords.glat > 47.5) & (coords.glat < 72.5),
+                 (coords.glon > 217.5) & (coords.glon < 242.5) & (coords.glat < -47.5) & (coords.glat > -72.5),
+                 (coords.glon > 217.5) & (coords.glon < 242.5) & (coords.glat > 47.5) & (coords.glat < 72.5)]
+
+for i in range(0,len(phot_modesub.columns)):
+    data = phot_modesub[noise_patches[0]].dropna().values[:,i]
+    # Using an initial stddev of 1 seems to lead to underfitting, here- using 0,5 instead
+    stddev = fitAndPlot(data,
+                        amplitude=2, 
+                        mean=np.mean(data), 
+                        ymax=7, 
+                        stddev = 0.1, 
+                        zero_mean=False, 
+                        left_wing=False,
+                        left_mean=False,                        
+                        nbins=400, 
+                        xrange=(-4,4))
+    
+    
+    stddevs.append(stddev)
+    plt.title(phot_modesub.columns[i], fontsize=22)
+    plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+"_noisePatch1.pdf", bbox_inches='tight', dpi=100)
+    plt.show()
+    plt.close()
+ 
+
+
+# #### Patch 2: (l:230, b:-60) [25x25 degree Gal] , npix = 20164
+
+# In[395]:
+
+for i in range(0,len(phot_modesub.columns)):
+    data = phot_modesub[noise_patches[1]].dropna().values[:,i]
+    # Using an initial stddev of 1 seems to lead to underfitting, here- using 0,5 instead
+    stddev = fitAndPlot(data,
+                        amplitude=2, 
+                        mean=np.mean(data), 
+                        ymax=7, 
+                        stddev = 0.1, 
+                        zero_mean=False, 
+                        left_wing=False, 
+                        nbins=1000, 
+                        xrange=(data.min(),data.max()))
+    
+    stddevs.append(stddev)
+    plt.title(phot_modesub.columns[i], fontsize=22)
+    plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+"_leftWing_zeroMean_noisePatch2.pdf", bbox_inches='tight', dpi=100)
+    plt.show()
+    plt.close()
+
+
+# #### Patch 3: (l:230, b:60) [25x25 degree Gal] , npix = 20164
+
+# In[396]:
+
+for i in range(0,len(phot_modesub.columns)):
+    data = phot_modesub[noise_patches[2]].dropna().values[:,i]
+    # Using an initial stddev of 1 seems to lead to underfitting, here- using 0,5 instead
+    stddev = fitAndPlot(data,
+                        amplitude=2, 
+                        mean=np.mean(data), 
+                        ymax=7, 
+                        stddev = 0.1, 
+                        zero_mean=False, 
+                        left_wing=False, 
+                        nbins=1000, 
+                        xrange=(data.min(),data.max()))
+    
+    stddevs.append(stddev)
+    plt.title(phot_modesub.columns[i], fontsize=22)
+    plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+"_leftWing_zeroMean_noisePatch3.pdf", bbox_inches='tight', dpi=100)
+    plt.show()
+    plt.close()
+
+
+# In[397]:
+
+#### All 3 patches merged together:
+
+noise_patches_merged = ((coords.glon > 117.5) & (coords.glon < 142.5) & (coords.glat > 47.5) & (coords.glat < 72.5)) |                  ((coords.glon > 217.5) & (coords.glon < 242.5) & (coords.glat < -47.5) & (coords.glat > -72.5)) |                  ((coords.glon > 217.5) & (coords.glon < 242.5) & (coords.glat > 47.5) & (coords.glat < 72.5) )
+
+
+for i in range(0,len(phot_modesub.columns)):
+    data = phot_modesub[noise_patches_merged].dropna().values[:,i]
+    # Using an initial stddev of 1 seems to lead to underfitting, here- using 0,5 instead
+    stddev = fitAndPlot(np.random.choice(data, size=len(noise_patches_merged)//1),
+                        amplitude=2, 
+                        mean=np.mean(data), 
+                        ymax=7, 
+                        stddev = 0.1, 
+                        zero_mean=False, 
+                        left_mean=False,                        
+                        nbins=1000, 
+                        xrange=(data.min(),5))
+    
+    stddevs.append(stddev)
+    plt.title(phot_modesub.columns[i], fontsize=22)
+    plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+"_leftWing_zeroMean_noisePatchMerged.pdf", bbox_inches='tight', dpi=100)
+    plt.show()
+    plt.close()
+
+
+# ## Estimate noise for a limited part of the sky: Planck CMB Mask
+
+# #### Masking test
+
+# In[273]:
+
+data =  phot_modesub.A9.values.copy
+hp.mollview(data)
+print len(data[np.isnan(data)==True])
+hmask = hp.read_map('/work1/users/aaronb/Codebrary/Python/Projects/LOrionis/data/raw/healpix/referenceMaps/COM_Mask_CMB-IQU-common-field-MaskInt_0256.fits')
+data[hmask==hp.UNSEEN] = np.nan
+print len(data[np.isnan(data)==True])
+print len(hmask[hmask==hp.UNSEEN])
+
+
+# In[ ]:
+
+
+
+
+# In[291]:
+
+from astropy.modeling import models, fitting
+
+def fitAndPlotMaskedTest(data,zero_mean=False, left_wing=False, left_mean=False):
+    
+    hp.mollview(data.values)
+    plt.show()
+    plt.close()
+    
+    data_unmask = data.copy()
+    data_mask   = data.copy()
+    
+    data_unmask = data_unmask.dropna().values
+
+    # Get distribution
+
+    y,x, patches = plt.hist(data_unmask, range=(-10, 10), bins=1000, normed=True,alpha=0.8)
     #print y
     # Fit the data using a Gaussian
     g_init = models.Gaussian1D(amplitude=1., mean=0, stddev=1.)
@@ -885,6 +1385,8 @@ def fitAndPlot(data,zero_mean=False, left_wing=False):
     
     if left_wing == True:
         g = fit_g(g_init, x[:-1][x[:-1]<0], y[x[:-1]<0])
+    elif left_mean == True:
+        g = fit_g(g_init, x[:-1][x[:-1]<np.median(data_unmask)], y[x[:-1]<np.median(data_unmask)])
     else:
         g = fit_g(g_init, x[:-1], y)
 
@@ -902,51 +1404,144 @@ def fitAndPlot(data,zero_mean=False, left_wing=False):
     plt.ylabel('Norm. Pixel Count', fontsize=22)
     plt.xlabel('Intensity [MJy/sr]',fontsize=22)
     plt.legend(loc=2)
-    plt.text(0.75,0.5,"Stddev: "+str(round(g.stddev.value,3)),fontsize=22)
-    plt.text(0.75,0.75,"Data mean: "+str(round(np.mean(data),3)),fontsize=22)
+    plt.text(0.75,0.5,"Stddev: "+str(round(g.stddev.value,5)),fontsize=22)
+    plt.text(0.75,0.75,"Data mean: "+str(round(np.mean(data_unmask),5)),fontsize=22)
+    plt.show()
+    plt.close()
+    
+    # Mask pixels from the degraded Planck Foreground Mask Map:
+    hmask = hp.read_map('/work1/users/aaronb/Codebrary/Python/Projects/LOrionis/data/raw/healpix/referenceMaps/COM_Mask_CMB-IQU-common-field-MaskInt_0256.fits')
+
+
+    data_mask[hmask==hp.UNSEEN] = np.nan
+    hp.mollview(data_mask)
+    plt.show()
+    plt.close()
+    
+    y,x, patches = plt.hist(data_mask, range=(-10, 10), bins=1000, normed=True,alpha=0.8)
+    #print y
+    # Fit the data using a Gaussian
+    g_init = models.Gaussian1D(amplitude=1., mean=0, stddev=1.)
+    g_init.mean.fixed = zero_mean
+    fit_g = fitting.LevMarLSQFitter()
+    
+    if left_wing == True:
+        g = fit_g(g_init, x[:-1][x[:-1]<0], y[x[:-1]<0])
+    elif left_mean == True:
+        g = fit_g(g_init, x[:-1][x[:-1]<np.median(data_mask)], y[x[:-1]<np.median(data_mask)])
+    else:
+        g = fit_g(g_init, x[:-1], y)
+
+
+
+    plt.plot(x,g(x),label='Gaussian', color='black')
+
+
+
+    # Plot the data with the best-fit model
+    # plt.figure(figsize=(8,5))
+    # plt.plot(x, y[:-1], 'ko')
+    # plt.plot(x, g(x), label='Gaussian')
+    plt.ylim(0,2.0)
+    plt.ylabel('Norm. Pixel Count', fontsize=22)
+    plt.xlabel('Intensity [MJy/sr]',fontsize=22)
+    plt.legend(loc=2)
+    plt.text(0.75,0.5,"Stddev: "+str(round(g.stddev.value,5)),fontsize=22)
+    plt.text(0.75,0.75,"Data mean: "+str(round(np.mean(data_mask),5)),fontsize=22)
+        
+    
+    
+    
     
     return g.stddev.value
 
-fitAndPlot(data)
+  
+fitAndPlotMaskedTest(phot_modesub.A9.copy(), zero_mean=True, left_wing=True)
 plt.show()
 plt.close()
-fitAndPlot(data, zero_mean=True)
-plt.show()
-plt.close()
-fitAndPlot(data, zero_mean=False, left_wing=True)
-plt.show()
-plt.close()
-fitAndPlot(data, zero_mean=True, left_wing=True)
-plt.show()
-plt.close()
+
     
 # Select data
 
 
-# In[191]:
+# In[ ]:
+
+from astropy.modeling import models, fitting
+
+def fitAndPlotMasked(data,zero_mean=False, left_wing=False, left_mean=False):
+    
+
+    data_mask   = data.copy()
+    
+    # Mask pixels from the degraded Planck Foreground Mask Map:
+    hmask = hp.read_map('/work1/users/aaronb/Codebrary/Python/Projects/LOrionis/data/raw/healpix/referenceMaps/COM_Mask_CMB-IQU-common-field-MaskInt_0256.fits')
+
+
+    data_mask[hmask==hp.UNSEEN] = np.nan
+
+    y,x, patches = plt.hist(data_mask, range=(-10, 10), bins=1000, normed=True,alpha=0.8)
+    #print y
+    # Fit the data using a Gaussian
+    g_init = models.Gaussian1D(amplitude=1., mean=0, stddev=1.)
+    g_init.mean.fixed = zero_mean
+    fit_g = fitting.LevMarLSQFitter()
+    
+    if left_wing == True:
+        g = fit_g(g_init, x[:-1][x[:-1]<0], y[x[:-1]<0])
+    elif left_mean == True:
+        g = fit_g(g_init, x[:-1][x[:-1]<np.median(data_mask)], y[x[:-1]<np.median(data_mask)])
+    else:
+        g = fit_g(g_init, x[:-1], y)
+
+
+
+    plt.plot(x,g(x),label='Gaussian', color='black')
+
+
+
+    # Plot the data with the best-fit model
+    # plt.figure(figsize=(8,5))
+    # plt.plot(x, y[:-1], 'ko')
+    # plt.plot(x, g(x), label='Gaussian')
+    plt.ylim(0,2.0)
+    plt.ylabel('Norm. Pixel Count', fontsize=22)
+    plt.xlabel('Intensity [MJy/sr]',fontsize=22)
+    plt.legend(loc=2)
+    plt.text(0.75,0.5,"Stddev: "+str(round(g.stddev.value,5)),fontsize=22)
+    plt.text(0.75,0.75,"Data mean: "+str(round(np.mean(data_mask),5)),fontsize=22)
+        
+    
+    
+    
+    
+    return g.stddev.value
+
 
 stddevs = []
 
 for i in range(0,len(phot_modesub.columns)):
-    data = phot_modesub.dropna().values[:,i]
-    stddev = fitAndPlot(data)
-    stddevs.append(stddev)
+    data = phot_modesub[phot_modesub.columns[i]].copy()
+    stddev = fitAndPlotMasked(data, zero_mean=True, left_wing=True)
     plt.title(phot_modesub.columns[i], fontsize=22)
-    plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+".pdf", bbox_inches='tight', dpi=100)
+    plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+"_leftWing_zeroMean_masked.pdf", bbox_inches='tight', dpi=100)
     plt.show()
- 
+    plt.close()
+    
+# Select data
 
 
-# In[192]:
+# ## Offset Uncorrected Maps:
+
+# In[241]:
 
 stddevs = []
 
-for i in range(0,len(phot_modesub.columns)):
-    data = phot_modesub.dropna().values[:,i]
-    stddev = fitAndPlot(data, zero_mean=True, left_wing=True)
+for i in range(0,len(phot.columns)):
+    data = phot.dropna().values[:,i]
+    stddev = fitAndPlot(data, zero_mean=False, left_wing=False, left_mean=True)
     stddevs.append(stddev)
-    plt.title(phot_modesub.columns[i], fontsize=22)
-    plt.savefig("../Plots/allsky_pixdist_"+phot_modesub.columns[i]+"_leftWing_zeroMean.pdf", bbox_inches='tight', dpi=100)
+    plt.title(phot.columns[i], fontsize=22)
+    plt.savefig("../Plots/allsky_pixdist_"+phot.columns[i]+"_nonOffsetCorr_leftWing_zeroMean.pdf", bbox_inches='tight', dpi=100)
     plt.show()
     plt.close()
  
