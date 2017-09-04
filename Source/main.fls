@@ -134,9 +134,9 @@ INPUT ../Plots/RegsAME_Bootstrap_MDustandMPAH.pdf
 INPUT /home/aaronb/Projectbrary/CosmicDust/Source/../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf
 INPUT ../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf
 INPUT ../Plots/RegsAME_Bootstrap_LDustandLPAH.pdf
-INPUT /home/aaronb/Projectbrary/CosmicDust/Source/../Plots/lOrionis_AKARI9.png
-INPUT ../Plots/lOrionis_AKARI9.png
-INPUT ../Plots/lOrionis_AKARI9.png
+INPUT /home/aaronb/Projectbrary/CosmicDust/Source/../Plots/LOri_akari9_AMEcont_1dres.pdf
+INPUT ../Plots/LOri_akari9_AMEcont_1dres.pdf
+INPUT ../Plots/LOri_akari9_AMEcont_1dres.pdf
 INPUT /home/aaronb/Projectbrary/CosmicDust/Source/../Plots/lOrionis_grid_img.png
 INPUT ../Plots/lOrionis_grid_img.png
 INPUT ../Plots/lOrionis_grid_img.png
