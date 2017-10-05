@@ -71,11 +71,19 @@ coords['elat'] = hp.read_map(filepath+"pixel_coords_map_ring_ecliptic_res8.fits"
 #### Read Planck low-res Modified blackbody fitting results:
 planck_bb_path    = filepath+"/COM_CompMap_dust-commander_0256_R2.00.fits.gz" #HEALPix FITS table containing Planck low-res modBB results
 fields            = [4,7,1] #The field number in the HEALPix file
-labels            = ["$T$","$B$","$I_d545$"]
+labels            = ["$T$","$B$","$I_{dust}(545)$"]
 
 planck_bb = pd.DataFrame()
 for i in range(0,3):
     planck_bb[labels[i]] = hp.read_map(planck_bb_path,field = fields[i], nest=nest)
+    
+### After adding the PR2 BB-fit results, also add the PR1 radiance map:
+### But first we have to load it and smooth it, as in Hensley+ 2016)
+
+planck_bb['$R_{PR1}$'] = hp.read_map('/work1/users/aaronb/Databrary/HEALPix/AKARI_HEALPix_orig/256_nside/radiance_PR1_256_smooth.fits',
+                      nest = nest)
+
+
 
 planck_bb.replace(
     to_replace =hp.UNSEEN,

@@ -8,7 +8,7 @@
 
 
 
-# In[6]:
+# In[1]:
 
 #from IPython.external import mathjax; mathjax.install_mathjax()
 import matplotlib
@@ -25,7 +25,7 @@ matplotlib.style.use('seaborn-bright')
 get_ipython().magic(u'matplotlib inline')
 
 
-# In[403]:
+# In[2]:
 
 with open('../Data/maps_nest.pickle') as f:  # Python 3: open(..., 'rb')
     coords, planck_bb, planck_mw, phot, phot_modesub = pickle.load(f)
@@ -33,19 +33,10 @@ with open('../Data/maps_nest.pickle') as f:  # Python 3: open(..., 'rb')
 phot.head()
 
 
-rad_pr1 = hp.read_map('/work1/users/aaronb/Databrary/HEALPix/AKARI_HEALPix_orig/256_nside/radiance_PR1_256_smooth.fits')
-
-
-rad_pr1 = pd.DataFrame(rad_pr1, columns=['$R$'])
 
 
 
-# In[404]:
-
-rad_pr1.replace(to_replace=hp.UNSEEN, value=np.nan, inplace=True)
-
-
-# In[9]:
+# In[3]:
 
 glatrange     = 10.0
 glatrange_mid = 2.5
@@ -61,7 +52,7 @@ gcut_h = np.where((abs(coords['glat']) > glatrange) & (abs(coords['elat']) > ela
 
 
 
-# In[307]:
+# In[4]:
 
 print hp.fit_monopole(phot['A9'])
 print hp.fit_monopole(phot['A9'].values[hmask!=hp.UNSEEN])
@@ -72,7 +63,7 @@ print hp.fit_dipole(phot['A9'])
 print hp.fit_dipole(phot['A18'])
 
 
-# In[10]:
+# In[5]:
 
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import Imputer
@@ -95,23 +86,29 @@ planck_mw_tr = pd.DataFrame(allsky_pipeline.fit_transform(planck_mw),columns=pla
 
 
 
+# In[9]:
 
-# In[11]:
+planck_bb.head()
+
+
+# In[6]:
 
 phot_corr = phot_tr.corr(method='spearman')
 planck_bb_corr = planck_bb_tr.corr(method='spearman')
 planck_mw_corr = planck_mw_tr.corr(method='spearman')
 
 
-# In[12]:
+# In[14]:
 
 import seaborn as sb
-phot_corr     = phot_tr.join(planck_mw_tr['AME']).corr(method='spearman')
-phot_corr_lgl = phot_tr.join(planck_mw_tr['AME']).iloc[gcut_l].corr(method='spearman')
-phot_corr_hgl = phot_tr.join(planck_mw_tr['AME']).iloc[gcut_h].corr(method='spearman')
+phot_corr     = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).corr(method='spearman')
+phot_corr_lgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[gcut_l].corr(method='spearman')
+phot_corr_hgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[gcut_h].corr(method='spearman')
 
 
-# In[13]:
+# ### Cross-correlation among all IR photometric bands and AME map
+
+# In[18]:
 
 #bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
 mask = np.zeros_like(phot_corr.values)
@@ -126,7 +123,7 @@ with sb.axes_style("white"):
     sb.heatmap(
         phot_corr,
         #linewidths=.5,
-        annot=False,
+        annot=True,
         mask=mask,
         cbar=False,
         yticklabels=True,
@@ -141,7 +138,7 @@ with sb.axes_style("white"):
     sb.heatmap(
         phot_corr_hgl,
         #linewidths=.5,
-        annot=False,
+        annot=True,
         mask=mask,
         cbar=False,
         yticklabels=False,
@@ -157,7 +154,7 @@ with sb.axes_style("white"):
     sb.heatmap(
         phot_corr_lgl,
         #linewidths=.5,
-        annot=False,
+        annot=True,
         mask=mask,
         cbar=True,
         cbar_ax=cbar_ax,
@@ -177,9 +174,23 @@ with sb.axes_style("white"):
     fig.savefig("../Plots/all_bands_corr_matrix_wAME_spearman.pdf", bbox_inches='tight')
 
 
-# In[14]:
+# ### Cross correlation between AME and Planck Mod-BB fits 
+# (+the smoothed PR1 Radiance map, as used by Hensley+ 2016)
 
-planck_bb_corr = planck_bb_tr.join(phot_tr['A9']).join(planck_mw_tr['AME']).corr(method='spearman')
+# In[53]:
+
+np.shape(rad_pr1.values)
+
+
+# In[54]:
+
+planck_bb_tr.head()
+planck_bb_tr.join(rad_pr1_tr, rsuffix='PR1').head()
+
+
+# In[45]:
+
+planck_bb_corr = planck_bb_tr.join(phot_tr['A9']).join(planck_mw_tr['AME']).join(rad_pr1_tr['$R_{PR1}$'],rsuffix='PR1').corr(method='spearman')
 #bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
 mask = np.zeros_like(planck_bb_corr.values)
 mask[np.triu_indices_from(mask,k=1)] = True
@@ -204,6 +215,16 @@ with sb.axes_style("white"):
 
     fig.savefig("../Plots/PlanckModBBvsAMEandA9.pdf", bbox_inches='tight')
     
+
+
+# In[ ]:
+
+
+
+
+# In[ ]:
+
+
 
 
 # In[15]:
@@ -1708,6 +1729,251 @@ phot_tr_nmf['nmf-two'] = nmf_result[:,1]
 
 
 print "Explained variation per principal component:{}".format(nmf.explained_variance_ratio_)
+
+
+# In[55]:
+
+planck_mw.head()
+
+
+# In[56]:
+
+planck_bb.head()
+
+
+# In[69]:
+
+hp.mollview(planck_mw['AME']/planck_bb['$R$'], norm='hist',min=1, max=10, nest=True, cmap='rainbow')
+
+
+# In[70]:
+
+hp.mollview(planck_mw_tr['AME']/planck_bb_tr['$R$'], norm='hist', nest=True, cmap='rainbow')
+
+
+# In[72]:
+
+hp.mollview(planck_mw_tr['Sync']/planck_bb_tr['$R$'], norm='hist', nest=True, cmap='rainbow')
+
+
+# In[73]:
+
+hp.mollview(planck_mw_tr['ff']/planck_bb_tr['$R$'], norm='hist', nest=True, cmap='rainbow')
+
+
+# In[10]:
+
+planck_mw.columns
+
+
+# In[12]:
+
+from sklearn.decomposition import PCA, FastICA, NMF
+from sklearn.preprocessing import Imputer
+
+imp = Imputer()
+
+#imp.fit(phot_modesub.values)
+#X = imp.transform(phot_modesub.values)
+
+imp.fit(planck_mw[['AME','ff','Sync']].values)
+X = imp.transform(planck_mw[['AME','ff','Sync']].values)
+
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+
+scaler = MinMaxScaler(feature_range=(0, 1))
+
+# Don't cheat - fit only on training data
+scaler.fit(X)  
+X = scaler.transform(X)  
+
+
+
+#X = X[:,[0,1,-2]]
+
+
+# In[13]:
+
+#X = planck_mw_tr.drop(['CO'])
+
+nmf = NMF(n_components=3)
+S_nmf_ = nmf.fit(X).transform(X)
+
+pca = PCA(n_components=3)
+S_pca_ = pca.fit(X).transform(X)
+
+rng = np.random.RandomState(42)
+ica = FastICA(random_state = rng, n_components=3)
+S_ica_ = ica.fit(X).transform(X)
+
+S_ica_ /= S_ica_.std(axis=0)
+
+
+# In[27]:
+
+from matplotlib.colors import SymLogNorm
+
+
+for i in range(0,np.size(S_ica_,axis=1)):
+    #plt.subplot(5,4,i+1)
+    #plt.figure(figsize=(20,20))
+    hp.cartview(S_ica_[:,i], title="IC_"+str(i),
+               cmap = "rainbow", 
+                norm=SymLogNorm(linthresh=0.01,
+                                linscale=1,vmin=0), nest=True)
+labels = ['AME','ff','Sync']
+
+for i in range(0,np.size(S_ica_,axis=1)):
+#for i in range(1,2):
+    
+    x_ = range(0,np.size(ica.components_,axis=1))
+    y_ = ica.components_[i]
+    
+    fig, ax = plt.subplots()
+    ax.scatter(x_,y_)
+    for i, txt in enumerate(labels):
+        #print x_[i], y_[i], labels[i]
+        ax.annotate(labels[i], (x_[i],y_[i]))
+        
+    #plt.xscale('log')
+    #plt.yscale('log')
+    #plt.xlim(8,1000)
+    #plt.xlabel("Wavelength (microns)       [EV_"+str(i)+"] "+str(round(eig_values[i]/sum(eig_values)*100,2))+"%")
+    plt.ylabel("Relative Contribution")
+    plt.show()
+    plt.close()
+    
+
+
+# In[25]:
+
+from matplotlib.colors import SymLogNorm
+
+
+for i in range(0,np.size(S_nmf_,axis=1)):
+    #plt.subplot(5,4,i+1)
+    #plt.figure(figsize=(20,20))
+    hp.cartview(S_nmf_[:,i], title="NN_"+str(i),
+               cmap = "rainbow", 
+                norm=SymLogNorm(linthresh=0.01,
+                                linscale=1,vmin=0), nest=True)
+    
+labels = ['AME','ff','Sync']
+
+for i in range(0,np.size(S_nmf_,axis=1)):
+#for i in range(1,2):
+    
+    x_ = range(0,np.size(nmf.components_,axis=1))
+    y_ = nmf.components_[i]
+    
+    fig, ax = plt.subplots()
+    ax.scatter(x_,y_)
+    for i, txt in enumerate(labels):
+        #print x_[i], y_[i], labels[i]
+        ax.annotate(labels[i], (x_[i],y_[i]))
+        
+    #plt.xscale('log')
+    #plt.yscale('log')
+    #plt.xlim(8,1000)
+    #plt.xlabel("Wavelength (microns)       [EV_"+str(i)+"] "+str(round(eig_values[i]/sum(eig_values)*100,2))+"%")
+    plt.ylabel("Relative Contribution")
+    plt.show()
+    plt.close()
+    
+
+
+# In[26]:
+
+from matplotlib.colors import SymLogNorm
+
+
+for i in range(0,np.size(S_pca_,axis=1)):
+    #plt.subplot(5,4,i+1)
+    #plt.figure(figsize=(20,20))
+    hp.cartview(S_pca_[:,i], title="PC_"+str(i),
+               cmap = "rainbow", 
+                norm=SymLogNorm(linthresh=0.01,
+                                linscale=1,vmin=0), nest=True)
+    
+labels = ['AME','ff','Sync']
+
+for i in range(0,np.size(S_pca_,axis=1)):
+#for i in range(1,2):
+    
+    x_ = range(0,np.size(pca.components_,axis=1))
+    y_ = pca.components_[i]
+    
+    fig, ax = plt.subplots()
+    ax.scatter(x_,y_)
+    for i, txt in enumerate(labels):
+        #print x_[i], y_[i], labels[i]
+        ax.annotate(labels[i], (x_[i],y_[i]))
+        
+    #plt.xscale('log')
+    #plt.yscale('log')
+    #plt.xlim(8,1000)
+    #plt.xlabel("Wavelength (microns)       [EV_"+str(i)+"] "+str(round(eig_values[i]/sum(eig_values)*100,2))+"%")
+    plt.ylabel("Relative Contribution")
+    plt.show()
+    plt.close()
+    
+
+
+# In[23]:
+
+for i in range(0,np.size(X,axis=1)):
+    #plt.subplot(5,4,i+1)
+    #plt.figure(figsize=(20,20))
+    hp.cartview(X[:,i], title="Input_"+str(i),
+               cmap = "rainbow", 
+                norm=SymLogNorm(linthresh=0.01,
+                                linscale=1,vmin=0), nest=True)
+    
+labels = ['AME','ff','Sync']
+
+for i in range(0,np.size(S_pca_,axis=1)):
+#for i in range(1,2):
+    
+    x_ = range(0,np.size(ica.components_,axis=1))
+    y_ = ica.components_[i]
+    
+    fig, ax = plt.subplots()
+    ax.scatter(x_,y_)
+    for i, txt in enumerate(labels):
+        #print x_[i], y_[i], labels[i]
+        ax.annotate(labels[i], (x_[i],y_[i]))
+        
+    #plt.xscale('log')
+    #plt.yscale('log')
+    #plt.xlim(8,1000)
+    #plt.xlabel("Wavelength (microns)       [EV_"+str(i)+"] "+str(round(eig_values[i]/sum(eig_values)*100,2))+"%")
+    plt.ylabel("Relative Contribution")
+    plt.show()
+    plt.close()
+    
+
+
+# In[40]:
+
+fontsize = 18
+
+plt.hexbin(
+    phot_modesub.join(planck_mw.AME).dropna().A9/phot_modesub.join(planck_mw.AME).dropna().I12, 
+                      planck_mw.join(phot_modesub).dropna().AME, 
+    gridsize=50, 
+    cmap='inferno',
+    mincnt=1, 
+    bins='log'  )
+
+plt.xlim(0,)
+cb = plt.colorbar()
+cb.set_label('log(N pixels)', fontsize=fontsize-3)
+plt.title('PAH Ionization-tracing Band Ratio vs. AME Intensity', fontsize = fontsize)
+plt.xlabel('$I_{9\mu{}m}$ / $I_{12\mu{}m}$', fontsize=fontsize-3)
+plt.ylabel('$I_{AME}$ [$\mu{}K_{RJ}$]', fontsize=fontsize-3)
+#rint np.corrcoef(LOri_df.dropna().akari_9/LOri_df.dropna().iras_12, LOri_df.dropna().AME1)
+scipy.stats.spearmanr(phot_modesub.join(planck_mw.AME).dropna().A9/phot_modesub.join(planck_mw.AME).dropna().I12, 
+                      planck_mw.join(phot_modesub).dropna().AME)
 
 
 # In[ ]:
