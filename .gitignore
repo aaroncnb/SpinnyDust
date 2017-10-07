@@ -3,4 +3,12 @@
 ./Data/*.pickle
 ./Data/*.p
 ./Data/**/*.fits
+./Source/main.pdf
+./Source/main.syntex.gz
+./Source/main.log
+./Source/main.aux
+./Source/main.fls
+./Source/main.fdb_latexmk
+./Source/main.blg
+./Source/main.bbl
 
