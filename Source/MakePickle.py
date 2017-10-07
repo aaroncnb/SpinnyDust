@@ -13,12 +13,12 @@ nest = bool(sys.argv[1])
 
 
 band_names =   [ "akari_9",\
-                    "dirbe_12","iras_12", \
+                    "iras_12", \
                     "akari_18", \
-                    "dirbe_25","iras_25", \
-                    "dirbe_60","iras_60","akari_65",\
+                    "iras_25", \
+                    "iras_60","akari_65",\
                     "akari_90",\
-                    "dirbe_100", "iras_100",\
+                    "iras_100",\
                     "dirbe_140", "akari_140",\
                     "akari_160", \
                     "dirbe_240", \
@@ -26,13 +26,13 @@ band_names =   [ "akari_9",\
 
 
 band_abbr =   [ "A9",\
-                    "D12","I12", \
+                    "I12", \
                     "A18", \
-                    "D25","I25", \
-                    "D60","I60","A65",\
+                    "I25", \
+                    "I60","A65",\
                     "A90",\
-                    "D100", "I100",\
-                    "D140", "A140",\
+                    "I100",\
+                    "A140",\
                     "A160", \
                     "D240", \
                     "P857", "P545"]
@@ -40,18 +40,18 @@ band_abbr =   [ "A9",\
 
 
 band_labels  = ["AKARI 9 $\mu{m}$",\
-                "DIRBE 12 $\mu{m}$","IRAS 12 $\mu{m}$", \
+                "IRAS 12 $\mu{m}$", \
                 "AKARI 18 $\mu{m}$",\
-                "DIRBE 25 $\mu{m}$", "IRAS 25 $\mu{m}$", \
-                "DIRBE 60 $\mu{m}$","IRAS 60 $\mu{m}$","AKARI 65 $\mu{m}$", \
+                "IRAS 25 $\mu{m}$", \
+                "IRAS 60 $\mu{m}$","AKARI 65 $\mu{m}$", \
                 "AKARI 90 $\mu{m}$", \
-                "DIRBE 100 $\mu{m}$","IRAS 100 $\mu{m}$",\
-                "DIRBE 140 $\mu{m}$","AKARI 140 $\mu{m}$",\
+                "IRAS 100 $\mu{m}$",\
+                "AKARI 140 $\mu{m}$",\
                 "AKARI 160 $\mu{m}$",\
                 "DIRBE 240 $\mu{m}$",\
                 "PLANCK 350 $\mu{m}$","PLANCK 550 $\mu{m}$" ]
 
-waves_micron  = [ 9,12,12,18,25,25,60,60,65,90,100,100,140,140,160,240,350,550]
+waves_micron  = [ 9,12,18,25,60,65,90,100,140,160,240,350,550]
 
 nbands_all        = len(band_names)
 
