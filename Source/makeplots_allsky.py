@@ -25,6 +25,8 @@ matplotlib.style.use('seaborn-bright')
 get_ipython().magic(u'matplotlib inline')
 
 
+# # 0.1) Load data and masks:
+
 # In[2]:
 
 with open('../Data/maps_nest.pickle') as f:  # Python 3: open(..., 'rb')
@@ -36,18 +38,12 @@ phot.head()
 
 
 
+# In[1]:
+
+#### Planck Milky Way Mask:
+
+
 # In[3]:
-
-glatrange     = 10.0
-glatrange_mid = 2.5
-elatrange     = 10
-
-
-gcut_l = np.where((abs(coords['glat']) < glatrange) & (abs(coords['elat']) > elatrange))
-gcut_h = np.where((abs(coords['glat']) > glatrange) & (abs(coords['elat']) > elatrange))
-
-
-
 
 
 
