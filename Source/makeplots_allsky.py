@@ -3,11 +3,6 @@
 
 # ### All-sky AME vs. IR Scatter Plots
 
-# In[ ]:
-
-
-
-
 # In[2]:
 
 #from IPython.external import mathjax; mathjax.install_mathjax()
@@ -101,9 +96,6 @@ gcut_h = np.where((abs(coords['glat']) > glatrange) & (abs(coords['elat']) > ela
 # In[9]:
 
 import seaborn as sb
-phot_corr     = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).corr(method='spearman')
-phot_corr_lgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[gcut_l].corr(method='spearman')
-phot_corr_hgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[gcut_h].corr(method='spearman')
 
 
 # In[ ]:
@@ -111,70 +103,77 @@ phot_corr_hgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']
 
 
 
-# In[10]:
+# In[66]:
 
-#bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
-mask = np.zeros_like(phot_corr.values)
-mask[np.triu_indices_from(mask,k=1)] = True
+def plotCorrMatrix():
+    
+    phot_corr     = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).corr(method='spearman')
+    phot_corr_lgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[gcut_l].corr(method='spearman')
+    phot_corr_hgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[gcut_h].corr(method='spearman')
+    
+    mask = np.zeros_like(phot_corr.values)
+    mask[np.triu_indices_from(mask,k=1)] = True
 
-with sb.axes_style("white"):
-
-    
-    fig, ax = plt.subplots(1,3,figsize=(15,5))
-    cbar_ax = fig.add_axes([.91, .2, .03, .7])
-    
-    sb.heatmap(
-        phot_corr,
-        #linewidths=.5,
-        annot=True,
-        mask=mask,
-        cbar=False,
-        yticklabels=True,
-        xticklabels=True,
-        ax = ax[0],
-        vmin=0,
-        vmax=1)
-    
-    ax[0].set_title("All-sky", fontsize=20)
-
-    
-    sb.heatmap(
-        phot_corr_hgl,
-        #linewidths=.5,
-        annot=True,
-        mask=mask,
-        cbar=False,
-        yticklabels=False,
-        xticklabels=False,
-        ax=ax[1],
-        vmin=0,
-        vmax=1)
-    
-    ax[1].set_title("$|b| > 10^{\circ}$", fontsize=20)
-
-    
-    
-    sb.heatmap(
-        phot_corr_lgl,
-        #linewidths=.5,
-        annot=True,
-        mask=mask,
-        cbar=True,
-        cbar_ax=cbar_ax,
-        yticklabels=False,
-        xticklabels=False,
-        ax=ax[2],
-        vmin=0,
-        vmax=1)
-    
-    ax[2].set_title("$|b| < 10^{\circ}$", fontsize=20)
+    with sb.axes_style("white"):
 
 
-    fig.tight_layout(rect=[0, 0, .9, 1])
-    
-    plt.show()
+        fig, ax = plt.subplots(1,3,figsize=(21,7))
+        cbar_ax = fig.add_axes([.91, .2, .03, .7])
 
-    fig.savefig("../Plots/all_bands_corr_matrix_wAME_spearman.pdf", bbox_inches='tight')
+        sb.heatmap(
+            phot_corr,
+            #linewidths=.5,
+            annot=True,
+            mask=mask,
+            cbar=False,
+            yticklabels=True,
+            xticklabels=True,
+            ax = ax[0],
+            vmin=0,
+            vmax=1)
+
+        ax[0].set_title("All-sky", fontsize=20)
+
+
+        sb.heatmap(
+            phot_corr_hgl,
+            #linewidths=.5,
+            annot=True,
+            mask=mask,
+            cbar=False,
+            yticklabels=True,
+            xticklabels=True,
+            ax=ax[1],
+            vmin=0,
+            vmax=1)
+
+        ax[1].set_title("$|b| > 10^{\circ}$", fontsize=20)
+
+
+
+        sb.heatmap(
+            phot_corr_lgl,
+            #linewidths=.5,
+            annot=True,
+            mask=mask,
+            cbar=True,
+            cbar_ax=cbar_ax,
+            yticklabels=True,
+            xticklabels=True,
+            ax=ax[2],
+            vmin=0,
+            vmax=1)
+
+        ax[2].set_title("$|b| < 10^{\circ}$", fontsize=20)
+
+
+        fig.tight_layout(rect=[0, 0, .9, 1])
+
+        plt.show()
+
+        fig.savefig("../Plots/all_bands_corr_matrix_wAME_spearman.pdf", bbox_inches='tight')
+        
+plotCorrMatrix()
 
 
 # ### 1.2) Cross-correlation among all IR photometric bands and AME map
@@ -182,66 +181,184 @@ with sb.axes_style("white"):
 
 # In[11]:
 
-irc9_detection_limit = 1.0 # MJy/sr
-
-
-irc9_lim = np.where(phot_modesub['A9'] > 1.0 )
 
 
 
 # In[12]:
 
 
-phot_corr_irc9_lim = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[irc9_lim].corr(method='spearman')
 
 
-# In[13]:
+# In[62]:
 
-#bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
-mask = np.zeros_like(phot_corr.values)
-mask[np.triu_indices_from(mask,k=1)] = True
+def plotCorrMatrixwCutoff(mapframe, cutoff_map,cutoff=1.0):
+    
 
-with sb.axes_style("white"):
+    lim = np.where(cutoff_map > cutoff )
 
     
-    fig, ax = plt.subplots(1,2,figsize=(15,7.5))
-    cbar_ax = fig.add_axes([.91, .2, .03, .7])
+    phot_corr_irc9_lim = mapframe.iloc[lim].corr(method='spearman')
     
-    sb.heatmap(
-        phot_corr,
-        #linewidths=.5,
-        annot=True,
-        mask=mask,
-        cbar=False,
-        yticklabels=True,
-        xticklabels=True,
-        ax = ax[0],
-        vmin=0,
-        vmax=1)
-    
-    ax[0].set_title("All-sky", fontsize=20)
+    #bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
+    mask = np.zeros_like(phot_corr.values)
+    mask[np.triu_indices_from(mask,k=1)] = True
 
-    
-    sb.heatmap(
-        phot_corr_irc9_lim,
-        #linewidths=.5,
-        annot=True,
-        mask=mask,
-        cbar=True,
-        yticklabels=False,
-        xticklabels=False,
-        ax=ax[1],
-        vmin=0,
-        vmax=1)
-    
-    ax[1].set_title("$I_{\mu{}m}$ > 1 MJy/sr", fontsize=20)
+    with sb.axes_style("white"):
 
 
-    fig.tight_layout(rect=[0, 0, .9, 1])
-    
-    plt.show()
+        fig, ax = plt.subplots(1,2,figsize=(15,7.5))
+        cbar_ax = fig.add_axes([.91, .2, .03, .7])
 
-    fig.savefig("../Plots/all_bands_corr_matrix_wAME__IRC9lim_spearman.pdf", bbox_inches='tight')
+        sb.heatmap(
+            phot_corr,
+            #linewidths=.5,
+            annot=True,
+            mask=mask,
+            cbar=False,
+            yticklabels=True,
+            xticklabels=True,
+            ax = ax[0],
+            vmin=0,
+            vmax=1)
+
+        ax[0].set_title("All-sky", fontsize=20)
+
+
+        sb.heatmap(
+            phot_corr_irc9_lim,
+            #linewidths=.5,
+            annot=True,
+            mask=mask,
+            cbar=True,
+            cbar_ax = cbar_ax,
+            yticklabels=True,
+            xticklabels=True,
+            ax=ax[1],
+            vmin=0,
+            vmax=1)
+
+        ax[1].set_title("$I_um$ > {} MJy/sr".format(cutoff), fontsize=20)
+
+
+        fig.tight_layout(rect=[0, 0, .9, 1])
+
+        plt.show()
+
+        fig.savefig("../Plots/all_bands_corr_matrix_wAME__IRC9lim{}MJysr_spearman.pdf".format(cutoff), bbox_inches='tight')
+        
+plotCorrMatrixwCutoff(phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']), phot_modesub['A9'], cutoff=10)
+
+
+# Why is IRAS 25 $\mu$m the most unique map? Somewhat odd that it correlates miraculously well with IRAS 12 $\mu$m - despite its weak correlation with  the IRC $\mu$m map. Perhaps this is due to correlated noise, systematic effects in the IRAS MIR bands. Correlated Zodiacal light subtraction residuals, perhaps
+
+# # All-sky AME vs. IR plots:
+
+# In[67]:
+
+
+
+def plotBandsCloud(nside=256):
+    
+    sb.set_style("whitegrid")
+
+    ncols=4
+    nrows=3
+    aspect=1.0
+
+    fig, axs = plt.subplots(ncols=ncols, 
+                            nrows=nrows, 
+                            sharey=True, 
+                            sharex=True)
+    #fig.subplots_adjust(hspace=0.1, left=0.1, right=0.7)
+    plt.setp(axs.flat, aspect=1.0, adjustable='box-forced')
+
+    k=0
+
+    hsize = hp.nside2npix(nside)
+    
+    randsub = np.random.randint(low=0, high=hsize, size=hsize//10)
+
+
+    for i in range(0,nrows):
+        for j in range(0,ncols):
+
+                if k > 11:
+
+                    pass
+
+                else:
+
+                    x = phot_modesub.values[randsub,k].copy()
+
+
+                    y = planck_mw['AME'].values[randsub].copy()
+
+                    x_ = x[(x>0) & (y>0)].copy()
+                    y_ = y[(x>0) & (y>0)].copy()
+
+                    x_ = np.log10(x_)
+                    y_ = np.log10(y_)
+
+
+                    xmin = x_.min()
+                    xmax = x_.max()
+                    ymin = y_.min()
+                    ymax = y_.max()
+
+                    #print xmin
+                    #print xmax
+                    #print ymin
+                    #print ymax
+
+                    ax = axs[i,j]
+                    #ax.set_aspect(aspect, adjustable='box')
+
+                    #ax.set_xscale('log')
+                    #ax.set_yscale('log')
+
+
+                    sb.kdeplot(
+                           x_,
+                           y_,
+                           shade=True,
+                           shade_lowest=False,
+                           gridsize=50,
+                            ax = ax)
+
+
+
+                    #ax.axis([xmin, xmax, ymin, ymax])
+                    ax.axis([-1,1,1,3.0])
+
+                    ax.text(0.2, 0.9,phot_modesub.columns[k], horizontalalignment='center',
+                      verticalalignment='center',
+                      transform=ax.transAxes, 
+                      fontsize=15)
+
+                    ax.grid(True)
+
+                    ax.set_frame_on(True)
+
+                    k += 1
+                    
+        ax = axs[1,0]
+        ax.set_ylabel('AME [$\mu{}K_{CMB}$]', fontsize=15)
+        ax = axs[-1,2]
+        ax.set_xlabel('log $\nu{}I_{nu}$ [MJy/sr]', fontsize=15)
+
+        plt.show()
+
+        fig.savefig("../Plots/AMEvsDust_allsky_allbands_kde.pdf", bbox_inches='tight')
+
+                    
+    return axs
+    
+allbands_kde = plotBandsCloud()
+
+
+# In[ ]:
+
+## Check correlations, adding 10% noise after removal of first principal component
 
 
 # ### Cross correlation between AME and Planck Mod-BB fits 
@@ -315,7 +432,7 @@ corr_patches_pn = testSpatialCorr(bba, nside_in, nside_out, test=False)
 # The check appears successful, so make a plot grid of all the nsides:
 
 
-# In[51]:
+# In[21]:
 
 import matplotlib as mpl
 
@@ -388,86 +505,20 @@ def SpatialCorrAll(df, nside_in):
 
 
 
-# # All-sky AME vs. IR plots:
+# In[60]:
 
-# In[23]:
+def dispAllbandsKDE(allbands_kde):
+    
+    ax = axs[1,0]
+    ax.set_ylabel('AME [$\mu{}K_{CMB}$]', fontsize=15)
+    ax = axs[-1,2]
+    ax.set_xlabel('log $\nuI_nu$ [MJy/sr]', fontsize=15)
 
-ncols=4
-nrows=3
-aspect=1.0
+    plt.show()
 
-fig, axs = plt.subplots(ncols=ncols, 
-                        nrows=nrows, 
-                        sharey=True, 
-                        sharex=True)
-#fig.subplots_adjust(hspace=0.1, left=0.1, right=0.7)
-plt.setp(axs.flat, aspect=1.0, adjustable='box-forced')
-
-k=0
-
-
-for i in range(0,nrows):
-    for j in range(0,ncols):
-            
-            if k > 11:
-                
-                pass
-            
-            else:
-           
-                x = phot_modesub.values[:,k]
-
-
-                y = planck_mw['AME'].values[:]
-
-                x_ = x[(x>0) & (y>0)]
-                y_ = y[(x>0) & (y>0)]
-                
-                x_ = np.log10(x_.copy())
-                y_ = np.log10(y_.copy())
-
-
-                xmin = x_.min()
-                xmax = x_.max()
-                ymin = y_.min()
-                ymax = y_.max()
-
-                ax = axs[i,j]
-                #ax.set_aspect(aspect, adjustable='box')
-                
-                ax.set_xscale('log')
-                ax.set_yscale('log')
-
-
-                sb.kdeplot(
-                       x_,
-                       y_, 
-                       gridsize=10,
-                        ax = ax)
-                
-
-
-                ax.axis([xmin, xmax, ymin, ymax])
-
-                ax.text(0.2, 0.9,phot_modesub.columns[k], horizontalalignment='center',
-                  verticalalignment='center',
-                  transform=ax.transAxes, 
-                  fontsize=15)
-                
-                ax.grid(True)
-                
-                ax.set_frame_on(True)
-
-                k += 1
-            
-ax = axs[1,0]
-ax.set_ylabel('AME [$\mu{}K_{CMB}$]', fontsize=15)
-ax = axs[-1,2]
-ax.set_xlabel('IR [MJy/sr]', fontsize=15)
-
-plt.show()
-
-fig.savefig("../Plots/AMEvsDust_allsky_allbands.pdf", bbox_inches='tight', dpi=100)  
+    fig.savefig("../Plots/AMEvsDust_allsky_allbands_kde.pdf", bbox_inches='tight')
+    
+dispAllbandsKDE(allbands_kde)
 
 
 # ## Compare with Planck PR2 Dust Intensity Map
