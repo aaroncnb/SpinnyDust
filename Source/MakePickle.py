@@ -19,9 +19,8 @@ band_names =   [ "akari_9",\
                     "iras_60","akari_65",\
                     "akari_90",\
                     "iras_100",\
-                    "dirbe_140", "akari_140",\
+                    "akari_140",\
                     "akari_160", \
-                    "dirbe_240", \
                     "planck_857", "planck_545"]
 
 
@@ -34,7 +33,6 @@ band_abbr =   [ "A9",\
                     "I100",\
                     "A140",\
                     "A160", \
-                    "D240", \
                     "P857", "P545"]
 
 
@@ -48,10 +46,9 @@ band_labels  = ["AKARI 9 $\mu{m}$",\
                 "IRAS 100 $\mu{m}$",\
                 "AKARI 140 $\mu{m}$",\
                 "AKARI 160 $\mu{m}$",\
-                "DIRBE 240 $\mu{m}$",\
                 "PLANCK 350 $\mu{m}$","PLANCK 550 $\mu{m}$" ]
 
-waves_micron  = [ 9,12,18,25,60,65,90,100,140,160,240,350,550]
+waves_micron  = [ 9,12,18,25,60,65,90,100,140,160,350,550]
 
 nbands_all        = len(band_names)
 
@@ -115,8 +112,10 @@ print "COMMANDER MW Maps Read"
 
 #### Read in the MIR to FIR photometry data:
 phot = pd.DataFrame()
+
 for i in range(0,len(band_names)):
     phot[band_abbr[i]] = hp.read_map(filepath+band_names[i]+"_"+str(nside)+"_1dres.fits.gz", nest=nest)
+
 print "IR Maps Read"
 
 phot.replace(

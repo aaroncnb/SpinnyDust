@@ -8,7 +8,7 @@
 
 
 
-# In[1]:
+# In[11]:
 
 #from IPython.external import mathjax; mathjax.install_mathjax()
 import matplotlib
@@ -27,7 +27,7 @@ get_ipython().magic(u'matplotlib inline')
 
 # # 0.1) Load data and masks:
 
-# In[2]:
+# In[12]:
 
 with open('../Data/maps_nest.pickle') as f:  # Python 3: open(..., 'rb')
     coords, planck_bb, planck_mw, phot, phot_modesub = pickle.load(f)
@@ -38,28 +38,17 @@ phot.head()
 
 
 
-# In[1]:
+# In[13]:
 
 #### Planck Milky Way Mask:
 
 
-# In[3]:
+# In[ ]:
 
 
 
 
-# In[4]:
-
-print hp.fit_monopole(phot['A9'])
-print hp.fit_monopole(phot['A9'].values[hmask!=hp.UNSEEN])
-print phot['A9'].mode()
-print hp.fit_monopole(phot['A18'])
-print phot['A18'].mode()
-print hp.fit_dipole(phot['A9'])
-print hp.fit_dipole(phot['A18'])
-
-
-# In[5]:
+# In[14]:
 
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import Imputer
@@ -75,26 +64,41 @@ allsky_pipeline = Pipeline([
 #     ('imputer', Imputer(strategy="median"))
 # ])
 
-phot_tr = pd.DataFrame(allsky_pipeline.fit_transform(phot),columns=phot.columns)
+phot_tr      = pd.DataFrame(allsky_pipeline.fit_transform(phot),columns=phot.columns)
 planck_bb_tr = pd.DataFrame(allsky_pipeline.fit_transform(planck_bb),columns=planck_bb.columns)
 planck_mw_tr = pd.DataFrame(allsky_pipeline.fit_transform(planck_mw),columns=planck_mw.columns)
 
 
 
 
-# In[9]:
+# In[15]:
 
 planck_bb.head()
 
 
-# In[6]:
+# In[16]:
 
 phot_corr = phot_tr.corr(method='spearman')
 planck_bb_corr = planck_bb_tr.corr(method='spearman')
 planck_mw_corr = planck_mw_tr.corr(method='spearman')
 
 
-# In[14]:
+# ### 1.1) Cross-correlation among all IR photometric bands and AME map
+# ##### Split by Galactic Latitude
+
+# In[18]:
+
+glatrange     = 10.0
+glatrange_mid = 2.5
+elatrange     = 10
+
+
+gcut_l = np.where((abs(coords['glat']) < glatrange) & (abs(coords['elat']) > elatrange))
+gcut_h = np.where((abs(coords['glat']) > glatrange) & (abs(coords['elat']) > elatrange))
+
+
+
+# In[19]:
 
 import seaborn as sb
 phot_corr     = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).corr(method='spearman')
@@ -102,9 +106,12 @@ phot_corr_lgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']
 phot_corr_hgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[gcut_h].corr(method='spearman')
 
 
-# ### Cross-correlation among all IR photometric bands and AME map
+# In[ ]:
 
-# In[18]:
+
+
+
+# In[20]:
 
 #bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
 mask = np.zeros_like(phot_corr.values)
@@ -170,82 +177,81 @@ with sb.axes_style("white"):
     fig.savefig("../Plots/all_bands_corr_matrix_wAME_spearman.pdf", bbox_inches='tight')
 
 
+# ### 1.2) Cross-correlation among all IR photometric bands and AME map
+# ##### Split by AKARI 9 micron detection limit (2 MJy/sr)
+
+# In[34]:
+
+irc9_detection_limit = 1.0 # MJy/sr
+
+
+irc9_lim = np.where(phot_modesub['A9'] > 1.0 )
+
+
+
+# In[35]:
+
+
+phot_corr_irc9_lim = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[irc9_lim].corr(method='spearman')
+
+
+# In[38]:
+
+#bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
+mask = np.zeros_like(phot_corr.values)
+mask[np.triu_indices_from(mask,k=1)] = True
+
+with sb.axes_style("white"):
+
+    
+    fig, ax = plt.subplots(1,2,figsize=(15,7.5))
+    cbar_ax = fig.add_axes([.91, .2, .03, .7])
+    
+    sb.heatmap(
+        phot_corr,
+        #linewidths=.5,
+        annot=True,
+        mask=mask,
+        cbar=False,
+        yticklabels=True,
+        xticklabels=True,
+        ax = ax[0],
+        vmin=0,
+        vmax=1)
+    
+    ax[0].set_title("All-sky", fontsize=20)
+
+    
+    sb.heatmap(
+        phot_corr_irc9_lim,
+        #linewidths=.5,
+        annot=True,
+        mask=mask,
+        cbar=True,
+        yticklabels=False,
+        xticklabels=False,
+        ax=ax[1],
+        vmin=0,
+        vmax=1)
+    
+    ax[1].set_title("$I_{\mu{}m}$ > 1 MJy/sr", fontsize=20)
+
+
+    fig.tight_layout(rect=[0, 0, .9, 1])
+    
+    plt.show()
+
+    fig.savefig("../Plots/all_bands_corr_matrix_wAME__IRC9lim_spearman.pdf", bbox_inches='tight')
+
+
 # ### Cross correlation between AME and Planck Mod-BB fits 
 # (+the smoothed PR1 Radiance map, as used by Hensley+ 2016)
 
-# In[53]:
-
-np.shape(rad_pr1.values)
-
-
-# In[54]:
-
-planck_bb_tr.head()
-planck_bb_tr.join(rad_pr1_tr, rsuffix='PR1').head()
-
-
-# In[45]:
-
-planck_bb_corr = planck_bb_tr.join(phot_tr['A9']).join(planck_mw_tr['AME']).join(rad_pr1_tr['$R_{PR1}$'],rsuffix='PR1').corr(method='spearman')
-#bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
-mask = np.zeros_like(planck_bb_corr.values)
-mask[np.triu_indices_from(mask,k=1)] = True
-
-
-
-with sb.axes_style("white"):
-    
-    fig = plt.figure(figsize=(6,5))
-    sb.heatmap(
-        planck_bb_corr,
-        linewidths=.5,
-        annot=True,
-        mask=mask)
-    
-    
-    fig.show()
-    
-    plt.title("Planck Mod-BB vs. AME and AKARI 9 $\mu$m emission",fontsize=10)
-    
-    fig.tight_layout(rect=[0, 0, .9, 1])
-
-    fig.savefig("../Plots/PlanckModBBvsAMEandA9.pdf", bbox_inches='tight')
-    
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
-
-# In[15]:
-
-## Force background color to be white:
-### Note that seaborn plotting functions my override these settings.
-#plt.rcParams['axes.facecolor']='white'
-#plt.rcParams['figure.facecolor']='white'
-#plt.rcParams['savefig.facecolor']='white'
-
-
-# In[16]:
-
-bba = planck_bb_tr.join(phot_tr['A9']).join(planck_mw_tr['AME'])
-
-
 # ## Confirmation of all-sky correlation results:
-# # Instead of downgrading the pixel sizes, just copy the same correaltion value of the 64 NSIDE 256 pixels
-# # in a batch to all of those pixel positions in an output map (also size NSIDE 256).
+#  Instead of downgrading the pixel sizes, just copy the same correaltion value of the 64 NSIDE 256 pixels
+#  in a batch to all of those pixel positions in an output map (also size NSIDE 256).
 
-# In[20]:
-
-#import pandas as pd
-#import numpy as np
-#import healpy as hp
+# In[24]:
 
 def testSpatialCorr(df, nside_in, nside_out, test=False):
     
@@ -290,7 +296,7 @@ def testSpatialCorr(df, nside_in, nside_out, test=False):
     return corr_patches_pn
 
 
-# In[ ]:
+# In[25]:
 
 nside_in = 256
 nside_out = 32
@@ -414,305 +420,11 @@ SpatialCorrAll(bba, 256)
 PlotSpatialCorrAll(corr_patches_pn)
 
 
-# In[ ]:
-
-fig.subplots_adjust(hspace=0.1, left=0.1, right=0.7)
-fig.show()
-
-
-# # Correlation tests along Galactic meridians and parallels:
-
-# In[53]:
-
-start = -90
-stop = 90
-step = 1
-
-glat_intervs = np.arange(start,stop,step)
-
-start = 0
-stop = 360
-step = 1
-
-glon_intervs = np.arange(start,stop,step)
-
-glats = [np.where(np.logical_and(coords['glat']>i, coords['glat']< i+1))  for i in glat_intervs]
-
-glons = [np.where(np.logical_and(coords['glon']>i, coords['glon']< i+1))  for i in glon_intervs]
-
-
-# In[54]:
-
-
-bb_corr_glats = [bba.iloc[i].corr(method='spearman') for i in glats]
-
-bb_corr_glons = [bba.iloc[i].corr(method='spearman') for i in glons]
-
-#bb_corr_glats_A9 = [bb_corr_glats[i]['A9']]
-
-bb_corr_glats_pn = pd.Panel({i: bb_corr_glats[i] for i in glat_intervs})
-bb_corr_glons_pn = pd.Panel({i: bb_corr_glons[i] for i in glon_intervs})
-
-
-# In[55]:
-
-planck_mw_corr_glats = [planck_mw.iloc[i].corr(method='spearman') for i in glats]
-
-planck_mw_corr_glons = [planck_mw.iloc[i].corr(method='spearman') for i in glons]
-
-#bb_corr_glats_A9 = [bb_corr_glats[i]['A9']]
-
-planck_mw_corr_glats_pn = pd.Panel({i: planck_mw_corr_glats[i] for i in glat_intervs})
-planck_mw_corr_glons_pn = pd.Panel({i: planck_mw_corr_glons[i] for i in glon_intervs})
-
-
-# In[56]:
-
-bba.columns
-
-
-# In[57]:
-
-import matplotlib as mpl
-mpl.rcParams['axes.edgecolor'] = 'black'
-mpl.rcParams['figure.edgecolor'] = 'black'
-mpl.rcParams['axes.facecolor'] = 'white'
-mpl.rcParams['figure.facecolor'] = 'white'
-
-
-# In[58]:
-
-#plt.rcParams['axes.facecolor']='white'
-#matplotlib.style.use('seaborn-bright')
-
-
-X = glat_intervs
-
-Y = bb_corr_glats_pn.values[:,:,4]
-
-fig, ax = plt.subplots(edgecolor='k')
-
-for i in range(0,4):
-    ax.set_frame_on(True)
-    ax.scatter(X,Y[:,i], alpha=0.7, label=bba.columns[i])
-    ax.patch.set_visible(True) 
-    ax.grid(True) 
-    ax.set_frame_on(True)
-    
-    
-legend = ax.legend(loc=0, shadow=True)
-# The frame is matplotlib.patches.Rectangle instance surrounding the legend.
-frame = legend.get_frame()
-frame.set_facecolor('0.90')
-
-plt.xlim(-90,90)
-plt.ylabel("$S$ (rel. to AME)", fontsize=20)
-plt.xlabel("$GLAT [1^{\circ}$  bins]", fontsize=20)
-fig.show()
-
-fig.savefig("../Plots/PlanckModBBvsAMEandA9_byGLAT.pdf", 
-            bbox_inches ='tight')
-
-
-
-# In[59]:
-
-X = glon_intervs
-
-Y = bb_corr_glons_pn.values[:,:,4]
-
-fig, ax  = plt.subplots()
-
-for i in range(0,4):
-    ax.scatter(X,Y[:,i], alpha=0.7, label=bba.columns[i])
-    
-legend = ax.legend(loc=0, shadow=True)
-# The frame is matplotlib.patches.Rectangle instance surrounding the legend.
-frame = legend.get_frame()
-frame.set_facecolor('0.90')
-#plt.legend(loc=1,prop={'size':14},fancybox=True, framealpha=1)
-#leg.get_frame().set_alpha(0.5)
-plt.xlim(0,360)
-plt.ylabel("$S$ (rel. to AME)", fontsize=20)
-plt.xlabel(" $GLON [1^{\circ}$  bins]", fontsize=20)
-fig.show()
-
-fig.savefig("../Plots/PlanckModBBvsAMEandA9_byGLON.pdf", 
-            bbox_inches ='tight',
-            facecolor = fig.get_facecolor())
-#plt.close()
-# plt.hist(bb_corr_glats_pn.dropna().values[:,2,0], bins=10, alpha=0.4, label='Beta')
-# plt.hist(bb_corr_glats_pn.dropna().values[:,3,0], bins=10, alpha=0.4, label='FIR')
-# plt.hist(bb_corr_glats_pn.dropna().values[:,4,0], bins=10, alpha=0.4, label='A9')
-
-
-
-# In[60]:
-
-fig, ax = plt.subplots()
-
-for i in range(0,4):
-    ax.hist(bb_corr_glats_pn.dropna().values[:,i,4], alpha=0.7, label=bba.columns[i], bins=10)
-ax.legend(loc=0)
-plt.xlabel("$S$ (rel. to AME)", fontsize=20)
-fig.show()
-
-fig.savefig("../Plots/PlanckModBBvsAMEandA9_GLAT_hist.pdf", bbox_inches='tight')
-
-#plt.plot[bb_corr_glats_pn.values[]])
-
-
-# In[61]:
-
-fig, ax = plt.subplots()
-
-for i in range(0,4):
-    ax.hist(bb_corr_glons_pn.dropna().values[:,i,4], alpha=0.7, label=bba.columns[i], bins=10)
-ax.legend(loc=0)
-plt.xlabel("$S$ (rel. to AME)", fontsize=20)
-fig.show()
-
-fig.savefig("../Plots/PlanckModBBvsAMEandA9_GLON_hist.pdf", bbox_inches='tight')
-#plt.close()
-
-#plt.plot[bb_corr_glats_pn.values[]])
-
-
-# ## AME to IR Ratio Averages:
-
-# In[62]:
-
-## Just got the median intensities along GLON:
-#### Using mode-subtracted maps
-
-
-# In[63]:
-
-
-planck_mw_glons_med  = [planck_mw.iloc[i].dropna().median() for i in glons]
-planck_mw_glats_med  = [planck_mw.iloc[i].dropna().median() for i in glats]
-planck_mw_glons_mean = [planck_mw.iloc[i].dropna().mean() for i in glons]
-planck_mw_glats_mean = [planck_mw.iloc[i].dropna().mean() for i in glats]
-
-
-phot_glons_med = [phot.iloc[i].dropna().median() for i in glons]
-phot_glats_med = [phot.iloc[i].dropna().median() for i in glats]
-phot_glons_mean= [phot.iloc[i].dropna().mean() for i in glons]
-phot_glats_mean = [phot.iloc[i].dropna().mean() for i in glats]
-
-
-# In[64]:
-
-pd.DataFrame(phot_glons_med)[['A9','I12','A18','I25','I100','A140','P857']].join(pd.DataFrame(planck_mw_glons_med)['AME']) .plot(subplots=True,title="Med. Intensity Variation Along GLON")
-plt.xlabel("$l$")
-#plt.show()
-plt.savefig("../Plots/IntensityByGLON_median.pdf", bbox_inches='tight')
-plt.close()
-
-pd.DataFrame(phot_glats_med)[['A9','I12','A18','I25','I100','A140','P857']].join(pd.DataFrame(planck_mw_glats_med)['AME']).set_index(glat_intervs) .plot(subplots=True,title="Med. Intensity Variation Along GLAT ")
-plt.xlabel("$b$")
-#plt.show()
-plt.savefig("../Plots/IntensityByGLAT_median.pdf", bbox_inches='tight')
-plt.close()
-
-#Plot by Means:
-pd.DataFrame(phot_glons_mean)[['A9','I12','A18','I25','I100','A140','P857']].join(pd.DataFrame(planck_mw_glons_mean)['AME']). plot(subplots=True,title="Mean Intensity Variation Along GLON")
-plt.xlabel("$l$")
-#plt.show()
-plt.savefig("../Plots/IntensitybyGLON_mean.pdf", bbox_inches='tight')
-plt.close()
-
-pd.DataFrame(phot_glats_mean)[['A9','I12','A18','I25','I100','A140','P857']].join(pd.DataFrame(planck_mw_glats_mean)['AME']).set_index(glat_intervs) .plot(subplots=True,title="Mean Intensity Variation Along GLAT ")
-plt.xlabel("$b$")
-#plt.show()
-plt.savefig("../Plots/IntensityByGLAT_mean.pdf", bbox_inches='tight')
-plt.close()
-
-
-# In[65]:
-
-# Get the COMMANDER Components along GLON and GLAT:
-
-pd.DataFrame(planck_mw_glons_med).plot(subplots=True,title="Med. Intensity Variation Along GLON")
-plt.xlabel("$l$")
-#plt.show()
-plt.savefig("../Plots/CommanderByGLON_median.pdf", bbox_inches='tight')
-plt.close()
-
-pd.DataFrame(planck_mw_glats_med).set_index(glat_intervs) .plot(subplots=True,title="Med. Intensity Variation Along GLAT ")
-plt.xlabel("$b$")
-#plt.show()
-plt.savefig("../Plots/CommanderByGLAT_median.pdf", bbox_inches='tight')
-plt.close()
-######################
-## By Mean:
-pd.DataFrame(planck_mw_glons_mean).plot(subplots=True,title="Mean Intensity Variation Along GLON")
-plt.xlabel("$l$")
-#plt.show()
-plt.savefig("../Plots/CommanderByGLON_mean.pdf", bbox_inches='tight')
-plt.close()
-
-pd.DataFrame(planck_mw_glats_mean).set_index(glat_intervs) .plot(subplots=True,title="Mean Intensity Variation Along GLAT ")
-plt.xlabel("$b$")
-#plt.show()
-plt.savefig("../Plots/CommanderByGLAT_mean.pdf", bbox_inches='tight')
-plt.close()
-
-
-# In[66]:
-
-phot_AME_ratio = pd.DataFrame(
-    
-    (phot_tr.values.T/planck_mw_tr['AME'].values).T,
-    columns = phot_tr.columns)
-
-phot_AME_ratio.head()
-
-phot_AME_ratio_glons_med = [phot_AME_ratio.iloc[i].median() for i in glons]
-phot_AME_ratio_glats_med = [phot_AME_ratio.iloc[i].median() for i in glats]
-
-phot_AME_ratio_glons_mean = [phot_AME_ratio.iloc[i].dropna().mean() for i in glons]
-phot_AME_ratio_glats_mean = [phot_AME_ratio.iloc[i].dropna().mean() for i in glats]
-
-planck_mw_glons_med_scaled  = [planck_mw_tr.iloc[i].dropna().median() for i in glons]
-planck_mw_glats_med_scaled  = [planck_mw_tr.iloc[i].dropna().median() for i in glats]
-planck_mw_glons_mean_scaled = [planck_mw_tr.iloc[i].dropna().mean() for i in glons]
-planck_mw_glats_mean_scaled = [planck_mw_tr.iloc[i].dropna().mean() for i in glats]
-
-
-# In[67]:
-
-pd.DataFrame(phot_AME_ratio_glons_med)[['A9','I12','A18','I25','I100','A140','P857']].join(pd.DataFrame(planck_mw_glons_med_scaled)['AME']) .plot(subplots=True,title="Med. IR:AME Ratio Along GLON")
-plt.xlabel("$l$")
-plt.show()
-plt.savefig("../Plots/Intensity_AME_ratio_ByGLON_median.pdf", bbox_inches='tight')
-plt.close()
-
-pd.DataFrame(phot_AME_ratio_glats_med)[['A9','I12','A18','I25','I100','A140','P857']].join(pd.DataFrame(planck_mw_glats_med_scaled)['AME']).set_index(glat_intervs) .plot(subplots=True,title="Med. IR:AME Ratio Along GLAT ")
-plt.xlabel("$b$")
-plt.show()
-plt.savefig("../Plots/Intensity_AME_ratio_ByGLAT_median.pdf", bbox_inches='tight')
-plt.close()
-
-#Plot by Means:
-pd.DataFrame(phot_AME_ratio_glons_mean)[['A9','I12','A18','I25','I100','A140','P857']].join(pd.DataFrame(planck_mw_glons_mean_scaled)['AME']). plot(subplots=True,title="Mean IR:AME Ratio Along GLON")
-plt.xlabel("$l$")
-plt.show()
-plt.savefig("../Plots/Intensity_AME_ratio_byGLON_mean.pdf", bbox_inches='tight')
-plt.close()
-
-pd.DataFrame(phot_AME_ratio_glats_mean)[['A9','I12','A18','I25','I100','A140','P857']].join(pd.DataFrame(planck_mw_glats_mean_scaled)['AME']).set_index(glat_intervs) .plot(subplots=True,title="Mean IR:AME Ratio Along GLAT ")
-plt.xlabel("$b$")
-plt.show()
-plt.savefig("../Plots/Intensity_AME_ratio_ByGLAT_mean.pdf", bbox_inches='tight')
-plt.close()
-
-
 # # All-sky AME vs. IR plots:
 
-# In[18]:
+# In[27]:
 
-ncols=6
+ncols=4
 nrows=3
 aspect=1.0
 
@@ -729,7 +441,7 @@ k=0
 for i in range(0,nrows):
     for j in range(0,ncols):
             
-            if k > 17:
+            if k > 11:
                 
                 pass
             
