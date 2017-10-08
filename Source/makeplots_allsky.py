@@ -8,7 +8,7 @@
 
 
 
-# In[11]:
+# In[2]:
 
 #from IPython.external import mathjax; mathjax.install_mathjax()
 import matplotlib
@@ -27,7 +27,7 @@ get_ipython().magic(u'matplotlib inline')
 
 # # 0.1) Load data and masks:
 
-# In[12]:
+# In[3]:
 
 with open('../Data/maps_nest.pickle') as f:  # Python 3: open(..., 'rb')
     coords, planck_bb, planck_mw, phot, phot_modesub = pickle.load(f)
@@ -38,7 +38,7 @@ phot.head()
 
 
 
-# In[13]:
+# In[4]:
 
 #### Planck Milky Way Mask:
 
@@ -48,7 +48,7 @@ phot.head()
 
 
 
-# In[14]:
+# In[5]:
 
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import Imputer
@@ -71,12 +71,12 @@ planck_mw_tr = pd.DataFrame(allsky_pipeline.fit_transform(planck_mw),columns=pla
 
 
 
-# In[15]:
+# In[6]:
 
 planck_bb.head()
 
 
-# In[16]:
+# In[7]:
 
 phot_corr = phot_tr.corr(method='spearman')
 planck_bb_corr = planck_bb_tr.corr(method='spearman')
@@ -86,7 +86,7 @@ planck_mw_corr = planck_mw_tr.corr(method='spearman')
 # ### 1.1) Cross-correlation among all IR photometric bands and AME map
 # ##### Split by Galactic Latitude
 
-# In[18]:
+# In[8]:
 
 glatrange     = 10.0
 glatrange_mid = 2.5
@@ -98,7 +98,7 @@ gcut_h = np.where((abs(coords['glat']) > glatrange) & (abs(coords['elat']) > ela
 
 
 
-# In[19]:
+# In[9]:
 
 import seaborn as sb
 phot_corr     = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).corr(method='spearman')
@@ -111,7 +111,7 @@ phot_corr_hgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']
 
 
 
-# In[20]:
+# In[10]:
 
 #bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
 mask = np.zeros_like(phot_corr.values)
@@ -180,7 +180,7 @@ with sb.axes_style("white"):
 # ### 1.2) Cross-correlation among all IR photometric bands and AME map
 # ##### Split by AKARI 9 micron detection limit (2 MJy/sr)
 
-# In[34]:
+# In[11]:
 
 irc9_detection_limit = 1.0 # MJy/sr
 
@@ -189,13 +189,13 @@ irc9_lim = np.where(phot_modesub['A9'] > 1.0 )
 
 
 
-# In[35]:
+# In[12]:
 
 
 phot_corr_irc9_lim = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[irc9_lim].corr(method='spearman')
 
 
-# In[38]:
+# In[13]:
 
 #bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
 mask = np.zeros_like(phot_corr.values)
@@ -251,7 +251,7 @@ with sb.axes_style("white"):
 #  Instead of downgrading the pixel sizes, just copy the same correaltion value of the 64 NSIDE 256 pixels
 #  in a batch to all of those pixel positions in an output map (also size NSIDE 256).
 
-# In[24]:
+# In[14]:
 
 def testSpatialCorr(df, nside_in, nside_out, test=False):
     
@@ -296,13 +296,6 @@ def testSpatialCorr(df, nside_in, nside_out, test=False):
     return corr_patches_pn
 
 
-# In[25]:
-
-nside_in = 256
-nside_out = 32
-corr_patches_pn = testSpatialCorr(bba, nside_in, nside_out)
-
-
 # In[ ]:
 
 nside_in = 256
@@ -315,21 +308,6 @@ corr_patches_pn = testSpatialCorr(bba, nside_in, nside_out,test=False)
 nside_in = 256
 nside_out = 8
 corr_patches_pn = testSpatialCorr(bba, nside_in, nside_out, test=False)
-
-
-# In[ ]:
-
-nside_in = 256
-nside_out = 4
-corr_patches_pn, corr_patches_pn_conf = testSpatialCorr(bba, nside_in, nside_out)
-
-
-# In[ ]:
-
-nside_in = 256
-nside_out = 2
-
-corr_patches_pn, corr_patches_pn_conf = testSpatialCorr(bba, nside_in, nside_out)
 
 
 # In[ ]:
@@ -410,19 +388,9 @@ def SpatialCorrAll(df, nside_in):
 
 
 
-# In[52]:
-
-SpatialCorrAll(bba, 256)
-
-
-# In[26]:
-
-PlotSpatialCorrAll(corr_patches_pn)
-
-
 # # All-sky AME vs. IR plots:
 
-# In[27]:
+# In[23]:
 
 ncols=4
 nrows=3
@@ -454,25 +422,29 @@ for i in range(0,nrows):
 
                 x_ = x[(x>0) & (y>0)]
                 y_ = y[(x>0) & (y>0)]
+                
+                x_ = np.log10(x_.copy())
+                y_ = np.log10(y_.copy())
 
 
-                xmin = 5e-5#x_.min()
-                xmax = 400 #x_.max()
-                ymin = 0.01#y_.min()
+                xmin = x_.min()
+                xmax = x_.max()
+                ymin = y_.min()
                 ymax = y_.max()
 
                 ax = axs[i,j]
                 #ax.set_aspect(aspect, adjustable='box')
+                
+                ax.set_xscale('log')
+                ax.set_yscale('log')
 
-                hb = ax.hexbin(
+
+                sb.kdeplot(
                        x_,
                        y_, 
-                       mincnt=1,
-                       gridsize=50,
-                       bins='log', 
-                       cmap='inferno_r',
-                       xscale='log',
-                       yscale='log')
+                       gridsize=10,
+                        ax = ax)
+                
 
 
                 ax.axis([xmin, xmax, ymin, ymax])
