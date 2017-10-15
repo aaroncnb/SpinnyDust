@@ -3,7 +3,7 @@
 
 # ### All-sky AME vs. IR Scatter Plots
 
-# In[2]:
+# In[1]:
 
 #from IPython.external import mathjax; mathjax.install_mathjax()
 import matplotlib
@@ -22,25 +22,22 @@ get_ipython().magic(u'matplotlib inline')
 
 # # 0.1) Load data and masks:
 
-# In[3]:
+# In[2]:
 
 with open('../Data/maps_nest.pickle') as f:  # Python 3: open(..., 'rb')
     coords, planck_bb, planck_mw, phot, phot_modesub = pickle.load(f)
     
-phot.head()
 
 
 
+# In[191]:
+
+print phot.head()
 
 
-# In[4]:
+print planck_mw.head()
 
-#### Planck Milky Way Mask:
-
-
-# In[ ]:
-
-
+print planck_bb.head()
 
 
 # In[5]:
@@ -96,11 +93,6 @@ gcut_h = np.where((abs(coords['glat']) > glatrange) & (abs(coords['elat']) > ela
 # In[9]:
 
 import seaborn as sb
-
-
-# In[ ]:
-
-
 
 
 # In[66]:
@@ -173,30 +165,28 @@ def plotCorrMatrix():
 
         fig.savefig("../Plots/all_bands_corr_matrix_wAME_spearman.pdf", bbox_inches='tight')
         
+
+
+# In[113]:
+
 plotCorrMatrix()
 
 
 # ### 1.2) Cross-correlation among all IR photometric bands and AME map
 # ##### Split by AKARI 9 micron detection limit (2 MJy/sr)
 
-# In[11]:
+# In[283]:
 
-
-
-
-# In[12]:
-
-
-
-
-# In[62]:
-
-def plotCorrMatrixwCutoff(mapframe, cutoff_map,cutoff=1.0):
+def plotCorrMatrixwCutoff(mapframe, cutoff_map, lower_cutoff=5.0, upper_cutoff = 5e2):
     
+    cutoff_map_cp = cutoff_map.copy()
 
-    lim = np.where(cutoff_map > cutoff )
-
+    lim = np.where(
+        (cutoff_map > lower_cutoff ) & 
+        (cutoff_map < upper_cutoff)
+        )
     
+    phot_corr     = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).corr(method='spearman')
     phot_corr_irc9_lim = mapframe.iloc[lim].corr(method='spearman')
     
     #bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
@@ -237,23 +227,37 @@ def plotCorrMatrixwCutoff(mapframe, cutoff_map,cutoff=1.0):
             vmin=0,
             vmax=1)
 
-        ax[1].set_title("$I_um$ > {} MJy/sr".format(cutoff), fontsize=20)
+        ax[1].set_title("{} > $I_um$ > {} MJy/sr".format(upper_cutoff,lower_cutoff), fontsize=20)
 
 
         fig.tight_layout(rect=[0, 0, .9, 1])
 
         plt.show()
 
-        fig.savefig("../Plots/all_bands_corr_matrix_wAME__IRC9lim{}MJysr_spearman.pdf".format(cutoff), bbox_inches='tight')
+        fig.savefig("../Plots/all_bands_corr_matrix_wAME__IRC9lim{}_{}_MJysr_spearman.pdf".format(upper_cutoff,lower_cutoff), bbox_inches='tight')
+        print lim
+        cutoff_map_cp.iloc[:] = hp.UNSEEN
+        cutoff_map_cp.iloc[lim] = cutoff_map.iloc[lim].copy()
         
-plotCorrMatrixwCutoff(phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']), phot_modesub['A9'], cutoff=10)
+        hp.mollview(cutoff_map_cp, nest=True, norm='hist', cmap="rainbow")
+
+
+# In[291]:
+
+plotCorrMatrixwCutoff(
+                        phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']), 
+                        phot_modesub['A9'], 
+                        lower_cutoff=0.5, 
+                        upper_cutoff = 25
+    
+                        )
 
 
 # Why is IRAS 25 $\mu$m the most unique map? Somewhat odd that it correlates miraculously well with IRAS 12 $\mu$m - despite its weak correlation with  the IRC $\mu$m map. Perhaps this is due to correlated noise, systematic effects in the IRAS MIR bands. Correlated Zodiacal light subtraction residuals, perhaps
 
 # # All-sky AME vs. IR plots:
 
-# In[67]:
+# In[71]:
 
 
 
@@ -328,7 +332,7 @@ def plotBandsCloud(nside=256):
 
 
                     #ax.axis([xmin, xmax, ymin, ymax])
-                    ax.axis([-1,1,1,3.0])
+                    ax.axis([-1.5,2,1,3.5])
 
                     ax.text(0.2, 0.9,phot_modesub.columns[k], horizontalalignment='center',
                       verticalalignment='center',
@@ -344,7 +348,7 @@ def plotBandsCloud(nside=256):
         ax = axs[1,0]
         ax.set_ylabel('AME [$\mu{}K_{CMB}$]', fontsize=15)
         ax = axs[-1,2]
-        ax.set_xlabel('log $\nu{}I_{nu}$ [MJy/sr]', fontsize=15)
+        ax.set_xlabel('log $I_{\lambda}$ [MJy/sr]', fontsize=15)
 
         plt.show()
 
@@ -353,6 +357,10 @@ def plotBandsCloud(nside=256):
                     
     return axs
     
+
+
+# In[114]:
+
 allbands_kde = plotBandsCloud()
 
 
@@ -368,63 +376,72 @@ allbands_kde = plotBandsCloud()
 #  Instead of downgrading the pixel sizes, just copy the same correaltion value of the 64 NSIDE 256 pixels
 #  in a batch to all of those pixel positions in an output map (also size NSIDE 256).
 
-# In[14]:
+# In[20]:
 
-def testSpatialCorr(df, nside_in, nside_out, test=False):
+def testSpatialCorr(df, 
+                    nside_in, 
+                    nside_out,
+                    method='spearman'):
     
     npix_in    = 12*nside_in**2
     npix_out   = 12*nside_out**2
     pix_interv = (nside_in/nside_out)**2
     
     ## First, do it the "normal way"-
-    patches_corr = [df.iloc[i*pix_interv:(i+1)*pix_interv].corr(method='spearman') for i in range(0,npix_out)]
+    patches_corr = [df.iloc[i*pix_interv:(i+1)*pix_interv].corr(method=method) for i in range(0,npix_out)]
     corr_patches_pn = pd.Panel({i: patches_corr[i] for i in range(0,npix_out)})
 
-#     ## Confirm it:
-#     if test==True:
-        
-#         patches_corr_conf = []
-
-#         for i in range(0,npix_out):
-#             for j in range(0,pix_interv):
-#                 patches_corr_conf.append(patches_corr[i])
-
-#         corr_patches_pn_conf = pd.Panel({i: patches_corr_conf[i] for i in range(0,npix_in)})
-
-    fig = plt.figure(figsize=(8,4))
-
-    for j in range(0,4):
-        #plt.subplot(2,5,(j*2)+1)
-        im = hp.cartview(corr_patches_pn.values[:,j,4],
-                         sub=(1,4,j+1), 
-                         fig=fig,
-                         cmap="rainbow", 
-                         cbar=True, 
-                         min=-1, 
-                         max=1, 
-                         nest=True, 
-                         title="$S$(AME:"+bba.columns[j]+") NSIDE"+str(nside_out))
-        
-        #fig.subplots_adjust(right=0.8)
-        #cbar_ax = fig.add_axes([0.85, 0.15, 0.05, 0.7])
-        #fig.colorbar(plt.gca(),cax=cbar_ax)
-        plt.savefig("../Plots/Spearman_Map_nside"+str(nside_out)+"_AMEtoMBBandA9.pdf")
     
     return corr_patches_pn
 
+def displaySpatialCorr(corr_patches_pn,labels, ref_col=0):
 
-# In[ ]:
+    nside = len(corr_patches_pn.values[:,0,0])
+    #fig = plt.figure(figsize=(8,4))
+
+    for j in range(0,len(labels)):
+        #plt.subplot(2,5,(j*2)+1)
+        hp.cartview(corr_patches_pn.values[:,j,ref_col],
+                         #sub=(1,4,j+1), 
+                         #fig=fig,
+                         cmap = "rainbow", 
+                         cbar = False, 
+                         min  = -1, 
+                         max  = 1, 
+                         nest = True, 
+                         title="$S$({}:{}) NSIDE".format(labels[ref_col],labels[j],nside_out))
+        
+        plt.savefig("../Plots/Spearman_Map_nside"+str(nside_out)+"_{}to{}.pdf".format(labels[ref_col],labels[j]))
+
+
+# In[24]:
 
 nside_in = 256
 nside_out = 16
-corr_patches_pn = testSpatialCorr(bba, nside_in, nside_out,test=False)
+test_frame = phot_modesub.join(planck_mw)
+corr_patches_pn = testSpatialCorr(test_frame,
+                                  nside_in, 
+                                  nside_out)
 
 
-# In[ ]:
+# In[26]:
+
+displaySpatialCorr(corr_patches_pn, test_frame.columns, ref_col = -1)
+
+
+# In[27]:
 
 nside_in = 256
 nside_out = 8
-corr_patches_pn = testSpatialCorr(bba, nside_in, nside_out, test=False)
+test_frame = phot_modesub.join(planck_mw)
+corr_patches_pn = testSpatialCorr(test_frame,
+                                  nside_in, 
+                                  nside_out)
+
+
+# In[30]:
+
+displaySpatialCorr(corr_patches_pn, test_frame.columns, ref_col = -4)
 
 
 # In[ ]:
@@ -595,177 +612,6 @@ for i in range(0,nrows):
 
                 k += 1
             mAdd
-
-
-# ## Compare with Planck PR1 Radiance Map 
-# (degraded and smoothed as in Hensley+ 2016)
-
-# In[21]:
-
-plt.close()
-
-ncols=6
-nrows=3
-aspect=1.0
-
-fig, axs = plt.subplots(ncols=ncols, 
-                        nrows=nrows, 
-                        sharey=True, 
-                        sharex=True)
-#fig.subplots_adjust(hspace=0.1, left=0.1, right=0.7)
-plt.setp(axs.flat, aspect=1.0, adjustable='box-forced')
-
-k=0
-
-
-for i in range(0,nrows):
-    for j in range(0,ncols):
-            
-            if k > 17:
-                
-                pass
-            
-            else:
-           
-                x = phot_modesub.values[:,k]
-
-
-                y = planck_mw['AME'].values[:]
-                
-                R = rad_pr1['$R$'].values[:]
-                
-                y = y/R
-                x = x/R
-
-                x_ = x[(x>0) & (y>0)]
-                y_ = y[(x>0) & (y>0)]
-
-
-                xmin = x_.min()
-                xmax = x_.max()
-                ymin = y_.min()
-                ymax = y_.max()
-
-                ax = axs[i,j]
-                #ax.set_aspect(aspect, adjustable='box')
-
-                hb = ax.hexbin(
-                       x_,
-                       y_, 
-                       mincnt=1,
-                       gridsize=10,
-                       bins='log', 
-                       cmap='inferno_r',
-                       xscale='log',
-                       yscale='log')
-
-
-                ax.axis([xmin, xmax, ymin, ymax])
-
-                ax.text(0.4, 0.4,
-                        phot_modesub.columns[k], 
-                        horizontalalignment='left',
-                        verticalalignment='top',
-                        transform=ax.transAxes, 
-                        fontsize=15)
-                
-                ax.grid(True)
-                
-                ax.set_frame_on(True)
-
-                k += 1
-            
-ax = axs[1,0]
-ax.set_ylabel('$I_{AME} / R$', fontsize=15)
-ax = axs[-1,3]
-ax.set_xlabel('$I_{IR} / R$', fontsize=15)
-
-plt.show()
-
-fig.savefig("../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf", bbox_inches='tight')  
-
-
-
-
-# In[19]:
-
-plt.close()
-
-ncols=6
-nrows=3
-aspect=1.0
-
-fig, axs = plt.subplots(ncols=ncols, 
-                        nrows=nrows, 
-                        sharey=True, 
-                        sharex=True)
-#fig.subplots_adjust(hspace=0.1, left=0.1, right=0.7)
-plt.setp(axs.flat, aspect=1.0, adjustable='box-forced')
-
-k=0
-
-
-for i in range(0,nrows):
-    for j in range(0,ncols):
-            
-            if k > 17:
-                
-                pass
-            
-            else:
-           
-                x = phot_modesub.values[:,k]
-
-
-                y = rad_pr1['$R$'].values[:]
-                
-                #y = y/R
-                #x = x/R
-
-                x_ = x[(x>0)]
-                y_ = y[(x>0)]
-
-
-                xmin = x_.min()
-                xmax = x_.max()
-                ymin = y_.min()
-                ymax = y_.max()
-
-                ax = axs[i,j]
-                #ax.set_aspect(aspect, adjustable='box')
-
-                hb = ax.hexbin(
-                       x_,
-                       y_, 
-                       mincnt=1,
-                       gridsize=50,
-                       bins='log', 
-                       cmap='inferno_r',
-                       xscale='log',
-                       yscale='log')
-
-
-                ax.axis([xmin, xmax, ymin, ymax])
-
-                ax.text(0.8, 0.5,phot_modesub.columns[k], horizontalalignment='center',
-                  verticalalignment='center',
-                  transform=ax.transAxes, 
-                  fontsize=15)
-                
-                ax.grid(True)
-                
-                ax.set_frame_on(True)
-
-                k += 1
-            
-ax = axs[1,0]
-ax.set_ylabel('$R$', fontsize=15)
-ax = axs[-1,3]
-ax.set_xlabel('$I_{IR}$', fontsize=15)
-
-plt.show()
-
-fig.savefig("../Plots/IRvsR_allsky_allbands.pdf", bbox_inches='tight', dpi=100)  
 
 
 # ## All-sky Noise Estimation:
@@ -1540,171 +1386,267 @@ S_ica_ = ica.fit(X).transform(X)
 S_ica_ /= S_ica_.std(axis=0)
 
 
-# In[27]:
+# ## Apply PCA to the Planck-COMMANDER Maps:
+
+# In[152]:
+
+#AME Regions coords:
+
+
+glat_regs    = np.genfromtxt('../Data/AME.txt',usecols = (2), dtype = 'float', delimiter=',')[1:]
+glon_regs    = np.genfromtxt('../Data/AME.txt',usecols = (1), dtype = 'float', delimiter=',')[1:]
+
+print glon_regs
+
+
+# In[31]:
+
+
+
 
 from matplotlib.colors import SymLogNorm
-
-
-for i in range(0,np.size(S_ica_,axis=1)):
-    #plt.subplot(5,4,i+1)
-    #plt.figure(figsize=(20,20))
-    hp.cartview(S_ica_[:,i], title="IC_"+str(i),
-               cmap = "rainbow", 
-                norm=SymLogNorm(linthresh=0.01,
-                                linscale=1,vmin=0), nest=True)
-labels = ['AME','ff','Sync']
-
-for i in range(0,np.size(S_ica_,axis=1)):
-#for i in range(1,2):
     
-    x_ = range(0,np.size(ica.components_,axis=1))
-    y_ = ica.components_[i]
+from sklearn.decomposition import PCA, FastICA, NMF
+from sklearn.preprocessing import Imputer
+
+
+def getCommanderPCs(commander_parmaps):
     
-    fig, ax = plt.subplots()
-    ax.scatter(x_,y_)
-    for i, txt in enumerate(labels):
-        #print x_[i], y_[i], labels[i]
-        ax.annotate(labels[i], (x_[i],y_[i]))
+    imp = Imputer()
+
+    #imp.fit(phot_modesub.values)
+    #X = imp.transform(phot_modesub.values)
+
+    imp.fit(commander_parmaps)
+    X = imp.transform(commander_parmaps)
+
+    from sklearn.preprocessing import StandardScaler, MinMaxScaler
+
+    scaler = MinMaxScaler(feature_range=(0, 1))
+
+    # Don't cheat - fit only on training data
+    scaler.fit(X)  
+    X = scaler.transform(X)  
+    
+    pca = PCA(n_components=3)
+    S_pca_ = pca.fit(X).transform(X)
+    
+    
+    for i in range(0,np.size(S_pca_,axis=1)):
+        #plt.subplot(5,4,i+1)
+        #plt.figure(figsize=(20,20))
+        p = hp.cartview(S_pca_[:,i], title="PC_"+str(i),
+                   cmap = "rainbow", 
+                    norm=SymLogNorm(linthresh=0.01,
+                                    linscale=1,vmin=0), 
+                    nest=True,
+                    xsize = 1000
+                       )
+        hp.visufunc.projscatter(glon_regs, 
+                                glat_regs,
+                                lonlat=True, 
+                                coord='G',
+                                alpha = 1,
+                                facecolors = 'none', 
+                                edgecolors = 'red'
+                               )
         
-    #plt.xscale('log')
-    #plt.yscale('log')
-    #plt.xlim(8,1000)
-    #plt.xlabel("Wavelength (microns)       [EV_"+str(i)+"] "+str(round(eig_values[i]/sum(eig_values)*100,2))+"%")
-    plt.ylabel("Relative Contribution")
-    plt.show()
-    plt.close()
-    
+        plt.savefig("../Plots/pca_commander_ncomp3_{}.pdf".format(i), bbox_inches='tight')
 
+    labels = ['AME','ff','Sync']
 
-# In[25]:
+    for i in range(0,np.size(S_pca_,axis=1)):
+    #for i in range(1,2):
 
-from matplotlib.colors import SymLogNorm
+        x_ = range(0,np.size(pca.components_,axis=1))
+        y_ = pca.components_[i]
 
+        fig, ax = plt.subplots()
+        ax.scatter(x_,y_)
+        for i, txt in enumerate(labels):
+            #print x_[i], y_[i], labels[i]
+            ax.annotate(labels[i], (x_[i],y_[i]))
 
-for i in range(0,np.size(S_nmf_,axis=1)):
-    #plt.subplot(5,4,i+1)
-    #plt.figure(figsize=(20,20))
-    hp.cartview(S_nmf_[:,i], title="NN_"+str(i),
-               cmap = "rainbow", 
-                norm=SymLogNorm(linthresh=0.01,
-                                linscale=1,vmin=0), nest=True)
-    
-labels = ['AME','ff','Sync']
-
-for i in range(0,np.size(S_nmf_,axis=1)):
-#for i in range(1,2):
-    
-    x_ = range(0,np.size(nmf.components_,axis=1))
-    y_ = nmf.components_[i]
-    
-    fig, ax = plt.subplots()
-    ax.scatter(x_,y_)
-    for i, txt in enumerate(labels):
-        #print x_[i], y_[i], labels[i]
-        ax.annotate(labels[i], (x_[i],y_[i]))
+        #plt.xscale('log')
+        #plt.yscale('log')
+        #plt.xlim(8,1000)
+        #plt.xlabel("Wavelength (microns)       [EV_"+str(i)+"] "+str(round(eig_values[i]/sum(eig_values)*100,2))+"%")
+        plt.ylabel("Relative Contribution")
+        plt.show()
+        plt.close()
         
-    #plt.xscale('log')
-    #plt.yscale('log')
-    #plt.xlim(8,1000)
-    #plt.xlabel("Wavelength (microns)       [EV_"+str(i)+"] "+str(round(eig_values[i]/sum(eig_values)*100,2))+"%")
-    plt.ylabel("Relative Contribution")
-    plt.show()
-    plt.close()
+        return S_pca, pca
+
+
+# In[32]:
+
+S_pca, pca = getCommanderPCs(planck_mw[['AME','ff','Sync']])
+
+
+# In[112]:
+
+def checkIonRatio(ion_r, ame):
     
-
-
-# In[26]:
-
-from matplotlib.colors import SymLogNorm
-
-
-for i in range(0,np.size(S_pca_,axis=1)):
-    #plt.subplot(5,4,i+1)
-    #plt.figure(figsize=(20,20))
-    hp.cartview(S_pca_[:,i], title="PC_"+str(i),
-               cmap = "rainbow", 
-                norm=SymLogNorm(linthresh=0.01,
-                                linscale=1,vmin=0), nest=True)
     
-labels = ['AME','ff','Sync']
-
-for i in range(0,np.size(S_pca_,axis=1)):
-#for i in range(1,2):
+    fontsize = 18
     
-    x_ = range(0,np.size(pca.components_,axis=1))
-    y_ = pca.components_[i]
+    hsize = len(ion_r)
+
+    randsub = np.random.randint(low=0, 
+                            high=hsize, 
+                            size=hsize//20)
+
+    p = sb.jointplot(ion_r.iloc[randsub], 
+                     ame.iloc[randsub],
+                     kind = "hex",
+                    gridsize=20,
+                    extent = (-1,20,-1, 215),
+                    xlim = (-1,20),
+                    ylim = (-1,150),
+                    bins = 'log')
+                    
+
+
+    #plt.xlim(0,)
+    #cb = plt.colorbar()
+    #cb.set_label('log(N pixels)', fontsize=fontsize-3)
+    #plt.title('PAH Ionization-tracing Band Ratio vs. AME Intensity', fontsize = fontsize)
+    #plt.xlabel('$I_{9\mu{}m}$ / $I_{12\mu{}m}$', fontsize=fontsize-3)
+    #plt.ylabel('$I_{AME}$ [$\mu{}K_{RJ}$]', fontsize=fontsize-3)
+    #rint np.corrcoef(LOri_df.dropna().akari_9/LOri_df.dropna().iras_12, LOri_df.dropna().AME1)
+    scipy.stats.spearmanr(ion_r, 
+                          ame)
     
-    fig, ax = plt.subplots()
-    ax.scatter(x_,y_)
-    for i, txt in enumerate(labels):
-        #print x_[i], y_[i], labels[i]
-        ax.annotate(labels[i], (x_[i],y_[i]))
-        
-    #plt.xscale('log')
-    #plt.yscale('log')
-    #plt.xlim(8,1000)
-    #plt.xlabel("Wavelength (microns)       [EV_"+str(i)+"] "+str(round(eig_values[i]/sum(eig_values)*100,2))+"%")
-    plt.ylabel("Relative Contribution")
-    plt.show()
-    plt.close()
+ion_r = phot_modesub.join(planck_mw.AME).dropna().A9 / phot_modesub.join(planck_mw.AME).dropna().I12
+
+ame   = planck_mw.join(phot_modesub).dropna().AME
+
+p = checkIonRatio(ion_r, ame)
+
+
+# In[ ]:
+
+# Make an NSIDE 64 version of the data to check for remaining issues caused by beam-size discrepancies
+
+
+# In[211]:
+
+phot_n64 = pd.DataFrame()
+
+for map in phot.columns:
+
+    phot_n64[map] = hp.ud_grade(phot_tr[map], nside_out = 64, order_in = 'NESTED', order_out = 'NESTED', pess = True)
     
-
-
-# In[23]:
-
-for i in range(0,np.size(X,axis=1)):
-    #plt.subplot(5,4,i+1)
-    #plt.figure(figsize=(20,20))
-    hp.cartview(X[:,i], title="Input_"+str(i),
-               cmap = "rainbow", 
-                norm=SymLogNorm(linthresh=0.01,
-                                linscale=1,vmin=0), nest=True)
+    hp.mollview(phot_n64[map], nest=True, title=map, norm='hist')
     
-labels = ['AME','ff','Sync']
+planck_mw_n64 = pd.DataFrame()
 
-for i in range(0,np.size(S_pca_,axis=1)):
-#for i in range(1,2):
+print planck_mw.columns
+
+for map in planck_mw.columns:
     
-    x_ = range(0,np.size(ica.components_,axis=1))
-    y_ = ica.components_[i]
+    planck_mw_n64[map] = hp.ud_grade(planck_mw_tr[map], 
+                                     nside_out = 64, 
+                                     order_in = 'NESTED', 
+                                     order_out = 'NESTED', 
+                                     pess = True)
     
-    fig, ax = plt.subplots()
-    ax.scatter(x_,y_)
-    for i, txt in enumerate(labels):
-        #print x_[i], y_[i], labels[i]
-        ax.annotate(labels[i], (x_[i],y_[i]))
-        
-    #plt.xscale('log')
-    #plt.yscale('log')
-    #plt.xlim(8,1000)
-    #plt.xlabel("Wavelength (microns)       [EV_"+str(i)+"] "+str(round(eig_values[i]/sum(eig_values)*100,2))+"%")
-    plt.ylabel("Relative Contribution")
-    plt.show()
-    plt.close()
-    
+    hp.mollview(planck_mw_n64[map], nest=True, title=map, norm='hist')
 
 
-# In[40]:
+# In[212]:
 
-fontsize = 18
+plt.close()
 
-plt.hexbin(
-    phot_modesub.join(planck_mw.AME).dropna().A9/phot_modesub.join(planck_mw.AME).dropna().I12, 
-                      planck_mw.join(phot_modesub).dropna().AME, 
-    gridsize=50, 
-    cmap='inferno',
-    mincnt=1, 
-    bins='log'  )
+s_corr = phot_n64.join(planck_mw_n64['AME']).dropna().corr(method='spearman')
 
-plt.xlim(0,)
-cb = plt.colorbar()
-cb.set_label('log(N pixels)', fontsize=fontsize-3)
-plt.title('PAH Ionization-tracing Band Ratio vs. AME Intensity', fontsize = fontsize)
-plt.xlabel('$I_{9\mu{}m}$ / $I_{12\mu{}m}$', fontsize=fontsize-3)
-plt.ylabel('$I_{AME}$ [$\mu{}K_{RJ}$]', fontsize=fontsize-3)
-#rint np.corrcoef(LOri_df.dropna().akari_9/LOri_df.dropna().iras_12, LOri_df.dropna().AME1)
-scipy.stats.spearmanr(phot_modesub.join(planck_mw.AME).dropna().A9/phot_modesub.join(planck_mw.AME).dropna().I12, 
-                      planck_mw.join(phot_modesub).dropna().AME)
+p_corr = phot_n64.join(planck_mw_n64['AME']).dropna().corr(method='pearson')
+plt.figure(figsize=(10,10))
+sb.heatmap(s_corr, square=True, annot=True)
+plt.show()
+plt.close()
+plt.figure(figsize=(10,10))
+sb.heatmap(p_corr, square=True, annot=True)
+plt.show()
+plt.close()
+plt.figure(figsize=(10,10))
+sb.heatmap((s_corr - p_corr), square=True, annot=True)
+plt.show()
+plt.close()
+
+
+# In[215]:
+
+# Experiment with the Planck PR2 Tau353Ghz map:
+dust_gnilc = pd.DataFrame()
+dust_gnilc['tau'] = hp.read_map('/work1/users/aaronb/Databrary/HEALPix/COM_CompMap_Dust-GNILC-Model-Opacity_2048_R2.01.fits', nest=True)
+dust_gnilc['rad'] = hp.read_map('/work1/users/aaronb/Databrary/HEALPix/COM_CompMap_Dust-GNILC-Radiance_2048_R2.00.fits', nest=True)
+
+
+# In[216]:
+
+dust_gnilc_n64 = pd.DataFrame()
+
+dust_gnilc_n64['tau'] = hp.ud_grade(
+    dust_gnilc['tau'], 
+    nside_out = 64, 
+    order_in = 'NESTED', 
+    order_out = 'NESTED', 
+    pess = True
+    )
+
+
+dust_gnilc_n64['rad'] = hp.ud_grade(
+    dust_gnilc['rad'], 
+    nside_out = 64, 
+    order_in = 'NESTED', 
+    order_out = 'NESTED', 
+    pess = True
+    )
+
+
+# In[230]:
+
+dust_gnilc_n64['isrf']              = dust_gnilc_n64['rad'] / dust_gnilc_n64['tau']
+planck_mw_n64['ame_g0_scaled']      = planck_mw_n64['AME'] / dust_gnilc_n64['isrf']
+planck_mw_n64['ame_tau_scaled']      = planck_mw_n64['AME'] / dust_gnilc_n64['tau']
+planck_mw_n64['ame_rad_scaled']      = planck_mw_n64['AME'] / dust_gnilc_n64['rad']
+
+
+# In[236]:
+
+phot_n64['A9_I12'] = phot_n64['A9'] / phot_n64['I12']
+
+
+# In[244]:
+
+phot_tr['A9_I12'] = phot_modesub['A9'] / phot_modesub['I12']
+
+
+# In[237]:
+
+plt.close()
+
+s_corr = phot_n64.join(
+    planck_mw_n64[['AME','ame_g0_scaled','ame_tau_scaled','ame_rad_scaled']], 
+        ).dropna().corr(method='spearman')
+
+p_corr = phot_n64.join(
+    planck_mw_n64[['AME','ame_g0_scaled','ame_tau_scaled','ame_rad_scaled']]).dropna().corr(method='pearson')
+
+
+plt.figure(figsize=(10,10))
+sb.heatmap(s_corr, square=True, annot=True)
+plt.show()
+plt.close()
+plt.figure(figsize=(10,10))
+sb.heatmap(p_corr, square=True, annot=True)
+plt.show()
+plt.close()
+plt.figure(figsize=(10,10))
+sb.heatmap((s_corr - p_corr), square=True, annot=True)
+plt.show()
+plt.close()
 
 
 # In[ ]:

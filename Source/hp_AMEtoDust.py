@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[5]:
+# In[1]:
 
 import matplotlib
 #from IPython.external import mathjax; mathjax.install_mathjax()
@@ -27,7 +27,7 @@ get_ipython().magic(u'matplotlib inline')
 # 
 # The first thing we do is just re-load our progress so far (the photometry data) into memory.
 
-# In[18]:
+# In[2]:
 
 data_path = "../Data/"
 
@@ -71,7 +71,7 @@ sig_ame = np.genfromtxt(pcxv_AME,usecols = (16), dtype = 'float', delimiter=',',
 # Now we do the same thing for the SED fitting. Just load the columns from Fred's "results.csv" file into python variables.
 # (In the future, it may be better to load these as Pandas DataFrames)
 
-# In[19]:
+# In[3]:
 
 ##############Model A: Fred's Model############
 ###############################################
@@ -90,7 +90,7 @@ sres_nonan = np.isnan(sres_ame)==False
 
 # ### Load results intp Pandas dataframe, instead of individual variables:
 
-# In[21]:
+# In[4]:
 
 #sed_res_path = '/work1/users/aaronb/Databrary/fred_results_82616.csv'
 
@@ -101,10 +101,12 @@ sed_res_data = pd.read_csv(sed_res_path, index_col=False)
 print sed_res_data.values[-1,:]
 sed_res_data.head()
 
+plt.scatter(sed_res_data['sigma(qPAH)']/sed_res_data['qPAH'], sed_res_data['sigma(ln(Md))'])
+
 
 # # Plots of dust vs. AME using Galliano+ (2011) model:
 
-# In[22]:
+# In[5]:
 
 ## Force background color to be white:
 ### Note that seaborn plotting functions my override these settings.
@@ -113,7 +115,7 @@ plt.rcParams['figure.facecolor']  ='white'
 plt.rcParams['savefig.facecolor'] ='white'
 
 
-# In[65]:
+# In[6]:
 
 
 
@@ -170,7 +172,7 @@ subset_ls = (subset_hs == False)
 
 Y_   = sres_ame.copy()
 X_   = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values)       * sed_res_data['qPAH'].values
-dmass.copy()
+
 yerr = sres_ame_err.copy()
 xerr = np.exp(sed_res_data['sigma(ln(Md))'].values)*X_*sed_res_data['qPAH'].values
 
@@ -189,7 +191,7 @@ pltAMEvsDust(X_,
              ftitle="RegsAMEvsPAHMass.pdf")
 
 
-# In[63]:
+# In[7]:
 
 X_ = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values)
 Y_   = sres_ame.copy()
@@ -208,7 +210,7 @@ pltAMEvsDust(X_,
              ftitle="RegsAMEvsDustMass.pdf")
 
 
-# In[59]:
+# In[8]:
 
 X_ = sed_res_data['qPAH'].values
 Y_   = sres_ame.copy()
@@ -227,21 +229,19 @@ pltAMEvsDust(X_,
              ftitle="RegsAMEvsqPAH.pdf")
 
 
-# In[37]:
-
-sns.regplot(x=np.log(X_), y= np.log(Y_), logistic=True, n_boot=50)
-
-
-# In[66]:
+# In[9]:
 
 Y_ = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values)
 ylabel = "Dust Mass [kg/m2/sr]"
 
-X_ = sed_res_data['qPAH'].values
-xlabel = "PAH Fraction"
+X_ = sed_res_data['qPAH'].values*Y_.copy()
+xlabel = "PAH Mass "
 
 yerr = sed_res_data['sigma(ln(Md))'].values*Y_
-xerr = sed_res_data['sigma(qPAH)'].values
+xerr = X_*sed_res_data['sigma(ln(Md))'].values
+
+
+
 
 pltAMEvsDust(
     X_, 
@@ -253,12 +253,93 @@ pltAMEvsDust(
     yerr=yerr,
     xerr=xerr,
     logy=True, 
-    logx=False,
+    logx=True,
+    ftitle="RegsMDustvsMPAH.pdf")
+plt.show()
+plt.close()
+
+plt.hist(X_[subset_hs],alpha=0.5)
+plt.hist(X_[subset_ls],alpha=0.5)
+plt.show()
+
+plt.close()
+
+
+# In[10]:
+
+Y_ = sed_res_data['qPAH'].values
+ylabel = "qPAH "
+
+X_ = sig_ame
+xlabel = "$\sigma_{AME}$"
+
+yerr = sed_res_data['sigma(qPAH)'].values
+
+print X_
+
+plt.scatter(Y_,X_)
+plt.ylabel('AME Sig.')
+plt.xlabel('qPAH')
+# pltAMEvsDust(
+#     X_, 
+#     Y_, 
+#     subset_hs, 
+#     subset_ls, 
+#     xlabel, 
+#     ylabel,
+#     yerr=yerr,
+#     xerr=xerr,
+#     logy=False, 
+#     logx=False,
+#     xmin=0.1,
+#     ftitle="RegsSigmaAMEvsQPAH.pdf")
+# plt.show()
+# plt.close()
+
+
+
+
+# In[11]:
+
+Y_ = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values)
+ylabel = "Dust Mass [kg/m2/sr]"
+
+X_ = sed_res_data['qPAH'].values
+xlabel = "qPAH "
+
+yerr = sed_res_data['sigma(ln(Md))'].values*Y_
+xerr = sed_res_data['sigma(qPAH)'].values
+
+
+
+
+pltAMEvsDust(
+    X_, 
+    Y_, 
+    subset_hs, 
+    subset_ls, 
+    xlabel, 
+    ylabel,
+    yerr=yerr,
+    xerr=xerr,
+    logy=True, 
+    logx=True,
     xmin=0.01,
-    ftitle="RegsDustMassvsqPAH.pdf")
+    ftitle="RegsMDustvsQPAH.pdf")
+plt.show()
+plt.close()
 
 
-# In[67]:
+
+
+# In[12]:
+
+plt.hist(Y_[subset_hs],alpha=0.5)
+plt.hist(Y_[subset_ls],alpha=0.5)
+plt.show()
+
+
+# In[13]:
 
 Y_     = np.exp(sed_res_data['ln(<U> [Habings])'].values)
 ylabel = 'U [Habings]'
@@ -286,9 +367,11 @@ pltAMEvsDust(X_,
              ftitle="RegsUvsqPAH.pdf")
 
 
-# ## Experimenting with a boostrap test (Per Doi-san's advice')
+# ## Experimenting with a boostrap test:
 
-# In[63]:
+# In[14]:
+
+import numpy.random as npr
 
 def bootstrap(data_x, 
               data_y, 
@@ -361,7 +444,7 @@ def bootstrap_run(X1_data,
     
     plt.figure(figsize=(6,6))
 
-    round_it = 3
+    round_it = 2
 
     bins = np.linspace(0.1, 1.0, 100)
 
@@ -372,7 +455,7 @@ def bootstrap_run(X1_data,
                                            str(round(np.nanmean(X2),round_it)) + " +/- " +  
                                            str(round(np.nanstd(X2),round_it))
                                             + "\n" + "t-stat: "+ 
-                                                       str(round(t,round_it))+", p-value: "+   str(round(prob,round_it)))
+                                                       str(round(t,1))+", p-value: "+   str(round(prob,5)))
     plt.ylabel("Count", fontsize=20)
     plt.xlabel("$S$", fontsize=20)
     
@@ -401,63 +484,30 @@ def bootstrap_run(X1_data,
     
 
 
-# In[71]:
+# In[15]:
 
 print subset_ls[subset_ls==False]
 
 
-# In[74]:
+# In[16]:
 
 Y_data = sres_ame
 
-X1_data = np.exp(sed_res_data['ln(Md [kg/m2/sr])'])
+X1_data = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values)
 X2_data = X1_data*sed_res_data['qPAH'].values
 
-Y_data = Y_data[subset_hs==True]
-X1_data = X1_data[subset_hs==True]
-X2_data = X2_data[subset_hs==True]
+# Y_data = Y_data[subset_hs==True]
+# X1_data = X1_data[subset_hs==True]
+# X2_data = X2_data[subset_hs==True]
 
 
     
-X1_label = "Dust Lum. vs. AME \n  $S$ = "
-X2_label = "PAH Lum. vs. AME \n   $S$ = "
+X1_label = "$M_{dust}$ vs. AME \n  $S$ = "
+X2_label = "$M_{PAH}$ vs. AME \n   $S$ = "
 
-ftitle ="RegsAME_Bootstrap_LDustandLPAH.pdf"
+ftitle ="RegsAME_Bootstrap_MDustandMPAH.pdf"
 
-iterations = 1000
-
-kind = 'Spearman'
-bootstrap_run(
-    X1_data, 
-    X2_data, 
-    Y_data, 
-    kind=kind, 
-    X1_label = X1_label, 
-    X2_label = X2_label, 
-    iterations=iterations, 
-    ftitle=ftitle)
-
-
-
-# In[73]:
-
-Y_data = sres_ame
-
-X1_data = np.exp(sed_res_data['ln(<U> [Habings])'].values)*np.exp(sed_res_data['ln(Md [kg/m2/sr])'])
-X2_data = X1_data*sed_res_data['qPAH'].values
-
-Y_data = Y_data[subset_ls==True]
-X1_data = X1_data[subset_ls==True]
-X2_data = X2_data[subset_ls==True]
-
-
-    
-X1_label = "Dust Lum. vs. AME \n  $S$ = "
-X2_label = "PAH Lum. vs. AME \n   $S$ = "
-
-ftitle ="RegsAME_Bootstrap_LDustandLPAH.pdf"
-
-iterations = 1000
+iterations = 10000
 
 kind = 'Spearman'
 bootstrap_run(
@@ -474,15 +524,15 @@ bootstrap_run(
 
 # ## Calculate bootstrap results using PAH Luminosity ( not PAH Mass)
 
-# In[58]:
+# In[17]:
 
 Y_data = sres_ame
 
-X1_data = np.exp(sed_res_data['ln(<U> [Habings])'].values)*np.exp(sed_res_data['ln(Md [kg/m2/sr])']) 
+X1_data = np.exp(sed_res_data['ln(<U> [Habings])'].values)*np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values) 
 X2_data = X1_data*sed_res_data['qPAH'].values 
     
-X1_label = "Dust Lum. vs. AME \n  $S$ = "
-X2_label = "PAH Lum. vs. AME \n   $S$ = "
+X1_label = "$L_{dust}$. vs. AME \n  $S$ = "
+X2_label = "$L_{PAH}$ vs. AME \n   $S$ = "
 
 ftitle ="RegsAME_Bootstrap_LDustandLPAH.pdf"
 
@@ -497,6 +547,306 @@ bootstrap_run(
     X1_label = X1_label, 
     X2_label = X2_label, 
     iterations=iterations, 
+    ftitle=ftitle)
+
+
+
+# # Make a Bootstrap code that incorporates the noises:
+
+# In[18]:
+
+import numpy as np
+import numpy.random as npr
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def noisyBootstrap(
+              data_x, 
+              data_y,
+              noise_x,
+              noise_y,
+              kind='Spearman',
+              niterations=1):
+    
+    """Returns bootstrap estimate of 100.0*(1-alpha) CI for statistic.
+    Ye be warned, this function assumes guassian noise"""
+    
+    n = len(data_x)
+
+    
+    corr_coeff_array = np.zeros(niterations)
+    
+    # Generate a whole set of random number in one go, for the noise perturbation
+    # Basically, a vectorized alternative to doing it once per iteration
+    
+    pert_x = npr.normal(loc=0.0, scale = 1.0, size = (n,niterations))
+    pert_y = npr.normal(loc=0.0, scale = 1.0, size = (n,niterations))
+    
+    #print "pert_x :"+str(pert_x)
+    
+    # Now do the same thing for the boostrap grabbing:
+    
+    idx = npr.randint(0, n, size = (n,niterations))
+    #print "idx :"+str(np.shape(idx))
+    #idy = npr.randint(0, n, size = (n,niterations))
+    
+    #print "noise_x :"+str(noise_x)
+    
+    #print "rel_noise_x :"+str(noise_x/data_x)
+    
+    for i in range(0,niterations):
+
+        noisy_x        = data_x.copy() + noise_x.copy()*pert_x[:,i].copy()
+        noisy_y        = data_y.copy() + noise_y.copy()*pert_y[:,i].copy()
+        samples_x      = noisy_x[idx[:,i]]
+        samples_y      = noisy_y[idx[:,i]]
+
+
+        if kind == 'Pearson':
+
+            stat_r, stat_p = scipy.stats.pearsonr(samples_x,samples_y,axis=0)
+            
+        elif kind == 'Spearman':
+            
+            stat_r, stat_p = scipy.stats.spearmanr(samples_x,samples_y,axis=0, nan_policy='omit')
+
+        corr_coeff_array[i] = stat_r
+    
+    corr_coeff_array[np.isnan(corr_coeff_array)==False]
+
+    return corr_coeff_array
+
+
+
+def noisyBootstrap_run(
+                  X1_data, 
+                  X2_data, 
+                  Y_data,
+                  X1_noise,
+                  X2_noise,
+                  Y_noise,
+                  kind='Spearman', 
+                  niterations=10000, 
+                  title=None, 
+                  X1_label=None, 
+                  X2_label=None,
+                  ftitle='Bootstrap' ):
+    
+        ## Force background color to be white:
+    ### Note that seaborn plotting functions my override these settings.
+    plt.rcParams['axes.facecolor']='white'
+    plt.rcParams['figure.facecolor']='white'
+    plt.rcParams['savefig.facecolor']='white'
+    
+    
+    corr_array_X1 = noisyBootstrap(X1_data, Y_data, X1_noise,Y_noise, kind=kind, niterations=niterations)
+
+    corr_array_X2 = noisyBootstrap(X2_data, Y_data, X2_noise,Y_noise, kind=kind, niterations=niterations)
+    
+    X1 = corr_array_X1
+    X2 = corr_array_X2
+    
+    X1 = X1[~np.isnan(X1)]
+    X2 = X2[~np.isnan(X2)]
+    
+    t, prob = scipy.stats.ttest_ind(X1,X2, axis=0, equal_var=True) #Equal_var=False for Welch's t-test
+    # make plots
+    
+    plt.figure(figsize=(6,6))
+
+    round_it = 2
+
+    bins = np.linspace(0.1, 1.0, 100)
+
+    plt.hist(X1, bins, alpha=0.5, color= 'r', label=X1_label +" "+ 
+                                           str(round(np.nanmean(X1),round_it)) + " +/- " +  
+                                           str(round(np.nanstd(X1),round_it)) )
+    plt.hist(X2, bins, alpha=0.5, color= 'b', label=X2_label+" "+ 
+                                           str(round(np.nanmean(X2),round_it)) + " +/- " +  
+                                           str(round(np.nanstd(X2),round_it))
+                                            + "\n" + "t-stat: "+ 
+                                                       str(round(t,1))+"\n p-value: "+   str(round(prob,6)))
+    plt.ylabel("Count", fontsize=20)
+    plt.xlabel("$S$", fontsize=20)
+    
+    
+    plt.legend(loc='upper left')
+    plt.savefig("../Plots/"+ftitle)
+    plt.show()
+    
+    return corr_array_X1, corr_array_X2
+
+
+def getProductError(x,y,sigmax,sigmay):
+    
+    '''Given X and Y data, and corresponding absolute errors,
+    get the relative errors, and then calculate the relative
+    error of the product. Then convert this finally to the
+    absolute error of the product. Return this error and the
+    product XY.'''
+    
+    rel_errorx = sigmax/x
+    rel_errory = sigmay/y
+    
+    rel_errorxy = rel_errorx + rel_errory
+    prod_xy = x*y
+    
+    sigmaxy = rel_errorxy * (prod_xy)
+    
+    return sigmaxy, prod_xy
+
+
+# # Noisy Bootstrap Test Run:
+
+# In[19]:
+
+Y_data  = sres_ame
+Y_noise = sres_ame_err
+
+X1_data  = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values)
+X1_rel_noise = sed_res_data['sigma(ln(Md))'].values
+X1_noise = X1_rel_noise*X1_data
+
+X2_data = X1_data*sed_res_data['qPAH']
+qPAH_rel_noise = sed_res_data['sigma(qPAH)'].values/sed_res_data['qPAH'].values
+
+X2_rel_noise = qPAH_rel_noise + X1_rel_noise
+X2_noise = X2_rel_noise * X2_data
+
+#X2_noise = (sed_res_data['sigma(qPAH)']/sed_res_data['qPAH'])+sed_res_data['sigma(ln(Md))'].values
+# X2_noise, X2_data = getProductError(X1_data.copy(), sed_res_data['qPAH'].values, 
+#                                     X1_noise.copy(), sed_res_data['sigma(qPAH)'].values)
+
+#X2_noise sed_res_data['sigma(qPAH)']/sed_res_data['qPAH']
+
+# = np.exp(sed_res_data['sigma(ln(<U>))'].values)
+
+# Y_data = Y_data[subset_hs==True]
+# X1_data = X1_data[subset_hs==True]
+# X2_data = X2_data[subset_hs==True]
+
+
+    
+X1_label = "$M_{dust}$ vs. AME \n  $S$ = "
+X2_label = "$M_{PAH}}$ vs. AME \n   $S$ = "
+
+ftitle ="RegsAME_noisyBootstrap_MDustandMPAH_test.pdf"
+
+niterations = 10000
+
+noisyBootstrap_run(
+    X1_data, 
+    X2_data, 
+    Y_data,
+    X1_noise,
+    X2_noise,
+    Y_noise, 
+    X1_label = X1_label, 
+    X2_label = X2_label, 
+    niterations=niterations, 
+    ftitle=ftitle)
+
+
+
+# In[20]:
+
+## Just the high sig regions: (Sample size probably too small)
+### Subsets separating "Highly Significant" AME from "Low/Non-significant" AME
+subset_hs = (
+    
+    (sig_ame     > 5.000)   & 
+    (f_uch       <= 0.25)    #& 
+
+    )
+
+subset_ls = (subset_hs == False)
+
+
+# In[21]:
+
+Y_data  = sres_ame[subset_hs]
+Y_noise = sres_ame_err[subset_hs]
+
+X1_data  = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values)[subset_hs]
+X1_rel_noise = (sed_res_data['sigma(ln(Md))'].values)[subset_hs]
+X1_noise = X1_rel_noise*X1_data
+
+X2_data = X1_data*sed_res_data['qPAH'].values[subset_hs]
+qPAH_rel_noise = sed_res_data['sigma(qPAH)'].values[subset_hs]/sed_res_data['qPAH'].values[subset_hs]
+
+X2_rel_noise = qPAH_rel_noise+ X1_rel_noise
+X2_noise = X2_rel_noise * X2_data
+
+#X2_noise = (sed_res_data['sigma(qPAH)']/sed_res_data['qPAH'])+sed_res_data['sigma(ln(Md))'].values
+# X2_noise, X2_data = getProductError(X1_data.copy(), sed_res_data['qPAH'].values, 
+#                                     X1_noise.copy(), sed_res_data['sigma(qPAH)'].values)
+
+#X2_noise sed_res_data['sigma(qPAH)']/sed_res_data['qPAH']
+
+# = np.exp(sed_res_data['sigma(ln(<U>))'].values)
+
+# Y_data = Y_data[subset_hs==True]
+# X1_data = X1_data[subset_hs==True]
+# X2_data = X2_data[subset_hs==True]
+
+
+    
+X1_label = "$M_{dust}$ vs. AME \n  $S$ = "
+X2_label = "$M_{PAH}}$ vs. AME \n   $S$ = "
+
+ftitle ="RegsAME_noisyBootstrap_MDustandMPAH_test.pdf"
+
+niterations = 2000
+
+Dust_S, PAH_S = noisyBootstrap_run(
+    X1_data, 
+    X2_data, 
+    Y_data,
+    X1_noise,
+    X2_noise,
+    Y_noise, 
+    X1_label = X1_label, 
+    X2_label = X2_label, 
+    niterations=niterations, 
+    ftitle=ftitle)
+
+
+
+# In[ ]:
+
+Y_data = sres_ame
+Y_noise = sres_ame_err
+
+X1_data = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values)
+#X2_data = X1_data*sed_res_data['qPAH'].values
+X2_data = np.exp(sed_res_data['ln(<U> [Habings])'].values)
+
+X1_noise = np.exp(sed_res_data['sigma(ln(Md))'].values)
+X2_noise = np.exp(sed_res_data['sigma(ln(<U>))'].values)
+
+# Y_data = Y_data[subset_hs==True]
+# X1_data = X1_data[subset_hs==True]
+# X2_data = X2_data[subset_hs==True]
+
+
+    
+X1_label = "$M_{dust}$ vs. AME \n  $S$ = "
+X2_label = "$U_{Habings}$ vs. AME \n   $S$ = "
+
+ftitle ="RegsAME_noisyBootstrap_MDustandU_test.pdf"
+
+niterations = 10000
+
+noisyBootstrap_run(
+    X1_data, 
+    X2_data, 
+    Y_data,
+    X1_noise,
+    X2_noise,
+    Y_noise, 
+    X1_label = X1_label, 
+    X2_label = X2_label, 
+    niterations=niterations, 
     ftitle=ftitle)
 
 
@@ -526,65 +876,21 @@ bootstrap_run(X1_data, X2_data, Y_data, kind=kind,
 # In[ ]:
 
 Y_data = sres_ame
-X1_data = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values) 
-X2_data = X1_data*sed_res_data['qPAH'].values 
-X1_data = X1_data - X2_data
-    
-X1_label = "Dust Mass. vs. AME \n  $S$ = "
-X2_label = "PAH Mass. vs. AME \n   $S$ = "
-
-iterations = 10000
-
-
-kind = 'Spearman'
-
-ftitle ="RegsAME_Bootstrap_MDustandMPAH.pdf"
-
-bootstrap_run(X1_data, X2_data, Y_data, kind=kind, 
-              X1_label = X1_label, X2_label = X2_label, iterations=iterations, ftitle=ftitle)
-
-
-
-# In[ ]:
-
-Y_data = sres_ame[subset_ls]
 
 X1_data = np.exp(sed_res_data['ln(Md [kg/m2/sr])'].values) 
 X2_data = X1_data*sed_res_data['qPAH'].values 
-X1_data = X1_data - X2_data
+
     
 X1_label = "Dust Mass. vs. AME \n  R = "
 X2_label = "PAH Mass. vs. AME \n   R = "
 
-X1_data=X1_data[subset_ls]
-X2_data=X2_data[subset_ls]
-
 iterations = 10000
 
-# kind = 'Pearson'
-# bootstrap_run(X1_data, X2_data, Y_data, kind=kind, 
-#               X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)
-
-#bootstrap_run(X1_data, X2_data, Y_data, X3_data=X3_data, kind=kind, iterations=iterations, title=None)
-
 kind = 'Spearman'
 bootstrap_run(X1_data, X2_data, Y_data, kind=kind, 
               X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)
 
 
-Y_data = fd_all[subset_ls]
-
-# kind = 'Pearson'
-# bootstrap_run(X1_data, X2_data, Y_data, kind=kind, 
-#               X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)
-
-#bootstrap_run(X1_data, X2_data, Y_data, X3_data=X3_data, kind=kind, iterations=iterations, title=None)
-
-kind = 'Spearman'
-bootstrap_run(X1_data, X2_data, Y_data, kind=kind, 
-              X1_label = X1_label, X2_label = X2_label, iterations=iterations, title=None)
-#kind = 'pearson'
-#bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)
 
 
 # In[ ]:
@@ -674,62 +980,6 @@ kind = 'spearman'
 bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)
 # kind = 'pearson'
 # bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)
-
-
-# In[ ]:
-
-kind = 'spearman'
-iterations = 10000000
-
-
-Y_data  = fd_all[subset_hs]
-X1_data = dmass[subset_hs] #[~np.isnan(dmass)]
-X2_data = pahmass[subset_hs] #[~np.isnan(pahmass)]
-
-bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)
-
-
-
-
-
-# In[ ]:
-
-iterations = 1000000
-
-
-Y_data  = fd_all[subset_ls]
-X1_data = dmass[subset_ls] #[~np.isnan(dmass)]
-X2_data = pahmass[subset_ls] #[~np.isnan(pahmass)]
-
-bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)
-
-
-# In[ ]:
-
-iterations = 1000000
-
-Y_data  = sres_ame[subset_hs]
-X1_data = dmass[subset_hs] #[~np.isnan(dmass)]
-X2_data = pahmass[subset_hs] #[~np.isnan(pahmass)]
-
-bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)
-
-Y_data  = sres_ame[subset_ls]
-X1_data = dmass[subset_ls] #[~np.isnan(dmass)]
-X2_data = pahmass[subset_ls] #[~np.isnan(pahmass)]
-
-bootstrap_run(X1_data, X2_data, Y_data, kind=kind, iterations=iterations, title=None)
-
-
-# In[ ]:
-
-print len(sres_ame)
-print len(fd_all)
-print fd_all[np.isnan(fd_all)==False]
-print fd_all[np.isnan(fd_all)==True]
-print sres_ame[np.isnan(sres_ame)==False]
-print sres_ame[np.isnan(sres_ame)==True]
-print corr_array_hs[np.isnan(corr_array_hs)==False]
 
 
 # In[ ]:
