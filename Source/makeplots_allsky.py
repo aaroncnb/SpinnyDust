@@ -20,27 +20,22 @@ matplotlib.style.use('seaborn-bright')
 get_ipython().magic(u'matplotlib inline')
 
 
+# In[ ]:
+
+
+
+
 # # 0.1) Load data and masks:
 
 # In[2]:
 
 with open('../Data/maps_nest.pickle') as f:  # Python 3: open(..., 'rb')
-    coords, planck_bb, planck_mw, phot, phot_modesub = pickle.load(f)
+    coords, planck_bb, planck_mw, phot, phot_modesub, phot_mpsub = pickle.load(f)
     
 
 
 
-# In[191]:
-
-print phot.head()
-
-
-print planck_mw.head()
-
-print planck_bb.head()
-
-
-# In[5]:
+# In[ ]:
 
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import Imputer
@@ -63,22 +58,15 @@ planck_mw_tr = pd.DataFrame(allsky_pipeline.fit_transform(planck_mw),columns=pla
 
 
 
-# In[6]:
+# In[ ]:
 
 planck_bb.head()
-
-
-# In[7]:
-
-phot_corr = phot_tr.corr(method='spearman')
-planck_bb_corr = planck_bb_tr.corr(method='spearman')
-planck_mw_corr = planck_mw_tr.corr(method='spearman')
 
 
 # ### 1.1) Cross-correlation among all IR photometric bands and AME map
 # ##### Split by Galactic Latitude
 
-# In[8]:
+# In[104]:
 
 glatrange     = 10.0
 glatrange_mid = 2.5
@@ -90,20 +78,20 @@ gcut_h = np.where((abs(coords['glat']) > glatrange) & (abs(coords['elat']) > ela
 
 
 
-# In[9]:
+# In[105]:
 
 import seaborn as sb
 
 
-# In[66]:
+# In[106]:
 
-def plotCorrMatrix():
+def plotCorrMatrix(mapframe):
     
-    phot_corr     = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).corr(method='spearman')
-    phot_corr_lgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[gcut_l].corr(method='spearman')
-    phot_corr_hgl = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).iloc[gcut_h].corr(method='spearman')
+    mapframe_corr     = mapframe.corr(method='spearman')
+    mapframe_corr_lgl = mapframe.iloc[gcut_l].corr(method='spearman')
+    mapframe_corr_hgl = mapframe.iloc[gcut_h].corr(method='spearman')
     
-    mask = np.zeros_like(phot_corr.values)
+    mask = np.zeros_like(mapframe_corr.values)
     mask[np.triu_indices_from(mask,k=1)] = True
 
     with sb.axes_style("white"):
@@ -113,7 +101,7 @@ def plotCorrMatrix():
         cbar_ax = fig.add_axes([.91, .2, .03, .7])
 
         sb.heatmap(
-            phot_corr,
+            mapframe_corr,
             #linewidths=.5,
             annot=True,
             mask=mask,
@@ -128,7 +116,7 @@ def plotCorrMatrix():
 
 
         sb.heatmap(
-            phot_corr_hgl,
+            mapframe_corr_hgl,
             #linewidths=.5,
             annot=True,
             mask=mask,
@@ -144,7 +132,7 @@ def plotCorrMatrix():
 
 
         sb.heatmap(
-            phot_corr_lgl,
+            mapframe_corr_lgl,
             #linewidths=.5,
             annot=True,
             mask=mask,
@@ -167,17 +155,37 @@ def plotCorrMatrix():
         
 
 
-# In[113]:
+# In[109]:
 
-plotCorrMatrix()
+plotCorrMatrix(
+    phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$'])
+               )
+
+plotCorrMatrix(  
+                phot_modesub.join(planck_mw['AME']).divide(planck_bb['$R_{PR1}$'], axis=0)
+               )
+
+
+plotCorrMatrix(  
+                phot_mpsub.join(planck_mw['AME']).divide(planck_bb['$R_{PR1}$'], axis=0)
+               )
+
+plotCorrMatrix(  
+                phot_mpsub.join(planck_mw['AME']).divide(planck_bb[''], axis=0)
+               )
+
+
+# In[ ]:
+
+planck_bb['']
 
 
 # ### 1.2) Cross-correlation among all IR photometric bands and AME map
 # ##### Split by AKARI 9 micron detection limit (2 MJy/sr)
 
-# In[283]:
+# In[ ]:
 
-def plotCorrMatrixwCutoff(mapframe, cutoff_map, lower_cutoff=5.0, upper_cutoff = 5e2):
+def maskByIntensity(cutoff_map, lower_cutoff=5.0, upper_cutoff = 5e2):
     
     cutoff_map_cp = cutoff_map.copy()
 
@@ -186,11 +194,27 @@ def plotCorrMatrixwCutoff(mapframe, cutoff_map, lower_cutoff=5.0, upper_cutoff =
         (cutoff_map < upper_cutoff)
         )
     
-    phot_corr     = phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']).corr(method='spearman')
-    phot_corr_irc9_lim = mapframe.iloc[lim].corr(method='spearman')
+    return lim
+
+
+def plotCorrMatrixwCutoff(mapframe,
+                          cutoff_map,
+                          lower_cutoff = 5.0, 
+                          upper_cutoff = 5e2):
+    
+    cutoff_map_cp = cutoff_map.copy()
+
+    cutoff = np.where(
+        (cutoff_map > lower_cutoff) & 
+        (cutoff_map < upper_cutoff)
+        )
+    
+    
+    mapframe_corr        = mapframe.corr(method='spearman')
+    mapframe_corr_masked = mapframe.iloc[cutoff].corr(method='spearman')
     
     #bb_corr_drop = bb_corr.drop('AME',axis=0).drop('A9',axis=1)
-    mask = np.zeros_like(phot_corr.values)
+    mask = np.zeros_like(mapframe_corr.values)
     mask[np.triu_indices_from(mask,k=1)] = True
 
     with sb.axes_style("white"):
@@ -200,7 +224,7 @@ def plotCorrMatrixwCutoff(mapframe, cutoff_map, lower_cutoff=5.0, upper_cutoff =
         cbar_ax = fig.add_axes([.91, .2, .03, .7])
 
         sb.heatmap(
-            phot_corr,
+            mapframe_corr,
             #linewidths=.5,
             annot=True,
             mask=mask,
@@ -215,7 +239,7 @@ def plotCorrMatrixwCutoff(mapframe, cutoff_map, lower_cutoff=5.0, upper_cutoff =
 
 
         sb.heatmap(
-            phot_corr_irc9_lim,
+            mapframe_corr_masked,
             #linewidths=.5,
             annot=True,
             mask=mask,
@@ -234,32 +258,41 @@ def plotCorrMatrixwCutoff(mapframe, cutoff_map, lower_cutoff=5.0, upper_cutoff =
 
         plt.show()
 
-        fig.savefig("../Plots/all_bands_corr_matrix_wAME__IRC9lim{}_{}_MJysr_spearman.pdf".format(upper_cutoff,lower_cutoff), bbox_inches='tight')
-        print lim
+        fig.savefig("../Plots/all_bands_corr_matrix_wAME__IRC9lim{}_{}_MJysr_spearman.pdf".format(
+                upper_cutoff,lower_cutoff), bbox_inches='tight')
+
         cutoff_map_cp.iloc[:] = hp.UNSEEN
-        cutoff_map_cp.iloc[lim] = cutoff_map.iloc[lim].copy()
+        cutoff_map_cp.iloc[cutoff] = cutoff_map.iloc[cutoff].copy()
         
         hp.mollview(cutoff_map_cp, nest=True, norm='hist', cmap="rainbow")
 
 
-# In[291]:
+# In[ ]:
 
 plotCorrMatrixwCutoff(
-                        phot_tr.join(planck_mw_tr['AME']).join(planck_bb_tr['$R_{PR1}$']), 
+                        phot.join(planck_mw['AME']).join(planck_bb['$R_{PR1}$']), 
                         phot_modesub['A9'], 
-                        lower_cutoff=0.5, 
-                        upper_cutoff = 25
-    
-                        )
+                        lower_cutoff=0.3, 
+                        upper_cutoff = 10) 
+
+plotCorrMatrixwCutoff(
+                        phot.join(planck_mw['AME']).divide(planck_bb['$R_{PR1}$'], axis=0), 
+                        phot_modesub['A9'], 
+                        lower_cutoff=0.3, 
+                        upper_cutoff = 5)
+
+plotCorrMatrixwCutoff(
+                        phot_mpsub.join(planck_mw['AME']).divide(planck_bb['$R_{PR1}$'], axis=0), 
+                        phot_mpsub['A9'], 
+                        lower_cutoff=0.3, 
+                        upper_cutoff = 5)
 
 
 # Why is IRAS 25 $\mu$m the most unique map? Somewhat odd that it correlates miraculously well with IRAS 12 $\mu$m - despite its weak correlation with  the IRC $\mu$m map. Perhaps this is due to correlated noise, systematic effects in the IRAS MIR bands. Correlated Zodiacal light subtraction residuals, perhaps
 
 # # All-sky AME vs. IR plots:
 
-# In[71]:
-
-
+# In[ ]:
 
 def plotBandsCloud(nside=256):
     
@@ -280,53 +313,39 @@ def plotBandsCloud(nside=256):
 
     hsize = hp.nside2npix(nside)
     
-    randsub = np.random.randint(low=0, high=hsize, size=hsize//10)
+    randsub = np.random.randint(low=0, high=hsize, size=hsize//50)
 
 
     for i in range(0,nrows):
         for j in range(0,ncols):
-
+                
+                print k
+                
                 if k > 11:
 
                     pass
 
                 else:
 
-                    x = phot_modesub.values[randsub,k].copy()
+                    x = phot_mpsub[phot_mpsub.columns[k]].iloc[randsub]
 
 
-                    y = planck_mw['AME'].values[randsub].copy()
+                    y = planck_mw['AME'].iloc[randsub]
 
-                    x_ = x[(x>0) & (y>0)].copy()
-                    y_ = y[(x>0) & (y>0)].copy()
+                    x_ = x[(x>0) & (y>0) & (np.isfinite(x)==True) & (np.isfinite(y)==True)].copy()
+                    y_ = y[(x>0) & (y>0) & (np.isfinite(x)==True) & (np.isfinite(y)==True)].copy()
 
-                    x_ = np.log10(x_)
-                    y_ = np.log10(y_)
-
-
-                    xmin = x_.min()
-                    xmax = x_.max()
-                    ymin = y_.min()
-                    ymax = y_.max()
-
-                    #print xmin
-                    #print xmax
-                    #print ymin
-                    #print ymax
+                    x_ = np.log10(x_).copy()
+                    y_ = np.log10(y_).copy()
 
                     ax = axs[i,j]
-                    #ax.set_aspect(aspect, adjustable='box')
-
-                    #ax.set_xscale('log')
-                    #ax.set_yscale('log')
-
 
                     sb.kdeplot(
                            x_,
                            y_,
                            shade=True,
                            shade_lowest=False,
-                           gridsize=50,
+                           gridsize=100,
                             ax = ax)
 
 
@@ -345,26 +364,26 @@ def plotBandsCloud(nside=256):
 
                     k += 1
                     
-        ax = axs[1,0]
+        ax = axs[-1,0]
         ax.set_ylabel('AME [$\mu{}K_{CMB}$]', fontsize=15)
-        ax = axs[-1,2]
+        ax = axs[-1,0]
         ax.set_xlabel('log $I_{\lambda}$ [MJy/sr]', fontsize=15)
 
         plt.show()
 
-        fig.savefig("../Plots/AMEvsDust_allsky_allbands_kde.pdf", bbox_inches='tight')
+        fig.savefig("../Plots/AMEvsDust_allsky_allbands__mpsub_kde.pdf", bbox_inches='tight')
 
                     
     return axs
     
 
 
-# In[114]:
+# In[95]:
 
-allbands_kde = plotBandsCloud()
+plotBandsCloud()
 
 
-# In[ ]:
+# In[16]:
 
 ## Check correlations, adding 10% noise after removal of first principal component
 
@@ -376,7 +395,7 @@ allbands_kde = plotBandsCloud()
 #  Instead of downgrading the pixel sizes, just copy the same correaltion value of the 64 NSIDE 256 pixels
 #  in a batch to all of those pixel positions in an output map (also size NSIDE 256).
 
-# In[20]:
+# In[ ]:
 
 def testSpatialCorr(df, 
                     nside_in, 
@@ -394,14 +413,14 @@ def testSpatialCorr(df,
     
     return corr_patches_pn
 
-def displaySpatialCorr(corr_patches_pn,labels, ref_col=0):
+def displaySpatialCorr(corr_patches_pn,labels, ref_col=0,subdir='../Plots/Allsky_Corr/'):
 
     nside = len(corr_patches_pn.values[:,0,0])
     #fig = plt.figure(figsize=(8,4))
 
     for j in range(0,len(labels)):
         #plt.subplot(2,5,(j*2)+1)
-        hp.cartview(corr_patches_pn.values[:,j,ref_col],
+        hp.mollview(corr_patches_pn.values[:,j,ref_col],
                          #sub=(1,4,j+1), 
                          #fig=fig,
                          cmap = "rainbow", 
@@ -410,23 +429,9 @@ def displaySpatialCorr(corr_patches_pn,labels, ref_col=0):
                          max  = 1, 
                          nest = True, 
                          title="$S$({}:{}) NSIDE".format(labels[ref_col],labels[j],nside_out))
+        hp.graticule(dpar=5, dmer=5,coord='G')
         
-        plt.savefig("../Plots/Spearman_Map_nside"+str(nside_out)+"_{}to{}.pdf".format(labels[ref_col],labels[j]))
-
-
-# In[24]:
-
-nside_in = 256
-nside_out = 16
-test_frame = phot_modesub.join(planck_mw)
-corr_patches_pn = testSpatialCorr(test_frame,
-                                  nside_in, 
-                                  nside_out)
-
-
-# In[26]:
-
-displaySpatialCorr(corr_patches_pn, test_frame.columns, ref_col = -1)
+        plt.savefig("{}/Spearman_Map_nside{}_{}to{}.pdf".format(subdir,nside_out,labels[ref_col],labels[j]) )
 
 
 # In[27]:
@@ -439,9 +444,49 @@ corr_patches_pn = testSpatialCorr(test_frame,
                                   nside_out)
 
 
-# In[30]:
+# In[28]:
 
-displaySpatialCorr(corr_patches_pn, test_frame.columns, ref_col = -4)
+for i in range(0,len(test_frame.columns)):
+    displaySpatialCorr(corr_patches_pn, test_frame.columns, ref_col = i)
+
+
+# In[72]:
+
+nside_in = 256
+nside_out = 8
+test_frame_RadNorm = phot_mpsub.join(planck_mw['AME']).divide(planck_bb['$R_{PR1}$'], axis=0)
+corr_patches_pn_RadNorm = testSpatialCorr(test_frame_RadNorm,
+                                  nside_in, 
+                                  nside_out)
+
+
+# In[ ]:
+
+for i in range(0,len(test_frame_RadNorm.columns)):
+    displaySpatialCorr(corr_patches_pn_RadNorm, test_frame_RadNorm.columns, ref_col = i,
+                                  subdir='../Plots/Allsky_Corr/UNorm')
+
+
+# In[ ]:
+
+nside_in = 256
+nside_out = 8
+test_frame_UNorm = phot_mpsub.join(planck_mw['AME']).divide(planck_bb['$U$'], axis=0),
+corr_patches_pn_UNorm = testSpatialCorr(test_frame_UNorm,
+                                  nside_in, 
+                                  nside_out)
+
+
+# In[ ]:
+
+for i in range(0,len(test_frame_UNorm.columns)):
+    displaySpatialCorr(corr_patches_pn_UNorm, test_frame_UNorm.columns, ref_col = i,
+                                  subdir='../Plots/Allsky_Corr/UNorm')
+
+
+# In[ ]:
+
+
 
 
 # In[ ]:
@@ -449,170 +494,8 @@ displaySpatialCorr(corr_patches_pn, test_frame.columns, ref_col = -4)
 # The check appears successful, so make a plot grid of all the nsides:
 
 
-# In[21]:
-
-import matplotlib as mpl
-
-def SpatialCorrAll(df, nside_in):
-    
-    nside_list = [32,16,8,4,2]
-    
-    fig = plt.figure()
-    
-    #fig.subplots_adjust(hspace=0, left=0.1, right=0.7)
-    
-    for k in range(0,5):
-    
-        npix_in    = 12*nside_in**2
-        npix_out   = 12*nside_list[k]**2
-        pix_interv = (nside_in/nside_list[k])**2
-
-        ## First, do it the "normal way"-
-        patches_corr = [df.iloc[i*pix_interv:(i+1)*pix_interv].corr(method='spearman') for i in range(0,npix_out)]
-        
-        corr_patches_pn = pd.Panel({i: patches_corr[i] for i in range(0,npix_out)})
-
-
-        for j in range(0,4):
-            
-            sub_index = (j*5)+1+k
-            
-            ax = fig.add_subplot(4,5,sub_index)
-
-    #             if j == 0:
-    #                 ax_again = fig.add_subplot(4,5,sub_index)
-    #                 ax_again.set_ylabel("$S$(AME:"+bba.columns[j])
-    #             if k == 0:
-    #                 ax_again = fig.add_subplot(4,5,sub_index)
-    #                 ax_again.set_xlabel("NSIDE"+str(nside_list[k]))
-
-            hp.cartview(
-                corr_patches_pn.values[:,j,4],
-                cmap="rainbow", 
-                cbar=False,
-                fig = ax,
-                min=-1, 
-                max=1, 
-                nest=True, 
-                title="",
-                hold=False)
-        
-    fig.subplots_adjust(right=0.8)
-    cbar_ax = fig.add_axes([0.85, 0.15, 0.05, 0.7])
-    
-    
-    #cmap = mpl.cm.cool
-    norm = mpl.colors.Normalize(vmin=-1, vmax=1)
-
-    # ColorbarBase derives from ScalarMappable and puts a colorbar
-    # in a specified axes, so it has everything needed for a
-    # standalone colorbar.  There are many more kwargs, but the
-    # following gives a basic continuous colorbar with ticks
-    # and labels.
-    cb1 = mpl.colorbar.ColorbarBase(cbar_ax, 
-                                    cmap="rainbow",
-                                    norm=norm,
-                                    orientation='vertical')
-    cb1.set_label('$S$')
-
-    plt.show()
-    
-
-    plt.savefig("../Plots/Spearman_Map_nsideALL_AMEtoMBBandA9.pdf")
-
-
-
-# In[60]:
-
-def dispAllbandsKDE(allbands_kde):
-    
-    ax = axs[1,0]
-    ax.set_ylabel('AME [$\mu{}K_{CMB}$]', fontsize=15)
-    ax = axs[-1,2]
-    ax.set_xlabel('log $\nuI_nu$ [MJy/sr]', fontsize=15)
-
-    plt.show()
-
-    fig.savefig("../Plots/AMEvsDust_allsky_allbands_kde.pdf", bbox_inches='tight')
-    
-dispAllbandsKDE(allbands_kde)
-
-
 # ## Compare with Planck PR2 Dust Intensity Map
 # (With ref. frequency at 545 GHz)
-
-# In[ ]:
-
-ncols=6
-nrows=3
-aspect=1.0
-
-fig, axs = plt.subplots(ncols=ncols, 
-                        nrows=nrows, 
-                        sharey=True, 
-                        sharex=True)
-#fig.subplots_adjust(hspace=0.1, left=0.1, right=0.7)
-plt.setp(axs.flat, aspect=1.0, adjustable='box-forced')
-
-k=0
-
-
-for i in range(0,nrows):
-    for j in range(0,ncols):
-            
-            if k > 17:
-                
-                pass
-            
-            else:
-           
-                x = phot_modesub.values[:,k]
-
-
-                y = planck_mw['AME'].values[:]
-                
-                R = planck_bb['$R$'].values[:]
-                
-                y = y/R
-                x = x/R
-
-                x_ = x[(x>0) & (y>0)]
-                y_ = y[(x>0) & (y>0)]
-
-
-                xmin = 5e-5#x_.min()
-                xmax = 0.1 #x_.max()
-                ymin = 0.01#y_.min()
-                ymax = y_.max()
-
-                ax = axs[i,j]
-                #ax.set_aspect(aspect, adjustable='box')
-
-                hb = ax.hexbin(
-                       x_,
-                       y_, 
-                       mincnt=1,
-                       gridsize=300,
-                       bins='log', 
-                       cmap='inferno_r',
-                       xscale='log',
-                       yscale='log')
-
-
-                ax.axis([xmin, xmax, ymin, ymax])
-
-                ax.text(0.2, 0.9,phot_modesub.columns[k], horizontalalignment='center',
-                  verticalalignment='center',
-                  transform=ax.transAxes, 
-                  fontsize=15)
-                
-                ax.grid(True)
-                
-                ax.set_frame_on(True)
-
-                k += 1
-            mAdd
-
 
 # ## All-sky Noise Estimation:
 
@@ -1198,126 +1081,6 @@ hp.anafast(a140)
     # Set that pixel value to the spearman correlation coefficient
 
 
-# In[19]:
-
-import time
-
-from sklearn.manifold import TSNE
-np.random.seed(seed=42)
-
-rndperm = np.random.permutation(phot.shape[0])
-
-
-
-n_sne = 7000
-
-time_start = time.time()
-tsne = TSNE(n_components=2, verbose=1, perplexity=40, n_iter=300)
-tsne_results = tsne.fit_transform(phot_tr.loc[rndperm[:n_sne],:].values)
-
-print 't-SNE done! Time elapsed: {} seconds'.format(time.time()-time_start)
-
-
-# In[75]:
-
-phot_tr_tsne = phot_tr.loc[rndperm[:n_sne],:].copy()
-phot_tr_tsne['x-tsne'] = tsne_results[:,0]
-phot_tr_tsne['y-tsne'] = tsne_results[:,1]
-
-
-# In[78]:
-
-from ggplot import *
-
-
-# In[93]:
-
-chart = ggplot( phot_tr_tsne, aes(x='x-tsne', y='y-tsne'))         + geom_point(size=70, alpha = 0.1)         + ggtitle("tSNE dimensions colored by digit")
-
-
-# In[94]:
-
-chart
-
-
-# In[ ]:
-
-do_tsne(perp):
-    
-    time_start = time.time()
-    tsne = TSNE(n_components=2, verbose=1, perplexity=perp, n_iter=100)
-    tsne_results = tsne.fit_transform(phot_tr.loc[rndperm[:n_sne],:].values)
-
-    print 't-SNE done! Time elapsed: {} seconds'.format(time.time()-time_start)
-
-    phot_tr_tsne = phot_tr.loc[rndperm[:n_sne],:].copy()
-    phot_tr_tsne['x-tsne'] = tsne_results[:,0]
-    phot_tr_tsne['y-tsne'] = tsne_results[:,1]
-
-    chart = ggplot( phot_tr_tsne, aes(x='x-tsne', y='y-tsne'))             + geom_point(size=70, alpha = 0.1)             + ggtitle("tSNE dimensions colored by digit")
-
-    return chart
-
-
-# In[ ]:
-
-do_tsne(10)
-
-
-# In[105]:
-
-from sklearn.decomposition import PCA
-
-pca = PCA(n_components=2)
-
-pca_result = pca.fit_transform(phot_tr.values)
-phot_tr_pca = phot_tr.copy()
-
-phot_tr_pca['pca-one'] = pca_result[:,0]
-phot_tr_pca['pca-two'] = pca_result[:,1]
-#phot_tr_pca['pca-three'] = pca_result[:,2]
-
-
-print "Explained variation per principal component:{}".format(pca.explained_variance_ratio_)
-
-
-# In[106]:
-
-chart_pca = ggplot(phot_tr_pca.loc[:,:], aes(x='pca-one',y='pca-two') )         + geom_point(size=75, alpha=0.2)         + ggtitle("First and Second Principal Components colored by digit")
-
-
-# In[107]:
-
-chart_pca
-
-
-# In[113]:
-
-from sklearn.decomposition import NMF
-
-nmf = NMF(n_components=2)
-
-nmf_result = nmf.fit_transform(phot_tr.values)
-phot_tr_nmf = phot_tr.copy()
-
-phot_tr_nmf['nmf-one'] = nmf_result[:,0]
-phot_tr_nmf['nmf-two'] = nmf_result[:,1]
-#phot_tr_pca['pca-three'] = pca_result[:,2]
-
-
-print "Explained variation per principal component:{}".format(nmf.explained_variance_ratio_)
-
-
-# In[55]:
-
-planck_mw.head()
-
-
-# In[56]:
-
-planck_bb.head()
-
-
 # In[69]:
 
 hp.mollview(planck_mw['AME']/planck_bb['$R$'], norm='hist',min=1, max=10, nest=True, cmap='rainbow')
@@ -1326,6 +1089,65 @@ hp.mollview(planck_mw['AME']/planck_bb['$R$'], norm='hist',min=1, max=10, nest=T
 # In[70]:
 
 hp.mollview(planck_mw_tr['AME']/planck_bb_tr['$R$'], norm='hist', nest=True, cmap='rainbow')
+
+
+# In[23]:
+
+hp.mollview(planck_mw['AME']/planck_bb['$R_{PR1}$'], norm='hist', nest=True, cmap='rainbow')
+
+
+# In[26]:
+
+hp.mollview(phot['A9']/planck_bb['$R_{PR1}$'], norm='hist', nest=True, cmap='rainbow')
+
+
+# In[27]:
+
+hp.mollview(phot_modesub['A9']/planck_bb['$R_{PR1}$'], norm='hist', nest=True, cmap='rainbow')
+
+
+# In[28]:
+
+hp.mollview(hp.remove_monopole(phot_modesub['A9'])/planck_bb['$R_{PR1}$'], norm='hist', nest=True, cmap='rainbow')
+
+
+# In[30]:
+
+hp.mollview(hp.remove_monopole(phot['A9'])/planck_bb['$R_{PR1}$'], norm='hist', nest=True, cmap='rainbow')
+
+
+# In[40]:
+
+from matplotlib.colors import SymLogNorm
+hp.mollview(hp.remove_monopole(phot['A9']), norm=SymLogNorm(linthresh=0.01,
+                                    linscale=1,vmin=0), min=-0.1,nest=True, cmap='rainbow')
+
+
+# In[41]:
+
+hp.mollview(phot_modesub['A9'], norm=SymLogNorm(linthresh=0.01,
+                                    linscale=1,vmin=0),min=-0.1, nest=True, cmap='rainbow')
+
+
+# In[50]:
+
+(phot_modesub['A9']-phot['A9']).head()
+
+
+# In[56]:
+
+hp.mollview(hp.remove_monopole(phot['A9'],gal_cut = 80
+                        ), norm='hist', nest=True, cmap='rainbow')
+
+
+# In[47]:
+
+hp.mollview(hp.remove_monopole(phot['A9']), norm='hist', nest=True, cmap='rainbow')
+
+
+# In[60]:
+
+hp.mollview(hp.remove_dipole(phot['A9'], nest=True, gal_cut=20), norm='hist', nest=True, cmap='rainbow')
 
 
 # In[72]:
@@ -1578,9 +1400,9 @@ plt.close()
 # In[215]:
 
 # Experiment with the Planck PR2 Tau353Ghz map:
-dust_gnilc = pd.DataFrame()
-dust_gnilc['tau'] = hp.read_map('/work1/users/aaronb/Databrary/HEALPix/COM_CompMap_Dust-GNILC-Model-Opacity_2048_R2.01.fits', nest=True)
-dust_gnilc['rad'] = hp.read_map('/work1/users/aaronb/Databrary/HEALPix/COM_CompMap_Dust-GNILC-Radiance_2048_R2.00.fits', nest=True)
+dust_pr1 = pd.DataFrame()
+        dust_pr1['tau'] = hp.read_map('/work1/users/aaronb/Databrary/HEALPix/.fits', nest=True)
+dust_pr1['rad'] = hp.read_map('/work1/users/aaronb/Databrary/HEALPix/COM_CompMap_Dust-GNILC-Radiance_2048_R2.00.fits', nest=True)
 
 
 # In[216]:
@@ -1647,6 +1469,19 @@ plt.figure(figsize=(10,10))
 sb.heatmap((s_corr - p_corr), square=True, annot=True)
 plt.show()
 plt.close()
+
+
+# In[98]:
+
+hp.ud_grade(
+                hp.read_map(
+                        "../Data/raw/HFI_CompMap_ThermalDustModel_2048_R1.20.fits",
+                        nest=True,
+                        field=0
+               	),
+                nside_out = 256,
+                order_in = 'NESTED',
+                order_out = 'NESTED')
 
 
 # In[ ]:

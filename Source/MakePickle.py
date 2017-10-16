@@ -76,9 +76,36 @@ for i in range(0,3):
     
 ### After adding the PR2 BB-fit results, also add the PR1 radiance map:
 ### But first we have to load it and smooth it, as in Hensley+ 2016)
+### PR1 Dust Parameter Maps (NSIDE 2048) available here:
+###
+# 
+#http://irsa.ipac.caltech.edu/data/Planck/release_1/all-sky-maps/previews/HFI_CompMap_ThermalDustModel_2048_R1.20/index.html
+#
+#
+#planck_bb['$R_{PR1}$'] = 
+#hp.read_map('/work1/users/aaronb/Databrary/HEALPix/AKARI_HEALPix_orig/256_nside/radiance_PR1_256_smooth.fits',
+#                      nest = nest)
 
-planck_bb['$R_{PR1}$'] = hp.read_map('/work1/users/aaronb/Databrary/HEALPix/AKARI_HEALPix_orig/256_nside/radiance_PR1_256_smooth.fits',
-                      nest = nest)
+planck_bb['$R_{PR1}$'] = hp.ud_grade(		
+		hp.read_map(
+			filepath+"/HFI_CompMap_ThermalDustModel_2048_R1.20.fits",
+			nest=True,
+			field=3 
+		),
+		nside_out = 256,
+		order_in = 'NESTED',
+		order_out = 'NESTED')
+
+planck_bb['$\tau_{353,PR1}$'] = hp.ud_grade(
+                hp.read_map(
+                        filepath+"/HFI_CompMap_ThermalDustModel_2048_R1.20.fits",
+                        nest=True,
+                        field=0),
+                nside_out = 256,
+                order_in = 'NESTED',
+                order_out = 'NESTED')
+
+planck_bb['$U$'] =  planck_bb['$R_{PR1}$'].divide(planck_bb['$\tau_{353,PR1}$'], axis=0)
 
 
 
@@ -133,6 +160,12 @@ allsky_modes = phot.round(3).mode(axis=0)
 ## Trying a vectorized way now, using the Pandas ".subtract" method
 phot_modesub = pd.DataFrame(phot.values-allsky_modes.values,columns=phot.columns)
 
+## ALternate background correction: Subtract a monopole using healpy
+
+phot_mpsub = pd.DataFrame()
+
+for map in phot.columns:
+	phot_mpsub[map] =  hp.remove_monopole(phot[map], nest=True, gal_cut=20)
 
 
 import pickle
@@ -146,4 +179,4 @@ else:
     pname = "maps.pickle"
 
 with open("../Data/"+pname, 'w') as f:  # Python 3: open(..., 'wb')
-    pickle.dump([coords, planck_bb, planck_mw, phot, phot_modesub], f)
+    pickle.dump([coords, planck_bb, planck_mw, phot, phot_modesub, phot_mpsub], f)
