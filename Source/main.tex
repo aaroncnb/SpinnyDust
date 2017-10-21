@@ -1,44 +1,10 @@
-%
-%% Beginning of file 'sample.tex'
-%%
-%% Modified 2005 December 5
-%%
-%% This is a sample manuscript marked up using the
-%% AASTeX v5.x LaTeX 2e macros.
-
-%% The first piece of markup in an AASTeX v5.x document
-%% is the \documentclass command. LaTeX will ignore
-%% any data that comes before this command.
-
-%% The command below calls the preprint style
-%% which will produce a one-column, single-spaced document.
-%% Examples of commands for other substyles follow. Use
-%% whichever is most appropriate for your purposes.
-%%
-%%\documentclass[12pt,preprint]{aastex}
-
+%\documentclass[12pt,preprint]{aastex}
 %% manuscript produces a one-column, double-spaced document:
-
-%\documentclass[manuscript]{aastex}
-
+\documentclass[manuscript]{aastex}
 %% preprint2 produces a double-column, single-spaced document:
-
 %\documentclass[preprint2]{aastex}
-
-%% Sometimes a paper's abstract is too long to fit on the
-%% title page in preprint2 mode. When that is the case,
-%% use the longabstract style option.
-
- \documentclass[preprint2,longabstract]{aastex}
+%\documentclass[preprint2,longabstract]{aastex}
  \usepackage{graphicx}
-%% If you want to create your own macros, you can do so
-%% using \newcommand. Your macros should appear before
-%% the \begin{document} command.
-%%
-%% If you are submitting to a journal that translates manuscripts
-%% into SGML, you need to follow certain guidelines when preparing
-%% your macros. See the AASTeX v5.x Author Guide
-%% for information.
 
 \newcommand{\vdag}{(v)^\dagger}
 \newcommand{\myemail}{skywalker@galaxy.far.far.away}
@@ -232,12 +198,12 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
         \label{fig:AMEvsDust_allsky_allbands}
         \includegraphics[width=150mm]{../Plots/AMEvsDust_allsky_allbands.pdf}
         \centering
-        \caption{ALL-SKY 'hexbin' density plots of each of the 18 infrared bands' photometry results against those of the PR2 AME map. Pixels within 10$^{\circ}$ of the ecliptic plane are excluded. Darker values indicate higher pixel densities. Plots share logarithmic. 'A' indicates AKARI; 'D', DIRBE; 'I', IRAS, and 'P' Planck. The number after each letter indicates the band central nominal wavelength in microns (or frequency in GHz, in the case of the Planck bands.) }
+        \caption{ALL-SKY kernel density estimate plots of 12-band infrared photometry results against the PR2 AME map. Pixels within 10$^{\circ}$ of the ecliptic plane are excluded. Darker values indicate higher pixel densities. Plots share logarithmic axes. 'A' indicates AKARI; 'D', DIRBE; 'I', IRAS, and 'P' Planck. The number after each letter indicates the band central nominal wavelength in microns (or frequency in GHz, in the case of the Planck bands.) }
       \end{figure*}
 
       \begin{figure*}
         \label{fig:AMEtoRvsDusttoR_allsky_allbands}
-        \includegraphics[width=150mm]{../Plots/AMEtoRvsDusttoR_allsky_allbands.pdf}
+        \includegraphics[width=150mm]{../Plots/AMEtoRvsDusttoR_allsky_allbands_mpsub_Rnorm_kde.pdf}
         \centering
         \caption{Similar comparison to Fig. \ref{fig:AMEvsDust_allsky_allbands}, with both the IR and the AME intensities scaled by the PR2 dust radiance ($R$) for each pixel. }
       \end{figure*}
