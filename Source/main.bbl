@@ -1,4 +1,4 @@
-\begin{thebibliography}{61}
+\begin{thebibliography}{60}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Ali-Haimoud}(2010)}]{ali-haimoud10}
@@ -69,9 +69,6 @@
 
 \bibitem[{{Draine} \& {Li}(2007)}]{draine07}
 ---. 2007, \apj, 657, 810
-
-\bibitem[{Efron(1979)}]{efron79}
-Efron, B. 1979, Ann. Statist., 7, 1
 
 \bibitem[{{Erickson}(1957)}]{erickson57}
 {Erickson}, W.~C. 1957, \apj, 126, 480
