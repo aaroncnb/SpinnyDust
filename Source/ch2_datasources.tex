@@ -75,14 +75,21 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
 
       \begin{figure*}
         \label{fig:AME_commander_freqdist}
-        \includegraphics[width=185mm]{../Plots/AME_commander_freqdist.pdf}
+        \includegraphics[width=185mm]{../Plots/ch_intro/AME_commander_freqdist.pdf}
         \centering
         \caption{The peak frequencies of the varying component $AME_{var}$.  The pink shaded region indicates frequencies not covered by either WMAP or Planck The green line at 33.5~GHz indicates the peak frequency of $AME_{fix}$.}
       \end{figure*}
 
-      The next figure shows the all-sky ratio map, of AMEvar:AMEfix. That is, the ratio of the integrated intensities of these components, rather than the intensities given directly in the COMMANDER maps. This is because the COMMANDER maps give each component's intensity at a different "reference frequency" (corresponding to photometric bands). In other words, the COMMANDER AME intensities are not peak intensities. Moreover they are intensities calculated for a single template spinning dust spectrum- but one that has been translated to fit the observations. The physical paraneters in the spinning dust model, ''spdust'' are not varied.
+      The next figure shows the all-sky ratio map, of AMEvar:AMEfix. That is, the ratio of the integrated intensities of these components, rather than the intensities given directly in the COMMANDER maps. This is because the COMMANDER maps give each component's intensity at a different "reference frequency" (corresponding to photometric bands). In other words, the COMMANDER AME intensities are not peak intensities. Moreover they are intensities calculated for a single template spinning dust spectrum- but one that has been translated to fit the observations (a demonstration of such shifted templates, for a common ``reference intensity'' at a common ``reference frequency'', is shown in Fig. \ref{fig:AME_commander_freqshift_templ}). The physical paraneters in the spinning dust model, ''spdust'' are not varied.
 
-      For these reasons, we are very cautious in deriving conclusions from comparisons with the COMMANDE AME map. Indeed, the authors themselves include a similar disclaimer. However since there is currently no better all-sky component separation available, and carrying out a spinning dust modeling and component separation is beyond the scope of this work, we proceed with care.
+      \begin{figure*}
+        \label{fig:AME_commander_freqshift_templ}
+        \includegraphics[width=185mm]{../Plots/ch_datasources/AME_commander_freqshift_templ.pdf}
+        \centering
+        \caption{Spdust template spinning dust profiles fitted by PC15 when calculating $AME_{var}$.  The reference frequency, 22.8~GHz is indicated by the vertical green line. Each template has the same $AME_{var}$ amplitude of 100~$\mu$K, indicated by the horizontal green line, plotted to highlight the potential deviation between $AME_{var}$ and the actual peak intensity. }
+      \end{figure*}
+
+      For these reasons, we are very cautious in deriving conclusions from comparisons with the COMMANDE AME map. Indeed, the authors themselves include a similar disclaimer. However since there is currently no better all-sky component separation available\footnote{Indeed, improving on the COMMANDER AME map would be extremely difficult without lower frequency constraints and/or higher resolution observations of not only the AME itself but the contribution from synchrotron and free-free emisson.}, and carrying out a spinning dust modeling and component separation is beyond the scope of this work, we proceed with care.
 
 
 \subsection{All-sky Data Processing}
