@@ -70,9 +70,15 @@ We are primarily interested in the AKARI/IRC 9~$\mu$m band's unique coverage of 
      \subsection{COMMANDER-AME: Peak Frequency Distribution}
 
       $I_{AME}\nu_{var}$
-      The Planck-COMMANDER component separation products contain estimates of known microwave foreground components (free-free, synchrotron, thermal dust emission \footnote{"Thermal dust emission" in the COMMANDER context refers to dust emission in the Rayleigh Jeans-regime, as the COMMANDER fitting does not include photometric constraints on the thermal emission peak, or consider small grain emission on the Wiens side.}) contributions to the Planck photometric bands. In addition, there is an "AME" component map, which presumes that AME originates from spinning dust. While acknowledging that such a decomposition is non-physical, the AME is further broken down into two components: a spatially varying peak frequency component, and a spatially constant peak frequency component.
+      The Planck-COMMANDER component separation products contain estimates of known microwave foreground components (free-free, synchrotron, thermal dust emission \footnote{"Thermal dust emission" in the COMMANDER context refers to dust emission in the Rayleigh Jeans-regime, as the COMMANDER fitting does not include photometric constraints on the thermal emission peak, or consider small grain emission on the Wiens side.}) contributions to the Planck photometric bands. In addition, there is an ``AME component map'', which presumes that AME originates from spinning dust. While acknowledging that such a decomposition is non-physical, the AME is further broken down into two components: a spatially varying peak frequency component, and a spatially constant peak frequency component. However as seen in Fig. \ref{fig:AME_commander_freqdist}, virtually all of the fitted peak frequncies for $AME_{var}$ beyond the reach of WMAP and Planck. Only the fitted global frequency, 33.5~GHz for the spatially constant component, is covered.
 
-      Below, we show a density plot of the peak frequencies of the varying component (I(AMEv)). The green line at 33.5 GHz indicates the peak frequency of the spatially varying component. The pink region indicates frequencies not covered by either WMAP or Planck: virtually all of the fitted peak frequncies for $AME_{var}$ are unconstrained. Only the fitted global frequency, 33.5~GHz for the spatially constant component is covered.
+
+      \begin{figure*}
+        \label{fig:AME_commander_freqdist}
+        \includegraphics[width=185mm]{../Plots/AME_commander_freqdist.pdf}
+        \centering
+        \caption{The peak frequencies of the varying component $AME_{var}$.  The pink shaded region indicates frequencies not covered by either WMAP or Planck The green line at 33.5~GHz indicates the peak frequency of $AME_{fix}$.}
+      \end{figure*}
 
       The next figure shows the all-sky ratio map, of AMEvar:AMEfix. That is, the ratio of the integrated intensities of these components, rather than the intensities given directly in the COMMANDER maps. This is because the COMMANDER maps give each component's intensity at a different "reference frequency" (corresponding to photometric bands). In other words, the COMMANDER AME intensities are not peak intensities. Moreover they are intensities calculated for a single template spinning dust spectrum- but one that has been translated to fit the observations. The physical paraneters in the spinning dust model, ''spdust'' are not varied.
 

@@ -1,11 +1,11 @@
 \chapter{All-sky Analysis}
 \label{sec:analysis}
 
-    We inspect the IR abd AME data in 3 approaches, relying on HEALPix maps at ~1$^{\circ}$ angular resolution. We start with an all-sky AME to IR comparison, looking for global patterns among all pixels (except those within 10$^{\circ}$ of the ecliptic plane.) 2) Next we show a more regionalized comparison, looking at the set of AME-prominent galactic clouds identified by the \cite{planckXV}. As much as possible, we maintain comparability between their IRAS-Planck based result, and our result which adds-in AKARI data and dust SED fitting. 3) Lastly, we highlight the $\lambda$~Orionis molecular ring \citep{maddalena86,maddalena87}, a particular AME-dominated region with resolvable structure even at ~1$^{\circ}$ angular resolution.
+    We will first introduce our all-sky analysis of the AME vs. IR emission. This approach relies on HEALPix maps smoothed to  ~1$^{\circ}$ angular resolution. We start with an all-sky AME to IR comparison, looking for global patterns among all pixels (except those within 10$^{\circ}$ of the ecliptic plane.)
 
 \section{All-sky Pixel Domain Analysis}
 
-	In order to look more closely at the variations between the individual bands' maps, we include a pixel-by-pixel analysis. Figure \ref{fig:AMEvsDust_allsky_allbands} shows the result of such a comparison, for each of the 18 bands sampled. The AME data comes from the PR2 AME map.
+	In order to look more closely how the the AME to IR relationship varies with wavelength, we first do a simple cross-correlation test. Figure \ref{fig:AMEvsDust_allsky_allbands} shows Spearman rank correlation coefficents ($S$), for each of the 12 bands sampled. The AME data comes from the PR2 astrophysical component datasets. We show the comparison for 3 different AME estimates: the two AME components ($AME_var$ and $AME_fix$) as they are provided in PR2 (intensities quoted at reference frequencies\footnote{22.8~GHz for $AME_var$, 41~GHz for $AME_fix$}. The $AME_fix$ peak freq. is spatially constant at 33.5~GHz ), with $AME_var$ and $AME_fix$ calculated at each pixel's peak frequency rather than the PR2 reference freq. We do this because there is nothing physically special about the Planck reference frequencies, and because the PR2 $AME_var$ component intensity could vary significantly from the intensity at the peak of the fitted spinning dust template. Thirdly we show the corr-correlation matrix with a single AME metric- calculating the integrated intensity at each pixel, for both AME components, creating an $AME_sum$ component.
 
     To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane, where the Zodi-residuals can be a problematic (especially in the MIR.)
 
