@@ -1,14 +1,11 @@
-%\documentclass[12pt,preprint]{aastex}
 %% manuscript produces a one-column, double-spaced document:
 \documentclass[12pt, manuscript]{aastex}
-%% preprint2 produces a double-column, single-spaced document:
-%\documentclass[preprint2]{aastex}
-%\documentclass[preprint2,longabstract]{aastex}
- \usepackage{graphicx}
- %\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\usepackage{hyperref}
+%\usepackage[most]{tcolorbox}
 %\usepackage{setspace}
-\newcommand{\vdag}{(v)^\dagger}
-\newcommand{\myemail}{skywalker@galaxy.far.far.away}
+%\usepackage{footmisc}
+%\renewcommand{\footnotesize}{\small}
 
 \begin{document}
 
@@ -16,13 +13,12 @@
 \title{AKARI and Spinning Dust Emission\\
 A look at microwave dust emission via the Infrared}
 
-\author{A. Bell, T. Onaka, F. Galliano, R. Wu, Y. Doi, D. Ishihara, M. Hammonds, M. Giard}
-\affil{University of Tokyo,
-   Bunkyo, Tokyo, Japan, 113-0033;}
+\author{Aaron Christopher Bell}
+%\affil{University of Tokyo,
+%Bunkyo, Tokyo, Japan, 113-0033;}
+%\email{abell@astron.s.u-tokyo.ac.jp}
 
-\email{abell@astron.s.u-tokyo.ac.jp}
-
-\keywords{AME, spinning dust, PAH bands, AKARI}
+%\keywords{AME, spinning dust, PAH bands, AKARI}
 
 \maketitle
 
@@ -33,6 +29,7 @@ A look at microwave dust emission via the Infrared}
 \include{ch4_lori}
 \include{ch6_discussion}
 \include{summary}
+\include{acknowledgements}
 
 \small
 \bibliographystyle{apj}
