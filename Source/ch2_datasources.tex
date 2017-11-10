@@ -1,7 +1,7 @@
-\chapter{Data Sources}
+\section{Data Sources}
   \label{ch:datasources}
 
-  \paragraph{A collection of skies}
+  \subsection{A collection of skies}
     This work relies completely on all-sky surveys. All of the maps utilized are photometric-band infrared maps, except for the AME data, which is an all-sky component separation analysis product, from the Planck Collaboration's efforts to separate galactic foregrounds from the CMB.
 
 
@@ -29,11 +29,11 @@
       \end{tabular}
     \end{table*}
 
-  \paragraph{Primary band of interest}\footnote{Not to be confused with ``The band primarily interested'' in dust, Queen.}
+  \subsubsection{Primary band of interest}\footnote{Not to be confused with ``The band primarily interested'' in dust, Queen.}
     The AKARI/IRC 9~$\mu$m band (A9) provides uniquely complete coverage of the PAH bands at 6.2, 7.7, 8.6, and 11.2~$\mu$m, and may be an excellent tool for testing PAH-related hyoptheses on an all-sky basis. The combination of A9 with W12 and/or I12 may be especially insightful. In total, we employ all-sky maps from 12 photometric bands, spanning the wavelength range of 6.9~$\mu$m to 550~$\mu$m\footnote{Planck bands are named according to their central frequency, not wavelength.}
 
-  \section{Infrared Data}
-    \subsection{AKARI}
+  \subsection{Infrared Data}
+    \subsubsection{AKARI}
        The AKARI infrared space telescope revealed an entire sky of infrared light, from the mid to far infrared, via two instruments \citep{akari07} the Infrared Camera (IRC)\citep{irc07} and the Far Infrared Surveyor (FIS) \citep{fis07}.
 
        \paragraph{AKARI/IRC PAH feature coverage}
@@ -71,12 +71,12 @@
 
        Data from the Infrared Astronomical Satellite \citep{iras84} all-sky surveys are used to supplement the similarly-centered AKARI photometric bands. The IRAS 12~$\mu$m band is similar to the AKARI 9~$\mu$m band in terms of the sky coverage, central wavelength, and especially in that both surveys are heavily dominated by zodiacal light. We use the Improved Reprocessing of the IRAS Surveys (IRIS) \citep{iris05}, which use undergone a zodiacal-light removal. The Zodiacal light model, however differs between the two bands. The IRAS Zodi-subtraction is primarily based on the \cite{kelsall98} model.
 
-  \section{Planck COMMANDERAME Parameter Maps}
+  \subsection{Planck COMMANDERAME Parameter Maps}
 
        We utilize the COMMANDER-Ruler astrophysical component separation maps, from the Planck Collaboration's Public Data Release 2 (hereafter, PR2). Details of the foreground contribution estimates are given in \cite{planckXII}.
 
 
-       \subsection{COMMANDER-AME: Peak Frequency Distribution}
+       \subsubsection{COMMANDER-AME: Peak Frequency Distribution}
 
         $I_{AME}\nu_{var}$
         The Planck-COMMANDER component separation products contain estimates of known microwave foreground components (free-free, synchrotron, thermal dust emission \footnote{``Thermal dust emission'' in the COMMANDER context refers to dust emission in the Rayleigh Jeans-regime, as the COMMANDER fitting does not include photometric constraints on the thermal emission peak, or consider small grain emission on the Wiens side.}) contributions to the Planck photometric bands. In addition, there is an ``AME component map'', which presumes that AME originates from spinning dust. While acknowledging that such a decomposition lacks a physical justfication, \cite{planck15X} break the AME into two components: a spatially varying peak frequency component, and a spatially constant peak frequency component. However as seen in Fig. \ref{fig:AME_commander_freqdist}, virtually all of the fitted peak frequncies for $AME_{var}$ beyond the reach of WMAP and Planck. Only the fitted global frequency, 33.5~GHz for the spatially constant component, is covered.

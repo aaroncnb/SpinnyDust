@@ -1,10 +1,10 @@
-\chapter{All-sky Analysis}
+\section{All-sky Analysis}
 \label{sec:analysis}
 
     We will first introduce our all-sky analysis of the AME vs. IR emission. This approach relies on HEALPix maps smoothed to  ~1$^{\circ}$ angular resolution. We start with an all-sky AME to IR comparison, looking for global patterns among all pixels (except those within 10$^{\circ}$ of the ecliptic plane.)
 
-\section{All-sky Pixel Domain Analysis}
-  \subsection{All-sky cross correlations}
+\subsection{All-sky Pixel Domain Analysis}
+  \subsubsection{All-sky cross correlations}
   	In order to look more closely how the the AME to IR relationship varies with wavelength, we first do a simple cross-correlation test. Figure \ref{fig:AMEvsDust_allsky_allbands} shows Spearman rank correlation coefficents ($S$), for each of the 12 bands sampled.
 
     \subsubsection{Pixel mask}
@@ -17,7 +17,7 @@
 
      Figure \ref{fig:AME_IR_crosscorr_allbandsg} visualizes the cross-correlation matrix for each of the IR bands. The AME does not show a strong correlation with other bands at $|l|>10$. At $|l|<10$, the FIR bands show stronger correlation. The PAH-tracing bands show a stronger correlation than bands at 18 to 60~$\mu$m, but weaker than AME vs. the FIR bands.
 
-  \paragraph{Spatial variaton of correlations}
+  \subsection{Spatial variaton of correlations}
     To understand how these trends may vary across the sky, we produce an all-sky maps of $r_{s}$ for AME vs. IR emission. From the NSIDE 256 input maps of AME and 4 IR wavelength maps, we produce NSIDE 8 maps of $r_{s}$. These maps are shown in Fig. \hyperref[fig:Spearman_Map_nside8_AMEtoIR]{\ref*{fig:Spearman_Map_nside8_AMEtoIR}}.
 
       \begin{figure*}

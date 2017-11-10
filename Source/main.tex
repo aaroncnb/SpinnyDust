@@ -2,11 +2,12 @@
 \documentclass[12pt, manuscript]{aastex}
 \usepackage{graphicx}
 \usepackage{hyperref}
+%\usepackage{fancyhdr}
 %\usepackage[most]{tcolorbox}
 %\usepackage{setspace}
 %\usepackage{footmisc}
 %\renewcommand{\footnotesize}{\small}
-
+%\pagestyle{fancy}
 \begin{document}
 
 
@@ -22,17 +23,27 @@ A look at microwave dust emission via the Infrared}
 
 \maketitle
 
+\pagenumbering{roman}
 \include{abstract}
+\tableofcontents
+\listoffigures
+
+\pagenumbering{arabic}
 \include{ch1_intro}
 \include{ch2_datasources}
 \include{ch3_allsky}
 \include{ch4_lori}
 \include{ch6_discussion}
 \include{summary}
-\include{acknowledgements}
 
+
+
+%%%%%% appendix %%%%%%%
 \appendix
 \include{app_pca}
+
+%\singlespacing
+\include{acknowledgements}
 
 \small
 \bibliographystyle{apj}
