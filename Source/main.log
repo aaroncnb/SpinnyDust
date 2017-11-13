@@ -1,0 +1,1046 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.9)  13 NOV 2017 16:47
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**main.tex
+(/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 95.
+ (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen105
+\Hy@linkcounter=\count89
+\Hy@pagecounter=\count90
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count91
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count92
+ (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen106
+\Fld@menulength=\count93
+\Field@Width=\dimen107
+\Fld@charsize=\dimen108
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count94
+\c@Item=\count95
+\c@Hfootnote=\count96
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count97
+\c@bookmark@seq@number=\count98
+ (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
+)
+\Hy@SectionHShift=\skip43
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/03 v2.15a AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen109
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen110
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count99
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count100
+\leftroot@=\count101
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count102
+\DOTSCASE@=\count103
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen111
+LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
+\macc@depth=\count104
+\c@MaxMatrixCols=\count105
+\dotsspace@=\muskip11
+\c@parentequation=\count106
+\dspbrk@lvl=\count107
+\tag@help=\toks16
+\row@=\count108
+\column@=\count109
+\maxfields@=\count110
+\andhelp@=\toks17
+\eqnshift@=\dimen112
+\alignsep@=\dimen113
+\tagshift@=\dimen114
+\tagwidth@=\dimen115
+\totwidth@=\dimen116
+\lineht@=\dimen117
+\@envbody=\toks18
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2735.
+LaTeX Info: Redefining \] on input line 2736.
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen118
+\captionmargin@=\dimen119
+\captionwidth=\dimen120
+\caption@tempdima=\dimen121
+\caption@indent=\dimen122
+\caption@parindent=\dimen123
+\caption@hangindent=\dimen124
+)
+\c@ContinuedFloat=\count111
+Package caption Info: hyperref package is loaded.
+)
+\c@KVtest=\count112
+\sf@farskip=\skip47
+\sf@captopadj=\dimen125
+\sf@capskip=\skip48
+\sf@nearskip=\skip49
+\c@subfigure=\count113
+\c@subfigure@save=\count114
+\c@lofdepth=\count115
+\c@subtable=\count116
+\c@subtable@save=\count117
+\c@lotdepth=\count118
+\sf@top=\skip50
+\sf@bottom=\skip51
+) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/natbib.sty
+Package: natbib 2003/06/06 7.1 (PWD)
+\bibhang=\skip52
+\bibsep=\skip53
+LaTeX Info: Redefining \cite on input line 518.
+\c@NAT@ctr=\count119
+) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/aas_macros.sty) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+) (/usr/share/texlive/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count120
+\rotFPtop=\skip54
+\rotFPbot=\skip55
+\rot@float@box=\box28
+\rot@mess@toks=\toks20
+) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip56
+\f@ncyO@elh=\skip57
+\f@ncyO@erh=\skip58
+\f@ncyO@olh=\skip59
+\f@ncyO@orh=\skip60
+\f@ncyO@elf=\skip61
+\f@ncyO@erf=\skip62
+\f@ncyO@olf=\skip63
+\f@ncyO@orf=\skip64
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen126
+\lightrulewidth=\dimen127
+\cmidrulewidth=\dimen128
+\belowrulesep=\dimen129
+\belowbottomsep=\dimen130
+\aboverulesep=\dimen131
+\abovetopsep=\dimen132
+\cmidrulesep=\dimen133
+\cmidrulekern=\dimen134
+\defaultaddspace=\dimen135
+\@cmidla=\count121
+\@cmidlb=\count122
+\@aboverulesep=\dimen136
+\@belowrulesep=\dimen137
+\@thisruleclass=\count123
+\@lastruleclass=\count124
+\@thisrulewidth=\dimen138
+) (/usr/share/texlive/texmf-dist/tex/latex/was/gensymb.sty
+Package: gensymb 2003/07/02 v1.0 (WaS)
+) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.aux (/home/aaronb/Projectbrary/latex/CosmicDust/Source/abstract.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch1_intro.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch2_datasources.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch3_allsky.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch4_lori.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch6_discussion.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/summary.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/app_pca.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/acknowledgements.aux))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 20.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+) (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count125
+\scratchdimen=\dimen139
+\scratchbox=\box29
+\nofMPsegments=\count126
+\nofMParguments=\count127
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count128
+\MPscratchDim=\dimen140
+\MPnumerator=\count129
+\makeMPintoPDFobject=\count130
+\everyMPtoPDFconversion=\toks22
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+ (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring OFF on input line 20.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count131
+)
+LaTeX Info: Redefining \ref on input line 20.
+LaTeX Info: Redefining \pageref on input line 20.
+LaTeX Info: Redefining \nameref on input line 20.
+ (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.out) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.out)
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: rotating package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Info: Redefining \celsius on input line 20.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 20.
+
+
+Package gensymb Warning: Not defining \perthousand.
+
+LaTeX Info: Redefining \ohm on input line 20.
+Package gensymb Info: Using \Omega for \ohm on input line 20.
+
+Package gensymb Warning: Not defining \micro.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+\openout2 = `abstract.aux'.
+
+ (/home/aaronb/Projectbrary/latex/CosmicDust/Source/abstract.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+)
+Overfull \hbox (6.77599pt too wide) in paragraph at lines 3--36
+\OT1/ptm/m/n/12 dipole emis-sion by grains with mag-netic in-clu-sions (``mag-netic dust'') have emerged
+ []
+
+[1
+
+
+] (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+ [2
+
+
+])
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+ [3] (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.lof
+
+Package caption Warning: \label without proper reference on input line 101.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AME_commander_freqdist' on page iv undefined on input line 5.
+
+[4
+
+]
+
+Package caption Warning: \label without proper reference on input line 36.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AMEvsDust_allsky_allbands' on page v undefined on input line 9.
+
+
+Overfull \hbox (19.08379pt too wide) in paragraph at lines 10--10
+ [][] [][]\OT1/ptm/m/n/12 Spatial map of $\OML/cmm/m/it/12 r[]$ \OT1/ptm/m/n/12 be-tween the AME and IR in-ten-sity for 4 bands:$\OT1/cmr/m/n/12 9 []\OML/cmm/m/it/12 ^^V[]m$\OT1/ptm/m/n/12 , 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+
+Package caption Warning: \label without proper reference on input line 42.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:orionis-akari9' on page vi undefined on input line 12.
+
+)
+\tf@lof=\write5
+\openout5 = `main.lof'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.41 \include{ch1_intro}
+                         [1]
+\openout2 = `ch1_intro.aux'.
+
+ (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch1_intro.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
+ [2
+
+] [3]
+Overfull \hbox (1.90404pt too wide) in paragraph at lines 39--40
+\OT1/ptm/m/n/12 Since its first de-tec-tion in early mi-crowave ob-ser-va-tions, the anoma-lous mi-crowave
+ []
+
+[4] [5] [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7] [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9] [10]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 93.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)) [11]
+\openout2 = `ch2_datasources.aux'.
+
+ (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch2_datasources.tex
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 16.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 16.
+
+Overfull \hbox (84.98729pt too wide) in paragraph at lines 12--30
+ [][] 
+ []
+
+[12
+
+
+]
+
+Package caption Warning: \label without proper reference on input line 50.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:relSpectralResponse_MIR' on page 13 undefined on input line 40.
+
+[13]
+
+Package caption Warning: \label without proper reference on input line 58.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:inband_ionfrac_ratios' on page 14 undefined on input line 46.
+
+<../Plots/RelSpectralResponse_MIR.png, id=523, 379.4175pt x 266.9975pt>
+File: ../Plots/RelSpectralResponse_MIR.png Graphic file (type png)
+ <use ../Plots/RelSpectralResponse_MIR.png>
+Package pdftex.def Info: ../Plots/RelSpectralResponse_MIR.png used on input line 52.
+(pdftex.def)             Requested size: 426.79134pt x 300.33884pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 52--53
+ [][] 
+ []
+
+<../Plots/band-ratio-multiple.pdf, id=525, 433.62pt x 289.08pt>
+File: ../Plots/band-ratio-multiple.pdf Graphic file (type pdf)
+ <use ../Plots/band-ratio-multiple.pdf>
+Package pdftex.def Info: ../Plots/band-ratio-multiple.pdf used on input line 60.
+(pdftex.def)             Requested size: 426.79134pt x 284.54036pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 60--61
+ [][] 
+ []
+
+[14] [15 <../Plots/RelSpectralResponse_MIR.png>] [16 <../Plots/band-ratio-multiple.pdf>]
+
+Package caption Warning: \label without proper reference on input line 83.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:R_PCAMEtoPCdust' on page 17 undefined on input line 80.
+
+
+Package natbib Warning: Citation `hensley17' on page 17 undefined on input line 80.
+
+[17] <../Plots/ch_datasources/R_PCAMEtoPCRad.pdf, id=616, 614.295pt x 390.25798pt>
+File: ../Plots/ch_datasources/R_PCAMEtoPCRad.pdf Graphic file (type pdf)
+ <use ../Plots/ch_datasources/R_PCAMEtoPCRad.pdf>
+Package pdftex.def Info: ../Plots/ch_datasources/R_PCAMEtoPCRad.pdf used on input line 85.
+(pdftex.def)             Requested size: 512.1496pt x 325.38489pt.
+
+Overfull \hbox (122.1496pt too wide) in paragraph at lines 85--86
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <../Plots/ch_datasources/R_PCAMEtoPCRad.pdf>]
+
+Package caption Warning: \label without proper reference on input line 101.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AME_commander_freqdist' on page 19 undefined on input line 97.
+
+<../Plots/ch_intro/AME_commander_freqdist.pdf, id=676, 433.62pt x 289.08pt>
+File: ../Plots/ch_intro/AME_commander_freqdist.pdf Graphic file (type pdf)
+ <use ../Plots/ch_intro/AME_commander_freqdist.pdf>
+Package pdftex.def Info: ../Plots/ch_intro/AME_commander_freqdist.pdf used on input line 102.
+(pdftex.def)             Requested size: 512.1496pt x 341.47313pt.
+
+Overfull \hbox (122.1496pt too wide) in paragraph at lines 102--104
+ [][] 
+ []
+
+<../Plots/ch_datasources/PCAME_var_freq.pdf, id=677, 614.295pt x 390.25798pt>
+File: ../Plots/ch_datasources/PCAME_var_freq.pdf Graphic file (type pdf)
+ <use ../Plots/ch_datasources/PCAME_var_freq.pdf>
+Package pdftex.def Info: ../Plots/ch_datasources/PCAME_var_freq.pdf used on input line 109.
+(pdftex.def)             Requested size: 512.1496pt x 325.38489pt.
+
+Overfull \hbox (122.1496pt too wide) in paragraph at lines 109--111
+ [][] 
+ []
+
+
+Package caption Warning: \label without proper reference on input line 101.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AME_commander_freqdist' on page 19 undefined on input line 111.
+
+
+Package caption Warning: \label without proper reference on input line 101.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AME_commander_freqdist' on page 19 undefined on input line 111.
+
+
+Package caption Warning: \label without proper reference on input line 118.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AME_commander_freqshift_templ' on page 19 undefined on input line 115.
+
+
+Overfull \hbox (1.95221pt too wide) in paragraph at lines 115--116
+\OT1/ptm/m/n/12 tem-plates, for a com-mon ``ref-er-ence in-ten-sity'' at a com-mon ``ref-er-ence fre-quency'',
+ []
+
+[19] [20 <../Plots/ch_intro/AME_commander_freqdist.pdf>] [21 <../Plots/ch_datasources/PCAME_var_freq.pdf>] <../Plots/ch_datasources/AME_commander_freqshift_templ.pdf, id=789, 433.62pt x 289.08pt>
+File: ../Plots/ch_datasources/AME_commander_freqshift_templ.pdf Graphic file (type pdf)
+ <use ../Plots/ch_datasources/AME_commander_freqshift_templ.pdf>
+Package pdftex.def Info: ../Plots/ch_datasources/AME_commander_freqshift_templ.pdf used on input line 119.
+(pdftex.def)             Requested size: 526.37598pt x 350.9612pt.
+
+Overfull \hbox (136.37598pt too wide) in paragraph at lines 119--121
+ [][] 
+ []
+
+) [22] [23 <../Plots/ch_datasources/AME_commander_freqshift_templ.pdf>] [24]
+\openout2 = `ch3_allsky.aux'.
+
+ (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch3_allsky.tex
+
+Package caption Warning: \label without proper reference on input line 36.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AMEvsDust_allsky_allbands' on page 25 undefined on input line 10.
+
+[25
+
+
+]
+
+Package caption Warning: \label without proper reference on input line 29.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AME_IR_crosscorr_allbandsg' on page 26 undefined on input line 23.
+
+
+Package caption Warning: \label without proper reference on input line 50.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:Spearman_Map_nside8_AMEtoIR' on page 26 undefined on input line 26.
+
+<../Plots/all_bands_corr_matrix_wAME_spearman.pdf, id=898, 969.68896pt x 490.01067pt>
+File: ../Plots/all_bands_corr_matrix_wAME_spearman.pdf Graphic file (type pdf)
+ <use ../Plots/all_bands_corr_matrix_wAME_spearman.pdf>
+Package pdftex.def Info: ../Plots/all_bands_corr_matrix_wAME_spearman.pdf used on input line 30.
+(pdftex.def)             Requested size: 526.37598pt x 266.00748pt.
+
+Overfull \hbox (136.37598pt too wide) in paragraph at lines 30--32
+ [][] 
+ []
+
+<../Plots/AMEvsDust_allsky_allbands.pdf, id=899, 505.37556pt x 337.42545pt>
+File: ../Plots/AMEvsDust_allsky_allbands.pdf Graphic file (type pdf)
+ <use ../Plots/AMEvsDust_allsky_allbands.pdf>
+Package pdftex.def Info: ../Plots/AMEvsDust_allsky_allbands.pdf used on input line 37.
+(pdftex.def)             Requested size: 426.79134pt x 284.96974pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 37--39
+ [][] 
+ []
+
+<../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf, id=900, 505.37556pt x 314.093pt>
+File: ../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf Graphic file (type pdf)
+ <use ../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf>
+Package pdftex.def Info: ../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf used on input line 44.
+(pdftex.def)             Requested size: 426.79134pt x 265.26453pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 44--46
+ [][] 
+ []
+
+
+Package caption Warning: \label without proper reference on input line 36.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AMEvsDust_allsky_allbands' on page 26 undefined on input line 46.
+
+
+Package caption Warning: \label without proper reference on input line 36.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AMEvsDust_allsky_allbands' on page 26 undefined on input line 46.
+
+<../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf, id=903, 614.295pt x 390.25798pt>
+File: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf Graphic file (type pdf)
+ <use ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf>
+Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf used on input line 51.
+(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
+ <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf, id=904, 614.295pt x 390.25798pt>
+File: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf Graphic file (type pdf)
+ <use ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf>
+Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf used on input line 52.
+(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
+ <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf, id=905, 614.295pt x 390.25798pt>
+File: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf Graphic file (type pdf)
+ <use ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf>
+Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf used on input line 53.
+(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
+ <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf, id=906, 614.295pt x 390.25798pt>
+File: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf Graphic file (type pdf)
+ <use ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf>
+Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf used on input line 54.
+(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
+ <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf, id=907, 614.295pt x 390.25798pt>
+File: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf Graphic file (type pdf)
+ <use ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf>
+Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf used on input line 55.
+(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
+ <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf, id=908, 614.295pt x 390.25798pt>
+File: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf Graphic file (type pdf)
+ <use ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf>
+Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf used on input line 56.
+(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
+
+<../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf, id=909, 614.295pt x 390.25798pt>
+File: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf Graphic file (type pdf)
+ <use ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf>
+Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf used on input line 57.
+(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
+ <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf, id=910, 614.295pt x 390.25798pt>
+File: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf Graphic file (type pdf)
+ <use ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf>
+Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf used on input line 58.
+(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
+
+
+LaTeX Warning: Float too large for page by 625.36046pt on input line 61.
+
+) [26] [27 <../Plots/all_bands_corr_matrix_wAME_spearman.pdf>] [28 <../Plots/AMEvsDust_allsky_allbands.pdf>] [29 <../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf>] [30 <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf> <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+\openout2 = `ch4_lori.aux'.
+
+ (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch4_lori.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\lambda' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+[31
+
+
+]
+
+Package caption Warning: \label without proper reference on input line 42.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:orionis-akari9' on page 32 undefined on input line 24.
+
+[32]
+
+Package caption Warning: \label without proper reference on input line 51.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:orionis-img' on page 33 undefined on input line 34.
+
+
+Package caption Warning: \label without proper reference on input line 58.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:orionis-corr' on page 33 undefined on input line 34.
+
+[33] <../Plots/LOri_akari9_AMEcont_1dres.pdf, id=1349, 630.41711pt x 579.11609pt>
+File: ../Plots/LOri_akari9_AMEcont_1dres.pdf Graphic file (type pdf)
+ <use ../Plots/LOri_akari9_AMEcont_1dres.pdf>
+Package pdftex.def Info: ../Plots/LOri_akari9_AMEcont_1dres.pdf used on input line 43.
+(pdftex.def)             Requested size: 426.79134pt x 392.06175pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 43--47
+ [][] 
+ []
+
+<../Plots/lOrionis_grid_img.png, id=1350, 1375.1375pt x 1013.7875pt>
+File: ../Plots/lOrionis_grid_img.png Graphic file (type png)
+ <use ../Plots/lOrionis_grid_img.png>
+Package pdftex.def Info: ../Plots/lOrionis_grid_img.png used on input line 52.
+(pdftex.def)             Requested size: 483.69684pt x 356.59442pt.
+
+Overfull \hbox (93.69684pt too wide) in paragraph at lines 52--54
+ [][] 
+ []
+
+
+Package caption Warning: \label without proper reference on input line 42.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:orionis-akari9' on page 34 undefined on input line 54.
+
+
+Package caption Warning: \label without proper reference on input line 42.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:orionis-akari9' on page 34 undefined on input line 54.
+
+<../Plots/orionis_correlations_AME.png, id=1353, 1409.265pt x 1078.0275pt>
+File: ../Plots/orionis_correlations_AME.png Graphic file (type png)
+ <use ../Plots/orionis_correlations_AME.png>
+Package pdftex.def Info: ../Plots/orionis_correlations_AME.png used on input line 59.
+(pdftex.def)             Requested size: 483.69684pt x 369.99532pt.
+
+Overfull \hbox (93.69684pt too wide) in paragraph at lines 59--61
+ [][] 
+ []
+
+
+Underfull \vbox (badness 2368) has occurred while \output is active []
+
+ [34] [35 <../Plots/LOri_akari9_AMEcont_1dres.pdf>] [36 <../Plots/lOrionis_grid_img.png>] [37 <../Plots/orionis_correlations_AME.png>]) [38]
+\openout2 = `ch6_discussion.aux'.
+
+ (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch6_discussion.tex [39
+
+
+]
+Underfull \vbox (badness 1024) has occurred while \output is active []
+
+ [40]
+
+Package caption Warning: \label without proper reference on input line 29.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AME_IR_crosscorr_allbandsg' on page 41 undefined on input line 22.
+
+
+Package caption Warning: \label without proper reference on input line 36.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:AMEvsDust_allsky_allbands' on page 41 undefined on input line 22.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 25.
+
+
+Underfull \vbox (badness 1024) has occurred while \output is active []
+
+ [41]) [42]
+\openout2 = `summary.aux'.
+
+ (/home/aaronb/Projectbrary/latex/CosmicDust/Source/summary.tex
+Chapter 1.
+
+Underfull \vbox (badness 1931) has occurred while \output is active []
+
+ [43
+
+
+
+]
+Overfull \hbox (9.84737pt too wide) in paragraph at lines 7--8
+\OT1/ptm/m/n/12 resolved com-par-isons to in-ves-ti-gate the po-ten-tial AME-PAH (or AME-nanosilicates,
+ []
+
+) [44]
+\openout2 = `app_pca.aux'.
+
+ (/home/aaronb/Projectbrary/latex/CosmicDust/Source/app_pca.tex
+
+Package caption Warning: \label without proper reference on input line 9.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:pca_intro' on page 45 undefined on input line 5.
+
+
+Package caption Warning: \label without proper reference on input line 9.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:pca_intro' on page 45 undefined on input line 5.
+
+
+Underfull \vbox (badness 2189) has occurred while \output is active []
+
+ [45
+
+
+
+] <../Plots/ch_intro/pca_intro.pdf, id=1539, 578.16pt x 397.485pt>
+File: ../Plots/ch_intro/pca_intro.pdf Graphic file (type pdf)
+ <use ../Plots/ch_intro/pca_intro.pdf>
+Package pdftex.def Info: ../Plots/ch_intro/pca_intro.pdf used on input line 10.
+(pdftex.def)             Requested size: 512.1496pt x 352.12294pt.
+
+Overfull \hbox (122.1496pt too wide) in paragraph at lines 10--12
+ [][] 
+ []
+
+) [46] [47 <../Plots/ch_intro/pca_intro.pdf>]
+\openout2 = `acknowledgements.aux'.
+
+ (/home/aaronb/Projectbrary/latex/CosmicDust/Source/acknowledgements.tex) [48
+
+
+] (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.bbl [49
+
+
+] [50] [51] [52])
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 60.
+[53]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 60.
+ (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.aux (/home/aaronb/Projectbrary/latex/CosmicDust/Source/abstract.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch1_intro.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch2_datasources.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch3_allsky.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch4_lori.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch6_discussion.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/summary.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/app_pca.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/acknowledgements.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 60.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 60.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 9279315A5D6C77A7D606158E41CE867B;1638.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 60.
+ ) 
+Here is how much of TeX's memory you used:
+ 8464 strings out of 493029
+ 130053 string characters out of 6136234
+ 239731 words of memory out of 5000000
+ 11549 multiletter control sequences out of 15000+600000
+ 35571 words of font info for 82 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 44i,10n,45p,2479b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.31} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.30} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.29} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.28} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.27} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.26} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.25} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.24} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.23} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.22} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.21} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /home/aaronb/Projectbrary/latex/CosmicDust/Source/main.pdf (59 pages, 3792411 bytes).
+PDF statistics:
+ 1720 PDF objects out of 1728 (max. 8388607)
+ 1140 compressed objects within 12 object streams
+ 239 named destinations out of 1000 (max. 500000)
+ 290 words of extra memory for PDF output out of 10000 (max. 10000000)
+
