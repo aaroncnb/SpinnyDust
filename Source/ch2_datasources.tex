@@ -73,8 +73,23 @@
 
   \subsection{Planck COMMANDERAME Parameter Maps}
 
-       We utilize the COMMANDER-Ruler astrophysical component separation maps, from the Planck Collaboration's Public Data Release 2 (hereafter, PR2). Details of the foreground contribution estimates are given in \cite{planckXII}.
+       We utilize the COMMANDER-Ruler astrophysical component separation maps, from the Planck Collaboration's Public Data Release 2 (hereafter, PR2). Details of the foreground contribution estimates are given in \cite{planckXII}. We first describe the 'non-AME' components, so as to not give any indiciation that their estimation is trival.
 
+       \subsubsection{Synchrotron}
+        While the Planck observations themselves do limit our resolution when assessing the AME - it is in fact the primary constraint on synchrotron emission, 408~MHz map by \cite{haslam82} that is the major resolution limiting factor. While an impressive, pioneering effort for to reveal the low-frequency sky, \citep{haslam82} is limited to an appriximately 1 degree resolution. The map also contains
+        many artifacts. For the time being however, it is still the most synchrotron-dominated all-sky map available, and for this reason PC15X included it in their COMMANDER component separation. The final synchrotron product produced by COMMANDER (hereafter, PCSync) highly resembles the \citep{haslam82} map, however it is also demonstrated PCSync does not fully capture the synchrotron signal. This can be visualized by inspecting the PCAME:PCdust ratio map (see Fig. \ref{fig:R_PCAMEtoPCdust}), which \cite{hensley17} describe as containing synchrotron emission patterns at high latitudes.
+
+        \begin{figure*}
+        \label{fig:R_PCAMEtoPCdust}
+        \centering
+        \includegraphics[width=150mm]{../Plots/R_PCAMEtoPCRad.pdf}
+        \caption{All-sky map of the ratio of two COMMANDER components- the frequency-varying AME component divided by the intensity of thermal dust emission at 545~GHz. }
+        \end{figure*}
+
+       \subsubsection{Free-free emission}
+        Unlike the PCSync component, the fitting of the Planck COMMANDER free-free component map (hereafter, PCff) does not employ any free-free dominated emisison map.\footnote{The Planck AME paper, \cite{planckXV}, had employed the H-$\alpha$ map by \cite{wham98}}.
+
+      \subsubsection{Thermal dust emission}
 
        \subsubsection{COMMANDER-AME: Peak Frequency Distribution}
 
