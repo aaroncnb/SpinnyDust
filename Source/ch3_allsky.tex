@@ -1,28 +1,28 @@
-\section{All-sky Analysis}
+\chapter{All-sky Analysis}
 \label{sec:analysis}
 
     We first would like to note that ``all-sky analysis'' can be a bit misleading. The term tends to lead readers to the idea of a definitive study
 
     We will first introduce our all-sky analysis of the AME vs. IR emission. This approach relies on HEALPix maps smoothed to  ~1$^{\circ}$ angular resolution. We start with an all-sky AME to IR comparison, looking for global patterns among all pixels (except those within 10$^{\circ}$ of the ecliptic plane.)
 
-\subsection{All-sky Pixel Domain Analysis}
-  \subsubsection{All-sky cross correlations}
+\section{All-sky Pixel Domain Analysis}
+  \subsection{All-sky cross correlations}
   	In order to look more closely how the the AME to IR relationship varies with wavelength, we first do a simple cross-correlation test. Figure \ref{fig:AMEvsDust_allsky_allbands} shows Spearman's $\rho$ ($r_{S}$)
     %\footnote{:<math>r_s = \rho_{\operatorname{rg}_X,\operatorname{rg}_Y} = \frac {\operatorname{cov}(\operatorname{rg}_X,\operatorname{rg}_Y)} { \sigma_{\operatorname{rg}_X} \sigma_{\operatorname{rg}_Y} }</math>}
     , for each of the 12 bands sampled. \footnote{Throughout this work we adopt $r_{s}$ as our statistical metric. Rather than the linearity of potential IR-MW relationships, we are interested in the extent of monotonic relatedness.sea }.
 
-    \subsubsection{Pixel mask}
+    \subsection{Pixel mask}
       \paragraph{Zodical light}
         To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane. Even though we use the Zodi-subtracted maps (\citep{kelsall98, kondo16}), the Zodi residuals are still problematic (especially in the MIR.)\footnote{Note that even at high ecliptic latitudes, the relative uncertainty of the Zodi-level is not well estimated; S/N may significantly reduced in for faint pixels, mainly for the 9 through 25 micron maps.}
 
-    \subsubsection{AME data}
+    \subsection{AME data}
        The AME data comes from the PR2 astrophysical component datasets, as described in Ch. \ref{ch:datasources}. We show the comparison for 3 different AME estimates: the two AME components ($AME_{var}$ and $AME_{fix}$) as they are provided in PR2 (intensities quoted at reference frequencies\footnote{22.8~GHz for $AME_{var}$, 41~GHz for $AME_{fix}$}. The  $AME_{fix}$ peak freq. is spatially constant at 33.5~GHz ), with $AME_{var}$ and $AME_{fix}$ calculated at each pixel's peak frequency rather than the PR2 reference freq. We do this because there is nothing physically special about the Planck reference frequencies, and because the PR2 $AME_{var}$ component intensity could vary significantly from the intensity at the peak of the fitted spinning dust template. Thirdly we show the corr-correlation matrix with a single AME metric- calculating the integrated intensity at each pixel, for both AME components, creating an $AME_{sum}$ component.
 
 
 
      Figure \ref{fig:AME_IR_crosscorr_allbandsg} visualizes the cross-correlation matrix for each of the IR bands. The AME does not show a strong correlation with other bands at $|l|>10$. At $|l|<10$, the FIR bands show stronger correlation. The PAH-tracing bands show a stronger correlation than bands at 18 to 60~$\mu$m, but weaker than AME vs. the FIR bands.
 
-  \subsection{Spatial variaton of correlations}
+  \section{Spatial variaton of correlations}
     To understand how these trends may vary across the sky, we produce an all-sky maps of $r_{s}$ for AME vs. IR emission. From the NSIDE 256 input maps of AME and 4 IR wavelength maps, we produce NSIDE~8 maps of $r_{s}$. These maps are shown in Fig. \hyperref[fig:Spearman_Map_nside8_AMEtoIR]{\ref*{fig:Spearman_Map_nside8_AMEtoIR}}.
 
       \begin{figure*}
