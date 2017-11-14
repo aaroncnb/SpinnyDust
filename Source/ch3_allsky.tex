@@ -52,17 +52,23 @@
         \includegraphics[width=80mm]{../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf}
         \includegraphics[width=80mm]{../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf}
         \includegraphics[width=80mm]{../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf}
-        \includegraphics[width=80mm]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf}
-        \includegraphics[width=80mm]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf}
-        \includegraphics[width=80mm]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf}
-        \includegraphics[width=80mm]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf}
         \centering
         \caption{Spatial map of $r_{s}$ between the AME and IR intensity for 4 bands:$9~\mu{}m$, $12~\mu{}m$, $25~\mu{}m$, and $140~\mu{}m$. $r_{s}$ is calculated for all NSIDE~256 pixels within each NSIDE~8 pixel-sized bin.}
       \end{figure*}
 
+      \begin{figure*}
+        \label{fig:Spearman_Map_nside8_AMEtoIR_radnorm}
+      \includegraphics[width=80mm]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf}
+      \includegraphics[width=80mm]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf}
+      \includegraphics[width=80mm]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf}
+      \includegraphics[width=80mm]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf}
+      \centering
+      \caption{Spatial map of $r_{s}$ between the AME and IR intensity as in Fig. \ref{fig:Spearman_Map_nside8_AMEtoIR}, but with the AME and IR maps first normalized by dust radiance $R$.}
+    \end{figure*}
+
+
     \section{Discussion}
       \subsection{AME:Dust}
-
         As noted in Ch. \hyperref[ch:intro]{\ref*{ch:intro}}, previous studies found that the AME generally correlates at dust-related IR wavelengths \citep{ysard10b,planckXV, hensley16}. We see the same overall pattern in the present study.
 
          In our all-sky comparison, we find a first-order correlation between IR intensity and AME intensity, for each of the 12 wavelengths sampled. This is again consistent with the previous investigations of the AME cited above, in that the FIR emission shows the tightest correlation with the AME intensity.
