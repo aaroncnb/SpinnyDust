@@ -1,11 +1,11 @@
 \chapter{Data Sources}
   \label{ch:datasources}
 
-  \subsection{A collection of skies}
+  \section{A collection of skies}
     This work relies completely on all-sky surveys. All of the maps utilized are photometric-band infrared maps, except for the AME data, which is an all-sky component separation analysis product, from the Planck Collaboration's efforts to separate galactic foregrounds from the CMB.
 
 
-    \begin{table*}
+    \begin{table}[h]
       \label{tab:data}
       \caption{Observational data sources used in this article}
       \centering
@@ -13,27 +13,27 @@
         \hline\hline
         Instrument & Central Wavelength & FWHM & Cali & Reference \\
         \hline
-        AKARI/IRC & 9~$\mu$m  &  \~{}10$"$ & \textless 10\%   & \citep{ishihara10} \\
+        AKARI/IRC & 9~$\mu$m  &  \~{}10$"$ & \textless 10\%   & \tablefootnote{\citep{ishihara10}} \\
         AKARI/IRC & 18~$\mu$m & \~{}10$"$  & \textless 10\%     & '' \\
-        AKARI/FIS & 65~$\mu$m  & 63$"$ & \textless 10\% & \citep{doi15,takita16} \\
+        AKARI/FIS & 65~$\mu$m  & 63$"$ & \textless 10\% & \tablefootnote{\cite{doi15,takita16}} \\
         AKARI/FIS & 90~$\mu$m  & 78$"$ & \textless 10\%   & '' \\
         AKARI/FIS & 140~$\mu$m & 88$"$ & \textless 10\%   & '' \\
         AKARI/FIS & 160~$\mu$m & 88$"$ & \textless 10\%   & '' \\
-        IRAS/IRIS & 12~$\mu$m   & 4.0$'$ &   \textless 5.1\%       & \citep{iris05} \\
+        IRAS/IRIS & 12~$\mu$m   & 4.0$'$ &   \textless 5.1\%       & \tablefootnote{\cite{iris05}} \\
         IRAS/IRIS & 25~$\mu$m   & 4.0$'$ &    \textless 15.1\%      & ''\\
         IRAS/IRIS & 60~$\mu$m   & 4.2$'$ &    \textless 10.4\%      & '' \\
         IRAS/IRIS & 100~$\mu$m  & 4.5$'$ &   \textless 13.5\%       & '' \\
-        Planck/HFI & 345~$\mu$m & 4.7$'$ & & \citep{hfi14viii} \\
+        Planck/HFI & 345~$\mu$m & 4.7$'$ & & \tablefootnote{\cite{hfi14viii}} \\
         Planck/HFI & 550~$\mu$m & 4.3$'$& & '' \\
         \hline
       \end{tabular}
-    \end{table*}
+    \end{table}
 
-  \subsubsection{Primary band of interest}\footnote{Not to be confused with ``The band primarily interested'' in dust, Queen.}
+  \subsection{Primary band of interest}\footnote{Not to be confused with ``The band primarily interested'' in dust, Queen.}
     The AKARI/IRC 9~$\mu$m band (A9) provides uniquely complete coverage of the PAH bands at 6.2, 7.7, 8.6, and 11.2~$\mu$m, and may be an excellent tool for testing PAH-related hyoptheses on an all-sky basis. The combination of A9 with W12 and/or I12 may be especially insightful. In total, we employ all-sky maps from 12 photometric bands, spanning the wavelength range of 6.9~$\mu$m to 550~$\mu$m\footnote{Planck bands are named according to their central frequency, not wavelength.}
 
-  \subsection{Infrared Data}
-    \subsubsection{AKARI}
+  \section{Infrared Data}
+    \subsection{AKARI}
        The AKARI infrared space telescope revealed an entire sky of infrared light, from the mid to far infrared, via two instruments \citep{akari07} the Infrared Camera (IRC)\citep{irc07} and the Far Infrared Surveyor (FIS) \citep{fis07}.
 
        \paragraph{AKARI/IRC PAH feature coverage}
@@ -71,11 +71,18 @@
 
        Data from the Infrared Astronomical Satellite \citep{iras84} all-sky surveys are used to supplement the similarly-centered AKARI photometric bands. The IRAS 12~$\mu$m band is similar to the AKARI 9~$\mu$m band in terms of the sky coverage, central wavelength, and especially in that both surveys are heavily dominated by zodiacal light. We use the Improved Reprocessing of the IRAS Surveys (IRIS) \citep{iris05}, which use undergone a zodiacal-light removal. The Zodiacal light model, however differs between the two bands. The IRAS Zodi-subtraction is primarily based on the \cite{kelsall98} model.
 
-  \subsection{Planck COMMANDERAME Parameter Maps}
+  \section{Planck COMMANDERAME Parameter Maps}
 
-       We utilize the COMMANDER-Ruler astrophysical component separation maps, from the Planck Collaboration's Public Data Release 2 (hereafter, PR2). Details of the foreground contribution estimates are given in \cite{planckXII}. We first describe the 'non-AME' components, so as to not give any indiciation that their estimation is trival.
+       We utilize the COMMANDER-Ruler astrophysical component separation maps, from the Planck Collaboration's Public Data Release 2 (hereafter, PR2). These contain estimates of known microwave foreground components (free-free, synchrotron, thermal dust emission contributions to the Planck photometric bands. Details of the foreground contribution estimates are given in \cite{planckXII}. We will first describe the 'non-AME' components, so as to not give any indiciation that their estimation is trival.
 
-       \subsubsection{Synchrotron}
+       \begin{figure*}
+         \label{fig:PCCS_corrmatrix}
+         \includegraphics[width=\textwidth]{../Plots/ch_datasources/PCCS_corrmatrix.pdf}
+         \centering
+         \caption{All-sky map of the peak frequencies of the varying component $AME_{var}$, corresponding to Fig. \ref{fig:AME_commander_freqdist}.}
+       \end{figure*}
+
+       \subsection{Synchrotron}
         While the Planck observations themselves do limit our resolution when assessing the AME - it is in fact the primary constraint on synchrotron emission, 408~MHz map by \cite{haslam82} that is the major resolution limiting factor. While an impressive, pioneering effort for to reveal the low-frequency sky, \citep{haslam82} is limited to an appriximately 1 degree resolution. The map also contains
         many artifacts. For the time being however, it is still the most synchrotron-dominated all-sky map available, and for this reason PC15X included it in their COMMANDER component separation. The final synchrotron product produced by COMMANDER (hereafter, PCSync) highly resembles the \citep{haslam82} map, however it is also demonstrated PCSync does not fully capture the synchrotron signal. This can be visualized by inspecting the PCAME:PCdust ratio map (see Fig. \ref{fig:R_PCAMEtoPCdust}), which \cite{hensley17} describe as containing synchrotron emission patterns at high latitudes.
 
@@ -89,12 +96,14 @@
        \subsubsection{Free-free emission}
         Unlike the PCSync component, the fitting of the Planck COMMANDER free-free component map (hereafter, PCff) does not employ any free-free dominated emisison map.\footnote{The Planck AME paper, \cite{planckXV}, had employed the H-$\alpha$ map by \cite{wham98}}.
 
-      \subsubsection{Thermal dust emission}
+      \subsection{Thermal dust emission}
 
-       \subsubsection{COMMANDER-AME: Peak Frequency Distribution}
+      ``Thermal dust emission'' in the COMMANDER context refers to dust emission in the Rayleigh Jeans-regime, as the COMMANDER fitting does not include photometric constraints on the thermal emission peak, or consider small grain emission on the Wiens side.
+
+       \subsection{COMMANDER-AME: Peak Frequency Distribution}
 
         $I_{AME}\nu_{var}$
-        The Planck-COMMANDER component separation products contain estimates of known microwave foreground components (free-free, synchrotron, thermal dust emission \footnote{``Thermal dust emission'' in the COMMANDER context refers to dust emission in the Rayleigh Jeans-regime, as the COMMANDER fitting does not include photometric constraints on the thermal emission peak, or consider small grain emission on the Wiens side.}) contributions to the Planck photometric bands. In addition, there is an ``AME component map'', which presumes that AME originates from spinning dust. While acknowledging that such a decomposition lacks a physical justfication, \cite{planck15X} break the AME into two components: a spatially varying peak frequency component, and a spatially constant peak frequency component. However as seen in Fig. \ref{fig:AME_commander_freqdist}, virtually all of the fitted peak frequncies for $AME_{var}$ beyond the reach of WMAP and Planck. Only the fitted global frequency, 33.5~GHz for the spatially constant component, is covered.
+        In addition, there is an ``AME component map'', which presumes that AME originates from spinning dust. While acknowledging that such a decomposition lacks a physical justfication, \cite{planck15X} break the AME into two components: a spatially varying peak frequency component, and a spatially constant peak frequency component. However as seen in Fig. \ref{fig:AME_commander_freqdist}, virtually all of the fitted peak frequncies for $AME_{var}$ beyond the reach of WMAP and Planck. Only the fitted global frequency, 33.5~GHz for the spatially constant component, is covered.
 
 
         \begin{figure*}
@@ -124,6 +133,6 @@
         For these reasons, we are very cautious in deriving conclusions from comparisons with the COMMANDE AME map. Indeed, the authors themselves include a similar disclaimer. However since there is currently no better all-sky component separation available\footnote{Indeed, improving on the COMMANDER AME map would be extremely difficult without lower frequency constraints and/or higher resolution observations of not only the AME itself but the contribution from synchrotron and free-free emisson.}, and carrying out a spinning dust modeling and component separation is beyond the scope of this work, we proceed with care.
 
 
-  \subsection{All-sky Data Processing}
+  \section{All-sky Data Processing}
 
         The HFI, FIS, and IRIS maps used here are downloaded from their respective online repositories, as all-sky HEALPix\footnote{HEALPix core software is described at \url{http://healpix.sourceforge.net}. The HEALPIx python package ``healpy'' used in this work is available at: \url{https://github.com/healpy/healpy}} maps \citep{gorski05}.   NSIDE 2048 maps. In the case of the IRC maps, we first create HEALPix maps from the 4,857 all-sky survey tiles using the Aladin all-sky data visualization platform \citep{bonnarel00}. NSIDE 2048 implies an average pixel spacing of 1.7$'$. The maps are then degraded to NSIDE 1024 before carrying out a Gaussian-beam smoothing to a 1$^{\circ}$ FWHM \footnote{To be clear, maps are converted first to spherical harmonic space, smoothed, and transformed back to position space using - steps carried about by the smoothing function contained in the healpy python package}. Following the smoothing process, the maps are degraded once more to NSIDE 256, or 15arcmin pixel-width \footnote{HEALPix pixel scale rebinning carried out with healpy.ud\_grade}. The value of each of the larger NSIDE 256 pixels, comes from the mean of its parent NSIDE 1024 pixels. The purpose of this processing is to ensure that all of the maps have the same resolution as the PR2 AME map.

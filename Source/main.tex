@@ -15,6 +15,9 @@
 \usepackage{fancyhdr}
 \usepackage{booktabs}
 \usepackage{gensymb}
+\usepackage{lineno}
+\usepackage{footnote}
+\usepackage{tablefootnote}
 
 \doublespacing
 \begin{document}
@@ -33,6 +36,10 @@ A look at microwave dust emission via the Infrared}
 \maketitle
 
 \pagenumbering{roman}
+\linenumbers
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+
 \include{abstract}
 \tableofcontents
 \listoffigures
