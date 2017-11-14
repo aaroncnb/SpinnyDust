@@ -19,20 +19,46 @@
 \usepackage{footnote}
 \usepackage{tablefootnote}
 
+
+%%%%%%%%%%%%%%%%text size and spacing%%%%%%
+%%% Number equations according to section %%%
+\numberwithin{equation}{section}
+
+
+
+%%% text size %%%
+\setlength{\topmargin}{10mm}
+\addtolength{\topmargin}{-1in}
+\setlength{\textheight}{262mm}
+\setlength{\headsep}{5mm}
+\setlength{\headheight}{0mm}
+\setlength{\topskip}{0mm}
+\setlength{\oddsidemargin}{-1in} %  set real left margin 0pt
+\setlength{\evensidemargin}{-1in} % do
+\addtolength{\oddsidemargin}{25mm} % odd page 25mm left margin
+\addtolength{\evensidemargin}{15mm}% even page 15mm left margin
+\setlength{\textwidth}{170mm}
+%\setlength{\leftmargin}{-1 in}
+
+\pagestyle{fancy}
+\lhead[\it \scriptsize \leftmark]{}
+\chead[]{}
+\rhead[]{\it \scriptsize \rightmark}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\baselinestretch}{1.}
+\renewcommand{\bibname}{References}
 \doublespacing
-\begin{document}
+
 
 
 \title{AKARI and Spinning Dust Emission\\
 A look at microwave dust emission via the Infrared}
 
 \author{Aaron Christopher Bell}
-%\affil{University of Tokyo,
-%Bunkyo, Tokyo, Japan, 113-0033;}
-%\email{abell@astron.s.u-tokyo.ac.jp}
 
-%\keywords{AME, spinning dust, PAH bands, AKARI}
 
+\begin{document}
 \maketitle
 
 \pagenumbering{roman}
