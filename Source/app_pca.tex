@@ -5,9 +5,10 @@ While we aim to demonstrate the application of high dimensionality in these stud
 Fig. \hyperref[fig:pca_intro]{\ref{fig:pca_intro}} shows the \% of variance in the data retained by the first $n$ principal components. Principal components are found essentially by first finding the covariance matrix of the input data, and then diaganolizing this matrix- the eigenvectors will be the basis vectors of each principal component. The eigenvalues will give the explained covariance per component. Applied in this manner, the components may not necessarily have a clear physical interpretation, but from a data analytics perspective we can at least assess the redundancies in our data. Thus from Fig. \hyperref[fig:pca_intro]{\ref{fig:pca_intro}}, and choosing an arbitrary covariance ``acceptable loss'' of 99\%, our photometric data set steeply reduces to 3 dimensions. The first component contains 98\% of the total variance.
 
 
-\begin{figure*}
-  \label{fig:pca_intro}
+\begin{figure}
+
   \includegraphics[width=\textwidth]{../Plots/ch_intro/pca_intro.pdf}
   \centering
   \caption{Explained variance decline for principal component analysis performed on a set of 12 all-sky infrared maps. The first three components account for over 99\% of the total variance. The PCA fit is performed on the whole sky, after whitening the data, using the ``scikitlearn }
-\end{figure*}
+  \label{fig:pca_intro}
+\end{figure}
