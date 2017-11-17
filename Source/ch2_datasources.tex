@@ -46,24 +46,22 @@
             Fig. \ref{fig:inband_ionfrac_ratios} demonstrates how the band ratios of the IRC 9um band vs. the other MIR bands change with different modeled PAH ionization fractions (determined using the DustEM default model template, by \cite{dustem11}. This band ratio can be determined, because the IRC9 filter is more sensitive to ionized PAH features, relative to IRAS12 or to WISE12.
            IRC 9~$\mu$m shows a larger contribution from ionized PAHs, by about 16 percent, and a conversely smaller contribution from neutral PAHs.
 
-       \begin{figure*}
-         \label{fig:relSpectralResponse_MIR}
+       \begin{figure}
          \centering
          \includegraphics[width=\textwidth]{../Plots/RelSpectralResponse_MIR.png}
          \caption{Relative spectral response curves of the MIR bands used in this study, AKARI/IRC 9~$\mu$m, IRAS 12~$\mu$m, WISE 12~$\mu$m, AKARI 18~$\mu$m, and  IRAS 25~$\mu$m. AKARI/IRC 9~$\mu$m, IRAS 12~$\mu$m, WISE 12~$\mu$m bands are dominated by PAH emission.}
-       \end{figure*}
+         \label{fig:relSpectralResponse_MIR}
+       \end{figure}
 
 
-       \begin{figure*}
-       \label{fig:inband_ionfrac_ratios}
-       \centering
-       \includegraphics[width=150mm]{../Plots/band-ratio-multiple.pdf}
-       \caption{Ionization fraction of PAHs vs. band ratios of IRAS12 and 25, and WISE 12 and 25~$\mu$m bads vs. the AKARI 9~$\mu$m band, for three ISRF strengths: Top: $G_{0} = 100$, Middle: $G_{0} = 1000$, and Bottom: $G_{0} = 10000$. These ratios are determined by assuming the SED template if \cite{dustem11} }
-       \end{figure*}
+       \begin{figure}
+           \centering
+           \includegraphics[width=150mm]{../Plots/band-ratio-multiple.pdf}
+           \caption{Ionization fraction of PAHs vs. band ratios of IRAS12 and 25, and WISE 12 and 25~$\mu$m bads vs. the AKARI 9~$\mu$m band, for three ISRF strengths: Top: $G_{0} = 100$, Middle: $G_{0} = 1000$, and Bottom: $G_{0} = 10000$. These ratios are determined by assuming the SED template if \cite{dustem11} }
+           \label{fig:inband_ionfrac_ratios}
+       \end{figure}
 
         We utilize the most recent version of the IRC data (Ishihara, et al., in prep.) This version has had an updated model of the Zodiacal light, fitted and subtracted. The details of the improved Zodi-model, which offers an improvement over that used for the IRAS all-sky maps, are given in \cite{kondo16}.
-
-
 
       The AKARI Far Infrared Surveyor (FIS) gives us photometric data around the peak of the typical thermal dust SED. FIS was equipped with four wavebands: two narrow bands centered at 65~$\mu$m and at 160~$\mu$m, and two wide bands at 90~$\mu$m and at 140~$\mu$m. An all-sky survey was carried out at each band \citep{kawada07}, and the processed maps have been publicly released \citep{doi15}.
 
@@ -75,23 +73,23 @@
 
        We utilize the COMMANDER-Ruler astrophysical component separation maps, from the Planck Collaboration's Public Data Release 2 (hereafter, PR2). These contain estimates of known microwave foreground components (free-free, synchrotron, thermal dust emission contributions to the Planck photometric bands. Details of the foreground contribution estimates are given in \cite{planckXII}. Fig. \ref{fig:PCCS_corrmatrix} demonstrates the correlatedness of these component maps, taken as provided in the PR2 archive. Without considering nouse levels or variations of scale, we see evidence these major components are correlated with one another. In the case of free-free emission,  \cite{vonHausegger15} found that by taking S/N ratios into account, the correlation between COMMANDER free-free and AME components turns negative. More generally they suggest that the intercorrelations betwen these products varies with scale. We will first describe the 'non-AME' components, so as to not give any indiciation that their estimation is trival.
 
-       \begin{figure*}
-         \label{fig:PCCS_corrmatrix}
+       \begin{figure}
          \includegraphics[width=\textwidth]{../Plots/ch_datasources/PCCS_corrmatrix.pdf}
          \centering
          \caption{$r_{s}$ cross correlation matrix of the PCCS maps: temperature $T$, emissivity index $\beta$, and amplitude at 545~GHz $I_{dust}(545)$ of thermal dust; intensity of free-free emission $ff$ at ; intensity of synchrotron emisison at 4~MHz $Sync$; intensity of the AME var. freq. component $AME$ at 22.8~GHz.}
-       \end{figure*}
+         \label{fig:PCCS_corrmatrix}
+       \end{figure}
 
        \subsection{Synchrotron}
         While the Planck observations themselves do limit our resolution when assessing the AME - it is in fact the primary constraint on synchrotron emission, 408~MHz map by \cite{haslam82} that is the major resolution limiting factor. While an impressive, pioneering effort for to reveal the low-frequency sky, \citep{haslam82} is limited to an appriximately 1 degree resolution. The map also contains
-        many artifacts. For the time being however, it is still the most synchrotron-dominated all-sky map available, and for this reason PC15X included it in their COMMANDER component separation. The final synchrotron product produced by COMMANDER (hereafter, PCSync) highly resembles the \citep{haslam82} map, however it is also demonstrated PCSync does not fully capture the synchrotron signal. This can be visualized by inspecting the PCAME:PCdust ratio map (see Fig. \ref{fig:R_PCAMEtoPCdust}), which \cite{hensley17} describe as containing synchrotron emission patterns at high latitudes.
+        many artifacts. For the time being however, it is still the most synchrotron-dominated all-sky map available, and for this reason PC15X included it in their COMMANDER component separation. The final synchrotron product produced by COMMANDER (hereafter, PCSync) highly resembles the \citep{haslam82} map, however it is also demonstrated PCSync does not fully capture the synchrotron signal. This can be visualized by inspecting the PCAME:PCdust ratio map (see Fig. \ref{fig:R_PCAMEtoPCdust}), which \cite{hensley16} describe as containing synchrotron emission patterns at high latitudes.
 
-        \begin{figure*}
-        \label{fig:R_PCAMEtoPCdust}
-        \centering
-        \includegraphics[width=\textwidth]{../Plots/ch_datasources/R_PCAMEtoPCRad.pdf}
-        \caption{All-sky map of the ratio of two COMMANDER components- the frequency-varying AME component divided by the intensity of thermal dust emission at 545~GHz. }
-        \end{figure*}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{../Plots/ch_datasources/R_PCAMEtoPCRad.pdf}
+            \caption{All-sky map of the ratio of two COMMANDER components- the frequency-varying AME component divided by the intensity of thermal dust emission at 545~GHz. }
+            \label{fig:R_PCAMEtoPCdust}
+        \end{figure}
 
        \subsubsection{Free-free emission}
         Unlike the PCSync component, the fitting of the Planck COMMANDER free-free component map (hereafter, PCff) does not employ any free-free dominated emisison map.\footnote{The Planck AME paper, \cite{planckXV}, had employed the H-$\alpha$ map by \cite{wham98}}.
@@ -102,33 +100,33 @@
 
        \subsection{COMMANDER-AME: Peak Frequency Distribution}
 
-        $I_{AME}\\nu_{var}$
+        $I_{AME}\nu_{var}$
         In addition, there is an ``AME component map'', which presumes that AME originates from spinning dust. While acknowledging that such a decomposition lacks a physical justfication, \cite{planck15X} break the AME into two components: a spatially varying peak frequency component, and a spatially constant peak frequency component. However as seen in Fig. \ref{fig:AME_commander_freqdist}, virtually all of the fitted peak frequncies for $AME_{var}$ beyond the reach of WMAP and Planck. Only the fitted global frequency, 33.5~GHz for the spatially constant component, is covered.
 
 
-        \begin{figure*}
-          \label{fig:AME_commander_freqdist}
+        \begin{figure}
           \includegraphics[width=\textwidth]{../Plots/ch_intro/AME_commander_freqdist.pdf}
           \centering
           \caption{The peak frequencies of the varying component $AME_{var}$.  The pink shaded region indicates frequencies not covered by either WMAP or Planck The green line at 33.5~GHz indicates the peak frequency of $AME_{fix}$.}
-        \end{figure*}
+          \label{fig:AME_commander_freqdist}
+        \end{figure}
 
-        \begin{figure*}
-          \label{fig:PCAME_var_freq.pdf}
+        \begin{figure}
           \includegraphics[width=\textwidth]{../Plots/ch_datasources/PCAME_var_freq.pdf}
           \centering
           \caption{All-sky map of the peak frequencies of the varying component $AME_{var}$, corresponding to Fig. \ref{fig:AME_commander_freqdist}.}
-        \end{figure*}
+          \label{fig:PCAME_var_freq}
+        \end{figure}
 
         %The next figure shows the all-sky ratio map, of $AME_{var}:AME_{fix}$. That is, the ratio of the integrated intensities of these components, rather than the intensities given directly in the COMMANDER maps.
-        The COMMANDER maps give each component's intensity at a different ``reference frequency'' (corresponding to photometric bands). In other words, the COMMANDER AME intensities are not peak intensities. Moreover they are intensities calculated for a single template spinning dust spectrum. Instead of parameterizing the spinning dust physical conditions, they apply a frequency shift and amplotide shift to a spectrum corresponding to a warm neutral phase of the ISM. This modeling approach was applied first in the WMAP spinning dust analysis, and was later adopted by the Planck Collaboration to investigate AME-prominent regions \citep{planckXV}, and again used in the COMMANDER component separation \citep{planck15X}). Fig. \ref{fig:AME_commander_freqshift_templ} demonstration of such shifted templates. Without fitting the ``spdust'' model parameters, the  for a common ``reference intensity'' at a common ``reference frequency'', is shown in ). 
+        The COMMANDER maps give each component's intensity at a different ``reference frequency'' (corresponding to photometric bands). In other words, the COMMANDER AME intensities are not peak intensities. Moreover they are intensities calculated for a single template spinning dust spectrum. Instead of parameterizing the spinning dust physical conditions, they apply a frequency shift and amplotide shift to a spectrum corresponding to a warm neutral phase of the ISM. This modeling approach was applied first in the WMAP spinning dust analysis, and was later adopted by the Planck Collaboration to investigate AME-prominent regions \citep{planckXV}. Fig. \ref{fig:AME_commander_freqshift_templ} demonstrates such shifted templates. Without fitting the ``spdust'' model parameters, the  for a common ``reference intensity'' at a common ``reference frequency''.
 
-        \begin{figure*}
-          \label{fig:AME_commander_freqshift_templ}
+        \begin{figure}
           \includegraphics[width=\textwidth]{../Plots/ch_datasources/AME_commander_freqshift_templ.pdf}
           \centering
-          \caption{Spdust template spinning dust profiles fitted by PC15 when calculating $AME_{var}$.  The reference frequency, 22.8~GHz is indicated by the vertical green line. Each template has the same $AME_{var}$ amplitude of 100~$\mu$K, indicated by the horizontal green line, plotted to highlight the potential deviation between $AME_{var}$ and the actual peak intensity. }
-        \end{figure*}
+          \caption{Spdust template spinning dust profiles fitted by PC15X when calculating $AME_{var}$.  The reference frequency, 22.8~GHz is indicated by the vertical green line. Each template has the same $AME_{var}$ amplitude of 100~$\mu$K, indicated by the horizontal green line, plotted to highlight the potential deviation between $AME_{var}$ and the actual peak intensity. }
+          \label{fig:AME_commander_freqshift_templ}
+      \end{figure}
 
         For these reasons, we are very cautious in deriving conclusions from comparisons with the COMMANDE AME map. The authors themselves include a similar disclaimer. However since there is currently no better all-sky component separation available, we carry out our investigation with this dataset. Improving on the COMMANDER AME map would be extremely difficult without lower frequency constraints and/or higher resolution observations of not only the AME itself but the contribution from synchrotron and free-free emisson.
 

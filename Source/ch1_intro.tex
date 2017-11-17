@@ -19,53 +19,75 @@
 
   \section{Infrared astronomy}
 
-  Infrared astronomy was essentially non-existant as recently as the 1920s, if we judge by the first IR observations \citep{pettit22, pettit28}. Mainstream IR astronomy is perhaps much younger, only really taking off - literally- in the post-war era, via ballon and rocket borne experiments \citep{johnson66}. Compare this to visible wavelengths, a field so old we name it after the bio-evolutionary advent of sight, itself. Even radio astronomy with its own logistical and technological challenges, has been around since at least 1932.
+    Infrared astronomy was essentially non-existant as recently as the 1920s, if we judge by the first IR observations \citep{pettit22, pettit28}. Mainstream IR astronomy is perhaps much younger, only really taking off - literally- in the post-war era, via ballon and rocket borne experiments \citep{johnson66}. Compare this to visible wavelengths, a field so old we name it after the bio-evolutionary advent of sight, itself. Even radio astronomy with its own logistical and technological challenges, has been around since at least 1932.
 
 
-  Despite the title quote above, astronomers were apprently not content to be constrained by atmospheric IR windows, even from the best of ground-based sites. Or perhaps interests have shifted so dramtically since 1966, that all of the investigations enabled by rocket-based, space-based, even Boeing 747-based IR astronomy would have bored 75\% of astronomers in the '60s. The meaning of ``far infrared'' has even redshifted, so to speak, from the \cite{johnson66} definition of ``4 to 22 um''.
+    Despite the title quote above, astronomers were apprently not content to be constrained by atmospheric IR windows, even from the best of ground-based sites. Or perhaps interests have shifted so dramtically since 1966, that all of the investigations enabled by rocket-based, space-based, even Boeing 747-based IR astronomy \citep{young12, } would have bored 75\% of astronomers in the '60s. The meaning of ``far infrared'' has even redshifted, so to speak, from the \cite{johnson66} definition of ``4 to 22 um''.
 
-   For our purposes, we consider the FIR to cover 60 to 550~$\mu$m, partially out of conveneince- FIR bands, in this paper, means the IRAS 60 and 100 micron, all four FIS bands, and the HFI~857~GHz and 545~GHz bands. The two IRC bands and the IRAS~12 and 25~$\mu$m bands we will refer to collectively as the MIR bands.
+     For our purposes, we consider the FIR to cover 60 to 550~$\mu$m, partially out of conveneince- FIR bands, in this paper, means the IRAS 60 and 100 micron, all four FIS bands, and the HFI~857~GHz and 545~GHz bands. The two IRC bands and the IRAS~12 and 25~$\mu$m bands we will refer to collectively as the MIR bands.
 
-  The ability to map and archive the sky with satellites - not only in the optical and infrared, but well into the microwave regime - has enabled interdisciplinary research of the ISM. The merits of multiwavelength based investigations arise from the simple fact that the ISM is very complex- both in terms of the myriad forms of matter present - from plasmas to dust grains - and in countless physical processes at play.
+    The ability to map and archive the sky with satellites - not only in the optical and infrared, but well into the microwave regime - has enabled interdisciplinary research of the ISM. The merits of multiwavelength based investigations arise from the simple fact that the ISM is very complex- both in terms of the myriad forms of matter present - from plasmas to dust grains - and in countless physical processes at play.
 
-   Consider the case of a dusty plasma, as in a supernova remnant or Hii region around an
+     Consider the case of a dusty plasma, as in a supernova remnant or Hii region around an
 
-   Studies of optical transients - a field accessible to amateur astronomers - can be validated by follow-ups in the infraredMulti-wavelength investigations not only allow us to examine the particular source we are interested in, but let us paint a full astrophysical picture. This is because the studying a given astrophysical phenomenon quickly requires us to control for confusing factors. Consider the case of thermal dust emission: attempting to trace the peak of thermal equilibirum dust emission, we will soon encounter deviations on the Wiens side- we know now that these mid to near IR deviations likely come from a smaller population of interstellar dust grains, with lower heat capacities \citep{purcell76, sellgren84,dwek86,draine01}.
+     Studies of optical transients - a field accessible to amateur astronomers - can be validated by follow-ups in the infraredMulti-wavelength investigations not only allow us to examine the particular source we are interested in, but let us paint a full astrophysical picture. This is because the studying a given astrophysical phenomenon quickly requires us to control for confusing factors. Consider the case of thermal dust emission: attempting to trace the peak of thermal equilibirum dust emission, we will soon encounter deviations on the Wiens side- we know now that these mid to near IR deviations likely come from a smaller population of interstellar dust grains, with lower heat capacities \citep{purcell76, sellgren84,dwek86,draine01}.
 
-  Astrochemists study of the molecular landscape of the ISM are
+    Astrochemists study of the molecular landscape of the ISM are
 
-  Astrophysicists focused on the Milky Way itself are collaborating closely with those having more distant goals. \cite{johnson66} did not offer a definition of ``microwave'', though \cite{penzias65} had stumbled intro microwave astronomy a year before.
+    Astrophysicists focused on the Milky Way itself are collaborating closely with those having more distant goals. \cite{johnson66} did not offer a definition of ``microwave'', though \cite{penzias65} had stumbled intro microwave astronomy a year before in their chance discovery of the cosmic microwave background (CMB). The CMB itself being relatively easy to model, on its own - latest measurements by Had the CMB been the only astronomical source of emission however, there would be no need for the following sections.
 
-\section{Why microwave foregrounds are important}
+\section{Microwave foregrounds}
 
-    The study of our galaxy itself via microwave emission is surely worth chapters of discussion. The reason that galactic microwave emission has gotten the amount of attention it has in recent years however has little to do with galactic astronomy. Rather, the inconvenience our galaxy presents to extragalactic, cosmological astornomy has brought the detailed decomposition of the microwave\-radio regime of ISM to the forefront of Planck Collaboration paper titles- in the combined papers of the official numbered Planck Collaboration paper series, the word ``dust'' appears in 20; ``Galactic'' in 23; ``Galactic dust'' in 5. Without extragalactic research, there would be no need for the word ``foreground'' in describing galactic microwave emission.
+    The study of our galaxy itself via microwave emission is surely worth chapters of discussion. The reason that galactic microwave emission has gotten the amount of attention it has in recent years however has little to do with galactic astronomy. Rather, our galaxy presents an inconvenience to observational cosmology in that it 'contaminates' observations of the CMB. The avereage SED of the CMB is simple enough to model, with a 2.755~K blackbody function. This temperature however means that the peak occurs between several microwave foreground components, as displayed in Fig. \ref{fig:mw_foregrounds_demo_rOph}.
 
-    The ISM has intruded into cosmological studies perhaps most prominently with the first claimed detection of B-mode polarization \citep{hanson13, bicep214, flauger14} and the subsequent counter\-claim that this detection arose from galactic dust, and most recently the counter-counter suggestion that, after carefully accounting for galactic dust, the combined BICEP2/Planck detection of B-mode polarization appears validated \citep{planckIntL17}. Similarly, More recently \cite{shimwell12} had noted a peculiar Sunyaev\-Zeldovich effect based galaxy cluster detection, AMI-CL~J0300+2613. \cite{perrott18} have since proposed that this may in fact arise from high galactic latitude dust via ``anomalous microwave emission'' (AME is described in the next section). In this way, enhanced wavelength coverage is both enabling and requiring deeper cross-disciplinary (galactic, extragalactic, CMB) collaboration.
+     temperature puts its emission peak right in the middle of severalThe difficult of decomposing the microwave sky into galactic ISM, extragalactic, and CMB components has brought the detailed decomposition of the microwave\-radio regime of ISM to the forefront of Planck Collaboration paper titles \citep{planckEarly11I,planck2013I,planck2015I}. This is true even though the CMB itself is relatively simple to model theoretically.
+     - in the combined papers of the official numbered Planck Collaboration paper series, the word ``dust'' appears in 20; ``Galactic'' in 23; ``Galactic dust'' in 5. Without extragalactic research, there would be no need for the word ``foreground'' in describing galactic microwave emission.
+
+    The ISM has intruded into cosmological studies perhaps most prominently with the first claimed detection of B-mode polarization \citep{hanson13, bicep214, flauger14} and the subsequent counter\-claim that this detection arose from galactic dust, and most recently the counter-counter suggestion that, after carefully accounting for galactic dust, the combined BICEP2/Planck detection of B-mode polarization appears validated \citep{planckIntL17}.\footnote{see \cite{sheehy17} for another take on Planck B-mode detection significance}. Similarly, More recently \cite{shimwell12} had noted a peculiar Sunyaev\-Zeldovich effect based galaxy cluster detection, AMI-CL~J0300+2613. \cite{perrott18} have since proposed that this may in fact arise from high galactic latitude dust via ``anomalous microwave emission'' (AME is described in the next section). In this way, enhanced wavelength coverage is both enabling and requiring deeper cross-disciplinary (galactic, extragalactic, CMB) collaboration.
 
   \subsection{Anomalous Microwave Emission}
 
-      In our efforts to decompose and understand galactic microwave emission itself, there remains a constant antagonist, the AME. The term itself can be a bit confusing, as the word ``anomalous'' tends to imply an unexplained outlier, or a stochastic pattern. Fig.
+      In our efforts to decompose and understand galactic microwave emission itself, there remains a constant antagonist. Anomalous microwave emission (AME) is a component of microwave emission in excess of 10 to 40~GHz predictions for known microwave emission mechansisms, lacking a confirmed physical mechanism. The term itself can be a bit confusing, as the word ``anomalous'' tends to imply an outlier lacking much evidence as to its cause, and with few emprical patterns. In this section we will explain that while there is indeed much mystery as to the exact mechanism(s) producing the AME, what causes its spectral variations, and what might be its physical carrier(s) - it is by now, perhaps less than anomalous. Following subsections will discuss the history of AME and the produced physical explanations, as well comparisons between the AME and infarred emission from interstellar dust.
 
-
-
-    \begin{figure*}
-      \label{fig:mw_foregrounds_demo_rOph}
+    \begin{figure}
       \centering
       \includegraphics[width=\textwidth]{../Plots/ch_intro/mw_foregrounds_demo_rOph.pdf}
-      \caption{An example of a potential makueup of microwave emission components. Photometry points are extracted from the Planck and WMAP all-sky maps, for a region well-known for prominant AME, $\rho$~Ophiuchus. \citep{planckxx11}}
-    \end{figure*}
+        \caption{An example of a potential makueup of microwave emission components. Photometry points are extracted from the Planck and WMAP all-sky maps, for a region well-known for prominant AME, $\rho$~Ophiuchus. \citep{planckxx11}}
+      \label{fig:mw_foregrounds_demo_rOph}
+    \end{figure}
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=\textwidth]{../Plots/ch_intro/AME_contours.pdf}
+        \caption{Two AME prominent regions investigated by \cite{planckxx11, tibbs11}, $\rho$~Ophiuchus and Perseus, as they appear in the AKARI/IRC 9$\mu$m all-sky data at native resolution. White contours show AME at 1-degree resolution, extracted from the map by  \cite{planck15X}.}
+      \label{fig:AME-contours}
+    \end{figure}
 
     \subsubsection{Discovery and first explorations}
 
-     Since its first detection in early microwave observations, AME has been found to be a widespread feature of the microwave Milky Way \citep{dickinson13r}. \cite{kogut96,deoliveiracosta97,leitch98} showed that the AME correlates very well with infrared emission from dust, via COBE/DIRBE and IRAS far-IR maps. However there remains much mystery, except that the most likely source of the AME is interstellar dust \citep{ysard10a,tibbs11,hensley16}. Let alone uncertainty in the physical mechanism of the AME, and even assuming a dusty origin\- we are still puzzled as to the chemical composition and morphology of the carrier(s).
+     Since its first detection in early microwave observations, AME has been found to be a widespread feature of the microwave Milky Way \citep{dickinson13r}. \cite{kogut96,deoliveiracosta97,leitch98} showed that the AME correlates very well with infrared emission from dust, via COBE/DIRBE and IRAS far-IR maps.
 
+     From about 2002, the AME starts to become less of an anomaly, and more of an established -albeit mysterious- component of microwave emission. \cite{finkbeiner02} reported the first detection of a ``rising spectrum source at 8~−~10~GHz'' in a targeted observation, making the AME more than a statistical spectral outlier in CMB experiments. \cite{deoliveiracosta02} furher argued that this emission is in fact ``ubiquitous''. The exact mechanism and carrier/s remain mysterious however. Variations in the spectral profile of the AME signature,
 
+     However there remains much mystery, except that the most likely source of the AME is interstellar dust. Several works have reported correlations between AME and thermal dust emission - but with some disagreement as to whether this correlation is improved in 12~$\mu$ emission vs. 100~$\mu$m emission \citep{ysard10a,tibbs11,hensley16}. Exactly which physical mechanisms are at play is still an open question, even if we assume a dusty AME origin. Even assuming a particular dust-based physical mechanism, we would still be puzzled as to the chemical composition and morphology of the carrier(s). We also lack an all-sky constraint on the emissivity of the AME spectrum at frequencies short of the WMAP cut-off, around 23~GHz.
 
   \subsubsection{Proposed explanations}
 
      From the observed spatial correlation between AME and dust emerged two prevailing hypotheses:
 
-    1) Electric dipole emission by spinning small dust grains, a mechanism proposed in \cite{erickson57} and \cite{hoyle70}, with further discussion in \cite{ferrara94}. \cite{draine98b} give the earliest thorough description, with substantial updates contributed more recently by \cite{ysard10a}, \cite{ali-haimoud09}, \cite{hoang10} and several others. \cite{hensley17a} propose that such small spinning grains may consist primarily of silicates, and that this is allowed by observational upper-bounds of nanosilicate abudance, although nanosilicates have not yet been detected in the ISM. \cite{dickinson13r} provide a detailed overview of AME and spinning dust literature. An updated state of play of AME research has been submitted at the time of this writing (Dickinson, et al., submitted).
+    1) Electric dipole emission by spinning small dust grains, a mechanism proposed in \cite{erickson57} and \cite{hoyle70}, with further discussion in \cite{ferrara94}. \cite{draine98b} give the earliest thorough description, with substantial updates contributed more recently by \cite{ysard10a}, \cite{ali-haimoud09}, \cite{hoang10} and several others. \cite{hensley17a} propose that such small spinning grains may consist primarily of silicates, and that this is allowed by observational upper-bounds of nanosilicate abudance, although nanosilicates have not yet been detected in the ISM. \cite{dickinson13r} provide a detailed overview of AME and spinning dust literature. An updated state of play of AME research has been submitted at the time of this writing (Dickinson, et al., submitted). Eq. \ref{eq:Pspin} gives the radiated power by spinning dust
+
+        \begin{equation}
+        P = {4\over9} {\mu^2\omega^4\over c^3}
+        \label{eq:Pspin}
+        \end{equation}
+
+        \begin{equation}
+        {\omega_T\over 2\pi} =
+        \langle\nu^2\rangle^{1/2}
+        \approx 5.60\times 10^9 a_{-7}^{-5/2}\xi^{-1/2}T_2^{1/2}~~~{\rm Hz}
+        \label{eq:nurms}
+        \end{equation}
 
     2) Magnetic dipole emission, caused by thermal fluctuations in grains with magnetic inclusions, proposed by \cite{draine99}.
      More recently, modeled spectra for potential candidate carriers have appeared in the literature: PAHs, grains with magnetic inclusions \citep{draine13, ali-haimoud14, hoang16a}.
