@@ -6,66 +6,55 @@ A level-1 auxiliary file: ch1_intro.aux
 A level-1 auxiliary file: ch2_datasources.aux
 A level-1 auxiliary file: ch3_allsky.aux
 A level-1 auxiliary file: ch4_lori.aux
-A level-1 auxiliary file: ch5_discussion.aux
 A level-1 auxiliary file: summary.aux
 A level-1 auxiliary file: app_pca.aux
 A level-1 auxiliary file: acknowledgements.aux
 The style file: apj.bst
 Database file #1: reference.bib
-I was expecting a `,' or a `}'---line 624 of file reference.bib
- :   
- :   school   = {UNIVERSIDAD AUTONOMA DE MADRID},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Repeated entry---line 2389 of file reference.bib
+Repeated entry---line 2631 of file reference.bib
  : @article{flauger14
  :                   ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "hensley17"
-Warning--to sort, need author or key in aran09
-Warning--empty author in aran09
-Warning--empty year in aran09; set to ????
-Warning--empty school in aran09
 Warning--empty publisher in draine11
-You've used 74 entries,
+You've used 90 entries,
             2988 wiz_defined-function locations,
-            1055 strings with 32636 characters,
-and the built_in function-call counts, 42875 in all, are:
-= -- 2672
-> -- 4584
-< -- 26
-+ -- 1536
-- -- 1451
-* -- 4480
-:= -- 8524
-add.period$ -- 74
-call.type$ -- 74
-change.case$ -- 462
-chr.to.int$ -- 67
-cite$ -- 81
-duplicate$ -- 1353
-empty$ -- 1979
-format.name$ -- 1710
-if$ -- 7981
-int.to.chr$ -- 8
+            1133 strings with 39413 characters,
+and the built_in function-call counts, 51955 in all, are:
+= -- 3220
+> -- 5576
+< -- 35
++ -- 1863
+- -- 1761
+* -- 5426
+:= -- 10361
+add.period$ -- 90
+call.type$ -- 90
+change.case$ -- 551
+chr.to.int$ -- 80
+cite$ -- 91
+duplicate$ -- 1642
+empty$ -- 2394
+format.name$ -- 2080
+if$ -- 9667
+int.to.chr$ -- 11
 int.to.str$ -- 1
-missing$ -- 70
-newline$ -- 226
-num.names$ -- 292
-pop$ -- 464
+missing$ -- 86
+newline$ -- 274
+num.names$ -- 360
+pop$ -- 541
 preamble$ -- 1
-purify$ -- 461
+purify$ -- 550
 quote$ -- 0
-skip$ -- 1136
+skip$ -- 1383
 stack$ -- 0
-substring$ -- 1502
-swap$ -- 12
+substring$ -- 1805
+swap$ -- 16
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 663
-warning$ -- 5
-while$ -- 239
+type$ -- 807
+warning$ -- 1
+while$ -- 290
 width$ -- 0
-write$ -- 741
-(There were 2 error messages)
+write$ -- 902
+(There was 1 error message)

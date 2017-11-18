@@ -1,55 +1,57 @@
 \contentsline {chapter}{Abstract}{i}{chapter*.1}
 \contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
-\contentsline {subsection}{\numberline {1.0.1}All-sky Astronomy}{2}{subsection.1.0.1}
-\contentsline {subsection}{\numberline {1.0.2}Infrared astronomy}{3}{subsection.1.0.2}
-\contentsline {section}{\numberline {1.1}Anomalous Microwave Foreground}{4}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Why microwave foregrounds are important}{4}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Discovery and first explorations}{4}{subsection.1.1.2}
-\contentsline {subsection}{\numberline {1.1.3}Proposed explanations}{5}{subsection.1.1.3}
-\contentsline {subsection}{\numberline {1.1.4}Spinning dust}{6}{subsection.1.1.4}
-\contentsline {subsection}{\numberline {1.1.5}Spinning PAHs?}{7}{subsection.1.1.5}
-\contentsline {paragraph}{Spinning PAHs - a more testable hypothesis?}{7}{section*.4}
-\contentsline {subsection}{\numberline {1.1.6}Excitation factors}{8}{subsection.1.1.6}
-\contentsline {subsection}{\numberline {1.1.7}AME vs. IR in the literature}{9}{subsection.1.1.7}
-\contentsline {section}{\numberline {1.2}Scope of this Dissertation}{10}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}An application of all-sky archival data}{10}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Testing the spinning PAH hypothesis}{11}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Limitations}{11}{subsection.1.2.3}
-\contentsline {subsection}{\numberline {1.2.4}Code availability}{12}{subsection.1.2.4}
+\contentsline {section}{\numberline {1.1}All-sky Astronomy}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Infrared astronomy}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Microwave foregrounds}{4}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Anomalous Microwave Emission}{5}{subsection.1.3.1}
+\contentsline {subsubsection}{Discovery and first explorations}{7}{section*.6}
+\contentsline {subsubsection}{Proposed explanations}{7}{section*.7}
+\contentsline {subsubsection}{Spinning dust}{8}{section*.8}
+\contentsline {subsubsection}{Spinning PAHs?}{9}{section*.9}
+\contentsline {paragraph}{A more testable hypothesis}{9}{section*.10}
+\contentsline {subsection}{\numberline {1.3.2}Excitation factors}{10}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}AME vs. IR in the literature}{10}{subsection.1.3.3}
+\contentsline {section}{\numberline {1.4}Scope of this Dissertation}{11}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}An application of all-sky archival data}{11}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Testing the spinning PAH hypothesis}{11}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Limitations}{11}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Code availability}{12}{subsection.1.4.4}
 \contentsline {chapter}{\numberline {2}Data Sources}{13}{chapter.2}
-\contentsline {subsection}{\numberline {2.0.1}A collection of skies}{13}{subsection.2.0.1}
-\contentsline {subsubsection}{Primary band of interest}{13}{section*.6}
-\contentsline {subsection}{\numberline {2.0.2}Infrared Data}{14}{subsection.2.0.2}
-\contentsline {subsubsection}{AKARI}{14}{section*.7}
-\contentsline {paragraph}{AKARI/IRC PAH feature coverage}{14}{section*.8}
-\contentsline {paragraph}{In-band conribution from PAHs}{15}{section*.9}
-\contentsline {paragraph}{Potential to trace PAH ionization}{15}{section*.10}
-\contentsline {subsection}{\numberline {2.0.3}Planck COMMANDERAME Parameter Maps}{18}{subsection.2.0.3}
-\contentsline {subsubsection}{Synchrotron}{19}{section*.13}
-\contentsline {subsubsection}{Free-free emission}{19}{section*.15}
-\contentsline {subsubsection}{Thermal dust emission}{21}{section*.16}
-\contentsline {subsubsection}{COMMANDER-AME: Peak Frequency Distribution}{21}{section*.17}
-\contentsline {subsection}{\numberline {2.0.4}All-sky Data Processing}{23}{subsection.2.0.4}
-\contentsline {chapter}{\numberline {3}All-sky Analysis}{26}{chapter.3}
-\contentsline {section}{\numberline {3.1}All-sky Pixel Domain Analysis}{26}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}All-sky cross correlations}{26}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Pixel mask}{27}{subsection.3.1.2}
-\contentsline {paragraph}{Zodical light}{27}{section*.21}
-\contentsline {subsection}{\numberline {3.1.3}AME data}{27}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Spatial variaton of correlations}{28}{section.3.2}
-\contentsline {chapter}{\numberline {4}Analysis of an interesting AME region: $\lambda $\nobreakspace {}Orionis}{32}{chapter.4}
-\contentsline {section}{\numberline {4.1}An interesting AME region}{32}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Where does the ring come from?}{33}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}A well-studied region}{33}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Investigative approach}{34}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Data preparation}{34}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Extraction from HEALPix maps}{35}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Multi-wavelength characterization}{35}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Ionization fraction}{35}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}SED Fitting}{36}{subsection.4.2.5}
-\contentsline {chapter}{\numberline {5}Discussion}{40}{chapter.5}
-\contentsline {section}{\numberline {5.1}AME:Dust}{40}{section.5.1}
-\contentsline {section}{\numberline {5.2}AME:PAH}{42}{section.5.2}
-\contentsline {section}{\numberline {5.3}AME:$T$, $G_{0}$}{43}{section.5.3}
-\contentsline {section}{\numberline {5.4}Microwave foreground component separation}{43}{section.5.4}
-\contentsline {chapter}{\numberline {6}Summary}{44}{chapter.6}
+\contentsline {section}{\numberline {2.1}A collection of skies}{13}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Primary band of interest}{13}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Infrared Data}{14}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}AKARI}{14}{subsection.2.2.1}
+\contentsline {paragraph}{AKARI/IRC PAH feature coverage}{14}{section*.12}
+\contentsline {paragraph}{In-band conribution from PAHs}{14}{section*.13}
+\contentsline {paragraph}{Potential to trace PAH ionization}{14}{section*.14}
+\contentsline {section}{\numberline {2.3}Planck COMMANDER Parameter Maps}{18}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Synchrotron}{18}{subsection.2.3.1}
+\contentsline {subsubsection}{Free-free emission}{20}{section*.21}
+\contentsline {subsection}{\numberline {2.3.2}Thermal dust emission}{20}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}COMMANDER-AME: Peak Frequency Distribution}{20}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}All-sky Data Processing}{23}{section.2.4}
+\contentsline {chapter}{\numberline {3}All-sky Analysis}{24}{chapter.3}
+\contentsline {section}{\numberline {3.1}All-sky Pixel Domain Analysis}{24}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}All-sky cross correlations}{24}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Pixel mask}{24}{subsection.3.1.2}
+\contentsline {paragraph}{Zodical light}{24}{section*.25}
+\contentsline {subsection}{\numberline {3.1.3}AME data}{25}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Spatial variaton of correlations}{26}{section.3.2}
+\contentsline {section}{\numberline {3.3}Discussion}{26}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}AME:Dust}{26}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}AME:PAH}{29}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}AME:$T$, $G_{0}$}{30}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Microwave foreground component separation}{30}{subsection.3.3.4}
+\contentsline {chapter}{\numberline {4}Analysis of an interesting AME region: $\lambda $\nobreakspace {}Orionis}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}An interesting AME region}{31}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Where does the ring come from?}{31}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}A well-studied region}{32}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Investigative approach}{32}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Data preparation}{33}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Extraction from HEALPix maps}{33}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Multi-wavelength characterization}{33}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Ionization fraction}{33}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}SED Fitting}{38}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}Discussion}{38}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}AME:PAH}{38}{subsection.4.3.1}
+\contentsline {chapter}{\numberline {5}Summary}{40}{chapter.5}

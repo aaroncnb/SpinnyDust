@@ -1,8 +1,5 @@
-\begin{thebibliography}{74}
+\begin{thebibliography}{90}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-
-\bibitem[{ara(????)}]{aran09}
- ????, PhD thesis
 
 \bibitem[{{Ali-Haimoud}(2010)}]{ali-haimoud10}
 {Ali-Haimoud}, Y. 2010, {SpDust/SpDust.2: Code to Calculate Spinning Dust
@@ -33,6 +30,9 @@
   {Allamandola}, \& {Tielens}}]{andrews15}
 {Andrews}, H., {Boersma}, C., {Werner}, M.~W., {Livingston}, J., {Allamandola},
   L.~J., \& {Tielens}, A.~G.~G.~M. 2015, \apj, 807, 99
+
+\bibitem[{{Aran}(2009)}]{aran09}
+{Aran}, A.~B. 2009, PhD thesis, UNIVERSIDAD AUTONOMA DE MADRID
 
 \bibitem[{{BICEP2 Collaboration} {et~al.}(2014){BICEP2 Collaboration}, {Ade},
   {Aikin}, {Barkats}, {Benton}, {Bischoff}, {Bock}, {Brevik}, {Buder},
@@ -68,6 +68,11 @@
 {de Oliveira-Costa}, A., {Kogut}, A., {Devlin}, M.~J., {Netterfield}, C.~B.,
   {Page}, L.~A., \& {Wollack}, E.~J. 1997, \apjl, 482, L17
 
+\bibitem[{{de Oliveira-Costa} {et~al.}(2002){de Oliveira-Costa}, {Tegmark},
+  {Finkbeiner}, {Davies}, {Gutierrez}, {Haffner}, {Jones}, {Lasenby}, {Rebolo},
+  {Reynolds}, {Tufte}, \& {Watson}}]{deoliveiracosta02}
+{de Oliveira-Costa}, A., {et~al.} 2002, \apj, 567, 363
+
 \bibitem[{{Dickinson} {et~al.}(2013){Dickinson}, {Paladini}, \&
   {Verstraete}}]{dickinson13r}
 {Dickinson}, C., {Paladini}, R., \& {Verstraete}, L. 2013, Advances in
@@ -94,17 +99,28 @@
 \bibitem[{{Draine} \& {Lazarian}(1999)}]{draine99}
 ---. 1999, \apj, 512, 740
 
+\bibitem[{{Draine} \& {Li}(2001)}]{draine01}
+{Draine}, B.~T., \& {Li}, A. 2001, \apj, 551, 807
+
 \bibitem[{{Draine} \& {Li}(2007)}]{draine07}
-{Draine}, B.~T., \& {Li}, A. 2007, \apj, 657, 810
+---. 2007, \apj, 657, 810
 
 \bibitem[{{Duerr} {et~al.}(1982){Duerr}, {Imhoff}, \& {Lada}}]{duerr82}
 {Duerr}, R., {Imhoff}, C.~L., \& {Lada}, C.~J. 1982, \apj, 261, 135
+
+\bibitem[{{Dwek}(1986)}]{dwek86}
+{Dwek}, E. 1986, \apj, 302, 363
 
 \bibitem[{{Erickson}(1957)}]{erickson57}
 {Erickson}, W.~C. 1957, \apj, 126, 480
 
 \bibitem[{{Ferrara} \& {Dettmar}(1994)}]{ferrara94}
 {Ferrara}, A., \& {Dettmar}, R.-J. 1994, \apj, 427, 155
+
+\bibitem[{{Finkbeiner} {et~al.}(2002){Finkbeiner}, {Schlegel}, {Frank}, \&
+  {Heiles}}]{finkbeiner02}
+{Finkbeiner}, D.~P., {Schlegel}, D.~J., {Frank}, C., \& {Heiles}, C. 2002,
+  \apj, 566, 898
 
 \bibitem[{{Fioc} \& {Rocca-Volmerange}(1997)}]{fioc97}
 {Fioc}, M., \& {Rocca-Volmerange}, B. 1997, \aap, 326, 950
@@ -301,17 +317,38 @@ Lovas, F.~J., McMahon, R.~J., Grabow, J.-U., Schnell, M., Mack, J., Scott,
   {Shimwell}, {Titterington}, \& {Waldram}}]{perrott18}
 {Perrott}, Y.~C., {et~al.} 2018, \mnras, 473, 1157
 
+\bibitem[{{Pettit} \& {Nicholson}(1922)}]{pettit22}
+{Pettit}, E., \& {Nicholson}, S.~B. 1922, \apj, 56, 295
+
+\bibitem[{{Pettit} \& {Nicholson}(1928)}]{pettit28}
+---. 1928, \apj, 68
+
+\bibitem[{{Planck Collaboration} {et~al.}(2011{\natexlab{a}}){Planck
+  Collaboration}, {Ade}, {Aghanim}, {Arnaud}, {Ashdown}, {Aumont},
+  {Baccigalupi}, {Baker}, {Balbi}, {Banday}, \& et~al.}]{planckEarly11I}
+{Planck Collaboration} {et~al.} 2011{\natexlab{a}}, \aap, 536, A1
+
+\bibitem[{{Planck Collaboration} {et~al.}(2011{\natexlab{b}}){Planck
+  Collaboration}, {Ade}, {Aghanim}, {Arnaud}, {Ashdown}, {Aumont},
+  {Baccigalupi}, {Balbi}, {Banday}, {Barreiro}, \& et~al.}]{planckxx11}
+---. 2011{\natexlab{b}}, \aap, 536, A20
+
 \bibitem[{{Planck Collaboration} {et~al.}(2014{\natexlab{a}}){Planck
-  Collaboration}, {Ade}, {Aghanim}, {Armitage-Caplan}, {Arnaud}, {Ashdown},
-  {Atrio-Barandela}, {Aumont}, {Baccigalupi}, {Banday}, \& et~al.}]{hfi14viii}
-{Planck Collaboration} {et~al.} 2014{\natexlab{a}}, \aap, 571, A8
+  Collaboration}, {Ade}, {Aghanim}, {Alves}, {Armitage-Caplan}, {Arnaud},
+  {Ashdown}, {Atrio-Barandela}, {Aumont}, {Aussel}, \& et~al.}]{planck2013I}
+---. 2014{\natexlab{a}}, \aap, 571, A1
 
 \bibitem[{{Planck Collaboration} {et~al.}(2014{\natexlab{b}}){Planck
   Collaboration}, {Ade}, {Aghanim}, {Armitage-Caplan}, {Arnaud}, {Ashdown},
-  {Atrio-Barandela}, {Aumont}, {Baccigalupi}, {Banday}, \& et~al.}]{planckXII}
----. 2014{\natexlab{b}}, \aap, 571, A12
+  {Atrio-Barandela}, {Aumont}, {Baccigalupi}, {Banday}, \& et~al.}]{hfi14viii}
+---. 2014{\natexlab{b}}, \aap, 571, A8
 
 \bibitem[{{Planck Collaboration} {et~al.}(2014{\natexlab{c}}){Planck
+  Collaboration}, {Ade}, {Aghanim}, {Armitage-Caplan}, {Arnaud}, {Ashdown},
+  {Atrio-Barandela}, {Aumont}, {Baccigalupi}, {Banday}, \& et~al.}]{planckXII}
+---. 2014{\natexlab{c}}, \aap, 571, A12
+
+\bibitem[{{Planck Collaboration} {et~al.}(2014{\natexlab{d}}){Planck
   Collaboration}, {Ade}, {Aghanim}, {Alves}, {Arnaud}, {Atrio-Barandela},
   {Aumont}, {Baccigalupi}, {Banday}, {Barreiro}, {Battaner}, {Benabed},
   {Benoit-L{\'e}vy}, {Bernard}, {Bersanelli}, {Bielewicz}, {Bobin}, {Bonaldi},
@@ -344,19 +381,24 @@ Lovas, F.~J., McMahon, R.~J., Grabow, J.-U., Schnell, M., Mack, J., Scott,
   {Tucci}, {Valenziano}, {Valiviita}, {Van Tent}, {Varis}, {Verstraete},
   {Vielva}, {Villa}, {Wandelt}, {Watson}, {Wilkinson}, {Ysard}, {Yvon},
   {Zacchei}, \& {Zonca}}]{planckXV}
----. 2014{\natexlab{c}}, \aap, 565, A103
+---. 2014{\natexlab{d}}, \aap, 565, A103
 
 \bibitem[{{Planck Collaboration} {et~al.}(2016{\natexlab{a}}){Planck
-  Collaboration}, {Adam}, {Ade}, {Aghanim}, {Alves}, {Arnaud}, {Ashdown},
-  {Aumont}, {Baccigalupi}, {Banday}, \& et~al.}]{planck15X}
----. 2016{\natexlab{a}}, \aap, 594, A10
+  Collaboration}, {Adam}, {Ade}, {Aghanim}, {Akrami}, {Alves}, {Arg{\"u}eso},
+  {Arnaud}, {Arroja}, {Ashdown}, \& et~al.}]{planck2015I}
+---. 2016{\natexlab{a}}, \aap, 594, A1
 
 \bibitem[{{Planck Collaboration} {et~al.}(2016{\natexlab{b}}){Planck
-  Collaboration}, {Ade}, {Aghanim}, {Alves}, {Arnaud}, {Ashdown}, {Aumont},
-  {Baccigalupi}, {Banday}, {Barreiro}, \& et~al.}]{planck15XXV}
----. 2016{\natexlab{b}}, \aap, 594, A25
+  Collaboration}, {Adam}, {Ade}, {Aghanim}, {Alves}, {Arnaud}, {Ashdown},
+  {Aumont}, {Baccigalupi}, {Banday}, \& et~al.}]{planck15X}
+---. 2016{\natexlab{b}}, \aap, 594, A10
 
 \bibitem[{{Planck Collaboration} {et~al.}(2016{\natexlab{c}}){Planck
+  Collaboration}, {Ade}, {Aghanim}, {Alves}, {Arnaud}, {Ashdown}, {Aumont},
+  {Baccigalupi}, {Banday}, {Barreiro}, \& et~al.}]{planck15XXV}
+---. 2016{\natexlab{c}}, \aap, 594, A25
+
+\bibitem[{{Planck Collaboration} {et~al.}(2016{\natexlab{d}}){Planck
   Collaboration}, {Ade}, {Aghanim}, {Alves}, {Aniano}, {Arnaud}, {Ashdown},
   {Aumont}, {Baccigalupi}, {Banday}, {Barreiro}, {Bartolo}, {Battaner},
   {Benabed}, {Benoit-L{\'e}vy}, {Bernard}, {Bersanelli}, {Bielewicz},
@@ -389,13 +431,53 @@ Lovas, F.~J., McMahon, R.~J., Grabow, J.-U., Schnell, M., Mack, J., Scott,
   {Spencer}, {Stolyarov}, {Sudiwala}, {Sunyaev}, {Sutton}, {Suur-Uski},
   {Sygnet}, {Tauber}, {Terenzi}, {Toffolatti}, {Tomasi}, {Tristram}, {Tucci},
   {Umana}, {Valenziano}, {Valiviita}, {Van Tent}, {Vielva}, {Villa}, {Wade},
-  {Wandelt}, {Wehus}, {Ysard}, {Yvon}, {Zacchei}, \& {Zonca}}]{planck16}
----. 2016{\natexlab{c}}, \aap, 586, A132
+  {Wandelt}, {Wehus}, {Ysard}, {Yvon}, {Zacchei}, \& {Zonca}}]{planckIntXXIX16}
+---. 2016{\natexlab{d}}, \aap, 586, A132
+
+\bibitem[{{Planck Collaboration} {et~al.}(2017){Planck Collaboration},
+  {Aghanim}, {Ashdown}, {Aumont}, {Baccigalupi}, {Ballardini}, {Banday},
+  {Barreiro}, {Bartolo}, {Basak}, {Benabed}, {Bernard}, {Bersanelli},
+  {Bielewicz}, {Bonaldi}, {Bonavera}, {Bond}, {Borrill}, {Bouchet},
+  {Boulanger}, {Bracco}, {Burigana}, {Calabrese}, {Cardoso}, {Chiang},
+  {Colombo}, {Combet}, {Comis}, {Crill}, {Curto}, {Cuttaia}, {Davis}, {de
+  Bernardis}, {de Rosa}, {de Zotti}, {Delabrouille}, {Delouis}, {Di Valentino},
+  {Dickinson}, {Diego}, {Dor{\'e}}, {Douspis}, {Ducout}, {Dupac}, {Dusini},
+  {Efstathiou}, {Elsner}, {En{\ss}lin}, {Eriksen}, {Falgarone}, {Fantaye},
+  {Finelli}, {Frailis}, {Fraisse}, {Franceschi}, {Frolov}, {Galeotta}, {Galli},
+  {Ganga}, {G{\'e}nova-Santos}, {Gerbino}, {Ghosh}, {Giard},
+  {Gonz{\'a}lez-Nuevo}, {G{\'o}rski}, {Gregorio}, {Gruppuso}, {Gudmundsson},
+  {Hansen}, {Helou}, {Herranz}, {Hivon}, {Huang}, {Jaffe}, {Jones},
+  {Keih{\"a}nen}, {Keskitalo}, {Kisner}, {Krachmalnicoff}, {Kunz},
+  {Kurki-Suonio}, {Lagache}, {L{\"a}hteenm{\"a}ki}, {Lamarre}, {Lasenby},
+  {Lattanzi}, {Lawrence}, {Le Jeune}, {Levrier}, {Liguori}, {Lilje},
+  {L{\'o}pez-Caniego}, {Lubin}, {Mac{\'{\i}}as-P{\'e}rez}, {Maggio}, {Maino},
+  {Mandolesi}, {Mangilli}, {Maris}, {Martin}, {Mart{\'{\i}}nez-Gonz{\'a}lez},
+  {Matarrese}, {Mauri}, {McEwen}, {Melchiorri}, {Mennella}, {Migliaccio},
+  {Mitra}, {Miville-Desch{\^e}nes}, {Molinari}, {Moneti}, {Montier},
+  {Morgante}, {Moss}, {Naselsky}, {N{\o}rgaard-Nielsen}, {Oxborrow}, {Pagano},
+  {Paoletti}, {Partridge}, {Patrizii}, {Perdereau}, {Perotto}, {Pettorino},
+  {Piacentini}, {Plaszczynski}, {Polenta}, {Puget}, {Rachen}, {Reinecke},
+  {Remazeilles}, {Renzi}, {Rocha}, {Rossetti}, {Roudier},
+  {Rubi{\~n}o-Mart{\'{\i}}n}, {Ruiz-Granados}, {Salvati}, {Sandri},
+  {Savelainen}, {Scott}, {Sirignano}, {Sirri}, {Stanco}, {Suur-Uski}, {Tauber},
+  {Tenti}, {Toffolatti}, {Tomasi}, {Tristram}, {Trombetti}, {Valiviita},
+  {Vansyngel}, {Van Tent}, {Vielva}, {Wandelt}, {Wehus}, {Zacchei}, \&
+  {Zonca}}]{planckIntL17}
+---. 2017, \aap, 599, A51
+
+\bibitem[{{Purcell}(1976)}]{purcell76}
+{Purcell}, E.~M. 1976, \apj, 206, 685
 
 \bibitem[{{Reynolds} {et~al.}(1998){Reynolds}, {Tufte}, {Haffner}, {Jaehnig},
   \& {Percival}}]{wham98}
 {Reynolds}, R.~J., {Tufte}, S.~L., {Haffner}, L.~M., {Jaehnig}, K., \&
   {Percival}, J.~W. 1998, \pasa, 15, 14
+
+\bibitem[{{Sellgren}(1984)}]{sellgren84}
+{Sellgren}, K. 1984, \apj, 277, 623
+
+\bibitem[{{Sheehy} \& {Slosar}(2017)}]{sheehy17}
+{Sheehy}, C., \& {Slosar}, A. 2017, ArXiv e-prints
 
 \bibitem[{{Takita} {et~al.}(2015){Takita}, {Doi}, {Ootsubo}, {Arimatsu},
   {Ikeda}, {Kawada}, {Kitamura}, {Matsuura}, {Nakagawa}, {Hattori},
@@ -411,6 +493,18 @@ Lovas, F.~J., McMahon, R.~J., Grabow, J.-U., Schnell, M., Mack, J., Scott,
   {Shenoy}, {Carey}, {Noriega-Crespo}, {Dickinson}, {Ali-Ha{\"i}moud},
   {Casassus}, {Cleary}, {Davies}, {Davis}, {Hirata}, \& {Watson}}]{tibbs11}
 {Tibbs}, C.~T., {et~al.} 2011, \mnras, 418, 1889
+
+\bibitem[{{von Hausegger} \& {Liu}(2015)}]{vonHausegger15}
+{von Hausegger}, S., \& {Liu}, H. 2015, \jcap, 8, 029
+
+\bibitem[{{Young} {et~al.}(2012){Young}, {Becklin}, {Marcum}, {Roellig}, {De
+  Buizer}, {Herter}, {G{\"u}sten}, {Dunham}, {Temi}, {Andersson}, {Backman},
+  {Burgdorf}, {Caroff}, {Casey}, {Davidson}, {Erickson}, {Gehrz}, {Harper},
+  {Harvey}, {Helton}, {Horner}, {Howard}, {Klein}, {Krabbe}, {McLean}, {Meyer},
+  {Miles}, {Morris}, {Reach}, {Rho}, {Richter}, {Roeser}, {Sandell}, {Sankrit},
+  {Savage}, {Smith}, {Shuping}, {Vacca}, {Vaillancourt}, {Wolf}, \&
+  {Zinnecker}}]{young12}
+{Young}, E.~T., {et~al.} 2012, \apjl, 749, L17
 
 \bibitem[{{Ysard} {et~al.}(2011){Ysard}, {Juvela}, \& {Verstraete}}]{ysard11}
 {Ysard}, N., {Juvela}, M., \& {Verstraete}, L. 2011, \aap, 535, A89

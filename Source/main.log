@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.9)  13 NOV 2017 17:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.7)  19 NOV 2017 00:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **main.tex
-(/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.tex
+(/home/aaronb/Projectbrary/CosmicDust/Source/main.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
@@ -243,13 +243,13 @@ Package caption Info: hyperref package is loaded.
 \c@lotdepth=\count118
 \sf@top=\skip50
 \sf@bottom=\skip51
-) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/natbib.sty
+) (/home/aaronb/Projectbrary/CosmicDust/Source/natbib.sty
 Package: natbib 2003/06/06 7.1 (PWD)
 \bibhang=\skip52
 \bibsep=\skip53
 LaTeX Info: Redefining \cite on input line 518.
 \c@NAT@ctr=\count119
-) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/aas_macros.sty) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+) (/home/aaronb/Projectbrary/CosmicDust/Source/aas_macros.sty) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 ) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
@@ -295,39 +295,82 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@thisrulewidth=\dimen138
 ) (/usr/share/texlive/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
-) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.aux (/home/aaronb/Projectbrary/latex/CosmicDust/Source/abstract.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch1_intro.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch2_datasources.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch3_allsky.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch4_lori.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch5_discussion.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/summary.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/app_pca.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/acknowledgements.aux))
+) (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count125
+\output=\toks21
+\linenoprevgraf=\count126
+\linenumbersep=\dimen139
+\linenumberwidth=\dimen140
+\c@linenumber=\count127
+\c@pagewiselinenumber=\count128
+\c@LN@truepage=\count129
+\c@internallinenumber=\count130
+\c@internallinenumbers=\count131
+\quotelinenumbersep=\dimen141
+\bframerule=\dimen142
+\bframesep=\dimen143
+\bframebox=\box29
+LaTeX Info: Redefining \\ on input line 3056.
+) (/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box30
+\fn@width=\dimen144
+) (/usr/share/texlive/texmf-dist/tex/latex/tablefootnote/tablefootnote.sty
+Package: tablefootnote 2014/01/26 v1.1c Table foot notes (HMM)
+ (/usr/share/texlive/texmf-dist/tex/latex/xifthen/xifthen.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count132
+\calc@Bcount=\count133
+\calc@Adimen=\dimen145
+\calc@Bdimen=\dimen146
+\calc@Askip=\skip65
+\calc@Bskip=\skip66
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count134
+\calc@Cskip=\skip67
+) (/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
+)) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count135
+)) (/home/aaronb/Projectbrary/CosmicDust/Source/main.aux (/home/aaronb/Projectbrary/CosmicDust/Source/abstract.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/ch1_intro.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/ch2_datasources.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/ch3_allsky.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/ch4_lori.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/summary.aux)
+(/home/aaronb/Projectbrary/CosmicDust/Source/app_pca.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/acknowledgements.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 58.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count125
-\scratchdimen=\dimen139
-\scratchbox=\box29
-\nofMPsegments=\count126
-\nofMParguments=\count127
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count128
-\MPscratchDim=\dimen140
-\MPnumerator=\count129
-\makeMPintoPDFobject=\count130
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count136
+\scratchdimen=\dimen147
+\scratchbox=\box31
+\nofMPsegments=\count137
+\nofMParguments=\count138
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen148
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
+\everyMPtoPDFconversion=\toks23
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
  (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -339,19 +382,19 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 20.
+\AtBeginShipoutBox=\box32
+Package hyperref Info: Link coloring OFF on input line 58.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count131
+\c@section@level=\count142
 )
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.out) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.out)
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
+ (/home/aaronb/Projectbrary/CosmicDust/Source/main.out) (/home/aaronb/Projectbrary/CosmicDust/Source/main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
@@ -359,22 +402,22 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \celsius on input line 20.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 20.
+LaTeX Info: Redefining \celsius on input line 58.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 58.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 20.
-Package gensymb Info: Using \Omega for \ohm on input line 20.
+LaTeX Info: Redefining \ohm on input line 58.
+Package gensymb Info: Using \Omega for \ohm on input line 58.
 
 Package gensymb Warning: Not defining \micro.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 34.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 34.
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -382,360 +425,453 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 \openout2 = `abstract.aux'.
 
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/abstract.tex
+ (/home/aaronb/Projectbrary/CosmicDust/Source/abstract.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-)
-Overfull \hbox (6.77599pt too wide) in paragraph at lines 3--36
-\OT1/ptm/m/n/12 dipole emis-sion by grains with mag-netic in-clu-sions (``mag-netic dust'') have emerged
- []
-
-[1
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 1.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)) [1
 
 
-] (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.toc
+] (/home/aaronb/Projectbrary/CosmicDust/Source/main.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
  [2
 
 
-] [3])
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [4] (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.lof
-
-Package caption Warning: \label without proper reference on input line 101.
-See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:AME_commander_freqdist' on page v undefined on input line 7.
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-[5
+[3] (/home/aaronb/Projectbrary/CosmicDust/Source/main.lof
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4
 
 ]
-
-Package caption Warning: \label without proper reference on input line 36.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:AMEvsDust_allsky_allbands' on page vi undefined on input line 12.
-
-
-Overfull \hbox (19.08379pt too wide) in paragraph at lines 13--13
- [][] [][]\OT1/ptm/m/n/12 Spatial map of $\OML/cmm/m/it/12 r[]$ \OT1/ptm/m/n/12 be-tween the AME and IR in-ten-sity for 4 bands:$\OT1/cmr/m/n/12 9 []\OML/cmm/m/it/12 ^^V[]m$\OT1/ptm/m/n/12 , 
+Overfull \hbox (20.86218pt too wide) in paragraph at lines 15--15
+ [][] [][]\OT1/ptm/m/n/12 Histograms of the peak in-ten-sity AME maps cal-cu-lated from the orig-i-nal COMMANDER- 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
-
-Package caption Warning: \label without proper reference on input line 41.
-See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:orionis-akari9' on page vii undefined on input line 16.
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-)
+[5])
 \tf@lof=\write5
 \openout5 = `main.lof'.
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.41 \include{ch1_intro}
+l.71 \include{ch1_intro}
                          [1]
 \openout2 = `ch1_intro.aux'.
 
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch1_intro.tex
+ (/home/aaronb/Projectbrary/CosmicDust/Source/ch1_intro.tex
 Chapter 1.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 10.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2
+[2
 
 
 ]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3]
-Overfull \hbox (1.90404pt too wide) in paragraph at lines 39--40
-\OT1/ptm/m/n/12 Since its first de-tec-tion in early mi-crowave ob-ser-va-tions, the anoma-lous mi-crowave
- []
 
-[4] [5] [6] [7] [8]
-Underfull \vbox (badness 1024) has occurred while \output is active []
 
- [9]
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4] <../Plots/ch_intro/mw_foregrounds_demo_rOph.pdf, id=509, 433.62pt x 289.08pt>
+File: ../Plots/ch_intro/mw_foregrounds_demo_rOph.pdf Graphic file (type pdf)
+ <use ../Plots/ch_intro/mw_foregrounds_demo_rOph.pdf>
+Package pdftex.def Info: ../Plots/ch_intro/mw_foregrounds_demo_rOph.pdf used on input line 54.
+(pdftex.def)             Requested size: 483.69684pt x 322.47937pt.
+ <../Plots/ch_intro/AME_contours.pdf, id=514, 557.67146pt x 358.50739pt>
+File: ../Plots/ch_intro/AME_contours.pdf Graphic file (type pdf)
+ <use ../Plots/ch_intro/AME_contours.pdf>
+Package pdftex.def Info: ../Plots/ch_intro/AME_contours.pdf used on input line 61.
+(pdftex.def)             Requested size: 483.69684pt x 310.958pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 93.
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5 <../Plots/ch_intro/mw_foregrounds_demo_rOph.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6 <../Plots/ch_intro/AME_contours.pdf>]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no ˆ in font ptmr7t!
+Missing character: There is no ’ in font ptmr7t!
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7]
+
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 81.
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 138.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)) [11] [12]
+))
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12]
 \openout2 = `ch2_datasources.aux'.
 
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch2_datasources.tex
+ (/home/aaronb/Projectbrary/CosmicDust/Source/ch2_datasources.tex
 Chapter 2.
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 4.
-
 LaTeX Font Info:    Try loading font information for OML+ptm on input line 16.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <12> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 16.
-
-Overfull \hbox (84.98729pt too wide) in paragraph at lines 12--30
- [][] 
- []
-
-[13
+ [13
 
 
 
-]
+] <../Plots/ch_datasources/ratioMap_A9I12.pdf, id=979, 614.295pt x 390.25798pt>
+File: ../Plots/ch_datasources/ratioMap_A9I12.pdf Graphic file (type pdf)
+ <use ../Plots/ch_datasources/ratioMap_A9I12.pdf>
+Package pdftex.def Info: ../Plots/ch_datasources/ratioMap_A9I12.pdf used on input line 51.
+(pdftex.def)             Requested size: 483.69684pt x 307.29405pt.
+ <../Plots/ch_datasources/ratioMap_A9I25.pdf, id=980, 614.295pt x 390.25798pt>
+File: ../Plots/ch_datasources/ratioMap_A9I25.pdf Graphic file (type pdf)
+ <use ../Plots/ch_datasources/ratioMap_A9I25.pdf>
+Package pdftex.def Info: ../Plots/ch_datasources/ratioMap_A9I25.pdf used on input line 58.
+(pdftex.def)             Requested size: 483.69684pt x 307.29405pt.
+ <../Plots/RelSpectralResponse_MIR.png, id=981, 379.4175pt x 266.9975pt>
+File: ../Plots/RelSpectralResponse_MIR.png Graphic file (type png)
+ <use ../Plots/RelSpectralResponse_MIR.png>
+Package pdftex.def Info: ../Plots/RelSpectralResponse_MIR.png used on input line 65.
+(pdftex.def)             Requested size: 483.69684pt x 340.38672pt.
+ <../Plots/band-ratio-multiple.pdf, id=983, 433.62pt x 289.08pt>
+File: ../Plots/band-ratio-multiple.pdf Graphic file (type pdf)
+ <use ../Plots/band-ratio-multiple.pdf>
+Package pdftex.def Info: ../Plots/band-ratio-multiple.pdf used on input line 73.
+(pdftex.def)             Requested size: 426.79134pt x 284.54036pt.
 
-Package caption Warning: \label without proper reference on input line 50.
-See the caption package documentation for explanation.
 
-
-LaTeX Warning: Reference `fig:relSpectralResponse_MIR' on page 14 undefined on input line 40.
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [14]
 
-Package caption Warning: \label without proper reference on input line 58.
-See the caption package documentation for explanation.
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
+[15 <../Plots/ch_datasources/ratioMap_A9I12.pdf> <../Plots/ch_datasources/ratioMap_A9I25.pdf
 
-LaTeX Warning: Reference `fig:inband_ionfrac_ratios' on page 15 undefined on input line 46.
+pdfTeX warning: pdflatex (file ../Plots/ch_datasources/ratioMap_A9I25.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
 
-<../Plots/RelSpectralResponse_MIR.png, id=629, 379.4175pt x 266.9975pt>
-File: ../Plots/RelSpectralResponse_MIR.png Graphic file (type png)
- <use ../Plots/RelSpectralResponse_MIR.png>
-Package pdftex.def Info: ../Plots/RelSpectralResponse_MIR.png used on input line 52.
-(pdftex.def)             Requested size: 426.79134pt x 300.33884pt.
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 52--53
- [][] 
- []
+[16 <../Plots/RelSpectralResponse_MIR.png>]
 
-<../Plots/band-ratio-multiple.pdf, id=631, 433.62pt x 289.08pt>
-File: ../Plots/band-ratio-multiple.pdf Graphic file (type pdf)
- <use ../Plots/band-ratio-multiple.pdf>
-Package pdftex.def Info: ../Plots/band-ratio-multiple.pdf used on input line 60.
-(pdftex.def)             Requested size: 426.79134pt x 284.54036pt.
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 60--61
- [][] 
- []
-
-[15] [16 <../Plots/RelSpectralResponse_MIR.png>] [17 <../Plots/band-ratio-multiple.pdf>]
-
-Package caption Warning: \label without proper reference on input line 83.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:R_PCAMEtoPCdust' on page 18 undefined on input line 80.
-
-
-Package natbib Warning: Citation `hensley17' on page 18 undefined on input line 80.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18] <../Plots/ch_datasources/R_PCAMEtoPCRad.pdf, id=720, 614.295pt x 390.25798pt>
+[17 <../Plots/band-ratio-multiple.pdf>] <../Plots/ch_datasources/PCCS_corrmatrix.pdf, id=1130, 433.62pt x 289.08pt>
+File: ../Plots/ch_datasources/PCCS_corrmatrix.pdf Graphic file (type pdf)
+ <use ../Plots/ch_datasources/PCCS_corrmatrix.pdf>
+Package pdftex.def Info: ../Plots/ch_datasources/PCCS_corrmatrix.pdf used on input line 91.
+(pdftex.def)             Requested size: 483.69684pt x 322.47937pt.
+ <../Plots/ch_datasources/R_PCAMEtoPCRad.pdf, id=1140, 614.295pt x 390.25798pt>
 File: ../Plots/ch_datasources/R_PCAMEtoPCRad.pdf Graphic file (type pdf)
  <use ../Plots/ch_datasources/R_PCAMEtoPCRad.pdf>
-Package pdftex.def Info: ../Plots/ch_datasources/R_PCAMEtoPCRad.pdf used on input line 85.
-(pdftex.def)             Requested size: 390.0pt x 247.76938pt.
-
-
-Package caption Warning: \label without proper reference on input line 101.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:AME_commander_freqdist' on page 19 undefined on input line 97.
-
+Package pdftex.def Info: ../Plots/ch_datasources/R_PCAMEtoPCRad.pdf used on input line 103.
+(pdftex.def)             Requested size: 483.69684pt x 307.29405pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19] [20 <../Plots/ch_datasources/R_PCAMEtoPCRad.pdf>] <../Plots/ch_intro/AME_commander_freqdist.pdf, id=792, 433.62pt x 289.08pt>
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19 <../Plots/ch_datasources/PCCS_corrmatrix.pdf> <../Plots/ch_datasources/R_PCAMEtoPCRad.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/ch_datasources/R_PCAMEtoPCRad.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] <../Plots/ch_intro/AME_commander_freqdist.pdf, id=1254, 433.62pt x 289.08pt>
 File: ../Plots/ch_intro/AME_commander_freqdist.pdf Graphic file (type pdf)
  <use ../Plots/ch_intro/AME_commander_freqdist.pdf>
-Package pdftex.def Info: ../Plots/ch_intro/AME_commander_freqdist.pdf used on input line 102.
-(pdftex.def)             Requested size: 390.0pt x 260.01079pt.
- <../Plots/ch_datasources/PCAME_var_freq.pdf, id=793, 614.295pt x 390.25798pt>
+Package pdftex.def Info: ../Plots/ch_intro/AME_commander_freqdist.pdf used on input line 120.
+(pdftex.def)             Requested size: 483.69684pt x 322.47937pt.
+ <../Plots/ch_datasources/PCAME_var_freq.pdf, id=1255, 614.295pt x 390.25798pt>
 File: ../Plots/ch_datasources/PCAME_var_freq.pdf Graphic file (type pdf)
  <use ../Plots/ch_datasources/PCAME_var_freq.pdf>
-Package pdftex.def Info: ../Plots/ch_datasources/PCAME_var_freq.pdf used on input line 109.
-(pdftex.def)             Requested size: 390.0pt x 247.76938pt.
-
-
-Package caption Warning: \label without proper reference on input line 101.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:AME_commander_freqdist' on page 21 undefined on input line 111.
-
-
-Package caption Warning: \label without proper reference on input line 101.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:AME_commander_freqdist' on page 21 undefined on input line 111.
-
-
-Package caption Warning: \label without proper reference on input line 118.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:AME_commander_freqshift_templ' on page 21 undefined on input line 115.
-
-
-Overfull \hbox (1.95221pt too wide) in paragraph at lines 115--116
-\OT1/ptm/m/n/12 tem-plates, for a com-mon ``ref-er-ence in-ten-sity'' at a com-mon ``ref-er-ence fre-quency'',
- []
-
-<../Plots/ch_datasources/AME_commander_freqshift_templ.pdf, id=797, 433.62pt x 289.08pt>
+Package pdftex.def Info: ../Plots/ch_datasources/PCAME_var_freq.pdf used on input line 127.
+(pdftex.def)             Requested size: 483.69684pt x 307.29405pt.
+ <../Plots/ch_datasources/AME_commander_freqshift_templ.pdf, id=1261, 433.62pt x 289.08pt>
 File: ../Plots/ch_datasources/AME_commander_freqshift_templ.pdf Graphic file (type pdf)
  <use ../Plots/ch_datasources/AME_commander_freqshift_templ.pdf>
-Package pdftex.def Info: ../Plots/ch_datasources/AME_commander_freqshift_templ.pdf used on input line 119.
-(pdftex.def)             Requested size: 390.0pt x 260.01079pt.
- [21] [22 <../Plots/ch_intro/AME_commander_freqdist.pdf>]) [23 <../Plots/ch_datasources/PCAME_var_freq.pdf>] [24 <../Plots/ch_datasources/AME_commander_freqshift_templ.pdf>] [25]
+Package pdftex.def Info: ../Plots/ch_datasources/AME_commander_freqshift_templ.pdf used on input line 137.
+(pdftex.def)             Requested size: 483.69684pt x 322.47937pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21 <../Plots/ch_intro/AME_commander_freqdist.pdf> <../Plots/ch_datasources/PCAME_var_freq.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/ch_datasources/PCAME_var_freq.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22 <../Plots/ch_datasources/AME_commander_freqshift_templ.pdf>])
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[23]
 \openout2 = `ch3_allsky.aux'.
 
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch3_allsky.tex
+ (/home/aaronb/Projectbrary/CosmicDust/Source/ch3_allsky.tex
 Chapter 3.
-
-Package caption Warning: \label without proper reference on input line 36.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:AMEvsDust_allsky_allbands' on page 26 undefined on input line 10.
-
-[26
+[24
 
 
 
-]
+] <../Plots/ch_allsky/AME_comps_distplot.pdf, id=1414, 578.16pt x 397.485pt>
+File: ../Plots/ch_allsky/AME_comps_distplot.pdf Graphic file (type pdf)
+ <use ../Plots/ch_allsky/AME_comps_distplot.pdf>
+Package pdftex.def Info: ../Plots/ch_allsky/AME_comps_distplot.pdf used on input line 22.
+(pdftex.def)             Requested size: 483.69684pt x 332.53867pt.
+ <../Plots/ch_allsky/AMEfreq_vs_fix.pdf, id=1416, 433.62pt x 433.62pt>
+File: ../Plots/ch_allsky/AMEfreq_vs_fix.pdf Graphic file (type pdf)
+ <use ../Plots/ch_allsky/AMEfreq_vs_fix.pdf>
+Package pdftex.def Info: ../Plots/ch_allsky/AMEfreq_vs_fix.pdf used on input line 29.
+(pdftex.def)             Requested size: 161.23227pt x 161.23087pt.
+ <../Plots/ch_allsky/AMEfreq_vs_rad.pdf, id=1417, 433.62pt x 433.62pt>
+File: ../Plots/ch_allsky/AMEfreq_vs_rad.pdf Graphic file (type pdf)
+ <use ../Plots/ch_allsky/AMEfreq_vs_rad.pdf>
+Package pdftex.def Info: ../Plots/ch_allsky/AMEfreq_vs_rad.pdf used on input line 30.
+(pdftex.def)             Requested size: 161.23227pt x 161.23087pt.
+ <../Plots/ch_allsky/AMEfreq_vs_var.pdf, id=1418, 433.62pt x 433.62pt>
+File: ../Plots/ch_allsky/AMEfreq_vs_var.pdf Graphic file (type pdf)
+ <use ../Plots/ch_allsky/AMEfreq_vs_var.pdf>
+Package pdftex.def Info: ../Plots/ch_allsky/AMEfreq_vs_var.pdf used on input line 31.
+(pdftex.def)             Requested size: 161.23227pt x 161.23087pt.
 
-Package caption Warning: \label without proper reference on input line 29.
-See the caption package documentation for explanation.
+Underfull \vbox (badness 1596) has occurred while \output is active []
 
 
-LaTeX Warning: Reference `fig:AME_IR_crosscorr_allbandsg' on page 27 undefined on input line 23.
 
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-Package caption Warning: \label without proper reference on input line 50.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:Spearman_Map_nside8_AMEtoIR' on page 27 undefined on input line 26.
-
-[27] <../Plots/all_bands_corr_matrix_wAME_spearman.pdf, id=1009, 969.68896pt x 490.01067pt>
+[25 <../Plots/ch_allsky/AME_comps_distplot.pdf>] <../Plots/all_bands_corr_matrix_wAME_spearman.pdf, id=1486, 969.68896pt x 490.01067pt>
 File: ../Plots/all_bands_corr_matrix_wAME_spearman.pdf Graphic file (type pdf)
  <use ../Plots/all_bands_corr_matrix_wAME_spearman.pdf>
-Package pdftex.def Info: ../Plots/all_bands_corr_matrix_wAME_spearman.pdf used on input line 30.
-(pdftex.def)             Requested size: 526.37598pt x 266.00748pt.
-
-Overfull \hbox (136.37598pt too wide) in paragraph at lines 30--32
- [][] 
- []
-
-<../Plots/AMEvsDust_allsky_allbands.pdf, id=1010, 505.37556pt x 337.42545pt>
+Package pdftex.def Info: ../Plots/all_bands_corr_matrix_wAME_spearman.pdf used on input line 44.
+(pdftex.def)             Requested size: 483.69684pt x 244.429pt.
+ <../Plots/AMEvsDust_allsky_allbands.pdf, id=1487, 505.37556pt x 337.42545pt>
 File: ../Plots/AMEvsDust_allsky_allbands.pdf Graphic file (type pdf)
  <use ../Plots/AMEvsDust_allsky_allbands.pdf>
-Package pdftex.def Info: ../Plots/AMEvsDust_allsky_allbands.pdf used on input line 37.
-(pdftex.def)             Requested size: 426.79134pt x 284.96974pt.
-
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 37--39
- [][] 
- []
-
-<../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf, id=1011, 505.37556pt x 314.093pt>
+Package pdftex.def Info: ../Plots/AMEvsDust_allsky_allbands.pdf used on input line 52.
+(pdftex.def)             Requested size: 483.69684pt x 322.96707pt.
+ <../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf, id=1488, 494.20885pt x 283.38023pt>
 File: ../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf Graphic file (type pdf)
  <use ../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf>
-Package pdftex.def Info: ../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf used on input line 44.
-(pdftex.def)             Requested size: 426.79134pt x 265.26453pt.
-
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 44--46
- [][] 
- []
-
-
-Package caption Warning: \label without proper reference on input line 36.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:AMEvsDust_allsky_allbands' on page 28 undefined on input line 46.
-
-
-Package caption Warning: \label without proper reference on input line 36.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:AMEvsDust_allsky_allbands' on page 28 undefined on input line 46.
-
-<../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf, id=1014, 614.295pt x 390.25798pt>
+Package pdftex.def Info: ../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf used on input line 59.
+(pdftex.def)             Requested size: 483.69684pt x 277.36047pt.
+ <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf, id=1491, 614.295pt x 390.25798pt>
 File: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf Graphic file (type pdf)
  <use ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf>
-Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf used on input line 51.
-(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
- <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf, id=1015, 614.295pt x 390.25798pt>
+Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf used on input line 66.
+(pdftex.def)             Requested size: 161.23227pt x 102.42935pt.
+ <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf, id=1492, 614.295pt x 390.25798pt>
 File: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf Graphic file (type pdf)
  <use ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf>
-Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf used on input line 52.
-(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
- <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf, id=1016, 614.295pt x 390.25798pt>
+Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf used on input line 67.
+(pdftex.def)             Requested size: 161.23227pt x 102.42935pt.
+ <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf, id=1493, 614.295pt x 390.25798pt>
 File: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf Graphic file (type pdf)
  <use ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf>
-Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf used on input line 53.
-(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
- <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf, id=1017, 614.295pt x 390.25798pt>
+Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf used on input line 68.
+(pdftex.def)             Requested size: 161.23227pt x 102.42935pt.
+
+<../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf, id=1494, 614.295pt x 390.25798pt>
 File: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf Graphic file (type pdf)
  <use ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf>
-Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf used on input line 54.
-(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
- <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf, id=1018, 614.295pt x 390.25798pt>
+Package pdftex.def Info: ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf used on input line 69.
+(pdftex.def)             Requested size: 161.23227pt x 102.42935pt.
+ <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf, id=1495, 614.295pt x 390.25798pt>
 File: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf Graphic file (type pdf)
  <use ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf>
-Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf used on input line 55.
-(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
- <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf, id=1019, 614.295pt x 390.25798pt>
+Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf used on input line 76.
+(pdftex.def)             Requested size: 161.23227pt x 102.42935pt.
+ <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf, id=1496, 614.295pt x 390.25798pt>
 File: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf Graphic file (type pdf)
  <use ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf>
-Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf used on input line 56.
-(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
-
-<../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf, id=1020, 614.295pt x 390.25798pt>
+Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf used on input line 77.
+(pdftex.def)             Requested size: 161.23227pt x 102.42935pt.
+ <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf, id=1497, 614.295pt x 390.25798pt>
 File: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf Graphic file (type pdf)
  <use ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf>
-Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf used on input line 57.
-(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
- <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf, id=1021, 614.295pt x 390.25798pt>
+Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf used on input line 78.
+(pdftex.def)             Requested size: 161.23227pt x 102.42935pt.
+ <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf, id=1498, 614.295pt x 390.25798pt>
 File: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf Graphic file (type pdf)
  <use ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf>
-Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf used on input line 58.
-(pdftex.def)             Requested size: 227.62204pt x 144.60756pt.
+Package pdftex.def Info: ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf used on input line 79.
+(pdftex.def)             Requested size: 161.23227pt x 102.42935pt.
 
 
-LaTeX Warning: Float too large for page by 625.36046pt on input line 61.
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-) [28 <../Plots/all_bands_corr_matrix_wAME_spearman.pdf>] [29 <../Plots/AMEvsDust_allsky_allbands.pdf>] [30 <../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf>] [31 <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf> <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf
+[26 <../Plots/ch_allsky/AMEfreq_vs_fix.pdf> <../Plots/ch_allsky/AMEfreq_vs_rad.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/ch_allsky/AMEfreq_vs_rad.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../Plots/ch_allsky/AMEfreq_vs_var.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/ch_allsky/AMEfreq_vs_var.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27 <../Plots/all_bands_corr_matrix_wAME_spearman.pdf> <../Plots/AMEvsDust_allsky_allbands.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/AMEvsDust_allsky_allbands.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[28 <../Plots/AMEvsDust_allsky_allbands__mpsub_Rnorm_kde.pdf> <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf
 
 pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25.pdf
@@ -744,10 +880,14 @@ pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI25
 > <../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf
 
 pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA140.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf
+>]
 
-pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[29 <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf> <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf
 
 pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf
@@ -757,9 +897,37 @@ pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_
 
 pdfTeX warning: pdflatex (file ../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 98.
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30]
 \openout2 = `ch4_lori.aux'.
 
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch4_lori.tex
+ (/home/aaronb/Projectbrary/CosmicDust/Source/ch4_lori.tex
 Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -773,243 +941,173 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
-
-Underfull \vbox (badness 3977) has occurred while \output is active []
-
- [32
+[31
 
 
 
 ]
-
-Package caption Warning: \label without proper reference on input line 41.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:orionis-akari9' on page 33 undefined on input line 23.
-
-[33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
-
-Package caption Warning: \label without proper reference on input line 50.
-See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:orionis-img' on page 35 undefined on input line 33.
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-
-Package caption Warning: \label without proper reference on input line 57.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:orionis-corr' on page 35 undefined on input line 33.
-
-<../Plots/LOri_akari9_AMEcont_1dres.pdf, id=1446, 630.41711pt x 579.11609pt>
+[32] <../Plots/LOri_akari9_AMEcont_1dres.pdf, id=2038, 630.41711pt x 579.11609pt>
 File: ../Plots/LOri_akari9_AMEcont_1dres.pdf Graphic file (type pdf)
  <use ../Plots/LOri_akari9_AMEcont_1dres.pdf>
-Package pdftex.def Info: ../Plots/LOri_akari9_AMEcont_1dres.pdf used on input line 42.
-(pdftex.def)             Requested size: 426.79134pt x 392.06175pt.
-
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 42--46
- [][] 
- []
-
-[35] <../Plots/lOrionis_grid_img.png, id=1453, 1375.1375pt x 1013.7875pt>
+Package pdftex.def Info: ../Plots/LOri_akari9_AMEcont_1dres.pdf used on input line 43.
+(pdftex.def)             Requested size: 483.69684pt x 444.33902pt.
+ <../Plots/lOrionis_grid_img.png, id=2039, 1375.1375pt x 1013.7875pt>
 File: ../Plots/lOrionis_grid_img.png Graphic file (type png)
  <use ../Plots/lOrionis_grid_img.png>
-Package pdftex.def Info: ../Plots/lOrionis_grid_img.png used on input line 51.
+Package pdftex.def Info: ../Plots/lOrionis_grid_img.png used on input line 53.
 (pdftex.def)             Requested size: 483.69684pt x 356.59442pt.
-
-Overfull \hbox (93.69684pt too wide) in paragraph at lines 51--53
- [][] 
- []
-
-
-Package caption Warning: \label without proper reference on input line 41.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:orionis-akari9' on page 36 undefined on input line 53.
-
-
-Package caption Warning: \label without proper reference on input line 41.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:orionis-akari9' on page 36 undefined on input line 53.
-
-<../Plots/orionis_correlations_AME.png, id=1456, 1409.265pt x 1078.0275pt>
+ <../Plots/orionis_correlations_AME.png, id=2042, 1409.265pt x 1078.0275pt>
 File: ../Plots/orionis_correlations_AME.png Graphic file (type png)
  <use ../Plots/orionis_correlations_AME.png>
-Package pdftex.def Info: ../Plots/orionis_correlations_AME.png used on input line 58.
+Package pdftex.def Info: ../Plots/orionis_correlations_AME.png used on input line 61.
 (pdftex.def)             Requested size: 483.69684pt x 369.99532pt.
+ <../Plots/ch_lori/Lori_corrmatrix_I.pdf, id=2043, 867.24pt x 867.24pt>
+File: ../Plots/ch_lori/Lori_corrmatrix_I.pdf Graphic file (type pdf)
+ <use ../Plots/ch_lori/Lori_corrmatrix_I.pdf>
+Package pdftex.def Info: ../Plots/ch_lori/Lori_corrmatrix_I.pdf used on input line 70.
+(pdftex.def)             Requested size: 483.69684pt x 483.70584pt.
 
-Overfull \hbox (93.69684pt too wide) in paragraph at lines 58--60
- [][] 
- []
 
-) [36] [37 <../Plots/LOri_akari9_AMEcont_1dres.pdf>] [38 <../Plots/lOrionis_grid_img.png>] [39 <../Plots/orionis_correlations_AME.png>]
-\openout2 = `ch5_discussion.aux'.
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch5_discussion.tex
+[33]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34 <../Plots/LOri_akari9_AMEcont_1dres.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35 <../Plots/lOrionis_grid_img.png>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[36 <../Plots/orionis_correlations_AME.png>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[37 <../Plots/ch_lori/Lori_corrmatrix_I.pdf>])
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[38]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39]
+\openout2 = `summary.aux'.
+
+ (/home/aaronb/Projectbrary/CosmicDust/Source/summary.tex
 Chapter 5.
 [40
 
 
 
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+])
 
- [41]
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-Package caption Warning: \label without proper reference on input line 29.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:AME_IR_crosscorr_allbandsg' on page 42 undefined on input line 22.
-
-
-Package caption Warning: \label without proper reference on input line 36.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:AMEvsDust_allsky_allbands' on page 42 undefined on input line 22.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 25.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 25.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 25.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 25.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 25.
-
-) [43]
-\openout2 = `summary.aux'.
-
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/summary.tex
-Chapter 6.
-
-Underfull \vbox (badness 1931) has occurred while \output is active []
-
- [44
-
-
-
-]
-Overfull \hbox (9.84737pt too wide) in paragraph at lines 7--8
-\OT1/ptm/m/n/12 resolved com-par-isons to in-ves-ti-gate the po-ten-tial AME-PAH (or AME-nanosilicates,
- []
-
-) [45]
+[41]
 \openout2 = `app_pca.aux'.
 
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/app_pca.tex
-
-Package caption Warning: \label without proper reference on input line 9.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:pca_intro' on page 46 undefined on input line 5.
-
-
-Package caption Warning: \label without proper reference on input line 9.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:pca_intro' on page 46 undefined on input line 5.
-
-
-Underfull \vbox (badness 2189) has occurred while \output is active []
-
- [46
-
-
-
-] <../Plots/ch_intro/pca_intro.pdf, id=1635, 578.16pt x 397.485pt>
+ (/home/aaronb/Projectbrary/CosmicDust/Source/app_pca.tex <../Plots/ch_intro/pca_intro.pdf, id=2230, 578.16pt x 397.485pt>
 File: ../Plots/ch_intro/pca_intro.pdf Graphic file (type pdf)
  <use ../Plots/ch_intro/pca_intro.pdf>
 Package pdftex.def Info: ../Plots/ch_intro/pca_intro.pdf used on input line 10.
-(pdftex.def)             Requested size: 512.1496pt x 352.12294pt.
+(pdftex.def)             Requested size: 483.69684pt x 332.53867pt.
+) [42
 
-Overfull \hbox (122.1496pt too wide) in paragraph at lines 10--12
- [][] 
- []
 
-) [47] [48 <../Plots/ch_intro/pca_intro.pdf>]
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[43 <../Plots/ch_intro/pca_intro.pdf>]
 \openout2 = `acknowledgements.aux'.
 
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/acknowledgements.tex) [49
+ (/home/aaronb/Projectbrary/CosmicDust/Source/acknowledgements.tex)
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[44
 
 
-] (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.bbl [50
+] (/home/aaronb/Projectbrary/CosmicDust/Source/main.bbl [45
 
 
-] [51] [52] [53])
+]
 
-Package natbib Warning: There were undefined citations.
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 60.
-[54]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 60.
- (/home/aaronb/Projectbrary/latex/CosmicDust/Source/main.aux (/home/aaronb/Projectbrary/latex/CosmicDust/Source/abstract.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch1_intro.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch2_datasources.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch3_allsky.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch4_lori.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/ch5_discussion.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/summary.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/app_pca.aux) (/home/aaronb/Projectbrary/latex/CosmicDust/Source/acknowledgements.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 60.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 60.
+[46])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 88.
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[47]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 88.
+ (/home/aaronb/Projectbrary/CosmicDust/Source/main.aux (/home/aaronb/Projectbrary/CosmicDust/Source/abstract.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/ch1_intro.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/ch2_datasources.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/ch3_allsky.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/ch4_lori.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/summary.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/app_pca.aux) (/home/aaronb/Projectbrary/CosmicDust/Source/acknowledgements.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 88.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 88.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FCAE459EF73F04935F418C6EC118FC93;3127.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 60.
+(rerunfilecheck)             Checksum: B5D59BDE5C65992B60D483F3D2EBABCC;3280.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
  ) 
 Here is how much of TeX's memory you used:
- 8499 strings out of 493029
- 130632 string characters out of 6136234
- 239827 words of memory out of 5000000
- 11582 multiletter control sequences out of 15000+600000
- 38663 words of font info for 94 fonts, out of 8000000 for 9000
+ 9347 strings out of 493029
+ 143141 string characters out of 6136234
+ 276931 words of memory out of 5000000
+ 12382 multiletter control sequences out of 15000+600000
+ 42614 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,10n,45p,2479b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.31} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.30} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.29} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.28} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.27} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.26} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.25} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.24} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.23} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.22} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.21} has been referenced but does not exist, replaced by a fixed one
-
+ 44i,14n,48p,2493b,552s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not exist, replaced by a fixed one
@@ -1050,11 +1148,12 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/aaronb/Projectbrary/latex/CosmicDust/Source/main.pdf (61 pages, 3790062 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /home/aaronb/Projectbrary/CosmicDust/Source/main.pdf (53 pages, 8564106 bytes).
 PDF statistics:
- 1815 PDF objects out of 2073 (max. 8388607)
- 1233 compressed objects within 13 object streams
- 241 named destinations out of 1000 (max. 500000)
- 458 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2409 PDF objects out of 2487 (max. 8388607)
+ 1459 compressed objects within 15 object streams
+ 251 named destinations out of 1000 (max. 500000)
+ 532 words of extra memory for PDF output out of 10000 (max. 10000000)
 
