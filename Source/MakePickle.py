@@ -167,7 +167,7 @@ phot_modesub = pd.DataFrame(phot.values-allsky_modes.values,columns=phot.columns
 phot_mpsub = pd.DataFrame()
 
 for map in phot.columns:
-	phot_mpsub[map] =  hp.remove_monopole(phot[map], nest=True, gal_cut=20)
+	phot_mpsub[map] =  hp.remove_monopole(phot[map], nest=True, gal_cut=30)
 
 
 import pickle
