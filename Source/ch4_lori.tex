@@ -73,7 +73,7 @@
     \label{fig:orionis-corr-matrix}
   \end{figure}
 
-  \subsection{SED Fitting}
+  \subsection{Comparison with SED Fitting}
     We performed a full dust SED fitting on the LOri photometry, according to the \cite{galliano11} dust model. We used a mixture of amorphous carbon and silicate dust. Indeed, this dust mixture is more emissive than the standard silicate-graphite \citep{draine07}, by a factor of 2-3. As was shown by Herschel, in the LMC \citep{galliano11}, and by Planck, in the Milky Way \citep{planckIntXXIX16}, this increase of emissivity is necessary to have a proper fit of the sub-mm emission. We assume that the radiation field heating this dust mixture is the Galactic ISRF \citep{math83}, scaled by a factor $U$. We also assume, following \cite{dale01}, that the dust is exposed to a distribution of starlight intensity, distributed as:
 
     \begin{equation}
@@ -83,17 +83,26 @@
 
     between $U_{min}$ and $U_{max}$, where $U_{min}$, $U_{max}$ and $\alpha{}$ are free parameters. An old stellar population template (PEGASE; \citep{fioc97}) is added to this SED in order to model the near-IR emission. We perform a simple least-squares analysis.
 
-    Fig. \ref{fig:fred_LOri_notes_Oct2017_fig1a}
+    Figs. \ref{fig:fred_LOri_notes_Oct2017_fig1a,fig:fred_LOri_notes_Oct2017_fig1b } shows
 
     \begin{figure}
 
       \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf}
-      \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf}
+      %\includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf}
       \centering
-      \caption{Example SED of a pixel within $\lambda$~Orionis, along with the dust SED model fit results, and the synthetic photometry points.}
+      \caption{Example SED of a pixel within $\lambda$~Orionis, along with the dust SED model fit results, and the synthetic photometry points. The center of this pixel corresponds to ...}
       \label{fig:fred_LOri_notes_Oct2017_fig1a}
     \end{figure}
 
+    \begin{figure}
+      %\includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf}
+      \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf}
+      \centering
+      \caption{The same as Fig. \ref{fig:fred_LOri_notes_Oct2017_fig1b}, but for a different pixel position. Corresponds to galactic coordinates...}
+      \label{fig:fred_LOri_notes_Oct2017_fig1b}
+    \end{figure}
+
+    Based on the dust properties derived from these SED fits, we attempt investigate whether any fitted parameter shows a preferential relation with the AME. Fig. \ref{fig:fred_LOri_notes_Oct2017_fig1a}
 
   \section{Discussion}
     \subsection{AME:PAH}
