@@ -33,6 +33,17 @@
 		\subsection{Multi-wavelength characterization}
 			Figure \ref{fig:orionis-img} shows the region in 12 photometric bands, from the mid to far IR. Contours indicate the region's shape in the PCAME map. Figure \ref{fig:orionis-corr} shows IR to AME cross correlation plots, for all pixels within the 10$^{\circ}$ by 10$^{\circ}$ $\lambda$~Orionis region. The correlation is most clear for the shortest and for the longest wavelength bands, and weakens the most at around 60~$\mu$m. The weakening of the correlation score appears to come from brighter 25 to 90~$\mu$m emission within the ring. The spectrum is consistent with warm thermal dust emission, heated by $\lambda$~Orionis and its associates. The ring structure itself appears relatively consistent accross all bands. Fig. \
 
+            To assess the robustness of the correlation scores, we carry out tests for each IR band vs. the AME. The data are resampled 1000 times for each correlation test. This is repeated for both $r_{s}$ and $r_{p}$ based tests. The distributions of the boostrap resamplings are showin in Figs. \ref{fig:bootstrap_vs_AME}. For both test cases, the best correlations are the longest and shortest bands. In the Pearson correlation case, the strongest correlation is the A9 band vs the AME.
+
+            \begin{figure}
+              \includegraphics[width=\textwidth]{../Plots/ch_lori/bootstrap_vs_AME_pearson_i1000.pdf}
+              \includegraphics[width=\textwidth]{../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf}
+              \centering
+              \caption{Re-sampeld (Bootstrap) correlation tests for IR emission in $\lambda$~Orionis vs. AME, for both Spearman and Pearson correlation tests.)
+              }
+              \label{fig:bootstrap_vs_AME}
+            \end{figure}
+
 		\subsection{Ionization fraction}
 			We attempt to estimate the relative fraction of charged to neutral PAHs via the $R(A9:I12)$ band ratio. A9 is known to cover ionized PAH features (as well as neutral) whereas I12 primarily covers neutral features.
       %Fig. \ref{fig:lori_RA9I12} indicates that R(A9:I12) correlates with $AME_{var}$
