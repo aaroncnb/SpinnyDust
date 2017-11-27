@@ -32,7 +32,7 @@
 
 		\subsection{Multi-wavelength characterization}
 			Figure \ref{fig:orionis-img} shows the region in 12 photometric bands, from the mid to far IR, covering key dust emission regimes as described in Ch. \ref{ch:datasources}.
-			} Contours indicate the region's shape in the PCAME map. Figure \ref{fig:orionis-corr} shows IR to AME cross correlation plots, for all pixels within the 10$^{\circ}$ by 10$^{\circ}$ $\lambda$~Orionis region. The correlation is most clear for the shortest and for the longest wavelength bands, and weakens the most at around 60~$\mu$m. The weakening of the correlation score appears to come from brighter 25 to 90~$\mu$m emission within the ring. The spectrum is consistent with warm thermal dust emission, heated by $\lambda$~Orionis and its associates. The ring structure itself appears relatively consistent accross all of the IR bands.
+			Contours indicate the region's shape in the PCAME map. Figure \ref{fig:orionis-corr} shows IR to AME cross correlation plots, for all pixels within the 10$^{\circ}$ by 10$^{\circ}$ $\lambda$~Orionis region. The correlation is most clear for the shortest and for the longest wavelength bands, and weakens the most at around 60~$\mu$m. The weakening of the correlation score appears to come from brighter 25 to 90~$\mu$m emission within the ring. The spectrum is consistent with warm thermal dust emission, heated by $\lambda$~Orionis and its associates. The ring structure itself appears relatively consistent accross all of the IR bands.
 
             To assess the robustness of the correlation scores, we carry out tests for each IR band vs. the AME. The data are resampled 10,000 times for each correlation test. This is repeated for both $r_{s}$ and $r_{p}$ based tests. The distributions of the boostrap resamplings are show in in Figs. \ref{fig:bootstrap_vs_AME}. For both test cases, the best correlations are the longest and shortest wavelength bands. In the $r_{p}$ case, the strongest correlation is the A9 band vs the AME.
 
@@ -56,10 +56,10 @@
 
           between $U_{min}$ and $U_{max}$, where $U_{min}$, $U_{max}$ and $\alpha{}$ are free parameters. An old stellar population template (PEGASE; \citep{fioc97}) is added to this SED in order to model the near-IR emission.
 
-          We utilize both the Bayesian dust SED fitting approach by Galliano (in prep.), and a least-squares analysis. The SED fitting accounts for estimates of the respective calibration uncertainties, and the spectral response cures (Fig. \ref{fig:figure  })
+          We utilize both the Bayesian dust SED fitting approach by Galliano (in prep.), and a least-squares analysis. The SED fitting accounts for estimates of the respective calibration uncertainties, and the spectral response curves (Fig. \ref{fig:Filter_coverage_example_full})
 
-          Figs. \ref{fig:fred_LOri_notes_Oct2017_fig1a,fig:fred_LOri_notes_Oct2017_fig1b } shows
-
+        \ref{fig:fred_LOri_notes_Oct2017_fig1a},\ref{fig:fred_LOri_notes_Oct2017_fig1b} shows
+`
 		\subsection{Ionization fraction}
 			We attempt to estimate the relative fraction of charged to neutral PAHs via the $R(A9:I12)$ band ratio. A9 is known to cover ionized PAH features (as well as neutral) whereas I12 primarily covers neutral features.
       %Fig. \ref{fig:lori_RA9I12} indicates that R(A9:I12) correlates with $AME_{var}$
@@ -105,7 +105,6 @@
     \begin{figure}
 
       \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf}
-      %\includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf}
       \centering
       \caption{Example SED of a pixel within $\lambda$~Orionis, along with the dust SED model fit results, and the synthetic photometry points. The center of this pixel corresponds to ...}
       \label{fig:fred_LOri_notes_Oct2017_fig1a}
@@ -115,7 +114,7 @@
       %\includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf}
       \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf}
       \centering
-      \caption{The same as Fig. \ref{fig:fred_LOri_notes_Oct2017_fig1b}, but for a different pixel position. Corresponds to galactic coordinates...}
+      \caption{The same as Fig. \ref{fig:fred_LOri_notes_Oct2017_fig1a}, but for a different pixel position. Corresponds to galactic coordinates...}
       \label{fig:fred_LOri_notes_Oct2017_fig1b}
     \end{figure}
 
