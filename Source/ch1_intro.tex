@@ -34,26 +34,24 @@
 
     Infrared astronomy was essentially non-existant as recently as the 1920s, if we judge by the first IR observations \citep{pettit22, pettit28}. Mainstream IR astronomy is perhaps much younger, only really taking off - literally- in the post-war era, via ballon and rocket borne experiments \citep{johnson66}. Compare this to visible wavelengths, a field so old we name it after the bio-evolutionary advent of sight, itself. Even radio astronomy with its own logistical and technological challenges, has been around since at least 1932.
 
-    Astronomers have not been content to be constrained by atmospheric IR windows, even from the best of ground-based sites. Or perhaps interests have shifted so dramtically since 1966, that all of the investigations enabled by rocket-based, space-based, even Boeing 747-based IR astronomy \citep{young12} would have bored 75\% of astronomers in the '60s. The meaning of ``far infrared'' has even redshifted, so to speak, from the \cite{johnson66} definition of ``4 to 22 um''- consider the ``Far Infrared Surveyor'' instrument onboard the AKARI satellite, which observed from 50 to 180 microns
+    Astronomers have not been content to be constrained by atmospheric IR windows, even from the best of ground-based sites. Or perhaps interests have shifted so dramtically since 1966, that all of the investigations enabled by rocket-based, space-based, even Boeing 747-based IR astronomy \citep{young12} would have bored 75\% of astronomers in the '60s. The meaning of ``far infrared'' has even redshifted, so to speak, from the \cite{johnson66} definition of ``4 to 22 um''- consider the ``Far Infrared Surveyor'' instrument onboard the AKARI satellite \citep{akari07}, which observed from 50 to 180~$\mu$m \citep{kawada07}
 
-     For our purposes, we consider the FIR to cover 60 to 550~$\mu$m, partially out of convenience- FIR bands, in this paper, means the IRAS 60 and 100 micron, all four FIS bands, and the HFI~857~GHz and 545~GHz bands. The two IRC bands and the IRAS~12 and 25~$\mu$m bands we will refer to collectively as the MIR bands.
+     For our purposes, we consider the FIR to cover 60 to 550~$\mu$m, partially out of convenience- FIR bands, in this paper, means the Infrared Astronomical Satellite (IRAS) 60 and 100~$\mu$m \citep{iras84}, all four FIS bands, and the Planck Observatory's High Frequency Instrument (HFI)~857~GHz and 545~GHz bands \citep{planckEarly11I, hfi14viii}. The two AKARI Infrared Camera (IRC) \citep{irc07,ishihara10} bands and the IRAS~12 and 25~$\mu$m bands we will refer to collectively as the mid-infrared (MIR) bands.
 
     The ability to map and archive the sky with satellites - not only in the optical and infrared, but well into the microwave regime - has enabled interdisciplinary research of the ISM. The merits of multiwavelength based investigations arise from the simple fact that the ISM is very complex- both in terms of the myriad forms of matter present - from plasmas to dust grains - and in countless physical processes at play. Consider the complex case of a supernova remnant influencing surrounding ISM: through a combined analysis of radio, mid-far infrared, and X-ray data, \cite{lau15} were able to characterize the history of dust production, heating, and destruction within the Sgr A East supernova remnant.
 
      In the case of interstellar dust emission, especially, multi-wavelength analysis is crucial to understanding the individual components of interstellar dust emission. If we assume that grains in local thermal equilibrium emit in an essentially classical manner, we will quickly become frustrated by multi-band IR observations. It is believed that factors such as variations in the optical properties of dust grains leads to a deviation from blackbody emission. The intensity of such emission has come to be represented by a ``modified blackbody'' function, provided in \cite{onaka99} as follows:
-
      \begin{equation}
-         I_d(\nu) \propto \nu{}^{\beta{}_d}B_\nu{}(T_d)
+         I_d(\nu) \propto \nu{}^{\beta{}_d}B_\nu{}(T_d),
          \label{eq:mbb}
      \end{equation}
-
      where $\beta$ is known as the ``emissivity index'', and $T_d$ is the dust temperature. Tracing this emission from microwave to IR wavelengths, in the diffuse Milky Way, \cite{planckIntXXIX16} find a typical value of $1.6 \pm 0.1$ for $\beta$, and $19.4 \pm 1.3$~K for the dust temperature (assuming a single temperature component).
 
-     Even after adopting a modified blackbody, we will still be unable to explain dust emission if we include wavelengths from the mid to Far-IR. A modified blackbody underestimates dust emission on the Wiens side, such as that traced by IRAS and COBE/DIRBE, and this cannot be explained by temperature variations of grains large enough to be in thermal equilibirum \citep{sodroski87, sodroski94}. This excess likely comes from a smaller population of interstellar dust grains \citep{purcell76, sellgren84,dwek86,draine01}.
+     Even after adopting a modified blackbody, we will still be unable to explain dust emission if we include wavelengths from the mid to Far-IR. A modified blackbody underestimates dust emission on the Wiens side, such as that traced by IRAS, an effect first reported by \cite{boulanger85}, and also found later in data collected by the Cosmic  Background Explorer (COBE)'s Diffuse Infrared Background Experiment \citep{sodroski87, sodroski94}. This excess cannot be explained by temperature variations of grains large enough to be in thermal equilibirum, and likely comes from a smaller population of interstellar dust grains \citep{purcell76, sellgren84,dwek86,draine01}.
 
      From the mid-to-near IR however, spectroscopic observations enabled and required the simple-two populations model of larger and smaller dust, to be expanded. ``Unidentified IR bands'' from~ 3 to 11~$\mu$m \cite{gillet73, sellgren83, onaka96} have come to be explained via polycyclic aromatic hydrocarbons (PAHs)\citep{allamandola85,puget85}. PAHs are a class of molecules composed primarily of fused carbon rings such as corranulene.
 
-    Moving in the opposite direction, into the Rayleigh-Jeans resime of thermal dust emission, multi-wavelength observations have opened up a new discipline: the disentagnlement of interstellar dust emission from non-dust emission components. Most notably, separating fluctuations in the cosmic microwave background (CMB) fluctuations from the microwave extent of thermal dust emission. Those studying the Milky Way itself, from the far IR into microwave and radio frequencies, are now collaborating closely with those interested in the precise nature of the CMB.
+    Moving in the opposite direction, into the Rayleigh-Jeans resime of thermal dust emission, multi-wavelength observations have opened up a new discipline: the disentagnlement of interstellar dust emission from non-dust emission components. Most notably, separating fluctuations in the cosmic microwave background (CMB) from the microwave extent of thermal dust emission. Those studying the Milky Way itself, from the far IR into microwave and radio frequencies, are now collaborating closely with those interested in the precise nature of the CMB.
 
 \section{Microwave foregrounds}
 
@@ -65,13 +63,13 @@
 
       In our efforts to decompose and understand galactic microwave emission itself, there remains a constant antagonist. Galactic foregrounds had been broken down into 3 dominant components: free-free emission from ionized regions, synchrotron emission generated by electrons relativistically by the Milky Way's magnetic field, and the microwave extent of thermal dust emission \citep{wmap03b, leach08, planckXII}. Deviations from this understanding began to appear in the early 1990s, with efforts by \cite{kogut96, leitch97} to carefully investigate the CMB. They had found a component of the microwave sky which implied unlikely spectral indices for free-free or synchrotron emission.
 
-        AME generally takes the form of an 'excess' continnuum emission source, having a peak somewhere between 10 to 40~GHz. This excess is defies predictions for known microwave emission mechansisms. AME still lacks a concrete physical explanation. Also, the term itself can be a bit confusing, as the word ``anomalous'' tends to imply localized outlier. The AME is shown to more than an isolated anomaly, but an added component of microwave emission appearing throughout the galaxy \citep{deoliveiracosta97,wmap03b,tibbs11,planckxx11,dickinson13r}.
+        AME generally takes the form of an 'excess' continnuum emission source, having a peak somewhere between 10 to 40~GHz (see Fig. \ref{fig:mw_foregrounds_demo_rOph}). This excess defies predictions for known microwave emission mechansisms. AME still lacks a concrete physical explanation. Also, the term itself can be a bit confusing, as the word ``anomalous'' tends to imply localized outlier. The AME is shown to be more than an isolated anomaly, but an added component of microwave emission appearing throughout the galaxy \citep{deoliveiracosta97,wmap03b,dickinson13r}. Fig \ref{fig:AME-contours} shows two prominent AME regions, $\rho$~Ophiuchus and the Persues Molecular Cloud investigated by \cite{tibbs11,planckxx11}, as they appear in AKARI/IRC~9$\mu$m all-sky map \citep{ishihara10}.
         In this section we will explain that while there is indeed much mystery as to the exact mechanism(s) producing the AME, what causes its spectral variations, and what might be its physical carrier(s) - it is by now, perhaps less than anomalous. Following subsections will discuss the history of AME and the produced physical explanations, as well comparisons between the AME and infarred emission from interstellar dust.
 
     \begin{figure}
       \centering
       \includegraphics[width=\textwidth]{../Plots/ch_intro/mw_foregrounds_demo_rOph.pdf}
-        \caption{An example of a potential makueup of microwave emission components. Photometry points are extracted from the Planck and WMAP all-sky maps, for a region well-known for prominant AME, $\rho$~Ophiuchus. \citep{planckxx11}}
+        \caption{An example of a potential makueup of microwave emission components. Photometry points are extracted from the Planck and WMAP all-sky maps, for a region well-known for prominant AME, $\rho$~Ophiuchus \citep{planckxx11}.}
       \label{fig:mw_foregrounds_demo_rOph}
     \end{figure}
 
@@ -97,11 +95,10 @@
     \begin{equation}
     {\omega_T\over 2\pi} =
     \langle\nu^2\rangle^{1/2}
-    \approx 5.60\times 10^9 a_{-7}^{-5/2}\xi^{-1/2}T_2^{1/2}~~~{\rm Hz}
+    \approx 5.60\times 10^9 a_{-7}^{-5/2}\xi^{-1/2}T_2^{1/2}~~~{\rm Hz},
     \label{eq:nurms}
     \end{equation}
-
-    where $T$ is the gas temperature, $a$ is the grain size, and $\xi$ represents the deviation from a spherical moment of intertia. Assuming a gas temperature of 100~K, roughly spherical grains, and a dipole moment on the order of 1~debye, Eq. \ref{eq:nurms} implies an oscillator size of approximately 10~nm. Thus PAHs, as considered by \cite{ysard10a}, are a primary candidate spinning dust carrier, due to their expected size range.
+    where $T$ is the gas temperature, $a$ is the grain size, and $\xi$ represents the deviation from a spherical moment of intertia. Assuming a gas temperature of 100~K, roughly spherical grains, and a dipole moment on the order of 1~debye, Eq. \ref{eq:nurms} implies an oscillator size of approximately 1~nm. Thus PAHs, as considered by \cite{ysard10a}, are a primary candidate spinning dust carrier, due to their expected size range.
 
     2) Magnetic dipole emission, caused by thermal fluctuations in grains with magnetic inclusions, proposed by \cite{draine99}.
      More recently, modeled spectra for potential candidate carriers have appeared in the literature: PAHs, grains with magnetic inclusions \citep{draine13, ali-haimoud14, hoang16a}.
@@ -114,13 +111,13 @@
       We explore the case that the AME signature arises from spinning dust emission. If the AME is carried by spinning dust, the carrier should be small enough that it can be rotationally excited to frequencies in the range of 10-40~GHz, and must have a permanent electric dipole. Within contemporary dust SED models, only the polycyclic aromatic hydrocarbon family of molecules (PAHs), or nanoscale amorphous carbon dust fit these criteria. Those PAHs which have a permanent electric dipole (i.e. coranulene, but not symmetric molecules like coronene), can emit rotationally. However the carrier need not be carbon-based. Indeed, \cite{hensley17a} claim that AME can be explained without carbonaceous carriers, using only spinning nanosilicates.
 
      \subsubsection{Spinning PAHs?}
-       Assuming the rotational emission model of \cite{draine98b}, the AME signature (consistent with peaked, continuum emission having a peak between 15 and 50~GHz ) implies very small oscillators (\textasciitilde{}10~nm).
+       Assuming the rotational emission model of \cite{draine98b}, the AME signature (consistent with peaked, continuum emission having a peak between 15 and 50~GHz ) implies very small oscillators (\textasciitilde{}1s~nm).
 
        In any case, the PAH class of molecules are the only spinning dust candidate so far which show both: \\
        1) Evidence of abundance in the ISM at IR wavelengths, and \\
        2) A predicted range of dipole moments (on order of 1~debye), to produce the observed AME signature \citep{draine98b, lovas05, thorwirth07}.
 
-       However, it should be noted that the although nanosilicates have not yet been detected in the ISM, \cite{hensley17a} propose that an upper bound on the abundance of nanosilicates by \cite{li01} (based on IRTS observations by \cite{onaka96}), allow such small spinning grains to be composed primarily of silicates.
+       However, it should be noted that although nanosilicates have not yet been detected in the ISM, \cite{hensley17a} propose that an upper bound on the abundance of nanosilicates by \cite{li01} (based on IRTS observations by \cite{onaka96}), allow such small spinning grains to be composed primarily of silicates.
 
     While neither nanosilicates nor any particular species of PAHs have been conclusively identified in the ISM, there is far more empiracal evidence for PAH-like dust there is for nanosilicates. Mid-infrared features associated with PAH-like aromatic materials have been observed. In fact, ``the PAH features'' are ubiquitous in the ISM \citep{giard94,onaka96,onaka00}, such that the carriers must be abundant. \cite{andrews15} strongly argue for the  existence of a dominant ``grandPAH'' class, containing 20 to 30 PAH species.
 
@@ -131,16 +128,13 @@
 
           The overall pattern among large-scale studies seems to show that all of the dust-tracing photometric bands correlate with the AME (and each other) to first-order.  On an all-sky, pixel-by-pixel basis, at 1$^{\circ}$ angular resolution, \cite{ysard10b} find that 12~$\mu$m emission, via IRAS, correlates slightly more strongly with AME (via WMAP) than with 100~$\mu$m emission.  They also find that scaling the IR intensity by the interstellar radiation field strength (given as $G_0$, a measure of ISRF relative to that of the solar neighborhood) improves both correlations. They interpret this finding as evidence that AME is related to dust, and more closely related to the small stochastically emitting dust - predominantly PAHs- that is traced by 12~$\mu$m emission.
           The improvement of the correlations after scaling by $G_0$ is expected, considering the following equation for the power emitted by a spinning dust, from \cite{draine98b}:
-
         \begin{center}
         \begin{equation}
-        P = {4\over9} {\mu^2\omega^4\over c^3}
+        P = {4\over9} {\mu^2\omega^4\over c^3},
         \label{eq:Pspin}
         \end{equation}
         \end{center}
-        where $\mu$ is the magnitude of the dipole moment, for a grain spinning at a frequency of $\omega$. Thus the power emitted depends only on the dipole moment and the grain angular velocity. Because photon absorption itself is not expected to significantly affect $\omega$,\citep{draine98b, ali-haimoud09}, scaling by $G_0$ is expected to give a better correlation with IR intensity.
-
-        Also, because the wavelength of emission from PAHs is not temperature dependent, the 12~$\mu$m intensity scaled by $G_0$, should be proportional to the column density of PAHs.
+        where $\mu$ is the magnitude of the dipole moment, for a grain spinning at a frequency of $\omega$. Thus the power emitted depends only on the dipole moment and the grain angular velocity. Because photon absorption itself is not expected to significantly affect $\omega$,\citep{draine98b, ali-haimoud09}, scaling by $G_0$ is expected to give a better correlation with IR intensity. Also, because the wavelength of emission from PAHs is not temperature dependent, the 12~$\mu$m intensity scaled by $G_0$, should be proportional to the column density of PAHs.
 
           In a similar work however \cite{hensley16} report a lack of support for the spinning PAH hypothesis. Finding that fluctuations in the ratio of PAH-dominated 12~$\mu$m emission (via WISE) to dust radiance, $R$, (via Planck) do not correlate with the ratio of AME intensity to $R$, they conclude that the AME is not likely to come from PAHs. In terms of emission intensity however, their findings are consistent with \cite{ysard10b} in $I_{12~\mu{}m}$ correlates well with $I_{AME}$. Thus there remains an open question as to what the actual carrier of the AME is.
 
@@ -160,4 +154,4 @@
     We do not explore the modeling of microwave dust emission itself, rather we refer to estimates of spinning dust emisison provided in the literature \citep{planckXII, wmap03b} in the form of archival data and parameter maps. We consider this problem first on an all-sky basis, not focusing on any pre-selected object of the sky - in order to assess if there any general pattern between the IR and the AME, beyond the AME-dust correlation already described above. We then focus on a region highlighted by the Planck Collaboration as being especially worthy of further investigation \citep{planck15X}, and has a resolvable topology even at 1-degree resolution. Essentially all of the analyses and conclusions presented in this work apply to an angular scale of approximately 1-degree, and only for the given component separation methods (Solar system, galactic, extragalactic) used by each of the data providers.
 
   \subsection{Code availability}
-    This dissertation is accompanied by a github repository\footnote{Available at: \url{https://github.com/aaroncnb/CosmicDust}.} Virtually all of the analyses code are available in that repository, in the form of Jupyter notebooks (along with the figures and the code used to generate them.) The dust SED fitting code is not part of that reposittory, but is described in Galliano et al. (in prep.)
+    This dissertation is accompanied by a github repository.\footnote{Available at: \url{https://github.com/aaroncnb/CosmicDust}.} Virtually all of the analyses code are available in that repository, in the form of Jupyter notebooks (along with the figures and the code used to generate them.) The dust SED fitting code is not part of that reposittory, but is described in Galliano et al. (in prep.)

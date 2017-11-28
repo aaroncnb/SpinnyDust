@@ -2,18 +2,15 @@
   \label{ch:datasources}
 
   \section{A collection of skies}
-    This work relies completely on all-sky surveys. All of the maps utilized are photometric-band infrared maps, except for the AME data, which is an all-sky component separation analysis product, from the Planck Collaboration's efforts to separate galactic foregrounds from the CMB.
-
-
+    This work relies completely on all-sky surveys. All of the maps utilized are photometric-band infrared maps, except for the AME data, which is an all-sky component separation analysis product, from the Planck Collaboration's efforts to separate galactic foregrounds from the CMB. Table \ref{tab:data} summarizes the observational data used in this thesis. In total, we employ all-sky maps from 12 photometric bands, spanning the wavelength range of 6.9~$\mu$m to 550~$\mu$m. The following sections give the details of the observational data from each instrument as well as of the parameter maps provided in \cite{planck15X}.\footnote{Planck bands are named according to their central frequency, not wavelength.}
     \begin{table}[h]
-      \label{tab:data}
       \caption{Observational data sources used in this article}
       \centering
         \begin{tabular}{lrrrrr}
         \hline\hline
         Instrument & Central Wavelength & FWHM & Cali & Reference \\
         \hline
-        AKARI/IRC & 9~$\mu$m  &  \~{}10$"$ & \textless 10\%   & \tablefootnote{\citep{ishihara10}} \\
+        AKARI/IRC & 9~$\mu$m  &  \~{}10$"$ & \textless 10\%   & \tablefootnote{\cite{ishihara10}} \\
         AKARI/IRC & 18~$\mu$m & \~{}10$"$  & \textless 10\%     & '' \\
         AKARI/FIS & 65~$\mu$m  & 63$"$ & \textless 10\% & \tablefootnote{\cite{doi15,takita16}} \\
         AKARI/FIS & 90~$\mu$m  & 78$"$ & \textless 10\%   & '' \\
@@ -26,22 +23,23 @@
         Planck/HFI & 345~$\mu$m & 4.7$'$ & & \tablefootnote{\cite{hfi14viii}} \\
         Planck/HFI & 550~$\mu$m & 4.3$'$& & '' \\
         \hline
+         \label{tab:data}
       \end{tabular}
     \end{table}
 
-  \subsection{Primary band of interest}
-  %\footnote{Not to be confused with ``The band primarily interested'' in dust, Queen.}
-    The AKARI/IRC 9~$\mu$m band (A9) provides uniquely complete coverage of the PAH bands at 6.2, 7.7, 8.6, and 11.2~$\mu$m, and may be an excellent tool for testing PAH-related hyoptheses on an all-sky basis. The combination of A9 with W12 and/or I12 may be especially insightful. In total, we employ all-sky maps from 12 photometric bands, spanning the wavelength range of 6.9~$\mu$m to 550~$\mu$m\footnote{Planck bands are named according to their central frequency, not wavelength.}
 
-  \section{Infrared Data}
-    \subsection{AKARI}
+  \section{AKARI}
+
        The AKARI infrared space telescope revealed an entire sky of infrared light, from the mid to far infrared, via two instruments \citep{akari07} the Infrared Camera (IRC)\citep{irc07} and the Far Infrared Surveyor (FIS) \citep{fis07}.
 
-       \paragraph{AKARI/IRC PAH feature coverage}
-         The IRC's 9~$\mu$m band all-sky map demonstrates the abundance of the PAH bands carrier in the Milky Way \citep{ishihara10}. Figure \ref{fig:Filter_coverage_example_MIR} shows the coverage of the MIR bands along with an example galactic cirrus SED. The 9~$\mu$m band uniquely covers major ionized PAH features at 6.2 and 7.7~$\mu$m; as well as neutral PAH features at 8.6 and 11.2~$\mu$m across the entire sky \citep{irc07}. The IRAS 12~$\mu$m band covers the 11.2 and 8.6~$\mu$m features, and the similarly-shaped WISE~12~$\mu$m band covers primarily the 11.2~$\mu$m feature but do not cover the 7.7~$\mu$m completely.
+       \subsection{AKARI/Infrared Camera (IRC) }
+           IRC proivded us with both spectroscopic and phometric data from the near to mid-infrared. In this work, we utilize the all-sky maps centered at 9 and 18~$\mu$m, created during by the IRC's fast-scanning mode. We utilize the most recent version of the IRC data (Ishihara, et al., in prep.) This version has had an updated model of the Zodiacal light, fitted and subtracted. The details of the improved Zodi-model, which offers an improvement over that used for the IRAS all-sky maps, are given in \cite{kondo16}.
+
+       \subsubsection{PAH feature coverage}
+         The IRC's 9~$\mu$m band all-sky map demonstrates the abundance of the PAH bands carrier in the Milky Way \citep{ishihara10}. Figure \ref{fig:Filter_coverage_example_MIR} shows the coverage of the MIR bands along with an example galactic cirrus SED. The 9~$\mu$m band uniquely covers major ionized PAH features at 6.2 and 7.7~$\mu$m; as well as neutral PAH features at 8.6 and 11.2~$\mu$m across the entire sky \citep{irc07}. This IRC is an excellent tool for testing PAH-related hyoptheses. The combination of A9 with W12 and/or I12 may be especially insightful. The IRAS 12~$\mu$m band covers the 11.2 and 8.6~$\mu$m features, and the similarly-shaped WISE~12~$\mu$m band covers primarily the 11.2~$\mu$m feature but do not cover the 7.7~$\mu$m completely. The other MIR bands used in this study, IRC~18~$\mu$m and IRAS~25~$\mu$m, do cover strong PAH features and are expected to be dominated rather by emission from very small grains (VSGs).
 
          \paragraph{In-band conribution from PAHs}
-           According to the distribution of PAH features across the response filters (Fig. \ref{fig:Filter_coverage_example_PAH}), it is expected that the IRC 9~$\mu{}$m band is most dominated by PAH emission even with increasing $G_0$. These contributions remain relatively constant out to a $G_{0}$ of about 100, with the contribution from warm dust becomming a larger factor for the IRAS 12~$\mu$m and WISE 12~$\mu$m bands. Thus, according the the DL01 template, IRC 9~$\mu$m should have the highest contribution from PAHs out to extreme radiation fields. At least to the extent with which PAHs can endure harsh UV radiation, as PAHs are expected to be destroyed in some environments\cite{pilleri12, pavlyuchenkov13}.
+           According to the distribution of PAH features across the response filters (Fig. \ref{fig:Filter_coverage_example_PAH}), it is expected that the IRC 9~$\mu{}$m band is most dominated by PAH emission even with increasing $G_{0}$. These contributions remain relatively constant out to a $G_{0}$ of about 100, with the contribution from warm dust becomming a larger factor for the IRAS 12~$\mu$m and WISE 12~$\mu$m bands. Thus, according the the DL01 template, IRC 9~$\mu$m should have the highest contribution from PAHs out to extreme radiation fields. At least to the extent with which PAHs can endure harsh UV radiation, as PAHs are expected to be destroyed in some environments. \citep{pilleri12, pavlyuchenkov13}.
 
           \paragraph{Potential to trace PAH ionization}
             Fig. \ref{fig:inband_ionfrac_ratios} demonstrates how the band ratios of the IRC~$\mu$m band vs. the other MIR bands change with different modeled PAH ionization fractions (determined using the DustEM default model template, by \cite{dustem11}. This band ratio can be determined, because the IRC9 filter is more sensitive to ionized PAH features, relative to IRAS12 or to WISE12.
@@ -90,13 +88,15 @@
            \label{fig:inband_ionfrac_ratios}
        \end{figure}
 
-        We utilize the most recent version of the IRC data (Ishihara, et al., in prep.) This version has had an updated model of the Zodiacal light, fitted and subtracted. The details of the improved Zodi-model, which offers an improvement over that used for the IRAS all-sky maps, are given in \cite{kondo16}.
 
-      The AKARI Far Infrared Surveyor (FIS) gives us photometric data around the peak of the typical thermal dust SED. FIS was equipped with four wavebands: two narrow bands centered at 65~$\mu$m and at 160~$\mu$m, and two wide bands at 90~$\mu$m and at 140~$\mu$m. An all-sky survey was carried out at each band \citep{kawada07}, and the processed maps have been publicly released \citep{doi15}.
 
-       The Planck Space Observatory (Planck) High Frequency Instrument (HFI) all-sky maps, spanning 100 to 857~GHz \citep{hfi14viii} help constrain the far IR dust emissivity. This study utilizes the 857~GHz (345~$\mu$m) and 545~GHz (550~$\mu$m) bands.
+      \subsection{The AKARI Far Infrared Surveyor (FIS)}
+           FIS gives us photometric data around the peak of the typical thermal dust SED. FIS was equipped with four wavebands: two narrow bands centered at 65~$\mu$m and at 160~$\mu$m, and two wide bands at 90~$\mu$m and at 140~$\mu$m. An all-sky survey was carried out at each band \citep{kawada07}, and the processed maps have been publicly released \citep{doi15}.
+    \subsection{Planck Observatory High Frequency Instrument (HFI)}
+       The HFI all-sky maps, spanning 100 to 857~GHz \citep{hfi14viii} help constrain the far IR dust emissivity. This study utilizes the 857~GHz (345~$\mu$m) and 545~GHz (550~$\mu$m) bands.
 
-       Data from the Infrared Astronomical Satellite \citep{iras84} all-sky surveys are used to supplement the similarly-centered AKARI photometric bands. The IRAS 12~$\mu$m band is similar to the AKARI 9~$\mu$m band in terms of the sky coverage, central wavelength, and especially in that both surveys are heavily dominated by zodiacal light. We use the Improved Reprocessing of the IRAS Surveys (IRIS) \citep{iris05}, which use undergone a zodiacal-light removal. The Zodiacal light model, however differs between the two bands. The IRAS Zodi-subtraction is primarily based on the \cite{kelsall98} model. Although WISE provides higher resolution than IRAS, we do not utilize the WISE data because we found the WISE all-sky 12~$\mu$m product to essentially trace the Planck HFI 857~GHz map, at 1 degree angular resolution. \cite{hensley16} had noted that this scaling of the WISE map may artificially suppress actual PAH-related variations at low resolution. Moreover, since we are conducting our analysis at 1 degree resolution in order to match the AME data, the higher resolution offered by WISE is not a significant advantage.
+    \section{Infrared Astronomical Satellite (IRAS)}
+       Data from the IRAS \citep{iras84} all-sky surveys are used to supplement the similarly-centered AKARI photometric bands. The IRAS 12~$\mu$m band is similar to the IRC 9~$\mu$m band in terms of the sky coverage, central wavelength, and especially in that both surveys are heavily dominated by zodiacal light. We use the Improved Reprocessing of the IRAS Surveys (IRIS) \citep{iris05}, which use undergone a zodiacal-light removal. The Zodiacal light model, however differs between the two bands. The IRAS Zodi-subtraction is primarily based on the \cite{kelsall98} model. Although WISE provides higher resolution than IRAS, we do not utilize the WISE data because we found the WISE all-sky 12~$\mu$m product to essentially trace the Planck HFI 857~GHz map, at 1 degree angular resolution. \cite{hensley16} had noted that this scaling of the WISE map may artificially suppress actual PAH-related variations at low resolution. Moreover, since we are conducting our analysis at 1 degree resolution in order to match the AME data, the higher resolution offered by WISE is not a significant advantage.
 
   \section{Planck COMMANDER Parameter Maps}
 
@@ -120,7 +120,7 @@
             \label{fig:R_PCAMEtoPCdust}
         \end{figure}
 
-       \subsubsection{Free-free emission}
+       \subsection{Free-free emission}
         Unlike the PCSync component, the fitting of the Planck COMMANDER free-free component map (hereafter, PCff) does not employ any free-free dominated emisison map, even though an earlier Planck AME paper \citep{planckXV} had employed the H-$\alpha$ map by \cite{wham98}. Uncertainties in this map arise from uncertainties in the gas temperature, and the Gaunt factor. This emission source is the dominant source of confusion with AME, especially for Hii regions \citep{planckXV,planckXII, paladini15}.
 
       \subsection{Thermal dust emission}

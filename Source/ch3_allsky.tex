@@ -15,6 +15,9 @@
       \paragraph{Zodical light}
         To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane. Even though we use the Zodi-subtracted maps (\citep{kelsall98, kondo16}), the Zodi residuals are still problematic (especially in the MIR.) Espeically at high ecliptic latitudes, the relative uncertainty of the Zodi-level is not well estimated; S/N may significantly reduced in for faint pixels, mainly for the 9 through 25~$\mu$m.
 
+     \paragraph{Point Sources}
+       The Planck Collaboration provides masks of the pixels they find to include point sources. In our analysis, we mask pixels which are flagged as being point-source contaim
+
     \subsection{AME data}
        The AME data comes from the PR2 astrophysical component datasets, as described in Ch. \ref{ch:datasources}. We show the comparison for 3 different AME estimates: the two AME components ($AME_{var}$ and $AME_{fix}$) as they are provided in PR2 (intensities quoted at reference frequencies\footnote{22.8~GHz for $AME_{var}$, 41~GHz for $AME_{fix}$}. The  $AME_{fix}$ peak freq. is spatially constant at 33.5~GHz ), with $AME_{var}$ and $AME_{fix}$ calculated at each pixel's peak frequency rather than the PR2 reference freq. We do this because there is nothing physically special about the Planck reference frequencies, and because the PR2 $AME_{var}$ component intensity could vary significantly from the intensity at the peak of the fitted spinning dust template. Thirdly we show the corr-correlation matrix with a single AME metric- calculating the integrated intensity at each pixel, for both AME components, creating an $AME_{sum}$ component. Fig. \ref{fig:AME_comps_distplot} compares the distrubution of these 3 components.
 
