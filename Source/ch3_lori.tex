@@ -1,4 +1,5 @@
 \chapter{Analysis of an interesting AME region: $\lambda$~Orionis}
+\label{ch:lori}
 
  \section{An interesting AME region}
 		The $\lambda$~Orionis molecular ring, also known as the Meissa Ring is a massive stucture surrounding the $\lambda$~Orionis O-type star. The ring contains an HII region, ionized by LOri itself and its OB associates \citep{murdin77}. What had been thought of as a star\-forming region of missing molecular gas. At the time \cite{murdin77} even speculated that this could be evidence of an alternate star\-formation pathway, writing: ``Notably we need to know if $\lambda$Ori is an example of a different mode of star formation or [...] simply a case in which the progenitor molecular cloud was exhausted within the last one or two million years.''
@@ -34,14 +35,6 @@
 			Figure \ref{fig:orionis-img} shows the region in 12 photometric bands, from the mid to far IR, covering key dust emission regimes as described in Ch. \ref{ch:datasources}.
 			Contours indicate the region's shape in the PCAME map. Figure \ref{fig:orionis-corr} shows IR to AME cross correlation plots, for all pixels within the 10$^{\circ}$ by 10$^{\circ}$ $\lambda$~Orionis region. The correlation is most clear for the shortest and for the longest wavelength bands, and weakens the most at around 60~$\mu$m. The weakening of the correlation score appears to come from brighter 25 to 90~$\mu$m emission within the ring. The spectrum is consistent with warm thermal dust emission, heated by $\lambda$~Orionis and its associates. The ring structure itself appears relatively consistent accross all of the IR bands.
 
-        \subsection{AME data}
-           The AME data comes from the PR2 astrophysical component datasets, as described in Ch. \ref{ch:datasources}. We show the comparison for 3 different AME estimates: the two AME components ($AME_{var}$ and $AME_{fix}$) as they are provided in PR2 (intensities quoted at reference frequencies\footnote{22.8~GHz for $AME_{var}$, 41~GHz for $AME_{fix}$}. The  $AME_{fix}$ peak freq. is spatially constant at 33.5~GHz ), with $AME_{var}$ and $AME_{fix}$ calculated at each pixel's peak frequency rather than the PR2 reference freq. We do this because there is nothing physically special about the Planck reference frequencies, and because the PR2 $AME_{var}$ component intensity could vary significantly from the intensity at the peak of the fitted spinning dust template. Thirdly we show the corr-correlation matrix with a single AME metric- calculating the integrated intensity at each pixel, for both AME components, creating an $AME_{sum}$ component. Fig. \ref{fig:AME_comps_distplot} compares the distrubution of these 3 components.
-           \begin{figure}
-            \includegraphics[width=\textwidth]{../Plots/ch_allsky/AME_comps_distplot.pdf}
-            \centering
-            \caption{Histograms of the peak intensity AME maps calculated from the original COMMANDER-AME reference frequency maps. AMEvar (blue) indicates the distribution of all pixels in the map, with intensities calculated at their peak frequencies (see Fig.} \ref{fig:AME_commander_freqdist}). AMEfix gives the peak intensity of the spatially-constant frequency component.
-            \label{fig:bootstrap_vs_AME_allsky_masked}
-           \end{figure}
 
             \subsubsection{Bootstrap analysis}
 
