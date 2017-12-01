@@ -19,14 +19,15 @@
         \begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}r}
           \toprule
           \addlinespace[1.5ex]
-          1983 & IRAS    & \cite{iras84}\\
+          1983 & IRAS    & \cite{iras84} \\
           1989 & COBE    & \\
           1999 & Chandra & \\
           2001 & WMAP    & \\
           2003 & 2MASS   &  \\
-          2006 & AKARI   &  \cite{akari07}\\
-          2009 & Planck &\\
-          2009 & WISE   & \cite{wright10}\\
+          2003 & GALEX   & \cite{martin05} \\
+          2006 & AKARI   &  \cite{akari07} \\
+          2009 & Planck &  \cite{planckEarly11I}\\
+          2009 & WISE   & \cite{wright10} \\
 
         \end{tabular}
     \end{table}
@@ -70,14 +71,14 @@
     \begin{figure}
       \centering
       \includegraphics[width=\textwidth]{../Plots/ch_intro/mw_foregrounds_demo_rOph.pdf}
-        \caption{An example of a potential makueup of microwave emission components. Photometry points are extracted from the Planck and WMAP all-sky maps, for a region well-known for prominant AME, $\rho$~Ophiuchus \citep{planckxx11}.}
+        \caption{An example of a potential makueup of microwave emission components. Photometry points are extracted from the Planck and WMAP all-sky maps \citep{hfi14viii}, for a part of the region well-known for prominant AME, $\rho$~Ophiuchus \citep{planckxx11}. The AME curve is produced from a warm neutral medium spinning dust template \citep{ali-haimoud09}, with a frequency-shift applied to approximately fit the microwave data s in \cite{planck15X}}
       \label{fig:mw_foregrounds_demo_rOph}
     \end{figure}
 
     \begin{figure}
       \centering
       \includegraphics[width=\textwidth]{../Plots/ch_intro/AME_contours.pdf}
-        \caption{Two AME prominent regions investigated by \cite{planckxx11, tibbs11}, $\rho$~Ophiuchus and Perseus, as they appear in the AKARI/IRC 9$\mu$m all-sky data at native resolution. White contours show AME at 1-degree resolution, extracted from the map by  \cite{planck15X}.}
+        \caption{Two AME prominent regions investigated by \cite{planckxx11, tibbs11}, $\rho$~Ophiuchus and Perseus, as they appear in the PAH-feature-tracing AKARI/IRC 9$\mu$m all-sky data at native resolution \citep{ishihara10}. White contours show AME at 1-degree resolution, extracted from the map by  \cite{planck15X}. The IRC data shown here is of a much finer resolution than the AME data, at around 10'', demonstrating the critical gap in resolvability of all-sky AME-tracing data itself vs. the IR dust tracers we hope to compare it to. }
       \label{fig:AME-contours}
     \end{figure}
 
@@ -127,18 +128,17 @@
 
        \subsection{AME vs. IR in the literature}
           The overall pattern among large-scale studies seems to show that all of the dust-tracing photometric bands correlate with the AME (and each other) to first-order.  On an all-sky, pixel-by-pixel basis, at 1$^{\circ}$ angular resolution, \cite{ysard10b} find that 12~$\mu$m emission, via IRAS, correlates slightly more strongly with AME (via WMAP) than with 100~$\mu$m emission.  They also find that scaling the IR intensity by the interstellar radiation field strength (given as $G_{0}$, a measure of ISRF relative to that of the solar neighborhood) improves both correlations. They interpret this finding as evidence that AME is related to dust, and more closely related to the small stochastically emitting dust - predominantly PAHs- that is traced by 12~$\mu$m emission.
-          The improvement of the correlations after scaling by $G_{0}$ is expected, considering the following equation for the power emitted by a spinning dust, from \cite{draine98b}:
-        \begin{center}
-        \begin{equation}
-        P = {4\over9} {\mu^2\omega^4\over c^3},
-        \label{eq:Pspin}
-        \end{equation}
-        \end{center}
-        where $\mu$ is the magnitude of the dipole moment, for a grain spinning at a frequency of $\omega$. Thus the power emitted depends only on the dipole moment and the grain angular velocity. Because photon absorption itself is not expected to significantly affect $\omega$,\citep{draine98b, ali-haimoud09}, scaling by $G_{0}$ is expected to give a better correlation with IR intensity. Also, because the wavelength of emission from PAHs is not temperature dependent, the 12~$\mu$m intensity scaled by $G_{0}$, should be proportional to the column density of PAHs.
+          The improvement of the correlations after scaling by $G_{0}$ is expected, if we consider that the UIR intensity, which dominates 12~$\mu$m or 9~$\mu$m photometric bands, is essentially determined by two factors: $I_{12~$\mu$m} \propto{} G_{0}\sigma{}$, where $\sigma$ is the column density of emitting PAHs.  
+      %  \begin{equation}
+      %  P = {4\over9} {\mu^2\omega^4\over c^3},
+      %  \label{eq:Pspin}
+      %  \end{equation}
+      %  \end{center}
+      %  where $\mu$ is the magnitude of the dipole moment, for a grain spinning at a frequency of $\omega$. Thus the power emitted depends only on the dipole moment and the grain angular velocity. Because photon absorption itself is not expected to significantly affect $\omega$,\citep{draine98b, ali-haimoud09}, scaling by $G_{0}$ is expected to give a better correlation with IR intensity. Also, because the wavelength of emission from PAHs is not temperature dependent, the 12~$\mu$m intensity scaled by $G_{0}$, should be proportional to the column density of PAHs.
 
-          In a similar work however \cite{hensley16} report a lack of support for the spinning PAH hypothesis. Finding that fluctuations in the ratio of PAH-dominated 12~$\mu$m emission (via WISE) to dust radiance, $R$, (via Planck) do not correlate with the ratio of AME intensity to $R$, they conclude that the AME is not likely to come from PAHs. In terms of emission intensity however, their findings are consistent with \cite{ysard10b} in $I_{12~\mu{}m}$ correlates well with $I_{AME}$. Thus there remains an open question as to what the actual carrier of the AME is.
+          In a similar work however \cite{hensley16} report a lack of support for the spinning PAH hypothesis. Finding that fluctuations in the ratio of PAH-dominated 12~$\mu$m emission (via WISE) to dust radiance, $R$, (via Planck) do not correlate with the ratio of AME intensity to $R$, they conclude that the AME is not likely to come from PAHs. In terms of emission intensity however, their findings are consistent with \cite{ysard10b} in that $I_{12~\mu{}m}$ correlates well with $I_{AME}$. Thus there remains an open question as to what the actual carrier of the AME is.
 
-         The story is no more clear when looking at the average properties of individual regions. \cite{planckXV} find that among 22 high-confidence ''AME regions" (galactic clouds such as the $\rho$~Ophiuchus cloud and the Perseus molecular cloud complex) AME vs. 12~$\mu$m  shows a marginally weaker correlation than AME vs. 100~$\mu$m (via IRAS). \cite{tibbs11} examined the AME-prominent Perseus Molecular Cloud complex, finding that while there is no clear evidence of a PAH-AME correlation, they do find a slight correlation between AME and  $G_{0}$.
+         The story is no more clear when looking at the average properties of individual regions. \cite{planckXV} find that among 22 high-confidence ``AME regions'' (galactic clouds such as the $\rho$~Ophiuchus cloud and the Perseus molecular cloud complex) AME vs. 12~$\mu$m  shows a marginally weaker correlation than AME vs. 100~$\mu$m (via IRAS). \cite{tibbs11} examined the AME-prominent Perseus Molecular Cloud complex, finding that while there is no clear evidence of a PAH-AME correlation, they do find a slight correlation between AME and  $G_{0}$.
 
 \section{Scope of this Dissertation}
 
