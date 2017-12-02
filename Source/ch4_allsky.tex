@@ -39,8 +39,7 @@
           \caption{All-sky map in A9 emission after applying the combined masks: ecliptic plane, galactic plane, point sources, and pixels with S/N $<1$. This mask essentially outlines the galaxy, except for the most confused regions.}
           \label{fig:A9_masked_map}
         \end{figure}
-
-          Fig. \ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_masked} shows point-density plots for $AME_{var}$ vs. each of the IR bands, after applying the mask described above.
+         Fig. \ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_masked} shows point-density plots for $AME_{var}$ vs. each of the IR bands, after applying the mask described above.
             \begin{figure}
               \includegraphics[width=\textwidth]{../Plots/ch_allsky/AMEvsDust_allsky_allbands_mpsub_kde_masked.pdf}
               \centering
@@ -67,8 +66,6 @@
               \caption{Cross-correlation ($r_{s}$ matrix for the $U$-normalized IR intensities vs. each other, and also against the AME components, other PC products, and ancilliary data. Only the IR maps are divided by $U$- other data is unchanged from Fig. \ref{fig:all_bands_corr_matrix_wAME_spearmanintensity_maskall})}
               \label{fig:all_bands_corr_matrix_wAME_spearmanU_norm_masked}
             \end{figure}
-
-        The intensity correlation-matrix for such a masked comparison is shown in , with the correlation method and maps considered exactly the same as for the unmasked comparison and Fig. \ref{fig:AMEvsDust_allsky_allbands}.
 
         \paragraph{Bootstrap test}
             In addition, for the masked comparison, we carry out a boostrap analysis similar to that discussed in Ch \ref{ch:lori} and Fig. \ref{fig:bootstrap_vs_AME}. The Spearman rank correlation coefficents $r_{S}$ of all of the bands, in intensity, vs. the $AME{var}$ component are shown. This is done only for the masked case, due to the computational challeneges presented by a well-sampled bootstrap of all ~700,000 pixels in the full sky. Because the mask applied here leaves us with approximately 1/7 of the sky, a bootstrap of N iterations with N pixels becomes tractable (though ideally we would prefer $n_{iterations} > n_{samples}$). We show the comparison only for the $AME_{var}$ component also due to computational constraints. The $r_{s}$ distributions for each IR band vs. AME are shown in Fig. \ref{fig:bootstrap_vs_AME_allsky_masked}

@@ -28,7 +28,7 @@
    The ring structure itself indicates excess microwave emission attributed to AME (white contours) while the central region is dominated by free-free emission \citep{aran09, koenig15}. Free-free emisison coming from the Hii phase surrounding the $\lambda$~Orionis association dominates the region's morphology in LFI images. \citep{planck15XXV}. Taking the hint from \cite{planck15XXV} that this may be among the more reliably component separated regions, we evaluate if there is any preferential relationship between any parameter of dust emission and the AME.
 
 	\section{Data preparation}
-		As indicated in Ch. \hyperref[ch:datasources]{\ref{ch:datasources}}, we use 12 photometric all-sky maps. For the IRC data (A9 and A18), we produce mosiacs of $\lambda$~Orionis from the individual tiles provided in the internal all-sky archive.
+		As indicated in Ch. \ref{ch:datasources}, we use 12 photometric all-sky maps. For the IRC data (A9 and A18), we produce mosiacs of $\lambda$~Orionis from the individual tiles provided in the internal all-sky archive.
       \footnote{IRC all-sky data is still in the proprietary phase at the time of this writing, but should be public by April 2018.}
        For the other sources, HEALPix all-sky maps are available publicly, at sufficient resolution relative to their native resolutions. \footnote{Planck data was retreived from the NASA IPAC online archive at \url{http://irsa.ipac.caltech.edu/data/Planck/release_2/all-sky-maps/}}\footnote{AKARI/FIS data }\footnote{IRAS/IRIS data }
 
@@ -51,7 +51,7 @@
                   \caption{Intensity cross-correlation for all pixels in the $\lambda$~Orionis cut-out region.  $r_{s}$ indicates the Spearman rank correlation coefficient for each plot.}
                   \label{fig:orionis-corr}
                 \end{figure}
-            The correlation matrix results corresponding to data shown in \ref{{fig:orionis-corr}, are shown in \ref{fig:orionis-corr-matrix}.
+            The correlation matrix results corresponding to data shown in \ref{fig:orionis-corr}, are shown in \ref{fig:orionis-corr-matrix}.
                 \begin{figure}
                   \includegraphics[width=\textwidth]{../Plots/ch_lori/Lori_corrmatrix_I.pdf}
                   \centering
@@ -66,7 +66,7 @@
                       \includegraphics[width=\textwidth]{../Plots/ch_lori/bootstrap_vs_AME_pearson_i1000.pdf}
                       \includegraphics[width=\textwidth]{../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf}
                       \centering
-                      \caption{Re-sampeld (Bootstrap) correlation tests for IR emission in $\lambda$~Orionis vs. AME, for both Spearman and Pearson correlation tests.) }
+                      \caption{Re-sampled (Bootstrap) correlation tests for IR emission in $\lambda$~Orionis vs. AME, for both Spearman and Pearson correlation tests.) }
                       \label{fig:bootstrap_vs_AME}
                     \end{figure}
                 For both test cases, the best correlations are the longest and shortest wavelength bands. In the $r_{p}$ case, the strongest correlation is the A9 band vs the AME.
@@ -93,13 +93,13 @@
               \end{figure}
            Performing such fits for all of the pixels, we are able to see how $I_{AME}$ varies with the bulk dust physical characteristics of the region. Fig. \ref{fig:fred_LOri_notes_Oct2017_fig2a} shows the fitted dust mass per pixel, relative to the AME intensity.
 
-               \begin{figure}
+                \begin{figure}
                  \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf}
                  \centering
                  \caption{Scatter plot with error elipses generated through the Bayesian SED fitting, of total dust mass $M_{dust}$ vs. $I_{AME}$ scaled by $U$.}
                  \label{fig:fred_LOri_notes_Oct2017_fig2a}
                \end{figure}
-               
+
            AME intensity is scaled by the ISRF intensity $U$. Although spinning dust emission is not predicted to vary directly with $U$, we consider that the ISRF may serve as a diagnostic of environmental conditions in the ISM. In any case, we find that performing such a scaling improves the correlations with dust mass.
 
           Figs. \ref{fig:fred_LOri_notes_Oct2017_fig2b} and \ref{fig:fred_LOri_notes_Oct2017_fig2d} describe the variation with $M_{PAH}$ and $M_{PAH+}$.
