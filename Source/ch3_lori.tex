@@ -36,6 +36,24 @@
 		  For the data obtained via HEALPix maps, we employ the ``healpix2wcs'' functionality provided in the ``gnomdrizz'' python package\footnote{Available at \url{http://cade.irap.omp.eu/dokuwiki/doku.php?id=software}}\footnote{``drizzlib'' 1.2.2 and earlier were not able to correctly access HEALPix files with multiple fields/columns. See appendix for our recommended workaround.} A9 and A18 images are produced by regridding the images with the ``montage'' software by NASA/IPAC. All of the images for all of the bands are based on a common FITS header which has a pixel grid spacing equal to the average pixel width in the NSIDE 256 HEALPix scheme.
       A background estimation and subtraction is made
 
+      \subsection{Point-source and artifact masking}
+
+      \subsection{PSF Smoothing}
+          \begin{lstlisting}[language=Python]
+            import numpy as np
+
+            def incmatrix(genl1,genl2):
+                m = len(genl1)
+                n = len(genl2)
+                M = None #to become the incidence matrix
+                VT = np.zeros((n*m,1), int)  #dummy variable
+        \end{lstlisting}
+
+      \subsection{Background subtraction}
+       We estiamte an average, flat background level for this region. Although this region is far from the Galactic plane, there is an appreciable background level which must be subtracted. We define two standard background `OFF` zones, indicated in Fig.~\ref{fig:lori_bgsep}, and use these to determine mean, flat background level. We do not expect the band-by-band correlation tests with the AME to be sensitive to this background subtraction
+
+
+
 		\section{Multi-wavelength characterization}
 			Figure~\ref{fig:orionis-img} shows the region in 12 photometric bands, from the mid to far IR, covering key dust emission regimes as described in Ch.~\ref{ch:datasources}.
                 \begin{figure}

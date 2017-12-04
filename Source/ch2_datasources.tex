@@ -48,12 +48,12 @@
               \label{fig:Filter_coverage_example_PAH}
             \end{figure}
          The A9 band uniquely covers major ionized PAH features at 6.2 and 7.7~$\mu$m; as well as neutral PAH features at 8.6 and 11.2~$\mu$m across the entire sky \citep{irc07}. The I12 band covers the 11.2 and 8.6~$\mu$m features, and the similarly-shaped W12 band covers primarily the 11.2~$\mu{}$m feature but do not cover the 7.7~$\mu{}$m completely. According to the distribution of PAH features across the response filters in Fig.~\ref{fig:Filter_coverage_example_PAH}, and referring back to the various dust components in Fig.~\ref{fig:Filter_coverage_example_full} it is also expected that the A9 band is most dominated by PAH emission even with increasing $G_{0}$. This may seem counter-intuitive, since, as described in Ch.~\ref{ch:intro}, the PAH spectral shape does not show a temperature variation. However as $T$ increases, the MIR extent of thermal dust emission and emission from VSGs encroach on I12 and WI2 sooner than A9, diluting emission from PAHs. In some ionized reigons, I12 may also include non-significant contributions from the NeII line at 12.8~$\mu$m. Figure~\ref{fig:Filter_coverage_example_MIR} demonstrates an example observational galactic cirrus spectrum in the MIR, from Spitzer Infrared Spectrograph (IRS) \citep{spitzer04} data from \cite{}, along with filters for all of the MIR bands used in this study.
-         \begin{figure}
-           \centering
-           \includegraphics[width=\textwidth]{../Plots/ch_datasources/Filter_coverage_example_MIR.pdf}
-           \caption{Coverage of MIR wavelengths by the filters used in this work. An Spitzer/IRS spectrum of the galactic plane (thin blue line) demonstrates how IRC and IRAS photometric bands trace these features on an all-sky basis. Strong PAH features overlap with the A9 and I12, while the A18 and I25 micron bands only trace much weaker features. }
-           \label{fig:Filter_coverage_example_MIR}
-         \end{figure}
+             \begin{figure}
+               \centering
+               \includegraphics[width=\textwidth]{../Plots/ch_datasources/Filter_coverage_example_MIR.pdf}
+               \caption{Coverage of MIR wavelengths by the filters used in this work. An Spitzer/IRS spectrum (see AOT4119040) of the galactic plane (thin blue line) demonstrates how IRC and IRAS photometric bands trace these features on an all-sky basis \citep{ishihara07}. Strong PAH features overlap with the A9 and I12, while the A18 and I25 micron bands only trace much weaker features. }
+               \label{fig:Filter_coverage_example_MIR}
+             \end{figure}
          It indicates that the other MIR bands, A18 and I25, do cover strong PAH features and are expected to be dominated rather by emission from very small grains (VSGs), as was indicated in Fig.~\ref{fig:Filter_coverage_example_full}.
 
          To help demonstate how the relative contribution from PAHs will change for each band, for different ISRF strengths, Fig.~\ref{inband contribution} gives just such a calculation. These contributions remain relatively constant out to a $G_{0}$ of about 100, with the contribution from warm dust becomming a larger factor for the I12 and W12 bands. Thus, according to the DL01 template, A9 should have the highest contribution from PAHs out to extreme radiation fields. At least to the extent with which PAHs can endure harsh UV radiation, as PAHs are expected to be destroyed in some environments \citep{allain96a,allain96b,pilleri12, pavlyuchenkov13}.
@@ -68,18 +68,18 @@
         \end{figure}
          demonstrates how the band ratios of the IRC~$\mu$m band vs. the other MIR bands change with different modeled PAH ionization fractions (determined using the DustEM default model template, by \cite{dustem11}. This band ratio can be determined, because the IRC9 filter is more sensitive to ionized PAH features, relative to IRAS12 or to WISE12.
        IRC 9~$\mu$m shows a larger contribution from ionized PAHs and a conversely smaller contribution from neutral PAHs. Fig.~\ref{fig:ratioMap_A9I12} and Fig.~\ref{fig:ratioMap_A9I25} show the R(A9:I12) and R(A9:I25) ratio maps, demonstrating the relative variations in these MIR bands accross the sky- or at least the portions of the sky where S/N is sufficient. While from visual inspection the various MIR intensity all-sky maps appear to essentially trace the same stuctures of the galaxy, the ratio maps reveal that there are indeed differences to be explored.  In regions where noise is dominant, ascertaining the ionization fraction will be quite difficult. This can be easily seen upon visual inspection of the ratio maps, in that there is a clear deliniation between brighter emission towards lower galactic latitudes, and the high latitude sky where the ratio shows very little discernible structure (except for the Zodi-residual patterns which differ between IRC and IRAS.) Thus even with the high latitude issues, there remains a large portion of the sky where a tracing of the ionization fraction may be feasible. This possibility is explored in Ch.~\ref{ch:lori}, in looking at the PAH distribution within $\lambda$~Orionis.
-       \begin{figure}
-         \centering
-         \includegraphics[width=\textwidth]{../Plots/ch_datasources/ratioMap_A9I12.pdf}
-         \caption{ AKARI/IRC 9~$\mu$m to IRAS 12~$\mu$m intensity ratio.}
-         \label{fig:ratioMap_A9I12}
-       \end{figure}
-       \begin{figure}
-         \centering
-         \includegraphics[width=\textwidth]{../Plots/ch_datasources/ratioMap_A9I25.pdf}
-         \caption{ AKARI/IRC 9~$\mu$m to IRAS 25~$\mu$m intensity ratio.}
-         \label{fig:ratioMap_A9I25}
-       \end{figure}
+           \begin{figure}
+             \centering
+             \includegraphics[width=\textwidth]{../Plots/ch_datasources/ratioMap_A9I12.pdf}
+             \caption{ AKARI/IRC 9~$\mu$m to IRAS 12~$\mu$m intensity ratio.}
+             \label{fig:ratioMap_A9I12}
+           \end{figure}
+           \begin{figure}
+             \centering
+             \includegraphics[width=\textwidth]{../Plots/ch_datasources/ratioMap_A9I25.pdf}
+             \caption{ AKARI/IRC 9~$\mu$m to IRAS 25~$\mu$m intensity ratio.}
+             \label{fig:ratioMap_A9I25}
+           \end{figure}
 
       \subsection{The AKARI Far Infrared Surveyor (FIS)}
            FIS gives us photometric data around the peak of the typical thermal dust SED. FIS was equipped with four wavebands: two narrow bands centered at 65~$\mu$m and at 160~$\mu$m, and two wide bands at 90~$\mu$m and at 140~$\mu$m. An all-sky survey was carried out at each band \citep{kawada07}, and the processed maps have been publicly released \citep{doi15}.
@@ -113,45 +113,45 @@
       \subsection{AME data}
 
           The COMMANDER map release also provides an``AME component map'', which presumes that AME originates from spinning dust. While acknowledging that such a decomposition lacks a strong physical interpretation, \cite{planck15X} break the AME into two components: a spatially varying peak frequency component, and a spatially constant peak frequency component. As seen in Fig.~\ref{fig:AME_commander_freqdist}, virtually all of the fitted peak frequncies for $AME_{var}$ are beyond the reach of WMAP and Planck.
-          \begin{figure}
-            \includegraphics[width=\textwidth]{../Plots/ch_intro/AME_commander_freqdist.pdf}
-            \centering
-            \caption{The peak frequencies of the varying component $AME_{var}$.  The pink shaded region indicates frequencies not covered by either WMAP or Planck The green line at 33.5~GHz indicates the peak frequency of $AME_{fix}$.}
-            \label{fig:AME_commander_freqdist}
-          \end{figure}
+              \begin{figure}
+                \includegraphics[width=\textwidth]{../Plots/ch_intro/AME_commander_freqdist.pdf}
+                \centering
+                \caption{The peak frequencies of the varying component $AME_{var}$.  The pink shaded region indicates frequencies not covered by either WMAP or Planck The green line at 33.5~GHz indicates the peak frequency of $AME_{fix}$.}
+                \label{fig:AME_commander_freqdist}
+              \end{figure}
           Only the fitted global frequency, 33.5~GHz for the spatially constant component, is covered. However they note that the combined components, per pixel, would have an average peak  at least within the WMAP coverage range. In general, $AME_{var}$ is the dominant component, accounting for approximately 90\% of the total AME intensity at a given frequency, indicated by the full-sky histograms in Fig.~\ref{fig:AME_comps_distplot}.
-          \begin{figure}
-           \includegraphics[width=\textwidth]{../Plots/ch_allsky/AME_comps_distplot.pdf}
-           \centering
-           \caption{Histograms of the peak intensity AME maps calculated from the original COMMANDER-AME reference frequency maps. The dominant component, $AME_{var}$ is indicated in blue, for all pixels in the map, with their spinning dust intensities evaluated their peak frequencies (see Fig.~\ref{fig:AME_commander_freqdist}.) $AME_{fix}$ gives the peak intensity of the spatially-constant frequency component, indicating it is essentially always the weaker component.}
-           \label{fig:AME_comps_distplot}
-          \end{figure}
+              \begin{figure}
+               \includegraphics[width=\textwidth]{../Plots/ch_allsky/AME_comps_distplot.pdf}
+               \centering
+               \caption{Histograms of the peak intensity AME maps calculated from the original COMMANDER-AME reference frequency maps. The dominant component, $AME_{var}$ is indicated in blue, for all pixels in the map, with their spinning dust intensities evaluated their peak frequencies (see Fig.~\ref{fig:AME_commander_freqdist}.) $AME_{fix}$ gives the peak intensity of the spatially-constant frequency component, indicating it is essentially always the weaker component.}
+               \label{fig:AME_comps_distplot}
+              \end{figure}
            As they are provided in PR2, the intensities are in fact the fitted spinning dust profiles for each pixel, evaluated at reference frequencies: 22.8~GHz for $AME_{var}$, 41~GHz for $AME_{fix}$ (for convenient comparison to the WMAP total intensity maps at those frequencies). Fig.~\ref{fig:AME_comps_distplot} in fact indicates our own re-evaluation of the fitted spinning dust SEDs at their peak frequencies, as the reference frequencies to not have any special physical relevance. This conversion does not have a significant effect on the results in the chapters to follow, except in the case of some outlying pixels with very low peak frequencies, easily seen in the map of the fitted frequencies in Fig.~\ref{fig:PCAME_var_freq}.
-           \begin{figure}
-             \includegraphics[width=\textwidth]{../Plots/ch_datasources/PCAME_var_freq.pdf}
-             \centering
-             \caption{All-sky map of the peak frequencies of the varying component $AME_{var}$, corresponding to Fig.~\ref{fig:AME_commander_freqdist}. Virtually all of the purple regions of the map correspond to pixels flagged for point sources in the LFI data. There are very few notable structures in the frequency map overall, other than the galactic plane itself, $\rho$~Ophiuchus, and Perseus.}
-             \label{fig:PCAME_var_freq}
-           \end{figure}
+               \begin{figure}
+                 \includegraphics[width=\textwidth]{../Plots/ch_datasources/PCAME_var_freq.pdf}
+                 \centering
+                 \caption{All-sky map of the peak frequencies of the varying component $AME_{var}$, corresponding to Fig.~\ref{fig:AME_commander_freqdist}. Virtually all of the purple regions of the map correspond to pixels flagged for point sources in the LFI data. There are very few notable structures in the frequency map overall, other than the galactic plane itself, $\rho$~Ophiuchus, and Perseus.}
+                 \label{fig:PCAME_var_freq}
+               \end{figure}
             However on comparison to point source masks by Planck, we find that these outliers correspond to intensity outliers in the LFI 30~GHz map. This is not readily apparent when viewing the $AME_{var}$, evaluated at 22.8~GHz, as it is provided in \cite{planck15X}.
 
         \subsubsection{Spinning dust fitting}
 
         The actual spinning dust SED which is fitted to the Planck data by is indicated by Fig.~\ref{fig:AME_commander_freqshift_templ}, which we have reproduced from the original template provided in \cite{ali-haimoud09}.
-        \begin{figure}
-          \includegraphics[width=\textwidth]{../Plots/ch_datasources/AME_commander_freqshift_templ.pdf}
-          \centering
-          \caption{Spdust template spinning dust profiles fitted by PC15X when calculating $AME_{var}$.  The reference frequency, 22.8~GHz is indicated by the vertical green line. Each template has the same $AME_{var}$ amplitude of 100~$\mu$K, indicated by the horizontal green line, plotted to highlight the potential deviation between $AME_{var}$ and the actual peak intensity. }
-          \label{fig:AME_commander_freqshift_templ}
-      \end{figure}
+            \begin{figure}
+              \includegraphics[width=\textwidth]{../Plots/ch_datasources/AME_commander_freqshift_templ.pdf}
+              \centering
+              \caption{Spdust template spinning dust profiles fitted by PC15X when calculating $AME_{var}$.  The reference frequency, 22.8~GHz is indicated by the vertical green line. Each template has the same $AME_{var}$ amplitude of 100~$\mu$K, indicated by the horizontal green line, plotted to highlight the potential deviation between $AME_{var}$ and the actual peak intensity. }
+              \label{fig:AME_commander_freqshift_templ}
+          \end{figure}
       PC15X fit the AME by applying a frequency shift and intensity shift parameter to this template. The physical parameters of the 'spdust' model itself are not directly varied in PC15X. In any case, the spinning dust model SED shape does not show significant variation from environment to environment \citep{ali-haimoud09}.
      Because of the phenenological approach of the AME fitting method, the PC15X authors themselves suggest caution in deriving conclusions from comparisons with the COMMANDE AME map. However it is the most thorough all-sky component separation currebtky available, and has not been well analyzed relative to the wavelength range of IR all-sky maps produced. Improving on the COMMANDER AME map will likely require lower frequency constraints (in the red-shaded portion of ) and/or higher resolution observations of not only the AME itself but the contribution from synchrotron and free-free emisson. This way some of the inherent degeneracies between free-free, synchrotron, thermal dust, and AME parameters may be able to be broken.
-    \begin{figure}
-         \centering
-         \includegraphics[width=\textwidth]{../Plots/ch_datasources/R_PCAMEtoPCRad.pdf}
-         \caption{All-sky map of the ratio of two COMMANDER components- the frequency-varying AME component divided by the intensity of thermal dust emission at 545~GHz. There are some recognizable AME emission regions, such as $\lambda$~Orionis. Large-scale patches of AME excess are noted to correspond to synchrotron emission \citep{hensley16}}
-         \label{fig:R_PCAMEtoPCdust}
-     \end{figure}
+        \begin{figure}
+             \centering
+             \includegraphics[width=\textwidth]{../Plots/ch_datasources/R_PCAMEtoPCRad.pdf}
+             \caption{All-sky map of the ratio of two COMMANDER components- the frequency-varying AME component divided by the intensity of thermal dust emission at 545~GHz. There are some recognizable AME emission regions, such as $\lambda$~Orionis. Large-scale patches of AME excess are noted to correspond to synchrotron emission \citep{hensley16}}
+             \label{fig:R_PCAMEtoPCdust}
+         \end{figure}
 
   \section{All-sky Data Processing}
 
