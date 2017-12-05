@@ -59,30 +59,32 @@
          To help demonstate how the relative contribution from PAHs will change for each band, for different ISRF strengths, Fig.~\ref{inband contribution} gives just such a calculation. These contributions remain relatively constant out to a $G_{0}$ of about 100, with the contribution from warm dust becomming a larger factor for the I12 and W12 bands. Thus, according to the DL01 template, A9 should have the highest contribution from PAHs out to extreme radiation fields. At least to the extent with which PAHs can endure harsh UV radiation, as PAHs are expected to be destroyed in some environments \citep{allain96a,allain96b,pilleri12, pavlyuchenkov13}.
 
       \subsubsection{PAH ionization}
-      Figure~\ref{fig:Filter_coverage_example_PAH} indicates that expected emission from ionized PAHs will preferentially contribute to the A9 band, even though both I12 and A9 cover ionized and neutral features. To estimate the extent to which the ionization fraction would effect the intensity ratio of these two bands, Fig.~\ref{fig:inband_ionfrac_ratios} gives the results of a calculation based on the \cite{drli01} dust model, for various strengths of $G_{0}$.
-        \begin{figure}
-            \centering
-            \includegraphics[width=150mm]{../Plots/band-ratio-multiple.pdf}
-            \caption{Ionization fraction of PAHs vs. band ratios of I12, I25, W12, W25 vs. A9, for three ISRF strengths: Top: $G_{0} = 100$, Middle: $G_{0} = 1000$, and Bottom: $G_{0} = 10000$. These ratios are determined by assuming the SED template of \cite{dustem11} }
-            \label{fig:inband_ionfrac_ratios}
-        \end{figure}
+        Figure~\ref{fig:Filter_coverage_example_PAH} indicates that expected emission from ionized PAHs will preferentially contribute to the A9 band, even though both I12 and A9 cover ionized and neutral features. To estimate the extent to which the ionization fraction would effect the intensity ratio of these two bands, Fig.~\ref{fig:inband_ionfrac_ratios} gives the results of a calculation based on the \cite{drli01} dust model, for various strengths of $G_{0}$.
+          \begin{figure}
+              \centering
+              \includegraphics[width=150mm]{../Plots/band-ratio-multiple.pdf}
+              \caption{Ionization fraction of PAHs vs. band ratios of I12, I25, W12, W25 vs. A9, for three ISRF strengths: Top: $G_{0} = 100$, Middle: $G_{0} = 1000$, and Bottom: $G_{0} = 10000$. These ratios are determined by assuming the SED template of \cite{dustem11} }
+              \label{fig:inband_ionfrac_ratios}
+          \end{figure}
          demonstrates how the band ratios of the IRC~$\mu$m band vs. the other MIR bands change with different modeled PAH ionization fractions (determined using the DustEM default model template, by \cite{dustem11}. This band ratio can be determined, because the IRC9 filter is more sensitive to ionized PAH features, relative to IRAS12 or to WISE12.
-       IRC 9~$\mu$m shows a larger contribution from ionized PAHs and a conversely smaller contribution from neutral PAHs. Fig.~\ref{fig:ratioMap_A9I12} and Fig.~\ref{fig:ratioMap_A9I25} show the R(A9:I12) and R(A9:I25) ratio maps, demonstrating the relative variations in these MIR bands accross the sky- or at least the portions of the sky where S/N is sufficient. While from visual inspection the various MIR intensity all-sky maps appear to essentially trace the same stuctures of the galaxy, the ratio maps reveal that there are indeed differences to be explored.  In regions where noise is dominant, ascertaining the ionization fraction will be quite difficult. This can be easily seen upon visual inspection of the ratio maps, in that there is a clear deliniation between brighter emission towards lower galactic latitudes, and the high latitude sky where the ratio shows very little discernible structure (except for the Zodi-residual patterns which differ between IRC and IRAS.) Thus even with the high latitude issues, there remains a large portion of the sky where a tracing of the ionization fraction may be feasible. This possibility is explored in Ch.~\ref{ch:lori}, in looking at the PAH distribution within $\lambda$~Orionis.
-           \begin{figure}
-             \centering
-             \includegraphics[width=\textwidth]{../Plots/ch_datasources/ratioMap_A9I12.pdf}
-             \caption{ AKARI/IRC 9~$\mu$m to IRAS 12~$\mu$m intensity ratio.}
-             \label{fig:ratioMap_A9I12}
-           \end{figure}
-           \begin{figure}
-             \centering
-             \includegraphics[width=\textwidth]{../Plots/ch_datasources/ratioMap_A9I25.pdf}
-             \caption{ AKARI/IRC 9~$\mu$m to IRAS 25~$\mu$m intensity ratio.}
-             \label{fig:ratioMap_A9I25}
-           \end{figure}
+         
+         IRC 9~$\mu$m shows a larger contribution from ionized PAHs and a conversely smaller contribution from neutral PAHs. Fig.~\ref{fig:ratioMap_A9I12} and Fig.~\ref{fig:ratioMap_A9I25} show the R(A9:I12) and R(A9:I25) ratio maps, demonstrating the relative variations in these MIR bands accross the sky- or at least the portions of the sky where S/N is sufficient. While from visual inspection the various MIR intensity all-sky maps appear to essentially trace the same stuctures of the galaxy, the ratio maps reveal that there are indeed differences to be explored.  In regions where noise is dominant, ascertaining the ionization fraction will be quite difficult. This can be easily seen upon visual inspection of the ratio maps, in that there is a clear deliniation between brighter emission towards lower galactic latitudes, and the high latitude sky where the ratio shows very little discernible structure (except for the Zodi-residual patterns which differ between IRC and IRAS.) Thus even with the high latitude issues, there remains a large portion of the sky where a tracing of the ionization fraction may be feasible. This possibility is explored in Ch.~\ref{ch:lori}, in looking at the PAH distribution within $\lambda$~Orionis.
+             \begin{figure}
+               \centering
+               \includegraphics[width=\textwidth]{../Plots/ch_datasources/ratioMap_A9I12.pdf}
+               \caption{ AKARI/IRC 9~$\mu$m to IRAS 12~$\mu$m intensity ratio.}
+               \label{fig:ratioMap_A9I12}
+             \end{figure}
+             \begin{figure}
+               \centering
+               \includegraphics[width=\textwidth]{../Plots/ch_datasources/ratioMap_A9I25.pdf}
+               \caption{ AKARI/IRC 9~$\mu$m to IRAS 25~$\mu$m intensity ratio.}
+               \label{fig:ratioMap_A9I25}
+             \end{figure}
 
-      \subsection{The AKARI Far Infrared Surveyor (FIS)}
-           FIS gives us photometric data around the peak of the typical thermal dust SED. FIS was equipped with four wavebands: two narrow bands centered at 65~$\mu$m and at 160~$\mu$m, and two wide bands at 90~$\mu$m and at 140~$\mu$m. An all-sky survey was carried out at each band \citep{kawada07}, and the processed maps have been publicly released \citep{doi15}.
+    \subsection{The AKARI Far Infrared Surveyor (FIS)}
+       FIS gives us photometric data around the peak of the typical thermal dust SED. FIS was equipped with four wavebands: two narrow bands centered at 65~$\mu$m and at 160~$\mu$m, and two wide bands at 90~$\mu$m and at 140~$\mu$m. An all-sky survey was carried out at each band \citep{kawada07}, and the processed maps have been publicly released \citep{doi15}.
+
     \subsection{Planck Observatory High Frequency Instrument (HFI)}
        The HFI all-sky maps, spanning 100 to 857~GHz \citep{hfi14viii} help constrain the far IR dust emissivity. This study utilizes the 857~GHz (345~$\mu$m) and 545~GHz (550~$\mu$m) bands.
 

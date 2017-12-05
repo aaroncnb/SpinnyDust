@@ -9,7 +9,10 @@
         As in Ch.~\ref{ch:lori}, this approach applies to a spatial resolution of approximately ~1$^{\circ}$. The resolution limimtation is imposed by the PC microwave component maps, which list an `effective resolution' of 60$'$ \citep{planck15X}. Thus we must apply a smoothing to most of our input datasets, which have native resolutions of a much finer scale (see Tab.~\ref{tab:data}), and Fig.~\ref{fig:AME_contours}. The data also come in a wide range of beam shapes with their own degrees of uncertainty, thus we conservatively smooth all of the data in the same way, using a circular Gaussian beam, to have ~1$^{\circ}$ FWHM resolution. we ar We start with an all-sky AME to IR comparison, looking for global patterns among all pixels (except those within 10$^{\circ}$ of the ecliptic plane.)
     \subsection{Pixel mask}
       \paragraph{Zodical light}
-        To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane. Even though we use the Zodi-subtracted maps \citep{kelsall98, kondo16}, the Zodi residuals are still problematic (especially in the MIR.) Espeically at high ecliptic latitudes, the relative uncertainty of the Zodi-level is not well estimated; S/N may significantly reduced for faint pixels, mainly for A9 through I25.
+        To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane \citep{hensley16}.  Even though we use the Zodi-subtracted maps \citep{kelsall98, kondo16, ootsubo16}, the Zodi residuals are still problematic (especially in the MIR.) This corresponds to regions with the heaviest contamination from Zodiacal light. Even in the Zodi-subtracted maps, residuals from the Zodi are apparent even with visual inspection for all of the MIR bands used in this study (see Ch.~\ref{ch:datasources}, and the MIR ratio maps in Figs. \ref{fig:ratioMap_A9I12}, and \ref{fig:ratioMap_A9I12}).
+
+      \paragraph{Signal to noise}
+
      \paragraph{Point Sources}
        The Planck Collaboration provides masks of the pixels they find to include point sources. In our analysis, we mask pixels which are flagged as being point-source contaminated, in the most heavily affected maps: Planck/HFI 857 GHz and Planck/LFI 30 GHz.
 
@@ -79,27 +82,55 @@
   \section{Spatial variaton of correlations}
     To understand how these trends may vary across the sky, we produce an all-sky maps of $r_{s}$ for AME vs. IR emission. From the NSIDE~256 input maps of AME and 4 IR wavelength maps, we produce NSIDE~8 maps of $r_{s}$. These maps are shown in Figs.~\ref{fig:Spearman_Map_nside8_AMEtoIR_A9} and~\ref{fig:Spearman_Map_nside8_AMEtoIR_I12}.
       \begin{figure}
-        \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoA9.pdf}
+        \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/Spearman_Map_nside8_A9toAMEvar.pdf}
         \centering
         \caption{Spatial map of $r_{s}$ between the AME and IR intensity for 4 bands:$9~\mu{}m$, $12~\mu{}m$, $25~\mu{}m$, and $140~\mu{}m$. $r_{s}$ is calculated for all NSIDE~256 pixels within each NSIDE~8 pixel-sized bin.}
         \label{fig:Spearman_Map_nside8_AMEtoIR_A9}
       \end{figure}
       \begin{figure}
-        \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/Spearman_Map_nside8_AMEtoI12.pdf}
+        \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/Spearman_Map_nside8_I12toAMEvar.pdf}
         \centering
         \caption{}
         \label{fig:Spearman_Map_nside8_AMEtoIR_I12}
       \end{figure}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/Spearman_Map_nside8_I25toAMEvar.pdf}
+        \centering
+        \caption{}
+        \label{fig:Spearman_Map_nside8_AMEtoIR_I25}
+      \end{figure}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/Spearman_Map_nside8_A140toAMEvar.pdf}
+        \centering
+        \caption{}
+        \label{fig:Spearman_Map_nside8_AMEtoIR_A140}
+      \end{figure}
 
-  %   \begin{figure}
-  %     \includegraphics[width=\textwidth/3]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf}
-  %     \includegraphics[width=\textwidth/3]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf}
-  %     \includegraphics[width=\textwidth/3]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf}
-  %     \includegraphics[width=\textwidth/3]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf}
-  %     \centering
-  %     \caption{Spatial map of $r_{s}$ between the AME and IR intensity as in Fig.~\ref{fig:Spearman_Map_nside8_AMEtoIR}, but with the AME and IR maps first normalized by dust radiance $R$.}
-  %     \label{fig:Spearman_Map_nside8_AMEtoIR_radnorm}
-  %  \end{figure}
+     \begin{figure}
+       \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf}
+       \centering
+       \caption{Spatial map of $r_{s}$ between the AME and IR intensity as in Fig.~\ref{fig:Spearman_Map_nside8_AMEtoIR}, but with the AME and IR maps first normalized y dust radiance $R$.}
+       \label{fig:Spearman_Map_nside8_AMEtoIR_radnorm_A9}
+      \end{figure}
+       \begin{figure}
+        \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf}
+        \centering
+        \caption{}
+        \label{fig:Spearman_Map_nside8_AMEtoIR_radnorm_I12}
+      \end{figure}
+        \begin{figure}
+         \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf}
+         \centering
+         \caption{}
+         \label{fig:Spearman_Map_nside8_AMEtoIR_radnorm_I25}
+      \end{figure}
+        \begin{figure}
+        \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA140.pdf}
+        \centering
+        \caption{}
+        \label{fig:Spearman_Map_nside8_AMEtoIR_radnorm_A140}
+        \end{figure}
+
 
     \section{Discussion}
       \subsection{AME:Dust}
