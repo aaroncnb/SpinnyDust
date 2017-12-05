@@ -9,7 +9,6 @@
 
 
   \section{All-sky cross correlations}
-
         In order to look more closely how the the AME to IR relationship varies with wavelength, we first do a comparison without applying any pixel mask, as a benchmark comparison. Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked} shows the pizel-density plots of AME vs. the IR bands' intensities. Darker regions show higher pixel densities, unshaded or more lightly shaded regions show low or zero pixel densities. We see immediately that each band shows evidence of a positive trend with AME intensity, as in Ch.~\ref{ch:lori}. For the MIR bands, at lower IR intensities we see the effects of detector noise become dominant, turning into a more defined positive trend with increasing IR intensity. This effect is less pronounced in the FIR.
           \begin{figure}
             \includegraphics[width=\textwidth]{../Plots/ch_allsky/AMEvsDust_allsky_allbands_mpsub_kde_unmasked.pdf}
@@ -28,29 +27,27 @@
 
         In the lower latitudes, with $|\beta| < 15deg$, bright emission in and around the galactic plane seems to homogenize the bands. We see little change from band to band both in terms of the relationship with AME or with other IR bands. Thus the increase of S/N with decreasing brightness at higher latitudes has a strong effect on such intensity correlation tests. Bands tracing bright thermal dust emission at higher latitudes are more robust against this effect. The only case where the trend is reversed, is with the maps of $N(H)$ and $H_{\alpha}$. Both of these maps show higher $r_{s}$ when compared to high latitude FIR emission. The next section descibes a pixel-masking strategy designed to mitigate both $r_{s}$ suppressing effects from band-to-band S/N variations, and $r_{s}$ enhancing effects from confusion near the galactic plane.
 
-
       \section{Masked Comparison}
-
-
-      \subsection{Pixel mask}
-          We prepare a global pixel mask (pixel positions masked in any map are excluded from the analysis).
-
-        \paragraph{Zodical light}
-          To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane \citep{hensley16}.  Even though we use the Zodi-subtracted maps \citep{kelsall98, kondo16, ootsubo16}, the Zodi residuals are still problematic (especially in the MIR.) This corresponds to regions with the heaviest contamination from Zodiacal light. Even in the Zodi-subtracted maps, residuals from the Zodi are apparent even with visual inspection for all of the MIR bands used in this study (see Ch.~\ref{ch:datasources} Ratio maps of MIR bands, in Figs. \ref{fig:ratioMap_A9I12}, and \ref{fig:ratioMap_A9I12}) demosntrate visually that the Zodi-residual patterns are quite different between AKARI and IRAS maps.
-
-        \paragraph{Signal to noise}
-          Some of the bands used lack sufficient sensitivity to trace fainter emisison, especially at higher galactic latitudes. This is mainly an issue for the mid-infrared bands. As such, we enforce a $3~\sigma$ threshold for all of the maps--- adding to the mask any pixel that has lower than $~\sigma$ detection in any of the maps.
-
-       \paragraph{Point Sources}
-         The Planck Collaboration provides masks of the pixels they find to include point sources. We mask pixels which are flagged as being point-source contaminated, in the most heavily affected maps: Planck/HFI~857 GHz and Planck/LFI~30 GHz.
-
-          Our pixel mask somewhat similar to that used by \cite{hensley16}, in that we adopt the Planck point source and galacitc plane masks, as well as mask pixels near the ecliptic plane. We do not use the WISE data however, thus our S/N threshold is based on the A9 map rather than WISE 12 micron. Finding that such a S/N threshold eliminates the vast majority of pixels beyond 30 degrees galactic latitude, with the pronounced exception of regions affected by stray moonlight, we choose simply to mask all pixels beyond 30 degrees latitude. We find this to be the simplest, most easily reproducable mask which minimizes S/N biases, point source contamination, and solar system systematic effects in our combined dataset. The A9 masked-sky map is shown in Fig.~\ref{fig:A9_masked_map}.
+        For the reasons described in the previous section, we consider that an exhaustive comparsion of the AME with IR requires the use of a pixel mask. In this section we describe the various masks applied to the full dataset. We then repeat both the comparisons above (as in  Figs.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked} and~\ref{fig:all_bands_corr_matrix_wAME_spearman}) for the masked dataset, and present additional analyses. The full mask, applied to the A9 map, is shown in Fig.~\ref{fig:A9_masked_map}. The same mask is applied to all maps, including the AME.
           \begin{figure}
             \includegraphics[width=\textwidth]{../Plots/ch_allsky/masked_map_A9.pdf}
             \centering
             \caption{All-sky map in A9 emission after applying the combined masks: ecliptic plane, galactic plane, point sources, and pixels with S/N $<1$. This mask essentially outlines the galaxy, except for the most confused regions.}
             \label{fig:A9_masked_map}
           \end{figure}
+
+      \subsection{Pixel mask}
+          We prepare a global pixel mask (pixel positions masked in any map are excluded from the analysis).
+
+        \paragraph{Zodical light}
+          To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane \citep{hensley16}.  Even though we use the Zodi-subtracted maps \citep{kelsall98, kondo16, ootsubo16}, the Zodi residuals are still problematic (especially in the MIR.) This corresponds to regions with the heaviest contamination from Zodiacal light, where Zodi residuals are apparent even with visual inspection for all of the MIR bands used in this study. In Ch.~\ref{fig:datasources}, Figs. \ref{fig:ratioMap_A9I12}, and \ref{fig:ratioMap_A9I12} clearly display these residual patterns.
+
+        \paragraph{Signal to noise}
+          Some of the bands used lack sufficient sensitivity to trace fainter emisison, especially at higher galactic latitudes. This is mainly an issue for the mid-infrared bands. As such, we enforce a $3~\sigma$ threshold for all of the maps--- adding to the mask any pixel that has lower than $~\sigma$ detection in any of the maps. This removes nearly all pixels beyond approx. 15 degrees from the galactic plane, with the pronounced exception of regions affected by stray moonlight. The extent of this particular mask is primarily defined by the IRC A9 and A18 maps, which have the highest noise levels.
+
+       \paragraph{Point Sources}
+         The Planck Collaboration provides masks of the pixels they find to include point sources. We mask pixels which are flagged as being point-source contaminated, in the most heavily affected maps: Planck/HFI~857 GHz and Planck/LFI~30 GHz.
+
            Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_masked} shows point-density plots for $AME_{var}$ vs. each of the IR bands, after applying the mask described above.
               \begin{figure}
                 \includegraphics[width=\textwidth]{../Plots/ch_allsky/AMEvsDust_allsky_allbands_mpsub_kde_masked.pdf}
