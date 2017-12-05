@@ -1,37 +1,41 @@
 \chapter{All-sky Analysis}
   \label{sec:analysis}
-
     What we present here is a test of the generalizability of results from Ch.\ref{ch:lori}, which focused on a particular structure on the sky, $\lambda$~Orionis.
     We first would like to note that ``all-sky analysis'' can be a bit misleading. The term tends to lead readers to the idea of a definitive study, answering a particular question for any given position on the sky.  While a truly all-sky analysis would be ideal, signal-to-noise constraints (mainly at high galactic latitudes), as well as confusion along the line of sight (mainly in the galactic plane), make a uniformly powerful study of the whole sky very challenging. Here we will indeed show results for the entire sky as a benchmark analysis, but for the core analysis we must mask certain regions dominated by systematic effects in order minimize biases for particular wavelenghts.
 
 \section{Pixel masking and resolution}
     \subsubsection{Smoothing}
-        As in Ch.~\ref{ch:lori}, this approach applies to a spatial resolution of approximately ~1$^{\circ}$. The resolution limimtation is imposed by the PC microwave component maps, which list an `effective resolution' of 60$'$ \citep{planck15X}. Thus we must apply a smoothing to most of our input datasets, which have native resolutions of a much finer scale (see Tab.~\ref{tab:data}), and Fig.~\ref{fig:AME_contours}. The data also come in a wide range of beam shapes with their own degrees of uncertainty, thus we conservatively smooth all of the data in the same way, using a circular Gaussian beam, to have ~1$^{\circ}$ FWHM resolution. we ar We start with an all-sky AME to IR comparison, looking for global patterns among all pixels (except those within 10$^{\circ}$ of the ecliptic plane.)
+        As in Ch.~\ref{ch:lori}, this approach applies to a spatial resolution of approximately ~1$^{\circ}$. The resolution limimtation is imposed by the PC microwave component maps, which list an `effective resolution' of 60$'$ \citep{planck15X}. Thus we must apply a smoothing to most of our input datasets, which have native resolutions of a much finer scale (see Tab.~\ref{tab:data}), and Fig.~\ref{fig:AME_contours}. The data also come in a wide range of beam shapes with their own degrees of uncertainty, thus we conservatively smooth all of the data in the same way, using a circular Gaussian beam, to have ~1$^{\circ}$ FWHM resolution. we ar We start with an all-sky AME to IR comparison, looking for global patterns among all pixels.
+
     \subsection{Pixel mask}
+        We prepare a global pixel mask (pixel positions masked in any map are excluded from the analysis).
+
       \paragraph{Zodical light}
-        To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane \citep{hensley16}.  Even though we use the Zodi-subtracted maps \citep{kelsall98, kondo16, ootsubo16}, the Zodi residuals are still problematic (especially in the MIR.) This corresponds to regions with the heaviest contamination from Zodiacal light. Even in the Zodi-subtracted maps, residuals from the Zodi are apparent even with visual inspection for all of the MIR bands used in this study (see Ch.~\ref{ch:datasources}, and the MIR ratio maps in Figs. \ref{fig:ratioMap_A9I12}, and \ref{fig:ratioMap_A9I12}).
+        To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane \citep{hensley16}.  Even though we use the Zodi-subtracted maps \citep{kelsall98, kondo16, ootsubo16}, the Zodi residuals are still problematic (especially in the MIR.) This corresponds to regions with the heaviest contamination from Zodiacal light. Even in the Zodi-subtracted maps, residuals from the Zodi are apparent even with visual inspection for all of the MIR bands used in this study (see Ch.~\ref{ch:datasources}, and the MIR ratio maps in Figs.~\ref{fig:ratioMap_A9I12}, and~\ref{fig:ratioMap_A9I25}).
 
       \paragraph{Signal to noise}
+        Some of the bands used lack sufficient sensitivity to trace fainter emisison, especially at higher galactic latitudes. This is mainly an issue for the mid-infrared bands. As such, we enforce a $3~\sigma$ threshold for all of the maps--- adding to the mask any pixel that has lower than $~\sigma$ detection in any of the maps.
 
      \paragraph{Point Sources}
-       The Planck Collaboration provides masks of the pixels they find to include point sources. In our analysis, we mask pixels which are flagged as being point-source contaminated, in the most heavily affected maps: Planck/HFI 857 GHz and Planck/LFI 30 GHz.
+       The Planck Collaboration provides masks of the pixels they find to include point sources. We mask pixels which are flagged as being point-source contaminated, in the most heavily affected maps: Planck/HFI 857 GHz and Planck/LFI 30 GHz.
 
   \section{All-sky cross correlations}
 
-        In order to look more closely how the the AME to IR relationship varies with wavelength, we first do comparisons simply using a simple mask- only excluding pixels within 10 degrees of the ecliptic plane, as a benchmark comparison. Fig. first shows the pizel-density plots of AME vs. the IR bands' intensities.
-        \begin{figure}
-          \includegraphics[width=\textwidth]{../Plots/ch_allsky/AMEvsDust_allsky_allbands_mpsub_kde_unmasked.pdf}
-          \centering
-          \caption{Point-density distributions of the AME intensity (Y-axis) vs. the IR bands' intensities. Darker regions indicated higher pixel densities. Only a simple mask of pixels near the ecliptic plane has been applied.}
-          \label{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked}
-        \end{figure}
-        Next we do a full cross-correlation comparison, to investigate all of the relationships between the mapus used. Figure~\ref{fig:all_bands_corr_matrix_wAME_spearman} show the Spearman's $\rho$ ($r_{S}$) corrlation matrix for the unmasked sky.
-        \begin{figure}
-          \includegraphics[width=\textwidth]{../Plots/ch_allsky/all_bands_corr_matrix_wAME_spearmanintensity_unmasked.pdf}
-          \centering
-          \caption{ALL-SKY cross-correlation matrix for the 12 infrared bands sampled, as well as the PC component maps (AME, Syncrotron, free-free), and ancilliary maps of $N_{H}$, $H_{\alpha}$ emission, and 408~MHz emission circa \cite{haslam82}. THe color-scale indicates ($r_{S}$). Results are based on the full sky (excluding pixels within 10$^{\circ}$ of the ecliptic plane). All-maps have been reduced to a common 1 degree resolution.}
-          \label{fig:all_bands_corr_matrix_wAME_spearman}
-        \end{figure}
+        In order to look more closely how the the AME to IR relationship varies with wavelength, we first do a comparison without applying any pixel mask, as a benchmark comparison. Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked} shows the pizel-density plots of AME vs. the IR bands' intensities. Darker regions show higher pixel densities, unshaded or more lightly shaded regions show low or zero pixel densities. We see immediately that each band shows evidence of a positive trend with AME intensity, as in Ch.~\ref{ch:lori}. For the MIR bands, at lower IR intensities we see the effects of detector noise become dominant, turning into a more defined positive trend with increasing IR intensity. This effect is less pronounced in the FIR.
+          \begin{figure}
+            \includegraphics[width=\textwidth]{../Plots/ch_allsky/AMEvsDust_allsky_allbands_mpsub_kde_unmasked.pdf}
+            \centering
+            \caption{Point-density distributions of the AME intensity (Y-axis) vs. the IR bands' intensities. Darker regions indicated higher pixel densities. Only a simple mask of pixels near the ecliptic plane has been applied.}
+            \label{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked}
+          \end{figure}
+        We consider that the IR maps used must not only be compared to the AME, but to each other, to assess multi-wavelength patterns. We also compare the AME and IR maps to ancilliary maps, as decribed in Ch.~\ref{ch:datasources} and Tab.~\ref{tab:ancilliarydata}. Fig.~\ref{fig:all_bands_corr_matrix_wAME_spearman} confirms the weaker trend in the MIR vs. AME, via a cross-correlation matrix, similar to that used in Ch.~\ref{ch:lori} and Fig.~\ref{fig:orionis-corr-matrix}.
+         Figure~\ref{fig:all_bands_corr_matrix_wAME_spearman} show the Spearman's $\rho$ ($r_{S}$) corrlation matrix for the unmasked sky.
+          \begin{figure}
+            \includegraphics[width=\textwidth]{../Plots/ch_allsky/all_bands_corr_matrix_wAME_spearmanintensity_unmasked.pdf}
+            \centering
+            \caption{ALL-SKY cross-correlation matrix for the 12 infrared bands sampled, as well as the PC component maps (AME, Syncrotron, free-free), and ancilliary maps of $N_{H}$, $H_{\alpha}$ emission, and 408~MHz emission circa \cite{haslam82}. THe color-scale indicates ($r_{S}$). Results are based on the full sky (excluding pixels within 10$^{\circ}$ of the ecliptic plane). All-maps have been reduced to a common 1 degree resolution.}
+            \label{fig:all_bands_corr_matrix_wAME_spearman}
+          \end{figure}
         Unmasked that is, except for the Zodical light mask. This comparison however may largely be affected by differences is resiudual Zodical light, even in regions far from the ecliptic plane. Galactic plane confusion also plays a role- note how all of the mapss essentially agree with one another at latitudes lower than 15 degrees. Differing noise of the maps, derived mainly from the different sensitivities of the instruments themselves, as well as varying scanning strategies and data processing pipelines, leads to a divergence of the maps with one another at higher galactic latitudes. As well as the IR bands from Tab.~\ref{tab:data}, we also show the correlations with various ancilliary maps, as well as the PC microwave component maps. The two AME components are shown separately.
 
     \subsubsection{Masked Comparison}
