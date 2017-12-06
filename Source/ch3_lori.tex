@@ -25,7 +25,13 @@
         \label{fig:orionis-akari9}
       \end{figure}
       Images at each wavelength used here are included as in appendix to this thesis.
-   The ring structure itself indicates excess microwave emission attributed to AME (white contours) while the central region is dominated by free-free emission \citep{aran09, koenig15}. Free-free emisison coming from the Hii phase surrounding the $\lambda$~Orionis association dominates the region's morphology in LFI images. \citep{planck15XXV}. Taking the hint from \cite{planck15XXV} that this may be among the more reliably component separated regions, we evaluate if there is any preferential relationship between any parameter of dust emission and the AME.
+   The ring structure itself indicates excess microwave emission attributed to AME (white contours) while the central region is dominated by free-free emission \citep{aran09, koenig15}. Free-free emisison coming from the Hii phase surrounding the $\lambda$~Orionis association dominates the region's morphology in LFI images. \citep{planck15XXV}. Taking the hint from \cite{planck15XXV} that this may be among the more reliably component separated regions, we evaluate if there is any preferential relationship between any parameter of dust emission and the AME. Fig.~\ref{fig:LOri_halpha_AMEvarContours} shows the expected distribution of free-free emission in the region, assuming that $H\alpha$ line emission is a tracer of microwave free-free. This indicates that free-free is strong within the central region, where radiation fields are more intense, and AME is minimal. The strongest AME follows the ring-shaped morphology outside the central bubble of free-free emission.
+     \begin{figure}
+       \includegraphics[width=\textwidth]{../Plots/ch_lori/LOri_halpha_AMEvarContours.pdf}
+       \centering
+       \caption{$\lambda$~Orionis as it appears in H-alpha emission by \cite{finkbeiner}. Contours indicate AME emission, from the variable frequency component. The colorbar indicates $H\alpha$ emission in Rayleighs. The field of view is slightly larger than that used for the IR comparison. }
+       \label{fig:LOri_halpha_AMEvarContours}
+     \end{figure}
 
 	\section{Data preparation}
 		As indicated in Ch.~\ref{ch:datasources}, we use 12 photometric all-sky maps. For the IRC data (A9 and A18), we produce mosiacs of $\lambda$~Orionis from the individual tiles provided in the internal all-sky archive.
@@ -37,8 +43,15 @@
       A background estimation and subtraction is made
 
       \subsection{Point-source and artifact masking}
+        \paragraph{Missing stripes}
+          The AKARI all-sky survey suffers from a few missing stripe errors throughout the IRC and FIS maps \citep{ihshihara10, doi15}. These are more a more serious issue for the far infrared maps. They can generally be characterized as a competition for integration time beteen the all-sky observing mode, and pointed observations during AKARI's crygoenic phase. Unfortunately for the present work, some of these stripes pass directly through the $\lambda$~Orionis region. Figs.~\ref{fig:LOri_FIS_color} and~\ref{fig:LOri_IRC_color} display the data at near-native resolution, demonstrating where these patterns occur. Additionally there are some saturated pixels in both IRC and FIS data. 
+
+        \paragraph{Point sources}
+          A caveat that comes with added ionized PAH feature coverage of the A9 band, is that the shorter central wavelength placement allows more contamination from point sources. We identify point sources with a moving-window approach provided in the astropy Python package, flagging pixels which have higher than $5~\sigma$ intensity among the surrounding 100 pixel window. We then place a mask at the center of the flagged point-sources. The masks are propogated through the regridding step, such that the low-resolution pixels having more than 50\% of their area masked in the high resolution tiles, also become masked. Such pixels appear black in Fig.~\ref{fig:orionis-akari-9}. The same process is applied to the A18 data. For other maps, which we extract from HEALPix data, we first regrid from HEALPix to rectangular grids, and then apply the point-source search and masking as above. For the I12 and I25 images, the rejected pixels were fewer than with A9, but positions overlapped with those already masked in A9. For bands longer than I25, this process did not result in rejected pixels. For the D12 and D25 bands, which are natively at a much lower resolution than AKARI or IRAS, point-sources present more of a challenge. For these images, we visually inspect and mask 3 regions with bright point source contamination consistent with the DIRBE beamsize and with point-sources identified in IRAS and IRC images.
+
 
       \subsection{PSF Smoothing}
+        We smooth the pixels in the spatial domain, to a 1 degree FWHM PSF. This means that the final grid is oversampled, however
         \begin{lstlisting}[language=Python]
           import numpy as np
 
@@ -130,7 +143,6 @@
     Based on the dust properties derived from these SED fits, we attempt investigate whether any fitted parameter shows a preferential relation with the AME.
 
   \section{Discussion}
-
       In  $\lambda$~Orionis we found that accross the whole region, A9 emission and P545 emission were the most strongly correlated with AME. This is apparent both in the photometric band analysis, and in the dust SED fitting.  The fact that the correlation strengths of PAH-tracing mission and sub-mm emission are similar is in-line with what we have seen in \cite{ysard10b} and \cite{hensley16}. In those works, the two relationships (MIR vs. AME and FIR vs. AME) are very close, although these two papers are odds as to which relationship is stronger, and thus in their final interpretation. With the present data and analysis of $\lambda$~Orionis, we fail to rule out PAHs as carriers of the AME. Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig2c} indicates that although total dust mass and PAH mass are both correlated with AME, there is a strong (\~100\%) probability that PAH mass is the stronger predictor of AME intensity.
           \begin{figure}
             \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf}

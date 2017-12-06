@@ -1,0 +1,63 @@
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}All-sky Astronomy}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Infrared astronomy}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Microwave foregrounds}{5}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Anomalous Microwave Emission}{6}{subsection.1.3.1}
+\contentsline {subsubsection}{Correlation with dust}{9}{section*.6}
+\contentsline {subsection}{\numberline {1.3.2}Proposed explanations}{9}{subsection.1.3.2}
+\contentsline {subsubsection}{Spinning dust}{10}{section*.7}
+\contentsline {subsubsection}{Spinning PAHs?}{11}{section*.8}
+\contentsline {subsection}{\numberline {1.3.3}Excitation factors}{11}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}AME vs. IR in the literature}{12}{subsection.1.3.4}
+\contentsline {section}{\numberline {1.4}Scope of this Dissertation}{13}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}An application of all-sky archival data}{13}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Testing the spinning PAH hypothesis}{13}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Limitations}{13}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Code availability}{14}{subsection.1.4.4}
+\contentsline {chapter}{\numberline {2}Data Sources}{15}{chapter.2}
+\contentsline {section}{\numberline {2.1}A collection of skies}{15}{section.2.1}
+\contentsline {section}{\numberline {2.2}AKARI}{16}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}AKARI/Infrared Camera (IRC) }{16}{subsection.2.2.1}
+\contentsline {subsubsection}{PAH feature coverage}{17}{section*.11}
+\contentsline {subsubsection}{PAH ionization}{19}{section*.14}
+\contentsline {subsection}{\numberline {2.2.2}The AKARI Far Infrared Surveyor (FIS)}{20}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Planck Observatory High Frequency Instrument (HFI)}{20}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Infrared Astronomical Satellite (IRAS)}{21}{section.2.3}
+\contentsline {section}{\numberline {2.4}Planck COMMANDER Parameter Maps}{22}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Synchrotron}{22}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Free-free emission}{22}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Thermal dust emission}{24}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}AME data}{24}{subsection.2.4.4}
+\contentsline {subsubsection}{Spinning dust fitting}{28}{section*.22}
+\contentsline {section}{\numberline {2.5}All-sky Data Processing}{29}{section.2.5}
+\contentsline {chapter}{\numberline {3}Analysis of an interesting AME region: $\lambda $\nobreakspace {}Orionis}{31}{chapter.3}
+\contentsline {section}{\numberline {3.1}An interesting AME region}{31}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Where does the ring come from?}{31}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}A well-studied region}{32}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Investigative approach}{32}{section.3.2}
+\contentsline {section}{\numberline {3.3}Data preparation}{35}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Extraction from HEALPix maps}{35}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Point-source and artifact masking}{35}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}PSF Smoothing}{35}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Background subtraction}{36}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Multi-wavelength characterization}{36}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Bootstrap analysis}{37}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Comparison with SED Fitting}{39}{section.3.5}
+\contentsline {section}{\numberline {3.6}Discussion}{42}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}PAH Ionization fraction}{44}{subsection.3.6.1}
+\contentsline {chapter}{\numberline {4}All-sky Analysis}{46}{chapter.4}
+\contentsline {section}{\numberline {4.1}Resolution matching}{46}{section.4.1}
+\contentsline {subsubsection}{Smoothing}{46}{section*.37}
+\contentsline {section}{\numberline {4.2}All-sky cross correlations}{47}{section.4.2}
+\contentsline {section}{\numberline {4.3}Masked Comparison}{49}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Pixel mask}{49}{subsection.4.3.1}
+\contentsline {paragraph}{Zodical light}{49}{section*.41}
+\contentsline {paragraph}{Signal to noise}{50}{section*.42}
+\contentsline {paragraph}{Point Sources}{50}{section*.43}
+\contentsline {paragraph}{Bootstrap test}{51}{section*.48}
+\contentsline {section}{\numberline {4.4}Spatial variaton of correlations}{53}{section.4.4}
+\contentsline {section}{\numberline {4.5}Discussion}{53}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}AME:Dust}{53}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}AME:PAH}{58}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}AME:$T$, $G_{0}$}{58}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Microwave foreground component separation}{59}{subsection.4.5.4}
