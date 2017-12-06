@@ -9,7 +9,7 @@
 
 
   \section{All-sky cross correlations}
-        In order to look more closely how the the AME to IR relationship varies with wavelength, we first do a comparison without applying any pixel mask, as a benchmark comparison. Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked} shows the pizel-density plots of AME vs. the IR bands' intensities. Darker regions show higher pixel densities, unshaded or more lightly shaded regions show low or zero pixel densities. We see immediately that each band shows evidence of a positive trend with AME intensity, as in Ch.~\ref{ch:lori}. For the MIR bands, at lower IR intensities we see the effects of detector noise become dominant, turning into a more defined positive trend with increasing IR intensity. This effect is less pronounced in the FIR.
+        In order to look more closely how the the AME to IR relationship varies with wavelength, we first do a comparison without applying any pixel mask, as a benchmark. Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked} shows the pizel-density plots of AME vs. the IR bands' intensities. Darker regions show higher pixel densities, unshaded or more lightly shaded regions show low or zero pixel densities. We see immediately that each band shows evidence of a positive trend with AME intensity, as in Ch.~\ref{ch:lori}. For the MIR bands, at lower IR intensities we see the effects of detector noise become dominant, turning into a more defined positive trend with increasing IR intensity. This effect is less pronounced in the FIR.
           \begin{figure}
             \includegraphics[width=\textwidth]{../Plots/ch_allsky/AMEvsDust_allsky_allbands_mpsub_kde_unmasked.pdf}
             \centering
@@ -47,7 +47,6 @@
 
        \paragraph{Point Sources}
          The Planck Collaboration provides masks of the pixels they find to include point sources. We mask pixels which are flagged as being point-source contaminated, in the most heavily affected maps: Planck/HFI~857 GHz and Planck/LFI~30 GHz.
-
            Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_masked} shows point-density plots for $AME_{var}$ vs. each of the IR bands, after applying the mask described above.
               \begin{figure}
                 \includegraphics[width=\textwidth]{../Plots/ch_allsky/AMEvsDust_allsky_allbands_mpsub_kde_masked.pdf}
@@ -115,7 +114,7 @@
      \begin{figure}
        \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf}
        \centering
-       \caption{Spatial map of $r_{s}$ between the AME and IR intensity as in Fig.~\ref{fig:Spearman_Map_nside8_AMEtoIR}, but with the AME and IR maps first normalized y dust radiance $R$.}
+       \caption{Spatial map of $r_{s}$ between the AME and IR intensity as in Fig.~\ref{fig:Spearman_Map_nside8_AMEtoIR}, but with the AME and IR maps first normalized by dust radiance $R$.}
        \label{fig:Spearman_Map_nside8_AMEtoIR_radnorm_A9}
       \end{figure}
        \begin{figure}
