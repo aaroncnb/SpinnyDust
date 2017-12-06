@@ -336,9 +336,6 @@ INPUT ../Plots/ch_lori/LOri_halpha_AMEvarContours.pdf
 INPUT /home/aaronb/Projectbrary/CosmicDust/Source/../Plots/ch_lori/lori_fis_rgb.pdf
 INPUT ../Plots/ch_lori/lori_fis_rgb.pdf
 INPUT ../Plots/ch_lori/lori_fis_rgb.pdf
-INPUT /home/aaronb/Projectbrary/CosmicDust/Source/../Plots/lOrionis_grid_img.png
-INPUT ../Plots/lOrionis_grid_img.png
-INPUT ../Plots/lOrionis_grid_img.png
 INPUT /home/aaronb/Projectbrary/CosmicDust/Source/../Plots/ch_lori/Lori_corrmatrix_I.pdf
 INPUT ../Plots/ch_lori/Lori_corrmatrix_I.pdf
 INPUT ../Plots/ch_lori/Lori_corrmatrix_I.pdf
@@ -366,6 +363,9 @@ INPUT ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf
 INPUT /home/aaronb/Projectbrary/CosmicDust/Source/../Plots/orionis_correlations_AME.png
 INPUT ../Plots/orionis_correlations_AME.png
 INPUT ../Plots/orionis_correlations_AME.png
+INPUT /home/aaronb/Projectbrary/CosmicDust/Source/../Plots/lOrionis_grid_img.png
+INPUT ../Plots/lOrionis_grid_img.png
+INPUT ../Plots/lOrionis_grid_img.png
 INPUT /home/aaronb/Projectbrary/CosmicDust/Source/../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf
 INPUT ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf
 INPUT ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf

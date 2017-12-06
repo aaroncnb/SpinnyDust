@@ -43,11 +43,11 @@
 \contentsline {subsection}{\numberline {3.3.3}PSF Smoothing}{36}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Background subtraction}{37}{subsection.3.3.4}
 \contentsline {section}{\numberline {3.4}Multi-wavelength characterization}{37}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Bootstrap analysis}{40}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Comparison with SED Fitting}{40}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Comparison with unmasked results}{45}{subsection.3.5.1}
-\contentsline {section}{\numberline {3.6}Discussion}{45}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}PAH Ionization fraction}{46}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.4.1}Bootstrap analysis}{39}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Comparison with SED Fitting}{39}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Comparison with unmasked results}{41}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}Discussion}{46}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}PAH Ionization fraction}{47}{subsection.3.6.1}
 \contentsline {chapter}{\numberline {4}All-sky Analysis}{48}{chapter.4}
 \contentsline {section}{\numberline {4.1}Resolution matching}{48}{section.4.1}
 \contentsline {subsubsection}{Smoothing}{48}{section*.40}

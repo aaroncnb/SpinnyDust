@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.7)  7 DEC 2017 01:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.7)  7 DEC 2017 01:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -517,10 +517,6 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 Package natbib Warning: Citation `finkbeiner' on page v undefined on input line 19.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 9.49998pt.
  We now make it that large for the rest of the document.
@@ -967,23 +963,17 @@ LaTeX Warning: Reference `fig:lori_bgsep' on page 37 undefined on input line 66.
 
 LaTeX Warning: Reference `fig:lori_processed_all' on page 37 undefined on input line 68.
 
-<../Plots/lOrionis_grid_img.png, id=2316, 1375.1375pt x 1013.7875pt>
-File: ../Plots/lOrionis_grid_img.png Graphic file (type png)
- <use ../Plots/lOrionis_grid_img.png>
-Package pdftex.def Info: ../Plots/lOrionis_grid_img.png used on input line 72.
-(pdftex.def)             Requested size: 483.69684pt x 356.59442pt.
 
+LaTeX Warning: Reference `fig:lori_processed_all' on page 37 undefined on input line 73.
 
-LaTeX Warning: Reference `fig:lori_processed_all' on page 37 undefined on input line 79.
-
-<../Plots/ch_lori/Lori_corrmatrix_I.pdf, id=2323, 867.24pt x 867.24pt>
+<../Plots/ch_lori/Lori_corrmatrix_I.pdf, id=2317, 867.24pt x 867.24pt>
 File: ../Plots/ch_lori/Lori_corrmatrix_I.pdf Graphic file (type pdf)
  <use ../Plots/ch_lori/Lori_corrmatrix_I.pdf>
-Package pdftex.def Info: ../Plots/ch_lori/Lori_corrmatrix_I.pdf used on input line 81.
+Package pdftex.def Info: ../Plots/ch_lori/Lori_corrmatrix_I.pdf used on input line 75.
 (pdftex.def)             Requested size: 483.69684pt x 483.70584pt.
 
 
-LaTeX Warning: Reference `lori_processed_all' on page 37 undefined on input line 86.
+LaTeX Warning: Reference `lori_processed_all' on page 37 undefined on input line 82.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -998,71 +988,69 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[38 <../Plots/lOrionis_grid_img.png>]
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 9.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[39 <../Plots/ch_lori/Lori_corrmatrix_I.pdf>] <../Plots/ch_lori/bootstrap_vs_AME_pearson_i1000.pdf, id=2375, 867.24pt x 433.62pt>
+[38 <../Plots/ch_lori/Lori_corrmatrix_I.pdf>] <../Plots/ch_lori/bootstrap_vs_AME_pearson_i1000.pdf, id=2365, 867.24pt x 433.62pt>
 File: ../Plots/ch_lori/bootstrap_vs_AME_pearson_i1000.pdf Graphic file (type pdf)
  <use ../Plots/ch_lori/bootstrap_vs_AME_pearson_i1000.pdf>
-Package pdftex.def Info: ../Plots/ch_lori/bootstrap_vs_AME_pearson_i1000.pdf used on input line 91.
+Package pdftex.def Info: ../Plots/ch_lori/bootstrap_vs_AME_pearson_i1000.pdf used on input line 87.
 (pdftex.def)             Requested size: 483.69684pt x 241.85292pt.
- <../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf, id=2376, 867.24pt x 433.62pt>
+ <../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf, id=2366, 867.24pt x 433.62pt>
 File: ../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf Graphic file (type pdf)
  <use ../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf>
-Package pdftex.def Info: ../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf used on input line 92.
+Package pdftex.def Info: ../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf used on input line 88.
 (pdftex.def)             Requested size: 483.69684pt x 241.85292pt.
-
-Underfull \vbox (badness 1137) has occurred while \output is active []
-
-
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 9.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[40]
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 9.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[41 <../Plots/ch_lori/bootstrap_vs_AME_pearson_i1000.pdf> <../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf
-
-pdfTeX warning: pdflatex (file ../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf, id=2511, 237.5274pt x 242.8272pt>
+ <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf, id=2388, 237.5274pt x 242.8272pt>
 File: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf Graphic file (type pdf)
  <use ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf>
-Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf used on input line 108.
+Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf used on input line 104.
 (pdftex.def)             Requested size: 241.84842pt x 247.25435pt.
- <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf, id=2512, 238.0092pt x 243.30899pt>
+ <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf, id=2389, 238.0092pt x 243.30899pt>
 File: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf Graphic file (type pdf)
  <use ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf>
-Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf used on input line 114.
+Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf used on input line 110.
 (pdftex.def)             Requested size: 241.84842pt x 247.24002pt.
- <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf, id=2516, 228.3732pt x 237.04561pt>
+ <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf, id=2393, 228.3732pt x 237.04561pt>
 File: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf Graphic file (type pdf)
  <use ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf>
-Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf used on input line 121.
+Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf used on input line 117.
 (pdftex.def)             Requested size: 241.84842pt x 251.0465pt.
- <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2b.pdf, id=2519, 228.3732pt x 237.04561pt>
+ <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2b.pdf, id=2396, 228.3732pt x 237.04561pt>
 File: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2b.pdf Graphic file (type pdf)
  <use ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2b.pdf>
-Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2b.pdf used on input line 128.
+Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2b.pdf used on input line 124.
 (pdftex.def)             Requested size: 241.84842pt x 251.0465pt.
- <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf, id=2522, 228.3732pt x 237.04561pt>
+ <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf, id=2399, 228.3732pt x 237.04561pt>
 File: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf Graphic file (type pdf)
- <use ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf>
-Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf used on input line 134.
+
+<use ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf>
+Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf used on input line 130.
 (pdftex.def)             Requested size: 241.84842pt x 251.0465pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[40 <../Plots/ch_lori/bootstrap_vs_AME_pearson_i1000.pdf> <../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf
+
+pdfTeX warning: pdflatex (file ../Plots/ch_lori/bootstrap_vs_AME_spearman_i1000.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] <../Plots/orionis_correlations_AME.png, id=2520, 1409.265pt x 1078.0275pt>
+File: ../Plots/orionis_correlations_AME.png Graphic file (type png)
+ <use ../Plots/orionis_correlations_AME.png>
+Package pdftex.def Info: ../Plots/orionis_correlations_AME.png used on input line 140.
+(pdftex.def)             Requested size: 483.69684pt x 369.99532pt.
+ <../Plots/lOrionis_grid_img.png, id=2522, 1375.1375pt x 1013.7875pt>
+File: ../Plots/lOrionis_grid_img.png Graphic file (type png)
+ <use ../Plots/lOrionis_grid_img.png>
+Package pdftex.def Info: ../Plots/lOrionis_grid_img.png used on input line 146.
+(pdftex.def)             Requested size: 483.69684pt x 356.59442pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -1070,14 +1058,14 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42 <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf>]
+[41 <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 9.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[43 <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf> <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf
+[42 <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf> <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf
 
 pdfTeX warning: pdflatex (file ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
@@ -1087,27 +1075,32 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[44 <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2b.pdf> <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf
+[43 <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2b.pdf> <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf
 
 pdfTeX warning: pdflatex (file ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <../Plots/orionis_correlations_AME.png, id=2576, 1409.265pt x 1078.0275pt>
-File: ../Plots/orionis_correlations_AME.png Graphic file (type png)
- <use ../Plots/orionis_correlations_AME.png>
-Package pdftex.def Info: ../Plots/orionis_correlations_AME.png used on input line 144.
-(pdftex.def)             Requested size: 483.69684pt x 369.99532pt.
- <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf, id=2582, 228.3732pt x 237.04561pt>
-File: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf Graphic file (type pdf)
- <use ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf>
-Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf used on input line 153.
-(pdftex.def)             Requested size: 241.84842pt x 251.0465pt.
-
+>]
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 9.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[45 <../Plots/orionis_correlations_AME.png>]
+[44 <../Plots/orionis_correlations_AME.png>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 9.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[45 <../Plots/lOrionis_grid_img.png>] <../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf, id=2587, 228.3732pt x 237.04561pt>
+File: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf Graphic file (type pdf)
+ <use ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf>
+Package pdftex.def Info: ../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf used on input line 156.
+(pdftex.def)             Requested size: 241.84842pt x 251.0465pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 9.49998pt.
@@ -1439,7 +1432,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 107.
 Here is how much of TeX's memory you used:
  11609 strings out of 493029
  178766 string characters out of 6136234
- 366680 words of memory out of 5000000
+ 366700 words of memory out of 5000000
  14517 multiletter control sequences out of 15000+600000
  43202 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1473,7 +1466,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/aaronb/Projectbrary/CosmicDust/Source/main.pdf (76 pages, 13811781 bytes).
+Output written on /home/aaronb/Projectbrary/CosmicDust/Source/main.pdf (76 pages, 13811017 bytes).
 PDF statistics:
  3572 PDF objects out of 3580 (max. 8388607)
  2179 compressed objects within 22 object streams
