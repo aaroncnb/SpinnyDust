@@ -37,16 +37,17 @@
 \BOOKMARK [1][-]{section.3.4}{Multi-wavelength characterization}{chapter.3}% 37
 \BOOKMARK [2][-]{subsection.3.4.1}{Bootstrap analysis}{section.3.4}% 38
 \BOOKMARK [1][-]{section.3.5}{Comparison with SED Fitting}{chapter.3}% 39
-\BOOKMARK [1][-]{section.3.6}{Discussion}{chapter.3}% 40
-\BOOKMARK [2][-]{subsection.3.6.1}{PAH Ionization fraction}{section.3.6}% 41
-\BOOKMARK [0][-]{chapter.4}{All-sky Analysis}{}% 42
-\BOOKMARK [1][-]{section.4.1}{Resolution matching}{chapter.4}% 43
-\BOOKMARK [1][-]{section.4.2}{All-sky cross correlations}{chapter.4}% 44
-\BOOKMARK [1][-]{section.4.3}{Masked Comparison}{chapter.4}% 45
-\BOOKMARK [2][-]{subsection.4.3.1}{Pixel mask}{section.4.3}% 46
-\BOOKMARK [1][-]{section.4.4}{Spatial variaton of correlations}{chapter.4}% 47
-\BOOKMARK [1][-]{section.4.5}{Discussion}{chapter.4}% 48
-\BOOKMARK [2][-]{subsection.4.5.1}{AME:Dust}{section.4.5}% 49
-\BOOKMARK [2][-]{subsection.4.5.2}{AME:PAH}{section.4.5}% 50
-\BOOKMARK [2][-]{subsection.4.5.3}{AME:T, G0}{section.4.5}% 51
-\BOOKMARK [2][-]{subsection.4.5.4}{Microwave foreground component separation}{section.4.5}% 52
+\BOOKMARK [2][-]{subsection.3.5.1}{Comparison with unmasked results}{section.3.5}% 40
+\BOOKMARK [1][-]{section.3.6}{Discussion}{chapter.3}% 41
+\BOOKMARK [2][-]{subsection.3.6.1}{PAH Ionization fraction}{section.3.6}% 42
+\BOOKMARK [0][-]{chapter.4}{All-sky Analysis}{}% 43
+\BOOKMARK [1][-]{section.4.1}{Resolution matching}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.2}{All-sky cross correlations}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.3}{Masked Comparison}{chapter.4}% 46
+\BOOKMARK [2][-]{subsection.4.3.1}{Pixel mask}{section.4.3}% 47
+\BOOKMARK [1][-]{section.4.4}{Spatial variaton of correlations}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.5}{Discussion}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.5.1}{AME:Dust}{section.4.5}% 50
+\BOOKMARK [2][-]{subsection.4.5.2}{AME:PAH}{section.4.5}% 51
+\BOOKMARK [2][-]{subsection.4.5.3}{AME:T, G0}{section.4.5}% 52
+\BOOKMARK [2][-]{subsection.4.5.4}{Microwave foreground component separation}{section.4.5}% 53

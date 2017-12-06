@@ -1,4 +1,4 @@
-\begin{thebibliography}{130}
+\begin{thebibliography}{131}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Ali-Haimoud}(2010)}]{ali-haimoud10}
@@ -171,6 +171,10 @@ Efron, B. 1979, Ann. Statist., 7, 1
 
 \bibitem[{{Erickson}(1957)}]{erickson57}
 {Erickson}, W.~C. 1957, \apj, 126, 480
+
+\bibitem[{{Feigelson} \& {Babu}(2013)}]{feigelson13}
+{Feigelson}, E.~D., \& {Babu}, G.~J. 2013, {Statistical Methods for Astronomy},
+  ed. T.~D. {Oswalt} \& H.~E. {Bond}, 445
 
 \bibitem[{{Ferrara} \& {Dettmar}(1994)}]{ferrara94}
 {Ferrara}, A., \& {Dettmar}, R.-J. 1994, \apj, 427, 155

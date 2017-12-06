@@ -38,26 +38,29 @@
 \contentsline {section}{\numberline {3.3}Data preparation}{35}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Extraction from HEALPix maps}{35}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Point-source and artifact masking}{35}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}PSF Smoothing}{35}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Background subtraction}{36}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Multi-wavelength characterization}{36}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Bootstrap analysis}{37}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Comparison with SED Fitting}{39}{section.3.5}
-\contentsline {section}{\numberline {3.6}Discussion}{42}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}PAH Ionization fraction}{44}{subsection.3.6.1}
-\contentsline {chapter}{\numberline {4}All-sky Analysis}{46}{chapter.4}
-\contentsline {section}{\numberline {4.1}Resolution matching}{46}{section.4.1}
-\contentsline {subsubsection}{Smoothing}{46}{section*.37}
-\contentsline {section}{\numberline {4.2}All-sky cross correlations}{47}{section.4.2}
-\contentsline {section}{\numberline {4.3}Masked Comparison}{49}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Pixel mask}{49}{subsection.4.3.1}
-\contentsline {paragraph}{Zodical light}{49}{section*.41}
-\contentsline {paragraph}{Signal to noise}{50}{section*.42}
-\contentsline {paragraph}{Point Sources}{50}{section*.43}
-\contentsline {paragraph}{Bootstrap test}{51}{section*.48}
-\contentsline {section}{\numberline {4.4}Spatial variaton of correlations}{53}{section.4.4}
-\contentsline {section}{\numberline {4.5}Discussion}{53}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}AME:Dust}{53}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}AME:PAH}{58}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}AME:$T$, $G_{0}$}{58}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Microwave foreground component separation}{59}{subsection.4.5.4}
+\contentsline {paragraph}{Missing stripes}{35}{section*.27}
+\contentsline {paragraph}{Point sources}{35}{section*.29}
+\contentsline {subsection}{\numberline {3.3.3}PSF Smoothing}{36}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Background subtraction}{37}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Multi-wavelength characterization}{37}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Bootstrap analysis}{40}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Comparison with SED Fitting}{40}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Comparison with unmasked results}{45}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}Discussion}{45}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}PAH Ionization fraction}{46}{subsection.3.6.1}
+\contentsline {chapter}{\numberline {4}All-sky Analysis}{48}{chapter.4}
+\contentsline {section}{\numberline {4.1}Resolution matching}{48}{section.4.1}
+\contentsline {subsubsection}{Smoothing}{48}{section*.40}
+\contentsline {section}{\numberline {4.2}All-sky cross correlations}{49}{section.4.2}
+\contentsline {section}{\numberline {4.3}Masked Comparison}{51}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Pixel mask}{51}{subsection.4.3.1}
+\contentsline {paragraph}{Zodical light}{51}{section*.44}
+\contentsline {paragraph}{Signal to noise}{52}{section*.45}
+\contentsline {paragraph}{Point Sources}{52}{section*.46}
+\contentsline {paragraph}{Bootstrap test}{53}{section*.51}
+\contentsline {section}{\numberline {4.4}Spatial variaton of correlations}{55}{section.4.4}
+\contentsline {section}{\numberline {4.5}Discussion}{55}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}AME:Dust}{55}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}AME:PAH}{60}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}AME:$T$, $G_{0}$}{60}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Microwave foreground component separation}{61}{subsection.4.5.4}
