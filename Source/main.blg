@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: ch1_intro.aux
+A level-1 auxiliary file: ch2_datasources.aux
+A level-1 auxiliary file: ch3_lori.aux
+A level-1 auxiliary file: ch4_allsky.aux
+A level-1 auxiliary file: app_pca.aux
+A level-1 auxiliary file: acknowledgements.aux
+The style file: apj.bst
+Database file #1: reference.bib
+Repeated entry---line 3087 of file reference.bib
+ : @article{flauger14
+ :                   ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "finkbeiner"
+Warning--empty publisher in draine11
+Warning--can't use both author and editor fields in feigelson13
+Warning--empty publisher in feigelson13
+Warning--empty journal in truemper82
+You've used 131 entries,
+            2988 wiz_defined-function locations,
+            1332 strings with 51141 characters,
+and the built_in function-call counts, 74399 in all, are:
+= -- 4805
+> -- 7676
+< -- 38
++ -- 2573
+- -- 2427
+* -- 7681
+:= -- 14694
+add.period$ -- 131
+call.type$ -- 131
+change.case$ -- 844
+chr.to.int$ -- 118
+cite$ -- 135
+duplicate$ -- 2422
+empty$ -- 3520
+format.name$ -- 2886
+if$ -- 13933
+int.to.chr$ -- 14
+int.to.str$ -- 1
+missing$ -- 127
+newline$ -- 397
+num.names$ -- 526
+pop$ -- 859
+preamble$ -- 1
+purify$ -- 843
+quote$ -- 0
+skip$ -- 2014
+stack$ -- 0
+substring$ -- 2650
+swap$ -- 37
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1173
+warning$ -- 4
+while$ -- 427
+width$ -- 0
+write$ -- 1311
+(There was 1 error message)
