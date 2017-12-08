@@ -92,7 +92,7 @@
                      \label{fig:bootstrap_vs_AME_allsky_masked}
                 \end{figure}
 
-\section{Spatial variaton of correlations}
+\section{Spatial variation of correlations}
     To understand how these trends may vary across the sky, we produce an all-sky maps of $r_{s}$ for AME vs. IR emission, without employing any pixel mask. From the NSIDE~256 input maps of AME and 4 IR wavelength maps, we produce NSIDE~8 maps of $r_{s}$. These maps are shown in Figs.~\ref{fig:Spearman_Map_nside8_AMEtoIR_A9} and~\ref{fig:Spearman_Map_nside8_AMEtoIR_I12}.
       \begin{figure}
         \includegraphics[width=\textwidth]{../Plots/Allsky_Corr/Spearman_Map_nside8_A9toAMEvar.pdf}
@@ -146,22 +146,17 @@
 
 
     \section{Discussion}
-      \subsection{AME:Dust}
-        As noted in Ch. \hyperref[ch:intro]{\ref{ch:intro}}, previous studies found that the AME generally correlates at dust-related IR wavelengths \citep{ysard10b,planckXV, hensley16}. We see the same overall pattern in the present study.
+        As noted in Ch. \hyperref[ch:intro]{\ref{ch:intro}}, previous studies found that the AME generally correlates at dust-related IR wavelengths \citep{ysard10b,planckXV, hensley16}. We see the same overall pattern in the present study. We also corroborate that the FIR emission shows the tightest correlation with the AME intensity, for large portion of the sky in a de-localized fashion. This does not conflict with results from Ch.~\ref{ch:lori}, except in that the findings from Fig.~\ref{fig:bootstrap_vs_AME}, wherein $r_{p}$ of A9 emission correlates better with AME than P545 emission, do not generalize to the results of this chapter (either the masked or unmasked cases.)
 
-         In our all-sky comparison, we find a first-order correlation between IR intensity and AME intensity, for each of the 12 wavelengths sampled. This is again consistent with the previous investigations of the AME cited above, in that the FIR emission shows the tightest correlation with the AME intensity.
+         In testing for a second-order correlation, we divided the IR intensities and AME intensity by $U$, and again performed the band-by-band all-sky comparison. There is evidence of a residual correlation between $I_{MIR}/U$ and $I_{AME}/U$.
 
-         In testing for a second-order correlation, we divided the IR intensities and AME intensity by the dust radiance, and again performed the band-by-band all-sky comparison. There is evidence of a residual correlation between $I_{MIR}$ and $I_{AME}/R$. Unsurprisingly, the strong correlation between $I_{FIR}$ and $I_{AME}$ disappears when scaling by $R$, as the the FIR bands are dominated by thermal dust emission. In this case, we again find no evidence of an improved correlation for the PAH-dominated bands.
-
-           The closeness of the correlation coefficients found here is consistent with the results of the IRAS vs. AME correlation test result from \cite{planckXV}. They found that the correlation coefficient among the 4 IRAS bands (12, 25, 60, and 100~$\mu$m) differ from one another only by about 5\%, across the whole set of 98 regions. The trend of AKARI MIR and FIR data vs. the AME does not disagree with their IRAS comparison. This work adds that bands longer than IRAS 100~$\mu$m also correlate strongly with AME, especially the two Planck/HFI bands used.
+       The closeness of the correlation coefficients found here is consistent with the results of the IRAS vs. AME correlation test result from \cite{planckXV}. They found that the correlation coefficient among the 4 IRAS bands (12, 25, 60, and 100~$\mu$m) differ from one another only by about 5\%, across the whole set of 98 regions. The trend of AKARI MIR and FIR data vs. the AME does not disagree with their IRAS comparison. This work adds that individual band intensities longer than IRAS 100~$\mu$m also correlate strongly with AME, especially the two Planck/HFI bands used.
 
           \subsection{AME:PAH}
             Each of the bands sampled show correlation with the AME, however the FIR bands always show the strongest correlation. In fact, the correlation pattern of AME vs. each of the IR bands, very strongly resembles the correlation results of the FIR vs. all of the other maps. This is readily apparent from the pixel-density plots in Figs.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked} and~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_masked}, wherein the FIR bands pixels show a very similar density profile vs. the AME. In attempting to factor out this first-order correlation, dividing the AME and IR intensities by $U$ for each pixel, we find the there is still a residual correlation between the MIR bands and the AME.
 
           \subsection{AME:$T$, $G_{0}$}
             According to spinning dust theory outlined in \cite{draine98a} and in subsequent works by \cite{ysard10a}, the AME profile and intensity will depend in part on the ISRF- but as is well-stated in \cite{hensley17a}, exactly how the ISRF will affect the AME SED is a more complicated question. Absorbed starlight photons may be able to rotationally excite the carriers, but if an enhanced ISRF leads to increased dust heating, then the increased IR emission can rotationally de-excite the carriers. Moreover the ISRF affects not only the dust temperature but ionization of the carriers.
-
-            %\cite{hensley16} looked at the $AME$/$R$ ratio vs. $T$ and found only a slight anti-correlation of $P = -0.06$.
 
           \subsection{Microwave foreground component separation}
 
