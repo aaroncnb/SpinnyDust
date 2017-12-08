@@ -39,8 +39,7 @@
        For the other sources, HEALPix all-sky maps are available publicly, at sufficient resolution relative to their native resolutions. \footnote{Planck data was retreived from the NASA IPAC online archive at \url{http://irsa.ipac.caltech.edu/data/Planck/release_2/all-sky-maps/}}\footnote{AKARI/FIS data }\footnote{IRAS/IRIS data }
 
 		\subsection{Extraction from HEALPix maps}
-		  For the data obtained via HEALPix maps, we employ the ``healpix2wcs'' functionality provided in the ``gnomdrizz'' python package\footnote{Available at \url{http://cade.irap.omp.eu/dokuwiki/doku.php?id=software}}\footnote{``drizzlib'' 1.2.2 and earlier were not able to correctly access HEALPix files with multiple fields/columns. See appendix for our recommended workaround.} A9 and A18 images are produced by regridding the images with the ``montage'' software by NASA/IPAC. All of the images for all of the bands are based on a common FITS header which has a pixel grid spacing equal to the average pixel width in the NSIDE 256 HEALPix scheme.
-      A background estimation and subtraction is made
+		  For the data obtained via HEALPix maps, we employ the ``healpix2wcs'' functionality provided in the ``gnomdrizz'' python package\footnote{Available at \url{http://cade.irap.omp.eu/dokuwiki/doku.php?id=software}}\footnote{``drizzlib'' 1.2.2 and earlier were not able to correctly access HEALPix files with multiple fields/columns. See appendix for our recommended workaround.} A9 and A18 images are produced by regridding the images with the ``montage'' software by NASA/IPAC. Figs.~\ref{fig:lori_A9_mosaic_smooth} and~\ref{fig:lori_A18_mosaic_smooth} show high resolution mosaics of the A9 and A18 data before processing). All of the images for all of the bands are based on a common FITS header which has a pixel grid spacing equal to the average pixel width in the NSIDE 256 HEALPix scheme.
 
       \subsection{Point-source and artifact masking}
 
@@ -55,13 +54,13 @@
             \begin{figure}
               \includegraphics[width=\textwidth]{../Plots/ch_lori/lori_A9_mosaic_smooth.pdf}
               \centering
-              \caption{The $\lambda$~Orionis region in A9 }
+              \caption{The $\lambda$~Orionis region in the A9 band at near-native resolution. This is a mosiac created from the 3x3 degree all-sky survey tiles by Ishirara et al. (in prep.) Missing stripes are less of a problem than with the A18 band (Fig.~\ref{fig:lori_A18_mosaic_smooth}), but point sources are more pronounced. Betelgeuse, in the lower left of the image, is bright enough in this band to produce a ring-shaped artifact. }
               \label{fig:lori_A9_mosaic_smooth}
             \end{figure}
             \begin{figure}
               \includegraphics[width=\textwidth]{../Plots/ch_lori/lori_A18_mosaic_smooth.pdf}
               \centering
-              \caption{The $\lambda$~Orionis region in A18 }
+              \caption{The $\lambda$~Orionis region in the A18 band at near-native resolution, demonstrating the regions affected by missing stripe errors, but less affected by point-sources than A9 (Fig.~\ref{fig:lori_A9_mosaic_smooth}). }
               \label{fig:lori_A18_mosaic_smooth}
             \end{figure}
 
@@ -71,20 +70,19 @@
 
         \subsection{PSF Smoothing}
           We smooth the pixels in the spatial domain, to have a 1 degree FWHM PSF, in order to have a resolution approximating that of the PC AME data.
-          The smoothing process relies on ``convlution'' module provided in the ``astropy'' package. We assume simple circular gaussian kernel for the smoothing process. While they may be asymmetries in the effective beam shapes of the IR bands used, the target resolution of the AME data is large enough relative to the native resolution of the input IR data (especially A9 and A18, see Fig.~\ref{tab:data}) as to render the beam shapes and positional variations negligible. Note that we do not use the image-reconstruction capability provided by the ``convolve'' function. Finally, we mask pixels along the edge of the FOV where the convolution process produces artifacts.
+          The smoothing process relies on the {\tt convolution} module provided in the ``astropy'' package. We assume simple circular gaussian kernel for the smoothing process. While they may be asymmetries in the effective beam shapes of the IR bands used, the target resolution of the AME data is large enough relative to the native resolution of the input IR data (especially A9 and A18, see Fig.~\ref{tab:data}) as to render the beam shapes and positional variations negligible. Finally, we mask pixels along the edge of the FOV where the convolution process produces artifacts.
 
       \subsection{Background subtraction}
-        We do not expect simple band-by-band intensity correlation tests with the AME to be sensitive to background and foreground emission along the line of sight towards the $\lambda$~Orionis region. The morphology is well pronounced and S/N is each band. However analyses such as dust SED fitting, to determine the relative abundances of different dust components, may be effected by the background level. We estimate an average, flat background level for this region. The background level is determined the mean of pixels in an `OFF` zone. The final images are shown in Fig.~\ref{fig:lori_processed_all}, with the full mask applied (masked pixels are indicated in white), and with the OFF zone indicated by the red rectangle on each frame.
+         We estimate an average, flat background level for this region. The background level is determined the mean of pixels in an `OFF` zone. The final images are shown in Fig.~\ref{fig:lori_processed_all}, with the full mask applied (masked pixels are indicated in white), and with the OFF zone indicated by the red rectangle on each frame.
           \begin{figure}
             \includegraphics[width=\textwidth]{../Plots/ch_lori/lori_processed_grid.pdf}
             \centering
-            \caption{Processed data at each wavelgnth for $lambda$~Orionis. A flat background has been subtracted from each frame based on the mean of pixels within the red rectangle. The pixel width is 0.25 degrees, with the data PSF smoothed to 1 degree spatial resolution. Masked pixels (point sources, stripe errors, convolution artifacts) are shown as white. The frames share the same FOV and GAL-TAN projection. Colorbars indicate the intensity in MJy/sr.}
+            \caption{Processed data at each wavelgnth for $\lambda$~Orionis. A flat background has been subtracted from each frame based on the mean of pixels within the red rectangle. The pixel width is 0.25 degrees, with the data PSF smoothed to 1 degree spatial resolution. Masked pixels (point sources, stripe errors, convolution artifacts) are shown as white. The frames share the same FOV and GAL-TAN projection. Colorbars indicate the intensity in MJy/sr.}
             \label{fig:lori_processed_all}
           \end{figure}
+          We do not expect simple band-by-band intensity correlation tests with the AME to be sensitive to background and foreground emission along the line of sight towards the $\lambda$~Orionis region. However analyses such as dust SED fitting, to determine the relative abundances of different dust components, may be effected by the background level. The general morphology as seen in the high resolution AKARI data (Figs.~\ref{fig:LOri_FIS_color},~\ref{fig:lori_A9_mosaic_smooth} and ~\ref{fig:lori_A18_mosaic_smooth}) remains well pronounced in the final, low resolution images.
 
-		\section{Multi-wavelength characterization}
-
-
+	\section{Multi-wavelength characterization}
     The correlation matrix results corresponding to data shown in Fig.~\ref{fig:lori_processed_all}, are shown in Fig.~\ref{fig:orionis-corr-matrix}.
       \begin{figure}
         \includegraphics[width=\textwidth]{../Plots/ch_lori/Lori_corrmatrix_I.pdf}
@@ -92,17 +90,17 @@
         \caption{$r_{s}$ correlation matrix for all of the data used in the $\lambda$~Orionis analysis, similar to that presented for the Planck Commander component maps in Fig.~\ref{fig:PCCS_corrmatrix}. The shade and annotation for each cell indicates the $r_{s}$ score, where $r_{s}$ of 1 indicates a monotonically increasing relationship for a given pair of images. The two AME components, as described in Ch.~\ref{ch:datasources}, are listed separately: $AME_{var}$ for the frequency-varying component, and $AME_{fix}$ for the constant frequency component.}
         \label{fig:orionis-corr-matrix}
       \end{figure}
-     This immediately confirms a correlation between the IR and AME, however this was readily visibly from the spatial morphology of the region. Interestingly though, the correlation strengths with $AME_{var}$ show a pattern from short to long wavelengths: A9, P857, and P545 show the strongest correlations, with the correlation weaking from A18 to A90, and again strengthening at longer wavelengths. The fixed peak frequency $AME_{fix}$, which is the much fainter component, shows the strongest correlation with A90- though all of the IR correlations relative to $AME_{fix}$ are weaker than those for $AME_{var}$. The overall pattern is for bands dominated by PAH emission (as discussined in Ch.~\ref{ch:datasources}), and those which trace Rayleigh-Jeans thermal dust emission are equally good predictors of the AME. Bands dominated by a mixture of VSGs, and warm dust emission, show a weaker correlation.
+     This immediately confirms a correlation between the IR and AME, however this was readily visibly from the spatial morphology of the region. Interestingly though, the correlation strengths with $AME_{var}$ show a pattern from short to long wavelengths: A9, P857, and P545 show the strongest correlations, with the correlation weaking from A18 to A90, and again strengthening at longer wavelengths. The fixed peak frequency $AME_{fix}$, which is the much fainter component, shows the strongest correlation with A90- though all of the IR correlations relative to $AME_{fix}$ are weaker than those for $AME_{var}$. The overall pattern is for bands dominated by PAH emission (as discussed in Ch.~\ref{ch:datasources}), and those which trace Rayleigh-Jeans thermal dust emission are equally good predictors of the AME. Bands dominated by a mixture of VSGs, and warm dust emission, show a weaker correlation. For the next stages of analysis, we will consider only the dominant component $AME_{sum}$, however the results are not sensitive the choice of $AME_{sum}$ or $AME_{var}$.
 
      Comparing the images in Fig.~\ref{fig:lori_processed_all}, most of the variation in the correlation scores appears to come from the central region of $\lambda$~Orionis. Because of the known heating present within the ring, from the $\lambda$~Orionis association, and given the brightening of bands between A18 and A90, this variation appears to be due to a temperature increase.
     \subsection{Bootstrap analysis}
-        To assess the robustness of the correlation scores, we employ the Bootstrap re-sampling approach, first introduced by \cite{efron79} (see \cite{feigelson13} for an updated description wihtin an astronomical context). This involves creating random re-sampled sets of the data. We use the 'with replacement' approach, meaning that a data point may be selected multiple times in a single re-sampling iteration. The size of the re-sampled set is the same is the input set size. For each random set we run a correlation test, resulting in a distribution of correlation coefficient. This allows us to estimate error bars for the correlation scores.
-        We carry out bootstrap correlation tests for each IR band's intensity vs. the $AME_{var}$ intensity. The data are resampled 10,000 times for each correlation test. This is repeated for both $r_{s}$ and $r_{p}$ based tests. The distributions of the boostrap resamplings are show in in Fig.~\ref{fig:bootstrap_vs_AME}.
+        To assess the robustness of the correlation scores, we employ the Bootstrap re-sampling approach, first introduced by \cite{efron79} (see \cite{feigelson13} for an updated description within an astronomical context). This involves creating random re-sampled sets of the data. We use the 'with replacement' approach, meaning that a data point may be selected multiple times in a single re-sampling iteration. The size of the re-sampled set is the same is the input set size. For each random set we run a correlation test, resulting in a distribution of correlation coefficients. This allows us to estimate error bars for the correlation scores.
+        We carry out bootstrap correlation tests for each IR band's intensity vs. the $AME_{sum}$ integrated intensity. The data are resampled 10,000 times for each correlation test, a sufficient resampling given the unmasked pixel count of \~1400 pixels, and considering that the effective beams are somewhat undersampled. This is repeated for both $r_{s}$ and $r_{p}$ based tests, in order to assess variations in degree of linearity among the various IR:AME trends. The distributions of the boostrap resamplings are shown in in Fig.~\ref{fig:bootstrap_vs_AME}.
             \begin{figure}
               \includegraphics[width=\textwidth]{../Plots/ch_lori/bootstrap_vs_AME_pearson_i10000.pdf}
               \includegraphics[width=\textwidth]{../Plots/ch_lori/bootstrap_vs_AME_spearman_i10000.pdf}
               \centering
-              \caption{Re-sampled (Bootstrap) correlation tests for IR emission in $\lambda$~Orionis vs. AME, for both Spearman and Pearson correlation tests.) }
+              \caption{Re-sampled (Bootstrap) correlation tests for IR emission in $\lambda$~Orionis vs. AME, for both $r_{p}$ (upper) and $r_{s}$ (lower) cases. Each band's $r$ distribution is shown in a different color (the same color scheme for both plots). The width of the distribution indicates the error for the given data in the correlation coefficient. The mean and standard deviation of the scores are given in the legend of each plot. The plot ranges only show positive values, since no negative scores were produced. }
               \label{fig:bootstrap_vs_AME}
             \end{figure}
         For both test cases, the best correlations are the longest and shortest wavelength bands, consistent with the straight-forward $r_{s}$ scores shown in Fig.~\ref{fig:orionis-corr-matrix}. In the $r_{p}$ case, the strongest correlation is the A9 band vs the AME.
@@ -116,61 +114,61 @@
           We utilize both the Bayesian dust SED fitting approach by Galliano (in prep.), and a least-squares analysis. The SED fitting accounts for estimates of the respective calibration uncertainties, and the spectral response curves (Fig.~\ref{fig:Filter_coverage_example_full}). As outputs, metrics of the total dust mass $M_{dust}$, PAH mass $M_{PAH}$, ionized PAH mass $M_{PAH+}$, and ISRF intensity $U$ are produced. We only carry out the fitting for unmasked pixels. We are primarily interested in which of the corrleations $M_{dust}$ vs. $I_{AME}$ or $M_{PAH}$ vs. $I_{AME}$ is stronger.
           Two sample fitting results are shown in Figs.~\ref{fig:fred_LOri_notes_Oct2017_fig1a}, and~\ref{fig:fred_LOri_notes_Oct2017_fig1b}.
               \begin{figure}
-                \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf}
+                \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf}
                 \centering
                 \caption{Observed (black circles and errors) and synthetic photometry (gray dots) SED of a pixel within $\lambda$~Orionis, along with the dust SED model fit results. Two SED fits are shown: on for the Bayesian fitting (magenta), and another showing the standard least-squares result for comparison (yellow). The fitted ISRF strength $U$, and fraction of mass in PAHs, $q_{PAH}$ are also given.}
                 \label{fig:fred_LOri_notes_Oct2017_fig1a}
               \end{figure}
               \begin{figure}
-                \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf}
+                \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf}
                 \centering
                 \caption{The same as Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig1a}, but for a different pixel position. Corresponds to galactic coordinates...}
                 \label{fig:fred_LOri_notes_Oct2017_fig1b}
               \end{figure}
            Performing such fits for all of the pixels, we are able to see how $I_{AME}$ varies with the bulk dust physical characteristics of the region. Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig2a} shows the fitted dust mass per pixel, relative to the AME intensity.
                 \begin{figure}
-                 \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf}
+                 \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf}
                  \centering
                  \caption{Scatter plot with error elipses generated through the Bayesian SED fitting, of total dust mass $M_{dust}$ vs. $I_{AME}$ scaled by $U$.}
                  \label{fig:fred_LOri_notes_Oct2017_fig2a}
                \end{figure}
            AME intensity is scaled by the ISRF intensity $U$. Although spinning dust emission is not predicted to vary directly with $U$, we consider that the ISRF may serve as a diagnostic of environmental conditions in the ISM. In any case, we find that performing such a scaling improves the correlations with dust mass.   Figs.~\ref{fig:fred_LOri_notes_Oct2017_fig2b} and~\ref{fig:fred_LOri_notes_Oct2017_fig2d} describe the variation with $M_{PAH}$ and $M_{PAH+}$.
               \begin{figure}
-                \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2b.pdf}
+                \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2b.pdf}
                 \centering
                 \caption{The same comparison is given by~\ref{fig:fred_LOri_notes_Oct2017_fig2a}, but showing total mass of PAHs ($M_{PAH}$) rather than total dust mass on the y-axis. }
                 \label{fig:fred_LOri_notes_Oct2017_fig2b}
               \end{figure}
               \begin{figure}
-                \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf}
+                \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf}
                 \centering
-                \caption{ The same as in Figs.~\ref{fig:fred_LOri_notes_Oct2017_fig2a} and~\ref{fig:fred_LOri_notes_Oct2017_fig2b} , but specifically comparing an estimate of the ionized component of PAH mass. }
+                \caption{ The same as in Figs.~\ref{fig:fred_LOri_notes_Oct2017_fig2a} and~\ref{fig:fred_LOri_notes_Oct2017_fig2b} , but specifically comparing an estimate of the charged component of PAH mass $M_{PAH+}$. This includes anions and cations, since we cannot distinguish between these two spectroscopically.}
                 \label{fig:fred_LOri_notes_Oct2017_fig2d}
               \end{figure}
     Based on the dust properties derived from these SED fits, we attempt investigate whether any fitted parameter shows a preferential relation with the AME.
 
     \subsection{Comparison with unmasked results}
-        To assess the effect of applying the mask and background subtraction from Sec.~\ref{sec:dataprocessing}, Fig.~\ref{fig:orionis-corr}
+        To assess the effect of applying the mask and background subtraction from Sec.~\ref{sec:dataprocessing}, Figs.~\ref{fig:orionis-img} and \ref{fig:orionis-corr} show a very simplistic version of the image processing. No point-source masking, background adjustment, or missing strip masking are applied. Data are simply smoothed with a 1-degree Gaussian beam, and missing data are interpolated.
+          \begin{figure}
+            \includegraphics[width=\textwidth]{../Plots/lOrionis_grid_img.png}
+            \centering
+            \caption{A grid of thumbnails showing the $\lambda$~Orionis region's structure, at 12 wavelengths, along with AME contours (shown in white countours. Spatial correlation seems to be the best at the shortest and longest wavelengths (AKARI/IRC 9~$\mu$m and Planck/HFI 550~$\mu$m). The images are only smoothed and interpolated, for demonstration of the effects without other image processing steps (i.e. background subtraction, point source masking). Figure~\ref{fig:orionis-akari9} demonstrates the actual pixel grid used for the SED fitting and intensity correlation tests.}
+            \label{fig:orionis-img}
+          \end{figure}
           \begin{figure}
             \includegraphics[width=\textwidth]{../Plots/orionis_correlations_AME.png}
             \centering
             \caption{Intensity cross-correlation for all pixels in the $\lambda$~Orionis cut-out region.  $r_{s}$ indicates the Spearman rank correlation coefficient for each plot.}
             \label{fig:orionis-corr}
           \end{figure}
-          \begin{figure}
-            \includegraphics[width=\textwidth]{../Plots/lOrionis_grid_img.png}
-            \centering
-            \caption{A grid of thumbnails showing the $\lambda$~Orionis region's structure, at 12 wavelengths, along with AME contours (shown in white countours. Spatial correlation seems to be the best at the shortest and longest wavelengths (AKARI/IRC 9~$\mu$m and Planck/HFI 550~$\mu$m). The images are smoothed and interpolated for demonstration. Figure~\ref{fig:orionis-akari9} demonstrates the actual pixel grid used for the SED fitting and intensity correlation tests.}
-            \label{fig:orionis-img}
-          \end{figure}
-        Contours indicate the region's shape in the PCAME map. Figure~\ref{fig:orionis-corr} shows IR to AME cross correlation plots, for all pixels within the 10$^{\circ}$ by 10$^{\circ}$ $\lambda$~Orionis region.
+        Contours indicate the region's shape in the PCAME map. Figure~\ref{fig:orionis-corr} shows IR to AME cross correlation plots, for all pixels within the 10$^{\circ}$ by 10$^{\circ}$ $\lambda$~Orionis region. Using this more crude processing, we see in Fig. find the same general pattern--- A9 and P545 show the tightest correlation. Thus the overal result, in terms of a ranking of correlation strengths, does not seem to depend heavily on the image processing steps applied.
 
   \section{Discussion}
       In  $\lambda$~Orionis we found that accross the whole region, A9 emission and P545 emission were the most strongly correlated with AME. This is apparent both in the photometric band analysis, and in the dust SED fitting.  The fact that the correlation strengths of PAH-tracing mission and sub-mm emission are similar is in-line with what we have seen in \cite{ysard10b} and \cite{hensley16}. In those works, the two relationships (MIR vs. AME and FIR vs. AME) are very close, although these two papers are odds as to which relationship is stronger, and thus in their final interpretation. With the present data and analysis of $\lambda$~Orionis, we fail to rule out PAHs as carriers of the AME. Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig2c} indicates that although total dust mass and PAH mass are both correlated with AME, there is a strong (\~100\%) probability that PAH mass is the stronger predictor of AME intensity.
           \begin{figure}
-            \includegraphics[width=\textwidth/2]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf}
+            \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2c.pdf}
             \centering
-            \caption{ The Bayesian correlation probablity distributions of Pearson's correlation coeffocoemt ($\rho{}$) for the three physical parameters vs. the AME intensity: total dust mass, $rho_{dust}$ (red); total PAH mass $rho_{PAH}$ (green); and only the ionized PAH mass $rho_{PAH+}$ (blue). Also given are the probabilities of either PAH component being better correlated with AME than dust mass, as well as the probability that ionized PAH mass correlates better than total PAH.}
+            \caption{ The Bayesian correlation probablity distributions of Pearson's $\rho{}$) for the three physical parameters vs. the AME intensity: total dust mass, $rho_{dust}$ (red); total PAH mass $rho_{PAH}$ (green); and only the ionized PAH mass $rho_{PAH+}$ (blue). Also given are the probabilities of either PAH component being better correlated with AME than dust mass, as well as the probability that ionized PAH mass correlates better than total PAH.}
             \label{fig:fred_LOri_notes_Oct2017_fig2c}
           \end{figure}
         The results are consistent with a scenario in which PAH mass, cold dust, and the AME are all tightly correlated. A correlation between cold dust and PAHs is observed in extragalactic targets \citep{haas02}. In the case that AME emanents from spinning PAHs, it is not surprising that cold dust would also correlate with the AME. Weaker correlation from 25 to 70~$\mu$m may indicate that AME is weaker in regions of warmer dust and stronger radiation fields. Such an anti-correlation with harsher radiation are consistent with the carriers of AME being destroyed in the central region of $\lambda$~Orionis, thus leading to substantially decreased spinning dust emission.
