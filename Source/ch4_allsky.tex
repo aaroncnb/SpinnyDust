@@ -8,10 +8,12 @@
         As in Ch.~\ref{ch:lori}, this approach applies to a spatial resolution of approximately ~1$^{\circ}$. The resolution limimtation is imposed by the PC microwave component maps, which list an `effective resolution' of 60$'$ \citep{planck15X}. Thus we must apply a smoothing to most of our input datasets, which have native resolutions of a much finer scale (see Tab.~\ref{tab:data}), and Fig.~\ref{fig:AME_contours}. The data also come in a wide range of beam shapes with their own degrees of uncertainty, thus we conservatively smooth all of the data in the same way, using a circular Gaussian beam, to have ~1$^{\circ}$ FWHM resolution. we ar We start with an all-sky AME to IR comparison, looking for global patterns among all pixels.
 
     \subsubsection{Offset correction}
-      The most recent version of the pre-release full-sky IRC data contained an apparent all-sky positive offset of \~2~MJy/sr for A9 and \~4~MJy/sr for A18. We assess this offset first by finding the mode of each of the \~4,700 3x3 degree tiles of the IRC survey, and then taking the median of this distribution. We then compare this result with a monopole offset fit to the all-sky HEALPix map of the IRC surveys, built from these tiles. Monopole fitting is handled by the {\tt healpy.fit\_monopole} function. We find the values produced by these to methods to be consistent. We found offsets also in the IRAS, FIS, and HFI bands, thus we apply the same monopole fitting and subtraction to all of the all-sky maps. We do not find the correlation analysis presented in later sections to be sensitive to this offset correction.
+      The most recent version of the pre-release full-sky IRC data contained an apparent all-sky positive offset of \textasciitilde{}2~MJy/sr for A9 and \textasciitilde{}4~MJy/sr for A18. We assess this offset first by finding the mode of each of the \textasciitilde{}4,700 3x3 degree tiles of the IRC survey, and then taking the mode of that distribution. We then compare this result with a monopole offset fit to the all-sky HEALPix map of the IRC surveys, built from these tiles. Monopole fitting is handled by the {\tt healpy.fit\_monopole} function. We find the values produced by these to methods to be consistent. We found offsets also in the IRAS, FIS, and HFI bands, thus we apply the same monopole fitting and subtraction to all of the all-sky maps. We do not find the correlation analysis presented in later sections to be sensitive to this offset correction.
 
   \section{All-sky cross correlations}
-        In order to look more closely how the the AME to IR relationship varies with wavelength, we first do a comparison without applying any pixel mask, as a benchmark. Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked} shows the pizel-density plots of AME vs. the IR bands' intensities. Darker regions show higher pixel densities, unshaded or more lightly shaded regions show low or zero pixel densities. An intial analysis, considering only the interreations of the PC parameter maps, was presented in Sec.~\ref{sec:PCmaps}, wherein correlations between the major microwave component maps (synchrotron, free-free, AME, and dust emisison) are demonstrated (Fig.~\ref{fig:PCCS_corrmatrix}). This section extends that analysis, considering the full range of IR maps described in Tab.~\ref{tab:data}. We see immediately that each band shows evidence of a positive trend with AME intensity. For the MIR bands, at lower IR intensities we see the effects of detector noise become dominant, turning into a more defined positive trend with increasing IR intensity. This effect is less pronounced in the FIR. The trend is similar to that found in Ch.~\ref{ch:lori}, and Fig.~\ref{fig:orionis-corr-matrix}.
+        In order to look more closely at how the the AME to IR relationship varies with wavelength, we first do a comparison without applying any pixel mask, as a benchmark. Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked} shows the pixel-density plots of AME vs. the IR bands' intensities. Darker regions show higher pixel densities, unshaded or more lightly shaded regions show low or zero pixel densities. An intial analysis, considering only the interreations of the PC parameter maps, was presented in Sec.~\ref{sec:PCmaps}, wherein correlations between the major microwave component maps (synchrotron, free-free, AME, and dust emisison) are demonstrated (Fig.~\ref{fig:PCCS_corrmatrix}). This section extends that analysis, considering the full range of IR maps described in Tab.~\ref{tab:data}.
+
+        We see immediately that each band shows evidence of a positive trend with AME intensity. For the MIR bands, at lower IR intensities we see the effects of detector noise become dominant, turning into a more defined positive trend with increasing IR intensity. This effect is less pronounced in the FIR. The trend is similar to that found in Ch.~\ref{ch:lori}, and Fig.~\ref{fig:orionis-corr-matrix}.
           \begin{figure}
             \includegraphics[width=\textwidth]{../Plots/ch_allsky/AMEvsDust_allsky_allbands_mpsub_kde_unmasked.pdf}
             \centering
@@ -34,21 +36,19 @@
           \begin{figure}
             \includegraphics[width=\textwidth]{../Plots/ch_allsky/masked_map_A9.pdf}
             \centering
-            \caption{All-sky map in A9 emission after applying the combined masks: ecliptic plane, galactic plane, point sources, and pixels with S/N $<3$. This mask essentially outlines the galaxy, except for the most confused regions. Diffuse galactic emission is essentially removed by the mask due to low S/N in the MIR bands. In the full sky map of \~700,000 pixels, there are ~50,000 unmasked pixels remaining.}
+            \caption{All-sky map in A9 emission after applying the combined masks: ecliptic plane, galactic plane, point sources, and pixels with S/N $<3$. This mask essentially outlines the galaxy, except for the most confused regions. Diffuse galactic emission is essentially removed by the mask due to low S/N in the MIR bands. In the full sky map of \textasciitilde{}700,000 pixels, there are ~50,000 unmasked pixels remaining.}
             \label{fig:A9_masked_map}
           \end{figure}
 
       \subsection{Pixel mask}
-          We prepare a global pixel mask (pixel positions masked in any map are excluded from the analysis).
-
         \paragraph{Galactic plane}
           The galactic plane tends to be a challenge in any comparison, but especially with low resolutions studies such as the present work. Complicated structures along the line of sight, smoothed to 1 degree resolution, means that emisison within any given pixel is an average of many different environments (evidenced by the homogenizing of the correlations between bands at low latitudes in Fig.~\ref{fig:all_bands_corr_matrix_wAME_spearman}.) Thus we exclude the brightest emission of the galactic plane, according to the mask prepared by the Planck Collaboration.
 
         \paragraph{Zodical light}
-          To keep our analysis comparable to previous works, we exclude pixels within 10$^{\circ}$ of the ecliptic plane \citep{hensley16}.  Even though we use the Zodi-subtracted maps \citep{kelsall98, kondo16, ootsubo16}, the Zodi residuals are still problematic (especially in the MIR.) This corresponds to regions with the heaviest contamination from Zodiacal light, where Zodi residuals are apparent even with visual inspection for all of the MIR bands used in this study. In Ch.~\ref{ch:datasources}, Figs. \ref{fig:ratioMap_A9I12}, and \ref{fig:ratioMap_A9I12} clearly display these residual patterns.
+          To minimize the effects of residual zodiacal light, we exclude pixels within 10$^{\circ}$ of the ecliptic plane.  Even though we use the Zodi-subtracted maps \citep{kelsall98, kondo16, ootsubo16}, the Zodi residuals are still problematic (especially in the MIR.) This corresponds to regions with the heaviest contamination from Zodiacal light, where Zodi residuals are apparent even with visual inspection for all of the MIR bands used in this study. In Ch.~\ref{ch:datasources}, Figs. \ref{fig:ratioMap_A9I12}, and \ref{fig:ratioMap_A9I12} clearly display these residual patterns.
 
         \paragraph{Signal to noise}
-          Some of the bands used lack sufficient sensitivity to trace fainter emisison, especially at higher galactic latitudes. This is mainly an issue for the mid-infrared bands. As such, we enforce a $3~\sigma$ threshold for all of the maps--- adding to the mask any pixel that has lower than $~\sigma$ detection in any of the maps. This removes nearly all pixels beyond approx. 15 degrees from the galactic plane, with the pronounced exception of regions affected by stray moonlight. The extent of this particular mask is primarily defined by the IRC A9 and A18 maps, which have the highest noise levels.
+          Some of the bands used lack sufficient sensitivity to trace fainter emisison, especially at higher galactic latitudes. This is mainly an issue for the mid-infrared bands. As such, we enforce a 3$\sigma$ threshold for all of the maps--- adding to the mask any pixel that has lower than 3$\sigma$ detection in any of the maps. This removes nearly all pixels beyond approx. 15 degrees from the galactic plane, with the pronounced exception of regions affected by stray moonlight. The extent of this particular mask is primarily defined by the IRC A9 and A18 maps, which have the highest noise levels.
 
        \paragraph{Point Sources}
          The Planck Collaboration provides masks of the pixels they find to include point sources. We mask pixels which are flagged as being point-source contaminated, in the most heavily affected maps: Planck/HFI~857 GHz and Planck/LFI~30 GHz.
@@ -64,21 +64,31 @@
                  \caption{The same comparison as shown for Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked}, but with the mask applied as in Fig.~\ref{fig:A9_masked_map}.}
                  \label{fig:AMEvsDust_allsky_allbands_mpsub_kde_masked}
                \end{figure}
-            As expected with such a drastic reduction of the number of noise-dominated points, the scatter, especially for the MIR bands, is reduced. This can be seen by comparing the Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_masked} to the unmasked distributions vs. AME in Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked} Otherwise the applicaiton of the mask does not bring about any special distinction among the bands when compared to the AME. What is notable however is that the persistent weakening of trend of I25 vs. AME, relative to A9 and the FIR bands.
+            As expected with such a drastic reduction of the number of noise-dominated points, the scatter, especially for the MIR bands, is reduced. This can be seen by comparing the Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_masked} to the unmasked distributions vs. AME in Fig.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked} Otherwise the applicaiton of the mask does not bring about any special distinction among the bands when compared to the AME. What is notable however is that the persistent weakening of trend of I25 vs. AME, relative to A9 and the FIR bands. This is seens also when looking at the full set of interrelations via the cross-correlation matrix in Fig.~\ref{fig:all_bands_corr_matrix_wAME_spearmanintensity_maskall}.
               \begin{figure}
                  \includegraphics[width=\textwidth]{../Plots/ch_allsky/all_bands_corr_matrix_wAME_spearmanintensity_maskall.pdf}
                  \centering
-                 \caption{Cross-correlation ($r_{s}$ matrix for the IR intensities (unscaled) vs. each other, esssentially the same comparison as in Fig.~\ref{fig:all_bands_corr_matrix_wAME_spearman}, except that the pixel mask is applied.}
+                 \caption{Cross-correlation ($r_{s}$ matrix for the IR intensities (unscaled) vs. each other, esssentially the same comparison as in Fig.~\ref{fig:all_bands_corr_matrix_wAME_spearman}, except that the pixel mask is applied, and we do not perform a split by Galactic latitude--- after the mask is applied, over 90\% of pixels are within 10 degrees of the galactic plane.}
                  \label{fig:all_bands_corr_matrix_wAME_spearmanintensity_maskall}
               \end{figure}
+
         \paragraph{Normalizing by radiation field $U$}
-          Following the logic that the PAH-tracing bands intensity is essentially a product $U$ and the column density of PAHs $\sigma_{PAH}$ (as explained in Ch~\ref{ch:datasources}), we redraw the comparison after scaling the MIR bands by $U$. We determine $U$ by taking the 1-degree smoohted, degraded PR1 dust radiance map (also used in \citep{hensley16}), and its corresponding $\tau_{353}$ map. We approximate $U$ as the ratio $R/\tau_{353}$. In the case of $U$-normalized intensities correlation plots, we only include the MIR bands. While $I_{MIR}/U$ is thought to trace column density of the band carriers (PAHs, or VSGs), there is a less definite interpretation of $I_{FIR}/U$ (since the profile of FIR dust emission depends on the dust temperature.) Thus for this particular comparison, we represent the FIR with $\tau_{353}$. The $U$-normalized correlation matrix is given by Fig~\ref{fig:all_bands_corr_matrix_wAME_spearmanU_norm_masked}.
-            \begin{figure}
-                \includegraphics[width=\textwidth]{../Plots/ch_allsky/all_bands_corr_matrix_wAME_spearmanU_norm_masked.pdf}
-                \centering
-                \caption{Cross-correlation ($r_{s}$ matrix for the $U$-normalized IR intensities vs. each other, and also against the AME components, other PC products, and ancilliary data. Only the IR maps are divided by $U$- other data is unchanged from Fig.~\ref{fig:all_bands_corr_matrix_wAME_spearmanintensity_maskall})}
-                \label{fig:all_bands_corr_matrix_wAME_spearmanU_norm_masked}
-            \end{figure}
+          Following the logic that the PAH-tracing bands intensity is essentially a product $U$ and the column density of PAHs $\sigma_{PAH}$ (as explained in Ch.~\ref{ch:datasources}), we redraw the comparison after scaling the MIR bands by $U$. We determine $U$ by taking the 1-degree smoothed, degraded PR1 dust radiance map (also used in \citep{hensley16}), and its corresponding $\tau_{353}$ map. We approximate $U$ as the ratio $R/\tau_{353}$. In the case of $U$-normalized intensities correlation plots, we only include the MIR bands. While $I_{MIR}/U$ is thought to trace column density of the band carriers (PAHs, or VSGs), there is a less definite interpretation of $I_{FIR}/U$ (since the profile of FIR dust emission depends on the dust temperature.) Thus for this particular comparison, we represent the FIR with $\tau_{353}$. The $U$-normalized correlation matrix is given by Fig~\ref{fig:all_bands_corr_matrix_wAME_spearmanU_norm_masked}.
+                \begin{figure}
+                    \includegraphics[width=\textwidth/2]{../Plots/ch_allsky/all_bands_corr_matrix_wAME_spearmanU_norm_masked.pdf}
+                    \centering
+                    \caption{Cross-correlation ($r_{s}$ matrix for the $U$-normalized IR intensities vs. each other, and also against the AME components, other PC products, and ancilliary data. Only the IR maps are divided by $U$- other data is unchanged from Fig.~\ref{fig:all_bands_corr_matrix_wAME_spearmanintensity_maskall})}
+                    \label{fig:all_bands_corr_matrix_wAME_spearmanU_norm_masked}
+                \end{figure}
+            In this comparison, we see that all of the correlations of the MIR bands vs. AME weaken slightly when we scale the MIR bands by $U$. However if we consider that $U$ may also affect the AME intensity, it may make sense to show a comparison where the MIR bands and AME intensities are all scaled by $U$. Fig.~\ref{fig:all_bands_corr_matrix_wAME_spearmanU_norm_AMEnorm_masked} shows such a comparison, and indeed the correlations improve slightly.
+                \begin{figure}
+                    \includegraphics[width=\textwidth/2]{../Plots/ch_allsky/all_bands_corr_matrix_wAME_spearmanU_norm_masked.pdf}
+                    \centering
+                    \caption{Cross-correlation ($r_{s}$ matrix for the $U$-normalized IR intensities vs. each other, and also against the AME components, other PC products, and ancilliary data. Only the IR maps are divided by $U$- other data is unchanged from Fig.~\ref{fig:all_bands_corr_matrix_wAME_spearmanintensity_maskall})}
+                    \label{fig:all_bands_corr_matrix_wAME_spearmanU_norm_AMEnorm_masked}
+                \end{figure}
+            In fact, sclaing both the MIR and AME intesities by $U$ gives a stronger correlation than even the unscaled case shown in Fig.~\ref{fig:all_bands_corr_matrix_wAME_spearmanintensity_maskall}.
+
 
         \paragraph{R-normalized comparison}
             For completeness we perform a comparison similar to that provided in \cite{hensley16}, wherein they compared the ratio $I_AME/R$ to the fraction of dust in PAHs, $fPAH$. In our analysis, the ratios of $A9/R$ and $I12/R$, considering that A9 and I12 are dominated by PAH emission, would be comparable to the \cite{hensley16} parameter of $fPAH$.
@@ -88,22 +98,23 @@
                     \caption{Cross-correlation ($r_{s}$ matrix for the $R$-normalized IR intensities vs. each other. )}
                     \label{fig:all_bands_corr_matrix_wAME_spearmanR_norm_masked_hens}
                 \end{figure}
-            As with the result in \cite{hensley16}, these data do not reveal any correlation between PAH fraction and $I_AME/R$. Interestingly, there is evidence of a marginal positive trend with synchrotron, and a negative trend with free-free emission. This suggests that the AME map, even with the mask applied, may be subject to component separation imperfections.
+            As with the result in \cite{hensley16}, these data do not reveal any correlation between PAH fraction and $I_{AME}/R$. Interestingly, there is evidence of a marginal positive trend with synchrotron, and a negative trend with free-free emission. This suggests that the AME map, even with the mask applied, may be subject to component separation imperfections, and these may suppress evidence of a trend with $fPAH$.
 
 
           \paragraph{Bootstrap test}
-              In addition, for the masked comparison, we carry out a boostrap analysis similar to that discussed in Ch.~\ref{ch:lori} and Fig.~\ref{fig:bootstrap_vs_AME}. The Spearman rank correlation coefficents $r_{S}$ of all of the bands, in intensity, vs. the $AME{var}$ component are shown. This is done only for the masked case, due to the computational challeneges presented by a well-sampled bootstrap of all \~780,000 pixels in the full sky. Because the mask applied here leaves us with approximately 1/7 of the sky, a bootstrap with $N_{iterations} > N_{pix}$ becomes tractable. We show the comparison only for the $AME_{var}$ component also due to computational constraints. The $r_{s}$ distributions for each IR band vs. AME are shown in Fig.~\ref{fig:bootstrap_vs_AME_allsky_masked}.
+              In addition, for the masked comparison, we carry out a boostrap analysis, using the same method explained in Ch.~\ref{ch:lori}. The Spearman rank correlation coefficents $r_{S}$ of all of the bands, in intensity, vs. the $AME{var}$ component are shown. This is done only for the masked case, due to the computational challeneges presented by a well-sampled bootstrap of all \textasciitilde{}780,000 pixels in the full sky. Because the mask applied here leaves us with approximately 1/7 of the sky, a bootstrap with $N_{iterations} > N_{pix}$ becomes tractable. We show the comparison only for the $AME_{var}$ component also due to computational constraints. The $r_{s}$ distributions for each IR band vs. AME are shown in Fig.~\ref{fig:bootstrap_vs_AME_allsky_masked}.
                 \begin{figure}
                      \includegraphics[width=\textwidth]{../Plots/ch_allsky/bootstrap_vs_AME_spearman_maskall_i1000.pdf}
                      \centering
-                     \caption{.}
+                     \caption{Re-sampled (Bootstrap) correlation tests for IR emission vs. AME, performed on the masked all-sky maps. Each band's $r_{s}$ distribution is shown in a different color. The width of the distribution indicates the error for the given data in the correlation coefficient. The mean and standard deviation of the scores are given in the legend of each plot. The plot ranges only show positive values, since no negative scores were produced. }
                      \label{fig:bootstrap_vs_AME_allsky_masked}
                 \end{figure}
+            The calculations are performed in the same way as with Fig.~\ref{fig:bootstrap_vs_AME} for $\lambda$~Orionis.
 
 \section{Spatial variation of correlations}
-    To understand how these trends may vary across the sky, we produce an all-sky maps of $r_{s}$ for AME vs. IR emission, without employing any pixel mask. From the NSIDE~256 input maps of AME and 4 IR wavelength maps, we produce NSIDE~8 maps of $r_{s}$. These maps are shown in Figs.~\ref{fig:Spearman_Map_nside8_AMEtoIR_A9} and~\ref{fig:Spearman_Map_nside8_AMEtoIR_I12}.
+    To understand how these trends may vary across the sky, independent from the choice of pixel masl, we produce an all-sky maps of $r_{s}$ for AME vs. IR emission. From the NSIDE~256 input maps of AME and 4 IR wavelength maps, we produce NSIDE~8 maps of $r_{s}$. These maps are shown in Figs.~\ref{fig:Spearman_Map_nside8_AMEtoIR_A9}-\ref{fig:Spearman_Map_nside8_AMEtoIR_A140}
       \begin{figure}
-        \includegraphics[width=\textwidth/2\end{figure}]{../Plots/Allsky_Corr/Spearman_Map_nside8_A9toAMEvar.pdf}
+        \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/Spearman_Map_nside8_A9toAMEvar.pdf}
         \centering
         \caption{Spatial map of $r_{s}$ between the AME and IR intensity for A9. $r_{s}$ is calculated for all NSIDE~256 pixels within each NSIDE~8 pixel-sized bin. The correlation score is calculated with the unmasked maps. The colorbar indicates $r_{s}$, ranging from -1 (negative monotonic relationship) to +1 (positive monotonic relationship).}
         \label{fig:Spearman_Map_nside8_AMEtoIR_A9}
@@ -126,44 +137,49 @@
         \caption{Spatial map of $r_{s}$ between the AME and IR intensity for A140, calculated as in Fig.~\ref{fig:Spearman_Map_nside8_AMEtoIR_A9}.}
         \label{fig:Spearman_Map_nside8_AMEtoIR_A140}
       \end{figure}
-
+  The most important feature of these maps is that they look very similar, confirming in a spatial context that there is very little difference overall, when comparing AME to IR in intensity, accross multiple wavelengths. The correlations weaken for the MIR bands at higher latitudes, as expected. Thus the question of which band correlates better depends on exactly where we look. Considering that we need also to look at secondary correlations, not only in intensity, we repeat the above process for ratios of the MIR to AME, scaling both by $U$, as in Fig,~\ref{fig:all_bands_corr_matrix_wAME_spearmanU_norm_AMEnorm_masked} (which gave the highest correlation between MIR and AME.) Figs.~\ref{fig:Spearman_Map_nside8_AMEtoIR_UNorm_A9}-\ref{fig:Spearman_Map_nside8_AMEtoIR_UNorm_I25} show such correlation maps.
      \begin{figure}
-       \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoA9.pdf}
+       \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEtoA9.pdf}
        \centering
-       \caption{Spatial map of $r_{s}$ between the AME and A9:$U$, a tracer of the column density of PAHs emitting within the A9 filter. The correlations are calculated as in Fig.~\ref{fig:Spearman_Map_nside8_AMEtoIR_A9}.}
-       \label{fig:Spearman_Map_nside8_AMEtoIR_radnorm_A9}
-      \end{figure}
-       \begin{figure}
-        \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI12.pdf}
+       \caption{Spatial map of $r_{s}$ between the AME:$U$ and A9:$U$, a tracer of the column density of PAHs emitting within the A9 filter. The correlations are calculated as in Fig.~\ref{fig:Spearman_Map_nside8_AMEtoIR_A9}.}
+       \label{fig:Spearman_Map_nside8_AMEtoIR_UNorm_A9}
+     \end{figure}
+     \begin{figure}
+       \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEtoA18.pdf}
+       \centering
+       \caption{}
+       \label{fig:Spearman_Map_nside8_AMEtoIR_UNorm_I12}
+     \end{figure}
+      \begin{figure}
+        \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEtoI12.pdf}
         \centering
         \caption{}
-        \label{fig:Spearman_Map_nside8_AMEtoIR_radnorm_I12}
+        \label{fig:Spearman_Map_nside8_AMEtoIR_UNorm_A18}
       \end{figure}
-        \begin{figure}
-         \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEtoI25.pdf}
+    \begin{figure}
+         \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEtoI25.pdf}
          \centering
          \caption{}
-         \label{fig:Spearman_Map_nside8_AMEtoIR_radnorm_I25}
+         \label{fig:Spearman_Map_nside8_AMEtoIR_UNorm_I25}
+    \end{figure}
 
     \section{Discussion}
-        As noted in Ch. \hyperref[ch:intro]{\ref{ch:intro}}, previous studies found that the AME generally correlates at dust-related IR wavelengths \citep{ysard10b,planckXV, hensley16}. We see the same overall pattern in the present study. We also corroborate that the FIR emission shows the tightest correlation with the AME intensity, for large portion of the sky in a de-localized fashion. This does not conflict with results from Ch.~\ref{ch:lori}, except in that the findings from Fig.~\ref{fig:bootstrap_vs_AME}, wherein $r_{p}$ of A9 emission correlates better with AME than P545 emission, do not generalize to the results of this chapter (either the masked or unmasked cases.)
+        As noted in Ch. \hyperref[ch:intro]{\ref{ch:intro}}, previous studies found that the AME generally correlates at dust-related IR wavelengths \citep{ysard10b,planckXV, hensley16}. We see the same overall pattern in the present study. We also corroborate that the FIR emission shows the tightest correlation with the AME intensity, for large portion of the sky in a de-localized fashion. This does not conflict with results from Ch.~\ref{ch:lori}, except in that the findings from Fig.~\ref{fig:bootstrap_vs_AME}, wherein $r_{p}$ of A9 emission correlates better with AME than P545 emission, do not generalize to the results of this chapter (either the masked or unmasked cases.) However, in the masked all-sky comparison as well as in Ch.~\ref{ch:lori}, we find a better corrleation between A9 and AME than between I12 and AME when we subject the correlations to bootstrap resampling.
 
          In testing for a second-order correlation, we divided the IR intensities and AME intensity by $U$, and again performed the band-by-band all-sky comparison. There is evidence of a residual correlation between $I_{MIR}/U$ and $I_{AME}/U$.
 
        The closeness of the correlation coefficients found here is consistent with the results of the IRAS vs. AME correlation test result from \cite{planckXV}. They found that the correlation coefficient among the 4 IRAS bands (12, 25, 60, and 100~$\mu$m) differ from one another only by about 5\%, across their whole set of 98 regions. They had also indicated that many of the regions sampled were HII regions, and that free-free emission may not have been completely separated from the AME. We consider that a similar phenomenon may be happening in the PCAME map we explore here.The trend of AKARI MIR and FIR data vs. the AME does not disagree with their IRAS comparison. This work adds that individual band intensities longer than IRAS 100~$\mu$m also correlate strongly with AME, especially the two Planck/HFI bands used.
 
-          \subsection{AME:PAH}
-            Each of the bands sampled show correlation with the AME, however the FIR bands always show the strongest correlation. In fact, the correlation pattern of AME vs. each of the IR bands, very strongly resembles the correlation results of the FIR vs. all of the other maps. This is readily apparent from the pixel-density plots in Figs.~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_unmasked} and~\ref{fig:AMEvsDust_allsky_allbands_mpsub_kde_masked}, wherein the FIR bands pixels show a very similar density profile vs. the AME. In attempting to factor out this first-order correlation, dividing the AME and IR intensities by $U$ for each pixel, we find the there is still a residual correlation between the MIR bands and the AME.
 
-          \subsection{AME:$T$, $U$}
-            According to spinning dust theory outlined in \cite{draine98a} and in subsequent works by \cite{ysard10a}, the AME profile and intensity will depend in part on the ISRF- but as is well-stated in \cite{hensley17a}, exactly how the ISRF will affect the AME SED is a more complicated question. Absorbed starlight photons may be able to rotationally excite the carriers, but if an enhanced ISRF leads to increased dust heating, then the increased IR emission can rotationally de-excite the carriers. Moreover the ISRF affects not only the dust temperature but ionization of the carriers.
+          \subsection{AME and interstellar radiation fields}
+            The fact that, for our masked analysis, the best correlation between the MIR bands and AME is found with after scaling both by $U$, indicates that the AME intensity is somewhat dependent on $U$. While it is expected that AME intensity depends both on the abundance of carriers, and various excitation terms, it is not predicted that $U$ directly influences spinning dust excitation. However it may be an indirect tracer of galactic environments and various other spinning dust excitation factors. According to spinning dust theory outlined in \cite{draine98a} and in subsequent works by \cite{ysard10a}, the AME profile and intensity will depend in part on the ISRF- but as is well-stated in \cite{hensley17a}, exactly how the ISRF will affect the AME SED is a more complicated question. Absorbed starlight photons may be able to rotationally excite the carriers, but if an enhanced ISRF leads to increased dust heating, then the increased IR emission can rotationally de-excite the carriers. Moreover the ISRF affects not only the dust temperature but ionization of the carriers. The slight improvement with division by $U$ was also seen with our investigation of $\lambda$~Orionis in Ch.~\ref{ch:lori}.
 
           \subsection{Microwave foreground component separation}
             There are known degeneracies between the foreground parameters of the COMMANDER maps (spinning-dust, and free-free, synchrotron components as described in \cite{planck15X}.) This can be demonstrated by examing the ratio map of the PCXV intensity to thermal dust intensity, as was shown in Ch.~\ref{ch:datasources}, Fig. to the PC free-free and synchrotron maps (the PC synchrotron map shows little difference from the \cite{haslam82} 408~MHz map, is the cross-correlation plots show.) Revisiting this problem, Figs.~\ref{fig:AMEvartoDust_ffandSyncCountours} and~\ref{fig:AMEfixtoDust_ffandSyncCountours} show the $AME_{var}/R$ and $AME_{fix}/R$ ratio maps, with contours from the free-free and synchrotron maps.
                 \begin{figure}
                     \includegraphics[width=\textwidth]{../Plots/ch_allsky/AMEvartoDust_ffandSyncCountours.pdf}
                     \centering
-                    \caption{}
+                    \caption{The ratio of $AME_{var}$ and PC dust radiance $R$, tracing fluctuations in AME per thermal dust emission. The contours trace the PC synchrotron (black) and free-free (white) components, to highlight various correlations between these components and PC AME fluctuations. Both free-free and syhncrotron can be seen to correlate and anti-correlate with the AME to dust ratio.}
                     \label{fig:AMEvartoDust_ffandSyncCountours}
                 \end{figure}
                 \begin{figure}
