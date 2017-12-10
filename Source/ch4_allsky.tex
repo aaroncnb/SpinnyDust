@@ -41,6 +41,7 @@
           \end{figure}
 
       \subsection{Pixel mask}
+      \label{sec:pixmask}
         \paragraph{Galactic plane}
           The galactic plane tends to be a challenge in any comparison, but especially with low resolutions studies such as the present work. Complicated structures along the line of sight, smoothed to 1 degree resolution, means that emisison within any given pixel is an average of many different environments (evidenced by the homogenizing of the correlations between bands at low latitudes in Fig.~\ref{fig:all_bands_corr_matrix_wAME_spearman}.) Thus we exclude the brightest emission of the galactic plane, according to the mask prepared by the Planck Collaboration.
 
@@ -98,8 +99,7 @@
                     \caption{Cross-correlation ($r_{s}$ matrix for the $R$-normalized IR intensities vs. each other. )}
                     \label{fig:all_bands_corr_matrix_wAME_spearmanR_norm_masked_hens}
                 \end{figure}
-            As with the result in \cite{hensley16}, these data do not reveal any correlation between PAH fraction and $I_{AME}/R$. Interestingly, there is evidence of a marginal positive trend with synchrotron, and a negative trend with free-free emission. This suggests that the AME map, even with the mask applied, may be subject to component separation imperfections, and these may suppress evidence of a trend with $fPAH$.
-
+            As with the result in \cite{hensley16}, these data do not reveal any correlation between PAH fraction and $I_{AME}/R$, or with any of the MIR/R ratios and $I_{AME}/R$. Interestingly, there is evidence of a marginal positive trend with synchrotron, and a negative trend with free-free emission.
 
           \paragraph{Bootstrap test}
               In addition, for the masked comparison, we carry out a boostrap analysis, using the same method explained in Ch.~\ref{ch:lori}. The Spearman rank correlation coefficents $r_{S}$ of all of the bands, in intensity, vs. the $AME{var}$ component are shown. This is done only for the masked case, due to the computational challeneges presented by a well-sampled bootstrap of all \textasciitilde{}780,000 pixels in the full sky. Because the mask applied here leaves us with approximately 1/7 of the sky, a bootstrap with $N_{iterations} > N_{pix}$ becomes tractable. We show the comparison only for the $AME_{var}$ component also due to computational constraints. The $r_{s}$ distributions for each IR band vs. AME are shown in Fig.~\ref{fig:bootstrap_vs_AME_allsky_masked}.
@@ -136,7 +136,7 @@
         \caption{Spatial map of $r_{s}$ between the AME and IR intensity for A140, calculated as in Fig.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_A9}.}
         \label{fig:Spearman_Map_nside8_AMEvartoIR_A140}
       \end{figure}
-  The most important feature of these maps is that they look very similar, confirming in a spatial context that there is very little difference overall, when comparing AME to IR in intensity, accross multiple wavelengths. The correlations weaken for the MIR bands at higher latitudes, as expected. Thus the question of which band correlates better depends on exactly where we look. Considering that we need also to look at secondary correlations, not only in intensity, we repeat the above process for ratios of the MIR to AME, scaling both by $U$, as in Fig,~\ref{fig:all_bands_corr_matrix_wAME_spearmanU_norm_AMEnorm_masked} (which gave the highest correlation between MIR and AME.) Figs.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_A9}-\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I25} show such correlation maps. Scaling by $U$ does not change the overall structure of these correlation maps, relative to the unscaled versions. This may indicate that at the scale of these correlation maps, the strength of $U$ does show much variation.
+  The most important feature of these maps is that they look very similar, confirming in a spatial context that there is very little difference overall, when comparing AME to IR in intensity, accross multiple wavelengths. The correlations weaken for the MIR bands at higher latitudes, as expected. Thus the question of which band correlates better depends on exactly where we look. Considering that we need also to look at secondary correlations, not only in intensity, we repeat the above process for ratios of the MIR to AME, scaling both by $U$, as in Fig,~\ref{fig:all_bands_corr_matrix_wAME_spearmanU_norm_AMEnorm_masked} (which gave the highest correlation between MIR and AME.) Figs.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_A9}-\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I25} show such correlation maps.
      \begin{figure}
        \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEvartoA9.pdf}
        \centering
@@ -161,6 +161,32 @@
          \caption{Spatial map of $r_{s}$ between the AME:$U$ and I25:$U$}
          \label{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I25}
     \end{figure}
+  Scaling by $U$ does not change the overall structure of these correlation maps, relative to the unscaled versions. This may indicate that at the scale of these correlation maps, the strength of $U$ does show much variation.
+  Corresponding to Fig., we explore if the results found when looking at all of our unmasked pixels in a delocalized manner, are replicated when we produce all-sky maps of $R$-normalized intensities. These maps are indicated in Figs.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_RadNorm_A9}-\ref{fig:Spearman_Map_nside8_AMEvartoIR_RadNorm_I25}.
+    \begin{figure}
+      \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEvartoA9.pdf}
+      \centering
+      \caption{Spatial map of $r_{s}$ between the AME:$R$ and A9:$R$, a tracer of the fraction of dust mass in PAHS, $fPAH$. The correlations are calculated as in Fig.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_A9}.}
+      \label{fig:Spearman_Map_nside8_AMEvartoIR_RadNorm_A9}
+    \end{figure}
+    \begin{figure}
+      \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEvartoI12.pdf}
+      \centering
+      \caption{Spatial map of $r_{s}$ between the AME:$U$ and I12:$U$}
+      \label{fig:Spearman_Map_nside8_AMEvartoIR_RadNorm_I12}
+    \end{figure}
+     \begin{figure}
+       \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEvartoA18.pdf}
+       \centering
+       \caption{Spatial map of $r_{s}$ between the AME:$U$ and A18:$U$}
+       \label{fig:Spearman_Map_nside8_AMEvartoIR_RadNorm_A18}
+     \end{figure}
+   \begin{figure}
+        \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEvartoI25.pdf}
+        \centering
+        \caption{Spatial map of $r_{s}$ between the AME:$U$ and I25:$U$}
+        \label{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I25}
+   \end{figure}
 
     \section{Discussion}
         As noted in Ch.~\ref{ch:intro}, previous studies found that the AME generally correlates at dust-related IR wavelengths \citep{ysard10b,planckXV, hensley16}. We see the same overall pattern in the present study. We also corroborate that the FIR emission shows the tightest correlation with the AME intensity, for large portion of the sky in a de-localized fashion. In testing for a second-order correlation, we divided the IR intensities and AME intensity by $U$, and again performed the band-by-band all-sky comparison. There is evidence of a residual correlation between $I_{MIR}/U$ and $I_{AME}/U$.
@@ -185,7 +211,11 @@
                     \caption{The same as Fig.~\ref{fig:AMEvartoDust_ffandSyncCountours}, but with $AME_{fix}/R$ as the all-sky image.}
                     \label{fig:AMEfixtoDust_ffandSyncCountours}
                 \end{figure}
-             There are clearly regions where synchrotron emission correlates with excesses in AME. Some of these appear as more large scale fluctuations, mainly at higher galactic latitude. Interestingly, free-free shows agreement with both positive and negative fluctuations in both ratio maps. At high galactic latitude, free-free tends to be associated with positive fluctuations. This is supported by the fact that $AME_{fix}$ shows an improved correlation with both the $H\alpha{}$ map and the PC free-free map, perhaps suggestion confusion between spinning dust and free-free components.
+             There are clearly regions where synchrotron emission correlates with excesses in AME. Some of these appear as more large scale fluctuations, mainly at higher galactic latitude. Interestingly, free-free shows agreement with both positive and negative fluctuations in both ratio maps. At high galactic latitude, free-free tends to be associated with positive fluctuations. This is supported by the fact that $AME_{fix}$ shows an improved correlation with both the $H\alpha{}$ map and the PC free-free map, perhaps suggesting confusion between spinning dust and free-free components.
+
+             The results of the $R$ normalized cross-correlation test show that $ff/R$ shows a negative correlation with $AME/R$. This may be furher indication that the AME map, even with the mask applied from Sec.\ref{sec:pixmask}, may suffer from significant MW component confusion in some regions. It is difficult to quantify potential effects from component separation uncertainties relative to genuine correlations between microwave emission components, with the present data. However there remains the potential for such confusion to suppress evidence of any trend between AME and the actual value of $fPAH$.  The anti-correlation hear between free-free/R and AME/R may be consistent with findings in \cite{vonHausegger15} that free-free emission anti-correlates with AME, if pixels are weighted by S/N.
+
+             Even though A9/R and I12/R do not correlate with AME/R overall, in our masked comparison, we do find some limited regions where these values do correlate. It may not
 
             \subsection{Comparison with $\lambda$~Orionis results}
                 This does not conflict with results from Ch.~\ref{ch:lori}, except in that the findings from Fig.~\ref{fig:bootstrap_vs_AME}, wherein $r_{p}$ of A9 emission correlates better with AME than P545 emission, do not generalize to the results of this chapter (either the masked or unmasked cases.) However, in the masked all-sky comparison as well as in Ch.~\ref{ch:lori}, we find a better corrleation between A9 and AME than between I12 and AME when we subject the correlations to bootstrap resampling.
@@ -193,6 +223,6 @@
                 Interestingly, the ring-structure of $\lambda$~Orionis region analyzed in Ch.~\ref{ch:lori}, does not have any apparent conterpart in the $AME/R$ ratio maps in Figs.~\ref{fig:AMEfixtoDust_ffandSyncCountours}~and~\ref{fig:AMEvartoDust_ffandSyncCountours}. The difference in our results, between the delocalized results presented in this chapter, and that of Ch.~\ref{ch:lori}, thus may be explained by variations in the component separation reliability. It is apparent that with the presently available data, there are a very limited number of regions on the sky which do not show strong free-free or synchrotron emissions, while also haivng enough S/N in the MIR, to reliably probe a relationship between PAH abundance fluctuations and AME fluctuations. $\lambda$~Orionis may be one of the exceptions, where the S/N high enough, and we are in fact able to see an improved correlation between PAHs and AME, relative to the overall dust emission to AME connection.
 
             \subsection{Potential for further investigations}
-                Future breakthroughs in the AME may be seen if we are able to increase the number of regions with a reliable AME estimation. This can be obtained through improved synchrotron emission constraints, at higher resolutions. CBASS will be helpful in this regard, providing higher resolution low frequency constraints for the whole sky. In terms of localized studies, it may be fruitful to consider the physical environment of each region (i.e. ionization state, gas temperature and density, other conditions indicated in \cite{draine98a, ali-haimoud10} to affect the SED shape) rather than relying of frequency-shifts to a template spectrum. More detailed exploration of PAH ionization, and other fluctuations between individual PAH features relative to variations in the AME spectral profile may also help us understand potential roles of PAHs in producing AME. However, even if we have excellent constraints on PAH emission features, synchrotron emission, free-free emission, and a powerful spinning dust SED model, the key data will be spectral coverage of the full AME profile. As noted in Ch.~\ref{ch:datasources}, the all-sky maps currently available, do not give constraints in the 10-20~GHz range. This means that lower frequency rspinning dust peaks and emissiviities are not well known. Improved understanding of AME and spinning dust therefore will require observations such as those being undertaken by the QUIJOTE \citep{} project.
+                Future breakthroughs in the AME may be seen if we are able to increase the number of regions with a reliable AME estimation. This can be obtained through improved synchrotron emission constraints, at higher resolutions. C-BASS will be helpful in this regard, providing higher resolution low frequency constraints for the whole sky \citep{irfan15}. In terms of localized studies, it may be fruitful to consider the physical environment of each region (i.e. ionization state, gas temperature and density, other conditions indicated in \cite{draine98a, ali-haimoud10} to affect the SED shape) rather than relying of frequency-shifts to a template spectrum. More detailed exploration of PAH ionization, and other fluctuations between individual PAH features relative to variations in the AME spectral profile may also help us understand potential roles of PAHs in producing AME. However, even if we have excellent constraints on PAH emission features, synchrotron emission, free-free emission, and a powerful spinning dust SED model, the key data will be spectral coverage of the full AME profile. As noted in Ch.~\ref{ch:datasources}, the all-sky maps currently available, do not give constraints in the 10-20~GHz range. This means that lower frequency rspinning dust peaks and emissiviities are not well known. Improved understanding of AME and spinning dust therefore will require observations such as those being undertaken by the QUIJOTE \citep{santos15} project.
 
                 We must also be careuful not to prematurely rule out AME explanations. The fact that we do not see a clear preferential relationship between AME and PAHs in this all-sky analysis, does not rule out a contribution by spinning PAHs to the AME. Likewise the fact that we do see a better correlation in $\lambda$~Orionis does not rule out contributions from other proposals, such as that form non-PAH small grains, or nanosilicates.
