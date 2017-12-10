@@ -118,11 +118,10 @@ planck_bb.replace(
 
 #### Read Planck low-res microwave component fitting results:
 planck_mw = pd.DataFrame()
-labels = ['AMEvar','AMEfix','AMErad','AMEfreq','ff','Sync']
+labels = ['AMEvar','AMEfix','AMEfreq','ff','Sync']
 
 paths = ['COM_CompMap_AME-commander_0256_R2.00_var_PEAK_I.fits',
          'COM_CompMap_AME-commander_0256_R2.00_fix_PEAK_I.fits',
-	 'COM_CompMap_AME-commander_0256_R2.00_comb_INT_I.fits',
 	 'COM_CompMap_AME-commander_0256_R2.00_var_FREQ_MEAN.fits',
          'COM_CompMap_freefree-commander_0256_R2.00.fits.gz',
          'COM_CompMap_Synchrotron-commander_0256_R2.00.fits.gz']
