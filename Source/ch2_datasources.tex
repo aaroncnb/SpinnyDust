@@ -40,13 +40,17 @@
       \centering
         \begin{tabular}{lrrrr}
         \hline\hline
-        Instrument   & FWHM      & Cali    & Reference \\
+        Product   & Relevant Freq./Wavelen  & FWHM    & Reference/URL \\
         \hline
-        $H\alpha{}$  & 658.5~nm  & 36$'$  & \tablefootnote{\cite{finkbeiner03}:} \\
+        $H\alpha{}$  & 658.5~nm  & 36$'$  & \tablefootnote{\cite{finkbeiner03}: \url{https://lambda.gsfc.nasa.gov/product/foreground/halpha_map.cfm}} \\
         $N(H)$       & 21~cm     & 36$'$  & \tablefootnote{\cite{kalberla05}: \url{https://lambda.gsfc.nasa.gov/product/foreground/fg_LAB_HI_Survey_get.cfm}} \\
-        $R$          & 353~GHz   & 5$'$   & \tablefootnote{\cite{}: \url{http://irsa.ipac.caltech.edu/data/Planck/release_1/all-sky-maps/previews/HFI_CompMap_ThermalDustModel_2048_R1.20/index.html} }\\
-        $\tau_{353}$ & 353~GHz   & 5$'$    & \tablefootnote{\cite{}} \\
+        PC $R$ (PR1)          & 353~GHz   & 5$'$   & \tablefootnote{\cite{}: \url{http://irsa.ipac.caltech.edu/data/Planck/release_1/all-sky-maps/previews/HFI_CompMap_ThermalDustModel_2048_R1.20/index.html} }\\
+        PC $\tau_{353}$ (PR1) & 353~GHz   & 5$'$    & '' \\
         Haslam~MHz   & 408~MHz   & 56$'$  & \tablefootnote{\cite{haslam82}} \\
+        PC Synchrotron (PR2) & 408~MHz & 60$'$ & \tablefootnote{\cite{planck15X}: \url{http://irsa.ipac.caltech.edu/data/Planck/release_2/all-sky-maps/previews/COM_CompMap_Synchrotron-commander_0256_R2.00/index.html}} \\
+        PC $AME_{var}$ (PR2) & 22.8~GHz & 60$'$ & \tablefootnote{\url{http://irsa.ipac.caltech.edu/data/Planck/release_2/all-sky-maps/previews/COM_CompMap_AME-commander_0256_R2.00/index.html}} \\
+        PC $AME_{fix}$ (PR2) & 41.0~GHz & 60$'$ & '' \\
+        PC free-free (PR2) & N/A & 60$'$ & \tablefootnote{\url{http://irsa.ipac.caltech.edu/data/Planck/release_2/all-sky-maps/previews/COM_CompMap_freefree-commander_0256_R2.00/index.html}} \\
         \hline
          \label{tab:ancilliarydata}
       \end{tabular}
@@ -65,7 +69,7 @@
               \caption{The I12 (orange) and A9 (green) filters coverage of modeled ionized (PAH1, red) and neutral (PAH0, purple)components of PAH features by \cite{dustem11}. The difference in the PAH feature coverage mainly comes from the 6.2~$\mu$m and the 7.7~$\mu$m feature.}
               \label{fig:Filter_coverage_example_PAH}
             \end{figure}
-         The A9 band uniquely covers major ionized PAH features at 6.2 and 7.7~$\mu$m; as well as neutral PAH features at 8.6 and 11.2~$\mu$m across the entire sky \citep{irc07}. The I12 band covers the 11.2 and 8.6~$\mu$m features, and the similarly-shaped W12 band covers primarily the 11.2~$\mu{}$m feature but do not cover the 7.7~$\mu{}$m completely. According to the distribution of PAH features across the response filters in Fig.~\ref{fig:Filter_coverage_example_PAH}, and referring back to the various dust components in Fig.~\ref{fig:Filter_coverage_example_full} it is also expected that the A9 band is most dominated by PAH emission even with increasing $U$ . This may seem counter-intuitive, since, as described in Ch.~\ref{ch:intro}, the PAH spectral shape does not show a temperature variation. However as $T$ increases, the MIR extent of thermal dust emission and emission from VSGs encroach on I12 and WI2 sooner than A9, diluting emission from PAHs (see Fig.~\ref{fig:inband_ionfrac_ratios}). In some ionized reigons, I12 may also include non-significant contributions from the NeII line at 12.8~$\mu$m. Figure~\ref{fig:Filter_coverage_example_MIR} demonstrates an example observational galactic cirrus spectrum in the MIR, from Spitzer Infrared Spectrograph (IRS) \citep{spitzer04} data, along with filters for all of the MIR bands used in this study.
+         The A9 band uniquely covers major ionized PAH features at 6.2 and 7.7~$\mu$m; as well as neutral PAH features at 8.6 and 11.2~$\mu$m across the entire sky \citep{irc07}. The I12 band covers the 11.2 and 8.6~$\mu$m features, and the similarly-shaped W12 band covers primarily the 11.2~$\mu{}$m feature but do not cover the 7.7~$\mu{}$m completely. According to the distribution of PAH features across the response filters in Fig.~\ref{fig:Filter_coverage_example_PAH}, and referring back to the various dust components in Fig.~\ref{fig:Filter_coverage_example_full} it is also expected that the A9 band is most dominated by PAH emission even with increasing $U$ . This may seem counter-intuitive, since, as described in Ch.~\ref{ch:intro}, the PAH spectral shape does not show a temperature variation. However as $T$ increases, the MIR extent of thermal dust emission and emission from VSGs encroach on I12 and WI2 sooner than A9, diluting emission from PAHs. In some ionized reigons, I12 may also include non-significant contributions from the [NeII] line at 12.8~$\mu$m. Figure~\ref{fig:Filter_coverage_example_MIR} demonstrates an example observational galactic cirrus spectrum in the MIR, from Spitzer Infrared Spectrograph (IRS) \citep{spitzer04} data, along with filters for all of the MIR bands used in this study.
              \begin{figure}
                \centering
                \includegraphics[width=\textwidth]{../Plots/ch_datasources/Filter_coverage_example_MIR.pdf}
@@ -74,19 +78,26 @@
              \end{figure}
          It indicates that the other MIR bands, A18 and I25, do cover strong PAH features and are expected to be dominated rather by emission from very small grains (VSGs), as was indicated in Fig.~\ref{fig:Filter_coverage_example_full}.
 
-         To help demonstate how the relative contribution from PAHs will change for each band, for different ISRF strengths, Fig.~\ref{inband contribution} gives just such a calculation. These contributions remain relatively constant out to a $U$ of about 100, with the contribution from warm dust becomming a larger factor for the I12 and W12 bands. Thus, according to the DL01 template, A9 should have the highest contribution from PAHs out to extreme radiation fields. At least to the extent with which PAHs can endure harsh UV radiation, as PAHs are expected to evaporate in strong enough radiation fields \citep{allain96a,allain96b,bocchio12,pilleri12, pavlyuchenkov13}.
+         To help demonstate how the relative contribution from PAHs will change for each band, for different ISRF strengths, Fig.~\ref{fig:InBandFracContribution_PAH} gives just such a calculation. These contributions remain relatively constant out to a $U$ of about 100, with the contribution from warm dust becomming a larger factor for the I12 and W12 bands. Thus, according to the DL01 template, A9 should have the highest contribution from PAHs out to extreme radiation fields. At least to the extent with which PAHs can endure harsh UV radiation, as PAHs are expected to evaporate in strong enough radiation fields \citep{allain96a,allain96b,bocchio12,pilleri12, pavlyuchenkov13}.
 
       \subsubsection{PAH ionization}
-        Figure~\ref{fig:Filter_coverage_example_PAH} indicates that expected emission from ionized PAHs will preferentially contribute to the A9 band, even though both I12 and A9 cover ionized and neutral features. To estimate the extent to which the ionization fraction would effect the intensity ratio of these two bands, Fig.~\ref{fig:inband_ionfrac_ratios} gives the results of a calculation based on the \cite{drli01} dust model, for various strengths of $U$.
+        Figure~\ref{fig:Filter_coverage_example_PAH} indicates that expected emission from ionized PAHs may preferentially contribute to the A9 band, even though both I12 and A9 cover ionized and neutral features. A PAH SED model calculation, using the \cite{dustem11} SED template, supports that for Galactic cirrus ISM conditions, emisison detected by the A9 band would have a higher contribution from charged PAHs than the I12 band. This is demonstrated in Fig.~\ref{fig:InBandFracContribution_PAH}.
           \begin{figure}
               \centering
-              \includegraphics[width=150mm]{../Plots/band-ratio-multiple.pdf}
-              \caption{Ionization fraction of PAHs vs. band ratios of I12, I25, W12, W25 vs. A9, for three ISRF strengths: Top: $U = 100$, Middle: $U = 1000$, and Bottom: $U = 10000$. These ratios are determined by assuming the SED template of \cite{dustem11} }
-              \label{fig:inband_ionfrac_ratios}
+              \includegraphics[width=\textwidth]{../Plots/ch_datasources/InBandFracContribution_PAH.pdf}
+              \caption{In-band contributions from charged (PAH1) neutral (PAH0) PAHs, to the emission detected by the I12 and A9 filters. These assume a model galactic cirrus spectrum simulated with the SED template of \cite{dustem11}. }
+              \label{fig:InBandFracContribution_PAH}
           \end{figure}
-         demonstrates how the band ratios of the IRC~$\mu$m band vs. the other MIR bands change with different modeled PAH ionization fractions (determined using the DustEM default model template, by \cite{dustem11}. This band ratio can be determined, because the A9 filter is more sensitive to ionized PAH features, relative to I12 or to WISE12.
+        To be clear, both bands are sensitive to both charged and neutral PAHs, however the relative contribution from charged PAHs is expected to be higher for A9. Thus we might expect that the ratio of intensities in this two bands, for a given line of sight (towards which PAHs are not destroyed), could trace the fraction of charged PAHs. Estimating the extent of this effect, Fig.~\ref{fig:band-ratio-multiple} gives the results of a calculation of I12/A9 and I25/A9 band ratios for two ISRF strengths.
+          \begin{figure}
+              \centering
+              \includegraphics[width=\textwidth]{../Plots/ch_datasources/band-ratio-multiple.pdf}
+              \caption{Ionization fraction of PAHs vs. band ratios of I12, I25, to A9, for two ISRF strengths: Top: $U = 1$, Bottom: $U = 10$. These ratios are determined by assuming the SED template of \cite{dustem11} }
+              \label{fig:band-ratio-multiple}
+          \end{figure}
+        This calculation is again based on \cite{dustem11}. It suggests that at least for $U<\sim{}10$, the fraction of charged PAHs may be estimated as a function of the I12/A9 ratio.
 
-         IRC 9~$\mu$m shows a larger contribution from ionized PAHs and a conversely smaller contribution from neutral PAHs. Fig.~\ref{fig:ratioMap_A9I12} and Fig.~\ref{fig:ratioMap_A9I25} show the R(A9:I12) and R(A9:I25) ratio maps, demonstrating the relative variations in these MIR bands accross the sky- or at least the portions of the sky where S/N is sufficient. While from visual inspection the various MIR intensity all-sky maps appear to essentially trace the same stuctures of the galaxy, the ratio maps reveal that there are indeed differences to be explored.  In regions where noise is dominant, ascertaining the ionization fraction will be quite difficult. This can be easily seen upon visual inspection of the ratio maps, in that there is a clear deliniation between brighter emission towards lower galactic latitudes, and the high latitude sky where the ratio shows very little discernible structure (except for the Zodi-residual patterns which differ between IRC and IRAS.) Thus there may a large portion of the sky where the S/N may be high enough to allow us to trace the PAH ionization fraction. This possibility is explored in Ch.~\ref{ch:lori}, in looking at the PAH distribution within $\lambda$~Orionis.
+         Examing how this might look in the data themselves, Fig.~\ref{fig:ratioMap_A9I12} and Fig.~\ref{fig:ratioMap_A9I25} show the R(A9:I12) and R(A9:I25) ratio maps, demonstrating the relative variations in these MIR bands accross the sky--- or at least the portions of the sky where S/N is sufficient. While from visual inspection the various MIR intensity all-sky maps appear to essentially trace the same stuctures of the galaxy, the ratio maps reveal that there are indeed differences to be explored.  In regions where noise is dominant, ascertaining the ionization fraction will be quite difficult. This can be easily seen upon visual inspection of the ratio maps, in that there is a clear deliniation between brighter emission towards lower galactic latitudes, and the high latitude sky where the ratio shows very little discernible structure (except for the Zodi-residual patterns which differ between IRC and IRAS.) Thus there may a large portion of the sky where the S/N may be high enough to allow us to trace the PAH ionization fraction. This possibility is explored in Ch.~\ref{ch:lori}, in looking at the PAH distribution within $\lambda$~Orionis.
              \begin{figure}
                \centering
                \includegraphics[width=\textwidth]{../Plots/ch_datasources/ratioMap_A9I12.pdf}

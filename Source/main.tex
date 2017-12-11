@@ -1,3 +1,4 @@
+
 %% manuscript produces a one-column, double-spaced document:
 \documentclass[12pt,a4paper,twoside]{report}
 %\documentclass[12pt, manuscript]%{aastex}
@@ -31,7 +32,6 @@
 \usepackage{listings}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
-
 \newcommand{\foo}{\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
 
 %%%
@@ -62,11 +62,11 @@
 \renewcommand{\footrulewidth}{0pt}
 \renewcommand{\baselinestretch}{1.}
 \renewcommand{\bibname}{References}
-% \doublespacing
 
+\doublespacing
 
-
-\title{AKARI and Spinning Dust Emission\\
+\title{学位論文\\
+AKARI and Spinning Dust Emission\\
 A look at microwave dust emission via the Infrared\\
 Doctoral Thesis\\
 Submitted to The University of Tokyo\\
@@ -83,9 +83,10 @@ DRAFT}
 \makesavenoteenv{tabular}
 \makesavenoteenv{table}
 
-%\include{abstract}
+\singlespacing
 \tableofcontents
 \listoffigures
+
 \doublespacing
 \pagenumbering{arabic}
 \include{ch1_intro}
