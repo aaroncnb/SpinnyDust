@@ -104,7 +104,7 @@
           \paragraph{Bootstrap test}
               In addition, for the masked comparison, we carry out a boostrap analysis, using the same method explained in Ch.~\ref{ch:lori}. The Spearman rank correlation coefficents $r_{S}$ of all of the bands, in intensity, vs. the $AME{var}$ component are shown. This is done only for the masked case, due to the computational challeneges presented by a well-sampled bootstrap of all \textasciitilde{}780,000 pixels in the full sky. Because the mask applied here leaves us with approximately 1/7 of the sky, a bootstrap with $N_{iterations} > N_{pix}$ becomes tractable. We show the comparison only for the $AME_{var}$ component also due to computational constraints. The $r_{s}$ distributions for each IR band vs. AME are shown in Fig.~\ref{fig:bootstrap_vs_AME_allsky_masked}.
                 \begin{figure}
-                     \includegraphics[width=\textwidth]{../Plots/ch_allsky/bootstrap_vs_AME_spearman_maskall_i1000.pdf}
+                     \includegraphics[width=\textwidth,trim={3cm 0.25cm 2.5cm 1cm},clip]{../Plots/ch_allsky/bootstrap_vs_AME_spearman_maskall_i1000.pdf}
                      \centering
                      \caption{Re-sampled (Bootstrap) correlation tests for IR emission vs. AME, performed on the masked all-sky maps. Each band's $r_{s}$ distribution is shown in a different color. The width of the distribution indicates the error for the given data in the correlation coefficient. The mean and standard deviation of the scores are given in the legend of each plot. The plot ranges only show positive values, since no negative scores were produced. }
                      \label{fig:bootstrap_vs_AME_allsky_masked}
