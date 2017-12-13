@@ -16,7 +16,7 @@
 \usepackage{lineno}
 \usepackage{footnote}
 \usepackage{tablefootnote}
-
+\usepackage{CJKutf8}
 
 %%% packages for pretty timeline %%%
 %\usepackage[utf8]{inputenc}
@@ -58,11 +58,17 @@
 
 \singlespacing
 
-\title{Doctoral Thesis Abstract\\
-AKARI and Spinning Dust Emission\\
+
+\title{
+\begin{CJK}{UTF8}{min}{\small 論文内容の要旨}\\
+Investigation of Interstellar Dust Emission in the Infrared-Microwave Range with All-sky Surveys\\
+{\small(全天サーベイによる赤外線マイクロ波帯での星間ダスト放射の研究)}\\
+\end{CJK}
 }
 
-\author{Aaron Christopher Bell}
+\author{
+    \begin{CJK}{UTF8}{min}ベル・アーロン・クリストファー\end{CJK}\\
+Aaron Christopher Bell}
 
 \begin{document}
 \maketitle
@@ -71,7 +77,7 @@ This thesis exemplifies both the mysteries and potential for answers revealed by
       \begin{figure}[h]
         \centering
         \includegraphics[width=\textwidth/2]{../Plots/ch_intro/mw_foregrounds_demo_rOph.pdf}
-          \caption{\small An example of a potential makueup of microwave emission components. Photometry points are extracted from the Planck and WMAP all-sky maps, for a part of the region well-known for prominant AME, $\rho$~Ophiuchus. The AME curve is produced from a warm neutral medium spinning dust template \citep{ali-haimoud09}, with a frequency-shift applied to approximately fit the microwave data.}
+          \caption{\small An example of a potential makueup of microwave emission components. Photometry points are extracted from the Planck and WMAP all-sky maps, for a part of the region well-known for prominant AME, $\rho$~Ophiuchus. The AME curve is produced from a warm neutral medium spinning dust template, with a frequency-shift applied to approximately fit the microwave data.}
         \label{fig:mw_foregrounds_demo_rOph}
       \end{figure}
 The overlap with frequencies important for cosmic microwae background (CMB) explorations, combined with a strong correlation with interstellar dust, drive cross-disciplinary collaboration between interstellar medium and obervational cosmology. The apparent relationship with dust has prompted a ``spinning dust'' hypothesis:  electric dipole emission by rapidly rotating, small dust grains. Magnetic dipole emission by grains with magnetic inclusions, while less suppported, has not been ruled out. Even assuming a spinning dust scenario, we are far from concluding which category of dust contributes. The typical peak frequency range of the AME profile implicates grains on the order of ~1nm. This points to polycyclic aromatic hydrocarbon molecules (PAHs). We explain the merit of testing a spinning PAH hypothesis, while noting that spinning nanosilicates, or even magnetic dipole emission from dust have also been put forth in the literature.
@@ -98,8 +104,4 @@ We attempte to generalize the result from $\lambda$~Orionis to wider-scale all-s
 
 Overall, using the presently available data, it is difficult to isolate the PAH-dust relationship, from the dust-AME relationship. We find throughout this work that a PAH-emission to AME correlation is readily demonstable, in intensity. A test of whether a second-order relationship exists, such that PAH emission is a better predictor of the AME than thermal dust emission, was shown to be inconclusive. One exception is that of $\lambda$~Orionis, where our results suggest that PAH mass correlates better with AME than does the total dust mass. Nevertheless we emphasize this point cautiously. We were not able to generalize it to a larger scale (all-sky data with, effectively, a mask on the galactic plane and high latitude emission.)  We are not able to confirm or reject a ``spinning PAH'' hypothesis for the source of AME. However in $\lambda$~Orionis, and perhaps other regions yet to be examined in with dust SED fitting, we suggest that there is still ample reason to continue testing this hypothesis. However further degree-scale all-sky analyses seem unlikely to help resolve this issue. Non-PAH carriers of the AME, such as nanosilicates, cannot be ruled out either.
 
-
-\small
-\bibliographystyle{apj}
-\bibliography{reference}
 \end{document}
