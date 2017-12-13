@@ -2,9 +2,10 @@
 %% manuscript produces a one-column, double-spaced document:
 \documentclass[12pt,a4paper,twoside]{report}
 %\documentclass[12pt, manuscript]%{aastex}
+%\usepackage{graphicx}
+%\usepackage[utf8]{inputenc}
+%\usepackage[ipaex]{pxchfon}
 \usepackage{graphicx}
-\usepackage{hyperref}
-
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{subfig}
 \usepackage{natbib, aas_macros}
@@ -18,6 +19,7 @@
 \usepackage{lineno}
 \usepackage{footnote}
 \usepackage{tablefootnote}
+\usepackage{url}
 
 
 %%% packages for pretty timeline %%%
@@ -65,8 +67,7 @@
 
 \doublespacing
 
-\title{学位論文\\
-AKARI and Spinning Dust Emission\\
+\title{AKARI and Spinning Dust Emission\\
 A look at microwave dust emission via the Infrared\\
 Doctoral Thesis\\
 Submitted to The University of Tokyo\\
@@ -84,7 +85,7 @@ DRAFT}
 
 \singlespacing
 \tableofcontents
-\listoffigures
+{\small \listoffigures}
 
 \doublespacing
 \include{abstract}
