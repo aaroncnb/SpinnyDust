@@ -105,14 +105,14 @@
             \end{figure}
         For both test cases, the best correlations are the longest and shortest wavelength bands, consistent with the straight-forward $r_{s}$ scores shown in Fig.~\ref{fig:orionis-corr-matrix}. In the $r_{p}$ case, the strongest correlation is the A9 band vs the AME.
         \section{Comparison with SED Fitting}
-          We performed a full dust SED fitting on the $\lambda$~Orionis photometry, according to the dust model by \cite{galliano11} (to be thoroughly introduced in Galliano, et al., in prep.)  We used a mixture of silicate and carbonaceous dust, silicate dust, the two dominant categories of interstellar dust as described in Ch.~\ref{ch:intro}. However, instead of the graphite-based carbon dust invoked by the canonical \cite{draine07} model (DL07), we assume amorphous carbon. This choice is an attempt to account for the ``sub-mm excess'' of dust emission, reported by \cite{israel10, bot10}, in the Large Megallanic Cloud (LMC). The increased emissivity of amorphous carbon (a factor of 2-3 more than DL07) allows a better fit to Herschel observations of the LMC \citep{galliano11}, and Planck observations of the Milky Way \citep{planckIntXXIX16}. We assume that the radiation field heating this dust mixture is the Galactic ISRF \citep{mathis83}, scaled by a factor $U$.
+          We performed a full dust SED fitting on the $\lambda$~Orionis photometry, according to the dust model by \cite{galliano11} (to be thoroughly introduced in Galliano, et al., in prep.)  We used a mixture of silicate and carbonaceous dust, silicate dust, the two dominant categories of interstellar dust as described in Ch.~\ref{ch:intro}. However, instead of the graphite-based carbon dust invoked by the canonical \cite{draine07} model (DL07), we assume amorphous carbon. This choice is an attempt to account for an excessive dust-gas-ratio, reported by \cite{israel10, bot10} in the Large Megallanic Cloud (LMC), which was found by \cite{galliano11} to violate elemental depletion constraints. The increased opacity of amorphous carbon (a factor of 2-3 more than DL07) allows a better fit to Herschel observations of the LMC \citep{galliano11}, and Planck observations of the Milky Way \citep{planckIntXXIX16}. We assume that the radiation field heating this dust mixture is the Galactic ISRF \citep{mathis83}, scaled by a factor $U$.
         %   We also assume, following \cite{dale01}, that the dust is exposed to a distribution of starlight intensity, distributed as:
         %       \begin{equation}
         %          \label{eq:U}
         %            dM_{dust}\propto{} U^{-\alpha}dU
         %       \end{equation}
         %   between $U_{min}$ and $U_{max}$, where $U_{min}$, $U_{max}$ and $\alpha{}$ are free parameters.
-          We utilize both the Bayesian dust SED fitting approach by Galliano (in prep.), and a least-squares analysis. The SED fitting accounts for estimates of the respective calibration uncertainties, and the spectral response curves (Fig.~\ref{fig:Filter_coverage_example_full}). As outputs, metrics of the total dust mass $M_{dust}$, PAH mass $M_{PAH}$, ionized PAH mass $M_{PAH+}$, and ISRF intensity $U$ are produced. We only carry out the fitting for unmasked pixels. We are primarily interested in which of the corrleations $M_{dust}$ vs. $I_{AME}$ or $M_{PAH}$ vs. $I_{AME}$ is stronger.
+          We utilize both the hierarchical Bayesian dust SED fitting approach by Galliano (in prep.), and a least-squares analysis. The SED fitting accounts for estimates of the respective calibration uncertainties, and the spectral response curves (Fig.~\ref{fig:Filter_coverage_example_full}). As outputs, metrics of the total dust mass $M_{dust}$, PAH mass $M_{PAH}$, ionized PAH mass $M_{PAH+}$, and ISRF intensity $U$ are produced. We only carry out the fitting for unmasked pixels. We are primarily interested in which of the corrleations $M_{dust}$ vs. $I_{AME}$ or $M_{PAH}$ vs. $I_{AME}$ is stronger.
           Two sample fitting results are shown in Figs.~\ref{fig:fred_LOri_notes_Oct2017_fig1a}, and~\ref{fig:fred_LOri_notes_Oct2017_fig1b}.
               \begin{figure}
                 \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf}
@@ -123,7 +123,7 @@
               \begin{figure}
                 \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1b.pdf}
                 \centering
-                \caption{The same as Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig1a}, but for a different pixel position. Corresponds to galactic coordinates...}
+                \caption{The same as Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig1a}, but for a different pixel position.}
                 \label{fig:fred_LOri_notes_Oct2017_fig1b}
               \end{figure}
            Performing such fits for all of the pixels, we are able to see how $I_{AME}$ varies with the bulk dust physical characteristics of the region. Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig2a} shows the fitted dust mass per pixel, relative to the AME intensity.

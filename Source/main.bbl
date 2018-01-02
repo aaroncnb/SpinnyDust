@@ -1,4 +1,4 @@
-\begin{thebibliography}{131}
+\begin{thebibliography}{139}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Ali-Haimoud}(2010)}]{ali-haimoud10}
@@ -44,6 +44,10 @@
 {Andrews}, H., {Boersma}, C., {Werner}, M.~W., {Livingston}, J., {Allamandola},
   L.~J., \& {Tielens}, A.~G.~G.~M. 2015, \apj, 807, 99
 
+\bibitem[{{Andrews} {et~al.}(2016){Andrews}, {Candian}, \&
+  {Tielens}}]{andrews16}
+{Andrews}, H., {Candian}, A., \& {Tielens}, A.~G.~G.~M. 2016, \aap, 595, A23
+
 \bibitem[{{Aran}(2009)}]{aran09}
 {Aran}, A.~B. 2009, PhD thesis, UNIVERSIDAD AUTONOMA DE MADRID
 
@@ -74,6 +78,11 @@
   {Yoon}}]{bicep214}
 {BICEP2 Collaboration} {et~al.} 2014, Physical Review Letters, 112, 241101
 
+\bibitem[{{Bocchio} {et~al.}(2012){Bocchio}, {Micelotta}, {Gautier}, \&
+  {Jones}}]{bocchio12}
+{Bocchio}, M., {Micelotta}, E.~R., {Gautier}, A.-L., \& {Jones}, A.~P. 2012,
+  \aap, 545, A124
+
 \bibitem[{{Boggess} {et~al.}(1992){Boggess}, {Mather}, {Weiss}, {Bennett},
   {Cheng}, {Dwek}, {Gulkis}, {Hauser}, {Janssen}, {Kelsall}, {Meyer},
   {Moseley}, {Murdock}, {Shafer}, {Silverberg}, {Smoot}, {Wilkinson}, \&
@@ -101,11 +110,6 @@
 
 \bibitem[{{Cunha} \& {Smith}(1996)}]{cunha96}
 {Cunha}, K., \& {Smith}, V.~V. 1996, \aap, 309, 892
-
-\bibitem[{{Dale} {et~al.}(2001){Dale}, {Helou}, {Contursi}, {Silbermann}, \&
-  {Kolhatkar}}]{dale01}
-{Dale}, D.~A., {Helou}, G., {Contursi}, A., {Silbermann}, N.~A., \&
-  {Kolhatkar}, S. 2001, \apj, 549, 215
 
 \bibitem[{{de Oliveira-Costa} {et~al.}(1997){de Oliveira-Costa}, {Kogut},
   {Devlin}, {Netterfield}, {Page}, \& {Wollack}}]{deoliveiracosta97}
@@ -179,6 +183,9 @@ Efron, B. 1979, Ann. Statist., 7, 1
 \bibitem[{{Ferrara} \& {Dettmar}(1994)}]{ferrara94}
 {Ferrara}, A., \& {Dettmar}, R.-J. 1994, \apj, 427, 155
 
+\bibitem[{{Finkbeiner}(2003)}]{finkbeiner03}
+{Finkbeiner}, D.~P. 2003, \apjs, 146, 407
+
 \bibitem[{{Finkbeiner} {et~al.}(2002){Finkbeiner}, {Schlegel}, {Frank}, \&
   {Heiles}}]{finkbeiner02}
 {Finkbeiner}, D.~P., {Schlegel}, D.~J., {Frank}, C., \& {Heiles}, C. 2002,
@@ -192,6 +199,16 @@ Efron, B. 1979, Ann. Statist., 7, 1
   {Lebouteiller}, {Misselt}, {Montiel}, {Panuzzo}, {Reach}, \&
   {Skibba}}]{galliano11}
 {Galliano}, F., {et~al.} 2011, \aap, 536, A88
+
+\bibitem[{{G{\'e}nova-Santos} {et~al.}(2015){G{\'e}nova-Santos},
+  {Rubi{\~n}o-Mart{\'{\i}}n}, {Rebolo}, {Pel{\'a}ez-Santos},
+  {L{\'o}pez-Caraballo}, {Harper}, {Watson}, {Ashdown}, {Barreiro},
+  {Casaponsa}, {Dickinson}, {Diego}, {Fern{\'a}ndez-Cobos}, {Grainge},
+  {Guti{\'e}rrez}, {Herranz}, {Hoyland}, {Lasenby}, {L{\'o}pez-Caniego},
+  {Mart{\'{\i}}nez-Gonz{\'a}lez}, {McCulloch}, {Melhuish}, {Piccirillo},
+  {Perrott}, {Poidevin}, {Razavi-Ghods}, {Scott}, {Titterington}, {Tramonte},
+  {Vielva}, \& {Vignaga}}]{santos15}
+{G{\'e}nova-Santos}, R., {et~al.} 2015, \mnras, 452, 4169
 
 \bibitem[{{Giard} {et~al.}(1994){Giard}, {Lamarre}, {Pajot}, \&
   {Serra}}]{giard94}
@@ -210,6 +227,9 @@ Efron, B. 1979, Ann. Statist., 7, 1
   {Wandelt}, {Hansen}, {Reinecke}, \& {Bartelmann}}]{gorski05}
 {G{\'o}rski}, K.~M., {Hivon}, E., {Banday}, A.~J., {Wandelt}, B.~D., {Hansen},
   F.~K., {Reinecke}, M., \& {Bartelmann}, M. 2005, \apj, 622, 759
+
+\bibitem[{{Haas} {et~al.}(2002){Haas}, {Klaas}, \& {Bianchi}}]{haas02}
+{Haas}, M., {Klaas}, U., \& {Bianchi}, S. 2002, \aap, 385, L23
 
 \bibitem[{{Hanson} {et~al.}(2013){Hanson}, {Hoover}, {Crites}, {Ade}, {Aird},
   {Austermann}, {Beall}, {Bender}, {Benson}, {Bleem}, {Bock}, {Carlstrom},
@@ -247,6 +267,20 @@ Hensley, B.~S., Draine, B.~T., \& Meisner, A.~M. 2016, The Astrophysical
 \bibitem[{{Hoyle} \& {Wickramasinghe}(1970)}]{hoyle70}
 {Hoyle}, F., \& {Wickramasinghe}, N.~C. 1970, \nat, 227, 473
 
+\bibitem[{{Huang} {et~al.}(2016){Huang}, {Morata}, {Koch}, {Kemper}, {Hwang},
+  {Chiong}, {Ho}, {Chu}, {Huang}, {Liu}, {Hsieh}, {Tseng}, {Weng}, {Ho},
+  {Chiang}, {Wu}, {Chang}, {Jian}, {Lee}, {Lee}, {Iguchi}, {Asayama}, {Iono},
+  {Gonzalez}, {Effland}, {Saini}, {Pospieszalski}, {Henke}, {Yeung}, {Finger},
+  {Tapia}, \& {Reyes}}]{huang16}
+{Huang}, Y.~D.~., {et~al.} 2016, in \procspie, Vol. 9911, Modeling, Systems
+  Engineering, and Project Management for Astronomy VI, 99111V
+
+\bibitem[{Irfan {et~al.}(2015)Irfan, Dickinson, Davies, Copley, Davis,
+  Ferreira, Holler, Jonas, Jones, King, Leahy, Leech, Leitch, Muchovej,
+  Pearson, Peel, Readhead, Stevenson, Sutton, Taylor, \& Zuntz}]{irfan15}
+Irfan, M.~O., {et~al.} 2015, Monthly Notices of the Royal Astronomical Society,
+  448, 3572
+
 \bibitem[{{Ishihara} {et~al.}(2007){Ishihara}, {Onaka}, {Kaneda}, {Suzuki},
   {Kataza}, {Sakon}, {Okada}, {Doi}, {Fujishiro}, {Fujiwara}, {Ita}, {Kii},
   {Kim}, {Makiuti}, {Matsumoto}, {Matsuhara}, {Murakami}, {Nakagawa}, {Ohyama},
@@ -282,6 +316,15 @@ Hensley, B.~S., Draine, B.~T., \& Meisner, A.~M. 2016, The Astrophysical
   {Verstraete}}]{jones17}
 {Jones}, A.~P., {K{\"o}hler}, M., {Ysard}, N., {Bocchio}, M., \& {Verstraete},
   L. 2017, \aap, 602, A46
+
+\bibitem[{{Juvela} \& {Ysard}(2012)}]{juvela12}
+{Juvela}, M., \& {Ysard}, N. 2012, \aap, 539, A71
+
+\bibitem[{{Kalberla, P. M. W.} {et~al.}(2005){Kalberla, P. M. W.}, {Burton, W.
+  B.}, {Hartmann, Dap}, {Arnal, E. M.}, {Bajaja, E.}, {Morras, R.}, \&
+  {Pöppel, W. G. L.}}]{kalberla05}
+{Kalberla, P. M. W.}, {Burton, W. B.}, {Hartmann, Dap}, {Arnal, E. M.},
+  {Bajaja, E.}, {Morras, R.}, \& {Pöppel, W. G. L.} 2005, A\&A, 440, 775
 
 \bibitem[{{Kawada} {et~al.}(2007{\natexlab{a}}){Kawada}, {Baba}, {Barthel},
   {Clements}, {Cohen}, {Doi}, {Figueredo}, {Fujiwara}, {Goto}, {Hasegawa},
@@ -629,11 +672,6 @@ Lovas, F.~J., McMahon, R.~J., Grabow, J.-U., Schnell, M., Mack, J., Scott,
 \bibitem[{{Purcell}(1976)}]{purcell76}
 {Purcell}, E.~M. 1976, \apj, 206, 685
 
-\bibitem[{{Reynolds} {et~al.}(1998){Reynolds}, {Tufte}, {Haffner}, {Jaehnig},
-  \& {Percival}}]{wham98}
-{Reynolds}, R.~J., {Tufte}, S.~L., {Haffner}, L.~M., {Jaehnig}, K., \&
-  {Percival}, J.~W. 1998, \pasa, 15, 14
-
 \bibitem[{{Russell} {et~al.}(1977){Russell}, {Soifer}, \&
   {Willner}}]{russell77b}
 {Russell}, R.~W., {Soifer}, B.~T., \& {Willner}, S.~P. 1977, \apjl, 217, L149
@@ -641,6 +679,11 @@ Lovas, F.~J., McMahon, R.~J., Grabow, J.-U., Schnell, M., Mack, J., Scott,
 \bibitem[{{Sakata} {et~al.}(1984){Sakata}, {Wada}, {Tanabe}, \&
   {Onaka}}]{sakata84}
 {Sakata}, A., {Wada}, S., {Tanabe}, T., \& {Onaka}, T. 1984, \apjl, 287, L51
+
+\bibitem[{{Sakon} {et~al.}(2004){Sakon}, {Onaka}, {Ishihara}, {Ootsubo},
+  {Yamamura}, {Tanab{\'e}}, \& {Roellig}}]{sakon04}
+{Sakon}, I., {Onaka}, T., {Ishihara}, D., {Ootsubo}, T., {Yamamura}, I.,
+  {Tanab{\'e}}, T., \& {Roellig}, T.~L. 2004, \apj, 609, 203
 
 \bibitem[{{Sellgren}(1984)}]{sellgren84}
 {Sellgren}, K. 1984, \apj, 277, 623
