@@ -127,27 +127,27 @@
                 \caption{The same as Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig1a}, but for a different pixel position.}
                 \label{fig:fred_LOri_notes_Oct2017_fig1b}
               \end{figure}
-           Performing such fits for all of the pixels, we are able to see how $I_{AME}$ varies with the bulk dust physical characteristics of the region. Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig2a} shows the fitted dust mass per pixel, relative to the AME intensity.
+           Performing such fits for all of the pixels, we are able to see how $I_{AME}$ varies with the bulk dust physical characteristics of the region. Fig.~\ref{fig:corr_IameUav_lnMd} shows the fitted dust mass per pixel, relative to the AME intensity.
                 \begin{figure}
-                 \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2a.pdf}
+                 \includegraphics[width=\textwidth]{../Plots/ch_lori/corr_IameUav_lnMd.pdf}
                  \centering
                  \caption{Scatter plot with error elipses generated through the Bayesian SED fitting, of total dust mass $M_{dust}$ vs. $I_{AME}$ scaled by $U$.}
-                 \label{fig:fred_LOri_notes_Oct2017_fig2a}
+                 \label{fig:corr_IameUav_lnMd}
                \end{figure}
-           AME intensity is scaled by the ISRF intensity $U$. Although spinning dust emission is not predicted to vary directly with $U$, we consider that the ISRF may serve as a diagnostic of environmental conditions in the ISM. In any case, we find that performing such a scaling improves the correlations with dust mass.   Figs.~\ref{fig:fred_LOri_notes_Oct2017_fig2b} and~\ref{fig:fred_LOri_notes_Oct2017_fig2d} describe the variation with $M_{PAH}$ and $M_{PAH+}$.
+           AME intensity is scaled by the ISRF intensity $U$. Although spinning dust emission is not predicted to vary directly with $U$, we consider that the ISRF may serve as a diagnostic of environmental conditions in the ISM. In any case, we find that performing such a scaling improves the correlations with dust mass.   Figs.~\ref{fig:corr_IameUav_lnMpah} and~\ref{fig:corr_IameUav_lnMpahion} describe the variation with $M_{PAH}$ and $M_{PAH+}$.
               \begin{figure}
-                \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2b.pdf}
+                \includegraphics[width=\textwidth]{../Plots/ch_lori/corr_IameUav_lnMpah.pdf}
                 \centering
-                \caption{The same comparison is given by~\ref{fig:fred_LOri_notes_Oct2017_fig2a}, but showing total mass of PAHs ($M_{PAH}$) rather than total dust mass on the y-axis. }
-                \label{fig:fred_LOri_notes_Oct2017_fig2b}
+                \caption{The same comparison is given by~\ref{fig:corr_IameUav_lnMd}, but showing total mass of PAHs ($M_{PAH}$) rather than total dust mass on the y-axis. }
+                \label{fig:corr_IameUav_lnMpah}
               \end{figure}
               \begin{figure}
-                \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig2d.pdf}
+                \includegraphics[width=\textwidth]{../Plots/ch_lori/corr_IameUav_lnMpahion.pdf}
                 \centering
-                \caption{ The same as in Figs.~\ref{fig:fred_LOri_notes_Oct2017_fig2a} and~\ref{fig:fred_LOri_notes_Oct2017_fig2b} , but specifically comparing an estimate of the charged component of PAH mass $M_{PAH+}$. This includes anions and cations, since we cannot distinguish between these two spectroscopically.}
-                \label{fig:fred_LOri_notes_Oct2017_fig2d}
+                \caption{ The same as in Figs.~\ref{fig:corr_IameUav_lnMd} and~\ref{fig:corr_IameUav_lnMpah} , but specifically comparing an estimate of the charged component of PAH mass $M_{PAH+}$. This includes anions and cations, since we cannot distinguish between these two spectroscopically.}
+                \label{fig:corr_IameUav_lnMpahion}
               \end{figure}
-    Based on the dust properties derived from these SED fits, we investigate whether any fitted parameter shows a preferential relation with the AME. Figs.~\ref{fig:fred_LOri_notes_Oct2017_fig2a}-\ref{fig:fred_LOri_notes_Oct2017_fig2d} reveal a very similar trend between the AME and the parameters $M_{PAH}$, $M_{PAH+}$, and $M_{dust}$. There is a slightly improved correlation between $M_{dust}$ and $M_{PAH}$ (0.857 vs 0.867). This is consistent with the intensity cross correlations in Fig.~\ref{fig:orionis-corr-matrix}. These corrleations are discussed further in Sec.~\ref{sec:lori_discussion} and Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig2c}.
+    Based on the dust properties derived from these SED fits, we investigate whether any fitted parameter shows a preferential relation with the AME. Figs.~\ref{fig:corr_IameUav_lnMd}-\ref{fig:corr_IameUav_lnMpahion} reveal a very similar trend between the AME and the parameters $M_{PAH}$, $M_{PAH+}$, and $M_{dust}$. There is a slightly improved correlation between $M_{dust}$ and $M_{PAH}$ (0.857 vs 0.867). This is consistent with the intensity cross correlations in Fig.~\ref{fig:orionis-corr-matrix}. These corrleations are discussed further in Sec.~\ref{sec:lori_discussion} and Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig2c}.
 
     \subsection{Comparison with unmasked results}
         To assess the effect of applying the mask and background subtraction from Sec.~\ref{sec:dataprocessing}, Figs.~\ref{fig:orionis-img} and \ref{fig:orionis-corr} show a very simplistic version of the image processing. No point-source masking, background adjustment, or missing strip masking are applied. Data are simply smoothed with a 1-degree Gaussian beam, and missing data are interpolated.
