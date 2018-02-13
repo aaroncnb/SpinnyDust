@@ -44,7 +44,7 @@
      The ability to map and archive the sky with satellites -- not only in the optical and infrared, but well into the microwave regime -- has enabled interdisciplinary research of the interstellar-medium (ISM). The ISM pervades the galaxy and either surrounds or intervenes basically any object one may wish to study. The ISM is enriched as matter is processed and flows back into space. We can describe the ISM as a mixture of gas and dust. An early estimate by \cite{knapp74} puts the mass of dust in the galaxy at about 1\% that of interstellar gas.
 
     A wealth of data is now available not only in the IR, but on into the sub-millimeter range and the interpretation of this data has become a serious priority. This is especially true for the last ten years as new, much higher resolution surveys have been carried out such as the Spitzer Space Telescope \cite{spitzer04}, Herschel Space Observatory (Herschel) \citep{herschel10} by NASA and the ESA respectively, and the AKARI telescope \citep{akari07},  by JAXA. AKARI especially, produced a wealth of data spanning the entire sky. It was equipped with IRC \citep{irc07} to study the MIR, and FIS \citep{fis07} to study cooler dust and gas, and conduct spectroscopy in the far infrared (FIR) via its built-in Fourier Transform Spectrometer (FTS). The FIS all-sky maps have just been publicly released at the time of this writing (Doi, et al. 2014). The IRC all-sky maps are soon to follow. In this thesis we use these AKARI surveys in a comparison with other cutting edge all-sky maps from the Planck Observatory in a multi-wavelength study of yet another part of the ISM puzzle, the AME and its connection to interstellar dust.
-    
+
     The merits of multiwavelength based investigations arise from the simple fact that the ISM is very complex--- both in terms of the myriad forms of matter present, from plasmas to dust grains --- and in countless physical processes at play. Consider the complex case of a supernova remnant influencing surrounding ISM: through a combined analysis of radio, mid-far infrared, and X-ray data, \cite{lau15} were able to characterize the history of dust production, heating, and destruction within the Sgr A East supernova remnant.
 
 
@@ -68,7 +68,6 @@
 
     From the mid-to-near IR however, spectroscopic observations enabled and required the simple two-populations model of larger and smaller dust (e.g. \cite{mathis77}), to be expanded. ``Unidentified IR bands'' from~ 3 to 11~$\mu$m (hereafter, UIR bands), demonstrate another divergence from the canonical dust emission story. The UIR bands were first reported at 8 to 13~$\mu$m in planetary nebulae and HII regions by \cite{gillet73, gillett75} in ground-based observations. Observations by \cite{merrill75} noted another unexplained feature at 3.27~$\mu$m, noting: ``there are [...] similarities in the 8-13~$\mu$m spectra of NGC 253, NGC 7027, and BD +30$^\circ$3639 \cite{gillett75}''. Features at 6.2 and 7.7~$\mu$m were reported by \cite{russell77b} using the first airplane-mounted IR telescope and predecessor to SOFIA, the Kuiper Airborne Observatory. \cite{sellgren83} reported features at 3.3 and 3.4~$\mu$m being detected in reflection nebulae.
 
-     Within  the last 30 years, a popular hypothesis has arisen that a particular set of features of the interstellar medium SED between 3 and 12 microns, known as the ``Unidentified Infrared Bands" (UIRs), can be explained by the PAH family of molecules. The PAH interpretation was first proposed by \cite{allamandola85} and \cite{puget85}.
      With the appearance of high powered computers with an ability to perform rigorous calculations, many attempts have been made to simulate the expected emission from PAHs. Density functional theory (DFT) \citep{honenberg64} has become available as a tool for simulating molecular emission features using a quantum approach. DFT calculations has become a subfield of ISM astrophysics. Many attempts are being made to fit particular emission features of PAHs, and other molecular and grain species, to observed ISM features \citep{hammonds09,hirata99}.
      While it is difficult to reproduce the exact interstellar conditions in a laboratory setting, DFT simulations have yielded some evidence that the UIR bands can be explained as PAH vibrational emission features \citep{pathak12,ricca11,yu12}.
 
@@ -160,12 +159,13 @@
 
 \section{Statistical Methods}
 
+  Pearson correlation coefficient
   \subsection{Correlation tests}
      \begin{equation}
      \rho_{X,Y}= \frac{\operatorname{cov}(X,Y)}{\sigma_X \sigma_Y}
    \end{equation}
 
-    Spearman's rank correlation coefficient:
+    Spearman's rank correlation coefficient ($r_s$):
 
     \begin{equation}
       r_s = \rho_{\operatorname{rg}_X,\operatorname{rg}_Y} = \frac {\operatorname{cov}(\operatorname{rg}_X,\operatorname{rg}_Y)} { \sigma_{\operatorname{rg}_X} \sigma_{\operatorname{rg}_Y} }
@@ -185,3 +185,5 @@
 
   \subsection{Code availability}
     Because this work is intedned to contribute working examples for future students, in addition to making a research contribution, this thesis is accompanied by a {\tt github} repository (to be made available upon acceptance of the thesis.) \footnote{Available at: \url{https://github.com/aaroncnb/CosmicDust}.} Most of analyses code are available in that repository, in the form of Jupyter notebooks. Most of the figures, and code used to generate them, are also included. The dust SED fitting code is not part of that repository, but is described in Galliano et al. (in prep.)
+
+  \subsection{Usage of Acronyms and Abbreviations}
