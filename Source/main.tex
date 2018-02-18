@@ -69,6 +69,50 @@
 
 \doublespacing
 
+\makeglossaries
+% abbreviations:
+\newacronym{alma}{ALMA}{Atacama Large Milimeter Array}
+\newacronym{ame}{AME}{Anomalous Microwave Emission}
+\newacronym{cbass}{CBASS}{C-Band All Sky Survey}
+\newacronym{cobe}{COBE}{COsmic Background Explorer}
+\newacronym{commander}{COMMANDER}{}
+\newacronym{dirbe}{DIRBE}{Diffuse InfraRed Background Experiment}
+\newacronym{esa}{ESA}{European Space Agency}
+\newacronym{fir}{FIR}{Far InfraRed}
+\newacronym{fis}{FIS}{Far Infrared Surveyor}
+\newacronym{fov}{FOV}{Field of View}
+\newacronym{fts}{FTS}{Fourier Transform Spectrometer}
+\newacronym{fwhm}{FWHM}{Full Width at Half Max}
+\newacronym{gal-tan}{GAL-TAN}{Galactic coordinate Tangential projection}
+\newacronym{healpix}{HEALPix}{Hierarchical Equal Area Iso Latitude pixelation of the sphere}
+\newacronym{Herschel}{Herschel}{Herschel Space Observatory}
+\newacronym{hb}{HB}{Hierarchical Bayesian analysis}
+\newacronym{hfi}{HFI}{High Frequency Instrument}
+\newacronym{ipac}{IPAC}{Infrared Processing and Analysis Center}
+\newacronym{irc}{IRC}{InfraRed Camera}
+\newacronym{iras}{IRAS}{InfraRed Astronomical Satellite}
+\newacronym{ism}{ISM}{InterStellar Medium}
+\newacronym{isrf}{ISRF}{InterStellar Radiation Field}
+\newacronym{lfi}{LFI}{Low Frequency Instrument}
+\newacronym{mir}{MIR}{Mid InfraRed}
+\newacronym{nasa}{NASA}{National Aeronautics and Space Administration}
+\newacronym{nir}{NIR}{Near InfraRed}
+\newacronym{pah}{PAH}{Polycyclic Aromatic Hydrocarbon}
+\newacronym{pc}{PC}{Planck Collaboration}
+\newacronym{pr1}{PR1}{Planck Public Data Release 1}
+\newacronym{pr2}{PR2}{Planck Public Data Release 2}
+\newacronym{psf}{PSF}{Point-Spread Function}
+\newacronym{quijote}{QUIJOTE}{Q-U-I JOint Tenerife Experiment}
+\newacronym{sed}{SED}{Spectral Energy Distribution}
+\newacronym{sofia}{SOFIA}{Stratospheric Observatory For Infrared Astronomy}
+\newacronym{sn}{S/N}{Signal-to-Noise ratio}
+\newacronym{sst}{SST}{Spitzer Space Telescope}
+\newacronym{uir}{UIR}{Unidentified InfraRed Bands}
+\newacronym{vsg}{VSG}{Very Small Grains}
+\newacronym{wise}{WISE}{Wide-field Infrared Survey Explorer}
+\newacronym{wmap}{WMAP}{Wilkinson Microwave Anisotropy Probe}
+
+
 \title{\begin{CJK}{UTF8}{min}学位論文\\
 Investigation of Interstellar Dust Emission in the Infrared-Microwave Range with All-sky Surveys\\
 (全天サーベイによる赤外線マイクロ波帯での星間ダスト放射の研究)\\
@@ -82,7 +126,7 @@ Bell, Aaron Christopher }
 
 \date{}
 
-\makeglossaries
+
 
 \begin{document}
 \maketitle
@@ -98,8 +142,8 @@ Bell, Aaron Christopher }
 
 
 \doublespacing
-\include{abbreviations}
-\printglossary
+
+
 \include{abstract}
 \pagenumbering{arabic}
 \include{ch1_intro}
@@ -119,4 +163,5 @@ Bell, Aaron Christopher }
 \small
 \bibliographystyle{apj}
 \bibliography{reference}
+\printglossary[type=\acronymtype]
 \end{document}
