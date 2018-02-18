@@ -173,22 +173,23 @@
 
     \subsection{Correlation tests}
 
-  Pearson correlation coefficient is defined as follows:
+    \paragraph{Pearson correlation coefficient $\rho_{p}$ }
+     $\rho_{p}$ is defined as follows:
 
-  \subsection{Correlation tests}
      \begin{equation}
-     \rho_{X,Y}= \frac{\operatorname{cov}(X,Y)}{\sigma_X \sigma_Y}
-   \end{equation}
+       \rho_{X,Y}= \frac{\operatorname{cov}(X,Y)}{\sigma_X \sigma_Y}
+     \end{equation}
+     where X and Y are the variables of interest, $cov$ is the covariance between them. \sigma_X is the standard deviation of X, and \sigma_Y that of Y.
+   To explain this conceptually, when we use $r_{p}$, we are essentially asking the question ``How well can we represent these data as having a linear trend?'' This is important to remember, as $r_{p}$ is often confused as being simply a measure of correlatedness. This is partly true, in that stronger $r_p$ scores indicate a better correlation. However lower scores may simply be indicating that a trend is not linear, or even that a linear trend is being overwheled by outliers or noise. For theses reasons, we will not use $r_{p}$ in the following chapters. It is described here simply to aid in the understanding of its variant, the Spearman's rank correlation coefficient.
 
-   To explain this conceptually, when we use $r_{p}$, we are essentially asking the question ``How well can we represent these data as having a linear trend?'' This is important to remember, as $r_{p}$ is often confused as being simply a measure of correlatedness. This is partly true, in that stronger $r_p$ scores indicate a better correlation. However lower scores may simply be indicating that a trend is not linear, or even that a linear trend is being overwheled by outliers or noise.
+    \paragraph{Spearman's rank correlation coefficient $r_{s}$}
+     $r_{s}$ can be thought of as a variation of $r_{p}$, and in fact depends on $r_{p}$ and can be written as follows:
 
-    Spearman's rank correlation coefficient ($r_s$) is defined as follows, and can be thought of as another flavor of $r_p$. The objective here is to test not just the linear-correlation, but to test more generally for a monotonic relationship. $r_s$ is defined as follows:
-
-    \begin{equation}
-      r_s = \rho_{\operatorname{rg}_X,\operatorname{rg}_Y} = \frac {\operatorname{cov}(\operatorname{rg}_X,\operatorname{rg}_Y)} { \sigma_{\operatorname{rg}_X} \sigma_{\operatorname{rg}_Y} }
-    \end{equation}
-
-     As a simple example, a pure power-law relationship would return a perfect 1 score for $r_s$, but not for $r_p$. Both tests would return 1 (or -1) for a purely linear relationship.
+       \begin{equation}
+         r_s = \r_{\operatorname{rg}_X,\operatorname{rg}_Y} = \frac {\operatorname{cov}(\operatorname{rg}_X,\operatorname{rg}_Y)} { \sigma_{\operatorname{rg}_X} \sigma_{\operatorname{rg}_Y} }
+       \end{equation}
+       where we see that $r_{p}$ appears, but note that this is $r_{p}$ as it is applied to the ``rank'' of the variables, indicated by $rg_{Y}$ and $rg_{X}$, and not the original values. Thus a sorting of the variables is needed. $cov$ is again the variance, and $\sigma{}$ the standard deviation.
+       The logic is similar to that in $r_{p}$, but the objective here is to test more generally for a monotonic relationship, and not only for linear relationships. As a simple example, a pure power-law relationship would return a perfect 1 score for $r_{s}$, but not for $r_{p}$. Both tests would return 1 (or -1) for a purely linear relationship. Throughout the following chapters, we will use $r_{s}$.
 
 
 
@@ -196,7 +197,7 @@
 
     This is less a statistical method as systematic way of using the above-described $r_p$ and $r_s$
 \section{Scope of this Dissertation}
-    We attempt to add to the understanding of AME and the possibility of spinning dust emission. With ample multiwavelength data now available, and a new PAH-focused all-sky survey in preparation by AKARI, we further test the PAH hypothesis, and assess how the IR to AME correlation changes as a function of wavelength.
+    We attempt to add to the understanding of AME and the possibility of spinning dust emission. With ample multiwavelength data now available, and a new PAH-focused all-sky survey in preparation by AKARI, we further test the PAH hypothesis, and assess how the IR to AME correlation changes as a function of wavelength. This thesis represents the first time that AKARI IRC data, have been utilized for AME investigation. Moreover, Ch. 3 represents the first time that AKARI data, and hierarchical Bayesian dust SED fitting respectively, have been used to investigate the $\lambda$~Orionis region. The result of Ch. 3 is likewise unique in that it is the first time a link between AME and PAHs has been demonstrated in $\lambda$~Orionis, and the first time that AME in any particular region has been shown to correlate better with PAH mass than with the total dust mass. Chs. 3 and 4 both utilize a greater number of mid IR to sub-mm photometric bands, than have ever been used for AME investigations. 
 
   \subsection{An application of all-sky archival data}
     This is an astrophysical data archive based work. The primary goal is to highlight a particular application of multiwavelength (mid-IR to radio), cross-archive all-sky data analysis. We describe the interrelatedness between mid to far IR dust emission and possible microwave emission from dust. This is accomplished through an investigation of photometric all sky maps mainly from AKARI, IRAS, and Planck.
@@ -208,6 +209,6 @@
     We do not explore the modeling of microwave dust emission itself, rather we refer to estimates of spinning dust emisison provided in the literature \citep{planckXII, wmap03b} in the form of archival data and parameter maps. We consider this problem first on an all-sky basis, not focusing on any pre-selected object of the sky --- in order to assess if there any general pattern between the IR and the AME, beyond the AME-dust correlation already described above. We then focus on a region highlighted by the Planck Collaboration as being especially worthy of further investigation \citep{planck15X}, and has a resolvable topology even at 1$^\circ$ resolution. Essentially all of the analyses and conclusions presented in this work apply to an angular scale of approximately 1$^\circ$, and only for the given component separation methods (Solar system, galactic, extragalactic) used by each of the data providers.
 
   \subsection{Code availability}
-    Because this work is intedned to contribute working examples for future students, in addition to making a research contribution, this thesis is accompanied by a {\tt github} repository (to be made available upon acceptance of the thesis.) \footnote{Available at: \url{https://github.com/aaroncnb/CosmicDust}.} Most of analyses code are available in that repository, in the form of Jupyter notebooks. Most of the figures, and code used to generate them, are also included. The hierarchical Bayes dust SED fitting code used in this work was developed by \cite{galliano18}, and its implementation in this work was carried out in collaboration with their group. The details of the code are described in \cite{galliano18}, and are not included in the respository for this thesis.
+    Because this work is intended to contribute working examples for future students, in addition to making a research contribution, this thesis is accompanied by a {\tt github} repository (to be made available upon acceptance of the thesis.) \footnote{Available at: \url{https://github.com/aaroncnb/CosmicDust}.} Most of analyses code are available in that repository, in the form of Jupyter notebooks. Most of the figures, and code used to generate them, are also included. The hierarchical Bayes dust SED fitting code used in this work was developed by \cite{galliano18}, and its implementation in this work was carried out in collaboration with their group. The details of the code are described in \cite{galliano18}, and are not included in the respository for this thesis.
 
   \subsection{Usage of Acronyms and Abbreviations}
