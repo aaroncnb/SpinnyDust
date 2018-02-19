@@ -131,10 +131,10 @@
                 \begin{figure}
                  \includegraphics[width=\textwidth]{../Plots/ch_lori/corr_IameUav_lnMd.pdf}
                  \centering
-                 \caption{Scatter plot with the bivariate error elipses generated through the HB \acrshort{sed} fitting, of total dust mass $M_{dust}$ vs. $I_{AME}$ scaled by $U$. Green dots indicate the results when using a simple least-squares method fit, for comparison with the HB method.}
+                 \caption{Scatter plot with the bivariate error elipses generated through the \acrshort{hb} \acrshort{sed} fitting, of total dust mass $M_{dust}$ vs. $I_{AME}$ scaled by $U$. Green dots indicate the results when using a simple least-squares method fit, for comparison with the HB method.}
                  \label{fig:corr_IameUav_lnMd}
                \end{figure}
-           \acrshort{ame} intensity is scaled by the ISRF intensity $U$. Although spinning dust emission is not predicted to vary directly with $U$, we consider that the ISRF may serve as a diagnostic of environmental conditions in the \acrshort{ism}. In any case, we find that performing such a scaling improves the correlations with dust mass.   Figs.~\ref{fig:corr_IameUav_lnMpah} and~\ref{fig:corr_IameUav_lnMpahion} describe the variation with $M_{PAH}$ and $M_{PAH+}$.
+           \acrshort{ame} intensity is scaled by the \acrshort{isrf} intensity $U$. Although spinning dust emission is not predicted to vary directly with $U$, we consider that the ISRF may serve as a diagnostic of environmental conditions in the \acrshort{ism}. In any case, we find that performing such a scaling improves the correlations with dust mass.   Figs.~\ref{fig:corr_IameUav_lnMpah} and~\ref{fig:corr_IameUav_lnMpahion} describe the variation with $M_{PAH}$ and $M_{PAH+}$.
               \begin{figure}
                 \includegraphics[width=\textwidth]{../Plots/ch_lori/corr_IameUav_lnMpah.pdf}
                 \centering
@@ -144,26 +144,13 @@
               \begin{figure}
                 \includegraphics[width=\textwidth]{../Plots/ch_lori/corr_IameUav_lnMpahion.pdf}
                 \centering
-                \caption{ The same as in Figs.~\ref{fig:corr_IameUav_lnMd} and~\ref{fig:corr_IameUav_lnMpah} , but specifically comparing an estimate of the charged component of \acrshort{pah} mass $M_{PAH+}$. This includes anions and cations, since we cannot distinguish between these two spectroscopically.}
+                \caption{ The same as in Figs.~\ref{fig:corr_IameUav_lnMd} and~\ref{fig:corr_IameUav_lnMpah}, but specifically comparing an estimate of the charged component of \acrshort{pah} mass $M_{PAH+}$. This includes anions and cations, since we cannot distinguish between these two spectroscopically.}
                 \label{fig:corr_IameUav_lnMpahion}
               \end{figure}
     Based on the dust properties derived from these \acrshort{sed} fits, we investigate whether any fitted parameter shows a preferential relation with the \acrshort{ame}. Figs.~\ref{fig:corr_IameUav_lnMd}-\ref{fig:corr_IameUav_lnMpahion} reveal a very similar trend between the \acrshort{ame} and the parameters $M_{PAH}$, $M_{PAH+}$, and $M_{dust}$. There is a slightly improved correlation between $M_{dust}$ and $M_{PAH}$ (0.857 vs 0.867). This is consistent with the intensity cross correlations in Fig.~\ref{fig:orionis-corr-matrix}. These corrleations are discussed further in Sec.~\ref{sec:lori_discussion} and Fig.~\ref{fig:PDFs_Iame}.
 
-    \subsection{Comparison with unmasked results}
-        To assess the effect of applying the mask and background subtraction from Sec.~\ref{sec:dataprocessing}, Figs.~\ref{fig:orionis-img} and \ref{fig:orionis-corr} show a very simplistic version of the image processing. No point-source masking, background adjustment, or missing strip masking are applied. Data are simply smoothed with a 1-degree Gaussian beam, and missing data are interpolated.
-          \begin{figure}
-            \includegraphics[width=\textwidth]{../Plots/lOrionis_grid_img.png}
-            \centering
-            \caption{A grid of thumbnails showing the $\lambda$~Orionis region's structure, at 12 wavelengths, along with \acrshort{ame} contours (shown in white countours. Spatial correlation seems to be the best at the shortest and longest wavelengths (AKARI/IRC 9~$\mu$m and Planck/HFI 550~$\mu$m). The images are only smoothed and interpolated, for demonstration of the effects without other image processing steps (i.e. background subtraction, point source masking). Figure~\ref{fig:orionis-akari9} demonstrates the actual pixel grid used for the \acrshort{sed} fitting and intensity correlation tests.}
-            \label{fig:orionis-img}
-          \end{figure}
-          \begin{figure}
-            \includegraphics[width=\textwidth]{../Plots/orionis_correlations_AME.png}
-            \centering
-            \caption{Intensity cross-correlation for all pixels in the $\lambda$~Orionis cut-out region.  $r_{s}$ indicates the Spearman rank correlation coefficient for each plot.}
-            \label{fig:orionis-corr}
-          \end{figure}
-        Contours indicate the region's shape in the PCAME map. Figure~\ref{fig:orionis-corr} shows IR to \acrshort{ame} cross correlation plots, for all pixels within the 10$^{\circ}$ by 10$^{\circ}$ $\lambda$~Orionis region. Using this more crude processing, we see in Fig. find the same general pattern--- A9 and P545 show the tightest correlation. Thus the overal result, in terms of a ranking of correlation strengths, does not seem to depend heavily on the image processing steps applied.
+    \subsection{Comparison masked result results}
+        To assess the effect of the morphology of $\lambda$~Orionis on the SED fitting results, we repeat the analysis with a mask applied to the central region. This allows us to focus on the variation of correlation strengths within the ring structure, which is less affected by heating from the $\lambda$Ori association. Fig.~\ref{fig:center_mask} indicates the mask applied. Fig.~\ref{fig:PDFs_center_masked_Iame}, in the same way as Fig.~\ref{fig:PDFs_Iame}, indicates the PDFs for the correlation scores of AME vs. dust mass, PAH mass, and ionized PAH masss--- but this time excluding pixels from the central portion of $\lambda$~Orionis.
 
   \section{Discussion}
   \label{sec:lori_discussion}
