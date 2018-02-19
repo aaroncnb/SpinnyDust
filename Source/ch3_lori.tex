@@ -31,7 +31,7 @@
        \caption{$\lambda$~Orionis as it appears in H-alpha emission by \cite{finkbeiner03}. Contours indicate \acrshort{ame} emission, from the variable frequency component. The colorbar indicates $H\alpha$ emission in Rayleighs. The field of view is slightly larger than that used for the final processed IR comparison (Fig.~\ref{fig:lori_processed_all}). }
        \label{fig:LOri_halpha_AMEvarContours}
      \end{figure}
-    We will first show a model-independent analysis, comparing IR photometric intensities from the mid to far-IR to the AME. After comparing all of these intensities, we describe which wavelength shows the best intensity correlation. The core results however will be based on a dust SED model-dependent analysis, which takes into consideration all of the photometric intensities to fit the total abundance of dust, PAH abundance, PAH ionization fraction, and ISRF strength, $U$, accross the $\lambda$~Orionis region. We will then discuss the core result, suggesting that PAH mass has a stronger relationship with AME than the total dust mass does, representing the first time such a result has been found for a specific AME-prominent region.
+    We will first show a model-independent analysis, comparing IR photometric intensities from the mid to far-IR to the \acrshort{ame}. After comparing all of these intensities, we describe which wavelength shows the best intensity correlation. The core results however will be based on a dust SED model-dependent analysis, which takes into consideration all of the photometric intensities to fit the total abundance of dust, PAH abundance, PAH ionization fraction, and ISRF strength, $U$, accross the $\lambda$~Orionis region. We will then discuss the core result, suggesting that PAH mass has a stronger relationship with AME than the total dust mass does, representing the first time such a result has been found for a specific \acrshort{ame}-prominent region.
 
 	\section{Data preparation}
     \label{sec:dataprocessing}
@@ -104,15 +104,19 @@
             \end{figure}
         For both test cases, the best correlations are the longest and shortest wavelength bands, consistent with the straight-forward $r_{s}$ scores shown in Fig.~\ref{fig:orionis-corr-matrix}.
 
-        \section{Comparison with \acrshort{sed} Fitting}
-          We performed a full dust \acrshort{sed} fitting on the $\lambda$~Orionis photometry, according to the dust model by \cite{galliano11}, and the hierarchical Bayesian SED fitting framework by \cite{galliano18}.  We used a mixture of silicate and carbonaceous dust, silicate dust, the two dominant categories of interstellar dust as described in Ch.~\ref{ch:intro}. However, instead of the graphite-based carbon dust invoked by the canonical \cite{draine07} model (DL07), we assume amorphous carbon. This is an attempt to account for an excessive dust-gas-ratio, reported by \cite{israel10, bot10} in the Large Megallanic Cloud (LMC), which was found by \cite{galliano11} to violate elemental depletion constraints. The increased opacity of amorphous carbon (a factor of 2-3 more than DL07) allows a better fit to Herschel observations of the LMC \citep{galliano11}, and Planck observations of the Milky Way \citep{planckIntXXIX16}. We assume that the radiation field heating this dust mixture is the Galactic ISRF \citep{mathis83}, scaled by the factor $U$.
+        \section{Comparison with SED Fitting}
+          We performed a full dust \acrshort{sed} fitting on the $\lambda$~Orionis photometry, according to the dust model by \cite{galliano11}, and the hierarchical Bayesian SED fitting framework by \cite{galliano18}. There are 4 free paremeters: total dust mass $M_{dust}$, fraction of dust mass as PAHs $q_{PAH}$, the fraction of PAHs that are ionized, and the average strength of the \acrshort{isrf} $<U>$. The hierarchical Bayesian implementation allows a few key advantages, mainly:
 
-          We utilize both the \acrlong{hb} approach and a least-squares analysis. The \acrshort{hb} approach allows us to accurately propogate errors in the data (including calibration uncertainties) through the \acrshort{sed} fitting process, as well as the correlation test thereafter. Compared to the ubiquitous \acrlong{lsm} In traditional \acrshort{sed} fitting we often assume only Gaussian uncorrelated noise. Even if this were a valid assumption for the raw data, processing steps may induce correlations or skew noise. Induced correlations may also appear in the parameters fit via standard approaches, when environments are mixed along the line-of-sight \citep{shetty09}. This may contribuute to the apparent anti-correlation between temperature and emissivity index shown in Fig.~\ref{fig:PCCS_corrmatrix}. The hierarchical Bayesian approach allows for consideration of these effects. As outputs of our fitting, metrics of the total dust mass $M_{dust}$, \acrshort{pah} mass $M_{PAH}$, ionized \acrshort{pah} mass $M_{PAH+}$, and ISRF intensity $U$ are produced. We only carry out the fitting for unmasked pixels. We are primarily interested in which of the corrleations $M_{dust}$ vs. $I_{AME}$ or $M_{PAH}$ vs. $I_{AME}$ is stronger.
-          Two sample fitting results are shown in Figs.~\ref{fig:fred_LOri_notes_Oct2017_fig1a}, and~\ref{fig:fred_LOri_notes_Oct2017_fig1b}.
+
+         We used a mixture of silicate and carbonaceous dust, silicate dust, the two dominant categories of interstellar dust as described in Ch.~\ref{ch:intro}. However, instead of the graphite-based carbon dust invoked by the canonical \cite{draine07} model (DL07), we assume amorphous carbon. This is an attempt to account for an excessive dust-gas-ratio, reported by \cite{israel10, bot10} in the \acrlong{lmc}, which was found by \cite{galliano11} to violate elemental depletion constraints. The increased opacity of amorphous carbon (a factor of 2-3 more than DL07) allows a better fit to \acrshort{herschel} observations of the \acrshort{lmc} \citep{galliano11}, and Planck observations of the Milky Way \citep{planckIntXXIX16}. We assume that the radiation field heating this dust mixture takes the profile of the typical Galactic \acrshort{isrf} in \cite{mathis83}.
+
+          We utilize both the \acrlong{hb} approach and a least-squares analysis. The \acrshort{hb} approach allows us to accurately propogate errors in the data (including calibration uncertainties) through the \acrshort{sed} fitting process, as well as the correlation test thereafter. Compared to the ubiquitous \acrlong{lsm} In traditional \acrshort{sed} fitting we often assume only Gaussian uncorrelated noise. Even if this were a valid assumption for the raw data, processing steps may induce correlations or skew noise. Induced correlations may also appear in the parameters fit via standard approaches, when environments are mixed along the line-of-sight \citep{shetty09}. This may contribuute to the apparent anti-correlation between temperature and emissivity index shown in Fig.~\ref{fig:PCCS_corrmatrix}. The hierarchical Bayesian approach allows for consideration of these effects.  We only carry out the fitting for unmasked pixels. We are primarily interested in which of the corrleations $M_{dust}$ vs. $I_{AME}$ or $M_{PAH}$ vs. $I_{AME}$ is stronger.
+
+          Two sample \acrshort{sed} fitting results are shown in Figs.~\ref{fig:fred_LOri_notes_Oct2017_fig1a}, and~\ref{fig:fred_LOri_notes_Oct2017_fig1b}.
               \begin{figure}
                 \includegraphics[width=\textwidth]{../Plots/ch_lori/fred_LOri_notes_Oct2017_fig1a.pdf}
                 \centering
-                \caption{Observed (black circles and errors) and synthetic photometry (gray dots) \acrshort{sed} of a pixel within $\lambda$~Orionis, along with the dust \acrshort{sed} model fit results. Two \acrshort{sed} fits are shown: on for the Bayesian fitting (magenta), and another showing the standard least-squares result for comparison (yellow). The fitted ISRF strength $U$, and fraction of mass in \acrshort{pah}s, $q_{PAH}$ are also given.}
+                \caption{Observed (black circles and errors) and synthetic photometry (gray dots) \acrshort{sed} of a pixel within $\lambda$~Orionis, along with the dust \acrshort{sed} model fit results. Two \acrshort{sed} fits are shown: on for the Bayesian fitting (magenta), and another showing the standard least-squares result for comparison (yellow). The fitted \acrshort{isrf} strength $U$, and fraction of mass in \acrshort{pah}s, $q_{PAH}$ are also given.}
                 \label{fig:fred_LOri_notes_Oct2017_fig1a}
               \end{figure}
               \begin{figure}
@@ -121,7 +125,7 @@
                 \caption{The same as Fig.~\ref{fig:fred_LOri_notes_Oct2017_fig1a}, but for a different pixel position.}
                 \label{fig:fred_LOri_notes_Oct2017_fig1b}
               \end{figure}
-           Performing such fits for all of the pixels, we are able to see how $I_{AME}$ varies with the bulk dust physical characteristics of the region. Fig.~\ref{fig:corr_IameUav_lnMd} shows the fitted dust mass per pixel, relative to the \acrshort{ame} intensity.
+           Performing such fits for all of the pixels, we are able to see how $I_{AME}$ varies with the dust properties of the region. Fig.~\ref{fig:corr_IameUav_lnMd} shows the fitted dust mass per pixel, relative to the \acrshort{ame} intensity.
                 \begin{figure}
                  \includegraphics[width=\textwidth]{../Plots/ch_lori/corr_IameUav_lnMd.pdf}
                  \centering
@@ -143,8 +147,14 @@
               \end{figure}
     Based on the dust properties derived from these \acrshort{sed} fits, we investigate whether any fitted parameter shows a preferential relation with the \acrshort{ame}. Figs.~\ref{fig:corr_IameUav_lnMd}-\ref{fig:corr_IameUav_lnMpahion} reveal a very similar trend between the \acrshort{ame} and the parameters $M_{PAH}$, $M_{PAH+}$, and $M_{dust}$. There is a slightly improved correlation between $M_{dust}$ and $M_{PAH}$ (0.857 vs 0.867). This is consistent with the intensity cross correlations in Fig.~\ref{fig:orionis-corr-matrix}. These corrleations are discussed further in Sec.~\ref{sec:lori_discussion} and Fig.~\ref{fig:PDFs_Iame}.
 
-    \subsection{Comparison masked result results}
+    \subsection{Masking of the Central Region}
         To assess the effect of the morphology of $\lambda$~Orionis on the SED fitting results, we repeat the analysis with a mask applied to the central region. This allows us to focus on the variation of correlation strengths within the ring structure, which is less affected by heating from the $\lambda$Ori association. Fig.~\ref{fig:center_mask} indicates the mask applied. Fig.~\ref{fig:PDFs_center_masked_Iame}, in the same way as Fig.~\ref{fig:PDFs_Iame}, indicates the PDFs for the correlation scores of AME vs. dust mass, PAH mass, and ionized PAH masss--- but this time excluding pixels from the central portion of $\lambda$~Orionis.
+        \begin{figure}
+          \includegraphics[width=\textwidth]{../Plots/ch_lori/PDFs_center_masked_Iame.pdf}
+          \centering
+          \caption{ The hierarchical Bayesian correlation probablity distributions of $\rho{s}$) for the three physical parameters vs. the \acrshort{ame} intensity: total dust mass, $\rho_{dust}$ (red); total \acrshort{pah} mass $\rho_{PAH}$ (green); and only the ionized \acrshort{pah} mass $\rho_{PAH+}$ (blue). Also given are the probabilities of either \acrshort{pah} component being better correlated with \acrshort{ame} than dust mass, as well as the probability that ionized \acrshort{pah} mass correlates better than total \acrshort{pah}.}
+          \label{fig:PDFs_Iame}
+        \end{figure}
 
   \section{Discussion}
   \label{sec:lori_discussion}
