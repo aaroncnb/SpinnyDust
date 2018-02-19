@@ -31,7 +31,7 @@
       \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{../Plots/ch_datasources/Filter_coverage_example_full.pdf}
-        \caption{Relative spectral response curves of the bands used in this study. Expected dust emission components, assuming the dust SED model by \citep{dustem11} are also shown. The components are summarized as emission from big grains (BGs, dashed yellow line), emission from very small grains (VSGs, dashed blue line), and emission from \acrshort{pah}s (dashed grey line).}
+        \caption{Relative spectral response curves of the bands used in this study. Expected dust emission components, assuming the dust \acrshort{sed} model by \citep{dustem11} are also shown. The components are summarized as emission from big grains (BGs, dashed yellow line), emission from very small grains (VSGs, dashed blue line), and emission from \acrshort{pah}s (dashed grey line).}
         \label{fig:Filter_coverage_example_full}
       \end{figure}
     From this point in the thesis, we will mostly use abbreviations to refer to the different bands, as follows: 'A' indicates AKARI; 'D', DIRBE; 'I', IRAS, and 'P' Planck. The number after each letter indicates the band central nominal wavelength in microns (or frequency in GHz, in the case of the Planck bands.)
@@ -81,18 +81,18 @@
          To help demonstate how the relative contribution from \acrshort{pah}s will change for each band, for different ISRF strengths, Fig.~\ref{fig:InBandFracContribution_PAH} gives just such a calculation. These contributions remain relatively constant out to a $U$ of about 100, with the contribution from warm dust becomming a larger factor for the I12 and W12 bands. Thus, according to the DL01 template, A9 should have the highest contribution from \acrshort{pah}s out to extreme radiation fields. At least to the extent with which \acrshort{pah}s can endure harsh UV radiation, as \acrshort{pah}s are expected to evaporate in strong enough radiation fields \citep{allain96a,allain96b,bocchio12,pilleri12, pavlyuchenkov13}.
 
       \subsubsection{PAH ionization}
-        Figure~\ref{fig:Filter_coverage_example_PAH} indicates that expected emission from ionized \acrshort{pah}s may preferentially contribute to the A9 band, even though both I12 and A9 cover ionized and neutral features. A \acrshort{pah} SED model calculation, using the \cite{dustem11} SED template, supports that for Galactic cirrus ISM conditions, emisison detected by the A9 band would have a higher contribution from charged \acrshort{pah}s than the I12 band. This is demonstrated in Fig.~\ref{fig:InBandFracContribution_PAH}.
+        Figure~\ref{fig:Filter_coverage_example_PAH} indicates that expected emission from ionized \acrshort{pah}s may preferentially contribute to the A9 band, even though both I12 and A9 cover ionized and neutral features. A \acrshort{pah} \acrshort{sed} model calculation, using the \cite{dustem11} \acrshort{sed} template, supports that for Galactic cirrus \acrshort{ism} conditions, emisison detected by the A9 band would have a higher contribution from charged \acrshort{pah}s than the I12 band. This is demonstrated in Fig.~\ref{fig:InBandFracContribution_PAH}.
           \begin{figure}
               \centering
               \includegraphics[width=\textwidth]{../Plots/ch_datasources/InBandFracContribution_PAH.pdf}
-              \caption{In-band contributions from charged (PAH1) neutral (PAH0) \acrshort{pah}s, to the emission detected by the I12 and A9 filters. These assume a model galactic cirrus spectrum simulated with the SED template of \cite{dustem11}. }
+              \caption{In-band contributions from charged (PAH1) neutral (PAH0) \acrshort{pah}s, to the emission detected by the I12 and A9 filters. These assume a model galactic cirrus spectrum simulated with the \acrshort{sed} template of \cite{dustem11}. }
               \label{fig:InBandFracContribution_PAH}
           \end{figure}
         To be clear, both bands are sensitive to both charged and neutral \acrshort{pah}s, however the relative contribution from charged \acrshort{pah}s is expected to be higher for A9. Thus we might expect that the ratio of intensities in this two bands, for a given line of sight (towards which \acrshort{pah}s are not destroyed), could trace the fraction of charged \acrshort{pah}s. Estimating the extent of this effect, Fig.~\ref{fig:band-ratio-multiple} gives the results of a calculation of I12/A9 and I25/A9 band ratios for two ISRF strengths.
           \begin{figure}
               \centering
               \includegraphics[width=\textwidth]{../Plots/ch_datasources/band-ratio-multiple.pdf}
-              \caption{Ionization fraction of \acrshort{pah}s vs. band ratios of I12, I25, to A9, for two ISRF strengths: Top: $U = 1$, Bottom: $U = 10$. These ratios are determined by assuming the SED template of \cite{dustem11} }
+              \caption{Ionization fraction of \acrshort{pah}s vs. band ratios of I12, I25, to A9, for two ISRF strengths: Top: $U = 1$, Bottom: $U = 10$. These ratios are determined by assuming the \acrshort{sed} template of \cite{dustem11} }
               \label{fig:band-ratio-multiple}
           \end{figure}
         This calculation is again based on \cite{dustem11}. It suggests that at least for $U<\sim{}10$, the fraction of charged \acrshort{pah}s may be estimated as a function of the I12/A9 ratio.
@@ -112,7 +112,7 @@
              \end{figure}
 
     \subsection{The AKARI Far Infrared Surveyor (FIS)}
-       FIS gives us photometric data around the peak of the typical thermal dust SED. FIS was equipped with four wavebands: two narrow bands centered at 65~$\mu$m and at 160~$\mu$m, and two wide bands at 90~$\mu$m and at 140~$\mu$m. An all-sky survey was carried out at each band \citep{kawada07}, and the processed maps have been publicly released \citep{doi15}.
+       FIS gives us photometric data around the peak of the typical thermal dust \acrshort{sed}. FIS was equipped with four wavebands: two narrow bands centered at 65~$\mu$m and at 160~$\mu$m, and two wide bands at 90~$\mu$m and at 140~$\mu$m. An all-sky survey was carried out at each band \citep{kawada07}, and the processed maps have been publicly released \citep{doi15}.
 
     \subsection{Planck Observatory High Frequency Instrument (HFI)}
        The HFI all-sky maps, spanning 100 to 857~GHz \citep{hfi14viii} help constrain the far IR dust emissivity. This study utilizes the 857~GHz (345~$\mu$m) and 545~GHz (550~$\mu$m) bands.
@@ -155,7 +155,7 @@
                  \caption{Histograms of the peak intensity \acrshort{ame} maps calculated from the original COMMANDER-AME reference frequency maps. The dominant component, $AME_{var}$ is indicated in blue, for all pixels in the map, with their spinning dust intensities evaluated their peak frequencies (see Fig.~\ref{fig:AME_commander_freqdist}.) $AME_{fix}$ gives the peak intensity of the spatially-constant frequency component, indicating it is essentially always the weaker component.}
                  \label{fig:AME_comps_distplot}
               \end{figure}
-           The intensities given by PC are evaluated at reference frequencies: 22.8~GHz for $AME_{var}$, 41~GHz for $AME_{fix}$ (for convenient comparison to the WMAP total intensity maps at those frequencies). They are not fitted peak intensities of the spinning dust SED model.
+           The intensities given by PC are evaluated at reference frequencies: 22.8~GHz for $AME_{var}$, 41~GHz for $AME_{fix}$ (for convenient comparison to the WMAP total intensity maps at those frequencies). They are not fitted peak intensities of the spinning dust \acrshort{sed} model.
 
             While acknowledging that the frequency constraints are lacking, we choose  to use these parameters maps in a self-consistent way, by taking the intensities and frequencies given by PC, and calculating the implied peak intensity. In any case, we find that this conversion does not have a significant effect on the results in the chapters to follow, except in the case of some outlying pixels with very low peak frequencies, easily seen in the map of the fitted frequencies in Fig.~\ref{fig:PCAME_var_freq}. .
                \begin{figure}
@@ -167,14 +167,14 @@
                These low frequency pixels result in very high \acrshort{ame} peak intensities.    On comparison to point source masks by Planck, we find that these outliers correspond to intensity outliers in the LFI 30~GHz map.
 
         \subsubsection{Spinning dust fitting}
-          The actual spinning dust SED template used by PC15X to fit the \acrshort{ame} is indicated by Fig.~\ref{fig:AME_commander_freqshift_templ}, which we have reproduced from the original template provided in \cite{ali-haimoud09}.
+          The actual spinning dust \acrshort{sed} template used by PC15X to fit the \acrshort{ame} is indicated by Fig.~\ref{fig:AME_commander_freqshift_templ}, which we have reproduced from the original template provided in \cite{ali-haimoud09}.
               \begin{figure}
                 \includegraphics[width=\textwidth]{../Plots/ch_datasources/AME_commander_freqshift_templ.pdf}
                 \centering
                 \caption{Spdust template spinning dust profiles fitted by PC15X when calculating $AME_{var}$.  The reference frequency, 22.8~GHz is indicated by the vertical green line. Each template has the same $AME_{var}$ amplitude of 100~$\mu$K, indicated by the horizontal green line, plotted to highlight the potential deviation between $AME_{var}$ and the actual peak intensity. }
                 \label{fig:AME_commander_freqshift_templ}
               \end{figure}
-          PC15X fit the \acrshort{ame} by applying a frequency shift and intensity shift parameter to this template. The physical parameters of the {\tt spdust} model itself are not directly varied in PC15X. In any case, the spinning dust model SED shape does not show significant variation from environment to environment \citep{ali-haimoud09}.
+          PC15X fit the \acrshort{ame} by applying a frequency shift and intensity shift parameter to this template. The physical parameters of the {\tt spdust} model itself are not directly varied in PC15X. In any case, the spinning dust model \acrshort{sed} shape does not show significant variation from environment to environment \citep{ali-haimoud09}.
          Because of the phenenological approach of the \acrshort{ame} fitting method, the PC15X authors themselves suggest caution in deriving conclusions from comparisons with the COMMANDE \acrshort{ame} map. However it is the most thorough all-sky component separation currently available, and has not been well analyzed relative to the full wavelength range of available IR all-sky maps. Improving on the COMMANDER \acrshort{ame} map will likely require lower frequency constraints (in the red-shaded portion of Fig.~\ref{fig:AME_commander_freqdist}) and/or higher resolution observations of not only the \acrshort{ame} itself but the contribution from synchrotron and free-free emisson. This way some of the inherent degeneracies between free-free, synchrotron, thermal dust, and \acrshort{ame} parameters may be able to be broken.
           \begin{figure}
                \centering
