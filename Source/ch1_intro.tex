@@ -62,11 +62,7 @@
 \subsection{Carbonaceous grains}
       As with silicates, the existance well-established that carbonaceous material, primarily amorphous carbon, exists in the \acrshort{ism} \citep{aitken81,tielens87}. This is material commonly called ``soot" or the fuel we know on earth as coal.    Some non-amorphous carbonaceous material is also speculated to exist, such as graphite \citep{zhou06} or ``buckyonions" (concentric-shell-graphite) \citep{li08}.
 
-\subsection{Size distribution of dust grains}
-
-
 \subsection{Polycyclic Aromatic Hydrocarbons and the Unidentified Infrared Bands}
-
     From the mid-to-near IR however, spectroscopic observations enabled and required the simple two-populations model of larger and smaller dust (e.g. \cite{mathis77}), to be expanded. ``Unidentified IR bands'' from~ 3 to 11~$\mu$m (hereafter, UIR bands), demonstrate another divergence from the canonical dust emission story. The UIR bands were first reported at 8 to 13~$\mu$m in planetary nebulae and HII regions by \cite{gillet73, gillett75} in ground-based observations. Observations by \cite{merrill75} noted another unexplained feature at 3.27~$\mu$m, noting: ``there are [...] similarities in the 8-13~$\mu$m spectra of NGC 253, NGC 7027, and BD +30$^\circ$3639 \cite{gillett75}''. Features at 6.2 and 7.7~$\mu$m were reported by \cite{russell77b} using the first airplane-mounted IR telescope and predecessor to SOFIA, the Kuiper Airborne Observatory. \cite{sellgren83} reported features at 3.3 and 3.4~$\mu$m being detected in reflection nebulae.
 
      Moving into the 1990s, the UIR bands become much less of property of select objects in targeted observations, are seen observed throughout the Milky Way. Balloon-based observation by \cite{giard94} confirmed that the 3.3~$\mu$m feature pervades throughout the Galactic plane. The first-ever airborne IR observatory, Kuiper Several years later, space-based spectroscopy with the Infrared Telescope in Space (IRTS)\citep{murakami96} and Infrared Space Observatory (ISO)\citep{kessler96} enabled confirmation by \cite{onaka96} and \cite{mattila96} that the mid-infrared UIR features are not limited to a few objects, but are present even in the diffuse galactic \acrshort{ism}. \cite{dwek97} even reported that photometric excess in the \acrshort{cobe}/\acrshort{dirbe} 12~$\mu$m band may be caused by the UIR bands, in and suggested they may be from these UIR features have come to be explained via \acrshort{pah}, a possibility which had been considered earlier by \cite{allamandola85,puget85}. \acrshort{pah}s are a class of molecules composed primarily of fused carbon rings such as corranulene. \acrshort{pah}s and/or similar amalgems containing aromatic structures (e.g. quenched carbonaceous composites (QCCs), \cite{sakata84}) have been incorporated into dust mixture \acrshort{sed} models over the last two decades \citep{drli01, drli07, hony01, dustem11, galliano11, jones13, jones17}.
@@ -80,14 +76,36 @@
 
 
      \subsection{Metrics of Interstellar Dust}
-      Carefully describing or parameterizing the \acrshort{sed} of interstellar dust emission can be somewhat involved. Over the years a few conventions have arisen, to modeling
+      Carefully describing or parameterizing the \acrshort{sed} of interstellar dust emission can be somewhat involved. Over the years a few conventions have arisen, when referring to dust SED properties.
 
-      \paragraph{Interstellar Radiation Field}
-      Throughout this work we will discuss the ISRF in terms of $U$, which is a conventional measure normalized to the ISRF of the solar neighborhood. In otherwords, a $U$ of 1 indicates a ``Habing unit'', or $1.6\times{}10^{-3} erg s^{-1} cm^{-2}$, a value given by \cite{habing68}. More correctly, $U$ is referring to the integration of the ISRF flux density from the far-UV to the nearIR, or $\lambda =0.09~$ to $\lambda =0.8~$.  The ISRF is sometimes indicated in the literature as $G_0$, instead of $U$, when discussing the ISRF integrated only the far-UV to UV, or $\lambda$ from 0.09~$\mu$m to 0.2$\mu$m. As long as we are assuming a spatially constant \acrshort{sed} for the ISRF, it is not so important which one we use, and does not affect the results or discusison in this thesis. $U$ will be used in the following chapters, except when referring to previous works which used $G_0$.
+      \paragraph{Interstellar Radiation Field $U$}
+        Throughout this work we will discuss the ISRF in terms of $U$, which is a conventional measure normalized to the ISRF of the solar neighborhood. In otherwords, a $U$ of 1 indicates a ``Habing unit'', or $1.6\times{}10^{-3} erg s^{-1} cm^{-2}$, a value given by \cite{habing68}. More correctly, $U$ is referring to the integration of the ISRF flux density from the far-UV to the nearIR, or $\lambda =0.09~$ to $\lambda =0.8~$.  The ISRF is sometimes indicated in the literature as $G_0$, instead of $U$, when integrated only from \textasciitilde{}0.09~$\mu$m to 0.2$\mu$m. As long as we are assuming a spatially constant \acrshort{sed} for the ISRF, it is not so important which one we use, and does not affect the results or discusison in this thesis. $U$ will be used in the following chapters, except when referring to previous works which used $G_0$.
 
-    Moving in the opposite direction, into the Rayleigh-Jeans regime of thermal dust emission, multi-wavelength observations have opened up a new discipline: the disentagnlement of interstellar dust emission from non-dust emission components. Most notably, separating fluctuations in the \acrlong{cmb} from the microwave extent of thermal dust emission. Those studying the Milky Way itself, from the far IR into microwave and radio frequencies, are now collaborating closely with those interested in the precise nature of the CMB.
+      \paragraph{Total dust abundance}
+         This is the total mass of all dust components contributing to the observed SED. It is often indicated either as the dust mass $M_{dust}$, in units of $M_{\odot}$, as in \cite{galliano08}. The dust abundance can be determined when both the luminosity of the dust, and the local interstellar radiation field heating the dust, $U$ are known, as in the following relation:
+
+           \begin{equation}
+            M_{dust} \propto L_{dust}/U
+           \end{equation}
+
+          Some caution must be excercised, as $M_{dust}$ may sometimes indicated only the mass of dust which is emitting thermall, in the FIR, excluding VSGs or PAHs. Throughout this thesis however, we consider that $M_{dust}$ includes emisison from both the thermal equilibirum grains, and small stochastically emitting dust and PAHs.
+
+      \paragraph{PAH Fraction $qPAH$}
+        $qPAH$, sometimes indicated as $\chi_{PAH}$, is defined as the fraction of the total dust mass which is in the form of PAHs, or:
+        \begin{equation}
+          qPAH = \frac{M_{PAH}}{M_{dust}}
+        \end{equation}
+        This parameter can be especially difficult to fit, relative to the total dust mass, for the reason that there a many more all-sky photometric data points in the far infrared, where thermal emission from dust grains dominates. In the mid infrared, where PAH features are observed, we have fewer observational constraints on an all-sky basis. This is discussed further in Ch.~\ref{ch:datasources}.
+
+      \paragraph{PAH Ionization Fraction $fPAH$}
+       $fPAH$ tells us the fraction of the total PAH mass which are ionized. Thus:
+         \begin{equation}
+           fPAH = \frac{M_{PAHion}}{M_{PAH}}
+         \end{equation}
+
 
 \section{Microwave foregrounds}
+    Moving on from the infrared dust SED, into the Rayleigh-Jeans regime of thermal dust emission, multi-wavelength observations have opened up a new discipline: the disentagnlement of interstellar dust emission from non-dust emission components. Most notably, separating temperature fluctuations in the \acrlong{cmb} from the microwave extent of thermal dust emission. Those studying the Milky Way itself, from the far IR into microwave and radio frequencies, are now collaborating closely with those interested in the precise nature of the CMB.
 
     Much of the motivation between recent galactic microwave emission research has little to do with galactic \acrshort{ism} astronomy itself. Rather, our galaxy presents an inconvenience to observational cosmology in that it 'contaminates' observations of the CMB. The avereage \acrshort{sed} of the CMB is simple enough to model, with a 2.725~K blackbody function. This temperature however means that the peak occurs between several microwave foreground components, from interstellar dust and gas, as displayed in Fig.~\ref{fig:mw_foregrounds_demo_rOph}. The difficulty of decomposing the microwave sky into galactic \acrshort{ism}, extragalactic, and CMB temperature fluctuation components has brought the detailed decomposition of the microwave-radio regime of \acrshort{ism} to the forefront of Planck Collaboration paper titles \citep{planckEarly11I,planck2013I,planck2015I}. Without extragalactic research, there would be no need for the word ``foreground'' in describing galactic microwave emission.
 
@@ -214,6 +232,7 @@
         \paragraph{Hierarchical Bayesian Analysis}
         In Bayesian analysis, we are specifying a prior expectation for our parameters up-front. The probability distribution that we use can significantly affect our result. If we instead infer a prior distribution from the data itself, we may be able to fine-tune the fitting process, and extract patterns that may not be readily revealed by standard Bayesisn analysis or \acrshort{lsm}. This technique is implented in Ch~\ref{ch:lori}, revealing a trend between PAH emission and the AME, forming the core result of this thesis. We will show also how the result could not have been demonstrated via \acrshort{lsm}. The major advantages of \acrshort{hb} are as follows:
             \begin{itemize}
+              \setlength{\itemsep}{5pt}
                 \item Prior is inferred from the data
                 \item Less vulnerable to local minima
                 \item Avoids noise-induced correlations
