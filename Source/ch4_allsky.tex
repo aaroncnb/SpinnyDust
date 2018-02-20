@@ -15,12 +15,13 @@
           \caption{Distributions of the modal values for each of the 4,737 survey tiles for the A9 band, and for the A18 band.}
           \label{fig:allsky_2016_tilemodes}
         \end{figure}
-      We then compare this result with a monopole offset fit to the all-sky HEALPix map of the IRC surveys, built from these tiles. Monopole fitting is handled by the {\tt healpy.fit\_monopole} function. The results from such a monopole fitting are showin in Tab.~\ref{tab:allsky_monopoles}.
-        \begin{table}
-          \centering
-          \caption{}
-          \label{tab:allsky_monopoles}
-        \end{table}
+      We then compare this result with a monopole offset fit to the all-sky HEALPix map of the IRC surveys, built from these tiles. Monopole fitting is handled by the {\tt healpy.fit\_monopole} function.
+    %   The results from such a monopole fitting are showin in Tab.~\ref{tab:allsky_monopoles}.
+    %     \begin{table}
+    %       \centering
+    %       \caption{}
+    %       \label{tab:allsky_monopoles}
+    %     \end{table}
       We find the values produced by these two methods to be consistent. We found offsets also in the \acrshort{iras}, \acrshort{fis}, and \acrshort{hfi} bands, thus we apply the same monopole fitting and subtraction to all of the all-sky maps. We do not find the correlation analysis presented in later sections to be sensitive to this offset correction.
 
   \section{All-sky cross correlations}
@@ -37,7 +38,7 @@
           \begin{figure}
             \includegraphics[width=\textwidth]{../Plots/ch_allsky/all_bands_corr_matrix_wAME_spearmanintensity_unmasked.pdf}
             \centering
-            \caption{ALL-SKY cross-correlation matrix for the 12 infrared bands sampled, as well as the PC component maps described in Ch.~\ref{ch:datasources}: the two \acrshort{ame} components evaluated at their peak frequencies $AME_{var}$, $AME_{fix}$; Syncrotron, and free-free), and ancilliary maps of $N_{H}$, $H{\alpha}$ emission, and 408~MHz emission \cite{haslam82}. The color-scale indicates ($r_{S}$). Results are based on the unmasked sky, but are split by Galaxctic latitude: pixels with $|\beta{}| < 15^{\circ}$ (left) and $|\beta{}| > 15^{\circ}$ (right). The color and annotations indicate $r_{s}$ as in Fig.~\ref{fig:orionis-corr-matrix}. }
+            \caption{ALL-SKY cross-correlation matrix for the 12 infrared bands sampled, as well as the PC component maps described in Ch.~\ref{ch:datasources}: the two \acrshort{ame} components evaluated at their peak frequencies $AME_{var}$, $AME_{fix}$; Syncrotron, and free-free), and ancilliary maps of $N_{H}$, $H{\alpha}$ emission, and 408~MHz emission \cite{haslam82}. The color-scale indicates ($r_{S}$). Results are based on the unmasked sky, but are split by Galactic latitude: pixels with $|\beta{}| > 15^{\circ}$ (left) and $|\beta{}| < 15^{\circ}$ (right). The color and annotations indicate $r_{s}$ as in Fig.~\ref{fig:orionis-corr-matrix}. }
             \label{fig:all_bands_corr_matrix_wAME_spearman}
           \end{figure}
        This is reflected in the comparison between high and low latitude plots: for pixels $|\beta| > 15 ^{\circ}$, we see a dramatic effect. In the most extreme case $r_{s}$ of A18 to $AME_{var}$ drops from 0.72 at lower latitudes, to 0.02 at higher latitudes. $r_{s}(A9:AME_{var})$ drops from 0.79 to 0.42. Correlations between the MIR bands and FIR bands also weaken. Only the the interrelations between the FIR bands from I60 to P545 remain essentially latitude independent (with the exception of A65, which has an especially high noise level.)
@@ -108,7 +109,7 @@
             As with the result in \cite{hensley16}, these data do not reveal any correlation between \acrshort{pah} fraction and $I_{AME}/R$, or with any of the MIR/R ratios and $I_{AME}/R$. Interestingly, there is evidence of a marginal positive trend with synchrotron, and a negative trend with free-free emission.
 
           \paragraph{Bootstrap test}
-              In addition, for the masked comparison, we carry out a boostrap analysis, using the same method explained in Ch.~\ref{ch:lori}. The Spearman rank correlation coefficents $r_{S}$ of all of the bands, in intensity, vs. the $AME_{var}$ component are shown. This is done only for the masked case, due to the computational challeneges presented by a well-sampled bootstrap of all \textasciitilde{}780,000 pixels in the full sky. Because the mask applied here leaves us with approximately 7\% the sky, a bootstrap with $N_{iterations} > N_{pix}$ becomes tractable. We show the comparison only for the $AME_{var}$ component also due to computational constraints. The $r_{s}$ distributions for each IR band vs. \acrshort{ame} are shown in Fig.~\ref{fig:bootstrap_vs_AME_allsky_masked}.
+              In addition, for the masked comparison, we carry out a boostrap analysis, using the same method explained in Ch.~\ref{ch:intro} and implemented in Ch.~\ref{ch:lori}. The Spearman rank correlation coefficents $r_{S}$ of all of the bands, in intensity, vs. the $AME_{var}$ component are shown. This is done only for the masked case, due to the computational challeneges presented by a well-sampled bootstrap of all \textasciitilde{}780,000 pixels in the full sky. Because the mask applied here leaves us with approximately 7\% the sky, a bootstrap with $N_{iterations} > N_{pix}$ becomes tractable. We show the comparison only for the $AME_{var}$ component also due to computational constraints. The $r_{s}$ distributions for each IR band vs. \acrshort{ame} are shown in Fig.~\ref{fig:bootstrap_vs_AME_allsky_masked}.
                 \begin{figure}
                      \includegraphics[width=\textwidth,trim={3cm 0.25cm 2.5cm 1cm},clip]{../Plots/ch_allsky/bootstrap_vs_AME_spearman_maskall_i1000.pdf}
                      \centering
@@ -168,31 +169,6 @@
          \label{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I25}
     \end{figure}
   Scaling by $U$ does not change the overall structure of these correlation maps, relative to the unscaled versions. This may indicate that at the scale of these correlation maps, the strength of $U$ does not show much variation.
-  % Corresponding to Fig., we explore if the results found when looking at all of our unmasked pixels in a delocalized manner, are replicated when we produce all-sky maps of $R$-normalized intensities. These maps are indicated in Figs.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_RadNorm_A9}-\ref{fig:Spearman_Map_nside8_AMEvartoIR_RadNorm_I25}.
-  %   \begin{figure}
-  %     \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEvartoA9.pdf}
-  %     \centering
-  %     \caption{Spatial map of $r_{s}$ between the \acrshort{ame}:$R$ and A9:$R$, a tracer of the fraction of dust mass in \acrshort{pah}S, $fPAH$. The correlations are calculated as in Fig.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_A9}.}
-  %     \label{fig:Spearman_Map_nside8_AMEvartoIR_RadNorm_A9}
-  %   \end{figure}
-  %   \begin{figure}
-  %     \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEvartoI12.pdf}
-  %     \centering
-  %     \caption{Spatial map of $r_{s}$ between the \acrshort{ame}:$U$ and I12:$U$}
-  %     \label{fig:Spearman_Map_nside8_AMEvartoIR_RadNorm_I12}
-  %   \end{figure}
-  %    \begin{figure}
-  %      \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEvartoA18.pdf}
-  %      \centering
-  %      \caption{Spatial map of $r_{s}$ between the \acrshort{ame}:$U$ and A18:$U$}
-  %      \label{fig:Spearman_Map_nside8_AMEvartoIR_RadNorm_A18}
-  %    \end{figure}
-  %  \begin{figure}
-  %       \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/RadNorm/Spearman_Map_nside8_AMEvartoI25.pdf}
-  %       \centering
-  %       \caption{Spatial map of $r_{s}$ between the \acrshort{ame}:$U$ and I25:$U$}
-  %       \label{fig:Spearman_Map_nside8_AMEvartoIR_RadNorm_I25}
-  %  \end{figure}
 
     \section{Discussion}
         As noted in Ch.~\ref{ch:intro}, previous studies found that the \acrshort{ame} generally correlates at dust-related IR wavelengths \citep{ysard10b,planckXV, hensley16}. We see the same overall pattern in the present study. We also corroborate that the FIR emission shows the tightest correlation with the \acrshort{ame} intensity, for large portion of the sky in a de-localized fashion (Figs.~\ref{fig:all_bands_corr_matrix_wAME_spearman} and~ \ref{fig:all_bands_corr_matrix_wAME_spearmanintensity_maskall}). In testing for a second-order correlation, we divided the IR intensities and \acrshort{ame} intensity by $U$, and again performed the band-by-band all-sky comparison. There is evidence of a residual correlation between $I_{MIR}/U$ and $I_{AME}/U$ (Figs.~\ref{fig:all_bands_corr_matrix_wAME_spearmanU_norm_masked}, and~\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_A9}-\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I25}).
@@ -205,7 +181,7 @@
             According to spinning dust theory outlined in \cite{draine98a} and in subsequent works by \cite{ysard10a}, the \acrshort{ame} profile and intensity will depend in part on the ISRF- but as is well-stated in \cite{hensley17a}, exactly how the ISRF will affect the \acrshort{ame} \acrshort{sed} is a more complicated question. Absorbed starlight photons may be able to rotationally excite the carriers, but if an enhanced ISRF leads to increased dust heating, then the increased IR emission can rotationally de-excite the carriers. Moreover the ISRF affects not only the dust temperature but ionization of the carriers.
 
           \subsection{Microwave foreground component separation}
-            There are known degeneracies between the foreground parameters of the COMMANDER maps (spinning-dust, and free-free, synchrotron components as described in \cite{planck15X}.) This can be demonstrated by examining the ratio map of the \acrshort{ame} intensity to $R$, in comparison with the PC free-free and synchrotron maps. Figs.~\ref{fig:AMEvartoDust_ffandSyncCountours} and~\ref{fig:AMEfixtoDust_ffandSyncCountours} show the $AME_{var}/R$ and $AME_{fix}/R$ ratio maps, with contours from the free-free and synchrotron maps.
+            There are known degeneracies between the foreground parameters of the COMMANDER maps (spinning-dust, and free-free, synchrotron components as described in \cite{planck15X}.) This can be demonstrated by examining the ratio map of the \acrshort{ame} intensity to $R$, in comparison with the \acrshort{pc} free-free and synchrotron maps. Figs.~\ref{fig:AMEvartoDust_ffandSyncCountours} and~\ref{fig:AMEfixtoDust_ffandSyncCountours} show the $AME_{var}/R$ and $AME_{fix}/R$ ratio maps, with contours from the free-free and synchrotron maps.
                 \begin{figure}
                     \includegraphics[width=\textwidth,trim={6cm 2cm 5.0cm 2cm},clip]{../Plots/ch_allsky/AMEvartoDust_ffandSyncCountours.pdf}
                     \centering
