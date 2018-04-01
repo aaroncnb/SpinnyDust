@@ -139,57 +139,33 @@
                 \end{figure}
             The calculations are performed in the same way as with Fig.~\ref{fig:bootstrap_vs_AME} for $\lambda$~Orionis. Consistent with the other correlation analyses already shown in this chapter, there is a stronger correlation in the FIR, espeically A160. Considering the \gls{mir} range, and as with $\lambda$~Orionis, A9 emission correlates better than I12. The worst correlation is seen with the A18 and I25 bands.
 \section{Spatial variation of correlations}
-    To understand how these trends may vary across the sky, independent from the choice of pixel masl, we produce an all-sky maps of $r_{s}$ for \gls{ame} vs. IR emission. From the NSIDE~256 input maps of \gls{ame} and 4 IR wavelength maps, we produce NSIDE~8 maps of $r_{s}$. These maps are shown in Figs.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_A9}-\ref{fig:Spearman_Map_nside8_AMEvartoIR_A140}
-      \begin{figure}
-        \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/Spearman_Map_nside8_A9toAMEvar.pdf}
-        \centering
-        \caption{Spatial map of $r_{s}$ between the \gls{ame} and IR intensity for A9. $r_{s}$ is calculated for all NSIDE~256 pixels within each NSIDE~8 pixel-sized bin. The correlation score is calculated with the unmasked maps. The colorbar indicates $r_{s}$, ranging from -1 (negative monotonic relationship) to +1 (positive monotonic relationship).}
-        \label{fig:Spearman_Map_nside8_AMEvartoIR_A9}
-      \end{figure}
-      \begin{figure}
-        \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/Spearman_Map_nside8_I12toAMEvar.pdf}
-        \centering
-        \caption{Spatial map of $r_{s}$ between the \gls{ame} and IR intensity for I12, calculated as in Fig.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_A9}.}
-        \label{fig:Spearman_Map_nside8_AMEvartoIR_I12}
-      \end{figure}
-      \begin{figure}
-        \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/Spearman_Map_nside8_I25toAMEvar.pdf}
-        \centering
-        \caption{Spatial map of $r_{s}$ between the \gls{ame} and IR intensity for I25, calculated as in Fig.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_A9}.}
-        \label{fig:Spearman_Map_nside8_AMEvartoIR_I25}
-      \end{figure}
-      \begin{figure}
-        \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/Spearman_Map_nside8_A140toAMEvar.pdf}
-        \centering
-        \caption{Spatial map of $r_{s}$ between the \gls{ame} and IR intensity for A140, calculated as in Fig.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_A9}.}
-        \label{fig:Spearman_Map_nside8_AMEvartoIR_A140}
-      \end{figure}
-  The most important feature of these maps is that they look very similar, confirming in a spatial context that there is very little difference overall, when comparing \gls{ame} to IR in intensity, accross multiple wavelengths. The correlations weaken for the \gls{mir} bands at higher latitudes, as expected. Thus the question of which band correlates better depends on exactly where we look. Considering that we need also to look at secondary correlations, not only in intensity, we repeat the above process for ratios of the \gls{mir} to \gls{ame}, scaling both by $U$, as in Fig,~\ref{fig:all_bands_corr_matrix_wAME_spearmanU_norm_masked}.  Figs.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_A9}-\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I25} show such correlation maps.
-     \begin{figure}
-       \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEvartoA9.pdf}
-       \centering
-       \caption{Spatial map of $r_{s}$ between the \gls{ame}:$U$ and A9:$U$, a tracer of the column density of \gls{pah}s emitting within the A9 filter. The correlations are calculated as in Fig.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_A9}.}
-       \label{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_A9}
-     \end{figure}
-     \begin{figure}
-       \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEvartoI12.pdf}
-       \centering
-       \caption{Spatial map of $r_{s}$ between the \gls{ame}:$U$ and I12:$U$}
-       \label{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I12}
-     \end{figure}
-      \begin{figure}
-        \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEvartoA18.pdf}
-        \centering
-        \caption{Spatial map of $r_{s}$ between the \gls{ame}:$U$ and A18:$U$}
-        \label{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_A18}
-      \end{figure}
+    To understand how these trends may vary across the sky, independent from the choice of pixel masl, we produce an all-sky maps of $r_{s}$ for \gls{ame} vs. IR emission. From the NSIDE~256 input maps of \gls{ame} and 4 IR wavelength maps, we produce NSIDE~8 maps of $r_{s}$. These maps are shown in Figs.~\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_A9}-\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I25}
     \begin{figure}
-         \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEvartoI25.pdf}
-         \centering
-         \caption{Spatial map of $r_{s}$ between the \gls{ame}:$U$ and I25:$U$}
-         \label{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I25}
+      \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEvartoA9.pdf}
+      \centering
+      \caption{Spatial map of $r_{s}$ between the \gls{ame}:$U$ and A9:$U$, a tracer of the column density of \gls{pah}s emitting within the A9 filter.  $r_{s}$ is calculated for all NSIDE~256 pixels within each NSIDE~8 pixel-sized bin. The correlation score is calculated with the unmasked maps. The colorbar indicates $r_{s}$, ranging from -1 (negative monotonic relationship) to +1 (positive monotonic relationship).}
+      \label{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_A9}
     \end{figure}
-  Scaling by $U$ does not change the overall structure of these correlation maps, relative to the unscaled versions. This may indicate that at the scale of these correlation maps, the strength of $U$ does not show much variation.
+    \begin{figure}
+      \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEvartoI12.pdf}
+      \centering
+      \caption{Spatial map of $r_{s}$ between the \gls{ame}:$U$ and I12:$U$}
+      \label{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I12}
+    \end{figure}
+     \begin{figure}
+       \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEvartoA18.pdf}
+       \centering
+       \caption{Spatial map of $r_{s}$ between the \gls{ame}:$U$ and A18:$U$}
+       \label{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_A18}
+     \end{figure}
+   \begin{figure}
+        \includegraphics[width=\textwidth/2]{../Plots/Allsky_Corr/UNorm/Spearman_Map_nside8_AMEvartoI25.pdf}
+        \centering
+        \caption{Spatial map of $r_{s}$ between the \gls{ame}:$U$ and I25:$U$}
+        \label{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I25}
+   \end{figure}
+
+  The most important feature of these maps is that they look very similar, confirming in a spatial context that there is very little difference overall, when comparing \gls{ame} to IR in intensity, accross multiple wavelengths. The correlations weaken for the \gls{mir} bands at higher latitudes, as expected. Thus the question of which band correlates better depends on exactly where we look.
 
     \section{Discussion}
         As noted in Ch.~\ref{ch:intro}, previous studies found that the \gls{ame} generally correlates at dust-related IR wavelengths \citep{ysard10b,planckXV, hensley16}. We see the same overall pattern in the present study. We also corroborate that the FIR emission shows the tightest correlation with the \gls{ame} intensity, for large portion of the sky in a de-localized fashion (Figs.~\ref{fig:all_bands_corr_matrix_wAME_spearman} and~ \ref{fig:all_bands_corr_matrix_wAME_spearmanintensity_maskall}). In testing for a second-order correlation, we divided the IR intensities and \gls{ame} intensity by $U$, and again performed the band-by-band all-sky comparison. There is evidence of a residual correlation between $I_{MIR}/U$ and $I_{AME}/U$ (Figs.~\ref{fig:all_bands_corr_matrix_wAME_spearmanU_norm_masked}, and~\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_A9}-\ref{fig:Spearman_Map_nside8_AMEvartoIR_UNorm_I25}).
