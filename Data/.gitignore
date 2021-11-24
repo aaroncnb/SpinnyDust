@@ -1,3 +1,6 @@
 *.pickle
 *.p
 ./raw/*.fits
+./lori_A18_mosaic_smooth.fits
+./lori_A9_mosaic_smooth.fits
+

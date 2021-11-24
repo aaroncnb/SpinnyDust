@@ -1,0 +1,256 @@
+\gls{irc}%!TEX root = main.tex
+\chapter{Introduction}
+  \label{ch:intro}
+  \begin{quotation}
+    \small
+    \textit{``It is now plain that about 75\% of the data we would like to have can be obtained from good ground-based sites''}
+
+    -H. Johnson, 1966
+  \end{quotation}
+
+\section{All-sky Astronomy}
+    All-sky astronomy is not new. Indeed, the notion of capturing a particular ``object'' or ``source'' with a camera and saving it for later investigation would be completely alien to the first astronomers and astronavigators. Absence of telescopes forced us to describe the sky in terms of its larger patterns, brightest characters. What is new however is the notion of preparing an archive of the sky itself for not only the research whims of a single investigator, team, institute, or even a single nation--- rather, all-sky surveys tend to be international endeavors in their production, and even more so in their utilization.
+      \begin{table}
+        \renewcommand\arraystretch{1.4}
+        \captionsetup{singlelinecheck=false, labelfont=sc, labelsep=quad}
+        \caption{Timeline of all-sky surveys}\vskip -1.5ex
+          \begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}r}
+            \toprule
+            \addlinespace[1.5ex]
+            1983 & IRAS    & \cite{iras84} \\
+            1989 & COBE    & \cite{boggess92}\\
+            1990 & ROSAT   & \cite{truemper82}\\
+            2001 & WMAP    & \cite{wmap03a}\\
+            2003 & 2MASS   & \cite{skrutskie06}\\
+            2003 & GALEX   & \cite{martin05} \\
+            2006 & AKARI   & \cite{akari07} \\
+            2008 & Fermi   & \cite{atwood09} \\
+            2009 & Planck  & \cite{planckEarly11I}\\
+            2009 & WISE    & \cite{wright10} \\
+          \end{tabular}
+      \end{table}
+
+
+  \section{Infrared astronomy}
+
+    Infrared astronomy was essentially non-existant as recently as the 1920s, if we judge by the first IR observations \citep{pettit22, pettit28}. Mainstream IR astronomy is perhaps much younger, only really taking off --- literally --- in the post-war era, via ballon and rocket borne experiments \citep{johnson66}. Compare this to visible wavelengths, a field so old we name it after the bio-evolutionary advent of sight, itself. Even radio astronomy with its own logistical and technological challenges, has been around since at least 1932.
+
+    Astronomers have not been content to be constrained by atmospheric IR windows, even from the best of ground-based sites. Or perhaps interests have shifted so dramatically since 1966, that all of the investigations enabled by rocket-based, space-based, even Boeing 747-based IR astronomy (e.g. SOFIA, the Stratospheric Observatory for Inrared Astornomy,\cite{young12}) would have bored 75\% of astronomers in the '60s. The meaning of ``far infrared'' has even redshifted, so to speak, from the \cite{johnson66} definition of ``4 to 22~$\mu$m'' --- consider the ``Far Infrared Surveyor'' instrument onboard the AKARI satellite \citep{akari07}, which observed from 50 to 180~$\mu$m \citep{kawada07}
+
+     For our purposes, we consider the \gls{fir} to cover 60 to 550~$\mu$m, partially out of convenience- \gls{fir} bands, in this paper, means the \gls{iras} 60 and 100~$\mu$m \citep{iras84}, all four FIS bands, and the Planck Observatory's \gls{hfi}~857~GHz and 545~GHz bands \citep{planckEarly11I, hfi14viii}. The two AKARI \gls{irc} \citep{irc07,ishihara10} bands and the \gls{iras}~12 and 25~$\mu$m bands we will refer to collectively as the \gls{mir} bands.
+
+ \section{Multi-wavelength investigations}
+
+     The ability to map and archive the sky with satellites -- not only in the optical and infrared, but well into the microwave regime -- has enabled interdisciplinary research of the \gls{ism}. The \gls{ism} pervades the galaxy and either surrounds or intervenes basically any object one may wish to study. The \gls{ism} is enriched as matter is processed and flows back into space. We can describe the \gls{ism} as a mixture of gas and dust. An early estimate by \cite{knapp74} puts the mass of dust in the galaxy at about 1\% that of interstellar gas.
+
+    A wealth of data is now available not only in the IR, but on into the sub-millimeter range and the interpretation of this data has become a serious priority. This is especially true for the last ten years as new, much higher resolution surveys have been carried out such as the \gls{sst} \cite{spitzer04}, \gls{herschel} \citep{herschel10} by \gls{nasa} and the \gls{esa} respectively, and the AKARI telescope \citep{akari07},  by JAXA. AKARI especially, produced a wealth of data spanning the entire sky. It was equipped with \gls{irc} \citep{irc07} to study the MIR, and FIS \citep{fis07} to study cooler dust and gas, and conduct spectroscopy in the \gls{fir} via its \gls{fts}. In this thesis we use these AKARI surveys in a comparison with other cutting edge all-sky maps from the Planck Observatory in a multi-wavelength study of yet another part of the \gls{ism} puzzle, the \gls{ame} and its connection to interstellar dust.
+
+    The merits of multiwavelength based investigations arise from the simple fact that the \gls{ism} is very complex--- both in terms of the myriad forms of matter present, from plasmas to dust grains --- and in countless physical processes at play. Consider the complex case of a supernova remnant influencing surrounding \gls{ism}: through a combined analysis of radio, mid-far infrared, and X-ray data, \cite{lau15} were able to characterize the history of dust production, heating, and destruction within the Sgr A East supernova remnant.
+
+
+\section{Interstellar Dust}
+
+    The study of interstellar dust has been connected to mainstream astrophysics research, and recognized as an integral player in the evolution of the interstellar medium. This has been shown by early sounding rocket experiments \citep{wolstencroft67,soifer71}, and balloon experiments \citep{muehlner70,emerson73}, and dust has been more profoundly exposed by the advent of all-sky infrared surveys like the \gls{cobe}'s \gls{dirbe} \citep{sodroski94} and \gls{iras} \citep{iras84}.
+    With space-borne long-term IR mapping finally available on an all-sky scale, we could move past the interplanetary medium and into the interstellar.
+
+  The role of dust in the interstellar medium has expanded beyond simply an intervening, stellar light obstructing material. Theoretical models and observations have shown that dust grains act as a catalyst for the formation of molecular hydrogen and other molecules, providing a substrate upon which hydrogen and other atoms can meet \citep{iglesias77,burke83}. With infrared observations we are able to study dust directly via its vibrational emission, rather than relying only on inference from visible reddening and polarization effects \citep{davis51,platt56, carrasco73}.
+   The question of the composition of dust has grown from a single thread of investigation into a network of questions. Many pieces in this dusty puzzle are missing. For example, the presence of dust grains containing silicates, and amorphous carbon is very strongly supported by comparisons of infrared spectroscopy with laboratory studies \citep{hagen79,joblin09}. But many questions remain about which silicate and carbonaceous species may be present, and in what proportions, and in what distribution of sizes. The question also remains, is there more to dust than simply carbonaceous and silicate grains?  The exact size distribution of dust grains is also an open question. The composition of extremely small grains / large molecules is a particularly challenging mystery, as well as the role of interstellar ices in the evolution dust and gas.
+
+\subsection{Silicate grains}
+     One of the first materials proposed to exist as interstellar dust were silicates, with the first evidence being UV absorption features \citep{knacke69}. More recently, specific species of silicates are being identified via absorption spectroscopy \citep{olofsson12}. However some doubt has been cast recently on the structure of the grains. For example, in \cite{jones13} and \cite{jones14} an updated model is proposed wherein dust grains may be composed of a mixture of silicate and amorphous carbon material, such as a silicate core with an amorphous carbon envelope, representing the first comprehensive model of continuous grain evolution. In other words, the first model to consider dust grain morphology beyond the descrete categories of silicate grains, carbonaceous grains, and \gls{pah}. An additional feature of this model is that silicates having iron inclusions are expected, which would be similar to the Fe form of olivine. This is an update from the conventional ``astronomical  silicates" assumed in earlier dust \gls{sed} models such as \cite{li01} or \cite{dustem11}.
+
+\subsection{Carbonaceous grains}
+      As with silicates, the existance well-established that carbonaceous material, primarily amorphous carbon, exists in the \gls{ism} \citep{aitken81,tielens87}. This is material commonly called ``soot" or the fuel we know on earth as coal.    Some non-amorphous carbonaceous material is also speculated to exist, such as graphite \citep{zhou06} or ``buckyonions" (concentric-shell-graphite) \citep{li08}.
+
+\subsection{Polycyclic Aromatic Hydrocarbons and the Unidentified Infrared Bands}
+    From the mid-to-near IR however, spectroscopic observations enabled and required the simple two-populations model of larger and smaller dust (e.g. \cite{mathis77}), to be expanded. ``Unidentified IR bands'' from~ 3 to 11~$\mu$m (hereafter, UIR bands), demonstrate another divergence from the canonical dust emission story. The UIR bands were first reported at 8 to 13~$\mu$m in planetary nebulae and HII regions by \cite{gillet73, gillett75} in ground-based observations. Observations by \cite{merrill75} noted another unexplained feature at 3.27~$\mu$m, noting: ``there are [...] similarities in the 8-13~$\mu$m spectra of NGC 253, NGC 7027, and BD +30$^\circ$3639 \cite{gillett75}''. Features at 6.2 and 7.7~$\mu$m were reported by \cite{russell77b} using the first airplane-mounted IR telescope and predecessor to SOFIA, the Kuiper Airborne Observatory. \cite{sellgren83} reported features at 3.3 and 3.4~$\mu$m being detected in reflection nebulae.
+
+     Moving into the 1990s, the UIR bands become much less of property of select objects in targeted observations, are seen observed throughout the Milky Way. Balloon-based observation by \cite{giard94} confirmed that the 3.3~$\mu$m feature pervades throughout the Galactic plane. The first-ever airborne IR observatory, Kuiper Several years later, space-based spectroscopy with the Infrared Telescope in Space (IRTS)\citep{murakami96} and Infrared Space Observatory (ISO)\citep{kessler96} enabled confirmation by \cite{onaka96} and \cite{mattila96} that the mid-infrared UIR features are not limited to a few objects, but are present even in the diffuse galactic \gls{ism}. \cite{dwek97} even reported that photometric excess in the \gls{cobe}/\gls{dirbe} 12~$\mu$m band may be caused by the UIR bands, in and suggested they may be from these UIR features have come to be explained via \gls{pah}, a possibility which had been considered earlier by \cite{allamandola85,puget85}. \gls{pah}s are a class of molecules composed primarily of fused carbon rings such as corranulene. \gls{pah}s and/or similar amalgems containing aromatic structures (e.g. quenched carbonaceous composites (QCCs), \cite{sakata84}) have been incorporated into dust mixture \gls{sed} models over the last two decades \citep{drli01, drli07, hony01, dustem11, galliano11, jones13, jones17}.
+
+     With the appearance of high powered computers with an ability to perform rigorous calculations, many attempts have been made to simulate the expected emission from \gls{pah}s. Density functional theory (DFT) \citep{honenberg64} has become available as a tool for simulating molecular emission features using a quantum approach. DFT calculations has become a subfield of \gls{ism} astrophysics. Many attempts are being made to fit particular emission features of \gls{pah}s, and other molecular and grain species, to observed \gls{ism} features \citep{hammonds09,hirata99}.
+     While it is difficult to reproduce the exact interstellar conditions in a laboratory setting, DFT simulations have yielded some evidence that the UIR bands can be explained as \gls{pah} vibrational emission features \citep{pathak12,ricca11,yu12}.
+
+    \paragraph{``PAH'' or ``UIR''?}
+      We should note however that \gls{pah}s are not the only proposed explanation for the UIR features, despite being the most widely accepted. \cite{zhang14} propsed theoretically that mixtures of non-PAH carbonaceous and silicate spectra could also fit theoretically calculated \gls{pah} emission features. However the \gls{pah}-UIR hypothesis is still widely supported \citep{tielens08,rastogi13}.  The way that \gls{pah}s might be produced or evolve from other species is not understood however. Though there are efforts underway to model potential formation pathways. As far as the evolution of larger aromatics form smaller \gls{pah}s, there is one proposed pathway wherein a benzene could grow into a larger aromatic molecule such as naphthalene \citep{ghesquiere14}. In any case, the terms ``PAH features'' and ``UIRs'' are too often used interchangably in the literature. In the following sections, we will define \gls{pah}s as the general class of aromatic-ring-containing molecules, and not explicitly to ``pure'' \gls{pah} species such as benzene, corronene, or corranulene, etc. From this point we will also abandon the term ``UIRs'', and use ``PAH features'' instead. We do so while acknowledging that interstellar \gls{pah}s is by no means a closed book.
+
+
+
+     \subsection{Metrics of Interstellar Dust}
+      Carefully describing or parameterizing the \gls{sed} of interstellar dust emission can be somewhat involved. Over the years a few conventions have arisen, when referring to dust SED properties.
+
+      \paragraph{Interstellar Radiation Field $U$}
+        Throughout this work we will discuss the ISRF in terms of $U$, which is a conventional measure normalized to the ISRF of the solar neighborhood. In otherwords, a $U$ of 1 indicates a ``Habing unit'', or $1.6\times{}10^{-3} erg s^{-1} cm^{-2}$, a value given by \cite{habing68}. More correctly, $U$ is referring to the integration of the ISRF flux density from the far-UV to the nearIR, or $\lambda =0.09~$ to $\lambda =0.8~$.  The ISRF is sometimes indicated in the literature as $G_0$, instead of $U$, when integrated only from \textasciitilde{}0.09~$\mu$m to 0.2$\mu$m. As long as we are assuming a spatially constant \gls{sed} for the ISRF, it is not so important which one we use, and does not affect the results or discusison in this thesis. $U$ will be used in the following chapters, except when referring to previous works which used $G_0$.
+
+      \paragraph{Total dust abundance}
+         This is the total mass of all dust components contributing to the observed SED. It is often indicated either as the dust mass $M_{dust}$, in units of $M_{\odot}$, as in \cite{galliano08a}. The dust abundance can be determined when both the luminosity of the dust, and the local interstellar radiation field heating the dust, $U$ are known, as in the following relation:
+
+           \begin{equation}
+            M_{dust} \propto L_{dust}/U
+           \end{equation}
+
+          Some caution must be excercised, as $M_{dust}$ may sometimes indicated only the mass of dust which is emitting thermall, in the FIR, excluding VSGs or PAHs. Throughout this thesis however, we consider that $M_{dust}$ includes emisison from both the thermal equilibirum grains, and small stochastically emitting dust and PAHs.
+
+      \paragraph{PAH Fraction $qPAH$}
+        $qPAH$, sometimes indicated as $\chi_{PAH}$, is defined as the fraction of the total dust mass which is in the form of PAHs, or:
+        \begin{equation}
+          qPAH = \frac{M_{PAH}}{M_{dust}}
+        \end{equation}
+        This parameter can be especially difficult to fit, relative to the total dust mass, for the reason that there a many more all-sky photometric data points in the far infrared, where thermal emission from dust grains dominates. In the mid infrared, where PAH features are observed, we have fewer observational constraints on an all-sky basis. This is discussed further in Ch.~\ref{ch:datasources}.
+
+      \paragraph{PAH Ionization Fraction $fPAH$}
+       $fPAH$ tells us the fraction of the total PAH mass which are ionized. Thus:
+         \begin{equation}
+           fPAH = \frac{M_{PAHion}}{M_{PAH}}
+         \end{equation}
+
+
+\section{Microwave foregrounds}
+    Moving on from the infrared dust SED, into the Rayleigh-Jeans regime of thermal dust emission, multi-wavelength observations have opened up a new discipline: the disentagnlement of interstellar dust emission from non-dust emission components. Most notably, separating temperature fluctuations in the \gls{cmb} from the microwave extent of thermal dust emission. Those studying the Milky Way itself, from the far IR into microwave and radio frequencies, are now collaborating closely with those interested in the precise nature of the CMB.
+
+    Much of the motivation between recent galactic microwave emission research has little to do with galactic \gls{ism} astronomy itself. Rather, our galaxy presents an inconvenience to observational cosmology in that it 'contaminates' observations of the CMB. The avereage \gls{sed} of the CMB is simple enough to model, with a 2.725~K blackbody function. This temperature however means that the peak occurs between several microwave foreground components, from interstellar dust and gas, as displayed in Fig.~\ref{fig:mw_foregrounds_demo_rOph}. The difficulty of decomposing the microwave sky into galactic \gls{ism}, extragalactic, and CMB temperature fluctuation components has brought the detailed decomposition of the microwave-radio regime of \gls{ism} to the forefront of Planck Collaboration paper titles \citep{planckEarly11I,planck2013I,planck2015I}. Without extragalactic research, there would be no need for the word ``foreground'' in describing galactic microwave emission.
+
+    The \gls{ism} has intruded into cosmological studies perhaps most prominently with the first claimed detection of B-mode polarization \citep{hanson13, bicep214, flauger14}, and multiple response papers. The main consensus being that the validation of CMB-related claims require a careful estimate of the contribution, in intensity and polarization, from interstellar dust and the subsequent counter-claim that this detection arose from galactic dust\citep{planckIntL17, sheehy17}. More recently \cite{shimwell12} had noted a peculiar Sunyaev-Zeldovich effect based galaxy cluster detection, AMI-CL~J0300+2613. \cite{perrott18} have since proposed that this may in fact arise from high galactic latitude dust via \gls{ame}.
+
+  \section{Anomalous Microwave Emission}
+      In our efforts to decompose and understand galactic microwave emission itself, there remains a constant antagonist. Galactic foregrounds had been broken down into 3 dominant components: free-free emission from ionized regions, synchrotron emission generated by relativistic electrons moving around the Milky Way's magnetic field, and the microwave extent of thermal dust emission \citep{wmap03b, leach08, planckXII}. Deviations from this understanding began to appear in the early 1990s, with efforts by \cite{kogut96, leitch97} to carefully investigate the CMB. They had found a component of the microwave sky which implied unlikely spectral indices for free-free or synchrotron emission. \gls{ame} generally takes the form of an 'excess' continnuum emission source, having a peak somewhere between 10 to 40~GHz (see Fig.~\ref{fig:mw_foregrounds_demo_rOph}).
+            \begin{figure}
+              \centering
+              \includegraphics[width=\textwidth]{../Plots/ch_intro/mw_foregrounds_demo_rOph_sub_Jy5.pdf}
+                \caption{An example of a potential makeup of microwave emission components. Photometry points are extracted from the Planck and WMAP all-sky maps \citep{hfi14viii}, for a part of the region well-known for prominant \gls{ame}, $\rho$~Ophiuchus \citep{planckxx11}. The \gls{ame} curve is produced from a warm neutral medium spinning dust template \citep{ali-haimoud09}, with a frequency-shift applied to approximately fit the microwave data in \cite{planck15X}}
+              \label{fig:mw_foregrounds_demo_rOph}
+            \end{figure}
+        This excess defies predictions for known microwave emission mechansisms. \gls{ame} still lacks a concrete physical explanation. Also, the term itself can be a bit confusing, as the word ``anomalous'' tends to imply localized outlier. The \gls{ame} is shown to be more than an isolated anomaly, but an added component of microwave emission appearing throughout the galaxy \citep{deoliveiracosta97,wmap03b,dickinson13r}. Fig~\ref{fig:AME_contours} shows two prominent \gls{ame} regions, $\rho{}$~Ophiuchus and the Persues Molecular Cloud investigated by \cite{tibbs11,planckxx11}, as they appear in AKARI/\gls{irc}~9$\mu$m all-sky map \citep{ishihara10}.
+            \begin{figure}
+              \centering
+              \includegraphics[width=\textwidth]{../Plots/ch_intro/AME_contours.pdf}
+                \caption{Two \gls{ame} prominent regions investigated by \cite{planckxx11, tibbs11}, $\rho$~Ophiuchus and Perseus, as they appear in the \gls{pah}-feature-tracing AKARI/\gls{irc}~9$\mu$m all-sky data at native resolution \citep{ishihara10}. White contours show \gls{ame} at 1$^\circ$ resolution, extracted from the map by  \cite{planck15X}. The \gls{irc} data shown here is of a much finer resolution than the \gls{ame} data, at around 10'', demonstrating the critical gap in resolvability of all-sky \gls{ame}-tracing data itself vs. the IR dust tracers we hope to compare it to. }
+              \label{fig:AME_contours}
+            \end{figure}
+        In this section we will explain that while there is indeed much mystery as to the exact mechanism(s) producing the \gls{ame}, what causes its spectral variations, and what might be its physical carrier(s) - it is by now, perhaps less than anomalous. Following subsections will discuss the history of \gls{ame} and the produced physical explanations, as well comparisons between the \gls{ame} and infarred emission from interstellar dust.
+
+    \subsection{Correlation with dust}
+           Since its first detection in early microwave observations, \gls{ame} has been found to be a widespread feature of the microwave Milky Way (see the review \cite{dickinson13r}, and an updated state-of-play of \gls{ame} research by \cite{dickinson18}. \cite{kogut96,deoliveiracosta97} showed that the \gls{ame} correlates very well with infrared emission from dust, via \gls{cobe}/\gls{dirbe} and \gls{iras} \gls{fir}.  \cite{finkbeiner02} reported the first detection of a ``rising spectrum source at 8~to~10~GHz'' in an observation targeting galactic \gls{ism} cloud. \cite{deoliveiracosta02} furher argued that this emission is in fact ``ubiquitous''. The exact mechanism and carrier/s remain mysterious however.
+        More recent works, employing observations by the \gls{wmap}, \gls{sst}, the latest \gls{ir} to microwave all-sky maps by Planck, and various ground based radio observations have strongly confirmed a relationship between interstellar dust emission and \gls{ame} \citep{ysard10a,tibbs11,hensley16}. Exactly which physical mechanisms produces the \gls{ame} however is still an open question, even if we assume a dusty \gls{ame} origin. We equally puzzled as to the chemical composition and morphology of the carrier(s). We also lack an all-sky constraint on the emissivity of the \gls{ame} spectrum at frequencies short of the \gls{wmap} cut-off, around 23~GHz. The typical peak frequency of \gls{ame}, in those cases where it is constrained, does give us a clue.
+
+  \subsection{Proposed explanations}
+     From the observed spatial correlation between \gls{ame} and dust emerged two prevailing hypotheses:
+
+    1) Electric dipole emission by spinning small dust grains, a mechanism proposed in \cite{erickson57} and \cite{hoyle70}, with further discussion in \cite{ferrara94}. \cite{draine98b} give the earliest thorough theoretical prediction of a spinning dust spectrum. A decade later \cite{ali-haimoud09} contributed substantial updates, expanded modeling of grain excitation mechanisms and adoption of an updated grain size distribution by \cite{weingartner01}. \cite{ysard10a} introduced the first model of a spinning dust spectrum based on rotational emission from \gls{pah}, which are implicated due to their size.  \cite{draine98b}, gives the expected rotational frequency of spinning dust oscillators $\omega$,  as follows:
+        \begin{equation}
+        {\omega_T\over 2\pi} =
+        \langle\nu^2\rangle^{1/2}
+        \approx 5.60\times 10^9 a_{-7}^{-5/2}\xi^{-1/2}T_2^{1/2}~~~{\rm Hz},
+        \label{eq:nurms}
+        \end{equation}
+    where $T$ is the gas temperature, $a$ is the grain size, and $\xi$ represents the deviation from a spherical moment of intertia. For example, we can take a typical peak frequency of the \gls{ame} of \textasciitilde{}20~GHz, a gas temperature of 100~K, roughly spherical grains, and a dipole moment on the order of 1~debye, and get:
+        \begin{equation}
+            {\omega_T\over 2\pi} =
+                20~GHz({T\over 100K})^{1/2}({\rho \over{3gcm^{03}}})^{-1/2}({a\over 5\AA{}})^{-5/2}
+            \label{eq:nurms_ex}
+        \end{equation}
+    implying an oscillator size of approximately 1~nm. Thus \gls{pah}s, as considered by \cite{ysard10a}, are a primary candidate spinning dust carrier, due to their expected size range.
+
+    2) Magnetic dipole emission, caused by thermal fluctuations in grains with magnetic inclusions, proposed by \cite{draine99}.
+     More recently, modeled spectra for potential candidate carriers have appeared in the literature: \gls{pah}s, grains with magnetic inclusions \citep{draine13, ali-haimoud14, hoang16a}.
+
+    3) Though not widely accepted, another possible explanation for \gls{ame} is discussed in \cite{jones09}. They have suggested that the emissivity of dust, in the spectral range related to \gls{ame}, could contain features caused by low temperature solid-state structural transitions.
+
+    \subsection{Spinning dust}
+     Spinning dust need not be the only emission mechanism, a convention as arisen in \gls{ame} observational works. The photometric signature of the \gls{ame} is frequently interepreted via spinning dust parameters \citep{ysard11,ali-haimoud10}. Archival all-sky \gls{ame} data products exclusively assume a spinning dust \gls{sed} templates. Both \gls{wmap} and Planck used a base template with 30~GHz peak frequency, and an assumed cold neutral medium environment. Using the ``spdust'' spinning dust \gls{sed} model code to fit excess microwave foreground emission has become analagous fitting a modified blackbody function to the \gls{fir}.
+
+      We explore the case that the \gls{ame} signature arises from spinning dust emission. If the \gls{ame} is carried by spinning dust, the carrier should be small enough that it can be rotationally excited to frequencies in the range of 10-40~GHz, and must have a permanent electric dipole. Within contemporary dust \gls{sed} models, only the \gls{pah} family of molecules, or nanoscale amorphous carbon dust fit these criteria. Those \gls{pah}s which have a permanent electric dipole (i.e. coranulene, but not symmetric molecules like coronene), can emit rotationally. However the carrier need not be carbon-based.
+
+     \subsection{Spinning \gls{pah}s?}
+       Assuming the rotational emission model of \cite{draine98b}, the \gls{ame} signature (consistent with peaked, continuum emission having a peak between 15 and 50~GHz ) implies very small oscillators (\textasciitilde{}1~nm).
+
+       In any case, the \gls{pah} class of molecules are the only spinning dust candidate so far which show both: \\
+       1) Evidence of abundance in the \gls{ism} at IR wavelengths, and \\
+       2) A predicted range of dipole moments (on order of 1~debye), to produce the observed \gls{ame} signature \citep{draine98b, lovas05, thorwirth07}.
+
+       However, it should be noted that although nanosilicates have not yet been detected in the \gls{ism}, \cite{hensley17a} propose that an upper bound on the abundance of nanosilicates by \cite{li01} (based on \gls{irts} observations by \cite{onaka96}), allow such small spinning grains to be composed primarily of silicates. This followed an earlier claim by \cite{hensley16} that the absence of a conclusive \gls{pah}-\gls{ame} link suggested the possibility of \gls{ame}-from-nanosilicates.
+
+    While neither nanosilicates nor any particular species of \gls{pah}s have been conclusively identified in the \gls{ism}, there is far more empiracal evidence for \gls{pah}-like dust than for nanosilicates. Mid-infrared features associated with \gls{pah}-like aromatic materials have been observed. In fact, ``the \gls{pah} features'' are ubiquitous in the \gls{ism} \citep{giard94,onaka96,onaka00}, such that the carriers must be abundant. \cite{andrews15} strongly argue for the  existence of a dominant ``grandPAH'' class, containing 20 to 30 \gls{pah} species.
+
+     \subsection{Excitation factors}
+       In the spinning dust model, there are several possible excitation factors for spinning dust. For the grains to have rotational velocities high enough to create the observed \gls{ame}, they must be subject to strong excitation mechansisms. The dominant factors that would be giving grains their spin, are broken down by \cite{draine11} into basically two categories: 1) Collisional excitation. 2) Radiative excitation, the sum of which could lead to sufficient rotational velocities for sufficiently small grains. However the extent of excitation will depend on environmental conditions, i.e. there will be more frequent encounters with ions and atoms in denser regions (so long as the density is not high enough to coagulate the small grains), and more excitation due to photon emission with increasing \gls{isrf} strength \citep{ali-haimoud09, ali-haimoud14}. One of the strongest potential excitation mechansims listed in \cite{draine11} is that of negatively charged grains interacting with ions. Thus not only must we consider environmental factors, grain composition and size, but also the ionization state of the carriers. (For example, ionized vs. neutral \gls{pah}s.) The dependence of the observed \gls{ame} on \gls{ism} density is modeled by \cite{ali-haimoud10}.
+
+       \subsection{AME vs. IR in the literature}
+          The overall pattern among large-scale studies seems to show that all of the dust-tracing photometric bands correlate with the \gls{ame} (and each other) to first-order.  On an all-sky, pixel-by-pixel basis, at 1$^{\circ}$ angular resolution, \cite{ysard10b} find that 12~$\mu$m emission, via \gls{iras}, correlates slightly more strongly with \gls{ame} (via \gls{wmap}) than with 100~$\mu$m emission.  They also find that scaling the IR intensity by the \gls{isrf} improves both correlations. They interpret this finding as evidence that \gls{ame} is related to dust, and more closely related to the small stochastically emitting dust --- predominantly \gls{pah}s --- that is traced by 12~$\mu$m emission. The improvement of the correlations after scaling by $U$ is expected, as long as the 12~$\mu$m band is dominated by stochastic emisson from \gls{pah}s, in other words:
+            \begin{equation}
+              I_{12~\mu{}m} \propto{} UN_{PAH},
+            \end{equation}
+          where $N_{PAH}$ is the column density of emitting \gls{pah}s \citep{onaka00}. Such a relationship is expected, assuming that \gls{pah}s are small enough, and their heat capacities low enough, such that their emission is indeed stochastic-- a single UV photon is absorbed, immediately followed by the emission of many IR photons. Under such conditions, a the radiation field would change only the intensity of \gls{pah} features, and not affect the spectral shape. Thus \cite{ysard10b} implies that $I_{12~\mu{}m}/U$ is giving us a measure of the column density of spinning dust.
+
+          In a similar work however \cite{hensley16} report a lack of support for the spinning \gls{pah} hypothesis. Finding that fluctuations in the ratio of \gls{pah}-dominated 12~$\mu$m emission (via \gls{wise}) to dust radiance, $R$, (via Planck) do not correlate with the ratio of \gls{ame} intensity to $R$, they conclude that the \gls{ame} is not likely to come from \gls{pah}s. In terms of emission intensity however, their findings are consistent with \cite{ysard10b} in that $I_{12~\mu{}m}$ correlates well with $I_{AME}$. Thus there remains an open question as to what the actual carrier of the \gls{ame} is.
+
+         The story is no more clear when looking at the average properties of individual regions. \cite{planckXV} find that among 22 high-confidence ``AME regions'' (galactic clouds such as the $\rho$~Ophiuchus cloud and the Perseus molecular cloud complex) \gls{ame} vs. 12~$\mu$m  shows a marginally weaker correlation than \gls{ame} vs. 100~$\mu$m (via \gls{iras}). \cite{tibbs11} examined the \gls{ame}-prominent Perseus Molecular Cloud complex, finding that while there is no clear evidence of a \gls{pah}-AME correlation, they do find a slight correlation between \gls{ame} and $U$.
+
+\section{Statistical Methods}
+
+    In the following chapters, various IR datasets and analysis comparing the \gls{ame} to dust emission will be described, along with a discussion of results testing the ``\gls{ame} from spinning \gls{pah}s'' hypothesis. Because this particular hypothesis is challenging to test, due to the first order correlation of different constituents of interstellar matter, we apply variety of statistical techniques to explore if \gls{pah}s show any better correlation with \gls{ame} than other dust metrics. These methods range from standard correlation tests to less common techniques, like the bootstrap test, and even relatively new approaches such as \gls{hb}. It may be useful to go ahead and introduce this methods from the outset.
+
+    \subsection{Correlation tests}
+
+    \paragraph{Pearson correlation coefficient}
+     $r_{p}$ is defined as follows:
+
+     \begin{equation}
+       \rho_{X,Y}= \frac{\operatorname{cov}(X,Y)}{\sigma_X \sigma_Y}
+     \end{equation}
+     where $X$ and $Y$ are the variables of interest, $cov$ is the covariance between them. $\sigma_{X}$ is the standard deviation of $X$, and $\sigma_{Y}$ that of $Y$.
+   To explain this conceptually, when we use $r_{p}$, we are essentially asking the question ``How well can we represent these data as having a linear trend?'' This is important to remember, as $r_{p}$ is often confused as being simply a measure of correlatedness. This is partly true, in that stronger $r_{p}$ scores indicate a better correlation. However lower scores may simply be indicating that a trend is not linear, or even that a linear trend is being overwheled by outliers or noise. For theses reasons, we will not use $r_{p}$ in the following chapters. It is described here simply to aid in the understanding of its variant, the Spearman's rank correlation coefficient.
+
+    \paragraph{Spearman's rank correlation coefficient}
+     $r_{s}$ can be thought of as a variation of $r_{p}$, and in fact depends on $r_{p}$ and can be written as follows:
+
+       \begin{equation}
+         r_s = \rho_{\operatorname{rg}_X,\operatorname{rg}_Y} = \frac {\operatorname{cov}(\operatorname{rg}_X,\operatorname{rg}_Y)} { \sigma_{\operatorname{rg}_X} \sigma_{\operatorname{rg}_Y} }
+       \end{equation}
+       where we see that $r_{p}$ appears, but note that this is $r_{p}$ as it is applied to the ``rank'' of the variables, indicated by $rg_{Y}$ and $rg_{X}$, and not the original values. Thus a sorting of the variables is needed. $cov$ is again the variance, and $\sigma{}$ the standard deviation.
+       The logic is similar to that in $r_{p}$, but the objective here is to test more generally for a monotonic relationship, not only linear. As a simple example, a pure power-law relationship would return a perfect 1 score for $r_{s}$, but not for $r_{p}$. Both tests would return 1 (or -1) for a purely linear relationship. Throughout the following chapters, we will use $r_{s}$.
+
+    \paragraph{Bootstrap analysis}
+    The ``Bootstrap'' test was first introduced by \cite{efron79}. The name comes the notion of fact that, without using any external information, we estimate the variation of a statistic directly from a population, ``picking oneself up by one's bootstraps''. \cite{feigelson13} gives an updated description of the Bootstrap test within an astronomical context. The process involves creating $N$ random re-samples of a population $P_{0}$, where the size of the re-samples $n_{resamp}$ equals the size $n_{orig}$ of $P_{0}$. This is carried out such that, when a datapoint is selected from $P_{0}$ and placed in the $Nth$ re-sample $P_{i}$, it immediately becomes eligible for re-slection. This is known as ``resampling with replacement``. The effect is that, within the re-sampled populations $P_{i}$, some of the original data may be omitted, while others may be over-represented. Ideally this process would be repeated for all of the re-sampling permutations, or $N = nPn$. This quickly becomes computationally infeasible, and $n*log(n)$ resamplings has become a conventional compromise, to sufficiently sample the distribution of your statistic in a reasonable time. Bootstrap tests are often applied to the Spearman and Pearson correlation tests, described above, to place an error estimate on correlation tests as well as de-weight outliers. Such an approach is applied in Chs.~\ref{ch:lori}~and~\ref{ch:allsky} to assess the reliability of Spearman scores between the AME and IR dust emission.
+       \subsection{Optimization/Fitting Methods}
+
+       \paragraph{Least-squares Method}
+
+        Ubiqutous throughout scientific and statistical literature, \gls{lsm} is the conventional way by which dust SED models have been fit to observational data, as in \cite{tibbs11}. Essentially a minimization problem, the method can be described mathematically as follows:
+        \begin{equation}
+             S=\sum_{i=1}^{i=n}r_i^2
+        \end{equation}
+        where $S$, the quantity being minimized, is the sum of errors or ``residuals'' $r_{i}$ between the model  and the observational data.
+
+       \paragraph{Bayesian analysis}
+
+       Whearas in \gls{lsm} we include no prior information regarding the likilihood of various output parameters, there is a well established framework by which we can do so.  The implementation of Bayesian analysis, so far, has not been widespread in the study of interstellar dust. The concept however is by no means new, first being described mathmatically in \cite{bayes1763}. The central principle is known today as ``Baye's theorem'', given as:
+           \begin{equation}
+               P(A\mid{} B) = \frac{P(B \mid{} A) \, P(A)}{P(B)}
+           \end{equation}
+        where, in the context of event probabilities, $P(A\mid{} B)$ is the chance that A will occur, given B. Likewise, $P(B\mid{} A)$, is the probability that $B$ will occur, given $A$. $P(A)$ and $P(B)$ are then the probability that either event would be observed, regardless of the other. In other words, to compute the probability of two events being observed together, we must consider the probability of them occuring independently. In practice, when we use Bayesian tecniques, what we are doing is building-in to our model some prior knowledge or expectation about the distribution of our output parameters. In contrast, when we use \gls{lsm}, we are implicitly assuming that any output value is equally likely. In the Bayesian framework, we consider that we always have some type of prior expectation of the output distribution, and that this must be stated or selected up-front. This forms the foundation of a method implemented in Ch.~\ref{ch:lori} to fit the dust SED properties of $\lambda$~Orionis, called \gls{hb}.
+
+        \paragraph{Hierarchical Bayesian Analysis}
+        In Bayesian analysis, we are specifying a prior expectation for our parameters up-front. The probability distribution that we use can significantly affect our result. If we instead infer a prior distribution from the data itself, we may be able to fine-tune the fitting process, and extract patterns that may not be readily revealed by standard Bayesisn analysis or \gls{lsm}. This technique is implented in Ch~\ref{ch:lori}, revealing a trend between PAH emission and the AME, forming the core result of this thesis. We will show also how the result could not have been demonstrated via \gls{lsm}. The major advantages of \gls{hb} are as follows:
+            \begin{itemize}
+              \setlength{\itemsep}{5pt}
+                \item Prior is inferred from the data
+                \item Less vulnerable to local minima
+                \item Avoids noise-induced correlations
+                \item Robust error propagation
+            \end{itemize}
+        The major disadvantage however is that \gls{hb} is relatively expensive, computationally, compared to \gls{lsm}. Also, in the case of only a single data source, we would not be able to build a prior distribution function from the data.
+
+\section{Scope of this Dissertation}
+    We attempt to add to the understanding of \gls{ame} and the possibility of spinning dust emission. With ample multiwavelength data now available, and a new \gls{pah}-focused all-sky survey in preparation by AKARI, we further test the \gls{pah} hypothesis, and assess how the IR to \gls{ame} correlation changes as a function of wavelength. This thesis represents the first time that AKARI \gls{irc} data, have been utilized for \gls{ame} investigation. Moreover, Ch.~\ref{ch:lori} represents the first time that AKARI data, and hierarchical Bayesian dust \gls{sed} fitting respectively, have been used to investigate the $\lambda$~Orionis region. The result of Ch.~\ref{ch:lori} is likewise unique in that it is the first time a link between \gls{ame} and \gls{pah}s has been demonstrated in $\lambda$~Orionis, and the first time that \gls{ame} in any particular region has been shown to correlate better with \gls{pah} mass than with the total dust mass. Chs.~\ref{ch:lori}~and~\ref{ch:allsky} both utilize a greater number of mid IR to sub-mm photometric bands, than have ever been used for \gls{ame} investigations. More specifically, this work represents the first use of a  photometric band covering the 6.2~$\mu$m C-C stretching \gls{pah} feature, for a wide-scale galactic investigation.
+
+  \subsection{An application of all-sky archival data}
+    This is an astrophysical data archive based work. The primary goal is to highlight a particular application of multiwavelength (mid-IR to radio), cross-archive all-sky data analysis. We describe the interrelatedness between mid to far IR dust emission and possible microwave emission from dust. This is accomplished through an investigation of photometric all sky maps mainly from AKARI, \gls{iras}, Planck, and \gls{dirbe}.
+
+  \subsection{Testing the spinning \gls{pah} hypothesis}
+    For the present work, we consider the spinning \gls{pah} hypothesis to have the highest degree of testability, due to the well-established presence of aromatic emisison features in the \gls{ism}.  We do not argue against the physical plausibility of nanosilicates to produce the \gls{ame}. Indeed, there is no argument to date that these potential physicalities are mutally exclusive, as long as both potential carriers are sufficiently abundant. Nor does spinning dust emission theoretically exclude magnetic dipole emission or microwave thermal dust emissivity fluctuations.
+
+  \subsection{Limitations}
+    We do not explore the modeling of microwave dust emission itself, rather we refer to estimates of spinning dust emisison provided in the literature \citep{planckXII, wmap03b} in the form of archival data and parameter maps. We consider this problem first on an all-sky basis, not focusing on any pre-selected object of the sky --- in order to assess if there any general pattern between the IR and the \gls{ame}, beyond the \gls{ame}-dust correlation already described above. We then focus on a region highlighted by the Planck Collaboration as being especially worthy of further investigation \citep{planck15X}, and has a resolvable topology even at 1$^\circ$ resolution. Essentially all of the analyses and conclusions presented in this work apply to an angular scale of approximately 1$^\circ$, and only for the given component separation methods (Solar system, galactic, extragalactic) used by each of the data providers.
+
+  \subsection{Code availability}
+    Because this work is intended to contribute working examples for future students, in addition to making a research contribution, this thesis is accompanied by a {\tt github} repository (to be made available upon acceptance of the thesis.) \footnote{Available at: \url{https://github.com/aaroncnb/CosmicDust}.} Most of analyses code are available in that repository, in the form of Jupyter notebooks. Most of the figures, and code used to generate them, are also included. The hierarchical Bayes dust \gls{sed} fitting code used in this work was developed by \cite{galliano18}, and its implementation in this work was carried out in collaboration with their group. The details of the code are described in \cite{galliano18}, and are not included in the respository for this thesis.

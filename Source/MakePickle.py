@@ -88,7 +88,7 @@ for i in range(0,3):
 
 planck_bb['$R_{PR1}$'] = hp.ud_grade(		
 		hp.read_map(
-			filepath+"/HFI_CompMap_ThermalDustModel_2048_R1.20.fits",
+			filepath+"HFI_CompMap_ThermalDustModel_2048_R1.20.fits.gz",
 			nest=True,
 			field=3 
 		),
@@ -98,7 +98,7 @@ planck_bb['$R_{PR1}$'] = hp.ud_grade(
 
 planck_bb['$\tau_{353,PR1}$'] = hp.ud_grade(
                 hp.read_map(
-                        filepath+"/HFI_CompMap_ThermalDustModel_2048_R1.20.fits",
+                        filepath+"HFI_CompMap_ThermalDustModel_2048_R1.20.fits.gz",
                         nest=True,
                         field=0),
                 nside_out = 256,
@@ -118,10 +118,11 @@ planck_bb.replace(
 
 #### Read Planck low-res microwave component fitting results:
 planck_mw = pd.DataFrame()
-labels = ['AME','CO','ff','Sync']
+labels = ['AMEvar','AMEfix','AMEfreq','ff','Sync']
 
-paths = ['COM_CompMap_AME-commander_0256_R2.00.fits.gz',
-         'COM_CompMap_CO-commander_0256_R2.00.fits.gz',
+paths = ['COM_CompMap_AME-commander_0256_R2.00_var_PEAK_I.fits',
+         'COM_CompMap_AME-commander_0256_R2.00_fix_PEAK_I.fits',
+	 'COM_CompMap_AME-commander_0256_R2.00_var_FREQ_MEAN.fits',
          'COM_CompMap_freefree-commander_0256_R2.00.fits.gz',
          'COM_CompMap_Synchrotron-commander_0256_R2.00.fits.gz']
 
@@ -165,7 +166,7 @@ phot_modesub = pd.DataFrame(phot.values-allsky_modes.values,columns=phot.columns
 phot_mpsub = pd.DataFrame()
 
 for map in phot.columns:
-	phot_mpsub[map] =  hp.remove_monopole(phot[map], nest=True, gal_cut=20)
+	phot_mpsub[map] =  hp.remove_monopole(phot[map], nest=True, gal_cut=30)
 
 
 import pickle
